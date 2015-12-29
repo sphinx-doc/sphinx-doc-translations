@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2015, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinx-doc-1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-28 08:21+0000\n"
+"PO-Revision-Date: 2015-03-11 05:35+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../extdev/index.rst:4
+msgid "Developing extensions for Sphinx"
+msgstr "Desenvolvendo extensões para Sphinx"
+
+#: ../../extdev/index.rst:6
+msgid ""
+"Since many projects will need special features in their documentation, "
+"Sphinx is designed to be extensible on several levels."
+msgstr "Como muitos projetos necessitam de funcionalidades especiais em sua documentação, Sphix foi desenhado para ser extensível em diversos níveis."
+
+#: ../../extdev/index.rst:9
+msgid ""
+"This is what you can do in an extension: First, you can add new "
+":term:`builder`\\s to support new output formats or actions on the parsed "
+"documents.  Then, it is possible to register custom reStructuredText roles "
+"and directives, extending the markup.  And finally, there are so-called "
+"\"hook points\" at strategic places throughout the build process, where an "
+"extension can register a hook and run specialized code."
+msgstr "É para isto que serve uma extensão: Primeiro, adicinar novo :term:`construtor` para suporte do novo formato ou ação nos documentos envolvidos. Então, será possivel registrar diretivas e funções de marcas extendidas. E finalmente, existem os pontos \"de referência\" como locais estratégicos no processo de construção, onde uma extensão pode interagir e executar código específico."
+
+#: ../../extdev/index.rst:16
+msgid ""
+"An extension is simply a Python module.  When an extension is loaded, Sphinx"
+" imports this module and executes its ``setup()`` function, which in turn "
+"notifies Sphinx of everything the extension offers -- see the extension "
+"tutorial for examples."
+msgstr "Uma extensão é simplesmente um módulo Python. Quando uma extensão é carregada, Sphinx importa esse módulo e executa sua função  ``setup()``, a qual notifica Sphinx de todas as ofertas que a extensão possui -- ver tutorial de exemplos de extensão."
+
+#: ../../extdev/index.rst:21
+msgid ""
+"The configuration file itself can be treated as an extension if it contains "
+"a ``setup()`` function.  All other extensions to load must be listed in the "
+":confval:`extensions` configuration value."
+msgstr "A configuração do próprio arquivo pode ser tratada como uma extensão se ela contiver uma função  ``setup()``. Todas as outras extensões para serem carregadas devem estar listadas em :confval:`extensions` "
+
+#: ../../extdev/index.rst:26
+msgid "Extension metadata"
+msgstr "Extensões Metadados"
+
+#: ../../extdev/index.rst:30
+msgid ""
+"The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
+" as metadata of the extension.  Metadata keys currently recognized are:"
+msgstr "A função ``setup()`` pode retornar um dicionário. Isso é tratado pelo Sphinx como extensão de metadados. Chaves dos Metadados normalmente reconhecidas são: "
+
+#: ../../extdev/index.rst:33
+msgid ""
+"``'version'``: a string that identifies the extension version.  It is used "
+"for extension version requirement checking (see :confval:`needs_extensions`)"
+" and informational purposes.  If not given, ``\"unknown version\"`` is "
+"substituted."
+msgstr "``'version'``: uma palavra que identifica a versão da extensão. É utilizada para a verificação da versão mínima requerida (ver :confval:`needs_extensions`) e finalidades de informação. Se não informado será apresentado  ``\"versão desconhecida\"``"
+
+#: ../../extdev/index.rst:36
+msgid ""
+"``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
+"source files can be used when the extension is loaded.  It defaults to "
+"``False``, i.e. you have to explicitly specify your extension to be "
+"parallel-read-safe after checking that it is."
+msgstr "``'parallel_read_safe'``: valor booleano que especifica se leitura paralela dos arquivos fontes pode ser usada, quando a extensão for carregada.  O valor padrão é ``False``, ex. deve ser explicitado que sua função pode usar processamento paralelo, após a devida comprovação através dos testes."
+
+#: ../../extdev/index.rst:40
+msgid ""
+"``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
+"output files can be used when the extension is loaded.  Since extensions "
+"usually don't negatively influence the process, this defaults to ``True``."
+msgstr "``'parallel_write_safe'``: valor booleano que especifica que a gravação dos arquivos de saída pode ser usada quando sua extensão for carregada. Normalmente extensões não influenciam negativamente o processo, o valor padrão é ``True``."
+
+#: ../../extdev/index.rst:45
+msgid "APIs used for writing extensions"
+msgstr "APIs usadas para gravar extensões"

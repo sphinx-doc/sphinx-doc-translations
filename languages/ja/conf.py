@@ -1,5 +1,6 @@
 import os
-BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+parent = os.path.dirname
+BASEDIR = parent(parent(parent(os.path.abspath(__file__))))
 
 execfile(os.path.join(BASEDIR, 'sphinx/doc/conf.py'))
 

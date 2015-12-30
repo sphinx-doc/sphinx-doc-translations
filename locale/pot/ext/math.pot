@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2014, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\sphinx\doc\ext\math.rst:4
+# 7ae7a1e75c86494892d9dfbf6a7dcfa8
+msgid "Math support in Sphinx"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:11
+# 2a063a67b5d84ff399a6ff4d07f3d0da
+msgid "Since mathematical notation isn't natively supported by HTML in any way, Sphinx supports math in documentation with several extensions."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:14
+# 4aada3cfc12f44b2bb93e724a4e943a6
+msgid "The basic math support is contained in :mod:`sphinx.ext.mathbase`. Other math support extensions should, if possible, reuse that support too."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:19
+# 65036a9d135346589f8d4d8206037cf8
+msgid ":mod:`.mathbase` is not meant to be added to the :confval:`extensions` config value, instead, use either :mod:`sphinx.ext.pngmath` or :mod:`sphinx.ext.mathjax` as described below."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:23
+# e0b2e023eac647a7a7b51adea8ea8570
+msgid "The input language for mathematics is LaTeX markup.  This is the de-facto standard for plain-text math notation and has the added advantage that no further translation is necessary when building LaTeX output."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:27
+# 28a323d33b6f431f9ac59deb3170c8a2
+msgid "Keep in mind that when you put math markup in **Python docstrings** read by :mod:`autodoc <sphinx.ext.autodoc>`, you either have to double all backslashes, or use Python raw strings (``r\"raw\"``)."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:31
+# 51ee708699464d5f9d79e1def1d8eca5
+msgid ":mod:`.mathbase` defines these new markup elements:"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:35
+# 8ce2952a90f0442d8725d84a8aac103b
+msgid "Role for inline math.  Use like this::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:41
+# 9b450fa4c2b94385b2d064fd36515386
+msgid "Directive for displayed math (math that takes the whole line for itself)."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:43
+# 3f222e014ea2414b85147803b55d2992
+msgid "The directive supports multiple equations, which should be separated by a blank line::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:52
+# ec37a78da1f34495b61ab36f48df2ea8
+msgid "In addition, each single equation is set within a ``split`` environment, which means that you can have multiple aligned lines in an equation, aligned at ``&`` and separated by ``\\\\``::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:61
+# 2cd9272f46e4461eae397c38f71b12c2
+msgid "For more details, look into the documentation of the `AmSMath LaTeX package`_."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:64
+# e4a62e2731be406e8e0e52b85c6d8f28
+msgid "When the math is only one line of text, it can also be given as a directive argument::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:69
+# 54e8374717f9431691a194dea9149ea2
+msgid "Normally, equations are not numbered.  If you want your equation to get a number, use the ``label`` option.  When given, it selects an internal label for the equation, by which it can be cross-referenced, and causes an equation number to be issued.  See :rst:role:`eqref` for an example.  The numbering style depends on the output format."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:75
+# 093513f989934d279dfbefa1c0a1b56c
+msgid "There is also an option ``nowrap`` that prevents any wrapping of the given math in a math environment.  When you give this option, you must make sure yourself that the math is properly set up.  For example::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:89
+# a773654b32e44116a989ab936ae35604
+msgid "Role for cross-referencing equations via their label.  This currently works only within the same document.  Example::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:100
+# c228bef923c44a01a0ff1dc5f6ee59e7
+msgid ":mod:`sphinx.ext.pngmath` -- Render math as PNG images"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:105
+# 0c5d2e7b6968487fa8d11d337152df81
+msgid "This extension renders math via LaTeX and dvipng_ into PNG images.  This of course means that the computer where the docs are built must have both programs available."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:109
+# ac5b03d978d842d1bdcd07a4cc51e78f
+msgid "There are various config values you can set to influence how the images are built:"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:114
+# 3c80f99e191747c4a3b9d28268162f2d
+msgid "The command name with which to invoke LaTeX.  The default is ``'latex'``; you may need to set this to a full path if ``latex`` is not in the executable search path."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:118
+# 5dc867a7f06c4a688844f1d8a4eee232
+msgid "Since this setting is not portable from system to system, it is normally not useful to set it in ``conf.py``; rather, giving it on the :program:`sphinx-build` command line via the :option:`-D` option should be preferable, like this::"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:125
+# 09d3fd02e29246248183c6704ec2b83a
+msgid "This value should only contain the path to the latex executable, not further arguments; use :confval:`pngmath_latex_args` for that purpose."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:131
+# 9e452064d2274ce1abc229249d0f5cc6
+msgid "The command name with which to invoke ``dvipng``.  The default is ``'dvipng'``; you may need to set this to a full path if ``dvipng`` is not in the executable search path."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:137
+# 2ffabbe7c5d4454584ba67bf8a44ef83
+msgid "Additional arguments to give to latex, as a list.  The default is an empty list."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:144
+# da436899a3204d069cdd4b65a85dbc6c
+msgid "Additional LaTeX code to put into the preamble of the short LaTeX files that are used to translate the math snippets.  This is empty by default.  Use it e.g. to add more packages whose commands you want to use in the math."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:150
+# b7bb6368976d41d8b09376a12f87c508
+msgid "Additional arguments to give to dvipng, as a list.  The default value is ``['-gamma', '1.5', '-D', '110', '-bg', 'Transparent']`` which makes the image a bit darker and larger then it is by default, and produces PNGs with a transparent background."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:155
+# 53971e340f0d4a28a15dcda1d865a259
+msgid "Now includes ``-bg Transparent`` by default."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:160
+# dfc5c2c068b1446385ef64569fa4bcc1
+msgid "``dvipng`` has the ability to determine the \"depth\" of the rendered text: for example, when typesetting a fraction inline, the baseline of surrounding text should not be flush with the bottom of the image, rather the image should extend a bit below the baseline.  This is what TeX calls \"depth\".  When this is enabled, the images put into the HTML document will get a ``vertical-align`` style that correctly aligns the baselines."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:167
+# 15ca1933e0dd41a2aa5595b39783160b
+msgid "Unfortunately, this only works when the `preview-latex package`_ is installed.  Therefore, the default for this option is ``False``."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:172
+# 21b0970e14bf4484b2196f20986311ae
+msgid "Default: true.  If false, do not add the LaTeX code as an \"alt\" attribute for math images."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:179
+# 7ff22802e8184b6f877b01f2d5595891
+msgid ":mod:`sphinx.ext.mathjax` -- Render math via JavaScript"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:186
+# 158e37c417544334bfd93dd4340f76fe
+msgid "This extension puts math as-is into the HTML files.  The JavaScript package MathJax_ is then loaded and transforms the LaTeX markup to readable math live in the browser."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:190
+# 06bfddb7199748d2b72d1065b2bf3319
+msgid "Because MathJax (and the necessary fonts) is very large, it is not included in Sphinx."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:195
+# d21eb7f0d46a4f159a673ea943d1fd24
+msgid "The path to the JavaScript file to include in the HTML files in order to load MathJax."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:198
+# 95afd9afb18d4f4086d52b8ab823a691
+msgid "The default is the ``http://`` URL that loads the JS files from the `MathJax CDN <http://docs.mathjax.org/en/latest/start.html>`_.  If you want MathJax to be available offline, you have to donwload it and set this value to a different path."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:203
+#: ..\..\sphinx\doc\ext\math.rst:228
+# 8281b932612b4fc59e0bcead3f062f83
+# b58f7986044b4cc890273863fd1b28ea
+msgid "The path can be absolute or relative; if it is relative, it is relative to the ``_static`` directory of the built docs."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:206
+# 33b75f10e7c74db49c1bae4bd2794ad9
+msgid "For example, if you put MathJax into the static path of the Sphinx docs, this value would be ``MathJax/MathJax.js``.  If you host more than one Sphinx documentation set on one server, it is advisable to install MathJax in a shared location."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:211
+# f3d65b43f555478b9ac23e5b36cc753e
+msgid "You can also give a full ``http://`` URL different from the CDN URL."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:215
+# ec8c18c5fc4a41e88b65aeccd66d4a3d
+msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:220
+# 8e7eee0a5a7b48998003b71789ea4759
+msgid "This extension works just as the MathJax extension does, but uses the older package jsMath_.  It provides this config value:"
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:225
+# 8855c440f25d47d88f6cf26397b72073
+msgid "The path to the JavaScript file to include in the HTML files in order to load JSMath.  There is no default."
+msgstr ""
+
+#: ..\..\sphinx\doc\ext\math.rst:231
+# 4e7b3299191d49128e996e82f86fe7bc
+msgid "For example, if you put JSMath into the static path of the Sphinx docs, this value would be ``jsMath/easy/load.js``.  If you host more than one Sphinx documentation set on one server, it is advisable to install jsMath in a shared location."
+msgstr ""
+

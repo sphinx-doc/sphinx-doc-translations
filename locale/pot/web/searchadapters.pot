@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2014, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:6
+# 0a972629f58b4d63bf16f374a60dcfe1
+msgid "Search Adapters"
+msgstr ""
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:8
+# 27a7dedb81b24ecea90a5199c7b314d8
+msgid "To create a custom search adapter you will need to subclass the :class:`BaseSearch` class.  Then create an instance of the new class and pass that as the `search` keyword argument when you create the :class:`~.WebSupport` object::"
+msgstr ""
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:17
+# 29dc698d85d84d0289db1563a3012c1b
+msgid "For more information about creating a custom search adapter, please see the documentation of the :class:`BaseSearch` class below."
+msgstr ""
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:22
+# 3436c824797341f091f32b337ff64657
+msgid "Defines an interface for search adapters."
+msgstr ""
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:26
+# b0e0e6323e5940e4a5b602567aeb6096
+msgid "BaseSearch Methods"
+msgstr ""
+
+#: ..\..\sphinx\doc\web\searchadapters.rst:28
+# 997d742a88184ff0921bfd5bb4ca1bd2
+msgid "The following methods are defined in the BaseSearch class. Some methods do not need to be overridden, but some (:meth:`~BaseSearch.add_document` and :meth:`~BaseSearch.handle_query`) must be overridden in your subclass. For a working example, look at the built-in adapter for whoosh."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.init_indexing:1
+# 6ddf58a38eab4ddabb3fce502ee7845f
+msgid "Called by the builder to initialize the search indexer. `changed` is a list of pagenames that will be reindexed. You may want to remove these from the search index before indexing begins."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.init_indexing:5
+# 8f85385ae22b40da9fbd67a8d26a3eed
+msgid "a list of pagenames that will be re-indexed"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.finish_indexing:1
+# 6d7f369c8c534f6aaa3eb72e381c187b
+msgid "Called by the builder when writing has been completed. Use this to perform any finalization or cleanup actions after indexing is complete."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.feed:1
+# 63f3107c4dea49219833f18ff8b14146
+msgid "Called by the builder to add a doctree to the index. Converts the `doctree` to text and passes it to :meth:`add_document`. You probably won't want to override this unless you need access to the `doctree`. Override :meth:`add_document` instead."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.feed:6
+# 7a4f6e8f747b4130a3fc12c1d71e54a2
+msgid "the name of the page to be indexed"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.feed:7
+# b526aa8ac16c43619fdc6f99079380ae
+msgid "the title of the page to be indexed"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.feed:8
+# 5aa83b14592f495796139e7c96126151
+msgid "is the docutils doctree representation of the page"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.add_document:1
+# 287a07370f1148719ee37c60d4b0ab92
+msgid "Called by :meth:`feed` to add a document to the search index. This method should should do everything necessary to add a single document to the search index."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.add_document:5
+# 7e815e94750b413c8d2dc276b58ef5f2
+msgid "`pagename` is name of the page being indexed. It is the combination of the source files relative path and filename, minus the extension. For example, if the source file is \"ext/builders.rst\", the `pagename` would be \"ext/builders\". This will need to be returned with search results when processing a query."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.add_document:12
+# 727ed0e74a0f49ae89d6618bb1ed8776
+msgid "the name of the page being indexed"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.add_document:13
+# 98bb5d4cb6f8458b8d43dd796d97a6b2
+msgid "the page's title"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.add_document:14
+# c02010bb950b460db015eac46e7d1915
+msgid "the full text of the page"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.query:1
+# 5c19adf25628455487c44ddfdd53c453
+msgid "Called by the web support api to get search results. This method compiles the regular expression to be used when :meth:`extracting context <extract_context>`, then calls :meth:`handle_query`.  You won't want to override this unless you don't want to use the included :meth:`extract_context` method.  Override :meth:`handle_query` instead."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.query:7
+# 23fbd2edb0ac42aa844da0eb46a8cf12
+msgid "the search query string."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.handle_query:1
+# 674b712669ac46ee8b73590cc9567b0d
+msgid "Called by :meth:`query` to retrieve search results for a search query `q`. This should return an iterable containing tuples of the following format::"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.handle_query:7
+# 12800644650e40f78b1e92eda536d8d6
+msgid "`path` and `title` are the same values that were passed to :meth:`add_document`, and `context` should be a short text snippet of the text surrounding the search query in the document."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.handle_query:11
+# 572ed8d704e94625bf05bf6b75f30755
+msgid "The :meth:`extract_context` method is provided as a simple way to create the `context`."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.handle_query:14
+# 99f65095d3714b3ab549373fcf057f52
+msgid "the search query"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.extract_context:1
+# 3ec402151ebf45358196b69ec3a84877
+msgid "Extract the context for the search query from the document's full `text`."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.extract_context:4
+# 55fb282e643f4203adf163e3bca9ece7
+msgid "the full text of the document to create the context for"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\websupport\search\__init__.py:docstring of sphinx.websupport.search.BaseSearch.extract_context:5
+# db2478d51848445bbd5aa3093e2ef04b
+msgid "the length of the context snippet to return."
+msgstr ""
+

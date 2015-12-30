@@ -1,0 +1,642 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2014, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:4
+# b181830d31bc4767a8087a6c11fc1f2b
+msgid "Application API"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:10
+# 73760e74ae63458e90b39f2d4e0d62df
+msgid "Each Sphinx extension is a Python module with at least a :func:`setup` function. This function is called at initialization time with one argument, the application object representing the Sphinx process."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:16
+# 2547910357604f7e833cdbc8ff489e65
+msgid "This application object has the public API described in the following."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:19
+# 421a5308d96f4534a728e4f19d9e6266
+msgid "Extension setup"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:21
+# 8f00ca0d6b1c4f4f92c5e47ada0351f1
+msgid "These methods are usually called in an extension's ``setup()`` function."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:23
+# 7165ac745d8940c59344053adef8f3a2
+msgid "Examples of using the Sphinx extension API can be seen in the :mod:`sphinx.ext` package."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:28
+# 779570b476e5429b963c5fb67167c3e8
+msgid "Load the extension given by the module *name*.  Use this if your extension needs the features provided by another extension."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:33
+# edd688a5ac634996ae2121e081eb410b
+msgid "Register a new builder.  *builder* must be a class that inherits from :class:`~sphinx.builders.Builder`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:38
+# 548106285c22436e9e1db29cf5203303
+msgid "Register a configuration value.  This is necessary for Sphinx to recognize new values and set default values accordingly.  The *name* should be prefixed with the extension name, to avoid clashes.  The *default* value can be any Python object.  The string value *rebuild* must be one of those values:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:43
+# a924fda3f98142dc992a708e0cbe3da6
+msgid "``'env'`` if a change in the setting only takes effect when a document is parsed -- this means that the whole environment must be rebuilt."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:45
+# 79da090b2bea4c69a6285bdf7a8683d4
+msgid "``'html'`` if a change in the setting needs a full rebuild of HTML documents."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:47
+# 00357ea879d446f2924e3502b65b4a57
+msgid "``''`` if a change in the setting will not need any special rebuild."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:49
+# e7d0df883fde4ee4bd0acb9eeda953a4
+msgid "If the *default* value is a callable, it will be called with the config object as its argument in order to get the default value.  This can be used to implement config values whose default depends on other values."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:54
+# 8916cb0e24b04962ab36d10fdae83e5d
+msgid "Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) to a string.  However, booleans are still accepted and converted internally."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:61
+# 3244391ae3134bfcac09f8041c350ca4
+msgid "Make the given *domain* (which must be a class; more precisely, a subclass of :class:`~sphinx.domains.Domain`) known to Sphinx."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:68
+# b3d0288da084420b92d3d918a096cbe8
+msgid "Make the given *domain* class known to Sphinx, assuming that there is already a domain with its ``.name``.  The new domain must be a subclass of the existing one."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:76
+# fb01be91368f48528f9e27f8e33feb0c
+msgid "Add a custom *index* class to the domain named *domain*.  *index* must be a subclass of :class:`~sphinx.domains.Index`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:83
+# f300adf560044ddc8c1f275af92addf8
+msgid "Register an event called *name*.  This is needed to be able to emit it."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:87
+# 78b3be3e5c2c476ba3ebac3a4e17b4fb
+msgid "Register a Docutils node class.  This is necessary for Docutils internals. It may also be used in the future to validate nodes in the parsed documents."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:90
+# e4801a7c4ad347d199df0cfa84745be7
+msgid "Node visitor functions for the Sphinx HTML, LaTeX, text and manpage writers can be given as keyword arguments: the keyword must be one or more of ``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'``, the value a 2-tuple of ``(visit, depart)`` methods.  ``depart`` can be ``None`` if the ``visit`` function raises :exc:`docutils.nodes.SkipNode`.  Example:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:107
+# 9f112eb42b2b48e2818ee224e24884e2
+msgid "Obviously, translators for which you don't specify visitor methods will choke on the node when encountered in a document to translate."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:110
+# 06ee80f204584e80879ae97af5cb4af2
+msgid "Added the support for keyword arguments giving visit functions."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:116
+# 7c86bd64dc6e46f89f021af300567cee
+msgid "Register a Docutils directive.  *name* must be the prospective directive name.  There are two possible ways to write a directive:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:119
+# 39cf432460634847a2493913582948d5
+msgid "In the docutils 0.4 style, *obj* is the directive function.  *content*, *arguments* and *options* are set as attributes on the function and determine whether the directive has content, arguments and options, respectively.  **This style is deprecated.**"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:124
+# 92fd61eeb49540338d9e97b347eef006
+msgid "In the docutils 0.5 style, *directiveclass* is the directive class.  It must already have attributes named *has_content*, *required_arguments*, *optional_arguments*, *final_argument_whitespace* and *option_spec* that correspond to the options for the function way.  See `the Docutils docs <http://docutils.sourceforge.net/docs/howto/rst-directives.html>`_ for details."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:131
+# 3f153e124341445485bb6549f0f0cdbe
+msgid "The directive class must inherit from the class ``docutils.parsers.rst.Directive``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:134
+# 44731a6d0e2e4abeb653955b52572167
+msgid "For example, the (already existing) :rst:dir:`literalinclude` directive would be added like this:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:146
+# 1bc0ac187ada4413899e8dc18c359cb1
+msgid "Docutils 0.5-style directive classes are now supported."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:152
+# 3afb6e3bc1e34375a35020885538e56f
+msgid "Like :meth:`add_directive`, but the directive is added to the domain named *domain*."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:159
+# de60d1b46ed540bc80d0409304c0702a
+msgid "Register a Docutils role.  *name* must be the role name that occurs in the source, *role* the role function (see the `Docutils documentation <http://docutils.sourceforge.net/docs/howto/rst-roles.html>`_ on details)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:165
+# 1c9439b252614a1d86e2ffc3a07a9633
+msgid "Like :meth:`add_role`, but the role is added to the domain named *domain*."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:171
+# 13da670159bf4f21b59191262a54b571
+msgid "Register a Docutils role that does nothing but wrap its contents in the node given by *nodeclass*."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:179
+# d3fb224cbedd46009eb882afc57eeba2
+msgid "This method is a very convenient way to add a new :term:`object` type that can be cross-referenced.  It will do this:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:182
+# 899923debb3942c1ac2556394a8f3c6b
+msgid "Create a new directive (called *directivename*) for documenting an object. It will automatically add index entries if *indextemplate* is nonempty; if given, it must contain exactly one instance of ``%s``.  See the example below for how the template will be interpreted."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:186
+# 0fff098ba5c94fa5ac367e4025557de9
+msgid "Create a new role (called *rolename*) to cross-reference to these object descriptions."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:188
+# d8460bbf90904a3392f04f7d5d370085
+msgid "If you provide *parse_node*, it must be a function that takes a string and a docutils node, and it must populate the node with children parsed from the string.  It must then return the name of the item to be used in cross-referencing and index entries.  See the :file:`conf.py` file in the source for this documentation for an example."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:193
+# 2b36352bd6d3477893b583a0f0dc30da
+msgid "The *objname* (if not given, will default to *directivename*) names the type of object.  It is used when listing objects, e.g. in search results."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:196
+# f96b8052c5274ebeb5fd862d409a3d4d
+msgid "For example, if you have this call in a custom Sphinx extension::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:200
+# a2f41b12d2224e94bce6e1fba388d2d7
+msgid "you can use this markup in your documents::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:210
+# 7ede37eab6b048d893a8906b6fad515f
+msgid "For the directive, an index entry will be generated as if you had prepended ::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:214
+# 91492a69bf7041689669328ea44067e5
+msgid "The reference node will be of class ``literal`` (so it will be rendered in a proportional font, as appropriate for code) unless you give the *ref_nodeclass* argument, which must be a docutils node class (most useful are ``docutils.nodes.emphasis`` or ``docutils.nodes.strong`` -- you can also use ``docutils.nodes.generated`` if you want no further text decoration)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:220
+# 91da57aa71864045b42a0adab6bf582a
+msgid "For the role content, you have the same syntactical possibilities as for standard Sphinx roles (see :ref:`xref-syntax`)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:223
+# 6a8b55ab31964fce8b787ba8b43852f5
+msgid "This method is also available under the deprecated alias ``add_description_unit``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:228
+# 762256801e854881b71c25a4423c176a
+msgid "This method is very similar to :meth:`add_object_type` except that the directive it generates must be empty, and will produce no output."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:231
+# 4655e0a07cc742d99ca36f8128c69d45
+msgid "That means that you can add semantic targets to your sources, and refer to them using custom roles instead of generic ones (like :rst:role:`ref`).  Example call::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:237
+# 87c2d9efc09a483d9c27c3e930f7628a
+msgid "Example usage::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:248
+# c07631783a764751a507731c2707b3ef
+msgid "(Of course, the element following the ``topic`` directive needn't be a section.)"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:253
+# cbe5d301f8d94253a33e7647d85b8b4c
+msgid "Add the standard docutils :class:`Transform` subclass *transform* to the list of transforms that are applied after Sphinx parses a reST document."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:258
+# 26b5cb923dbe415698e24d8cb4ffa01c
+msgid "Add *filename* to the list of JavaScript files that the default HTML template will include.  The filename must be relative to the HTML static path, see :confval:`the docs for the config value <html_static_path>`.  A full URI with scheme, like ``http://example.org/foo.js``, is also supported."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:267
+# a2b075d4d9e14b94bf18a38e4708dfc0
+msgid "Add *filename* to the list of CSS files that the default HTML template will include.  Like for :meth:`add_javascript`, the filename must be relative to the HTML static path, or a full URI with scheme."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:275
+# a0a0b03d5f344053b86f31474b720095
+msgid "Use *lexer*, which must be an instance of a Pygments lexer class, to highlight code blocks with the given language *alias*."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:282
+# 6256ae6ee5494960b1a64ba054a14804
+msgid "Add *cls* as a new documenter class for the :mod:`sphinx.ext.autodoc` extension.  It must be a subclass of :class:`sphinx.ext.autodoc.Documenter`. This allows to auto-document new types of objects.  See the source of the autodoc module for examples on how to subclass :class:`Documenter`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:293
+# 5b183d5f27ff4d55affe1a64d6f6cafd
+msgid "Add *getter*, which must be a function with an interface compatible to the :func:`getattr` builtin, as the autodoc attribute getter for objects that are instances of *type*.  All cases where autodoc needs to get an attribute of a type are then handled by this function instead of :func:`getattr`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:302
+# de5f30f898e14e83963f8cea96f5132a
+msgid "Add *cls*, which must be a subclass of :class:`sphinx.search.SearchLanguage`, as a support language for building the HTML full-text search index.  The class must have a *lang* attribute that indicates the language it should be used for.  See :confval:`html_search_language`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:311
+# abe206a19e2f48e1b50afa5ddfb0bc45
+msgid "Compare *version* (which must be a ``major.minor`` version string, e.g. ``'1.1'``) with the version of the running Sphinx, and abort the build when it is too old."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:319
+# 2f8604f2289a44dea7439a620e955c5b
+msgid "Register *callback* to be called when *event* is emitted.  For details on available core events and the arguments of callback functions, please see :ref:`events`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:323
+# c7c1ae6e58dd48889dc3a7110514809d
+msgid "The method returns a \"listener ID\" that can be used as an argument to :meth:`disconnect`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:328
+# 0b1254541a674b7c96d14566ab0e9d6c
+msgid "Unregister callback *listener_id*."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:333
+# c862f347602f42dd8a27def0b4def6b8
+msgid "All these methods raise this exception if something went wrong with the extension API."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:338
+# b899a802a5ed40668a6bbb1c19f3a9d6
+msgid "Emitting events"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:342
+# 31396e5ed2574e6ca2815ab8409bcf3a
+msgid "Emit *event* and pass *arguments* to the callback functions.  Return the return values of all callbacks as a list.  Do not emit core Sphinx events in extensions!"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:348
+# 80ba8045513c4213b511ec7b80a15cfe
+msgid "Emit *event* and pass *arguments* to the callback functions.  Return the result of the first callback that doesn't return ``None``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:355
+# 22a49bc464b841359381dbbc4bd33cd1
+msgid "Producing messages / logging"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:357
+# 08f0fc52626e426d9307d8dab581c8a0
+msgid "The application object also provides support for emitting leveled messages."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:361
+# f7be6713049748259fa4b7ff043d6d56
+msgid "There is no \"error\" call: in Sphinx, errors are defined as things that stop the build; just raise an exception (:exc:`sphinx.errors.SphinxError` or a custom subclass) to do that."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.warn:1
+# 907a9e99d9364d9ab29778ed80a18d79
+msgid "Emit a warning."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.warn:3
+# 893f7af48f5d4b83bbcbbdf98cef041e
+msgid "If *location* is given, it should either be a tuple of (docname, lineno) or a string describing the location of the warning as well as possible."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.warn:6
+# 37985cb9c8b348728e9410f470174a1a
+msgid "*prefix* usually should not be changed."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.warn:10
+# bba4d7dec139455795ee52e07fa2842c
+msgid "For warnings emitted during parsing, you should use :meth:`.BuildEnvironment.warn` since that will collect all warnings during parsing for later output."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.info:1
+# ece83feb560649c88e8bf570d855cb59
+msgid "Emit an informational message."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.info:3
+# 40afb1a522d4481a8b284a2e4872750c
+msgid "If *nonl* is true, don't emit a newline at the end (which implies that more info output will follow soon.)"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.verbose:1
+# 6090ab5781e84c6e9548bb8852d1a672
+msgid "Emit a verbose informational message."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.verbose:3
+# 38dfc5eb65434122b4469e102dbd7a9f
+msgid "The message will only be emitted for verbosity levels >= 1 (i.e. at least one ``-v`` option was given)."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.verbose:6
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug:6
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug2:6
+# 846d953b6b2a4669b4c392bcb459ea8f
+# c9575f08ad0a4bb69077a06489eac25a
+# f22cd7b7a9a74440b0b65b20c0bc416e
+msgid "The message can contain %-style interpolation placeholders, which is formatted with either the ``*args`` or ``**kwargs`` when output."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug:1
+# 71c4d7d7290f4a308e5974a030e74053
+msgid "Emit a debug-level informational message."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug:3
+# a9b6a9cf887f4d03b25310de035c8eed
+msgid "The message will only be emitted for verbosity levels >= 2 (i.e. at least two ``-v`` options were given)."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug2:1
+# 299d0ad642b5466184d569dff3de78ea
+msgid "Emit a lowlevel debug-level informational message."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.Sphinx.debug2:3
+# 480c22235bc9439abd03065a129161c7
+msgid "The message will only be emitted for verbosity level 3 (i.e. three ``-v`` options were given)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:379
+# a8c7559ec988423aa9983b4a911f6513
+msgid "Sphinx core events"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:381
+# 34a3087f1c1f44c58bbdd2b4f4222a04
+msgid "These events are known to the core.  The arguments shown are given to the registered event handlers.  Use :meth:`.connect` in an extension's ``setup`` function (note that ``conf.py`` can also have a ``setup`` function) to connect handlers to the events.  Example:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:397
+# 10e23e86aa1c478baa2bf301de6f66e2
+msgid "Emitted when the builder object has been created.  It is available as ``app.builder``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:402
+# a36f01d790264bd485e2d248e7dfd059
+msgid "Emitted when the environment determines which source files have changed and should be re-read.  *added*, *changed* and *removed* are sets of docnames that the environment has determined.  You can return a list of docnames to re-read in addition to these."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:411
+# e40573f02d6a45b68ce33fdacd2a8553
+msgid "Emitted when all traces of a source file should be cleaned from the environment, that is, if the source file is removed or before it is freshly read.  This is for extensions that keep their own caches in attributes of the environment."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:416
+# 2c1bf6da68fb46d3b882a1b4e183282a
+msgid "For example, there is a cache of all modules on the environment.  When a source file has been changed, the cache's entries for the file are cleared, since the module declarations could have been removed from the file."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:424
+# 9fc32b024fdb4f3f8e50c0da0b73b917
+msgid "Emitted when a source file has been read.  The *source* argument is a list whose single element is the contents of the source file.  You can process the contents and replace this item to implement source-level transformations."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:428
+# db1f7506140b4c779d83d77caef4e52c
+msgid "For example, if you want to use ``$`` signs to delimit inline math, like in LaTeX, you can use a regular expression to replace ``$...$`` by ``:math:`...```."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:436
+# bd5f4f6da676452eb127d9c93169c51d
+msgid "Emitted when a doctree has been parsed and read by the environment, and is about to be pickled.  The *doctree* can be modified in-place."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:441
+# d535269c68304d2186a2677cb3c711f2
+msgid "Emitted when a cross-reference to a Python module or object cannot be resolved.  If the event handler can resolve the reference, it should return a new docutils node to be inserted in the document tree in place of the node *node*.  Usually this node is a :class:`reference` node containing *contnode* as a child."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:447
+# 583d34330a894945bf9fdff73044c5c1
+msgid "The build environment (``app.builder.env``)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:448
+# ae08f7d8443d4e77a07df9c9aa585b96
+msgid "The :class:`pending_xref` node to be resolved.  Its attributes ``reftype``, ``reftarget``, ``modname`` and ``classname`` attributes determine the type and target of the reference."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:451
+# 8a49f962503d4b54a6efc6b629f7d6b8
+msgid "The node that carries the text and formatting inside the future reference and should be a child of the returned reference node."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:458
+# 6599257ace294534b990e843ba99d49f
+msgid "Emitted when a doctree has been \"resolved\" by the environment, that is, all references have been resolved and TOCs have been inserted.  The *doctree* can be modified in place."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:462
+# d1bc0ff9311b448381c57bf3a48d8f6d
+msgid "Here is the place to replace custom nodes that don't have visitor methods in the writers, so that they don't cause errors when the writers encounter them."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:467
+# a24501c0129f458285ca93a6dafcdde3
+msgid "Emitted when the :meth:`update` method of the build environment has completed, that is, the environment and all doctrees are now up-to-date."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:474
+# fe2b3e02966141a880f0a6426593dbd3
+msgid "Emitted when the HTML builder is starting to write non-document pages.  You can add pages to write by returning an iterable from this event consisting of ``(pagename, context, templatename)``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:482
+# 2468f331fc4d4600a335680ec76851a8
+msgid "Emitted when the HTML builder has created a context dictionary to render a template with -- this can be used to add custom elements to the context."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:485
+# 9f94809c7bd742abb8454bff413182f4
+msgid "The *pagename* argument is the canonical name of the page being rendered, that is, without ``.html`` suffix and using slashes as path separators.  The *templatename* is the name of the template to render, this will be ``'page.html'`` for all pages from reST documents."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:490
+# 3b34941f3cb94ec2bf8ee455104e4381
+msgid "The *context* argument is a dictionary of values that are given to the template engine to render the page and can be modified to include custom values.  Keys must be strings."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:494
+# c7ec9600824d470296caed394f8c04b8
+msgid "The *doctree* argument will be a doctree when the page is created from a reST documents; it will be ``None`` when the page is created from an HTML template alone."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:502
+# d431b30eae15468b8104c6d4b086888b
+msgid "Emitted when a build has finished, before Sphinx exits, usually used for cleanup.  This event is emitted even when the build process raised an exception, given as the *exception* argument.  The exception is reraised in the application after the event handlers have run.  If the build process raised no exception, *exception* will be ``None``.  This allows to customize cleanup actions depending on the exception status."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:513
+# 0559df99ac714f5bb29f50e7bc04710c
+msgid "Checking the Sphinx version"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:517
+# 8f10cfb88a434b169c6abdbaf0e126c6
+msgid "Use this to adapt your extension to API changes in Sphinx."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:521
+# 7387e2f9a8e546c9ba00befffd285faf
+msgid "A tuple of five elements; for Sphinx version 1.2.1 beta 3 this would be ``(1, 2, 1, 'beta', 3)``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:524
+# 7f781be186054157953f65597db7a6b2
+msgid "Before version 1.2, check the string ``sphinx.__version__``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:529
+# 125f9996bdb448a58dd91a7178446a61
+msgid "The Config object"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:535
+# d54a94837e0d4b74b1c60a7ee25999a8
+msgid "The config object makes the values of all config values available as attributes."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:538
+# 36e0c2a43246461fa1a4384c53a4834b
+msgid "It is available as the ``config`` attribute on the application and environment objects.  For example, to get the value of :confval:`language`, use either ``app.config.language`` or ``env.config.language``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:546
+# 096b2591b0ad4e51acc17092d9a8ade0
+msgid "The template bridge"
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge:1
+# f8c8e1c83df2448f8591b4878f7b0fbc
+msgid "This class defines the interface for a \"template bridge\", that is, a class that renders templates given a template name and a context."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.init:1
+# f5602b1b246c4798997a978f838d293e
+msgid "Called by the builder to initialize the template system."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.init:3
+# 06a194d583ef4a3683c6a52aa839ac1b
+msgid "*builder* is the builder object; you'll probably want to look at the value of ``builder.config.templates_path``."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.init:6
+# 58d3b22f6dd147568b16d1c2292a249e
+msgid "*theme* is a :class:`sphinx.theming.Theme` object or None; in the latter case, *dirs* can be list of fixed directories to look for templates."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.newest_template_mtime:1
+# 8076368910e14241ad92a75a67feb1e4
+msgid "Called by the builder to determine if output files are outdated because of template changes.  Return the mtime of the newest template file that was changed.  The default implementation returns ``0``."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.render:1
+# edd22ccc61244feeb25c25907bedfe17
+msgid "Called by the builder to render a template given as a filename with a specified context (a Python dictionary)."
+msgstr ""
+
+#: ..\..\sphinx\sphinx\application.py:docstring of sphinx.application.TemplateBridge.render_string:1
+# 016505de0a70469abbe45fb811b4f8ca
+msgid "Called by the builder to render a template given as a string with a specified context (a Python dictionary)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:557
+# 29242024dc584ae3ae8b2731e055e955
+msgid "Exceptions"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:563
+# a87ba81793994e7abb15144701886f2e
+msgid "This is the base class for \"nice\" exceptions.  When such an exception is raised, Sphinx will abort the build and present the exception category and message to the user."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:567
+# 2e65a39e78854c5da889a6b7fbf88c74
+msgid "Extensions are encouraged to derive from this exception for their custom errors."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:570
+# 176eb331ff3a4bbd922b2d4772da3559
+msgid "Exceptions *not* derived from :exc:`SphinxError` are treated as unexpected and shown to the user with a part of the traceback (and the full traceback saved in a temporary file)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:576
+# 688714741d2f45e0b0a197df307021fa
+msgid "Description of the exception \"category\", used in converting the exception to a string (\"category: message\").  Should be set accordingly in subclasses."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:582
+# 5f3114f4000f49bca10bd86e610199b1
+msgid "Used for erroneous values or nonsensical combinations of configuration values."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:587
+# 7631b4cc237846c6a8c267bb36e73e94
+msgid "Used for errors in setting up extensions."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:591
+# 6bee61e81a044b38822a86ca641be1be
+msgid "Used for errors to do with themes."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\appapi.rst:595
+# d34b7396d800486f9ec5d8944f044792
+msgid "Raised when the docs require a higher Sphinx version than the current one."
+msgstr ""
+

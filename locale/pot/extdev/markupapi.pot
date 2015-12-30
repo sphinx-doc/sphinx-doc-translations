@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2014, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:2
+# 4e90936ca22444088ca47c5ec67f6411
+msgid "Docutils markup API"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:4
+# 506f1828bc7a4f6681b59809def03738
+msgid "This section describes the API for adding ReST markup elements (roles and directives)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:8
+# 21110888f0024fd38ca1d4ab8bafa7e1
+msgid "Roles"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:12
+# 7953a9e1974c468ba041594489c765e6
+msgid "Directives"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:14
+# 5403c71115b5485ab1bd0c41d33db37d
+msgid "Directives are handled by classes derived from ``docutils.parsers.rst.Directive``.  They have to be registered by an extension using :meth:`.Sphinx.add_directive` or :meth:`.Sphinx.add_directive_to_domain`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:22
+# 3860ec2916bb4784b5793a93afcabed5
+msgid "The markup syntax of the new directive is determined by the follow five class attributes:"
+msgstr ""
+
+#: D:\venv27\lib\site-packages\docutils\parsers\rst\__init__.py:docstring of docutils.parsers.rst.Directive.required_arguments:1
+# 21f62a3354664058a7944b632875d2e7
+msgid "Number of required directive arguments."
+msgstr ""
+
+#: D:\venv27\lib\site-packages\docutils\parsers\rst\__init__.py:docstring of docutils.parsers.rst.Directive.optional_arguments:1
+# 29ac92c36105442ea2841ede8fc9b34d
+msgid "Number of optional arguments after the required arguments."
+msgstr ""
+
+#: D:\venv27\lib\site-packages\docutils\parsers\rst\__init__.py:docstring of docutils.parsers.rst.Directive.final_argument_whitespace:1
+# dc3c1e9c92494c8ea1eb8e8ee0545f01
+msgid "May the final argument contain whitespace?"
+msgstr ""
+
+#: D:\venv27\lib\site-packages\docutils\parsers\rst\__init__.py:docstring of docutils.parsers.rst.Directive.option_spec:1
+# 49d4f0fae871498d8ef178e508213921
+msgid "Mapping of option names to validator functions."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:30
+# 98a22ccc03144ff6a90afe397387a879
+msgid "Option validator functions take a single parameter, the option argument (or ``None`` if not given), and should validate it or convert it to the proper form.  They raise :exc:`ValueError` or :exc:`TypeError` to indicate failure."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:35
+# 657c0f4cfa2a40789c65afabd6837c1f
+msgid "There are several predefined and possibly useful validators in the :mod:`docutils.parsers.rst.directives` module."
+msgstr ""
+
+#: D:\venv27\lib\site-packages\docutils\parsers\rst\__init__.py:docstring of docutils.parsers.rst.Directive.has_content:1
+# 8b753533b4164bacb1206f06ac6f210f
+msgid "May the directive have content?"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:40
+# c2432be2a38543348fa4da13b1ef4be2
+msgid "New directives must implement the :meth:`run` method:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:44
+# 48d3ea08166b47279d351660f90b8729
+msgid "This method must process the directive arguments, options and content, and return a list of Docutils/Sphinx nodes that will be inserted into the document tree at the point where the directive was encountered."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:48
+# e35f384bae6c45f18620aa0c886633db
+msgid "Instance attributes that are always set on the directive are:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:52
+# 425dea40c9b04f4b91877a45fce1c2ab
+msgid "The directive name (useful when registering the same directive class under multiple names)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:57
+# 37ab1b8dfe0846ce984af205661949ac
+msgid "The arguments given to the directive, as a list."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:61
+# bcf863033f654f6cb093773d93a6e32f
+msgid "The options given to the directive, as a dictionary mapping option names to validated/converted values."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:66
+# 94872ab0ac8d437bb66fd2a0082be0fe
+msgid "The directive content, if given, as a :class:`.ViewList`."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:70
+# b4f2361e6f4e4ce994ac205613585de7
+msgid "The absolute line number on which the directive appeared.  This is not always a useful value; use :attr:`srcline` instead."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:75
+# 54ac6e5cfdd2420cbb4ece3e2dea2225
+msgid "The source file of the directive."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:79
+# 8e5413539e1248728450ef047888f3e1
+msgid "The line number in the source file on which the directive appeared."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:83
+# ebb8f62b9eae4e2eb96f6ed56af7669e
+msgid "Internal offset of the directive content.  Used when calling ``nested_parse`` (see below)."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:88
+# c7e3c1222609472ba7efd4bde913d3e3
+msgid "The string containing the entire directive."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:93
+# a64dd773de7e41dfa90ad86367852745
+msgid "The state and state machine which controls the parsing.  Used for ``nested_parse``."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:98
+# 4c900985e7d344199ebc20ae99bbdd63
+msgid "ViewLists"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:100
+# 4c8014a315b64ff78d93b91958f08cdc
+msgid "Docutils represents document source lines in a class ``docutils.statemachine.ViewList``.  This is a list with extended functionality -- for one, slicing creates views of the original list, and also the list contains information about the source line numbers."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:105
+# c63d2699e69d4c01952b7331c83f9891
+msgid "The :attr:`Directive.content` attribute is a ViewList.  If you generate content to be parsed as ReST, you have to create a ViewList yourself.  Important for content generation are the following points:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:109
+# 50c9437ce96448f790d12a10e3582b56
+msgid "The constructor takes a list of strings (lines) and a source (document) name."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:111
+# 0b50adaa9b454dc1b68927900340d5b4
+msgid "The ``.append()`` method takes a line and a source name as well."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:115
+# f5a833c0dd3849019fdeac2d5f092367
+msgid "Parsing directive content as ReST"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:117
+# dd97fb7cf9714508b5681c3f79dbfe41
+msgid "Many directives will contain more markup that must be parsed.  To do this, use one of the following APIs from the :meth:`Directive.run` method:"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:120
+# c01ce0685abf4ff18a915996329d8185
+msgid "``self.state.nested_parse``"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:121
+# f99263518a164e9a9d7201fded191b23
+msgid ":func:`sphinx.util.nodes.nested_parse_with_titles` -- this allows titles in the parsed content."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:124
+# bd1ae0e279ca454d99be926dad526a84
+msgid "Both APIs parse the content into a given node. They are used like this::"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:132
+# a9d0a1656bdf47d285ffa6504ba39a6f
+msgid "If you don't need the wrapping node, you can use any concrete node type and return ``node.children`` from the Directive."
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:138
+# 5141a86944e845788550e64d7cde3843
+msgid "`Creating directives <http://docutils.sf.net/docs/howto/rst-directives.html>`_"
+msgstr ""
+
+#: ..\..\sphinx\doc\extdev\markupapi.rst:139
+# f84cac62481543e28561ef61e0e057fa
+msgid "HOWTO of the Docutils documentation"
+msgstr ""
+

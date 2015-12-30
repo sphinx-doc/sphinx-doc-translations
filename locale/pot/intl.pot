@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2015, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.3.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-30 18:10+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\sphinx\doc\intl.rst:4
+msgid "Internationalization"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:8
+msgid "Complementary to translations provided for Sphinx-generated messages such as navigation bars, Sphinx provides mechanisms facilitating *document* translations in itself.  See the :ref:`intl-options` for details on configuration."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:15
+msgid "Workflow visualization of translations in Sphinx.  (The stick-figure is taken from an `XKCD comic <http://xkcd.com/779/>`_.)"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:22
+msgid "Sphinx internationalization details"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:24
+msgid "**gettext** [1]_ is an established standard for internationalization and localization.  It naively maps messages in a program to a translated string. Sphinx uses these facilities to translate whole documents."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:28
+msgid "Initially project maintainers have to collect all translatable strings (also referred to as *messages*) to make them known to translators.  Sphinx extracts these through invocation of ``sphinx-build -b gettext``."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:32
+msgid "Every single element in the doctree will end up in a single message which results in lists being equally split into different chunks while large paragraphs will remain as coarsely-grained as they were in the original document.  This grants seamless document updates while still providing a little bit of context for translators in free-text passages.  It is the maintainer's task to split up paragraphs which are too large as there is no sane automated way to do that."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:40
+msgid "After Sphinx successfully ran the :class:`~sphinx.builders.gettext.MessageCatalogBuilder` you will find a collection of ``.pot`` files in your output directory.  These are **catalog templates** and contain messages in your original language *only*."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:45
+msgid "They can be delivered to translators which will transform them to ``.po`` files --- so called **message catalogs** --- containing a mapping from the original messages to foreign-language strings."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:49
+msgid "Gettext compiles them into a binary format known as **binary catalogs** through :program:`msgfmt` for efficiency reasons.  If you make these files discoverable with :confval:`locale_dirs` for your :confval:`language`, Sphinx will pick them up automatically."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:54
+msgid "An example: you have a document ``usage.rst`` in your Sphinx project.  The gettext builder will put its messages into ``usage.pot``.  Imagine you have Spanish translations [2]_ on your hands in ``usage.po`` --- for your builds to be translated you need to follow these instructions:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:59
+msgid "Compile your message catalog to a locale directory, say ``locale``, so it ends up in ``./locale/es/LC_MESSAGES/usage.mo`` in your source directory (where ``es`` is the language code for Spanish.) ::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:65
+msgid "Set :confval:`locale_dirs` to ``[\"locale/\"]``."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:66
+msgid "Set :confval:`language` to ``es`` (also possible via :option:`-D`)."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:67
+msgid "Run your desired build."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:71
+msgid "Translating with sphinx-intl"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:74
+msgid "Quick guide"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:76
+msgid "`sphinx-intl`_ is a useful tool to work with Sphinx translation flow. This section describe a easy way to translate with sphinx-intl."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:79
+msgid "Install `sphinx-intl`_ by :command:`pip install sphinx-intl` or :command:`easy_install sphinx-intl`."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:82
+msgid "Add configurations to your `conf.py`::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:87
+msgid "This case-study assumes that :confval:`locale_dirs` is set to 'locale/' and :confval:`gettext_compact` is set to `False` (the Sphinx document is already configured as such)."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:91
+msgid "Extract document's translatable messages into pot files::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:95
+msgid "As a result, many pot files are generated under ``_build/locale`` directory."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:98
+msgid "Setup/Update your `locale_dir`::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:102
+msgid "Done. You got these directories that contain po files:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:104
+msgid "`./locale/de/LC_MESSAGES/`"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:105
+msgid "`./locale/ja/LC_MESSAGES/`"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:107
+msgid "Translate your po files under `./locale/<lang>/LC_MESSAGES/`."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:109
+msgid "Build mo files and make translated document."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:111
+msgid "You need a :confval:`language` parameter in ``conf.py`` or you may also specify the parameter on the command line::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:117
+msgid "Congratulations! You got the translated documentation in the ``_build/html`` directory."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:122
+msgid "Translating"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:124
+msgid "Translate po file under ``./locale/de/LC_MESSAGES`` directory. The case of builders.po file for sphinx document:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:134
+msgid "Another case, msgid is multi-line text and contains reStructuredText syntax:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:148
+msgid "Please be careful not to break reST notation.  Most po-editors will help you with that."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:153
+msgid "Update your po files by new pot files"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:155
+msgid "If a document is updated, it is necessary to generate updated pot files and to apply differences to translated po files. In order to apply the updating difference of a pot file to po file, use the :command:`sphinx-intl update` command."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:166
+msgid "Using Transifex service for team translation"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:168
+msgid "Transifex_ is one of several services that allow collaborative translation via a web interface.  It has a nifty Python-based command line client that makes it easy to fetch and push translations."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:175
+msgid "Install `transifex-client`_"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:177
+msgid "You need :command:`tx` command to upload resources (pot files)."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:183
+msgid "`Transifex Client v0.8 &mdash; Transifex documentation`_"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:186
+msgid "Create your transifex_ account and create new project for your document"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:188
+msgid "Currently, transifex does not allow for a translation project to have more than one version of the document, so you'd better include a version number in your project name."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:192
+msgid "For example:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:194
+msgid "``sphinx-document-test_1_0``"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:195
+msgid "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:198
+msgid "Create config files for tx command"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:200
+msgid "This process will create ``.tx/config`` in the current directory, as well as a ``~/.transifexrc`` file that includes auth information."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:214
+msgid "Upload pot files to transifex service"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:216
+msgid "Register pot files to ``.tx/config`` file:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:224
+msgid "and upload pot files:"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:236
+msgid "Forward the translation on transifex"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:241
+msgid "Pull translated po files and make translated html"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:243
+msgid "Get translated catalogs and build mo files (ex. for 'de'):"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:254
+msgid "Build po files into mo and make html::"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:260
+msgid "That's all!"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:263
+msgid "Translating locally and on Transifex"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:265
+msgid "If you want to push all language's po files, you can be done by using :command:`tx push -t` command. Watch out! This operation overwrites translations in transifex."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:269
+msgid "In other words, if you have updated each in the service and local po files, it would take much time and effort to integrate them."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:275
+msgid "Contributing to Sphinx reference translation"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:277
+msgid "The recommended way for new contributors to translate Sphinx reference is to join the translation team on Transifex."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:280
+msgid "There is `sphinx translation page`_ for Sphinx-1.3 documentation."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:282
+msgid "Login to transifex_ service."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:283
+msgid "Go to `sphinx translation page`_."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:284
+msgid "Click ``Request language`` and fill form."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:285
+msgid "Wait acceptance by transifex sphinx translation maintainers."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:286
+msgid "(after acceptance) translate on transifex."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:290
+msgid "Footnotes"
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:291
+msgid "See the `GNU gettext utilities <http://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ for details on that software suite."
+msgstr ""
+
+#: ..\..\sphinx\doc\intl.rst:294
+msgid "Because nobody expects the Spanish Inquisition!"
+msgstr ""
+

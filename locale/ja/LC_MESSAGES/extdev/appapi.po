@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the Sphinx package.
 # 
 # Translators:
+# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2014-2015
+# Yusuke Iwaki <yusuke.iwaki@crowdworks.co.jp>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: sphinx-doc-1.4\n"
+"Project-Id-Version: sphinx-doc-1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-28 08:21+0000\n"
+"POT-Creation-Date: 2015-12-28 08:28+0000\n"
 "PO-Revision-Date: 2015-10-12 07:54+0000\n"
-"Last-Translator: Arihiro TAKASE <artakase@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
+"Last-Translator: Yusuke Iwaki <yusuke.iwaki@crowdworks.co.jp>\n"
+"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_3/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,7 +97,7 @@ msgstr "もしも *default* の値が呼び出し可能オブジェクトの場�
 msgid ""
 "Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) "
 "to a string.  However, booleans are still accepted and converted internally."
-msgstr "*rebuild* が単純なブーリアン型(``''``, ``'env'`` に相当)から文字列に変更されました。後方互換性のために、ブーリアン型も受け取ることが可能で、その場合には内部で変換されます。"
+msgstr "*rebuild* が単純なブーリアン型('', 'env' に相当)から文字列に変更されました。後方互換性のために、ブーリアン型も受け取ることが可能で、その場合には内部で変換されます。"
 
 #: ../../extdev/appapi.rst:61
 msgid ""
@@ -127,7 +129,7 @@ msgid ""
 " custom output translator or to replace a builtin translator. This allows "
 "extensions to use custom translator and define custom nodes for the "
 "translator (see :meth:`add_node`)."
-msgstr "Docutilsのトランスレータクラスを登録または上書きします。カスタム出力トランスレータを登録したい場合や、ビルトインのトランスレータを置き換えたい場合に使用します。このメソッドを使って、拡張機能でカスタムトランスレータを使ったり、トランスレータに対してカスタムノードを定義したりすることができます。（参考：\\ :meth:`add_node`\\ ）"
+msgstr "Docutilsのトランスレータクラスを登録または上書きします。カスタム出力トランスレータを登録したい場合や、ビルトインのトランスレータを置き換えたい場合に使用します。このメソッドを使って、拡張機能でカスタムトランスレータを使ったり、トランスレータに対してカスタムノードを定義したりすることができます。(参考：\\ :meth:`add_node`\\ )"
 
 #: ../../extdev/appapi.rst:92
 msgid ""
@@ -151,7 +153,7 @@ msgid ""
 "supported translators, the value a 2-tuple of ``(visit, depart)`` methods. "
 "``depart`` can be ``None`` if the ``visit`` function raises "
 ":exc:`docutils.nodes.SkipNode`.  Example:"
-msgstr "キーワード引数を使用することで、SphinxのHTMLや、LaTeX、テキスト、manページなど、出力形式ごとにノードのビジター関数を与えることができます。キーワードは ``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'``, または他のサポートされているトランスレーターを1つ以上指定し、値としては、2要素のタプル ``(visit, depart)`` を指定します。 ``depart`` には、 ``None`` を指定可能ですが、この場合は、 ``visit`` 関数は :exc:`docutils.nodes.SkipNode` 例外を発生させます:"
+msgstr "キーワード引数を使用することで、SphinxのHTMLや、LaTeX、テキスト、manページなど、出力形式ごとにノードのビジター関数を与えることができます。キーワードは ``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'``, または他のサポートされているトランスレーターを1つ以上指定し、値としては、2要素のタプル ``(visit関数、depart関数)`` を指定します。 ``depart`` には、 ``None`` を指定可能ですが、この場合は、 ``visit`` 関数は :exc:`docutils.nodes.SkipNode` 例外を発生させます:"
 
 #: ../../extdev/appapi.rst:122
 msgid ""
@@ -175,7 +177,7 @@ msgid ""
 "*arguments* and *options* are set as attributes on the function and "
 "determine whether the directive has content, arguments and options, "
 "respectively.  **This style is deprecated.**"
-msgstr "docutils 0.4スタイル: *obj* がディレクティブ関数で、 *content*, *arguments* および *options* は関数の属性として設定されます。そして、ディレクティブがコンテンツや引数、オプションを持っているか、それぞれ決定されます。 **このスタイルは古いです。**"
+msgstr "docutils 0.4スタイル: *obj* がディレクティブ関数で、 *content*, *arguments, *options* は関数の属性として設定されます。そして、ディレクティブがコンテンツや引数、オプションを持っているか、それぞれ決定されます。 **このスタイルは古いです。**"
 
 #: ../../extdev/appapi.rst:139
 msgid ""
@@ -185,7 +187,7 @@ msgid ""
 "correspond to the options for the function way.  See `the Docutils docs "
 "<http://docutils.sourceforge.net/docs/howto/rst-directives.html>`_ for "
 "details."
-msgstr "docutils 0.5スタイル: *has_content*, *required_arguments*, *optional_arguments*, *final_argument_whitespace*, *option_spec* という、必要な属性を初めから持った、 *directiveclass* という、ディレクティブのためのクラスで定義します。これらの属性は、関数で登録する方法と同じ役割を持っています。詳しくは、 `Docutilsの資料 <http://docutils.sourceforge.net/docs/howto/rst-directives.html>`_ をご覧ください。"
+msgstr "docutils 0.5スタイル: *has_content*, *required_arguments*, *optional_arguments*, *final_argument_whitespace*, *option_spec* という、必要な属性を初めから持った、 **directiveclass** という、ディレクティブのためのクラスで定義します。これらの属性は、関数で登録する方法と同じ役割を持っています。詳しくは、 `Docutilsの資料 <http://docutils.sourceforge.net/docs/howto/rst-directives.html>`_ をご覧ください。"
 
 #: ../../extdev/appapi.rst:146
 msgid ""
@@ -260,7 +262,7 @@ msgstr "*parse_node* を指定する場合には、文字列と、docutilsのノ
 msgid ""
 "The *objname* (if not given, will default to *directivename*) names the type"
 " of object.  It is used when listing objects, e.g. in search results."
-msgstr "*objname* (もし与えられなければ、デフォルトでは *directivename* と同値になります)は、オブジェクトのタイプ名の名前を付けます。これは、検索結果など、オブジェクトを一覧表示する場合に使用されます。"
+msgstr "*objname*(もし与えられなければ、デフォルトでは *directivename* と同値になります)は、オブジェクトのタイプ名の名前を付けます。これは、検索結果など、オブジェクトを一覧表示する場合に使用されます。"
 
 #: ../../extdev/appapi.rst:211
 msgid "For example, if you have this call in a custom Sphinx extension::"
@@ -286,7 +288,7 @@ msgid ""
 "If the text should be treated as literal (e.g. no smart quote replacement), "
 "but not have typewriter styling, use ``sphinx.addnodes.literal_emphasis`` or"
 " ``sphinx.addnodes.literal_strong``."
-msgstr "リファレンスノードのクラスは、 *ref_nodeclass* を指定しない場合には ``literal`` (コードの記述に適したプロポーショナルフォントでレンダリングされる)になります。クラスは、docutilsのノードクラスを設定する必要があります。docutilsのクラスの中で頻繁に使用されるのは ``docutils.nodes.emphasis`` あるいは ``docutils.nodes.strong`` です。もしも装飾が不要であれば、 ``docutils.nodes.generated`` も使用できます。もしテキストをリテラルとして処理したいなら(例えばスマートクォート置換が扶養であれば)、そしてタイプライタースタイルで表示したくないなら、 ``sphinx.addnodes.literal_emphasis`` か ``sphinx.addnodes.literal_strong`` を使用してください。"
+msgstr "リファレンスノードのクラスは、 **参照ノードクラス** を指定しない場合には ``literal`` (コードの記述に適したプロポーショナルフォントでレンダリングされる)になります。クラスは、docutilsのノードクラスを設定する必要があります。docutilsのクラスの中で頻繁に使用されるのは ``docutils.nodes.emphasis`` あるいは ``docutils.nodes.strong`` です。もしも装飾が不要であれば、 ``docutils.nodes.generated`` も使用できます。もしテキストをリテラルとして処理したいなら(例えばスマートクォート置換が扶養であれば)、そしてタイプライタースタイルで表示したくないなら、 ``sphinx.addnodes.literal_emphasis`` か ``sphinx.addnodes.literal_strong`` を使用してください。"
 
 #: ../../extdev/appapi.rst:238
 msgid ""
@@ -342,7 +344,7 @@ msgid ""
 "Add *filename* to the list of CSS files that the default HTML template will "
 "include.  Like for :meth:`add_javascript`, the filename must be relative to "
 "the HTML static path, or a full URI with scheme."
-msgstr "CSSのファイルのリストに、指定された *filename* のファイルを追加します。ここで指定されたファイルは、デフォルトのHTMLテンプレートの中にインクルードされます。 :meth:`add_javascript` と同様に、ファイル名はHTMLの静的パスへの相対パスか完全なURIのスキームでなければなりません。"
+msgstr "CSSのファイルのリストに、指定された filename のファイルを追加します。ここで指定されたファイルは、デフォルトのHTMLテンプレートの中にインクルードされます。 :meth:`add_javascript` と同様に、ファイル名はHTMLの静的パスへの相対パスか完全なURIのスキームでなければなりません。"
 
 #: ../../extdev/appapi.rst:293
 msgid ""
@@ -371,7 +373,7 @@ msgid ""
 ":func:`getattr` builtin, as the autodoc attribute getter for objects that "
 "are instances of *type*.  All cases where autodoc needs to get an attribute "
 "of a type are then handled by this function instead of :func:`getattr`."
-msgstr "組み込みの :func:`getattr` 関数と互換性のあるインタフェースを持つ、 *getter* 関数を追加します。これは *type* 型のインスタンスのオブジェクトから、自動的に属性を取得してドキュメントを作成するのに使用されます。autodocが型の属性を取得する必要がある場面では、標準の :func:`getattr` 関数の代わりに、ここで指定された関数が呼ばれます。"
+msgstr "組み込みの :func:`getattr` 関数と互換性のあるインタフェースを持つ、 **getter** 関数を追加します。これは **type** 型のインスタンスのオブジェクトから、自動的に属性を取得してドキュメントを作成するのに使用されます。autodocが型の属性を取得する必要がある場面では、標準の :func:`getattr` 関数の代わりに、ここで指定された関数が呼ばれます。"
 
 #: ../../extdev/appapi.rst:332
 msgid ""
@@ -380,7 +382,7 @@ msgid ""
 "the HTML full-text search index.  The class must have a *lang* attribute "
 "that indicates the language it should be used for.  See "
 ":confval:`html_search_language`."
-msgstr "言語ごとに、HTMLの全文検索インデックスを構築する、 :class:`sphinx.search.SearchLanguage` クラスのサブクラスである *cls* を追加します。このクラスにはどの言語から使われるのかを表す、 *lang* 属性を持たせる必要があります。詳しくは、 :confval:`html_search_language` を参照してください。"
+msgstr "言語ごとに、HTMLの全文検索インデックスを構築する、 :class:`sphinx.search.SearchLanguage` クラスのサブクラスを追加します。このクラスにはどの言語から使われるのかを表す、 **lang** 属性を持たせる必要があります。詳しくは、 :confval:`html_search_language` を参照してください。"
 
 #: ../../extdev/appapi.rst:341
 msgid ""
@@ -394,7 +396,7 @@ msgid ""
 "Register *callback* to be called when *event* is emitted.  For details on "
 "available core events and the arguments of callback functions, please see "
 ":ref:`events`."
-msgstr "*event* が発行されたときに呼ばれる、 *callback* を登録します。利用可能なコアイベントと、コールバック関数の引数の詳細情報に関しては :ref:`events` を参照してください。"
+msgstr "**event** が発行されたときに呼ばれる、 **callback** を登録します。利用可能なコアイベントと、コールバック関数の引数の詳細情報に関しては :ref:`events` を参照してください。"
 
 #: ../../extdev/appapi.rst:353
 msgid ""
@@ -404,7 +406,7 @@ msgstr "このメソッドは \"リスナーID\" を返します。これは :me
 
 #: ../../extdev/appapi.rst:358
 msgid "Unregister callback *listener_id*."
-msgstr "*listener_id* で指定されたコールバックの登録を解除します。"
+msgstr "**listener_id** で指定されたコールバックの登録を解除します。"
 
 #: ../../extdev/appapi.rst:363
 msgid ""
@@ -421,13 +423,13 @@ msgid ""
 "Emit *event* and pass *arguments* to the callback functions.  Return the "
 "return values of all callbacks as a list.  Do not emit core Sphinx events in"
 " extensions!"
-msgstr "*event* を発行します。コールバック関数には *arguments* が渡されます。返り値は、すべてのコールバックの返り値がリストに格納されて返されます。拡張機能の中からは、Sphinxのコアのイベントを発行しないでください。"
+msgstr "**event** を発行します。コールバック関数には **arguments** が渡されます。返り値は、すべてのコールバックの返り値がリストに格納されて返されます。拡張機能の中からは、Sphinxのコアのイベントを発行しないでください。"
 
 #: ../../extdev/appapi.rst:378
 msgid ""
 "Emit *event* and pass *arguments* to the callback functions.  Return the "
 "result of the first callback that doesn't return ``None``."
-msgstr "*event* を発行します。コールバック関数には *arguments* が渡されます。最初に ``None`` 以外を返したコールバックの返り値を返します。"
+msgstr "**event** を発行します。コールバック関数には **arguments** が渡されます。最初に ``None`` 以外を返したコールバックの返り値を返します。"
 
 #: ../../extdev/appapi.rst:385
 msgid "Producing messages / logging"
@@ -538,7 +540,7 @@ msgid ""
 "should be re-read.  *added*, *changed* and *removed* are sets of docnames "
 "that the environment has determined.  You can return a list of docnames to "
 "re-read in addition to these."
-msgstr "ソースファイルが変更されたりして、再読み込みする必要がある場合に発行されます。 *added*, *changed*, *removed* には、ドキュメント名のセットです。さらに追加で読み込み直すべきドキュメントのリストを返すことができます。"
+msgstr "ソースファイルが変更されたりして、再読み込みする必要がある場合に発行されます。 **added**, **changed**, **removed** には、ドキュメント名のセットです。さらに追加で読み込み直すべきドキュメントのリストを返すことができます。"
 
 #: ../../extdev/appapi.rst:441
 msgid ""
@@ -576,7 +578,7 @@ msgid ""
 "whose single element is the contents of the source file.  You can process "
 "the contents and replace this item to implement source-level "
 "transformations."
-msgstr "ソースファイルが読み込まれる時に発行されます。 *source* 引数はリストで、ひとつの要素はソースファイルのコンテンツを表します。コンテンツに関する処理を行ったり、要素に関してソースレベルでの変換を実装したりできます。"
+msgstr "ソースファイルが読み込まれる時に発行されます。 **source** 引数はリストで、ひとつの要素はソースファイルのコンテンツを表します。コンテンツに関する処理を行ったり、要素に関してソースレベルでの変換を実装したりできます。"
 
 #: ../../extdev/appapi.rst:471
 msgid ""
@@ -589,7 +591,7 @@ msgstr "もしも、LaTeXと同じように、 ``$`` 記号を、インライン
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled.  The *doctree* can be modified in-place."
-msgstr "doctreeがパースされ、環境から読み込まれ、pickle化される時に発行されます。 *doctree* をその場で変更できます。"
+msgstr "doctreeがパースされ、環境から読み込まれ、pickle化される時に発行されます。 **doctree** をその場で変更できます。"
 
 #: ../../extdev/appapi.rst:484
 msgid ""
@@ -598,7 +600,7 @@ msgid ""
 "a new docutils node to be inserted in the document tree in place of the node"
 " *node*.  Usually this node is a :class:`reference` node containing "
 "*contnode* as a child."
-msgstr "Pythonモジュールやオブジェクトへの相互参照が解決できないときに発行されます。もしも参照の問題を解決できる場合には、 *node* の代わりにドキュメントツリーに挿入される、新しいdocutilsのノードを返すことで、イベントハンドラ側で解決できます。通常このノードは、 *contnode* を子供として含む :class:`reference` ノードです。"
+msgstr "Pythonモジュールやオブジェクトへの相互参照が解決できないときに発行されます。もしも参照の問題を解決できる場合には、 **node** の代わりにドキュメントツリーに挿入される、新しいdocutilsのノードを返すことで、イベントハンドラ側で解決できます。通常このノードは、 **contnode** を子供として含む :class:`reference` ノードです。"
 
 #: ../../extdev/appapi.rst:490
 msgid "The build environment (``app.builder.env``)."
@@ -622,7 +624,7 @@ msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
 "*doctree* can be modified in place."
-msgstr "環境がdoctreeに関して\"resolved(解決)\"と判断したときに発行されます。これは、すべての参照が解決され、目次が挿入された時、ということになります。 *doctree* はこのイベントハンドラ内で操作できます。"
+msgstr "環境がdoctreeに関して\"resolved(解決)\"と判断したときに発行されます。これは、すべての参照が解決され、目次が挿入された時、ということになります。 **doctree** はこのイベントハンドラ内で操作できます。"
 
 #: ../../extdev/appapi.rst:505
 msgid ""
@@ -681,7 +683,7 @@ msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
 "of ``(pagename, context, templatename)``."
-msgstr "HTMLビルダーが、ドキュメント以外のページの書き込みを開始するときに発行されます。 ``(pagename, context, templatename)`` という構成の要素を含むシーケンスを返すと、ページを追加できます。"
+msgstr "HTMLビルダーが、ドキュメント以外のページの書き込みを開始するときに発行されます。 ``(ページ名, コンテキスト, テンプレート名)`` という構成の要素を含むシーケンスを返すと、ページを追加できます。"
 
 #: ../../extdev/appapi.rst:552
 msgid ""
@@ -695,21 +697,21 @@ msgid ""
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
 " *templatename* is the name of the template to render, this will be "
 "``'page.html'`` for all pages from reST documents."
-msgstr "*pagename* 引数はレンダリングされるページの、規範に則った名前です。規範というのは、 ``.html`` が付かず、パス区切りとしてスラッシュ(/)が使われている状態です。 *templatename* はレンダリングに使用するテンプレートの名前です。 reSTドキュメントのページのレンダリング時には、必ず ``'page.html'`` となります。"
+msgstr "**pagename** 引数はレンダリングされるページの、規範に則った名前です。規範というのは、 ``.html`` が付かず、パス区切りとしてスラッシュ(/)が使われている状態です。 **templatename** はレンダリングに使用するテンプレートの名前です。 reSTドキュメントのページのレンダリング時には、必ず ``'page.html'`` となります。"
 
 #: ../../extdev/appapi.rst:560
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
 "values.  Keys must be strings."
-msgstr "*context* 引数はテンプレートエンジンがページをレンダリングする際に与えられる値の辞書になります。カスタムの値を持つように、変更することが可能です。キーは必ず文字列です。"
+msgstr "**context** 引数はテンプレートエンジンがページをレンダリングする際に与えられる値の辞書になります。カスタムの値を持つように、変更することが可能です。キーは必ず文字列です。"
 
 #: ../../extdev/appapi.rst:564
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
 "template alone."
-msgstr "*doctree* 引数はreSTドキュメントから作成する場合にはdoctreeとなります。もしもHTMLテンプレートからのみ作成されるページの場合には、 ``None`` となります。"
+msgstr "**doctree** 引数はreSTドキュメントから作成する場合にはdoctreeとなります。もしもHTMLテンプレートからのみ作成されるページの場合には、 ``None`` となります。"
 
 #: ../../extdev/appapi.rst:568
 msgid ""
@@ -729,7 +731,7 @@ msgid ""
 "the application after the event handlers have run.  If the build process "
 "raised no exception, *exception* will be ``None``.  This allows to customize"
 " cleanup actions depending on the exception status."
-msgstr "ビルドが完了し、Sphinxが終了する際に発行されます。通常はクリーンアップに使用されます。このイベントは、ビルドプロセスが例外を上げたときにも発行されます。その場合には、 *exception* 引数が渡されます。アプリケーションの中で発生した例外は、このイベントハンドラが終了した段階で、再度投げられます。もしもビルドプロセスが例外を発生しなかった場合には、 *exception* は ``None`` になります。これによって、例外の種類ごとの、クリーンアップの処理をカスタム化できます。"
+msgstr "ビルドが完了し、Sphinxが終了する際に発行されます。通常はクリーンアップに使用されます。このイベントは、ビルドプロセスが例外を上げたときにも発行されます。その場合には、 **exception** 引数が渡されます。アプリケーションの中で発生した例外は、このイベントハンドラが終了した段階で、再度投げられます。もしもビルドプロセスが例外を発生しなかった場合には、 **exception** は ``None`` になります。これによって、例外の種類ごとの、クリーンアップの処理をカスタム化できます。"
 
 #: ../../extdev/appapi.rst:589
 msgid "Checking the Sphinx version"
@@ -784,13 +786,13 @@ msgstr "テンプレートのシステムの初期化を行うために、ビル
 msgid ""
 "*builder* is the builder object; you'll probably want to look at the value "
 "of ``builder.config.templates_path``."
-msgstr "*builder* はビルダーオブジェクトで、 ``builder.config.templates_path`` の値を使用することになるでしょう。"
+msgstr "**builder** はビルダーオブジェクトで、 ``builder.config.templates_path`` の値を使用することになるでしょう。"
 
 #: ../../docstring of sphinx.application.TemplateBridge.init:6
 msgid ""
 "*theme* is a :class:`sphinx.theming.Theme` object or None; in the latter "
 "case, *dirs* can be list of fixed directories to look for templates."
-msgstr "*theme* は :class:`sphinx.theming.Theme` オブジェクト、あるいは ``None`` になります。後者の場合には、 *dirs* に固定ディレクトリのパスが入ったリストが渡され、この中からテンプレートを探します。"
+msgstr "**theme** は :class:`sphinx.theming.Theme` オブジェクト、あるいは ``None`` になります。後者の場合には、 **dirs** に固定ディレクトリのパスが入ったリストが渡され、この中からテンプレートを探します。"
 
 #: ../../docstring of
 #: sphinx.application.TemplateBridge.newest_template_mtime:1
@@ -798,7 +800,7 @@ msgid ""
 "Called by the builder to determine if output files are outdated because of "
 "template changes.  Return the mtime of the newest template file that was "
 "changed.  The default implementation returns ``0``."
-msgstr "このメソッドはビルダーから呼ばれます。テンプレートが変更されたことで、出力ファイルを再レンダリングする必要があるかどうかの判断をするために使用されます。変更された、最新のテンプレートのmtimeを返します。デフォルトの実装では ``0`` を返します。"
+msgstr "このメソッドはビルダーから呼ばれます。テンプレートが変更されたことで、出力ファイルを再レンダリングする必要があるかどうかの判断をするために使用されます。変更された、最新のテンプレートのmtimeを返します。デフォルトの実装ではゼロを返します。"
 
 #: ../../docstring of sphinx.application.TemplateBridge.render:1
 msgid ""

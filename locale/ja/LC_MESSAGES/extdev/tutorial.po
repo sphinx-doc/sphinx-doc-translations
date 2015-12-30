@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the Sphinx package.
 # 
 # Translators:
+# NAKADA Nobuhiro <nakada.nobuhiro@gmail.com>, 2014
+# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
-"Project-Id-Version: sphinx-doc-1.4\n"
+"Project-Id-Version: sphinx-doc-1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-28 08:21+0000\n"
-"PO-Revision-Date: 2015-09-13 05:35+0000\n"
-"Last-Translator: Arihiro TAKASE <artakase@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
+"POT-Creation-Date: 2015-12-28 08:28+0000\n"
+"PO-Revision-Date: 2015-12-28 08:06+0000\n"
+"Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_3/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,14 +26,14 @@ msgstr "チュートリアル: シンプルな拡張を作成"
 #: ../../extdev/tutorial.rst:6
 msgid ""
 "This section is intended as a walkthrough for the creation of custom "
-"extensions. It covers the basics of writing and activating an extension, as "
-"well as commonly used features of extensions."
+"extensions. It covers the basics of writing and activating an extensions, as"
+" well as commonly used features of extensions."
 msgstr "このセクションではカスタムの拡張の作成について一通り説明していきたいと思います。 ここの説明でカバーするのは、拡張の基本的な書き方と登録の仕方、あとは拡張を作成するのに使用される一般的な機能などです。"
 
 #: ../../extdev/tutorial.rst:10
 msgid ""
 "As an example, we will cover a \"todo\" extension that adds capabilities to "
-"include todo entries in the documentation, and to collect these in a central"
+"include todo entries in the documentation, and collecting these in a central"
 " place.  (A similar \"todo\" extension is distributed with Sphinx.)"
 msgstr "サンプルとしては、ドキュメントの中にToDoを書くことができるようになり、指定された場所にすべてのToDoの一覧を出力する、\"todo\"拡張を扱おうと思います。Sphinxの配布物に含まれる\"todo\"拡張とほぼ同じものになります。"
 
@@ -52,8 +54,8 @@ msgstr "アプリケーション"
 #: ../../extdev/tutorial.rst:22
 msgid ""
 "The application object (usually called ``app``) is an instance of "
-":class:`.Sphinx`.  It controls most high-level functionality, such as the "
-"setup of extensions, event dispatching and producing output (logging)."
+":class:`.Sphinx`.  It controls the most high-level functionality, such as "
+"the setup of extensions, event dispatching and producing output (logging)."
 msgstr "アプリケーションオブジェクト(通常 ``app`` と呼ばれる)は :class:`.Sphinx` のインスタンスです。これは高位の機能をコントロールします。例えば、拡張のセットアップや、イベントのディスパッチ、アウトプットの生成(ロギング)等です。"
 
 #: ../../extdev/tutorial.rst:26
@@ -70,9 +72,9 @@ msgstr "環境"
 msgid ""
 "The build environment object (usually called ``env``) is an instance of "
 ":class:`.BuildEnvironment`.  It is responsible for parsing the source "
-"documents, stores all metadata about the document collection and is "
-"serialized to disk after each build."
-msgstr "ビルド環境オブジェクト(通常 ``env`` と呼ばれる)は :class:`.BuildEnvironment` のインスタンスです。これはドキュメントソースのパースを行い、ドキュメントセットに関する全てのメタデータを保持し、それらをビルド後にディスクにシリアライズする責任を持っています。"
+"documents stores all metadata about the document collection and is "
+"serialized after each build."
+msgstr "ビルド環境オブジェクト(通常 ``env`` と呼ばれる)は :class:`.BuildEnvironment` のインスタンスです。これはドキュメントソースのパースを行い、ドキュメントセットに関する全てのメタデータを保持し、それらをビルド後にシリアライズする責任を持っています。"
 
 #: ../../extdev/tutorial.rst:35
 msgid ""
@@ -97,7 +99,7 @@ msgid ""
 " subclass of :class:`.Builder`.  Each builder class knows how to convert the"
 " parsed documents into an output format, or otherwise process them (e.g. "
 "check external links)."
-msgstr "ビルダーオブジェクト(通常 ``builder`` と呼ばれる)は :class:`.Builder` のサブクラスのインスタンスです。各ビルダークラスはパースしたドキュメントを使って、出力フォーマットに変換したり、データ処理したりします(例えば、外部リンクのチェックなど)。"
+msgstr "ビルダーオブジェクト(通常 ``builder`` と呼ばれる)は :class:`.Biulder` のサブクラスのインスタンスです。各ビルダークラスはパースしたドキュメントを使って、出力フォーマットに変換したり、データ処理したりします(例えば、外部リンクのチェックなど)。"
 
 #: ../../extdev/tutorial.rst:48
 msgid ""
@@ -136,7 +138,7 @@ msgstr "**フェーズ 0: 初期化**"
 
 #: ../../extdev/tutorial.rst:67
 msgid ""
-"In this phase, almost nothing of interest to us happens.  The source "
+"In this phase, almost nothing interesting for us happens.  The source "
 "directory is searched for source files, and extensions are initialized. "
 "Should a stored build environment exist, it is loaded, otherwise a new one "
 "is created."
@@ -150,11 +152,11 @@ msgstr "**フェーズ 1: 読み込み**"
 msgid ""
 "In Phase 1, all source files (and on subsequent builds, those that are new "
 "or changed) are read and parsed.  This is the phase where directives and "
-"roles are encountered by docutils, and the corresponding code is executed.  "
-"The output of this phase is a *doctree* for each source file; that is a tree"
-" of docutils nodes.  For document elements that aren't fully known until all"
-" existing files are read, temporary nodes are created."
-msgstr "フェーズ 1ではすべてのソースファイルが読み込まれ、パースされます。なお、この後のフェーズは新規のファイルか変更されたファイルに対して実行されます。このフェーズではdocutilsによってディレクティブやロールが処理され、それに対応するコードが実行されます。このフェーズの出力は、ソースファイルごとの\\ *doctree*\\ です。これは、docutilsのノードがツリー上に構成されているものです。すべてのファイルを読み込むまでは完全に解釈できないドキュメントの要素に関しては、一時的なノードが作られます。"
+"roles are encountered by the docutils, and the corresponding code is "
+"executed.  The output of this phase is a *doctree* for each source files, "
+"that is a tree of docutils nodes.  For document elements that aren't fully "
+"known until all existing files are read, temporary nodes are created."
+msgstr "フェーズ 1ではすべてのソースファイルが読み込まれ、パースされます。なお、この後のフェーズは新規のファイルか変更されたファイルに対して実行されます。このフェーズではdocutilsによってディレクティブやロールが処理され、それに対応するコードが実行されます。このフェーズの出力は、ソースファイルごとの\\ **DOCツリー**\\ です。これは、docutilsのノードがツリー上に構成されているものです。すべてのファイルを読み込むまでは完全に解釈できないドキュメントの要素に関しては、一時的なノードが作られます。"
 
 #: ../../extdev/tutorial.rst:81
 msgid ""
@@ -287,7 +289,7 @@ msgid ""
 ":meth:`~Sphinx.add_config_value` lets Sphinx know that it should recognize "
 "the new *config value* ``todo_include_todos``, whose default value should be"
 " ``False`` (this also tells Sphinx that it is a boolean value)."
-msgstr ":meth:`~Sphinx.add_config_value` メソッドはSphinxに対して新しい\\ *設定値*\\ である\\  ``todo_include_todos``\\ を追加するように指示して、 :file:`conf.py` の中に書けるようにします。このオプションのデフォルト値は\\ ``False``\\ になります。また、この設定値がブーリアンの値を取るということもSphinxに知らせます。"
+msgstr ":meth:`~Sphinx.add_config_value` メソッドはSphinxに対して新しい\\ **設定値**\\ である\\  ``todo_include_todos``\\ を追加するように指示して、 :file:`conf.py` の中に書けるようにします。このオプションのデフォルト値は\\ ``False``\\ になります。また、この設定値がブーリアンの値を取るということもSphinxに知らせます。"
 
 #: ../../extdev/tutorial.rst:174
 msgid ""
@@ -302,7 +304,7 @@ msgid ""
 "also can specify visitor functions for each supported output format.  These "
 "visitor functions are needed when the new nodes stay until phase 4 -- since "
 "the ``todolist`` node is always replaced in phase 3, it doesn't need any."
-msgstr ":meth:`~Sphinx.add_node` メソッドは、ビルドシステムに対して新しい\\ *ノードクラス*\\ を追加します。このメソッドはサポートする出力形式ごとにビジター関数を定義できます。これらのビジター関数は新しいノードがフェーズ.4まで残っている場合に必要になります。\\ ``todolist``\\ はフェーズ.3までにすべて置き換えられてしまうため、ビジターを指定する必要はありません。"
+msgstr ":meth:`~Sphinx.add_node` メソッドは、ビルドシステムに対して新しい\\ **ノードクラス**\\ を追加します。このメソッドはサポートする出力形式ごとにビジター関数を定義できます。これらのビジター関数は新しいノードがフェーズ.4まで残っている場合に必要になります。\\ ``todolist``\\ はフェーズ.3までにすべて置き換えられてしまうため、ビジターを指定する必要はありません。"
 
 #: ../../extdev/tutorial.rst:183
 msgid ""
@@ -313,7 +315,7 @@ msgstr "後ほど、 ``todo`` と ``todolist`` という2つのnodeクラスを�
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
-msgstr ":meth:`~Sphinx.add_directive` メソッドは、指定された名前とクラスから、新しい\\ *ディレクティブ*\\ を追加します。"
+msgstr ":meth:`~Sphinx.add_directive` メソッドは、指定された名前とクラスから、新しい\\ ``ディレクティブ``\\ を追加します。"
 
 #: ../../extdev/tutorial.rst:187
 msgid "The handler functions are created later."
@@ -324,7 +326,7 @@ msgid ""
 "Finally, :meth:`~Sphinx.connect` adds an *event handler* to the event whose "
 "name is given by the first argument.  The event handler function is called "
 "with several arguments which are documented with the event."
-msgstr "最後に、 :meth:`~Sphinx.connect` メソッドは、最初の引数に指定されたイベントの名前に対する、\\ *イベントハンドラ*\\ を追加します。イベントハンドラの関数は、ドキュメントに関する引数をいくつか伴って呼び出されます。"
+msgstr "最後に、 :meth:`~Sphinx.connect` メソッドは、最初の引数に指定されたイベントの名前に対する、\\ **イベントハンドラ**\\ を追加します。イベントハンドラの関数は、ドキュメントに関する引数をいくつか伴って呼び出されます。"
 
 #: ../../extdev/tutorial.rst:195
 msgid "The Node Classes"
@@ -359,9 +361,9 @@ msgid ""
 "A directive class is a class deriving usually from "
 ":class:`docutils.parsers.rst.Directive`.  The directive interface is also "
 "covered in detail in the `docutils documentation`_; the important thing is "
-"that the class should have attributes that configure the allowed markup, and"
-" a ``run`` method that returns a list of nodes."
-msgstr "directiveクラスは通常 :class:`docutils.parsers.rst.Directive` から派生します。ディレクティブのインタフェースの詳細は `docutils documentation`_ でも述べられています。重要なこととして、そのクラスはマークアップに許される設定のための属性と、ノードのリストを返す ``run`` メソッドを持たせるということです。"
+"that the class has attributes that configure the allowed markup and a method"
+" ``run`` that returns a list of nodes."
+msgstr "directiveクラスは通常 ``docutils.parsers.rst.Directive`` から派生します。ディレクティブのインタフェースの詳細は `docutils documentation`_ でも述べられています。重要なこととして、そのクラスはマークアップに許される設定のための属性と、ノードのリストを返す ``run`` というメソッドを持つということです。"
 
 #: ../../extdev/tutorial.rst:235
 msgid "The ``todolist`` directive is quite simple::"

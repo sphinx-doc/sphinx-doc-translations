@@ -8,3 +8,6 @@ rm -R es ja pt_BR
 tx pull -l es,ja,pt_BR
 git checkout .tx/config
 
+# sphinx-1.2.x doesn't support auto mo build
+sphinx-intl build -d .
+

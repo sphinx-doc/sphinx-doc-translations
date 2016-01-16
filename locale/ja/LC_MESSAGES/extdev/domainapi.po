@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# 
+# Translators:
+# takuan_osho <shimizu.taku@gmail.com>, 2014
+# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2014-2015
+# takuan_osho <shimizu.taku@gmail.com>, 2014
+# Yuta Hono <yuta.hono@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinx-doc-1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-16 05:36+0000\n"
+"PO-Revision-Date: 2015-09-13 05:34+0000\n"
+"Last-Translator: Takayuki Shimizukawa <shimizukawa@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_3/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../extdev/domainapi.rst:4
+msgid "Domain API"
+msgstr "ドメインAPI"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Domain:1
+msgid ""
+"A Domain is meant to be a group of \"object\" description directives for "
+"objects of a similar nature, and corresponding roles to create references to"
+" them.  Examples would be Python modules, classes, functions etc., elements "
+"of a templating language, Sphinx roles and directives, etc."
+msgstr "ドメインというのは、似たような特性を持つオブジェクトごとに用意された「オブジェクト」説明ディレクティブと、それらに対応してリファレンスを作成するロールを集めたものです。例えば、Pythonのモジュール、クラス、関数、テンプレート言語であればエレメント、Sphinxであればロールとディレクティブなどです。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Domain:6
+msgid ""
+"Each domain has a separate storage for information about existing objects "
+"and how to reference them in `self.data`, which must be a dictionary.  It "
+"also must implement several functions that expose the object information in "
+"a uniform way to parts of Sphinx that allow the user to reference or search "
+"for objects in a domain-agnostic way."
+msgstr "ドメインごとに、既存のオブジェクトの情報や、それらへの参照の仕方などを個別の領域に保存します。保存先は `self.data` で、辞書でなければなりません。また、Sphinxの一部として決まったフォーマットでオブジェクトの情報を公開するための関数や、ユーザが参照できるようにしたり、ドメインごとの方法でオブジェクトを探索する関数をいくつか実装する必要があります。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Domain:12
+msgid ""
+"About `self.data`: since all object and cross-referencing information is "
+"stored on a BuildEnvironment instance, the `domain.data` object is also "
+"stored in the `env.domaindata` dict under the key `domain.name`.  Before the"
+" build process starts, every active domain is instantiated and given the "
+"environment object; the `domaindata` dict must then either be nonexistent or"
+" a dictionary whose 'version' key is equal to the domain class' "
+":attr:`data_version` attribute.  Otherwise, `IOError` is raised and the "
+"pickled environment is discarded."
+msgstr "`self.data` に関しては、すべてのオブジェクトとクロスリファレンス情報はBuildEnvironmentインスタンスに保存しておくために、 `domain.data` オブジェクトも、 `domain.name` をキーにして `env.domaindata` 辞書に格納します。ビルドプロセスが始まるまえに、すべてのアクティブなドメインがインスタンス化され、環境オブジェクトが与えられます。 `domaindata` 辞書は、空にしておくか、もしくは'version'というキーがドメインクラスの :attr:`data_version` 属性と同じ値を格納しておく必要があります。そうでない場合には `IOError` が発生し、既存のpickle化された環境が破棄されます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.clear_doc:1
+msgid "Remove traces of a document in the domain-specific inventories."
+msgstr "ドメインに特化した領域から、指定されたドキュメントの情報を削除します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.directive:1
+msgid ""
+"Return a directive adapter class that always gives the registered directive "
+"its full name ('domain:name') as ``self.name``."
+msgstr "``self.name`` で指定されたドメイン付きで、完全な名前('ドメイン:名前')で登録されたディレクティブ を与える、ディレクティブアダプタークラスを返します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:1
+msgid ""
+"Return an iterable of \"object descriptions\", which are tuples with five "
+"items:"
+msgstr "次のような項目を持つ、「オブジェクトの説明」のタプルを返す、繰り返し可能オブジェクトを返します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:4
+msgid "`name`     -- fully qualified name"
+msgstr "`name`     -- 完全な修飾付きの名前"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:5
+msgid "`dispname` -- name to display when searching/linking"
+msgstr "`dispname` -- 検索やリンクの時に表示される名前"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:6
+msgid "`type`     -- object type, a key in ``self.object_types``"
+msgstr "`type`     -- オブジェクトの種類。 ``self.object_types`` のキー"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:7
+msgid "`docname`  -- the document where it is to be found"
+msgstr "`docname`  -- そのオブジェクトが発見されたドキュメント名"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:8
+msgid "`anchor`   -- the anchor name for the object"
+msgstr "`anchor`   -- そのオブジェクトのアンカー名"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:9
+msgid ""
+"`priority` -- how \"important\" the object is (determines placement in "
+"search results)"
+msgstr "`priority` -- そのオブジェクトがどれだけ重要か？(検索結果の決定に利用される)"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:12
+msgid "1: default priority (placed before full-text matches)"
+msgstr "1: デフォルトの優先順位(全文検索マッチの前に置かれる)"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:13
+msgid "0: object is important (placed before default-priority objects)"
+msgstr "0: 重要なオブジェクト(出フィルとの優先順位のオブジェクトの前に置かれる)"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:14
+msgid "2: object is unimportant (placed after full-text matches)"
+msgstr "2: 重要でないオブジェクト(全文検索マッチの後に置かれる)"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_objects:15
+msgid "-1: object should not show up in search at all"
+msgstr "-1: 検索結果に出すべきではないオブジェクト"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.get_type_name:1
+msgid "Return full name for given ObjType."
+msgstr "与えられたObjTypeの完全な名前を返します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.merge_domaindata:1
+msgid ""
+"Merge in data regarding *docnames* from a different domaindata inventory "
+"(coming from a subprocess in parallel builds)."
+msgstr " (並行ビルドのサブプロセスから生成された) 異なるdomaindataインベントリから *docnames*  へマージします。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.process_doc:1
+msgid "Process a document after it is read by the environment."
+msgstr "ドキュメントが環境によって読まれた後で、そのドキュメントを処理します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_any_xref:1
+msgid "Resolve the pending_xref *node* with the given *target*."
+msgstr "*target* を持つ、 ``pending_xref`` (未解決のクロスリファレンス) *node* の参照先の解決を行います。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_any_xref:3
+msgid ""
+"The reference comes from an \"any\" or similar role, which means that we "
+"don't know the type.  Otherwise, the arguments are the same as for "
+":meth:`resolve_xref`."
+msgstr "\"any\", もしくはそれに類似するロールに基づくリファレンスは、タイプがわからないということを意味します。もしくは、引数が :meth:`resolve_xref` と同様のものであるかです。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_any_xref:7
+msgid ""
+"The method must return a list (potentially empty) of tuples "
+"``('domain:role', newnode)``, where ``'domain:role'`` is the name of a role "
+"that could have created the same reference, e.g. ``'py:func'``. ``newnode`` "
+"is what :meth:`resolve_xref` would return."
+msgstr "このメソッドはタプルを要素に持つリストを返す必要があります(リストは空の可能性があります)。各要素はタプルで、 ``('domain:role', newnode)`` の形式です。 ``'domain:role'`` は ``'py:func'`` のようなnewnodeを生成するときに使われるロール名で、 ``newnode`` は :meth:`resolve_xref` の返値と同じです。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_xref:1
+msgid "Resolve the pending_xref *node* with the given *typ* and *target*."
+msgstr "*typ* 型と、 *target* を持つ、 ``pending_xref`` (未解決のクロスリファレンス) *node* の参照先の解決を行います。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_xref:3
+msgid ""
+"This method should return a new node, to replace the xref node, containing "
+"the *contnode* which is the markup content of the cross-reference."
+msgstr "このメソッドは、xrefノードと置き換えるための、新しいノードを返さなければなりません。また、この新しいノードには、クロスリファレンスのマークアップのコンテンツである、 *contnode* を含めます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_xref:7
+msgid ""
+"If no resolution can be found, None can be returned; the xref node will then"
+" given to the 'missing-reference' event, and if that yields no resolution, "
+"replaced by *contnode*."
+msgstr "もし、参照先を見つけることができなければ、Noneを返すことができます。xrefノードは'missing-reference'イベントを発行し、それでも解決しなければ、 *contnode* に置き換えられます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.resolve_xref:11
+msgid ""
+"The method can also raise :exc:`sphinx.environment.NoUri` to suppress the "
+"'missing-reference' event being emitted."
+msgstr "また、このメソッド内で :exc:`sphinx.environment.NoUri` 例外を発生させると、'missing-reference'が発行されるのを押さえることができます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.role:1
+msgid ""
+"Return a role adapter function that always gives the registered role its "
+"full name ('domain:name') as the first argument."
+msgstr "登録された完全な名前を持つロール('ドメイン:名前')を最初の引数として与える、ロールアダプター関数を返します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.dangling_warnings:1
+msgid "role name -> a warning message if reference is missing"
+msgstr "ロール名 -> リファレンスが存在しないときの警告メッセージ"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.data_version:1
+msgid "data version, bump this when the format of `self.data` changes"
+msgstr "データのバージョンです。もしも `self.data` 内のフォーマットを変更したときには、この数字を上げてください。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.directives:1
+msgid "directive name -> directive class"
+msgstr "ディレクティブ名→ディレクティブのクラスとなる辞書です。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.indices:1
+msgid "a list of Index subclasses"
+msgstr "Indexのサブクラスが格納されたリストです。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.initial_data:1
+msgid "data value for a fresh environment"
+msgstr "新しい環境に入れる値です。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.label:1
+msgid "domain label: longer, more descriptive (used in messages)"
+msgstr "ドメインのラベルです。 ``name`` よりも長く、説明的な名前です。メッセージ内で利用されます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.name:1
+msgid "domain name: should be short, but unique"
+msgstr "ドメイン名です。なるべく短く、重複のない名前にする必要があります。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.object_types:1
+msgid "type (usually directive) name -> ObjType instance"
+msgstr "型(通常はディレクティブ)名→ObjTypeのインスタンスとなる辞書です。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Domain.roles:1
+msgid "role name -> role callable"
+msgstr "ロール名→ロールの呼び出し可能オブジェクトとなる辞書です。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.ObjType:1
+msgid ""
+"An ObjType is the description for a type of object that a domain can "
+"document.  In the object_types attribute of Domain subclasses, object type "
+"names are mapped to instances of this class."
+msgstr "ObjTypeは、そのドメインでドキュメントを書くことができる、オブジェクトの種類に対する説明ユニットです。Domainのサブクラスの **object_types** の辞書の中に、オブジェクト名と、このクラスのインスタンスのマッピングが保持されます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.ObjType:5
+msgid "Constructor arguments:"
+msgstr "コンストラクタ引数"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.ObjType:7
+msgid "*lname*: localized name of the type (do not include domain name)"
+msgstr "*lname*: ローカライズされた型名"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.ObjType:8
+msgid "*roles*: all the roles that can refer to an object of this type"
+msgstr "*roles*: この型を参照できる、すべてのロール"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.ObjType:9
+msgid ""
+"*attrs*: object attributes -- currently only \"searchprio\" is known, which "
+"defines the object's priority in the full-text search index, see "
+":meth:`Domain.get_objects()`."
+msgstr "*attrs*: オブジェクトの属性。現在では、全文検索インデックス内での、オブジェクトの優先順位(:meth:`Domain.get_objects()` 参照)のみが定義されています。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Index:1
+msgid ""
+"An Index is the description for a domain-specific index.  To add an index to"
+" a domain, subclass Index, overriding the three name attributes:"
+msgstr "Indexは、ドメインに特化した索引のための説明を行うクラスです。ドメインに対する索引を追加する場合には、Indexのサブクラスを作り、3つの名前属性をオーバーライドします:"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Index:4
+msgid "`name` is an identifier used for generating file names."
+msgstr "`name` はファイル名を生成する際に使用される、識別子です。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Index:5
+msgid "`localname` is the section title for the index."
+msgstr "`localname` は索引のセクションタイトルです。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Index:6
+msgid ""
+"`shortname` is a short name for the index, for use in the relation bar in "
+"HTML output.  Can be empty to disable entries in the relation bar."
+msgstr "`shortname` は索引に対する短い名前です。これは、HTML出力のリレーションバーで使用されます。もしも空であれば、リレーションバーのエントリーは無効化されます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of sphinx.domains.Index:9
+msgid ""
+"and providing a :meth:`generate()` method.  Then, add the index class to "
+"your domain's `indices` list.  Extensions can add indices to existing "
+"domains using :meth:`~sphinx.application.Sphinx.add_index_to_domain()`."
+msgstr "次に、 :meth:`generate()` メソッドを提供するようにします。最後に、自分の作ったドメインのDomainクラスが持つ、 `indices` リストに追加します。拡張機能の中で :meth:`~sphinx.application.Sphinx.add_index_to_domain()` メソッドを呼ぶと、既存のドメインに対して、索引を追加することもできます。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:1
+msgid ""
+"Return entries for the index given by *name*.  If *docnames* is given, "
+"restrict to entries referring to these docnames."
+msgstr "*name* が与えられた索引に対する索引のエントリーを返します。もしも *docnames* が与えられた場合には、これらのdocnameに関連する要素だけを返します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:4
+msgid ""
+"The return value is a tuple of ``(content, collapse)``, where *collapse* is "
+"a boolean that determines if sub-entries should start collapsed (for output "
+"formats that support collapsing sub-entries)."
+msgstr "返り値は ``(content, collapse)`` というタプルです。 *collapse* はブーリアン型で、サブエントリーが折りたたまれて始まるべきかどうかを決定します。(出力フォーマットが折りたたまれたサブエントリーをサポートしている場合)。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:8
+msgid ""
+"*content* is a sequence of ``(letter, entries)`` tuples, where *letter* is "
+"the \"heading\" for the given *entries*, usually the starting letter."
+msgstr "*content* は ``(etter, entries)`` というタプルです。 *letter* は与えられた *entries* の見出しで、通常は初めの文字を表します。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:11
+msgid ""
+"*entries* is a sequence of single entries, where a single entry is a "
+"sequence ``[name, subtype, docname, anchor, extra, qualifier, descr]``. The "
+"items in this sequence have the following meaning:"
+msgstr "*entries* は単独のエントリーのシーケンスで、それぞれのエントリーは、 ``[name, subtype, docname, anchor, extra, qualifier, descr]`` という要素で構成されます。このシーケンスの要素はそれぞれ次のような意味を持っています。"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:15
+msgid "`name` -- the name of the index entry to be displayed"
+msgstr "`name` -- 索引のエントリーの、表示される名前"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:16
+msgid ""
+"`subtype` -- sub-entry related type: 0 -- normal entry 1 -- entry with sub-"
+"entries 2 -- sub-entry"
+msgstr "`subtype` -- サブエントリーの種類 0 -- 通常のエントリー 1 -- サブエントリー付きのエントリーentry with sub-entries 2 -- サブエントリー"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:20
+msgid "`docname` -- docname where the entry is located"
+msgstr "`docname` -- エントリーが置かれているドキュメント名"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:21
+msgid "`anchor` -- anchor for the entry within `docname`"
+msgstr "`anchor` -- `docname` 内の、エントリーへのアンカー"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:22
+msgid "`extra` -- extra info for the entry"
+msgstr "`extra` -- エントリーに関する追加情報extra info for the entry"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:23
+msgid "`qualifier` -- qualifier for the description"
+msgstr "`qualifier` -- 説明の修飾子qualifier for the description"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:24
+msgid "`descr` -- description for the entry"
+msgstr "`descr` -- エントリーの説明"
+
+#: ../../../sphinx/domains/__init__.pydocstring of
+#: sphinx.domains.Index.generate:26
+msgid "Qualifier and description are not rendered e.g. in LaTeX output."
+msgstr "修飾子と説明はLaTeX出力などではレンダリングされません。"

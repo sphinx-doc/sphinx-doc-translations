@@ -3,6 +3,7 @@
 execfile(os.path.join(BASEDIR, 'sphinx/doc/conf.py'))
 
 locale_dirs = [os.path.join(BASEDIR, 'locale/')]
+gettext_compact = False
 
 setup_original = setup
 

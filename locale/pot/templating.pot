@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"POT-Creation-Date: 2016-01-16 17:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,492 +17,492 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\sphinx\doc\templating.rst:6
-# 8111767db1244dbf8544fada5969c564
+# 7e264a41eadd4c1b910dbd70ac225e58
 msgid "Templating"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:8
-# 3d1c043c2d8a489aa885b247bd46befa
+# 86176df67d0f4a91a4fcb5a235a2b5a2
 msgid "Sphinx uses the `Jinja <http://jinja.pocoo.org>`_ templating engine for its HTML templates.  Jinja is a text-based engine, and inspired by Django templates, so anyone having used Django will already be familiar with it.  It also has excellent documentation for those who need to make themselves familiar with it."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:15
-# 9eebbdc8a60d4e49b09cd3096accc420
+# 2d5d46617682453fa1cee52a44cb9130
 msgid "Do I need to use Sphinx' templates to produce HTML?"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:17
-# 71e9d850e0b949aa88d71346c027a138
+# e6766979336349a7822c45dfa78eeffc
 msgid "No.  You have several other options:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:19
-# 853905814d044e2fa1049e10e7155366
+# 67cc9911595a4834a058e502e6f51d36
 msgid "You can write a :class:`~sphinx.application.TemplateBridge` subclass that calls your template engine of choice, and set the :confval:`template_bridge` configuration value accordingly."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:23
-# dc768e7929004bf1ab6f7eaddbe0c2a7
+# 218ae77f8e314e8ea10047b774e90acc
 msgid "You can :ref:`write a custom builder <writing-builders>` that derives from :class:`~sphinx.builders.html.StandaloneHTMLBuilder` and calls your template engine of choice."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:27
-# 46e74c7cbd0743c7af81087e4298c953
+# 8b99eaf4724840eda0978d6afa362deb
 msgid "You can use the :class:`~sphinx.builders.html.PickleHTMLBuilder` that produces pickle files with the page contents, and postprocess them using a custom tool, or use them in your Web application."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:33
-# d5d671da563d40a0b898524636c275cb
+# 9790ad05c025492ca82ac4694d851fd5
 msgid "Jinja/Sphinx Templating Primer"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:35
-# 385a0bcc20db43739dca8c1108cf6239
+# 086b384070724eb5a2be202d6bb94119
 msgid "The default templating language in Sphinx is Jinja.  It's Django/Smarty inspired and easy to understand.  The most important concept in Jinja is :dfn:`template inheritance`, which means that you can overwrite only specific blocks within a template, customizing it while also keeping the changes at a minimum."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:40
-# d789dfa7d17a4d94be69723926c4b53c
+# 51dcd4e43ffe45c789c1fcce01b8f4a7
 msgid "To customize the output of your documentation you can override all the templates (both the layout templates and the child templates) by adding files with the same name as the original filename into the template directory of the structure the Sphinx quickstart generated for you."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:45
-# e3ab42ff41b2480091fc23d7e9db5201
+# 648534e7f4c44ef2854edcd64a0dbf72
 msgid "Sphinx will look for templates in the folders of :confval:`templates_path` first, and if it can't find the template it's looking for there, it falls back to the selected theme's templates."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:49
-# 44af71be41f04314a380e48463e0f240
+# 70f66d9911664a2ea5f8632bcdc8790c
 msgid "A template contains **variables**, which are replaced with values when the template is evaluated, **tags**, which control the logic of the template and **blocks** which are used for template inheritance."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:53
-# 47a95002c12c4fdf9ace5b511d2c7ffb
+# 627c51f702dd43b4961de1c3fd289ff4
 msgid "Sphinx' *basic* theme provides base templates with a couple of blocks it will fill with data.  These are located in the :file:`themes/basic` subdirectory of the Sphinx installation directory, and used by all builtin Sphinx themes. Templates with the same name in the :confval:`templates_path` override templates supplied by the selected theme."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:59
-# da35204de70d4f599cc7358603dcbbc2
+# cdfcce2cd0f5434db566f7f2766b8685
 msgid "For example, to add a new link to the template area containing related links all you have to do is to add a new template called ``layout.html`` with the following contents::"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:69
-# 23790ca00e3d4c7d8393f2596e840502
+# d253dd2087ef4c1995ac72c27cf41f33
 msgid "By prefixing the name of the overridden template with an exclamation mark, Sphinx will load the layout template from the underlying HTML theme."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:72
-# 9273c1193b1d41ef98e656300718d238
+# 0b5723951a3842c2b4fe227d705392de
 msgid "**Important**: If you override a block, call ``{{ super() }}`` somewhere to render the block's content in the extended template -- unless you don't want that content to show up."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:78
-# 0e73d7a5a1064beb9a867ca80deab0d7
+# d5f998c63f4547c0987b2f6b18bf695f
 msgid "Working with the builtin templates"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:80
-# 9cf80cc1942d42e88d95ba8637c6baf2
+# 9d7934e06d33485fb85d068cb26363f0
 msgid "The builtin **basic** theme supplies the templates that all builtin Sphinx themes are based on.  It has the following elements you can override or use:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:84
-# b966d757539344689b81d21503fac5d4
+# 880beac9931f4c589237dc856541f851
 msgid "Blocks"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:86
-# d007391209ac46c9ae6557a3a0838063
+# 2f6c085062004bf8bea33f93ae8b6217
 msgid "The following blocks exist in the ``layout.html`` template:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:92
-# 349fce21c1724bb2ac078309f6e55046
+# 357b7e5931f6402093edbc272e68c198
 msgid "`doctype`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:89
-# 1210c72745244e0786d604b8b8f37642
+# 33bca441def84826826d08c650c8fe5b
 msgid "The doctype of the output format.  By default this is XHTML 1.0 Transitional as this is the closest to what Sphinx and Docutils generate and it's a good idea not to change it unless you want to switch to HTML 5 or a different but compatible XHTML doctype."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:96
-# cec1a553eb6a470ab6a1cd0d30501e7b
+# 5b8c5a1191aa4e6c8027070e4b5149b5
 msgid "`linktags`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:95
-# 0e55961d844846b8905d03a736c89148
+# 0a535259cf0d48d0b4d1485be50fa91d
 msgid "This block adds a couple of ``<link>`` tags to the head section of the template."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:101
-# d603e9dc94bc47c2bdb8ce94b5d3a0e2
+# 96e4f9a99b2f433e8ad001ea59d874ca
 msgid "`extrahead`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:99
-# a1990faee2374cbeb2c6f1f667878532
+# d394eb1ebc2d48e0bf3688e22597e3ba
 msgid "This block is empty by default and can be used to add extra contents into the ``<head>`` tag of the generated HTML file.  This is the right place to add references to JavaScript or extra CSS files."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:110
-# e814343544ae476190aac77897ff8649
+# 5820cac55eff4ccea3fc9811d5bde2ee
 msgid "`relbar1` / `relbar2`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:104
-# 9d716ed468de4ac5aa9bc878489bce84
+# a8e0da7496934feb80969ce9c427c767
 msgid "This block contains the *relation bar*, the list of related links (the parent documents on the left, and the links to index, modules etc. on the right).  `relbar1` appears before the document, `relbar2` after the document.  By default, both blocks are filled; to show the relbar only before the document, you would override `relbar2` like this::"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:118
-# 1bb0fb3ff011459eba2263bb2c4ad603
+# e5d764f84b6a498083b318eec1c85268
 msgid "`rootrellink` / `relbaritems`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:113
-# 364175b559c24e1db55afbea287ea5fe
+# c8a5f8c61228451186fd1d9b2c76de9e
 msgid "Inside the relbar there are three sections: The `rootrellink`, the links from the documentation and the custom `relbaritems`.  The `rootrellink` is a block that by default contains a list item pointing to the master document by default, the `relbaritems` is an empty block.  If you override them to add extra links into the bar make sure that they are list items and end with the :data:`reldelim1`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:122
-# 349c18add66249508a8f7ef5ac57a05e
+# 37aa6b754ba946cd92f8dbce2d2bc487
 msgid "`document`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:121
-# 6f8270f9679b47f5b99205200e52a6f0
+# d7dbe002c81f40f8855dde9540d0a2e7
 msgid "The contents of the document itself.  It contains the block \"body\" where the individual content is put by subtemplates like ``page.html``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:136
-# 226764e783eb477fa7853cadefba076c
+# 673de22e8c0143a9aef0956ff8cbfe89
 msgid "`sidebar1` / `sidebar2`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:125
-# f75ba5f76cbf408bb1d2b83d601661a3
+# fdea542eee184455b8d144bd3c645382
 msgid "A possible location for a sidebar.  `sidebar1` appears before the document and is empty by default, `sidebar2` after the document and contains the default sidebar.  If you want to swap the sidebar location override this and call the `sidebar` helper:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:135
-# d62659720d9f4d6c9a34937dc9387094
+# 164f054e38c94df39f15801d017cf53c
 msgid "(The `sidebar2` location for the sidebar is needed by the ``sphinxdoc.css`` stylesheet, for example.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:140
-# 2345d5ceb93b4f3ca717620bba111bbe
+# fb49058d9d794d8d8e89e42237106784
 msgid "`sidebarlogo`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:139
-# 7d9f21bc9ff048608685d760288ab5aa
+# 7794e7cff7bb4b6a9f27f9c71ebc820e
 msgid "The logo location within the sidebar.  Override this if you want to place some content at the top of the sidebar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:144
-# 16e67cbc86264379845b4c469f46e3c6
+# e93ea8535e304755b5589d1fc7176175
 msgid "`footer`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:143
-# 0011c9d9ee314245ad6d7ac327b2c3a6
+# c53da1aad6684ee1b02e4c15948716e5
 msgid "The block for the footer div.  If you want a custom footer or markup before or after it, override this one."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:146
-# 109afbd2c3144b608aaeeea034fe49d5
+# 7726e72069e74576aa1c22311a969228
 msgid "The following four blocks are *only* used for pages that do not have assigned a list of custom sidebars in the :confval:`html_sidebars` config value.  Their use is deprecated in favor of separate sidebar templates, which can be included via :confval:`html_sidebars`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:154
-# a81f4fb47bb94f56a3b274ad72ffd672
+# 3f8a0fab9b2c4fceb5ba69db5d65d59e
 msgid "`sidebartoc`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:152
-# b113442c9bfd4f83b8e7b2eb7b7c9922
+# 89b3cee587d141c093ca05a331aa319a
 msgid "The table of contents within the sidebar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:159
-# 128cb60ffd804f4cb2c780bcff14974c
+# d845dc55073f4512922c68718c030982
 msgid "`sidebarrel`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:157
-# bf0cf443b7a94a82b1613fe76cf1da61
+# 93bb779ebce64267b34df67683a49b99
 msgid "The relation links (previous, next document) within the sidebar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:165
-# 3071584c0a0c44308ed656d0383e4ad2
+# bcd6c5e6ae964a3a9e50c929ab1e3bc6
 msgid "`sidebarsourcelink`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:162
-# 33f567a92b1e44388ab01e8255f87fdc
+# 8625827987344f7f8524db53d09d9969
 msgid "The \"Show source\" link within the sidebar (normally only shown if this is enabled by :confval:`html_show_sourcelink`)."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:172
-# 168dd2777c90401394132a20216cec05
+# e2c962e1ce884884b0f8f06ea7a12fa6
 msgid "`sidebarsearch`"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:168
-# 8229fdcd172d411f93b1681bebe5fd42
+# 6d217d81e07d495b8f728a326f9bb10b
 msgid "The search box within the sidebar.  Override this if you want to place some content at the bottom of the sidebar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:175
-# c9a8388c8b31438d97108d3f5c815052
+# 4b7c5880f0a54880bdeab744a0aeb843
 msgid "Configuration Variables"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:177
-# 329b322f9cce4babab4506acec421390
+# 4e3e9e6b83114865aec0fa6995a1ae6c
 msgid "Inside templates you can set a couple of variables used by the layout template using the ``{% set %}`` tag:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:182
-# a42b46495537404d870dfbb1d71afb86
+# 00667ae1726c489c9cbc6a5b1c393fea
 msgid "The delimiter for the items on the left side of the related bar.  This defaults to ``' &raquo;'`` Each item in the related bar ends with the value of this variable."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:188
-# 951f4677dcbf4fba9391bfa94628d83d
+# 01351d68a8374264b6b4133ec6ebdcc6
 msgid "The delimiter for the items on the right side of the related bar.  This defaults to ``' |'``.  Each item except of the last one in the related bar ends with the value of this variable."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:192
-# 043aa43152d54b28b322cc6988dac610
+# 8d80f2a46756417ebbb38a2611bfb1ef
 msgid "Overriding works like this::"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:199
-# d35b8d88353247f3b6fec849b687b13a
+# 96fdff400cd740568b2e15d09ca73f6b
 msgid "Add additional script files here, like this::"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:205
-# 381dd674c44947518173c619ab0e5322
+# 45136c3bf4fb4415ad0dfb2f247be78a
 msgid "Similar to :data:`script_files`, for CSS files."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:209
-# ef276270de6b4e6b932a7035e195a903
+# 5cc74cf9b8304b9e802f66703cf3ab6f
 msgid "Helper Functions"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:211
-# c7261c0a6ad84b0aada1a5bb1b08d0cb
+# af6caa237e234488af222231f76d55cc
 msgid "Sphinx provides various Jinja functions as helpers in the template.  You can use them to generate links or output multiply used elements."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:216
-# 4f9cc682982249559fbd75315a5c6265
+# 7069a8c692fa4a5091c0f94b97d8f116
 msgid "Return the path to a Sphinx document as a URL.  Use this to refer to built documents."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:221
-# 049b60f11acc4cbc8b4fd1a353452b53
+# aad1ea51455f4cbd960072918cec7ab2
 msgid "Return the path to a *file* which is a filename relative to the root of the generated output.  Use this to refer to static files."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:226
-# 70d151b12acf4a4da1862a6680b1ff94
+# 34dd6152569d4bc680aba4efa9221078
 msgid "Check if a document with the name *document* exists."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:230
-# 7425c08c511b413d9d70f5921c79f7ba
+# 677db2dc75274fb685ca9432610b3f7c
 msgid "Return the rendered sidebar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:234
-# ea512797def94e119b2b4a06e17e68dd
+# 35a704495f1048da9a64536bf35826ab
 msgid "Return the rendered relation bar."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:238
-# d0e845cbacfa4fc3b96a73958c92c437
+# 5270131a3c994b0b9741be715465f942
 msgid "Global Variables"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:240
-# 6f86ef731530474cad5106faeec87260
+# f0abbd77b52d4ffe901cd676a1e5de79
 msgid "These global variables are available in every template and are safe to use. There are more, but most of them are an implementation detail and might change in the future."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:246
-# 2488dde8b3ea42859d8ebab3b3d28504
+# 940bda7addf14061ab4853203b5d67c4
 msgid "The name of the builder (e.g. ``html`` or ``htmlhelp``)."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:250
-# 587d0f6d2cee435685ce9edc91863a68
+# 1aea29daaf8c4727a03fe3c2ed898f1b
 msgid "The value of :confval:`copyright`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:254
-# e12bcbbe1f964db6afa41dac2e65589e
+# 343d26c54be14ce78f75333e9b8762c4
 msgid "The title of the documentation (the value of :confval:`html_title`), except when the \"single-file\" builder is used, when it is set to ``None``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:259
-# 9ad3272efec64cb8860ca1bbf16cf7d7
+# 5cc3414daea9488085c3a76be5053bbb
 msgid "True if the built HTML is meant to be embedded in some viewing application that handles navigation, not the web browser, such as for HTML help or Qt help formats.  In this case, the sidebar is not included."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:265
-# a99b5434b36640feb95d71efb6810541
+# f2dd6e99224e4ce88c139a61b1cedfca
 msgid "The path to the HTML favicon in the static path, or ``''``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:269
-# c3e86e347b294ed3af0703ea238d0010
+# cdef81b0129a44d2a711bb54b7d714e2
 msgid "The value of the builder's :attr:`~.SerializingHTMLBuilder.out_suffix` attribute, i.e. the file name extension that the output files will get.  For a standard HTML builder, this is usually ``.html``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:275
-# 04b05cdd9cf3421a957c529dc776c2e9
+# 1cb13dae7f004b3ca36d3d2af6630bc1
 msgid "True if the reST document sources are copied (if :confval:`html_copy_source` is true)."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:280
-# 1dd54b9cb1174f6294705cc50253326f
+# b69ec257205d480785accf2a693d3bec
 msgid "The build date."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:284
-# 9e6991dd40364d16bc10d86d5d6ea089
+# 9747c5ea6f4b4f1bb635c3f070a191f1
 msgid "The path to the HTML logo image in the static path, or ``''``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:288
-# 13261637005741f189babf966e5ddeb9
+# 67be5bf0fe9c4351a7da449b414484e4
 msgid "The value of :confval:`master_doc`, for usage with :func:`pathto`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:292
-# 44d3c67fbc784ad9986b5ef461accb40
+# b9714b2e81c04a52ad8f993abba98c6e
 msgid "The next document for the navigation.  This variable is either false or has two attributes `link` and `title`.  The title contains HTML markup.  For example, to generate a link to the next page, you can use this snippet::"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:302
-# f8470e0a8cb04d9f8339d2aa2ff997ce
+# dc5280f977714855ba158527c81750b4
 msgid "The \"page name\" of the current file, i.e. either the document name if the file is generated from a reST source, or the equivalent hierarchical name relative to the output directory (``[directory/]filename_without_extension``)."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:308
-# c046846fccec4994ba9d88b7220dfaee
+# c1804775605f4f21b2d062e97874e991
 msgid "A list of parent documents for navigation, structured like the :data:`next` item."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:313
-# 5f99a89ffe06438a961744f11b6f552e
+# 6ed5262337c54b4e9e9054320f6c570b
 msgid "Like :data:`next`, but for the previous page."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:317
-# 9aaa7bfc90bd4cef8ce029fd72b14ec2
+# 47f0bbc8e49742afbe8ffcd8da0eab2e
 msgid "The value of :confval:`project`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:321
-# e7813d189eab4467a7b98f3f4a9dd697
+# fab8c5ac4ed74f609b4c0863ae54cb37
 msgid "The value of :confval:`release`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:325
-# 3308333955874f1faac3ff4be9db044d
+# 94039caefd054a10b93bee99312aa0ea
 msgid "A list of links to put at the left side of the relbar, next to \"next\" and \"prev\".  This usually contains links to the general index and other indices, such as the Python module index.  If you add something yourself, it must be a tuple ``(pagename, link title, accesskey, link text)``."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:332
-# 68e894c24a8c429db1cd5ab93f081499
+# f5802fe6079445ab8aa65392effa0055
 msgid "The value of :confval:`html_short_title`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:336
-# a088daba224f421b82ccead6d9243d4a
+# 0247f646d4a94493b902bc39c0ba1268
 msgid "True if :confval:`html_show_sourcelink` is true."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:340
-# daac0ff8ea3d450abc5f631713c6bf6f
+# 5dc8e50324654788aac739a4964e8f57
 msgid "The version of Sphinx used to build."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:344
-# bd88ded32f474527aa12c3446c9e70bb
+# 3c24ae9105c34be68a8e83b8893e7f65
 msgid "The name of the main stylesheet, as given by the theme or :confval:`html_style`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:349
-# 8c7f70037ce34d11b2ba789dba44a58d
+# caf2825688f54535928463f47b77a534
 msgid "The title of the current document, as used in the ``<title>`` tag."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:353
-# f84bcba4c9ff4bb2b2885a9213d2c788
+# bc6f791ea7c643809bca5b1b84626d30
 msgid "The value of :confval:`html_use_opensearch`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:357
-# c26164d014cf45d994c9c6158a0a72f3
+# 64dffdb2184449d89d6beb27ce8d36eb
 msgid "The value of :confval:`version`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:360
-# a4b2d539f1504680aeaa612fd2f25f95
+# d4be67e2d004467b9db18d2084eaafbb
 msgid "In addition to these values, there are also all **theme options** available (prefixed by ``theme_``), as well as the values given by the user in :confval:`html_context`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:364
-# cc134b5a26e240fda4ede0f8245215a2
+# 1801364492894f289b9f65db787aea35
 msgid "In documents that are created from source files (as opposed to automatically-generated files like the module index, or documents that already are in HTML form), these variables are also available:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:370
-# ef1e7ded69684e6d9079feb27b270dd1
+# 76e81e9a479f4b5aaa28e4edd9ada3f6
 msgid "Document metadata (a dictionary), see :ref:`metadata`."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:374
-# 48e123caaf7f406991f1fa7ee736e8a3
+# 962112a6d9a24468b1f6f39e12d7d212
 msgid "The name of the copied source file for the current document.  This is only nonempty if the :confval:`html_copy_source` value is true."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:379
-# d4670f0418d44e96a289d08dbfd235f7
+# 052b1bf6f94c4b9f84d99db8b03bb24e
 msgid "The local table of contents for the current page, rendered as HTML bullet lists."
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:384
-# ff4c3919e76a46d294c0884e8719c3ce
+# 4c52b5b964694571b23be24918203eb7
 msgid "A callable yielding the global TOC tree containing the current page, rendered as HTML bullet lists.  Optional keyword arguments:"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:387
-# 6eace0b0b8b44110a51ed24cd39566f9
+# c10ddd96cf9c487da6448df4c5e14bbf
 msgid "``collapse`` (true by default): if true, all TOC entries that are not ancestors of the current page are collapsed"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:390
-# 9b58b43c166c4e629c38226297a20b0f
+# 7129c6729baa4db68945f234b5f18bc0
 msgid "``maxdepth`` (defaults to the max depth selected in the toctree directive): the maximum depth of the tree; set it to ``-1`` to allow unlimited depth"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:393
-# d9e1dad017b4498a9e536a3586a50631
+# bd972da79c0a410ea858b4b7342a1bea
 msgid "``titles_only`` (false by default): if true, put only toplevel document titles in the tree"
 msgstr ""
 
 #: ..\..\sphinx\doc\templating.rst:396
-# b850edcbad374f0faa509da4a287271f
+# afc6c88171ce43e9b139e9b7b8915c40
 msgid "``includehidden`` (false by default): if true, the TOC tree will also contain hidden entries."
 msgstr ""
 

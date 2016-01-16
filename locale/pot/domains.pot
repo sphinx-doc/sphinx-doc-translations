@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"POT-Creation-Date: 2016-01-16 17:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,820 +17,820 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\sphinx\doc\domains.rst:6
-# c6b61b840ccf493ab49161b137a9ff45
+# f57004fb929c438abcf7732c9a435077
 msgid "Sphinx Domains"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:11
-# 22517b2ec9294981bca16cb764a49d67
+# db1df6e76bc8431986fb9660f31fe351
 msgid "What is a Domain?"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:13
-# 509b0ef35b804f118dddbd266f154bb4
+# 37092840be914feeb4e254861a2f6b5e
 msgid "Originally, Sphinx was conceived for a single project, the documentation of the Python language.  Shortly afterwards, it was made available for everyone as a documentation tool, but the documentation of Python modules remained deeply built in -- the most fundamental directives, like ``function``, were designed for Python objects.  Since Sphinx has become somewhat popular, interest developed in using it for many different purposes: C/C++ projects, JavaScript, or even reStructuredText markup (like in this documentation)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:21
-# cb55a219dfe14d798f9fb58f23b7fc6d
+# fa3be2c106ee4f639f18e754189896a6
 msgid "While this was always possible, it is now much easier to easily support documentation of projects using different programming languages or even ones not supported by the main Sphinx distribution, by providing a **domain** for every such purpose."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:26
-# 05b46fccfeb34fdea35078a0391a94f0
+# 4f01de98ddcf47a2b2d2dc255c1c7d24
 msgid "A domain is a collection of markup (reStructuredText :term:`directive`\\ s and :term:`role`\\ s) to describe and link to :term:`object`\\ s belonging together, e.g. elements of a programming language.  Directive and role names in a domain have names like ``domain:name``, e.g. ``py:function``.  Domains can also provide custom indices (like the Python Module Index)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:32
-# 1a3b28eff5294b66a5c275f3e980ece0
+# 52c6f3f7380a467183efadfddbdf3e15
 msgid "Having domains means that there are no naming problems when one set of documentation wants to refer to e.g. C++ and Python classes.  It also means that extensions that support the documentation of whole new languages are much easier to write."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:37
-# f9bb1ba3e8bd454f90bb01e43ecf48da
+# 3a6ee037e9f745b2aacbbaa3ab33b31d
 msgid "This section describes what the domains that come with Sphinx provide.  The domain API is documented as well, in the section :ref:`domain-api`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:44
-# 2042ea4cb203439ea468a6aadaaab3ff
+# 9e202ac777084556ba903e8903d389cc
 msgid "Basic Markup"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:46
-# aa13b0acf6b44d7e9291a06ea5d3881b
+# 315da7d506bc4c3c9cec060c13d9056b
 msgid "Most domains provide a number of :dfn:`object description directives`, used to describe specific objects provided by modules.  Each directive requires one or more signatures to provide basic information about what is being described, and the content should be the description.  The basic version makes entries in the general index; if no index entry is desired, you can give the directive option flag ``:noindex:``.  An example using a Python domain directive::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:58
-# 087a6c23ef9d493ba6e4732231ba73a0
+# 1ff4dbd9d7064250891b42e3256b948b
 msgid "This describes the two Python functions ``spam`` and ``ham``.  (Note that when signatures become too long, you can break them if you add a backslash to lines that are continued in the next line.  Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:66
-# 8db11ae39958406ab197fbb4015e13f1
+# 40bfd5e7149c470d8e4066896abf9372
 msgid "(This example also shows how to use the ``:noindex:`` flag.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:68
-# 182edc6edb524250883bb3acb37c2b7a
+# a1983c3aeb9643459b70a1eacbfd828e
 msgid "The domains also provide roles that link back to these object descriptions.  For example, to link to one of the functions described in the example above, you could say ::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:74
-# 8b8f82424aa242e1ac0c931ae5a8bb5d
+# c7cb39ddff034cf1b854543cb44765c5
 msgid "As you can see, both directive and role names contain the domain name and the directive name."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:78
-# 3d5b98ba2c9f4dcfb2e3c2c1f836f587
+# 051fc1c58ddf4980b6f6d9c5d9075398
 msgid "Default Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:79
-# 818c291818454c2aaa687ba0ebeca30d
+# b3b393d09f3f4b7ba70f6a823e647657
 msgid "To avoid having to writing the domain name all the time when you e.g. only describe Python objects, a default domain can be selected with either the config value :confval:`primary_domain` or this directive:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:85
-# ee440cf1c06843cc94c60d86bac44cf5
+# 34f3d15a150740139606d39557e85e3f
 msgid "Select a new default domain.  While the :confval:`primary_domain` selects a global default, this only has an effect within the same file."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:88
-# 80ade347d8464be6924e539469630291
+# 50a8c36bc3be4e97b1e3122821c90032
 msgid "If no other default is selected, the Python domain (named ``py``) is the default one, mostly for compatibility with documentation written for older versions of Sphinx."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:92
-# d9640fa5b51c456f9d4eee9a2d2e9d61
+# 32f7e7c57e974f38b4fbcff7a13b3055
 msgid "Directives and roles that belong to the default domain can be mentioned without giving the domain name, i.e. ::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:103
-# f6e4bef041d546a08c5c961d0fb310f9
+# 8a069126079b4fcf864caa2c28910f90
 msgid "Cross-referencing syntax"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:105
-# 20528a60fa544896bdbabaa0425ae189
+# 606b0d08f00f477690c7fbe69b8e95b5
 msgid "For cross-reference roles provided by domains, the same facilities exist as for general cross-references.  See :ref:`xref-syntax`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:108
-# 9da62a2f0e9a4db686cbe2855314e5a0
+# 21e65242296242ecbd57e505cabd0ea3
 msgid "In short:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:110
-# 792cdcb10d524876a365ecc6cc6b1546
+# 5e9ea12f513c4f1f96760973b63c3365
 msgid "You may supply an explicit title and reference target: ``:role:`title <target>``` will refer to *target*, but the link text will be *title*."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:113
-# 267eafef4d6f478da57ce546f865de22
+# 062ce489afdd4a7d81b1decb357a4d4c
 msgid "If you prefix the content with ``!``, no reference/hyperlink will be created."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:115
-# 408ff85ffde643a6848ceef63afdebb7
+# d45eb9f2caee41849e62c8441968501f
 msgid "If you prefix the content with ``~``, the link text will only be the last component of the target.  For example, ``:py:meth:`~Queue.Queue.get``` will refer to ``Queue.Queue.get`` but only display ``get`` as the link text."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:121
-# c8f0c0919a324849a32c4686c2b001d8
+# 5915181b12b64f328e20832e6741257c
 msgid "The Python Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:123
-# 524fd993ced04ff2aef469844282d67b
+# 386e64cb7ad44bf1990ce61bd6af7e02
 msgid "The Python domain (name **py**) provides the following directives for module declarations:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:128
-# b291b5711e4341a68eb9d613b1a16d0f
+# 7ec3cacec4f44bad813e768961d7b0d2
 msgid "This directive marks the beginning of the description of a module (or package submodule, in which case the name should be fully qualified, including the package name).  It does not create content (like e.g. :rst:dir:`py:class` does)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:132
-# c0292bf1165d47f2bc0ce6cc378e6294
+# 610a7f70043d4a4996f9f489eb5ae98e
 msgid "This directive will also cause an entry in the global module index."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:134
-# 0db579cf50c642dc996e182692ae164f
+# d0568f554da14b5ebd2916784c92ee8c
 msgid "The ``platform`` option, if present, is a comma-separated list of the platforms on which the module is available (if it is available on all platforms, the option should be omitted).  The keys are short identifiers; examples that are in use include \"IRIX\", \"Mac\", \"Windows\", and \"Unix\".  It is important to use a key which has already been used when applicable."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:140
-# 361e86acd3fc4c35bc07f5f6d095461a
+# 9c4b73d2ba934d12b7187fd95e87e976
 msgid "The ``synopsis`` option should consist of one sentence describing the module's purpose -- it is currently only used in the Global Module Index."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:143
-# 1414d96e201c44fe9dd50c882efca05e
+# 66388c40109345b5a8d79335899dac05
 msgid "The ``deprecated`` option can be given (with no value) to mark a module as deprecated; it will be designated as such in various locations then."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:149
-# 21d6036aee51419fb7f9294a837e5788
+# aaabf6b053a943b1b35f56a3c7002b5c
 msgid "This directive tells Sphinx that the classes, functions etc. documented from here are in the given module (like :rst:dir:`py:module`), but it will not create index entries, an entry in the Global Module Index, or a link target for :rst:role:`py:mod`.  This is helpful in situations where documentation for things in a module is spread over multiple files or sections -- one location has the :rst:dir:`py:module` directive, the others only :rst:dir:`py:currentmodule`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:158
-# ab9cf9e09e894156a07c7819dd139662
+# 62aa094ba6d64b42a2cc1e751a7bcaeb
 msgid "The following directives are provided for module and class contents:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:162
-# 1e62785ec46a49b29d47a6df8f71522f
+# 10bafacd4f4d46c5bedc27dbbafdb342
 msgid "Describes global data in a module, including both variables and values used as \"defined constants.\"  Class and object attributes are not documented using this environment."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:168
-# bac0741dccfd4b21b2571e2f474cff5e
+# b1b8bda83b4f49c3b9558ddc43ff1bf9
 msgid "Describes an exception class.  The signature can, but need not include parentheses with constructor arguments."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:173
-# ae5cb298c15f4ca597b2918fcbdf82c9
+# a8ab6cb44f194e62828c334735eba672
 msgid "Describes a module-level function.  The signature should include the parameters as given in the Python function definition, see :ref:`signatures`. For example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:179
-# 06007b3b0159442595a69bb65a494c1c
+# eeefc798c0c0434995c2284723ea7ec4
 msgid "For methods you should use :rst:dir:`py:method`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:181
-# 47b765e6350946a3a73f717b6d5d7126
+# b2e6173b151746fb851bce61d5ab1962
 msgid "The description should include information about the parameters required and how they are used (especially whether mutable objects passed as parameters are modified), side effects, and possible exceptions.  This information can optionally be given in a structured form, see :ref:`info-field-lists`.  A small example may be provided."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:190
-# c8cff41c6fea4b158d112ad0dcea9d22
+# 7cb8d6aa4ed6422d9c059f043f43124f
 msgid "Describes a class.  The signature can optionally include parentheses with parameters which will be shown as the constructor arguments.  See also :ref:`signatures`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:194
-# fe27d1d4bb8a4308b72081a3ff3de98d
+# 167bb78e03f74f259ec6ae9a14607d7f
 msgid "Methods and attributes belonging to the class should be placed in this directive's body.  If they are placed outside, the supplied name should contain the class name so that cross-references still work.  Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:208
-# 0cc1bb55321b4488ae3868b7079b1e45
+# 9ebd400bb95b480db1b6ed033a107992
 msgid "The first way is the preferred one."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:212
-# 34cd0d9b6b1d4b12ab946c362438314d
+# 29fa0abf9ebd4b37aeeef250803e4521
 msgid "Describes an object data attribute.  The description should include information about the type of the data to be expected and whether it may be changed directly."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:218
-# 24e4e5acf07f4c16b49945971177ec03
+# 38226b7eb01f46b0a483339c30775448
 msgid "Describes an object method.  The parameters should not include the ``self`` parameter.  The description should include similar information to that described for ``function``.  See also :ref:`signatures` and :ref:`info-field-lists`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:225
-# dd308bb6199e45b1b83670db9cfac254
+# a67a0c5f364a4b6285314618d8510abb
 msgid "Like :rst:dir:`py:method`, but indicates that the method is a static method."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:231
-# 75b9c3ce7cf244fa90b7a327bc7ba46f
+# fb39a29c335649c2aefec356d852464e
 msgid "Like :rst:dir:`py:method`, but indicates that the method is a class method."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:238
-# ff05cbb39913478f8d8da193e43fcfe3
+# 3b5e10dee5da4b64a8f47fabdbf4006f
 msgid "Describes a decorator function.  The signature should represent the usage as a decorator.  For example, given the functions"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:253
-# 275abb3a9c8b4a8c8b0c65bdf46f5652
+# e592219496d441f5a57d971cec92a5a4
 msgid "the descriptions should look like this::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:263
-# 8fa761e3aa4a4d3c94dacc140cc76dce
+# 6fb9294fbdd34565924adae17ce234a6
 msgid "(as opposed to ``.. py:decorator:: removename(func)``.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:265
-# a14701d25db64e938685f95227a0fb4b
+# dcce3b5bfd6f49c899276a119e9d04f2
 msgid "There is no ``py:deco`` role to link to a decorator that is marked up with this directive; rather, use the :rst:role:`py:func` role."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:271
-# 5b77dd898fcd4485845d24409cb2f907
+# 70bbf8846b9b47828fdc9ae254f58fb1
 msgid "Same as :rst:dir:`py:decorator`, but for decorators that are methods."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:273
-# 0bfec26a43b64f4b88082b3332249e7b
+# 84c35ef63bb544d78db0521e3ffe059b
 msgid "Refer to a decorator method using the :rst:role:`py:meth` role."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:279
-# 3152440e27824ee29b30921be573b18b
+# 956cf81cdfce4cba8ed0d990fe541ba7
 msgid "Python Signatures"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:281
-# 43e3be52c3a748e3a40e48f66cc42cba
+# 6ca2f7a23f1d437e9ab03da586879538
 msgid "Signatures of functions, methods and class constructors can be given like they would be written in Python."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:284
-# 0b305967f4d0452b924d966b66020fe2
+# 0481d21bcc6648b5a3e8fec3461fa1e7
 msgid "Default values for optional arguments can be given (but if they contain commas, they will confuse the signature parser).  Python 3-style argument annotations can also be given as well as return type annotations::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:290
-# 970ca70eaaa948eb9de59db75bd4cb6d
+# 775a41e5160b4ece9e110bb9b424bd0d
 msgid "For functions with optional parameters that don't have default values (typically functions implemented in C extension modules without keyword argument support), you can use brackets to specify the optional parts:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:296
-# 1667b03709ce4e1b89ee302956406add
+# d50920809b92430b86438cfc25326389
 msgid "It is customary to put the opening bracket before the comma."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:302
-# 764d8d56c577401b93ad64fe4f89cd88
+# e9b92a1fe72148c59bae70b71ed0d3b6
 msgid "Info field lists"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:306
-# 81eb6513664141e18e9de6b779d0a91f
+# 25c9bf01b1e04413a3b5be59202e0353
 msgid "Inside Python object description directives, reST field lists with these fields are recognized and formatted nicely:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:309
-# 2acbad0e143749e199376a0f5c45b440
+# 601a3502e6124c71afcafa6bdea4eee5
 msgid "``param``, ``parameter``, ``arg``, ``argument``, ``key``, ``keyword``: Description of a parameter."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:311
-# ac0e675f67eb4c4eb186cf495b7876c2
+# 76fdaf5a9a554f8dbf5d48c12e2f337d
 msgid "``type``: Type of a parameter."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:312
-# 99747ff62fc347298b4b1ede6a760516
+# 6bbd6fd2b2db46e2b865b984899663d6
 msgid "``raises``, ``raise``, ``except``, ``exception``: That (and when) a specific exception is raised."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:314
-# b661364f4658469b8a43029db1b09ddb
+# 947fa55f9ced457cb42c840eb8d06bf3
 msgid "``var``, ``ivar``, ``cvar``: Description of a variable."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:315
-# 50041b85b84b48e3931a5e4f1709b9f5
+# ce249f0928244d6eaaa5cef969810bfc
 msgid "``returns``, ``return``: Description of the return value."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:316
-# d3266a8ded0f451b96fd647eafd1de7d
+# 745cfd18076a4a26a1ebfb3f81cbfae1
 msgid "``rtype``: Return type."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:318
-# 4440aa0a5c2240209f27defdc8fa6d4e
+# e9dc60810bbd48e780d9dcf1937d9615
 msgid "The field names must consist of one of these keywords and an argument (except for ``returns`` and ``rtype``, which do not need an argument).  This is best explained by an example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:336
-# 6862fc909b494e1da36b687bd548a984
+# 1d5fa9f4dca647cfa38eaa5a7ffbb26f
 msgid "This will render like this:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:341
-# f05223b8dd5b4dfa844a34f533fff89a
+# 87442b85002147778b25e2802b864837
 msgid "Send a message to a recipient"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:343
-# b186c47d4960454dae57298f082a5ed1
+# eb3e8a37f3814573be5bba59a6f13a67
 msgid "The person sending the message"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:344
-# 20581821e278452d9a24256a90cd1723
+# 5a0b5131d9d34fc89bd46fba03b9d5f5
 msgid "The recipient of the message"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:345
-# ec2892d195f148b0a064ef96421ee932
+# 0f90bd9191c64aabb03cca9365600528
 msgid "The body of the message"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:346
-# 3af7ea871e9f4502a2f4a4b4f528ff47
+# 883f88a5152d45ec8e85297c145a7e25
 msgid "The priority of the message, can be a number 1-5"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:348
-# 55f2b3bd6b17478fa0324c19f20cef33
+# 3eddf9f9055342638f9a852297dbbe09
 msgid "the message id"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:349
-# 52e61718c806441b9ac52bc064b3a6a3
+# a9cf1fe693f740d482dcb7de1cc2e9fa
 msgid "int"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:350
-# 9c24de094a2d475b827309953fc5d641
+# d96a6183305d4d099775eec9e57bc95b
 msgid "if the message_body exceeds 160 characters"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:351
-# 677540a69c3f4fbaa4cc87fe0eb56f04
+# c63cd85d98c640719d47fb8b5eda398b
 msgid "if the message_body is not a basestring"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:353
-# d1d3d5541a2f488fb8b89e64e6424704
+# 22944a9cb867414eb292c372b16646c3
 msgid "It is also possible to combine parameter type and description, if the type is a single word, like this::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:362
-# 880c7368fc144f8fb2753103b53febbe
+# 106a232f99054d629c7464c4f960a9f7
 msgid "Cross-referencing Python objects"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:364
-# 0ab6ad251e2f456995e8e831a3e42194
+# 45e99ec9b6fd416394e033b91aee7352
 msgid "The following roles refer to objects in modules and are possibly hyperlinked if a matching identifier is found:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:369
-# a8d53bcfdd5f49efb3d633bab6af81e8
+# 1b3fd7f633b34bd6b9bf8d6d5959eea6
 msgid "Reference a module; a dotted name may be used.  This should also be used for package names."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:374
-# 28a28364f4d1418588696e0b13103b2e
+# 73ea2efee7004f779a3c25d332cc8dd1
 msgid "Reference a Python function; dotted names may be used.  The role text needs not include trailing parentheses to enhance readability; they will be added automatically by Sphinx if the :confval:`add_function_parentheses` config value is true (the default)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:381
-# 32d5998249bb40f396c129784076a435
+# 24a4747a08d2416290ac4e3632a64b88
 msgid "Reference a module-level variable."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:385
-# 9a6cb9d496e9436ab268060688e2fc21
+# 16d6df693dff4cac86d6c2194bad0ebe
 msgid "Reference a \"defined\" constant.  This may be a Python variable that is not intended to be changed."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:390
-# bed53262771e476eb2cb0b67f9eeef23
+# f80241ec861547fda69ca5cb2f906608
 msgid "Reference a class; a dotted name may be used."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:394
-# 81adbf1d18fc4f6786acbc9ff4fc0459
+# 6e7970cbaf884ba2ba7e0d1cedf6c1e6
 msgid "Reference a method of an object.  The role text can include the type name and the method name; if it occurs within the description of a type, the type name can be omitted.  A dotted name may be used."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:400
-# 9b73e7812f3443958a7042dd3115c7fa
+# fbbc65abc24143ff8656c6f47fcf8b91
 msgid "Reference a data attribute of an object."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:404
-# 05e80e6aeaff4e79b106eb96745dbb75
+# 90a46a1495474ecaaf03615c6c1cbc63
 msgid "Reference an exception.  A dotted name may be used."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:408
-# bd1e71ea639543c0810e570d5bb2c44d
+# 504321bd57034732a022274917f6d038
 msgid "Reference an object of unspecified type.  Useful e.g. as the :confval:`default_role`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:413
-# 46e84a56798243b688015100ce3953fc
+# 77d91cb371f74dc487259c8da9cc9958
 msgid "The name enclosed in this markup can include a module name and/or a class name. For example, ``:py:func:`filter``` could refer to a function named ``filter`` in the current module, or the built-in function of that name.  In contrast, ``:py:func:`foo.filter``` clearly refers to the ``filter`` function in the ``foo`` module."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:419
-# 9be50f4061e44958a39e3b13ae6056dd
+# a77510666649414f88f6f8afa157dc64
 msgid "Normally, names in these roles are searched first without any further qualification, then with the current module name prepended, then with the current module and class name (if any) prepended.  If you prefix the name with a dot, this order is reversed.  For example, in the documentation of Python's :mod:`codecs` module, ``:py:func:`open``` always refers to the built-in function, while ``:py:func:`.open``` refers to :func:`codecs.open`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:426
-# c00f68f358704d0eb468ce1a87197070
+# fb9f07ec95a448d6bc8ab7a55654b9ee
 msgid "A similar heuristic is used to determine whether the name is an attribute of the currently documented class."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:429
-# 80b5e860eeb34b85adf4c62c79cb5070
+# f549676ea5844cd580c4c580a6b2a2f9
 msgid "Also, if the name is prefixed with a dot, and no exact match is found, the target is taken as a suffix and all object names with that suffix are searched.  For example, ``:py:meth:`.TarFile.close``` references the ``tarfile.TarFile.close()`` function, even if the current module is not ``tarfile``.  Since this can get ambiguous, if there is more than one possible match, you will get a warning from Sphinx."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:436
-# a27df2f3a5464567b5847eacd20230aa
+# 7d5a4d6529aa43ae8c69b7fa13b4426a
 msgid "Note that you can combine the ``~`` and ``.`` prefixes: ``:py:meth:`~.TarFile.close``` will reference the ``tarfile.TarFile.close()`` method, but the visible link caption will only be ``close()``."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:444
-# ddb837ab2c7146d78d48e1b05f316c64
+# 21e19d9f00e04786adf17e66e8b713b7
 msgid "The C Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:446
-# 5600cf5f486b44e4bdfa4ee6db7a426c
+# 4d119258dc174e56a8153ff312003504
 msgid "The C domain (name **c**) is suited for documentation of C API."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:450
-# 951ab72f69c4412687f16806269c6508
+# 90c0b0e37c7e45a38c12119aa10bbe60
 msgid "Describes a C function. The signature should be given as in C, e.g.::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:454
-# edeff1c6e9f04f1ab3b67e582fd7d314
+# 7365044207494118a622317f11f94286
 msgid "This is also used to describe function-like preprocessor macros.  The names of the arguments should be given so they may be used in the description."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:457
-# eec3bf1474a74bf3a969a9c37685e0b4
+# 9e39bee275af45bab8fbf7e347fd0e85
 msgid "Note that you don't have to backslash-escape asterisks in the signature, as it is not parsed by the reST inliner."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:462
-# 4d5569ccd0b3448ebd18feeac8611b1f
+# bfbaed933bd440b2b7ce98bc5bee81c5
 msgid "Describes a C struct member. Example signature::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:466
-# 5719d9f083d54173acee964dcef2ed93
+# 5f7f6d714f994a888136f3e08ea3062d
 msgid "The text of the description should include the range of values allowed, how the value should be interpreted, and whether the value can be changed. References to structure members in text should use the ``member`` role."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:472
-# 38a1e840ec304c9ab225135ca3f13e13
+# 80443c932cfe499f8e690cda2361550f
 msgid "Describes a \"simple\" C macro.  Simple macros are macros which are used for code expansion, but which do not take arguments so cannot be described as functions.  This is a simple C-language ``#define``.  Examples of its use in the Python documentation include :c:macro:`PyObject_HEAD` and :c:macro:`Py_BEGIN_ALLOW_THREADS`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:480
-# f64a3a85f15445bdb7f8d7a242172aa6
+# ee374dabc0ee4197b245fc20a87d1170
 msgid "Describes a C type (whether defined by a typedef or struct). The signature should just be the type name."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:485
-# 587305ba72904ba6869cc4d82c87bf9d
+# edd69da514d14f3ea6b47abcd3390ad7
 msgid "Describes a global C variable.  The signature should include the type, such as::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:494
-# f1df78a791184a8cb268a5053254d316
+# 14a1ab7bd6e64e6885dc711d0aa0726a
 msgid "Cross-referencing C constructs"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:496
-# 3cb69abe188a4bcd8dc733545f8ac92d
+# 062ac52e46bd4ffcba54ae8f06587cfa
 msgid "The following roles create cross-references to C-language constructs if they are defined in the documentation:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:501
-# d0ec53fa3f8e45c1aea613afc9bcfb09
+# 30cb82ee23d54b18b701e3e57094584a
 msgid "Reference a C-language variable."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:505
-# 8ecb5154eb964c6da7bb6d64d1cde40c
+# b3fbe800954048ab88ccebc0c9e80899
 msgid "Reference a C-language function. Should include trailing parentheses."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:509
-# b561e0265bd6410084c15d4cf609fe64
+# db7003a44f59444982f0da2c239a052c
 msgid "Reference a \"simple\" C macro, as defined above."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:513
-# dccb39829d1346a9839e3ffaad7762c7
+# 5e93f7e537544a91b0a31a3988e968cb
 msgid "Reference a C-language type."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:517
-# 6afb9e134ebd4274ab58c5b47bcd9761
+# c69f823eb7d242b5ad870b4460a906ba
 msgid "The C++ Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:519
-# b559b0c0bdc64b5791f0993d473e5ee1
+# e7eb568ea6f4489da2bfe245474c447e
 msgid "The C++ domain (name **cpp**) supports documenting C++ projects."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:521
-# 891ccf2bb34a40cf9a9c273cb267b3b7
+# 49be2562a97e4b898f1a93c0ae864c1d
 msgid "The following directives are available:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:528
-# 5c8de9e83bdd4034b7e0cc616d1e07a9
+# 1269c5e295d442568b4c45094dcfd5ee
 msgid "Describe a C++ object.  Full signature specification is supported -- give the signature as you would in the declaration.  Here some examples::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:557
-# 2a00c14815394a84942cc3f0890eeecc
+# ca27a412777c434aaf310701a14359d9
 msgid "Will be rendered like this:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:561
-# 8ef46fea137b4d118877116a39c715df
+# c001d77c36fb409c8f7a9a399007ffc4
 msgid "Describes a method with parameters and types."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:565
-# b272938dbf1a4c5fadbaebf87871364e
+# 47fec5f236f54e158c713a1a3e60c355
 msgid "Describes a method without types."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:569
-# 8770047da1bb4bd39c9a590c223d1483
+# de3b22d8910b451ca2cb189886d5d309
 msgid "Describes the constant indexing operator of a templated array."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:573
-# d73e234d230d4c2ca8ca99966d10bff6
+# 8d4378ebbad04be9b99071f7a562d40f
 msgid "Describe a casting operator here."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:577
-# 819f7c99842d41039eff209ebf768a29
+# 13f661ae27ad47688ebee2b29e0d4bcd
 msgid "Describe a constexpr function here."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:587
-# f770c1e83b03499bbfc60101c8a08c4d
+# e6efef3570ca461d9b282ff59dd08f97
 msgid "Select the current C++ namespace for the following objects."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:592
-# 3bb1814f30a14187abf8b39b17c1d10d
+# ebd56777aa744a7cb2e5692f27aa5b22
 msgid "These roles link to the given object types:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:599
-# 41fb5c5dfbc642b1b2657512440c6ab4
+# 0a9747fba7c04508aca7094ebe875efa
 msgid "Reference a C++ object.  You can give the full signature (and need to, for overloaded functions.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:604
-# 496b0d00465f463b823965f0228eb72f
+# e83df29866ad4c92978c2a7afef15777
 msgid "Sphinx' syntax to give references a custom title can interfere with linking to template classes, if nothing follows the closing angle bracket, i.e. if the link looks like this: ``:cpp:class:`MyClass<T>```. This is interpreted as a link to ``T`` with a title of ``MyClass``. In this case, please escape the opening angle bracket with a backslash, like this: ``:cpp:class:`MyClass\\<T>```."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:611
-# c55e23a129d54e59b65056d6faf80ab1
+# acdf20b360d64e098d1fb62c2bf1478b
 msgid "Note on References"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:613
-# fc3afff631e44573a66f4b52b762dd34
+# 00d414aaf6384b97948e86d5e8eca846
 msgid "It is currently impossible to link to a specific version of an overloaded method.  Currently the C++ domain is the first domain that has basic support for overloaded methods and until there is more data for comparison we don't want to select a bad syntax to reference a specific overload.  Currently Sphinx will link to the first overloaded version of the method / function."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:622
-# ae6b86c1b16c402e99466f689c22bd42
+# 45deb2168d85485bbb4aae71ae6c3e24
 msgid "The Standard Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:624
-# fae1c37d04b44772b313835724f5b499
+# 38d8e4a331a64a4ead53fd45b2069cd6
 msgid "The so-called \"standard\" domain collects all markup that doesn't warrant a domain of its own.  Its directives and roles are not prefixed with a domain name."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:628
-# ea0bec1d37f54157b19e1eefa7712885
+# efc3175db372425db807ce7078c5ca7c
 msgid "The standard domain is also where custom object descriptions, added using the :func:`~sphinx.application.Sphinx.add_object_type` API, are placed."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:631
-# 3a9af557059948b39f0f99d1326d2f87
+# 13d70e74b489492eba882b8a7f24ec87
 msgid "There is a set of directives allowing documenting command-line programs:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:635
-# 7bea0f9b7a0349b0adce480cfcfa7bc3
+# b7b4507dd12e484dbea19e371d674bea
 msgid "Describes a command line argument or switch.  Option argument names should be enclosed in angle brackets.  Examples::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:646
-# a4fb72e037cc43018024db08704b4268
+# 5704fb9f218e42dea3abab003508751b
 msgid "The directive will create cross-reference targets for the given options, referencable by :rst:role:`option` (in the example case, you'd use something like ``:option:`dest_dir```, ``:option:`-m```, or ``:option:`--module```)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:652
-# a538f6e0aa9a42dfb137b8bed0854efa
+# 89eeb6e9f5984471a89abdf1d41872b1
 msgid "Describes an environment variable that the documented code or program uses or defines.  Referencable by :rst:role:`envvar`."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:657
-# 2b58774b82dc4280895702d2d1e64850
+# 98437170ea3848f280ed5ff80393dd06
 msgid "Like :rst:dir:`py:currentmodule`, this directive produces no output.  Instead, it serves to notify Sphinx that all following :rst:dir:`option` directives document options for the program called *name*."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:661
-# 24c8c8b04ce147c38e01504e1529e4c3
+# a1fc62a6697a4e3ab749a140c9266d93
 msgid "If you use :rst:dir:`program`, you have to qualify the references in your :rst:role:`option` roles by the program name, so if you have the following situation ::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:677
-# 95d5546142a04af6b9524d8cf18a29c9
+# 4aeb85cdc16f4680b63f53eb272c5a5e
 msgid "then ``:option:`rm -r``` would refer to the first option, while ``:option:`svn -r``` would refer to the second one."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:680
-# 8a5cad3590d24f598b36551fdae8b1ca
+# 39955bdce8a14ed8b008bffa7513b8f4
 msgid "The program name may contain spaces (in case you want to document subcommands like ``svn add`` and ``svn commit`` separately)."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:686
-# 6f47dac5170d40c2bddd85f5a13ef0b7
+# d675b5f410e146ff9043542838623ad2
 msgid "There is also a very generic object description directive, which is not tied to any domain:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:692
-# a13f0e7936984db297dc60095cd6b9c4
+# 08e6665922bc42af9a1625a2ab010305
 msgid "This directive produces the same formatting as the specific ones provided by domains, but does not create index entries or cross-referencing targets. Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:702
-# 2f303d9da04b4cbf9f4aac30d8de9472
+# 43adc9c589b74f308f4f6530c27cb08d
 msgid "The JavaScript Domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:704
-# f36ea482ea78415e969c6f605280e955
+# 9cf87da90cca4a1d9f0f894b71ef2faf
 msgid "The JavaScript domain (name **js**) provides the following directives:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:708
-# 0e6731d947b5477a8088c04e8bb59521
+# 0baeb2902d024162ab2a32903b8c8b2f
 msgid "Describes a JavaScript function or method.  If you want to describe arguments as optional use square brackets as :ref:`documented <signatures>` for Python signatures."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:712
-# caf4e628e9284efc87549f7ffe12823b
+# b77257ebe8d4456698d84c492add7bbd
 msgid "You can use fields to give more details about arguments and their expected types, errors which may be thrown by the function, and the value being returned::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:726
 #: ..\..\sphinx\doc\domains.rst:748
-# 684c1b58d5e14a08852b0ddc493ec6f8
-# 6868c064c61f4d29a1f0ac6cda3f861f
+# 541d10423fc24f6e8210d23e5e220b6c
+# a5a1bf25225d4b52b5a0f6cedbe3081a
 msgid "This is rendered as:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:730
-# 41baeacc28224b9eb8718479cda9a24e
+# 7ce58c22f00f4d48be64b70f3f36fa26
 msgid "An URI to the location of the resource."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:731
-# 7c0f10f6e4414f5a9b1db61a24c97e3e
+# 7fca43b1dcfa46f2aafee88c9630bed9
 msgid "Gets called with the object."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:732
-# 0dd20e67514249f4aed634a897b1ff9f
+# d5e85546dae24c3e9c4be86ce195313d
 msgid "Gets called in case the request fails. And a lot of other text so we need multiple lines."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:735
-# 04d857ab6650487194a2e12fc60bb9a1
+# 50fcc8bd23d6423389224f3e33e5d6e1
 msgid "For whatever reason in that case."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:736
-# 08cf7069c34b4cb598c3d00d3023e813
+# 1d076652625245de9933fd422519d477
 msgid "Something."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:740
-# c0ee3946431344b4a9936ff46d14a48e
+# 8b751ed5d3f049fdbf9dc259e7db3a3b
 msgid "Describes a constructor that creates an object.  This is basically like a function but will show up with a `class` prefix::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:752
-# 3fd1185384dd4982b1080eb012657641
+# 28d16c75d82241e9acb4ba0df4b8d9b1
 msgid "The name of the animal"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:753
-# c1566c2d1a72462788bdd1ef2b911f03
+# f687b8e3b00540238c7e6fd1affa77cf
 msgid "an optional age for the animal"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:757
-# 28e296c81d7849ce90d33b2f358a2cb6
+# 6d876ca6a3524813a9d73b3de3f47ceb
 msgid "Describes a global variable or constant."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:761
-# c5fdac56020346859fab9af5f9d5a087
+# 6c69e725b6ef4071ba2e9e33f7a85aec
 msgid "Describes the attribute *name* of *object*."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:765
 #: ..\..\sphinx\doc\domains.rst:818
-# 7b686ea543ef4f049dc84d8979f17b76
-# 578abafdb33c400485cc80292075bac8
+# 2311f25198c94eaf949b89444b2354fd
+# 2404851fdd274d9599ecc81ff0d4a5c9
 msgid "These roles are provided to refer to the described objects:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:774
-# e3ab4ae448bb4cc9a3bcb764d7bc4951
+# 039cf7daf82e47a599234ac8c13fd53d
 msgid "The reStructuredText domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:776
-# 567922758639488e8030fa47a1cce790
+# 0e2c376b2b7b464792f3abf3ed0f31ed
 msgid "The reStructuredText domain (name **rst**) provides the following directives:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:780
-# bdcacf369b1d416fa58080cc1e9db227
+# 70ca68922767479687759d3d504c7067
 msgid "Describes a reST directive.  The *name* can be a single directive name or actual directive syntax (`..` prefix and `::` suffix) with arguments that will be rendered differently.  For example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:792
 #: ..\..\sphinx\doc\domains.rst:810
-# 79800ac1898545d8b87e383f6ac54489
-# 8a408a253ad146c2adb9f2cc8de9de93
+# 6ce8deef85ae4ad3a4c816d197a876bc
+# 1f2a784961aa4cfd94434bdbe9590bfd
 msgid "will be rendered as:"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:796
 #: ..\..\sphinx\doc\domains.rst:814
-# af6f9649843548f3b2c7aad263be4cfb
-# 5c09018a87fa4589acd10aa134cc4dc7
+# 9062fda91b0c4f5ebe45f792de783111
+# ab983ce8111e45e688509a83c7157637
 msgid "Foo description."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:800
-# c241cbc0a30944688b3f05fcf06f1236
+# 2445d321b11e41bc9bb6272c20026e99
 msgid "Bar description."
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:804
-# bcb34b5eacdd4368bfd397ef12a0d9ec
+# d7a2bf308d6a45239036c74d7a3d7bd0
 msgid "Describes a reST role.  For example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:825
-# 752c06925eb44aa4a7ded0c672f03021
+# 0bf1404bd04a4c6faf2a65308f87ffd4
 msgid "More domains"
 msgstr ""
 
 #: ..\..\sphinx\doc\domains.rst:827
-# 3bd9baabc2eb42d0987295a27cc29b10
+# 9aef409940294cbdb581a432844f19b5
 msgid "The sphinx-contrib_ repository contains more domains available as extensions; currently Ada_, CoffeeScript_, Erlang_, HTTP_, Lasso_, MATLAB_, PHP_, and Ruby_ domains. Also available are domains for `Common Lisp`_, dqn_, Go_, Jinja_, Operation_, and Scala_."
 msgstr ""
 

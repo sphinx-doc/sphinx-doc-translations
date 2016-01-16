@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"POT-Creation-Date: 2016-01-16 17:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,357 +17,357 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\sphinx\doc\intl.rst:4
-# 4822a6b0fec546c293b913fe51d8c6fe
+# 383b4c74ef004432880be587971d4de4
 msgid "Internationalization"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:8
-# c1666c36c31941f397d0f0441764695f
+# e1760e468c694e48b1a514a6875fefd0
 msgid "Complementary to translations provided for Sphinx-generated messages such as navigation bars, Sphinx provides mechanisms facilitating *document* translations in itself.  See the :ref:`intl-options` for details on configuration."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:15
-# be55f485687645eaaea9d61cbb77eb3a
+# b0f867d70db6431bbb7ea70fdd0578de
 msgid "Workflow visualization of translations in Sphinx.  (The stick-figure is taken from an `XKCD comic <http://xkcd.com/779/>`_.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:22
-# 400843a7f67845f4a99349c5f4ea4c97
+# 684e37cdabe64c448f8cc829e98b4400
 msgid "Sphinx internationalization details"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:24
-# a5dc1987161f4f7a8f38ff185d904912
+# 4974910a413743b7b3fe4677fc779b81
 msgid "**gettext** [1]_ is an established standard for internationalization and localization.  It naively maps messages in a program to a translated string. Sphinx uses these facilities to translate whole documents."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:28
-# cf5c1f25cbd144dfb59b900d8763282a
+# bebff7ab22254f96879d2e917500307d
 msgid "Initially project maintainers have to collect all translatable strings (also referred to as *messages*) to make them known to translators.  Sphinx extracts these through invocation of ``sphinx-build -b gettext``."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:32
-# 170bb9d5a0ba4d7b90cad80ffba18708
+# 6205e174a92f41d28de6c5a978431f5d
 msgid "Every single element in the doctree will end up in a single message which results in lists being equally split into different chunks while large paragraphs will remain as coarsely-grained as they were in the original document.  This grants seamless document updates while still providing a little bit of context for translators in free-text passages.  It is the maintainer's task to split up paragraphs which are too large as there is no sane automated way to do that."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:40
-# 1d32e01e011948f7a869504ec4450ed5
+# 37a226abbbff450e8a3a21a599a6dcdb
 msgid "After Sphinx successfully ran the :class:`~sphinx.builders.gettext.MessageCatalogBuilder` you will find a collection of ``.pot`` files in your output directory.  These are **catalog templates** and contain messages in your original language *only*."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:45
-# e5ec927298a04c14bff7aada8bfa5b33
+# 39bc5b466dc2426597eb6689b9610817
 msgid "They can be delivered to translators which will transform them to ``.po`` files --- so called **message catalogs** --- containing a mapping from the original messages to foreign-language strings."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:49
-# 6c4b7a79ef144de1989526c96a06f493
+# d46c6584d15445aabc4a89f8f8934424
 msgid "Gettext compiles them into a binary format known as **binary catalogs** through :program:`msgfmt` for efficiency reasons.  If you make these files discoverable with :confval:`locale_dirs` for your :confval:`language`, Sphinx will pick them up automatically."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:54
-# 1cecee3313d5466c8f696625e46e71ef
+# 0a62aa6b72084ac6aae07f37648cb9f6
 msgid "An example: you have a document ``usage.rst`` in your Sphinx project.  The gettext builder will put its messages into ``usage.pot``.  Imagine you have Spanish translations [2]_ on your hands in ``usage.po`` --- for your builds to be translated you need to follow these instructions:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:59
-# d25f5fd94f0f419d90e396d9c73642e1
+# 6be8c7f1a39644ceb2fb11d4e285b769
 msgid "Compile your message catalog to a locale directory, say ``locale``, so it ends up in ``./locale/es/LC_MESSAGES/usage.mo`` in your source directory (where ``es`` is the language code for Spanish.) ::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:65
-# 4158e931ed5a4657a66997115ef60820
+# f17df65d59d242cb9f28933b5e1c9e4d
 msgid "Set :confval:`locale_dirs` to ``[\"locale/\"]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:66
-# 80ef532bec6947a0af687a4af8cf02e3
+# 601eccafb5a24a4c8efb800d02953b65
 msgid "Set :confval:`language` to ``es`` (also possible via :option:`-D`)."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:67
-# c0484148b58f4620901356b4f45b37ed
+# 9ad5534a836e48b489ea2ced58ec914b
 msgid "Run your desired build."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:71
-# aa33d6693f0448edb299aba013c228fc
+# 5db41885e8b443399b8c7dc3bc8c77b8
 msgid "Translating with sphinx-intl"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:74
-# 018dc35fdf4a42e293b2d150a33f7284
+# 9fef0f581d1a4fdd8ceebe2036f048e0
 msgid "Quick guide"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:76
-# 8a3c8b6d59a340dc94324a4af2d11ccd
+# 176507ba16294557b71051d669bf5e93
 msgid "`sphinx-intl`_ is a useful tool to work with Sphinx translation flow. This section describe a easy way to translate with sphinx-intl."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:79
-# c5a871c7e6c64b62880f66c111001854
+# d5d675b3a5a74015b0a413551d7163cc
 msgid "Install `sphinx-intl`_ by :command:`pip install sphinx-intl` or :command:`easy_install sphinx-intl`."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:82
-# d86398a37b23433b95b01bdcf6d6b93b
+# 583c55fe3ddd403da0882dbfbfe4cc0f
 msgid "Add configurations to your `conf.py`::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:87
-# 98ce25fd10bf405abf42de4712a3c030
+# 743cc4f44c2547838ad6f7fb059f21bb
 msgid "This case-study assumes that :confval:`locale_dirs` is set to 'locale/' and :confval:`gettext_compact` is set to `False` (the Sphinx document is already configured as such)."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:91
-# 4d7086c715e5406ca345887392ec83f0
+# 8919b1d25af545d2a3e609be1261cba9
 msgid "Extract document's translatable messages into pot files::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:95
-# bd2b47f87ce8497388745df5792a8027
+# 6d6dcda51dd84da494d4119392755a0d
 msgid "As a result, many pot files are generated under ``_build/locale`` directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:98
-# 99871a71a56844a6aee6cfb633690b09
+# 32d2185202f44d0392a834ecb5c40627
 msgid "Setup/Update your `locale_dir`::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:102
-# 4ea1aa28efb54eb2ae3c77208eda24b1
+# eb1c3cdab3b94bed91ad8bd51c300677
 msgid "Done. You got these directories that contain po files:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:104
-# 7896abae177a44ed803803715cd84a63
+# 62d609150a6242a3b89df9e888c33873
 msgid "`./locale/de/LC_MESSAGES/`"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:105
-# 833308593f0d4c7da071d228a003ec99
+# 340b77e1283042f9b9903b6b157cfc4f
 msgid "`./locale/ja/LC_MESSAGES/`"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:107
-# b94f2f41f2224adb84f2ef9f6bc536cb
+# a63aa12c02a74557ac24c8cb26e8975f
 msgid "Translate your po files under `./locale/<lang>/LC_MESSAGES/`."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:109
-# 48e54d1fa5a345c282206530207bb415
+# 730daa2428504375ad4bf403655cc587
 msgid "Build mo files and make translated document."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:111
-# 6cd5fbd4f61048cd80427b12891e3ed8
+# f55b0a8651f74badb9ac36d490cc4932
 msgid "You need a :confval:`language` parameter in ``conf.py`` or you may also specify the parameter on the command line::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:117
-# 935573f56d83465dac6550c18eb80c34
+# 0982083838c444928f3fac63e92c4cbd
 msgid "Congratulations! You got the translated documentation in the ``_build/html`` directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:122
-# a3ce2b46f1f1495c86e9b3997225bab6
+# 902b404dd3a64cbba0b31d1ca0ec47da
 msgid "Translating"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:124
-# 074158d7af3d42fd9bfaf0bfaf681346
+# 2073d1999bdd44caa985d57b1dd49c72
 msgid "Translate po file under ``./locale/de/LC_MESSAGES`` directory. The case of builders.po file for sphinx document:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:134
-# 055cd586104b447882a7d4d0c1fa8d98
+# c49d71d68d994764b6da5ecce42c2865
 msgid "Another case, msgid is multi-line text and contains reStructuredText syntax:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:148
-# 22a74cd05acc4acfaa3c574c1bbbd414
+# 932811a534c84bb7bd043eee9d21655d
 msgid "Please be careful not to break reST notation.  Most po-editors will help you with that."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:153
-# e0ab68cfe05e461a9786d5d3878281c5
+# 2772e555d12c403fa3b7a5a19d7f5867
 msgid "Update your po files by new pot files"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:155
-# 0399d7a143ac49d7b04c70f3b7f17984
+# 955b9f2927c543f7960c346ada06d85b
 msgid "If a document is updated, it is necessary to generate updated pot files and to apply differences to translated po files. In order to apply the updating difference of a pot file to po file, use the :command:`sphinx-intl update` command."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:166
-# 14659238d2b34f6889025be864f76f2b
+# e9609dd33b8149e5841525ec8bb4cd9e
 msgid "Using Transifex service for team translation"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:168
-# a3c6a2c4fbfc486890de587a3ea526f7
+# 987adf0cd5b24e52a1567072e1afba49
 msgid "Transifex_ is one of several services that allow collaborative translation via a web interface.  It has a nifty Python-based command line client that makes it easy to fetch and push translations."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:175
-# 5d7eee7d45bf4fcd96755d88a92e2324
+# 6e33b35399dd448e8f661c3246de5cf8
 msgid "Install `transifex-client`_"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:177
-# 83370b4df91d4cb0879c059d3317c96a
+# c4d077cc0bed41f88cc2c892a07da119
 msgid "You need :command:`tx` command to upload resources (pot files)."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:183
-# aa08845adb25406bae6886ae9a11b0c7
+# 1545fc00922d4d6caf404066b2b04de3
 msgid "`Transifex Client v0.8 &mdash; Transifex documentation`_"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:186
-# 6044616c55524b8f8e1a1a3345bd4067
+# f38405b3180947a680ddc4eb109d0c93
 msgid "Create your transifex_ account and create new project for your document"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:188
-# 95e5bce89158465b8bf8337080ffa517
+# c241ad66f8e74c0087ca7f7ed87d6675
 msgid "Currently, transifex does not allow for a translation project to have more than one version of the document, so you'd better include a version number in your project name."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:192
-# e7504ce0e4174fe79bf225bc31bbc778
+# 5ff2c0891f2e4e43b3dff44b6737ba53
 msgid "For example:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:194
-# b20dd6db860a49c389c298a15e45a5dd
+# e7d1379047374d549187022a55230951
 msgid "``sphinx-document-test_1_0``"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:195
-# b665aea1bbef426baccf35288e998804
+# 6671118bc5154add8ef7e3372b5df651
 msgid "https://www.transifex.com/projects/p/sphinx-document-test_1_0/"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:198
-# df7c7c2fec59424f8cd3fb7e2cf2b02f
+# b92fb41de7bc4bbb8647420648ee71ec
 msgid "Create config files for tx command"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:200
-# 98176155acbe4158a70d02d3e6bbd3c6
+# bf58f136933b45b0949eaddbfaebe68c
 msgid "This process will create ``.tx/config`` in the current directory, as well as a ``~/.transifexrc`` file that includes auth information."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:211
-# fda17380d77b452baac8f9abfbdfc5ab
+# 83b1cb2db46b493882fc8cfe86646e71
 msgid "Upload pot files to transifex service"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:213
-# 849e09e9786746c9a6d77103305f826d
+# 3dca071941304b6fbb070f647284702c
 msgid "Register pot files to ``.tx/config`` file:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:221
-# 1c8f4a57286143cdb5519558813d693e
+# 1f429dca1aa84072bca10fa58d13c1f5
 msgid "and upload pot files:"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:233
-# 1344efdd1c96414da733cfc08a5b88d9
+# 3a5fbd381ab34125bc5f4affdfbd8c77
 msgid "Forward the translation on transifex"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:238
-# fb45f8116905471cb8e6c127a4c6bc6f
+# b6f2aefd639d4173a161b448137453c8
 msgid "Pull translated po files and make translated html"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:240
-# da2e00feac8a4857802d2c2b7bfda254
+# 5032ecfef2b9485c935b3ffa5244572b
 msgid "Get translated catalogs and build mo files (ex. for 'de'):"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:251
-# b8114ad0d58941eea019469bab98c1e0
+# 1e9316fad8c848d9abaea8ab69dfe778
 msgid "Build po files into mo and make html::"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:257
-# d4ee939e59724260b44b17099f6a521f
+# 8da7a46520c7496a8352aee524b2cd7f
 msgid "That's all!"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:260
-# 86d46727fdda4f69af381143caa0fe45
+# 8abdd9336dbb4340b71610d783fd35fa
 msgid "Translating locally and on Transifex"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:262
-# 5cfb526b2a4f4333bb31e45157bea6ec
+# 3121a08001804ef1818bb6f86d116689
 msgid "If you want to push all language's po files, you can be done by using :command:`tx push -t` command. Watch out! This operation overwrites translations in transifex."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:266
-# daff39be254548f48047f2fee93ba00d
+# 37bc585474b642dab84779a1a3e0dd8f
 msgid "In other words, if you have updated each in the service and local po files, it would take much time and effort to integrate them."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:272
-# 2e6ab14a63d446a88aedc7b6739e7771
+# 63f97b63e0804a10b7f03810c5356e37
 msgid "Contributing to Sphinx reference translation"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:274
-# 874a382938b84027a47fad795c7e0eed
+# 0f44b78e4caf4c25acb46a0f5d7e076c
 msgid "The recommended way for new contributors to translate Sphinx reference is to join the translation team on Transifex."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:277
-# d0a8ad4ccdde453490b4ed2823f693c4
+# b8ad29834f394fbb8a44d2f06b409c64
 msgid "There is `sphinx translation page`_ for Sphinx-1.2 documentation."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:279
-# 413685d5b01540df9a987cf30a969c36
+# 2ed94d55f2f94f2a8c546b583610ad2b
 msgid "Login to transifex_ service."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:280
-# 75269df3f1e849bbb726a0414c23fe81
+# 4fc5fca4d2d8496f83f5bf338d097412
 msgid "Go to `sphinx translation page`_."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:281
-# f1f54589cb87478ab7a1ec92b375bb4e
+# 04db26e8b80949fda39f467db48346ff
 msgid "Click ``Request language`` and fill form."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:282
-# 78982dda1c474c95953056efa58cd172
+# b624e0cc1ed94080b0039e6953a9237b
 msgid "Wait acceptance by transifex sphinx translation maintainers."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:283
-# 8ba1a922c36e43328e7a2ce2f690c0f2
+# 34b8fcd1bffd41fe8c453b6aff090580
 msgid "(after acceptance) translate on transifex."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:287
-# 95fc17f307484fe28672dee588dd7529
+# dea84f87defd4d21a497df538b2db818
 msgid "Footnotes"
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:288
-# b421381cd15c476bbff7f8baaf5c69af
+# faa65ef1ce1d42b584bd230ae1df6c43
 msgid "See the `GNU gettext utilites <http://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ for details on that software suite."
 msgstr ""
 
 #: ..\..\sphinx\doc\intl.rst:291
-# d73a12b9488c4f2bbd0aee85958b07ae
+# 83f7efaa773b4eaa8bbb1b4f74d86e55
 msgid "Because nobody expects the Spanish Inquisition!"
 msgstr ""
 

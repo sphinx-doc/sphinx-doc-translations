@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 17:52+0900\n"
+"POT-Creation-Date: 2016-01-16 17:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,1712 +17,1712 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\sphinx\doc\config.rst:6
-# 826f50dd4ff443e38c7de09dc00f6420
+# f7baa705bf0b4c9c9580679227e72912
 msgid "The build configuration file"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:11
-# 644edeabf0074a9e9488bbd0a704fbca
+# 1567f122eec041aab48d094a2d37f094
 msgid "The :term:`configuration directory` must contain a file named :file:`conf.py`. This file (containing Python code) is called the \"build configuration file\" and contains all configuration needed to customize Sphinx input and output behavior."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:15
-# 12ed06160e034a42b84a76bd75fcd895
+# 003e48c102b54c6bbc40dd77f97c1597
 msgid "The configuration file is executed as Python code at build time (using :func:`execfile`, and with the current directory set to its containing directory), and therefore can execute arbitrarily complex code.  Sphinx then reads simple names from the file's namespace as its configuration."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:20
-# 3a3a792c8a954ac6a57870edc5dc4c86
+# fe00d0bdc4f24000ad8acd2c0e53d949
 msgid "Important points to note:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:22
-# 7e57270862e440a29c8fc3dff27e4e66
+# e1a95779ccc8413ab5c4ee73304fae22
 msgid "If not otherwise documented, values must be strings, and their default is the empty string."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:25
-# fce4be47011142d4af34c3f06f25fc22
+# c03fb3b272744756a596ff6849dcbccc
 msgid "The term \"fully-qualified name\" refers to a string that names an importable Python object inside a module; for example, the FQN ``\"sphinx.builders.Builder\"`` means the ``Builder`` class in the ``sphinx.builders`` module."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:30
-# 524595bf48b74dfa8881bb7f7a1aef96
+# 46ef575331844ec8a50411e820bc46ba
 msgid "Remember that document names use ``/`` as the path separator and don't contain the file name extension."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:33
-# 80cb489235e84031b5fb0b1dc377e4aa
+# ff223e27b6ae43b698fcb012428e8dd3
 msgid "Since :file:`conf.py` is read as a Python file, the usual rules apply for encodings and Unicode support: declare the encoding using an encoding cookie (a comment like ``# -*- coding: utf-8 -*-``) and use Unicode string literals when you include non-ASCII characters in configuration values."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:38
-# 50c209b64b7c446daf248b327eb15281
+# 8fc2cef1baf944a3bb2acaf59284ffb0
 msgid "The contents of the config namespace are pickled (so that Sphinx can find out when configuration changes), so it may not contain unpickleable values -- delete them from the namespace with ``del`` if appropriate.  Modules are removed automatically, so you don't need to ``del`` your imports after use."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:45
-# d6149a4364e4412ba4bacb46a03b8e1b
+# 32fc8f6b73954905b26dc4b4796e620a
 msgid "There is a special object named ``tags`` available in the config file. It can be used to query and change the tags (see :ref:`tags`).  Use ``tags.has('tag')`` to query, ``tags.add('tag')`` and ``tags.remove('tag')`` to change. Note that the current builder tag is not available in ``conf.py``, as it is created *after* the builder is initialized."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:54
-# 2511c0a017ca4c4aa4fdd5f8a8c88513
+# 34d77ee28a5343f9a9cd9be4a5b0650c
 msgid "General configuration"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:58
-# 23a29e5be27d47ccbdeab25817926c54
+# 98cb91a4a51c4cfba8a474c8587b0e44
 msgid "A list of strings that are module names of Sphinx extensions.  These can be extensions coming with Sphinx (named ``sphinx.ext.*``) or custom ones."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:61
-# eca75441cce141839a9b207c357dce97
+# 7b3c78f3e9f14e78acec06c878c0f303
 msgid "Note that you can extend :data:`sys.path` within the conf file if your extensions live in another directory -- but make sure you use absolute paths. If your extension path is relative to the :term:`configuration directory`, use :func:`os.path.abspath` like so::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:72
-# aa23f88df1ca4c83a2165d99250c5a84
+# e181e73ee7fc4f31a5948069a0ebdcdd
 msgid "That way, you can load an extension called ``extname`` from the subdirectory ``sphinxext``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:75
-# 46f88971346e4b1e9ff3c24a2bc8fe6b
+# 9039dab5c6e24a41b7966b0318fe0dd1
 msgid "The configuration file itself can be an extension; for that, you only need to provide a :func:`setup` function in it."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:80
-# 12797e844eb4474ebc0e3c5076d1652c
+# 9e64e24d2e0244e39da882eb24c41ce3
 msgid "The file name extension of source files.  Only files with this suffix will be read as sources.  Default is ``'.rst'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:85
-# b85dd5b59c79466f90baa5cfc48f80c2
+# 01ce6bca59dc414583a3ad371d938df4
 msgid "The encoding of all reST source files.  The recommended encoding, and the default value, is ``'utf-8-sig'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:88
-# c80d0ee415284316a8de4e132f101a04
+# b967b868da6a437185015536b5fb091b
 msgid "Previously, Sphinx accepted only UTF-8 encoded sources."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:93
-# 92c86570dc2049d48c7d3acbb87d5c8a
+# b0247c15b3584236a33e8314a25e612e
 msgid "The document name of the \"master\" document, that is, the document that contains the root :rst:dir:`toctree` directive.  Default is ``'contents'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:98
-# 2a9073a80931407b92de5e6f18a74521
+# 9cf0796bab7a47bfa9094f0a04d3e43d
 msgid "A list of glob-style patterns that should be excluded when looking for source files. [1]_ They are matched against the source file names relative to the source directory, using slashes as directory separators on all platforms."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:102
-# e7fc2db53b564823a17682b2982da369
+# f828a11c4710407bad10eea21f682370
 msgid "Example patterns:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:104
-# bc45f04252b24439aea14a77623411d0
+# d5e1767b50cb4bf685a7e0ef8f5e0b66
 msgid "``'library/xml.rst'`` -- ignores the ``library/xml.rst`` file (replaces entry in :confval:`unused_docs`)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:106
-# 02a44a54daed4d35a048eafac34b3932
+# 7cbb0cdb1b064f4f8dcc6e01f6986642
 msgid "``'library/xml'`` -- ignores the ``library/xml`` directory (replaces entry in :confval:`exclude_trees`)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:108
-# bb59a02ac5cf4fbdb04b2cebf9491e0e
+# 376e07ff6a78403d91ee1e99ad7438ec
 msgid "``'library/xml*'`` -- ignores all files and directories starting with ``library/xml``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:110
-# 9b44ed58e7c94b61829fc3b91e7498e4
+# c3411a5babe54219aa143f47473c29b2
 msgid "``'**/.svn'`` -- ignores all ``.svn`` directories (replaces entry in :confval:`exclude_dirnames`)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:113
-# fd838a3a538d4c4ca93de3f49a2ff2ab
+# d85a14a74aaf46bbbeb7c96238b950a3
 msgid ":confval:`exclude_patterns` is also consulted when looking for static files in :confval:`html_static_path`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:120
-# e36990525e66453780617d0b9b4abe7a
+# f43e845b84de49d7bc2987f0b31da7f9
 msgid "A list of document names that are present, but not currently included in the toctree.  Use this setting to suppress the warning that is normally emitted in that case."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:124
 #: ..\..\sphinx\doc\config.rst:135
 #: ..\..\sphinx\doc\config.rst:147
-# b8244ef9d19e4ea287c85db9d5c0a87d
-# 82b6c4ba69864f1497be23d2c025149c
-# 7e92b320a0a745a08b2ae9324d5e5cc0
+# bcc43d7b855d4c1abb67ae52dcc89d84
+# 061d7f281fb346f19931db965862c053
+# 7c54e88f020e499f91fe15a828f31d09
 msgid "Use :confval:`exclude_patterns` instead."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:129
-# 8af71d9fdcea4d5f896597c3b32e31c6
+# 72819be45e1948dfa1f47a5c060882d0
 msgid "A list of directory paths, relative to the source directory, that are to be recursively excluded from the search for source files, that is, their subdirectories won't be searched too.  The default is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:140
-# 3bf2b75055a54f74a2470ebeb018de0f
+# 95175e1e1b1a4ff99d10ad5f24eb0cce
 msgid "A list of directory names that are to be excluded from any recursive operation Sphinx performs (e.g. searching for source files or copying static files).  This is useful, for example, to exclude version-control-specific directories like ``'CVS'``.  The default is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:152
-# 2130d4b1e83c4dcb8968e0e9e3b20ca7
+# bbb720b12ff8454f8cb29a759b89878f
 msgid "A list of paths that contain extra templates (or templates that overwrite builtin/theme-specific templates).  Relative paths are taken as relative to the configuration directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:158
-# 3145d57334bb49c18d6fa065bc03405c
+# d4b403f51b9340938f825604ba367488
 msgid "A string with the fully-qualified name of a callable (or simply a class) that returns an instance of :class:`~sphinx.application.TemplateBridge`.  This instance is then used to render HTML documents, and possibly the output of other builders (currently the changes builder).  (Note that the template bridge must be made theme-aware if HTML themes are to be used.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:168
-# dfb30c84033c4fda8d4e29991a9f4400
+# 6859d65c45414c55892486d7e976b54a
 msgid "A string of reStructuredText that will be included at the end of every source file that is read.  This is the right place to add substitutions that should be available in every file.  An example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:180
-# 03ca979827ad4403bdd8ae5a5e2edc16
+# ad940b0a029f44aca8e5eeb2aa0f68bc
 msgid "A string of reStructuredText that will be included at the beginning of every source file that is read."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:190
-# fc82f43352f3422d8f49db41554872a1
+# 9f00e363a3984aeba5de76bb54a81362
 msgid "The name of the default :ref:`domain <domains>`.  Can also be ``None`` to disable a default domain.  The default is ``'py'``.  Those objects in other domains (whether the domain name is given explicitly, or selected by a :rst:dir:`default-domain` directive) will have the domain name explicitly prepended when named (e.g., when the default domain is C, Python functions will be named \"Python function\", not just \"function\")."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:203
-# fdc8cfeb27a0441eaf24ae3d27bd23d9
+# 94626275770c4c4bac6d5c881bbb1ac0
 msgid "The name of a reST role (builtin or Sphinx extension) to use as the default role, that is, for text marked up ```like this```.  This can be set to ``'py:obj'`` to make ```filter``` a cross-reference to the Python function \"filter\".  The default is ``None``, which doesn't reassign the default role."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:208
-# e03efd47e93e45f3be8d505dd3c6e2f0
+# 1b9ae3ab969c482dbeb923ab03666faf
 msgid "The default role can always be set within individual documents using the standard reST :rst:dir:`default-role` directive."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:215
-# f49dee534edd4865a0301c1dc8a8f9b0
+# a285222714544243b0b61e205407cabb
 msgid "If true, keep warnings as \"system message\" paragraphs in the built documents. Regardless of this setting, warnings are always written to the standard error stream when ``sphinx-build`` is run."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:219
-# 7f6b7d0364f849fb9827aa8e60153b56
+# fd2a33fed38d4ff78abb7c4f2b411d2a
 msgid "The default is ``False``, the pre-0.5 behavior was to always keep them."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:225
-# 967fc943394b4a9d83d6f1a20a097646
+# 7d5b885882ea4050ac02a97b13cb4b14
 msgid "If set to a ``major.minor`` version string like ``'1.1'``, Sphinx will compare it with its version and refuse to build if it is too old.  Default is no requirement."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:233
-# 30dcff575f5c428d9d62f5008aa88e61
+# 8bf98f6c0ce84ba3b97583df846bf8b3
 msgid "If true, Sphinx will warn about *all* references where the target cannot be found.  Default is ``False``.  You can activate this mode temporarily using the :option:`-n` command-line switch."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:241
-# 229cad0da524491ca90d689195897790
+# 8036fda8eaf04b0989358a65fa19c3ad
 msgid "A list of ``(type, target)`` tuples (by default empty) that should be ignored when generating warnings in \"nitpicky mode\".  Note that ``type`` should include the domain name if present.  Example entries would be ``('py:func', 'int')`` or ``('envvar', 'LD_LIBRARY_PATH')``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:250
-# f8c2c69d2eb343df81d7dec5ba9825bc
+# 1412c50411c645b7a711bf13c5f3ea6a
 msgid "Project information"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:254
-# 3a0be670476b426c91c0c2b8a8c57f16
+# d60f670594694aa88772ed44e4039cf5
 msgid "The documented project's name."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:258
-# c54f9b9171b04e5abbc63be8e71c8987
+# 2ab72174cfea42f68b88aab75e5c44c2
 msgid "A copyright statement in the style ``'2008, Author Name'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:262
-# eccca56cdc2d4a56b9698c8b2e518794
+# 3d6f6c6219ba4a0983e58afa63a072aa
 msgid "The major project version, used as the replacement for ``|version|``.  For example, for the Python documentation, this may be something like ``2.6``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:267
-# 4713b3ef1c974504a3fca592adfb96d3
+# 17af262034824ff7bfde763abb10d9d3
 msgid "The full project version, used as the replacement for ``|release|`` and e.g. in the HTML templates.  For example, for the Python documentation, this may be something like ``2.6.0rc1``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:271
-# 9d78e98bf8ce4f2694f6fa78ee038707
+# 3f32a91993a3441185f5e49bcab087e2
 msgid "If you don't need the separation provided between :confval:`version` and :confval:`release`, just set them both to the same value."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:277
-# 701bda3953dc428c81b9a3dccbb0fb80
+# e31716e1628a41ddaf23f9c9921f7c47
 msgid "These values determine how to format the current date, used as the replacement for ``|today|``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:280
-# 5e3439d58d4e4b4183b18cd7c66857cc
+# 683211588b1c40849865abab583ee0b4
 msgid "If you set :confval:`today` to a non-empty value, it is used."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:281
-# f99c6d1bc6994bbd9d75a33e0b9ecef1
+# 727d53386ce74f0e8c355dcc7816735a
 msgid "Otherwise, the current time is formatted using :func:`time.strftime` and the format given in :confval:`today_fmt`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:284
-# 434c82b96c274ea6b8dd063330167509
+# 9d30f8d4bb9448da8a01137e048a150d
 msgid "The default is no :confval:`today` and a :confval:`today_fmt` of ``'%B %d, %Y'`` (or, if translation is enabled with :confval:`language`, an equivalent %format for the selected locale)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:290
-# 7250912fc33c46eaa640923d3455c9b2
+# 3f75697cf01c4dce9b51204549235fcb
 msgid "The default language to highlight source code in.  The default is ``'python'``.  The value should be a valid Pygments lexer name, see :ref:`code-examples` for more details."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:298
-# 5a6ced8972034894bd4baec7332da8cf
+# d63a2f44c18f48b091cd8ab21c7f4dc8
 msgid "The style name to use for Pygments highlighting of source code.  The default style is selected by the theme for HTML output, and ``'sphinx'`` otherwise."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:301
-# 879f6943095248a494b49e930f412e10
+# 686ff93c9d104e559692e2bc6e0a2a7c
 msgid "If the value is a fully-qualified name of a custom Pygments style class, this is then used as custom style."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:307
-# 6b6bd71747c44250be64145ce72f62cb
+# 7dee5ca00dc24f759539843fcdf70798
 msgid "A boolean that decides whether parentheses are appended to function and method role text (e.g. the content of ``:func:`input```) to signify that the name is callable.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:313
-# 03d6528a2e794081a8d02a02206e952a
+# d9af582dd98f4d2a95f2c79cc6492f69
 msgid "A boolean that decides whether module names are prepended to all :term:`object` names (for object types where a \"module\" of some kind is defined), e.g. for :rst:dir:`py:function` directives.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:319
-# 29054d73b0484d218e41ab5fcc7a518e
+# 97e5c471f0a9447d903db97d19bcdf9c
 msgid "A boolean that decides whether :rst:dir:`codeauthor` and :rst:dir:`sectionauthor` directives produce any output in the built files."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:324
-# a55cb9b8fb714ea8a485e6d3b7b09089
+# 2bf04bfd8ece47469087bb5cd99f0640
 msgid "A list of prefixes that are ignored for sorting the Python module index (e.g., if this is set to ``['foo.']``, then ``foo.bar`` is shown under ``B``, not ``F``). This can be handy if you document a project that consists of a single package.  Works only for the HTML builder currently.  Default is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:334
-# 9f0f52f5a5a04058acff39535675cadd
+# 54e759ea37494b349c90d34e480855ee
 msgid "Trim spaces before footnote references that are necessary for the reST parser to recognize the footnote, but do not look too nice in the output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:341
-# cc05f716bb834f71918d5bf294955107
+# 7f87aa7b71c74e3c8851d429e2c62a12
 msgid "If true, doctest flags (comments looking like ``# doctest: FLAG, ...``) at the ends of lines and ``<BLANKLINE>`` markers are removed for all code blocks showing interactive Python sessions (i.e. doctests).  Default is true.  See the extension :mod:`~sphinx.ext.doctest` for more possibilities of including doctests."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:348
-# 5d4b9f2a381143e7bf6906eb187515db
+# 6a22fab240ea40e7a66d654566d06b5f
 msgid "Now also removes ``<BLANKLINE>``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:355
-# 365fc8230b3a4c839809c194b117096d
+# faaca74c3cfa470fa0400b63324641e4
 msgid "Options for internationalization"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:357
-# 3580cc2a231e4999bdaf60ed4bb4198d
+# 001be076eb1f4f969d07647ce9170b03
 msgid "These options influence Sphinx' *Native Language Support*.  See the documentation on :ref:`intl` for details."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:362
-# 92ab99e554df4373927a64e61567a438
+# fd809036e50f4e30a5bc4ef2447de405
 msgid "The code for the language the docs are written in.  Any text automatically generated by Sphinx will be in that language.  Also, Sphinx will try to substitute individual paragraphs from your documents with the translation sets obtained from :confval:`locale_dirs`.  In the LaTeX builder, a suitable language will be selected as an option for the *Babel* package.  Default is ``None``, which means that no translation will be done."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:371
-# e8fe400391274b0fb52a8c819d82ad67
+# 1afbbcdc6bd445f19f558bcd85388e32
 msgid "Currently supported languages by Sphinx are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:373
-# 596fd444a455407083355a60258a37c4
+# 59e92a9030cb46718bcf2d45476d367b
 msgid "``bn`` -- Bengali"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:374
-# 4807569a8e924ddab23fc1d95cf64ce0
+# 5ff76fc21682438b90cd147343680e2e
 msgid "``ca`` -- Catalan"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:375
-# 284b2468cfa24289bb10c8f942ed5036
+# 89bb6c5451254060ac6eb4adc1a2d690
 msgid "``cs`` -- Czech"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:376
-# f77fe246e1c6436d9d7dee475c60f303
+# 8d832f5f51e04aa2b557555488198599
 msgid "``da`` -- Danish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:377
-# 3f3be822cdf74ecdb546713d01e4afe8
+# 6b943214efd54f51a7984914454092da
 msgid "``de`` -- German"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:378
 #: ..\..\sphinx\doc\config.rst:769
-# 501a22da5535438d89f2af6f59157b51
-# 574611d1d96a4711b8a730383921ba99
+# 8d7fe43a844243719e41f55f22526832
+# 324ee36471534da588a45e8ef6749317
 msgid "``en`` -- English"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:379
-# 057f42fe82c44944ade2ca1545312fc2
+# 670d440542004d1a85e3d600ce6fdbfa
 msgid "``es`` -- Spanish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:380
-# dd126327df204e9e86e2d1949c492f3d
+# 5e90454945ee4c9fb0974c1b03569b8f
 msgid "``et`` -- Estonian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:381
-# a5f43c052c6747d68c7890d140ce0234
+# ebb49c79242b4db78908716717077192
 msgid "``eu`` -- Basque"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:382
-# e4f8ccbace814ff083bb755b52c31f7d
+# e7f75da9345340f4878cd7a75aacd0d8
 msgid "``fa`` -- Iranian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:383
-# cd9c2490b2fa4d17974567cacfe936d5
+# 329c1cbe29f9449abe68d200822f0722
 msgid "``fi`` -- Finnish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:384
-# 69dceb5f43614e8490833edd367ab216
+# a62998ce3b8a4a998790bc95bccd8f9f
 msgid "``fr`` -- French"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:385
-# dee44412220e474eb48e7135c42af74b
+# 7851303829a346dcaf38e22c5325981e
 msgid "``he`` -- Hebrew"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:386
-# 4f899669b0b0407a915fc8d0762e456a
+# 8eceacc266d04f81bcc79517da0d1bab
 msgid "``hr`` -- Croatian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:387
-# 31717c5ab1724cff90e4cca60d345f66
+# b064de5168bd436f89268a3c40eb61c3
 msgid "``hu`` -- Hungarian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:388
-# 3fb2b843b3144e2dbe212231a43484e5
+# 26447468783b4bf38e239d988c4c0df2
 msgid "``id`` -- Indonesian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:389
-# c0cba661af914e61ba652a1115e9bfa8
+# ecbbc9550904492788e42d51667a64aa
 msgid "``it`` -- Italian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:390
 #: ..\..\sphinx\doc\config.rst:770
-# 2a8412748bf14cde8b12d3af959c5fc7
-# 7f3a79ab90fe482a87dbf9256594798c
+# a5a8d947f80d4a0f956be62fb4556b1a
+# f006f4b8f7ba4f5080c89b6997c7a968
 msgid "``ja`` -- Japanese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:391
-# f26b7c17b0d64119a591caa48474e80f
+# 19774e9f36cf47759167fc182edcfad9
 msgid "``ko`` -- Korean"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:392
-# 6159a54b9c774a9ba25b3c54aec9e4da
+# aec81b31ac254345811996b55a2e08a1
 msgid "``lt`` -- Lithuanian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:393
-# 9bf3f614e73a46d78dd3303bd303ba28
+# c72da452d3e2417682cc02fdbb7d1704
 msgid "``lv`` -- Latvian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:394
-# 67e1dffb70c541259125eda5ae1b8b99
+# 242b55842bc2455dacb1523a3222b45b
 msgid "``mk`` -- Macedonian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:395
-# 324d9aaf3e004437abcb3622f0a83277
+# 2236ab8837304f1dbe7e3286621093c4
 msgid "``nb_NO`` -- Norwegian Bokmal"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:396
-# e10b2a0c2148411a8a5e99c3e0e6cef7
+# cf31411986304af7891572bd78560c12
 msgid "``ne`` -- Nepali"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:397
-# 4708cd63822242b4ac6ae011b1fb10b2
+# 0a010ad2bcab45abac185b368dae49d8
 msgid "``nl`` -- Dutch"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:398
-# c1c3389805ed4a1aa47c1e01538afbaf
+# 766da941cc9a47f795bb8c20fd93d4f2
 msgid "``pl`` -- Polish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:399
-# 43caab8e1ad24f36a7f8e308e431ca4c
+# b632e332ef1941d28dec14c767d2db29
 msgid "``pt_BR`` -- Brazilian Portuguese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:400
-# ba57ec13d77e4b5bae4f138cbbbdea8f
+# ae3b18147b7d470abf3c82620ac83ae5
 msgid "``pt_PT`` -- European Portuguese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:401
-# 88c170edb39c40d1925f1e8b8a1bf8a4
+# 1c1937f47ade47dfb46fd1f00a306ca6
 msgid "``ru`` -- Russian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:402
-# 1b7f95c8e10e4f668bd1263e083aca73
+# 6efae9eb745f44dca47c5629017f9ba2
 msgid "``si`` -- Sinhala"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:403
-# 4d9a7c7f1d5444539d5bec1429e96768
+# bad54c73fef74b6d90ca43781bfa3369
 msgid "``sk`` -- Slovak"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:404
-# b5b61f57cb9f45bba6873668469522bd
+# 570a878aa0204d0eaa2b9ab400648b0b
 msgid "``sl`` -- Slovenian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:405
-# 58124803730d40eda87d1c7ce838979a
+# 08bb444da6d2401b8a406371dbf9d571
 msgid "``sv`` -- Swedish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:406
-# b2181e23a14847a995b1c1fa3ad1b196
+# e406c0b2f2ee47669bde295fb35761a3
 msgid "``tr`` -- Turkish"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:407
-# fa00bf3d670e420e89e18df8ceaaccd7
+# d69a3720f02940a8975f38927d01a6bc
 msgid "``uk_UA`` -- Ukrainian"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:408
-# fa3435a7f5bd44bdb4403e42ffa21a7a
+# eacce7e33be348448084acb4361ea890
 msgid "``vi`` -- Vietnamese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:409
-# 6c4a9d54a584471dbb74f600b2554eb3
+# 49e146b972ab412ba6a8ec96b10071fb
 msgid "``zh_CN`` -- Simplified Chinese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:410
-# b21a08fb323b4b1b939ae9228cda97ad
+# 1f4b827752b74abebce780868aa13f83
 msgid "``zh_TW`` -- Traditional Chinese"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:416
-# 72912b45316f4b4faeaf973f6120a42a
+# c9949f59fe1045d18aecfe0d1fa3cd51
 msgid "Directories in which to search for additional message catalogs (see :confval:`language`), relative to the source directory.  The directories on this path are searched by the standard :mod:`gettext` module."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:420
-# 6dd4f1ae51fa44359e01b42d74f90822
+# ebf7ae28e50d44e89738111be75b4323
 msgid "Internal messages are fetched from a text domain of ``sphinx``; so if you add the directory :file:`./locale` to this settting, the message catalogs (compiled from ``.po`` format using :program:`msgfmt`) must be in :file:`./locale/{language}/LC_MESSAGES/sphinx.mo`.  The text domain of individual documents depends on :confval:`gettext_compact`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:426
-# 7990102649584bfa8ed5c4ee325bf3dc
+# 0df7438a6c544ed7bdb675779a45b868
 msgid "The default is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:432
-# db3a6fa2b6ad42c599e45ab4a7e4ca66
+# ba8689591b02458ea388abaef901bbcf
 msgid "If true, a document's text domain is its docname if it is a top-level project file and its very base directory otherwise."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:435
-# 1ab835e2db944be29132c10a9b2dcdfb
+# 9d17e5d9cb4443fba75c4987d6a52cab
 msgid "By default, the document ``markup/code.rst`` ends up in the ``markup`` text domain.  With this option set to ``False``, it is ``markup/code``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:442
-# 35c3f3a74c2f45a6bbbf033901262ad8
+# 42891a3220804c9f9e67e379b662834d
 msgid "Options for HTML output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:444
-# 7bf67c13441f472e9428ab3f79c407e0
+# e25e37c9a8964dfa98daf7b6d5cb2273
 msgid "These options influence HTML as well as HTML Help output, and other builders that use Sphinx' HTMLWriter class."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:449
-# 6ef662f9468d4fd8a61a0e7710871e53
+# 5b7997b60a0446abb428fb1ee7835a81
 msgid "The \"theme\" that the HTML output should use.  See the :doc:`section about theming <theming>`.  The default is ``'default'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:456
 #: ..\..\sphinx\doc\config.rst:829
-# 70b2a32266bf49cfa1a51cdf6256ee25
-# 1de0f46577384b7b88fa61fc21efdc99
+# 6c5816775bd14a5084216b2a21636286
+# 6a14dace2a074c28881f411dbfd8045f
 msgid "A dictionary of options that influence the look and feel of the selected theme.  These are theme-specific.  For the options understood by the builtin themes, see :ref:`this section <builtin-themes>`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:464
-# dac0d8a4a6b245d4b496d4dccc039469
+# 323f01277a77420a818d28ecd335a36c
 msgid "A list of paths that contain custom themes, either as subdirectories or as zip files.  Relative paths are taken as relative to the configuration directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:472
-# 83ec0f05f0dc48a2831f5a182528a496
+# eeac2f45ac2343e7839a1b7557923f3b
 msgid "The style sheet to use for HTML pages.  A file of that name must exist either in Sphinx' :file:`static/` path, or in one of the custom paths given in :confval:`html_static_path`.  Default is the stylesheet given by the selected theme.  If you only want to add or override a few things compared to the theme's stylesheet, use CSS ``@import`` to import the theme's stylesheet."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:480
-# 5481503c6e49442982f873659ff6f8e2
+# 267ebab4360b472595015e8e4a38d76c
 msgid "The \"title\" for HTML documentation generated with Sphinx' own templates. This is appended to the ``<title>`` tag of individual pages, and used in the navigation bar as the \"topmost\" element.  It defaults to :samp:`'{<project>} v{<revision>} documentation'` (with the values coming from the config values)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:488
-# e003b6d2ecfd4551b00b99511a7199a6
+# 27e0f15db6544a26949723b14b0907d9
 msgid "A shorter \"title\" for the HTML docs.  This is used in for links in the header and in the HTML Help docs.  If not given, it defaults to the value of :confval:`html_title`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:496
-# 13d905acf07c464baf1fab83547b6097
+# b2ddc1690be74551ba0c2dc26bf0c7ff
 msgid "A dictionary of values to pass into the template engine's context for all pages.  Single values can also be put in this dictionary using the :option:`-A` command-line option of ``sphinx-build``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:504
-# 3f551f1ec77e4f8e8c181df5b97bda69
+# 65bfd67df1dd4fd5b782d309a1827460
 msgid "If given, this must be the name of an image file (path relative to the :term:`configuration directory`) that is the logo of the docs.  It is placed at the top of the sidebar; its width should therefore not exceed 200 pixels. Default: ``None``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:509
 #: ..\..\sphinx\doc\config.rst:520
-# d912bb7fe20e458c90804ffd0f55c407
-# 05475b15c7924228a1586f8f1663feb7
+# a9433fab47384cc7ab683c47a1052c60
+# 6596a3c9a93744b4a74557130b273ca1
 msgid "The image file will be copied to the ``_static`` directory of the output HTML, but only if the file does not already exist there."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:515
-# 459a88e33bff4338b40317806cfe176f
+# e9a61f27404b4871a9adf9f54eb97422
 msgid "If given, this must be the name of an image file (path relative to the :term:`configuration directory`) that is the favicon of the docs.  Modern browsers use this as icon for tabs, windows and bookmarks.  It should be a Windows-style icon file (``.ico``), which is 16x16 or 32x32 pixels large.  Default: ``None``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:526
-# 0103e5a9f0ad4bcc8d46930e5c3752a5
+# aaab74e8a18d483fa9b56369510186b2
 msgid "A list of paths that contain custom static files (such as style sheets or script files).  Relative paths are taken as relative to the configuration directory.  They are copied to the output's :file:`_static` directory after the theme's static files, so a file named :file:`default.css` will overwrite the theme's :file:`default.css`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:533
-# 583effbd335f4eadb25deedfc0c7392f
+# de296ea580724365ba8cda4fa737454d
 msgid "The paths in :confval:`html_static_path` can now contain subdirectories."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:536
-# fce47a04207249ce9378ad821fa47a1a
+# d127ffc21768459390bf12fd858203e3
 msgid "The entries in :confval:`html_static_path` can now be single files."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:541
-# 2455cbead8f842d3bf23d08212364b5c
+# 081e8455de55440482e6fad301674304
 msgid "A list of paths that contain extra files not directly related to the documentation, such as :file:`robots.txt` or :file:`.htaccess`. Relative paths are taken as relative to the configuration directory.  They are copied to the output directory.  They will overwrite any existing file of the same name."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:547
-# 170c54bdb4344fa8bf5c4e82c9f2acb6
+# 87912d6bf05a4e26ac73fee0b05a8881
 msgid "As these files are not meant to be built, they are automatically added to :confval:`exclude_patterns`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:554
-# 9a5873ee6cb54787965d2200ac9fb227
+# 1bfe1d84c1b046ce9ea08fa7871be81f
 msgid "If this is not the empty string, a 'Last updated on:' timestamp is inserted at every page bottom, using the given :func:`strftime` format.  Default is ``'%b %d, %Y'`` (or a locale-dependent equivalent)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:560
-# aecceda6d1b44a678e47db8ddfb6173a
+# baff60e8cc2e45758a91758e07d72003
 msgid "If true, *SmartyPants* will be used to convert quotes and dashes to typographically correct entities.  Default: ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:565
-# 79b14b8426124135a2ef9567edc46683
+# 2916a33e14944d35bc2ae9ffbb9513d9
 msgid "Sphinx will add \"permalinks\" for each heading and description environment as paragraph signs that become visible when the mouse hovers over them."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:568
-# 2562d69c54574717a847853993ca214b
+# 8e678c12741042939b6a1101692c04c9
 msgid "This value determines the text for the permalink; it defaults to ``\"¶\"``. Set it to ``None`` or the empty string to disable permalinks."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:571
-# 90a490c1a2e746cca77447bef0fdb602
+# 6d7e15aab92241b7819acdf1abb4c29d
 msgid "Previously, this was always activated."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:574
-# 7a286f6341944ed9b030a2ea95af8942
+# c876b6cce91744c2b083c1fa27d3af52
 msgid "This can now be a string to select the actual text of the link. Previously, only boolean values were accepted."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:580
-# 07f09b48e47d48b48a8d7d47f6f32230
+# 4ba410044d424435897859e7d0db038b
 msgid "Custom sidebar templates, must be a dictionary that maps document names to template names."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:583
-# b13a963a05164856a59e523dde3a9982
+# 22a738ae0e8d478283d7785712eb4992
 msgid "The keys can contain glob-style patterns [1]_, in which case all matching documents will get the specified sidebars.  (A warning is emitted when a more than one glob-style pattern matches for any document.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:587
-# 9b6c36bd6be746888bbb17cafa259a8e
+# 14340f8b83de47708eece9e37c431a25
 msgid "The values can be either lists or single strings."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:589
-# ce436e4d987f429db5ce0e38d0bdbc4d
+# 9c2ebe11c9d4458bbc78b0ea87a056ba
 msgid "If a value is a list, it specifies the complete list of sidebar templates to include.  If all or some of the default sidebars are to be included, they must be put into this list as well."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:593
-# f13a3b4ab89d49ebab549c16c85afc9d
+# ee2665ef541649b4b8a2fc9d7b425e12
 msgid "The default sidebars (for documents that don't match any pattern) are: ``['localtoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html']``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:597
-# 5f814c030c62494b89cd66f4488e1f69
+# 6b75c7724c9546be8bdf95c9a272861f
 msgid "If a value is a single string, it specifies a custom sidebar to be added between the ``'sourcelink.html'`` and ``'searchbox.html'`` entries.  This is for compatibility with Sphinx versions before 1.0."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:601
-# 1fda9d6dc6e94a829922d287254d8787
+# 5002dba665174dd79774573efb3ada26
 msgid "Builtin sidebar templates that can be rendered are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:603
-# bc8c3e02a16a4ef48e1f87428efa80c5
+# 9f4493136a6747a29bc4b06bd8ea42c1
 msgid "**localtoc.html** -- a fine-grained table of contents of the current document"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:604
-# 4d64e340af8e431d81c95c71ab47ec5f
+# 9bfd35d4b37548df97c4899d87bbbafa
 msgid "**globaltoc.html** -- a coarse-grained table of contents for the whole documentation set, collapsed"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:606
-# 5d1a8d4e911248db92662d838e3d82d9
+# a310ffb1eded4ccba63fe0009d1b6c2a
 msgid "**relations.html** -- two links to the previous and next documents"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:607
-# 31dff3c24ee34437afa711334cfb89a6
+# 57f9ea33194d4eb09550f52e4051bf2c
 msgid "**sourcelink.html** -- a link to the source of the current document, if enabled in :confval:`html_show_sourcelink`"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:609
-# ccd74e2c0c584918b72161fd0c7e0d8f
+# fdb40d6ecdc44e69bf0863cb85a4c28a
 msgid "**searchbox.html** -- the \"quick search\" box"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:611
 #: ..\..\sphinx\doc\config.rst:634
-# aaa1ab1f542540479e47efc07cbda4ed
-# 8aa4aeb0225947f49240c411e63af73c
+# 6cc9ee79b6574afab09b2de10615b261
+# 44de49cb7f3e4550b2cf3073d318109b
 msgid "Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:618
-# 84a10370c5124e6582cda3afe90baff6
+# f1524b752b65400781e04fff982479fe
 msgid "This will render the custom template ``windowssidebar.html`` and the quick search box within the sidebar of the given document, and render the default sidebars for all other pages (except that the local TOC is replaced by the global TOC)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:623
-# aa9c6a9c42584614964d1ec52b3f03c2
+# a67f9d932a87427695c7b6960cd8d341
 msgid "The ability to use globbing keys and to specify multiple sidebars."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:626
-# 1846cf4ae7084fdf8101a6b8f74b746b
+# 4993ebe85bac46b7924528a6a4d43975
 msgid "Note that this value only has no effect if the chosen theme does not possess a sidebar, like the builtin **scrolls** and **haiku** themes."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:631
-# 911842f191d44b7dbaae8e0960b28962
+# 5be0a502de854b659cd27c311b40bdbf
 msgid "Additional templates that should be rendered to HTML pages, must be a dictionary that maps document names to template names."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:640
-# 2e64dc195256457497508ed3bcfd6d91
+# 4045da49bfc441cc9787b7b7f136d9f4
 msgid "This will render the template ``customdownload.html`` as the page ``download.html``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:645
 #: ..\..\sphinx\doc\config.rst:1063
 #: ..\..\sphinx\doc\config.rst:1343
-# 0813973d397b48d794e7e41a8ff9d533
-# 1eb311d692ce41f5958553d9272f23d8
-# 9213c8938bc949f7817de03847eea6f7
+# 05715703f0a4484eb2b3cb7823c3e098
+# f634656ad8ad4644bcd368245293fcc8
+# bd04b4c2db704ab38f1dc0c1e9ca1d03
 msgid "If true, generate domain-specific indices in addition to the general index. For e.g. the Python domain, this is the global module index.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:649
-# 1bfd8718e1634150820566aca053aaee
+# 3e639bd3014b4f72945ef30ee7351516
 msgid "This value can be a bool or a list of index names that should be generated. To find out the index name for a specific index, look at the HTML file name. For example, the Python module index has the name ``'py-modindex'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:657
-# 7e20d3ed34e948beb0a06f567863951c
+# f3210a05902148fd96701d0d20532cc2
 msgid "If true, add a module index to the HTML documents.   Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:659
-# e2c1af05bc2340faac33cf23d484ca71
+# 9d78d065e1c54d999663fb9be9b887e6
 msgid "Use :confval:`html_domain_indices`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:664
-# f369f3199c094cdabff1f5911eb7f47e
+# cd5f9e2c3a6943a994d77db2c1c6ad2b
 msgid "If true, add an index to the HTML documents.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:670
-# ba19bd0530af4686aa37cdd2c7747042
+# e30627b0ae4642fab7ee9a632a28d209
 msgid "If true, the index is generated twice: once as a single page with all the entries, and once as one page per starting letter.  Default is ``False``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:677
-# 343cad2d95914f318766c567c6869470
+# 6601f8e921df48adb7e547c30b3fada5
 msgid "If true, the reST sources are included in the HTML build as :file:`_sources/{name}`.  The default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:682
-# 11d3aa6263bc48ba812cb56b7d70dc15
+# a40603826f2b443f92ef44faa2f1cdbf
 msgid "If this config value is set to ``False``, the JavaScript search function will only display the titles of matching documents, and no excerpt from the matching contents."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:688
-# 58b6306a2efd4658b76f0010e10ffc8f
+# 5868672f1d154337a8d9efa5e149cf6c
 msgid "If true (and :confval:`html_copy_source` is true as well), links to the reST sources will be added to the sidebar.  The default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:695
-# 0cf582377a4442649d5c504c1a00a7fb
+# ccd872c16676447d9668ed4d48ca0cbd
 msgid "If nonempty, an `OpenSearch <http://opensearch.org>` description file will be output, and all pages will contain a ``<link>`` tag referring to it.  Since OpenSearch doesn't support relative URLs for its search page location, the value of this option must be the base URL from which these documents are served (without trailing slash), e.g. ``\"http://docs.python.org\"``.  The default is ``''``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:704
-# 9baf419e5b614d9d8fd4765f62b9b2bf
+# fbfa017886b54d15bc09860289f405d8
 msgid "This is the file name suffix for generated HTML files.  The default is ``\".html\"``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:711
-# e94195a56bc34fa4be6e9403ecf8e7c4
+# a27f31e4ffb44b359dad8324846a10a2
 msgid "Suffix for generated links to HTML files.  The default is whatever :confval:`html_file_suffix` is set to; it can be set differently (e.g. to support different web server setups)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:719
-# bca4d1234291404fb7486f1b141677a6
+# 3a1b861c030c41e1a63f5b35dbe9ed93
 msgid "A string with the fully-qualified name of a HTML Translator class, that is, a subclass of Sphinx' :class:`~sphinx.writers.html.HTMLTranslator`, that is used to translate document trees to HTML.  Default is ``None`` (use the builtin translator)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:726
-# 24ae7d6f2ed840d5b0e6f97906bd493e
+# 702bf5deb36542c4b50a496dd67cda8f
 msgid "If true, \"(C) Copyright ...\" is shown in the HTML footer. Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:732
-# aaef733cbe97408b91bcecbab6659e11
+# fddb81358f804843940f2196c63f4fb8
 msgid "If true, \"Created using Sphinx\" is shown in the HTML footer.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:739
-# 20e70fa6764344339d6e0b5e3f90567a
+# d367be7f666b4b1ab964b7fa1ade35f4
 msgid "Encoding of HTML output files. Default is ``'utf-8'``.  Note that this encoding name must both be a valid Python encoding name and a valid HTML ``charset`` value."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:747
-# ae781530d9e441c2bf8d9b2e3ac078c9
+# 50efc490db4a46318797d0ae76df9310
 msgid "If true, list items containing only a single paragraph will not be rendered with a ``<p>`` element.  This is standard docutils behavior.  Default: ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:755
-# aad864dfc5f546928b185ea3399c4da9
+# 3f2593fb38c64696b08d58f6b53b1a1c
 msgid "Suffix for section numbers.  Default: ``\". \"``.  Set to ``\" \"`` to suppress the final dot on section numbers."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:762
-# ae777bdc81724399890f467f9ad57e08
+# 026fa5fea37d4a6a818bdae0eddd1914
 msgid "Language to be used for generating the HTML full-text search index.  This defaults to the global language selected with :confval:`language`.  If there is no support for this language, ``\"en\"`` is used which selects the English language."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:767
-# ea1024c07bfc42969c625c074701c986
+# 72405bb2b5af45a3bd7ab1fab232cd33
 msgid "Support is present for these languages:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:776
-# cf46f95251bb4a28b872d1fb04fa5e4e
+# b27b4529cd01498188027b4c75749d80
 msgid "A dictionary with options for the search language support, empty by default. The meaning of these options depends on the language selected."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:779
-# 1476981e081b4f61a7ead87234709c89
+# 6501fa38a44c4ad68f12833c7ed80782
 msgid "The English support has no options."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:781
-# 4acb90f1ed2a4b79911313aeca607f11
+# ee264ed087204c47890b9ab4d2dd7029
 msgid "The Japanese support has these options:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:783
-# fca4de94cdff41228b797c4a254f9717
+# 09d2c115e10a46acb253d2e91b7d6992
 msgid "``type`` -- ``'mecab'`` or ``'default'`` (selects either MeCab or TinySegmenter word splitter algorithm)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:785
-# b5e65e71997542bda6b5bdf686c145a9
+# 28062e4d682e454c9034a2292d08beca
 msgid "``dic_enc`` -- the encoding for the MeCab algorithm"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:786
-# 1c735f7494a0404c8e82ef99809aa241
+# 7a187ac61c6047a4b1259a1261edf8f8
 msgid "``dict`` -- the dictionary to use for the MeCab algorithm"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:787
-# b6a036c30ac145b9b718274503f8a734
+# 7dc0bc324670494b9997484019161e48
 msgid "``lib`` -- the library name for finding the MeCab library via ctypes if the Python binding is not installed"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:794
-# e1ef593a12e548d7b0024c3a7390de5f
+# 3bc3cb01b25f4f6db9cef5537541b06f
 msgid "The name of a javascript file (relative to the configuration directory) that implements a search results scorer.  If empty, the default will be used."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:803
-# b74b1c796e694820aefc7187e64c3338
+# 07097f6e9a184b93bb0fc0b36d793b24
 msgid "Output file base name for HTML help builder.  Default is ``'pydoc'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:809
-# 2725721195f248fb80daeec37063ac1a
+# 8868040c9b164e1582a22930aa5cd3b3
 msgid "Options for epub output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:811
-# d90fb3621221447eb2094b8b38d8876a
+# 22f9733485ae46a7a32933ab2d2b5fac
 msgid "These options influence the epub output.  As this builder derives from the HTML builder, the HTML options also apply where appropriate.  The actual values for some of the options is not really important, they just have to be entered into the `Dublin Core metadata <http://dublincore.org/>`_."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:818
-# ff7207e4f7cc407f97cd1e622e4088cd
+# 012e5b8d05f4414eabdedb6c075afbe9
 msgid "The basename for the epub file.  It defaults to the :confval:`project` name."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:822
-# e39cfa3d20d94c8a8493844f0c80884c
+# 183814c05b0b40b7ba0c37ad6583be37
 msgid "The HTML theme for the epub output.  Since the default themes are not optimized for small screen space, using the same theme for HTML and epub output is usually not wise.  This defaults to ``'epub'``, a theme designed to save visual space."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:837
-# 0477d30aba9141dd9cf461d1bbdfd0e4
+# baecbf9aa076406b95ef44aa3357c9f5
 msgid "The title of the document.  It defaults to the :confval:`html_title` option but can be set independently for epub creation."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:842
-# 3adfd193a3cf4b5a94ba4e52be48fe6c
+# 7eae0df0758e4df587ef166f9ec75542
 msgid "The author of the document.  This is put in the Dublin Core metadata.  The default value is ``'unknown'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:847
-# deec05281bf34e9b8f377082867ede87
+# 970797e6ac2b447bada72c2fc874d6e7
 msgid "The language of the document.  This is put in the Dublin Core metadata.  The default is the :confval:`language` option or ``'en'`` if unset."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:852
-# 36f100403f84403d9913405e343564e8
+# 777ecf6d693b4a1f810579cefe6c8fc9
 msgid "The publisher of the document.  This is put in the Dublin Core metadata.  You may use any sensible string, e.g. the project homepage.  The default value is ``'unknown'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:858
-# 756e5bd0da194ee6aebecdf18645612a
+# df88845d617a494294fb96813d2277be
 msgid "The copyright of the document.  It defaults to the :confval:`copyright` option but can be set independently for epub creation."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:863
-# 3f01714c1e0543388bdcd4dd7aaa82a5
+# eb8cac5cb33447c6ae6d583c1e635244
 msgid "An identifier for the document.  This is put in the Dublin Core metadata. For published documents this is the ISBN number, but you can also use an alternative scheme, e.g. the project homepage.  The default value is ``'unknown'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:870
-# 6ab5b55bfc1f487eb6447367acaced6a
+# 2f73048f8824407f98e0f468c170dbed
 msgid "The publication scheme for the :confval:`epub_identifier`.  This is put in the Dublin Core metadata.  For published books the scheme is ``'ISBN'``.  If you use the project homepage, ``'URL'`` seems reasonable.  The default value is ``'unknown'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:877
-# b3ba86a8cf354af9a1e0aa1275a2e7df
+# 681909133b1443b88584deeb1c6c2286
 msgid "A unique identifier for the document.  This is put in the Dublin Core metadata.  You may use a random string.  The default value is ``'unknown'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:882
-# 9a6bc615b8664a0495e4674656f3d4cc
+# e0a11ff519d54f6690f3be820daeac14
 msgid "The cover page information.  This is a tuple containing the filenames of the cover image and the html template.  The rendered html cover page is inserted as the first item in the spine in :file:`content.opf`.  If the template filename is empty, no html cover page is created.  No cover at all is created if the tuple is empty.  Examples::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:892
 #: ..\..\sphinx\doc\config.rst:908
-# fdd015df3d7940e9ad118040629e595a
-# fb9bb30b28544176bd81a5c2af64d01c
+# 9211b8ee979246aea372d1aab6da73c1
+# 73118c64e1684db28814757e5a84ce16
 msgid "The default value is ``()``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:898
-# 46eda3c919e34fc5ab2859ac7328baca
+# bd4e9a0738f54e5b9da3d551f1169bf5
 msgid "Meta data for the guide element of :file:`content.opf`. This is a sequence of tuples containing the *type*, the *uri* and the *title* of the optional guide information. See the OPF documentation at `<http://idpf.org/epub>`_ for details. If possible, default entries for the *cover* and *toc* types are automatically inserted. However, the types can be explicitely overwritten if the default entries are not appropriate. Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:912
-# f26a8b3815044cc08a8d3104587eb70a
+# e044ded0e0974fe0961abea3fe99e1eb
 msgid "Additional files that should be inserted before the text generated by Sphinx. It is a list of tuples containing the file name and the title. If the title is empty, no entry is added to :file:`toc.ncx`.  Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:920
-# 27c530819a1f42eaa870fbc47de0b049
+# 982beab847494c8585c5452511dc004c
 msgid "The default value is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:924
-# 05d900defc444efa8a094aadad54fe1d
+# c1c051f53def4cafa58478813e511973
 msgid "Additional files that should be inserted after the text generated by Sphinx. It is a list of tuples containing the file name and the title.  This option can be used to add an appendix.  If the title is empty, no entry is added to :file:`toc.ncx`.  The default value is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:931
-# b6690fcf833c473a93c42913a20fcea5
+# 41346cfc7b92438caf71a0fd1eae7ed6
 msgid "A list of files that are generated/copied in the build directory but should not be included in the epub file.  The default value is ``[]``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:936
-# ac5247eab7fb496fa899642be0146a0a
+# a8f17e529f66487493090e98a191528b
 msgid "The depth of the table of contents in the file :file:`toc.ncx`.  It should be an integer greater than zero.  The default value is 3.  Note: A deeply nested table of contents may be difficult to navigate."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:942
-# 8954906347c74632b59586f6b256d0f2
+# 60c7860cbfa14647ae5bb62a58a6c979
 msgid "This flag determines if a toc entry is inserted again at the beginning of it's nested toc listing.  This allows easier navitation to the top of a chapter, but can be confusing because it mixes entries of differnet depth in one list.  The default value is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:949
-# 85cd025e83b14718ae64dbf3de9116c9
+# 6c30e4e674ff4384856be8e9c67f27f8
 msgid "This setting control the scope of the epub table of contents.  The setting can have the following values:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:952
-# 5d25f1da328e41e59d0d25a8c4ce1ab6
+# aebd729eccb34216917f08e9ce304097
 msgid "``'default'`` -- include all toc entries that are not hidden (default)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:953
-# 4cc7bf9f8e75404b80bca59e07d4e244
+# b64218fb45f740ad9de4737ffe357124
 msgid "``'includehidden'`` -- include all toc entries"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:959
-# 0d6a8a172fd24d1db9784e37fe09a49f
+# ab8397cd0b2e45aba8d248054c6d835d
 msgid "This flag determines if sphinx should try to fix image formats that are not supported by some epub readers.  At the moment palette images with a small color table are upgraded.  You need the Python Image Library (PIL) installed to use this option.  The default value is ``False`` because the automatic conversion may lose information."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:969
-# d83a239d91214f81a33955b5ec95a807
+# 01bac2d083aa4770afdc8c66b8f65e81
 msgid "This option specifies the maximum width of images.  If it is set to a value greater than zero, images with a width larger than the given value are scaled accordingly.  If it is zero, no scaling is performed. The default value is ``0``.  You need the Python Image Library (PIL) installed to use this option."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:979
-# 702a9e4eeb4745d9af78f624c9b0eba0
+# 692b3612614b4aac9d49336bf543c190
 msgid "Control whether to display URL addresses. This is very useful for readers that have no other means to display the linked URL. The settings can have the following values:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:983
-# fc1ecb98de954a9bba47a72b096ba0fc
+# 33dcf16890f14071b8522c8c167262fc
 msgid "``'inline'`` -- display URLs inline in parentheses (default)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:984
 #: ..\..\sphinx\doc\config.rst:1092
-# 8b3dbbe594ad4d628fc2b9cd88e7ec7d
-# aef39b90257d4bf8b9cdda287b3df1bf
+# 2b21a67f8b6c4d5f89667ed46fe42bb4
+# b8802b573f614929aabefe1b294cdf6f
 msgid "``'footnote'`` -- display URLs in footnotes"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:985
 #: ..\..\sphinx\doc\config.rst:1357
-# 346636de2af14e8bb84152804d6619fb
-# 206d64fc261a4dd18931035e92a9a7f7
+# 50ef9ae740ab4f8f9263260292371d75
+# bbbbe5564438409d8b7ed6958e61db4e
 msgid "``'no'`` -- do not display URLs"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:987
-# 0e332c364472494f994aa254f72a7ef5
+# dd4fda87b8dd40508ae231517e9a47a5
 msgid "The display of inline URLs can be customized by adding CSS rules for the class ``link-target``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:994
-# b35f2a5d2bcc4f99aea998b731bae3a0
+# a401efd6da444b3ba5870681f3ae1e8d
 msgid "If true, add an index to the epub document.  It defaults to the :confval:`html_use_index` option but can be set independently for epub creation."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1003
-# 19290ae549dc41cf9a22786a724fdd21
+# 4a7247752074486bae61ccaab7defb3b
 msgid "Options for LaTeX output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1005
-# f3303f75e1ea473a8d5f7591b9484619
+# 73735f8609f44ccf901e623e2f2f3f43
 msgid "These options influence LaTeX output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1009
-# d2fe45417e284feb8859756ab5f2b34a
+# 8ebb8cecce1349e4bb4499407d93fe47
 msgid "This value determines how to group the document tree into LaTeX source files. It must be a list of tuples ``(startdocname, targetname, title, author, documentclass, toctree_only)``, where the items are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1013
-# 7479d175aa254cf482634a928946aab5
+# 039c1c3afec64b908269d1988898d5c8
 msgid "*startdocname*: document name that is the \"root\" of the LaTeX file.  All documents referenced by it in TOC trees will be included in the LaTeX file too.  (If you want only one LaTeX file, use your :confval:`master_doc` here.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1017
-# 45ad6fc8ddb54d9abf1e280bef995e97
+# db12cc3539a94122b6e5d5c451fe0b57
 msgid "*targetname*: file name of the LaTeX file in the output directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1018
-# 73ec45bd00684a53bce1ee0269ba83cc
+# 18cb9621c2f740c483f184a432786489
 msgid "*title*: LaTeX document title.  Can be empty to use the title of the *startdoc*.  This is inserted as LaTeX markup, so special characters like a backslash or ampersand must be represented by the proper LaTeX commands if they are to be inserted literally."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1022
-# 7f8245e38ad7479b823ed4ecf27e08ab
+# b3938dc632674c72bbf1cfe2d7a432ef
 msgid "*author*: Author for the LaTeX document.  The same LaTeX markup caveat as for *title* applies.  Use ``\\and`` to separate multiple authors, as in: ``'John \\and Sarah'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1025
-# eebc5e77b91c44b99769432b903bd558
+# 4d5d2351536f4208995745043e1d10e8
 msgid "*documentclass*: Normally, one of ``'manual'`` or ``'howto'`` (provided by Sphinx).  Other document classes can be given, but they must include the \"sphinx\" package in order to define Sphinx' custom LaTeX commands. \"howto\" documents will not get appendices.  Also, howtos will have a simpler title page."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1031
-# d94419deec4f41a19c962de306aa7268
+# aaf73ef9ddcf458f8ab8d600d30a6a3f
 msgid "*toctree_only*: Must be ``True`` or ``False``.  If ``True``, the *startdoc* document itself is not included in the output, only the documents referenced by it via TOC trees.  With this option, you can put extra stuff in the master document that shows up in the HTML, but not the LaTeX output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1036
-# e66f435ef3aa42de83fde42916b6ee65
+# 22e02379d7bb45909ade97fabed83f71
 msgid "In the past including your own document class required you to prepend the document class name with the string \"sphinx\". This is not necessary anymore."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1041
-# 6d04d2af8d5f4837aa6ddebf50f492d1
+# aa5cf1b399b8494ab5d404bd6edc24a3
 msgid "The 6th item ``toctree_only``.  Tuples with 5 items are still accepted."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1046
-# ed605dcbae7b46aca661f48f6b0632d1
+# 1972463064184ac49240c4c5f9c7ae91
 msgid "If given, this must be the name of an image file (relative to the configuration directory) that is the logo of the docs.  It is placed at the top of the title page.  Default: ``None``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1052
-# a0ec9f58c2dd4c428583d29569381603
+# 11f66a1fded94064aad7f39d5ad50785
 msgid "If true, the topmost sectioning unit is parts, else it is chapters.  Default: ``False``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1059
 #: ..\..\sphinx\doc\config.rst:1337
-# ee34da866c1f412fb3b1f8e04e35158f
-# 0f252793579c47768f85df1c2606d9f4
+# b5c791556d484bc4a737a09062352d20
+# 66770255a74640dcaf5a4f5575d54275
 msgid "A list of document names to append as an appendix to all manuals."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1067
 #: ..\..\sphinx\doc\config.rst:1347
-# 607147951c9b4865bf48566943ab6d53
-# 291f63476b564329bb78ea15d5468f3f
+# 2c8af8a81db14564a83adb290abe4d29
+# 304b45153f3e43799be07bcec7732150
 msgid "This value can be a bool or a list of index names that should be generated, like for :confval:`html_domain_indices`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1074
-# cb5d9700396a42aebc690bba1123d787
+# 12212e860c6b410a9f51d745239cd606
 msgid "If true, add a module index to LaTeX documents.   Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1076
-# 2bc344c445bf4976896500a9d27d2ceb
+# cf48b46c186840acbda7a6f21c4b387d
 msgid "Use :confval:`latex_domain_indices`."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1081
-# 4bae9e6a81384d1e8e267f6db67a6eec
+# 6c71f8f0f79247219589895667d4f36e
 msgid "If true, add page references after internal references.  This is very useful for printed copies of the manual.  Default is ``False``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1088
-# bf22d1f0e3a7492985b205454b2a5894
+# 0b1bbfe9534148128c06c88558b02f46
 msgid "Control whether to display URL addresses.  This is very useful for printed copies of the manual.  The setting can have the following values:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1091
-# 6d363cf890754ddda4f0068645245c16
+# 9c0ca0037d9e4f3890d89ce14aba54fd
 msgid "``'no'`` -- do not display URLs (default)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1093
 #: ..\..\sphinx\doc\config.rst:1358
-# 08a8ecd6ab6145ca913ccd60e250a039
-# 5e07219cac5949d699f6dbc6983aea33
+# 26dd83b937d4420181b6c569a21aa69f
+# ff67d2e152b54f4884cee3cd77441e33
 msgid "``'inline'`` -- display URLs inline in parentheses"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1096
-# 214a58c25b3c42b0b8c5a5de39c25f89
+# 5b50bcd4ceb948dc88a7f4a9cab99999
 msgid "This value is now a string; previously it was a boolean value, and a true value selected the ``'inline'`` display.  For backwards compatibility, ``True`` is still accepted."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1105
-# b0b9c86accb54b39b561b2ddb5afc065
+# 6067cdde28cf4c88b720415563226d7b
 msgid "A dictionary that contains LaTeX snippets that override those Sphinx usually puts into the generated ``.tex`` files."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1108
-# f79d3a0d5a8a4ada9880db978221bb93
+# 49225e8790b840e8802a3e99b1e5a8b2
 msgid "Keep in mind that backslashes must be doubled in Python string literals to avoid interpretation as escape sequences."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1111
 #: ..\..\sphinx\doc\config.rst:1374
-# 559d3519060241dfb4624e28c1c33480
-# 50990b5c75394656a9b153e90f1ca0e6
+# 2992ac6779c840b49ed8cf79767351fd
+# 8da9d95b7cac4718a31439c773848ecb
 msgid "Keys that you may want to override include:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1114
-# 4a5bdb032c214d538242714a7535b791
+# 8324d73c75c64d33bd9f75a172f13f41
 msgid "``'papersize'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1114
-# 134a4914f2d64952b3a2f59c307b2c78
+# 2ba635ba86134e738bd876ce3106590f
 msgid "Paper size option of the document class (``'a4paper'`` or ``'letterpaper'``), default ``'letterpaper'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1117
-# d05bf323117546be8a74e89b1b2cd4cd
+# 26ef5245919c4c7b825468487ccf7b79
 msgid "``'pointsize'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1117
-# 40d07ff57eae4c46954621457d187301
+# d4980166c7314e33878e959042071147
 msgid "Point size option of the document class (``'10pt'``, ``'11pt'`` or ``'12pt'``), default ``'10pt'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1119
-# c94d4e1e8087426197098cf3303f3b11
+# 42cc2037f6604eba89acf9e5b7697a5e
 msgid "``'babel'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1120
-# 7f0d81dac7a14ce391460e92fc6dab40
+# 9950b0a121364726842a3d42400d49de
 msgid "\"babel\" package inclusion, default ``'\\\\usepackage{babel}'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1127
-# 5994afe46682435db3a3008d31e37985
+# 3ffbbeb6e95549279e9ee9d5b224f954
 msgid "``'fontpkg'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1122
-# d4b4d51735164d88a898913f89044dfd
+# 128b0e55465345c9908ae5b4da4e6dd2
 msgid "Font package inclusion, default ``'\\\\usepackage{times}'`` (which uses Times and Helvetica).  You can set this to ``''`` to use the Computer Modern fonts."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1126
-# 3d36358e26c74048a4ec0497ca67f736
+# f23ae8b11fe94d9da7aca3645b55f420
 msgid "Defaults to ``''`` when the :confval:`language` uses the Cyrillic script."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1134
-# cbf2d0e78efb42858d20aed14d892a9c
+# 455b983b710643aea0c83253fe187a08
 msgid "``'fncychap'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1130
-# b7e3dea2ca924fa6ade62a7fb52f4305
+# 1bb1bcf0cc7d4b93aa02d08084f8ce59
 msgid "Inclusion of the \"fncychap\" package (which makes fancy chapter titles), default ``'\\\\usepackage[Bjarne]{fncychap}'`` for English documentation, ``'\\\\usepackage[Sonny]{fncychap}'`` for internationalized docs (because the \"Bjarne\" style uses numbers spelled out in English).  Other \"fncychap\" styles you can try include \"Lenny\", \"Glenn\", \"Conny\" and \"Rejne\".  You can also set this to ``''`` to disable fncychap."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1136
 #: ..\..\sphinx\doc\config.rst:1385
-# ba793bfd74b2432b935f57d3a459acfe
-# 36462d91f11340c5ad1492d3a689586a
+# da37db5770114b588b84d75e71c3a406
+# 34c06b708d3441bcbd560d85b6fd5107
 msgid "``'preamble'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1137
-# 4e85f9ea8c53497e8e6b2e76589471e3
+# 28d37965c5a2416d91b3e2208be6c331
 msgid "Additional preamble content, default empty."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1139
-# d6801d97cc834225bcdfa6128df2ce6a
+# 868e5627b8934ddd8b7d1e8b0fca98ad
 msgid "``'footer'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1139
-# be98f4bb67414847aea648bbc7bdf982
+# 9d401d3f62764022af38f9568cf8b8c6
 msgid "Additional footer content (before the indices), default empty."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1141
-# b3c22da3e7f14929913b3218f7fec6f4
+# 0adee22637b34d238f3f5c570f0336e2
 msgid "Keys that don't need be overridden unless in special cases are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1144
-# 0c67185d73744b28b649042edc3de884
+# f7e35922e8544c63917954e3bb48f6ae
 msgid "``'inputenc'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1144
-# c0c5a30c7af64f7caa0c6b1fcdb2e56a
+# 7f4df52a46214b91bb7cf3bcc8d9328e
 msgid "\"inputenc\" package inclusion, default ``'\\\\usepackage[utf8]{inputenc}'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1148
-# ca39a5a88c3e426bbddf936794a449b6
+# cba360e3fef94af383432975774921ec
 msgid "``'cmappkg'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1147
-# a093563a2fa145b08208005e04692a35
+# 67f95cbf8e1945a7ae499fd95e7fbb32
 msgid "\"cmap\" package inclusion, default ``'\\\\usepackage{cmap}'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1150
-# e0632cdce19d4f3bb89bc6500a8718e2
+# 5d3b7b67cc3a47eb9963bac2ca90266a
 msgid "``'fontenc'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1151
-# 719c9019b5a247df841d67b23c70324c
+# b29592e094b546108d8d37f3dbbcc772
 msgid "\"fontenc\" package inclusion, default ``'\\\\usepackage[T1]{fontenc}'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1153
-# d3ae11d5d2214efebcb1fca6f735037f
+# 5e14793ad7964892bf2c9aac6185ca58
 msgid "``'maketitle'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1153
-# ffedca35fd40422aa2fa5a18e5588ca4
+# 9ac376b98bbe459791aef3e1a368a392
 msgid "\"maketitle\" call, default ``'\\\\maketitle'``.  Override if you want to generate a differently-styled title page."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1157
-# 32dc5c26a44c4118bfd289d348d2ab41
+# c3c528f48fd74fca8fbbeef18f3abc8a
 msgid "``'tableofcontents'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1156
-# 9e856644c0034a72911fa937101eedf7
+# 15ab4e014a6d45c5b766cae44b14f79f
 msgid "\"tableofcontents\" call, default ``'\\\\tableofcontents'``.  Override if you want to generate a different table of contents or put content between the title page and the TOC."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1163
-# 48c2393407234e118c5e3f0d733c20b1
+# a228afe91b0647f198f45c8065aec58c
 msgid "``'transition'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1160
-# f84fb63c07054f3486877d913411b1c8
+# 271fe81beb644a049b58f73754438fa0
 msgid "Commands used to display transitions, default ``'\\n\\n\\\\bigskip\\\\hrule{}\\\\bigskip\\n\\n'``.  Override if you want to display transitions differently."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1168
-# 907e401746b84369a3a1fdaa50fe7631
+# 8ea4b3a481284d9a8d4cb5f4d6e118fd
 msgid "``'printindex'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1166
-# 245e531be2a448db8cbf3ad5f62dd931
+# 9df50c8b3b6344c2ac8736f503ccff3c
 msgid "\"printindex\" call, the last thing in the file, default ``'\\\\printindex'``.  Override if you want to generate the index differently or append some content after the index."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1170
 #: ..\..\sphinx\doc\config.rst:1392
-# c98db99f177f448a8212f2512105101e
-# 9416af366b694404aa1713b124018ede
+# 32f5ec6c06da42438de2aa41cdb5c8e6
+# a1f9c88483d74057adf8e6695de345f2
 msgid "Keys that are set by other options and therefore should not be overridden are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1172
-# 578a3c04b03a42f3b5dc71334fd19253
+# c2ed46707a604f0eb8f2a2058656710f
 msgid "``'docclass'`` ``'classoptions'`` ``'title'`` ``'date'`` ``'release'`` ``'author'`` ``'logo'`` ``'releasename'`` ``'makeindex'`` ``'shorthandoff'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1185
-# d43b05c93aa44ba59eb8552c85133b0f
+# 6523334c372742fdb45a439d66b425dd
 msgid "A dictionary mapping ``'howto'`` and ``'manual'`` to names of real document classes that will be used as the base for the two Sphinx classes.  Default is to use ``'article'`` for ``'howto'`` and ``'report'`` for ``'manual'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1193
-# 3c16991a389f47028d6e2886d67f9df1
+# ee79471b8f8e467888bef780bdc2807a
 msgid "A list of file names, relative to the configuration directory, to copy to the build directory when building LaTeX output.  This is useful to copy files that Sphinx doesn't copy automatically, e.g. if they are referenced in custom LaTeX added in ``latex_elements``.  Image files that are referenced in source files (e.g. via ``.. image::``) are copied automatically."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1199
-# 40e9f2b919e247daaec0a4ff9defcea0
+# 849e61fa4655497d816f699e6e092a1c
 msgid "You have to make sure yourself that the filenames don't collide with those of any automatically copied files."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1204
-# 3fca188b2e844213a641293786d9be5e
+# 4447b325cb2b4b32abbdd87d580021b5
 msgid "This overrides the files which is provided from Sphinx such as sphinx.sty."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1209
-# f6f48ca759ab4f339504a721e42ad7ed
+# 43b020c00498467fa40120eded48785d
 msgid "Additional LaTeX markup for the preamble."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1211
-# d2a3f32c5eaa45f0999e18f0beed0eb0
+# 98aed5ad92604730b232aac242f7adf5
 msgid "Use the ``'preamble'`` key in the :confval:`latex_elements` value."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1216
-# ccd7b0a5090b43169bd52de7cb0f30c9
+# 24b71e2d57044859b162b4bae12bb1b4
 msgid "The output paper size (``'letter'`` or ``'a4'``).  Default is ``'letter'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1218
-# 4f81d47b74ce41e1afe73b31d89b5073
+# ea985ccc11544563ab055e9dd31a48e3
 msgid "Use the ``'papersize'`` key in the :confval:`latex_elements` value."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1223
-# 03471a24515c47ff86d1a7e4b0fa9820
+# 81428b48b26a4643a1bb77ba4924b85c
 msgid "The font size ('10pt', '11pt' or '12pt'). Default is ``'10pt'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1225
-# 0a801488415d4340b3897fd0f2f704e0
+# 2b006ce1a5a9462e8bd4c56a19cf995c
 msgid "Use the ``'pointsize'`` key in the :confval:`latex_elements` value."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1232
-# a9accc7f38f041dfb22a88548e90b3e2
+# 813e9963f29643f7b438b513c2e7d64f
 msgid "Options for text output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1234
-# cb49c28b5a564fdbb9844ed2b2169f47
+# 9ff68d84d82b48a6b0f13f7399cf1a7c
 msgid "These options influence text output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1238
-# 35e6a94eb6e443d78e64b4c8c98f09a8
+# ec733d9c2e1b4db0aafe2072ddc64358
 msgid "Determines which end-of-line character(s) are used in text output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1240
-# 5a09aee8754c472aae3b4c55e3d9a05f
+# bd09fc50a6994d0e8cff08af6185b5a2
 msgid "``'unix'``: use Unix-style line endings (``\\n``)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1241
-# 1e52be618d294f06aad7bb49447d5c5b
+# db80efc6ead84b0b93cbec94644c2e67
 msgid "``'windows'``: use Windows-style line endings (``\\r\\n``)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1242
-# 7b13a4887d2e437bb92a34ee2688d698
+# d506ba56abd24a5fa02c8f43f335f180
 msgid "``'native'``: use the line ending style of the platform the documentation is built on"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1245
-# 33cd727054924a03b8b0b683d0fc7b58
+# e1e2f6d55a6d4a54a53951b3cd732b43
 msgid "Default: ``'unix'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1251
-# 8c355bfaf79949c292f37d6429762a4f
+# 8bd6e688c03d4640990521f42d15d634
 msgid "A string of 7 characters that should be used for underlining sections. The first character is used for first-level headings, the second for second-level headings and so on."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1255
-# e7229b5e23424fc9b1a3747f38b549ad
+# 278176f6ffee42218f01fab61833fca6
 msgid "The default is ``'*=-~\"+`'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1263
-# 9b3518f343c6425ba00270eba4faa7c7
+# 8edbabdbfaee4f9ba9d4154cfbe20f1f
 msgid "Options for manual page output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1265
-# aa970a062eb4441a80857f1bdcead959
+# b97b5092fda8470f9cc779ad1b679b55
 msgid "These options influence manual page output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1269
-# 2c55e8f388b940008fe5fd7ae0411a95
+# fb9b753baea3496a86e45b226464dc47
 msgid "This value determines how to group the document tree into manual pages.  It must be a list of tuples ``(startdocname, name, description, authors, section)``, where the items are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1273
-# 67d19caebe7048bfbe6aef4e982c4a22
+# ce61d63111b541f89ad7ff6554139705
 msgid "*startdocname*: document name that is the \"root\" of the manual page.  All documents referenced by it in TOC trees will be included in the manual file too.  (If you want one master manual page, use your :confval:`master_doc` here.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1277
-# d2d55c4dfdd8417184df0a9edcf3da65
+# 8a6c094c35924bb99453201dfc85f8dc
 msgid "*name*: name of the manual page.  This should be a short string without spaces or special characters.  It is used to determine the file name as well as the name of the manual page (in the NAME section)."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1280
-# b70e924842664b49893fc603a7417a8c
+# cbfc390f77ba453ca31067794b48a23c
 msgid "*description*: description of the manual page.  This is used in the NAME section."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1282
-# fc78dd92967d42a5b2f00ab257d84a7b
+# 693a19a896004f7e9e4611d49a7f6bfd
 msgid "*authors*: A list of strings with authors, or a single string.  Can be an empty string or list if you do not want to automatically generate an AUTHORS section in the manual page."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1285
-# d4c62aba0b714bac9d6d56b6f55f5202
+# a4f50a0ca63945efa8d7e6100b3f1888
 msgid "*section*: The manual page section.  Used for the output file name as well as in the manual page header."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1292
-# ccdda9b5c391459fbaddd8d605c1fd36
+# cacb21fb8fdf42ad98f61e9612971768
 msgid "If true, add URL addresses after links.  Default is ``False``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1300
-# 33fae72b5a4640eb80d10362f21dd8bc
+# 95d577ca938348cb9241bfd9cfb071d3
 msgid "Options for Texinfo output"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1302
-# 04ff433de83c40e4bc8c34a2ab0c29e5
+# 8ea8eda2e51547258f8916667a60a6bd
 msgid "These options influence Texinfo output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1306
-# f97e981abb274caaa693d2423dc1c190
+# fab7f18a04334e09a08b295a6f02e1b5
 msgid "This value determines how to group the document tree into Texinfo source files.  It must be a list of tuples ``(startdocname, targetname, title, author, dir_entry, description, category, toctree_only)``, where the items are:"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1311
-# 57c5b2f47a58459ea1bcaa3ef9c6e481
+# 092349159ccc4b939dea5e2a56cde683
 msgid "*startdocname*: document name that is the \"root\" of the Texinfo file.  All documents referenced by it in TOC trees will be included in the Texinfo file too.  (If you want only one Texinfo file, use your :confval:`master_doc` here.)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1315
-# 25a8bcb6eae14023ac77858a735ca97a
+# 6ca9bbf75fca4e77b3e1eeeb22f69b34
 msgid "*targetname*: file name (no extension) of the Texinfo file in the output directory."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1317
-# a208f6df234847ccb3a568b29c7b10a4
+# 2f008f751d1942519964b678817a9daf
 msgid "*title*: Texinfo document title.  Can be empty to use the title of the *startdoc*.  Inserted as Texinfo markup, so special characters like @ and {} will need to be escaped to be inserted literally."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1320
-# 453919af1ee54d6c8e5c4be744a25549
+# 478564a4a73b4a9e905fadb762fa9450
 msgid "*author*: Author for the Texinfo document.  Inserted as Texinfo markup. Use ``@*`` to separate multiple authors, as in: ``'John@*Sarah'``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1322
-# ac5ff9d5b3da4b3bb52fca15aa1ccc76
+# e942f8684a1547beb8510526f2bc4272
 msgid "*dir_entry*: The name that will appear in the top-level ``DIR`` menu file."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1323
-# 78c16b62002f4a608f74f9826a87f429
+# 4fe4b859eedf49cf855987c666f3094b
 msgid "*description*: Descriptive text to appear in the top-level ``DIR`` menu file."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1325
-# daae64740da14a45a109327b39d91031
+# 60898d794861434fbc0218c25b2ee5cd
 msgid "*category*: Specifies the section which this entry will appear in the top-level ``DIR`` menu file."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1327
-# 77b1d35207eb4128aa13b466a7a4a4b9
+# 1adaa85fda7440eab955038786078035
 msgid "*toctree_only*: Must be ``True`` or ``False``.  If ``True``, the *startdoc* document itself is not included in the output, only the documents referenced by it via TOC trees.  With this option, you can put extra stuff in the master document that shows up in the HTML, but not the Texinfo output."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1354
-# 48072d1b5034433f9ae2d7a8925a4cca
+# 03862aa095ec4727ad516ffcdfce0151
 msgid "Control how to display URL addresses."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1356
-# 51d932b27a2441a78511ac7507c627f4
+# 99c708e76eec4162a42cb00764e473bb
 msgid "``'footnote'`` -- display URLs in footnotes (default)"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1364
-# 4bf0b8e7d5a5414abf0e236b451aae9a
+# 269ad51e1e0c4c6bb25668b66d83c9f8
 msgid "If true, do not generate a ``@detailmenu`` in the \"Top\" node's menu containing entries for each sub-node in the document.  Default is ``False``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1371
-# 0fe1da8b387c4ccebb4c99cafac1a983
+# e8d8d30c7f4940eeb5e0f7f9e5ba8b58
 msgid "A dictionary that contains Texinfo snippets that override those Sphinx usually puts into the generated ``.texi`` files."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1378
-# 43327357f3844e75857322e9e526f656
+# 629fc4f6659942c395f26ed2918de088
 msgid "``'paragraphindent'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1377
-# fedb9e8c62644d19aafbf0b20d571c80
+# 2873dfa575c74c099989398b9dc526aa
 msgid "Number of spaces to indent the first line of each paragraph, default ``2``.  Specify ``0`` for no indentation."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1382
-# 58e96e87ffd64c418b800b5e0c44720f
+# fdb29fd204d04a62b25079f1f0865cb1
 msgid "``'exampleindent'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1381
-# 520d8b4e50914c72a4fde6fbf4054809
+# 7086158875464562b12c12bb2b4c0883
 msgid "Number of spaces to indent the lines for examples or literal blocks, default ``4``.  Specify ``0`` for no indentation."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1385
-# 3c1e47cf685d4f968239508c1727d64e
+# c677fe95392944d69bcb12baa39c68f9
 msgid "Texinfo markup inserted near the beginning of the file."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1390
-# 2a6383d2d23449b6bf7ec10a3320496d
+# f37b3d7d558d42f88e7d1e5b844d2b1f
 msgid "``'copying'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1388
-# ea31e24924634dbca7848cd7c709904a
+# 02bdc90c6c474c4eb2f2b20011d7bef0
 msgid "Texinfo markup inserted within the ``@copying`` block and displayed after the title.  The default value consists of a simple title page identifying the project."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1395
-# 25c9dd8e6cdb42fdb9ad3c89ad6c2ffc
+# 4961b0106aaf4e9abb6f379c7b06570b
 msgid "``'author'`` ``'body'`` ``'date'`` ``'direntry'`` ``'filename'`` ``'project'`` ``'release'`` ``'title'`` ``'direntry'``"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1409
-# 13a1d07669a64761b2fad85fe199c91c
+# d4928fc0388f45af97ee2b752277784d
 msgid "Options for the linkcheck builder"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1413
-# 221c344ea6724125a9727febf133e15d
+# 193425d3c6f24deea166c56af6a4a6a6
 msgid "A list of regular expressions that match URIs that should not be checked when doing a ``linkcheck`` build.  Example::"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1422
-# 1378d740e230437ea2de573506e8024b
+# 3729367e25a943f7be87eeb6a715e062
 msgid "A timeout value, in seconds, for the linkcheck builder.  **Only works in Python 2.6 and higher.**  The default is to use Python's global socket timeout."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1430
-# ffad8ed7733a4717ae21cb8ad5a2e74f
+# e3da8117a8ba4954b9e41b3b87247265
 msgid "The number of worker threads to use when checking links.  Default is 5 threads."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1437
-# f8d6a9822f4d4023a99d93750371e134
+# d8817ed91cbd442d80881a9ada1fa3b0
 msgid "True or false, whether to check the validity of ``#anchor``\\ s in links. Since this requires downloading the whole document, it's considerably slower when enabled.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1445
-# 5fd743063be24d55b8348b5295a2ea53
+# 17584ecaca27497f8972764091e8d9ea
 msgid "Options for the XML builder"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1449
-# 376cd152b0ed422b8f4c1080fbd3fe20
+# e09c0092780442b09d44cdaeb1094cdf
 msgid "If True, pretty-print the XML.  Default is ``True``."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1455
-# f24545af498745598864deb36408df3e
+# 3183dbe688b9415999057d6295240aa0
 msgid "Footnotes"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:1456
-# 526a837447974411aeaf4c92d94f4cd0
+# a563c93b94da4d4e93ddfe7853f1cc77
 msgid "A note on available globbing syntax: you can use the standard shell constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that these all don't match slashes.  A double star ``**`` can be used to match any sequence of characters *including* slashes."
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:166
-# 97fba5fb317248ffb698be9090509d6d
+# 7d7e4a7e615d4e9d9f44fefa087f3b45
 msgid "global"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:166
-# 97fba5fb317248ffb698be9090509d6d
+# 7d7e4a7e615d4e9d9f44fefa087f3b45
 msgid "substitutions"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:187
 #: ..\..\sphinx\doc\config.rst:201
-# 36db2374b56143d2931f5fbb37791942
-# 306ecf1f75ee4d60a03cfc25c27cac6a
+# 54b2a41abd6f4e6fa54afbade5c3aa7a
+# 3ee181d40988456fa3855b9732fee77e
 msgid "default"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:187
 #: ..\..\sphinx\doc\config.rst:187
-# 36db2374b56143d2931f5fbb37791942
-# 36db2374b56143d2931f5fbb37791942
+# 54b2a41abd6f4e6fa54afbade5c3aa7a
+# 54b2a41abd6f4e6fa54afbade5c3aa7a
 msgid "domain"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:187
-# 36db2374b56143d2931f5fbb37791942
+# 54b2a41abd6f4e6fa54afbade5c3aa7a
 msgid "primary"
 msgstr ""
 
 #: ..\..\sphinx\doc\config.rst:201
-# 306ecf1f75ee4d60a03cfc25c27cac6a
+# 3ee181d40988456fa3855b9732fee77e
 msgid "role"
 msgstr ""
 

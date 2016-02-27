@@ -1,11 +1,35 @@
 # sphinx-doc.org on the Read The Docs.
 
-This is a experimental project to provide Sphinx official documentation with multiple versions and multiple languages on Read The Docs site.
-
-http://shimizukawa-sphinx.readthedocs.org/
+This is a project to provide Sphinx official documentation with multiple versions and multiple languages on Read The Docs site.
 
 Current procedure is bit tricky because Read The Docs doesn't have a way to specify options for sphinx-build command.
 conf.py files for each languages have 'language' and 'locale_dirs' values without having full copy of conf.py of sphinx doc. If we want to specify conf.py file that is out of source directory, we will use '-c' option for sphinx-build command. Unfortunately Read the Docs can't. If there are any better way, please let me know.
+
+## URLs
+
+* RTD project pages for Sphinx:
+
+  * https://readthedocs.org/projects/sphinx/  (Master)
+  * https://readthedocs.org/projects/sphinx-ja/
+  * https://readthedocs.org/projects/sphinx-pt-br/
+  * https://readthedocs.org/projects/sphinx-es/
+
+* Documentation pages for each languages:
+
+  * http://www.sphinx-doc.org/
+  * http://www.sphinx-doc.org/ja
+  * http://www.sphinx-doc.org/pt_BR
+  * http://www.sphinx-doc.org/es
+
+## How to setup a translated documentation project on RTD
+
+Detail is here: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
+
+Points are:
+
+* We must have RTD projects for each languages.
+* Each projects must have correct Language setting on "Settings" page.
+* Master project has connections to each translated projects on "translations settings" page.
 
 
 ## How to update po files

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-24 10:48+0000\n"
-"PO-Revision-Date: 2016-01-12 12:16+0000\n"
+"POT-Creation-Date: 2016-02-29 14:23+0000\n"
+"PO-Revision-Date: 2016-02-17 12:39+0000\n"
 "Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_3/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgstr ":confval:`locale_dirs` に ``[\"locale/\"]`` をセットします。"
 msgid ""
 "Set :confval:`language` to ``es`` (also possible via :option:`-D <sphinx-"
 "build -D>`)."
-msgstr ""
+msgstr ":confval:`language` に ``es`` をセットします(:option:`-D <sphinx-build -D>` オプションも使用できます)。"
 
 #: ../../intl.rst:67
 msgid "Run your desired build."
@@ -179,8 +179,8 @@ msgid "Translate your po files under `./locale/<lang>/LC_MESSAGES/`."
 msgstr "`./locale/<lang>/LC_MESSAGES/` 以下にある po ファイルを翻訳します。"
 
 #: ../../intl.rst:109
-msgid "Build mo files and make translated document."
-msgstr "mo ファイルをビルドし、翻訳されたドキュメントを生成します。"
+msgid "make translated document."
+msgstr "翻訳されたドキュメントを生成します。"
 
 #: ../../intl.rst:111
 msgid ""
@@ -188,38 +188,50 @@ msgid ""
 "specify the parameter on the command line::"
 msgstr "``conf.py`` で :confval:`language` パラメーターを設定する必要があります、また、コマンドラインでもパラメータを設定できます::"
 
-#: ../../intl.rst:117
+#: ../../intl.rst:116
 msgid ""
 "Congratulations! You got the translated documentation in the ``_build/html``"
 " directory."
 msgstr "おめでとうございます! ``_build/html`` 以下に翻訳されたドキュメントが生成されました。"
 
-#: ../../intl.rst:122
+#: ../../intl.rst:121
+msgid ""
+"sphinx-build that is invoked by make command will build po files into mo "
+"files."
+msgstr "make コマンド中で起動する sphinx-build が po ファイルより mo ファイルを生成します。"
+
+#: ../../intl.rst:123
+msgid ""
+"If you are using 1.2.x or earlier, please invoke ``sphinx-intl build`` "
+"command before make command."
+msgstr "もし 1.2.x 以前を利用している場合、make の前に ``sphinx-intl build`` コマンドを実行してください。"
+
+#: ../../intl.rst:128
 msgid "Translating"
 msgstr "翻訳"
 
-#: ../../intl.rst:124
+#: ../../intl.rst:130
 msgid ""
 "Translate po file under ``./locale/de/LC_MESSAGES`` directory. The case of "
 "builders.po file for sphinx document:"
 msgstr "``./locale/de/LC_MESSAGES`` ディレクトリ以下の po ファイルを翻訳します。sphinx ドキュメントの  builders.po ファイルの場合はこうです:"
 
-#: ../../intl.rst:134
+#: ../../intl.rst:140
 msgid ""
 "Another case, msgid is multi-line text and contains reStructuredText syntax:"
 msgstr "別の場合として、msgid が複数行のテキストで reStructuredText の構文を含む場合:"
 
-#: ../../intl.rst:148
+#: ../../intl.rst:154
 msgid ""
 "Please be careful not to break reST notation.  Most po-editors will help you"
 " with that."
 msgstr "reST記法を崩さないよう、注意して下さい。殆どのpoエディタがreST記法について、あなたを助けてくれるでしょう。"
 
-#: ../../intl.rst:153
+#: ../../intl.rst:159
 msgid "Update your po files by new pot files"
 msgstr "poファイルを新しいpotファイルで置き換えます。"
 
-#: ../../intl.rst:155
+#: ../../intl.rst:161
 msgid ""
 "If a document is updated, it is necessary to generate updated pot files and "
 "to apply differences to translated po files. In order to apply the updating "
@@ -227,157 +239,157 @@ msgid ""
 "command."
 msgstr "ドキュメントが更新された場合、更新された pot ファイルを生成し、翻訳した po ファイルに更新差分を適用する必要があります。pot ファイルの更新差分を適用するには :command:`sphinx-intl update` コマンドを利用します。"
 
-#: ../../intl.rst:166
+#: ../../intl.rst:172
 msgid "Using Transifex service for team translation"
 msgstr "チームでの翻訳に Transifex サービスを利用する"
 
-#: ../../intl.rst:168
+#: ../../intl.rst:174
 msgid ""
 "Transifex_ is one of several services that allow collaborative translation "
 "via a web interface.  It has a nifty Python-based command line client that "
 "makes it easy to fetch and push translations."
 msgstr "Transifex_ はウェブインターフェースを通して共同作業で翻訳することを可能にするサービスの一つです。 Pythonベースのコマンドラインクライアントもあり、翻訳の取得やpushも簡単に実施してくれます。"
 
-#: ../../intl.rst:175
+#: ../../intl.rst:181
 msgid "Install `transifex-client`_"
 msgstr "`transifex-client`_ のインストール"
 
-#: ../../intl.rst:177
+#: ../../intl.rst:183
 msgid "You need :command:`tx` command to upload resources (pot files)."
 msgstr "resources(pot ファイル) をアップロードするには :command:`tx` コマンドが必要です。"
 
-#: ../../intl.rst:183
+#: ../../intl.rst:189
 msgid "`Transifex Client v0.8 &mdash; Transifex documentation`_"
 msgstr "`Transifex Client v0.8 &mdash; Transifex documentation`_"
 
-#: ../../intl.rst:186
+#: ../../intl.rst:192
 msgid ""
 "Create your transifex_ account and create new project for your document"
 msgstr "transifex_ のアカウントを作成し、ドキュメント用に新規プロジェクトを作成します。"
 
-#: ../../intl.rst:188
+#: ../../intl.rst:194
 msgid ""
 "Currently, transifex does not allow for a translation project to have more "
 "than one version of the document, so you'd better include a version number "
 "in your project name."
 msgstr "現在のところ、transifexは1つの翻訳プロジェクトに複数のバージョンを持てません。そのため、プロジェクト名にバージョン番号を含めるのが良いでしょう。"
 
-#: ../../intl.rst:192
+#: ../../intl.rst:198
 msgid "For example:"
 msgstr "例:"
 
-#: ../../intl.rst:194
+#: ../../intl.rst:200
 msgid "``sphinx-document-test_1_0``"
 msgstr "``sphinx-document-test_1_0``"
 
-#: ../../intl.rst:195
+#: ../../intl.rst:201
 msgid "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 msgstr "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 
-#: ../../intl.rst:198
+#: ../../intl.rst:204
 msgid "Create config files for tx command"
 msgstr "tx コマンドのために設定ファイルを作成します"
 
-#: ../../intl.rst:200
+#: ../../intl.rst:206
 msgid ""
 "This process will create ``.tx/config`` in the current directory, as well as"
 " a ``~/.transifexrc`` file that includes auth information."
 msgstr "ここの処理では現在のディレクトリに``.tx/config`` ディレクトリと、認証情報を含む ``~/.transifexrc`` というファイルを作成します。"
 
-#: ../../intl.rst:214
+#: ../../intl.rst:220
 msgid "Upload pot files to transifex service"
 msgstr "potファイルをtransifexサーバーにアップロードします"
 
-#: ../../intl.rst:216
+#: ../../intl.rst:222
 msgid "Register pot files to ``.tx/config`` file:"
 msgstr "potファイルを ``.tx/config`` ファイルに登録します:"
 
-#: ../../intl.rst:224
+#: ../../intl.rst:230
 msgid "and upload pot files:"
 msgstr "そして、potファイルをアップロードします:"
 
-#: ../../intl.rst:236
+#: ../../intl.rst:242
 msgid "Forward the translation on transifex"
 msgstr "transifex上で翻訳を進めます"
 
-#: ../../intl.rst:241
+#: ../../intl.rst:247
 msgid "Pull translated po files and make translated html"
 msgstr "翻訳済みのpoファイルを取得し、翻訳されたドキュメントを生成"
 
-#: ../../intl.rst:243
+#: ../../intl.rst:249
 msgid "Get translated catalogs and build mo files (ex. for 'de'):"
 msgstr "翻訳済みカタログを取得し、 moファイルを作成します (例: 'de'):"
 
-#: ../../intl.rst:254
-msgid "Build po files into mo and make html::"
-msgstr "poファイルをmoファイルに変換し、make htmlを実行します:"
-
 #: ../../intl.rst:260
+msgid "Invoke make html::"
+msgstr ""
+
+#: ../../intl.rst:265
 msgid "That's all!"
 msgstr "以上です!"
 
-#: ../../intl.rst:263
+#: ../../intl.rst:268
 msgid "Translating locally and on Transifex"
 msgstr "Transifex上での翻訳およびローカルでの翻訳"
 
-#: ../../intl.rst:265
+#: ../../intl.rst:270
 msgid ""
 "If you want to push all language's po files, you can be done by using "
 ":command:`tx push -t` command. Watch out! This operation overwrites "
 "translations in transifex."
 msgstr "すべての言語のpoファイルをpushする場合  :command:`tx push -t` を使用します。ただし、この操作はtransifex上の翻訳を上書きするので気を付けてください！"
 
-#: ../../intl.rst:269
+#: ../../intl.rst:274
 msgid ""
 "In other words, if you have updated each in the service and local po files, "
 "it would take much time and effort to integrate them."
 msgstr "つまり、更新する各サービスとローカルpoファイルと、多くの時間とそれらを統合する労力がかかります。"
 
-#: ../../intl.rst:275
+#: ../../intl.rst:280
 msgid "Contributing to Sphinx reference translation"
 msgstr "Sphinxドキュメントの翻訳に貢献する"
 
-#: ../../intl.rst:277
+#: ../../intl.rst:282
 msgid ""
 "The recommended way for new contributors to translate Sphinx reference is to"
 " join the translation team on Transifex."
 msgstr "Sphinxリファレンスの翻訳に新しく加わりたい人にお勧めする方法は、Transifex上の翻訳チームに参加することです。"
 
-#: ../../intl.rst:280
+#: ../../intl.rst:285
 msgid "There is `sphinx translation page`_ for Sphinx-1.3 documentation."
 msgstr "Sphinx-1.3 ドキュメントのために `sphinx translation page`_ があります。"
 
-#: ../../intl.rst:282
+#: ../../intl.rst:287
 msgid "Login to transifex_ service."
 msgstr "transifex_ にログインします。"
 
-#: ../../intl.rst:283
+#: ../../intl.rst:288
 msgid "Go to `sphinx translation page`_."
 msgstr "`sphinx translation page`_ に行きます。"
 
-#: ../../intl.rst:284
+#: ../../intl.rst:289
 msgid "Click ``Request language`` and fill form."
 msgstr "``Request language`` をクリックし、フォームを埋めます。"
 
-#: ../../intl.rst:285
+#: ../../intl.rst:290
 msgid "Wait acceptance by transifex sphinx translation maintainers."
 msgstr "sphinx翻訳のメンテナーによって承認されるのを待ちます。"
 
-#: ../../intl.rst:286
+#: ../../intl.rst:291
 msgid "(after acceptance) translate on transifex."
 msgstr "(承認後)transifex上で翻訳します。"
 
-#: ../../intl.rst:290
+#: ../../intl.rst:295
 msgid "Footnotes"
 msgstr "脚注"
 
-#: ../../intl.rst:291
+#: ../../intl.rst:296
 msgid ""
 "See the `GNU gettext utilities "
 "<http://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ for"
 " details on that software suite."
 msgstr "このツール群の詳細については、 `GNU gettextユーティリティ <http://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ を参照してください。"
 
-#: ../../intl.rst:294
+#: ../../intl.rst:299
 msgid "Because nobody expects the Spanish Inquisition!"
 msgstr "なぜなら誰もスペイン異端審問を期待していなからです!"

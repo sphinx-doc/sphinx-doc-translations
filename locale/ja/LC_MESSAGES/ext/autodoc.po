@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-16 05:42+0000\n"
-"PO-Revision-Date: 2016-01-11 17:19+0000\n"
-"Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
+"POT-Creation-Date: 2016-02-29 14:38+0000\n"
+"PO-Revision-Date: 2016-02-29 07:06+0000\n"
+"Last-Translator: Takeshi KOMIYA <i.tkomiya@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -362,7 +362,14 @@ msgstr "``\"init\"``"
 msgid "Only the ``__init__`` method's docstring is inserted."
 msgstr "``__init__``\\ メソッドのdocstringだけが挿入されます。"
 
-#: ../../ext/autodoc.rst:319
+#: ../../ext/autodoc.rst:317
+msgid ""
+"If the class has no ``__init__`` method or if the ``__init__`` method's "
+"docstring is empty, but the class has a ``__new__`` method's docstring, it "
+"is used instead."
+msgstr ""
+
+#: ../../ext/autodoc.rst:325
 msgid ""
 "This value selects if automatically documented members are sorted "
 "alphabetical (value ``'alphabetical'``), by member type (value "
@@ -370,17 +377,17 @@ msgid ""
 "alphabetical."
 msgstr "これの設定を変更することで、ドキュメントのついたメンバーをアルファベット順にソートするか(``'alphabetical'``)、もしくはメンバーのタイプによって(``'groupwise'``)ソートするか、ソースコードの定義順(``'bysource'``)にソートするかを変更できます。デフォルトはアルファベット順です。"
 
-#: ../../ext/autodoc.rst:324
+#: ../../ext/autodoc.rst:330
 msgid ""
 "Note that for source order, the module must be a Python module with the "
 "source code available."
 msgstr "ソースコードの定義順を指定する場合には、対象のモジュールはPythonモジュールで、ソースコードが利用できるようになっていなければなりません。"
 
-#: ../../ext/autodoc.rst:328
+#: ../../ext/autodoc.rst:334
 msgid "Support for ``'bysource'``."
 msgstr "``'bysource'`` をサポートしました。"
 
-#: ../../ext/autodoc.rst:333
+#: ../../ext/autodoc.rst:339
 msgid ""
 "This value is a list of autodoc directive flags that should be automatically"
 " applied to all autodoc directives.  The supported flags are ``'members'``, "
@@ -388,7 +395,7 @@ msgid ""
 "``'inherited-members'`` and ``'show-inheritance'``."
 msgstr "この値には、すべてのautodocディレクティブに対して、自動で適用したいフラグのリストを設定します。設定できるフラグは、 ``'members'``, ``'undoc-members'``, ``'private-members'``, ``'special-members'``, ``'inherited-members'``, ``'show-inheritance'`` です。"
 
-#: ../../ext/autodoc.rst:338
+#: ../../ext/autodoc.rst:344
 msgid ""
 "If you set one of these flags in this config value, you can use a negated "
 "form, :samp:`'no-{flag}'`, in an autodoc directive, to disable it once. For "
@@ -396,11 +403,11 @@ msgid ""
 "members']``, and you write a directive like this::"
 msgstr "これらのフラグの一つをこの設定値に設定した場合、否定形の :samp:`'no-{flag}'` をautodocディレクティブの中で指定することで、個別に機能をオフにできます。例えば、 ``autodoc_default_flags`` に ``['members', 'undoc-members']`` と指定した場合::"
 
-#: ../../ext/autodoc.rst:346
+#: ../../ext/autodoc.rst:352
 msgid "the directive will be interpreted as if only ``:members:`` was given."
 msgstr "このように記述すると、 ``:members:`` だけが指定されているという解釈がされます。"
 
-#: ../../ext/autodoc.rst:352
+#: ../../ext/autodoc.rst:358
 msgid ""
 "Functions imported from C modules cannot be introspected, and therefore the "
 "signature for such functions cannot be automatically determined.  However, "
@@ -408,7 +415,7 @@ msgid ""
 "the function's docstring."
 msgstr "Cモジュールからインポートされた関数は、情報を取得できないため、これらの関数に関するシグニチャを自動的に決定することはできません。しかし、これを使用すると、これらの関数のdocstringの最初の行に、これらの関数のシグニチャを入れられます。"
 
-#: ../../ext/autodoc.rst:357
+#: ../../ext/autodoc.rst:363
 msgid ""
 "If this boolean value is set to ``True`` (which is the default), autodoc "
 "will look at the first line of the docstring for functions and methods, and "
@@ -416,53 +423,53 @@ msgid ""
 "from the docstring content."
 msgstr "もしこの設定を ``True`` (デフォルト)にすると、autodocは関数やメソッドのdocstringの最初の行を見て、もしシグニチャのような情報が書かれていたら、その行をシグニチャとして読み込み、docstringからはその行の内容を削除して扱います。"
 
-#: ../../ext/autodoc.rst:366
+#: ../../ext/autodoc.rst:372
 msgid ""
 "This value contains a list of modules to be mocked up. This is useful when "
 "some external dependencies are not met at build time and break the building "
 "process."
 msgstr "この値はモックアップされるモジュールのリストを含みます。これはビルド時もしくはビルド過程の中断時にいくつかの外部依存が満たされない時に有用です。"
 
-#: ../../ext/autodoc.rst:374
+#: ../../ext/autodoc.rst:380
 msgid "Docstring preprocessing"
 msgstr "Docstringのプリプロセス"
 
-#: ../../ext/autodoc.rst:376
+#: ../../ext/autodoc.rst:382
 msgid "autodoc provides the following additional events:"
 msgstr "autodocは以下のイベントを追加で提供します:"
 
-#: ../../ext/autodoc.rst:382
+#: ../../ext/autodoc.rst:388
 msgid ""
 "Emitted when autodoc has read and processed a docstring.  *lines* is a list "
 "of strings -- the lines of the processed docstring -- that the event handler"
 " can modify **in place** to change what Sphinx puts into the output."
 msgstr "autodocがdocstringを読み込んで処理をするタイミングで呼び出されます。\\ *lines*\\ は処理されたdocstringが入っている、文字列のリストです。このリストはイベントハンドラの中で変更でき、この結果を利用します。"
 
-#: ../../ext/autodoc.rst:386 ../../ext/autodoc.rst:406
-#: ../../ext/autodoc.rst:443
+#: ../../ext/autodoc.rst:392 ../../ext/autodoc.rst:412
+#: ../../ext/autodoc.rst:449
 msgid "the Sphinx application object"
 msgstr "Sphinxのアプリケーションオブジェクト"
 
-#: ../../ext/autodoc.rst:387 ../../ext/autodoc.rst:407
-#: ../../ext/autodoc.rst:444
+#: ../../ext/autodoc.rst:393 ../../ext/autodoc.rst:413
+#: ../../ext/autodoc.rst:450
 msgid ""
 "the type of the object which the docstring belongs to (one of "
 "``\"module\"``, ``\"class\"``, ``\"exception\"``, ``\"function\"``, "
 "``\"method\"``, ``\"attribute\"``)"
 msgstr "docstringが属するオブジェクトの型 (以下のうちのどれか ``\"module\"``, ``\"class\"``, ``\"exception\"``, ``\"function\"``, ``\"method\"``, ``\"attribute\"``)"
 
-#: ../../ext/autodoc.rst:390 ../../ext/autodoc.rst:410
-#: ../../ext/autodoc.rst:447
+#: ../../ext/autodoc.rst:396 ../../ext/autodoc.rst:416
+#: ../../ext/autodoc.rst:453
 msgid "the fully qualified name of the object"
 msgstr "オブジェクトの完全な修飾付きの名前"
 
-#: ../../ext/autodoc.rst:391 ../../ext/autodoc.rst:411
-#: ../../ext/autodoc.rst:448
+#: ../../ext/autodoc.rst:397 ../../ext/autodoc.rst:417
+#: ../../ext/autodoc.rst:454
 msgid "the object itself"
 msgstr "オブジェクト自身"
 
-#: ../../ext/autodoc.rst:392 ../../ext/autodoc.rst:412
-#: ../../ext/autodoc.rst:451
+#: ../../ext/autodoc.rst:398 ../../ext/autodoc.rst:418
+#: ../../ext/autodoc.rst:457
 msgid ""
 "the options given to the directive: an object with attributes "
 "``inherited_members``, ``undoc_members``, ``show_inheritance`` and "
@@ -470,31 +477,31 @@ msgid ""
 "auto directive"
 msgstr "ディレクティブに与えられたオプションです。 ``inherited_members``, ``undoc_members``, ``show_inheritance``, ``noindex`` などの属性をもったオブジェクトです。同じ名前のフラグオプションが渡されるとtrueになります。"
 
-#: ../../ext/autodoc.rst:396
+#: ../../ext/autodoc.rst:402
 msgid "the lines of the docstring, see above"
 msgstr "docstringの行数。上記を参照。"
 
-#: ../../ext/autodoc.rst:402
+#: ../../ext/autodoc.rst:408
 msgid ""
 "Emitted when autodoc has formatted a signature for an object. The event "
 "handler can return a new tuple ``(signature, return_annotation)`` to change "
 "what Sphinx puts into the output."
 msgstr "autodocがオブジェクトのシグニチャをフォーマットしているときに呼び出されます。イベントハンドラは新しいタプル\\ ``(signature, return_annotation)``\\ を返すことができ、Sphinxはこの出力を使ってドキュメントを生成します。"
 
-#: ../../ext/autodoc.rst:416
+#: ../../ext/autodoc.rst:422
 msgid ""
 "function signature, as a string of the form ``\"(parameter_1, "
 "parameter_2)\"``, or ``None`` if introspection didn't succeed and signature "
 "wasn't specified in the directive."
 msgstr "``\"(parameter_1, parameter_2)\"`` という形式の文字列で示される関数シグニチャか、あるいは、イントロスペクションが成功せず、シグニチャをディレクティブ中で特定できない場合には ``None`` となります。"
 
-#: ../../ext/autodoc.rst:419
+#: ../../ext/autodoc.rst:425
 msgid ""
 "function return annotation as a string of the form ``\" -> annotation\"``, "
 "or ``None`` if there is no return annotation"
 msgstr "アノテーションを ``\" -> annotation\"`` という形式の文字列で返す関数か、アノテーションを返さない場合は ``None`` となります。"
 
-#: ../../ext/autodoc.rst:422
+#: ../../ext/autodoc.rst:428
 msgid ""
 "The :mod:`sphinx.ext.autodoc` module provides factory functions for commonly"
 " needed docstring processing in event :event:`autodoc-process-docstring`:"
@@ -530,24 +537,24 @@ msgid ""
 " be processed."
 msgstr "もしも *what* として、文字列の配列が渡されると、この *what* に含まれているタイプのdocstringだけが処理されます。"
 
-#: ../../ext/autodoc.rst:430
+#: ../../ext/autodoc.rst:436
 msgid "Skipping members"
 msgstr "メンバーのスキップ"
 
-#: ../../ext/autodoc.rst:432
+#: ../../ext/autodoc.rst:438
 msgid ""
 "autodoc allows the user to define a custom method for determining whether a "
 "member should be included in the documentation by using the following event:"
 msgstr "autodocでは以下のイベントを発行することで、指定されたメンバーをドキュメントに含めるかどうかをユーザが決定できるようになっています:"
 
-#: ../../ext/autodoc.rst:439
+#: ../../ext/autodoc.rst:445
 msgid ""
 "Emitted when autodoc has to decide whether a member should be included in "
 "the documentation.  The member is excluded if a handler returns ``True``.  "
 "It is included if the handler returns ``False``."
 msgstr "autodocがメンバーをドキュメントに含めるかどうかを決定するときに呼ばれます。もしもこのハンドラーが\\ ``True``\\ を返すとメンバーのドキュメントは外されます。\\ ``False``\\ を返すと含まれるようになります。"
 
-#: ../../ext/autodoc.rst:449
+#: ../../ext/autodoc.rst:455
 msgid ""
 "a boolean indicating if autodoc will skip this member if the user handler "
 "does not override the decision"

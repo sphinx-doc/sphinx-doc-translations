@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-16 05:42+0000\n"
-"PO-Revision-Date: 2015-09-13 06:04+0000\n"
-"Last-Translator: Arihiro TAKASE <artakase@gmail.com>\n"
+"POT-Creation-Date: 2016-02-29 14:38+0000\n"
+"PO-Revision-Date: 2016-02-14 11:33+0000\n"
+"Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,19 +191,44 @@ msgstr "(用語集がソートされる場合、最初の項がソート順序�
 
 #: ../../markup/para.rst:186
 msgid ""
+"If you want to specify \"grouping key\" for general index entries, you can "
+"put a \"key\" as \"term : key\". For example::"
+msgstr ""
+
+#: ../../markup/para.rst:195
+msgid ""
+"Note that \"key\" is used for grouping key as is. The \"key\" isn't "
+"normalized; key \"A\" and \"a\" become different groups. The whole "
+"characters in \"key\" is used instead of a first character; it is used for "
+"\"Combining Character Sequence\" and \"Surrogate Pairs\" grouping key."
+msgstr ""
+
+#: ../../markup/para.rst:200
+msgid ""
+"In i18n situation, you can specify \"localized term : key\" even if original"
+" text only have \"term\" part. In this case, translated \"localized term\" "
+"will be categorized in \"key\" group."
+msgstr ""
+
+#: ../../markup/para.rst:204
+msgid ""
 "You can now give the glossary directive a ``:sorted:`` flag that will "
 "automatically sort the entries alphabetically."
 msgstr "glossary ディレクティブに ``:sorted:`` フラグを追加することで、アルファベット順に自動的にソートされるようになりました。"
 
-#: ../../markup/para.rst:190
+#: ../../markup/para.rst:208
 msgid "Now supports multiple terms and inline markup in terms."
 msgstr "複数の用語をサポートし、また、用語の中でインラインマークアップを使えるようになりました。"
 
-#: ../../markup/para.rst:195
+#: ../../markup/para.rst:211
+msgid "Index key for glossary term should be considered *experimental*."
+msgstr ""
+
+#: ../../markup/para.rst:215
 msgid "Grammar production displays"
 msgstr "文法規則表示"
 
-#: ../../markup/para.rst:197
+#: ../../markup/para.rst:217
 msgid ""
 "Special markup is available for displaying the productions of a formal "
 "grammar. The markup is simple and does not attempt to model all aspects of "
@@ -213,7 +238,7 @@ msgid ""
 "directive:"
 msgstr "形式がきちんとした文法の規則を表示するための特別なマークアップを利用できます。マークアップはシンプルに作られています。その代わりに、BNFや、BNFの派生の記法をすべてのモデル化することは目標とされていませんが、文脈自由文法を表現するには十分な機能を持っていて、シンボルを書くと、定義にリンクが張られるようにレンダリングされます。以下のディレクティブがあります:"
 
-#: ../../markup/para.rst:205
+#: ../../markup/para.rst:225
 msgid ""
 "This directive is used to enclose a group of productions.  Each production "
 "is given on a single line and consists of a name, separated by a colon from "
@@ -222,18 +247,18 @@ msgid ""
 "the first line."
 msgstr "このディレクティブは文法の規則を表現するためのものです。それぞれの規則は一行で表現され、コロン(:)の前が名前で、その後ろが定義になります。定義を複数行で書くこともできますが、この場合は、それぞれの定義の行の先頭に、最初の行と同じ高さにそろえてコロンを書く必要があります。"
 
-#: ../../markup/para.rst:211
+#: ../../markup/para.rst:231
 msgid ""
 "The argument to :rst:dir:`productionlist` serves to distinguish different "
 "sets of production lists that belong to different grammars."
 msgstr ":rst:dir:`productionlist` に与える名前によって、異なる文法に属する、異なる規則セットのグループと区別できるようになります。"
 
-#: ../../markup/para.rst:214
+#: ../../markup/para.rst:234
 msgid ""
 "Blank lines are not allowed within ``productionlist`` directive arguments."
 msgstr "ディレクティブの引数の ``規則リスト`` の中には空行を入れることはできません。"
 
-#: ../../markup/para.rst:216
+#: ../../markup/para.rst:236
 msgid ""
 "The definition can contain token names which are marked as interpreted text "
 "(e.g. ``sum ::= `integer` \"+\" `integer```) -- this generates cross-"
@@ -241,12 +266,12 @@ msgid ""
 "list, you can reference to token productions using :rst:role:`token`."
 msgstr "定義には解釈済みのテキストとしてマークされたトークン名を含むことができます。これらのトークンの規則との間にクロスリファレンスが生成されます。(例 ``sum ::= `integer` \"+\" `integer```) 文法規則のリストその外では、 :rst:role:`token` ロールを使って、文法への参照を取ることができます。"
 
-#: ../../markup/para.rst:221
+#: ../../markup/para.rst:241
 msgid ""
 "Note that no further reST parsing is done in the production, so that you "
 "don't have to escape ``*`` or ``|`` characters."
 msgstr "規則の中ではreSTパーサは動作しないため、 ``*`` や、 ``|`` といった文字をエスケープすることはできません。"
 
-#: ../../markup/para.rst:224
+#: ../../markup/para.rst:244
 msgid "The following is an example taken from the Python Reference Manual::"
 msgstr "次のサンプルは、Pythonのリファレンスマニュアルにあった構文をSphinxで表現したものです::"

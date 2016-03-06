@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-29 14:38+0000\n"
-"PO-Revision-Date: 2016-02-29 07:07+0000\n"
+"POT-Creation-Date: 2016-03-06 13:36+0000\n"
+"PO-Revision-Date: 2016-03-06 05:08+0000\n"
 "Last-Translator: Takeshi KOMIYA <i.tkomiya@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -495,7 +495,13 @@ msgstr "\\ *location*\\ を指定する際は、(docname, lineno)のタプルも
 msgid "*prefix* usually should not be changed."
 msgstr "*prefix* は通常変更するべきではありません。"
 
-#: ../../docstring of sphinx.application.Sphinx.warn:10
+#: ../../docstring of sphinx.application.Sphinx.warn:8
+msgid ""
+"*type* and *subtype* are used to suppress warnings with "
+":confval:`suppress_warnings`."
+msgstr ""
+
+#: ../../docstring of sphinx.application.Sphinx.warn:12
 msgid ""
 "For warnings emitted during parsing, you should use "
 ":meth:`.BuildEnvironment.warn` since that will collect all warnings during "
@@ -706,11 +712,11 @@ msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
 " phase."
-msgstr ""
+msgstr "イベントハンドラより、ドキュメント名のイテレータを返すことができます。これらのドキュメントはアップデートされたとみなされ、書き込みフェイズにて新規書き込み(または書き換え)が行われます。"
 
 #: ../../extdev/appapi.rst:567
 msgid "The handlers' return value is now used."
-msgstr ""
+msgstr "イベントハンドラからの戻り値が利用されるようになりました。"
 
 #: ../../extdev/appapi.rst:572
 msgid ""
@@ -751,11 +757,11 @@ msgstr "*doctree* 引数はreSTドキュメントから作成する場合にはd
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
-msgstr ""
+msgstr "イベントハンドラは文字列を返すことができます、この文字列は ``'page.html'`` に代わりHTMLテンプレートとして、このページのレンダリングに利用されるテンプレート名になります。"
 
 #: ../../extdev/appapi.rst:601
 msgid "The return value can now specify a template name."
-msgstr ""
+msgstr "戻り値により使用するテンプレート名を指定できるようになりました。"
 
 #: ../../extdev/appapi.rst:606
 msgid ""
@@ -769,38 +775,38 @@ msgstr "ビルドが完了し、Sphinxが終了する際に発行されます。
 
 #: ../../extdev/appapi.rst:617
 msgid "Checking the Sphinx version"
-msgstr ""
+msgstr "Sphinx のバージョン確認"
 
 #: ../../extdev/appapi.rst:621
 msgid "Use this to adapt your extension to API changes in Sphinx."
-msgstr ""
+msgstr "作製した拡張をSphinxのAPI変更に追従させる為、この仕組みを使用してください。"
 
 #: ../../extdev/appapi.rst:625
 msgid ""
 "A tuple of five elements; for Sphinx version 1.2.1 beta 3 this would be "
 "``(1, 2, 1, 'beta', 3)``."
-msgstr ""
+msgstr "5つの要素を持ったタプルです; Sphinx のバージョンが 1.2.1 beta 3 の場合、``(1, 2, 1, 'beta', 3)`` となります。"
 
 #: ../../extdev/appapi.rst:628
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
-msgstr ""
+msgstr "1.2より前のバージョンでは ``sphinx.__version__`` の文字列により確認してください。"
 
 #: ../../extdev/appapi.rst:633
 msgid "The Config object"
-msgstr ""
+msgstr "Config オブジェクト"
 
 #: ../../extdev/appapi.rst:639
 msgid ""
 "The config object makes the values of all config values available as "
 "attributes."
-msgstr ""
+msgstr "config オブジェクトはすべての設定値を属性として利用できるよう保持します。"
 
 #: ../../extdev/appapi.rst:642
 msgid ""
 "It is available as the ``config`` attribute on the application and "
 "environment objects.  For example, to get the value of :confval:`language`, "
 "use either ``app.config.language`` or ``env.config.language``."
-msgstr ""
+msgstr "これは、アプリケーションおよび環境オブジェクト内において、 ``config`` 属性としてアクセスできます。例えば、 :confval:`language` の値を取得したい場合、``app.config.language`` または ``env.config.language`` のように使用します。"
 
 #: ../../extdev/appapi.rst:650
 msgid "The template bridge"
@@ -850,50 +856,50 @@ msgstr "指定された **context** (Python辞書)を使用して、 **template*
 
 #: ../../extdev/appapi.rst:661
 msgid "Exceptions"
-msgstr ""
+msgstr "例外"
 
 #: ../../extdev/appapi.rst:667
 msgid ""
 "This is the base class for \"nice\" exceptions.  When such an exception is "
 "raised, Sphinx will abort the build and present the exception category and "
 "message to the user."
-msgstr ""
+msgstr "これは \"ナイスな\" 例外を作成するための基底クラスです。この例外が発生すると、Sphinxはビルドを中止し、例外のカテゴリとメッセージをユーザーに表示します。"
 
 #: ../../extdev/appapi.rst:671
 msgid ""
 "Extensions are encouraged to derive from this exception for their custom "
 "errors."
-msgstr ""
+msgstr "拡張プログラムでは、この例外を継承しカスタマイズすることが強く推奨されます。"
 
 #: ../../extdev/appapi.rst:674
 msgid ""
 "Exceptions *not* derived from :exc:`SphinxError` are treated as unexpected "
 "and shown to the user with a part of the traceback (and the full traceback "
 "saved in a temporary file)."
-msgstr ""
+msgstr ":exc:`SphinxError` から *継承されない* 例外は予期しない例外として扱われ、トレースバックの一部を表示(そして、全部を一時ファイルに保存)します。"
 
 #: ../../extdev/appapi.rst:680
 msgid ""
 "Description of the exception \"category\", used in converting the exception "
 "to a string (\"category: message\").  Should be set accordingly in "
 "subclasses."
-msgstr ""
+msgstr "例外の \"category\" の記述部分は、例外内容を文字列に変換する場合に利用されます(\"category: message\" という書式)。 例外のサブクラスに応じて適切に設定するべきです。"
 
 #: ../../extdev/appapi.rst:686
 msgid ""
 "Used for erroneous values or nonsensical combinations of configuration "
 "values."
-msgstr ""
+msgstr "コンフィグ値において、誤った値や、おかしな値の組み合わせが与えられた場合に利用されます。"
 
 #: ../../extdev/appapi.rst:691
 msgid "Used for errors in setting up extensions."
-msgstr ""
+msgstr "拡張機能のセットアップ中に発生した例外に対して使用します。"
 
 #: ../../extdev/appapi.rst:695
 msgid "Used for errors to do with themes."
-msgstr ""
+msgstr "テーマの処理中に生じた例外に対して使用します。"
 
 #: ../../extdev/appapi.rst:699
 msgid ""
 "Raised when the docs require a higher Sphinx version than the current one."
-msgstr ""
+msgstr "ドキュメントが現在よりも高いSphinxのバージョンを要求した場合に発生します。"

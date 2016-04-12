@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.4\n"
+"Project-Id-Version: Sphinx 1.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-29 00:03+0900\n"
+"POT-Creation-Date: 2016-04-12 22:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,7 +245,7 @@ msgid "It is customary to put the opening bracket before the comma."
 msgstr ""
 
 #: ../../sphinx/doc/domains.rst:304
-#: ../../sphinx/doc/domains.rst:753
+#: ../../sphinx/doc/domains.rst:770
 msgid "Info field lists"
 msgstr ""
 
@@ -513,328 +513,344 @@ msgstr ""
 msgid "A type alias can also be templated::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:640
+#: ../../sphinx/doc/domains.rst:635
+msgid "The example are rendered as follows."
+msgstr ""
+
+#: ../../sphinx/doc/domains.rst:639
+msgid "A typedef-like declaration of a type."
+msgstr ""
+
+#: ../../sphinx/doc/domains.rst:643
+msgid "Declaration of a type alias with unspecified type."
+msgstr ""
+
+#: ../../sphinx/doc/domains.rst:647
+msgid "Declaration of a type alias."
+msgstr ""
+
+#: ../../sphinx/doc/domains.rst:657
 msgid "Describe a (scoped) enum, possibly with the underlying type specified. Any enumerators declared inside an unscoped enum will be declared both in the enum scope and in the parent scope. Examples::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:664
+#: ../../sphinx/doc/domains.rst:681
 msgid "Describe an enumerator, optionally with its value defined, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:672
+#: ../../sphinx/doc/domains.rst:689
 msgid "Namespacing"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:674
+#: ../../sphinx/doc/domains.rst:691
 msgid "Declarations in the C++ domain are as default placed in global scope. The current scope can be changed using three namespace directives. They manage a stack declarations where ``cpp:namespace`` resets the stack and changes a given scope. The ``cpp:namespace-push`` directive changes the scope to a given inner scope of the current one. The ``cpp:namespace-pop`` directive undos the most recent ``cpp:namespace-push`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:685
+#: ../../sphinx/doc/domains.rst:702
 msgid "Changes the current scope for the subsequent objects to the given scope, and resets the namespace directive stack. Note that the namespace does not need to correspond to C++ namespaces, but can end in names of classes, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:692
+#: ../../sphinx/doc/domains.rst:709
 msgid "All subsequent objects will be defined as if their name were declared with the scope prepended. The subsequent cross-references will be searched for starting in the current scope."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:695
+#: ../../sphinx/doc/domains.rst:712
 msgid "Using ``NULL``, ``0``, or ``nullptr`` as the scope will change to global scope."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:697
+#: ../../sphinx/doc/domains.rst:714
 msgid "A namespace declaration can also be templated, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:706
+#: ../../sphinx/doc/domains.rst:723
 msgid "declares ``size`` as a member function of the template class ``std::vector``. Equivalently this could have been declared using::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:714
+#: ../../sphinx/doc/domains.rst:731
 msgid "or:::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:722
+#: ../../sphinx/doc/domains.rst:739
 msgid "Change the scope relatively to the current scope. For example, after::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:728
+#: ../../sphinx/doc/domains.rst:745
 msgid "the current scope will be ``A::B::C::D``."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:732
+#: ../../sphinx/doc/domains.rst:749
 msgid "Undo the previous ``cpp:namespace-push`` directive (*not* just pop a scope). For example, after::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:741
+#: ../../sphinx/doc/domains.rst:758
 msgid "the current scope will be ``A::B`` (*not* ``A::B::C``)."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:743
+#: ../../sphinx/doc/domains.rst:760
 msgid "If no previous ``cpp:namespace-push`` directive has been used, but only a ``cpp:namespace`` directive, then the current scope will be reset to global scope. That is, ``.. cpp:namespace:: A::B`` is equivalent to::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:755
+#: ../../sphinx/doc/domains.rst:772
 msgid "The C++ directives support the following info fields (see also :ref:`info-field-lists`):"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:757
+#: ../../sphinx/doc/domains.rst:774
 msgid "`param`, `parameter`, `arg`, `argument`: Description of a parameter."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:758
+#: ../../sphinx/doc/domains.rst:775
 msgid "`tparam`: Description of a template parameter."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:759
+#: ../../sphinx/doc/domains.rst:776
 msgid "`returns`, `return`: Description of a return value."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:760
+#: ../../sphinx/doc/domains.rst:777
 msgid "`throws`, `throw`, `exception`: Description of a possibly thrown exception."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:766
+#: ../../sphinx/doc/domains.rst:783
 msgid "Cross-referencing"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:768
+#: ../../sphinx/doc/domains.rst:785
 msgid "These roles link to the given declaration types:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:779
+#: ../../sphinx/doc/domains.rst:796
 msgid "Reference a C++ declaration by name (see below for details). The name must be properly qualified relative to the position of the link."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:782
+#: ../../sphinx/doc/domains.rst:799
 msgid "Note on References with Templates Parameters/Arguments"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:784
+#: ../../sphinx/doc/domains.rst:801
 msgid "Sphinx's syntax to give references a custom title can interfere with linking to template classes, if nothing follows the closing angle bracket, i.e. if the link looks like this: ``:cpp:class:`MyClass<int>```. This is interpreted as a link to ``int`` with a title of ``MyClass``. In this case, please escape the opening angle bracket with a backslash, like this: ``:cpp:class:`MyClass\\<int>```."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:791
+#: ../../sphinx/doc/domains.rst:808
 msgid "Note on References to Overloaded Functions"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:793
+#: ../../sphinx/doc/domains.rst:810
 msgid "It is currently impossible to link to a specific version of an overloaded method.  Currently the C++ domain is the first domain that has basic support for overloaded methods and until there is more data for comparison we don't want to select a bad syntax to reference a specific overload.  Currently Sphinx will link to the first overloaded version of the method / function."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:801
+#: ../../sphinx/doc/domains.rst:818
 msgid "Declarations without template parameters and template arguments"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:803
+#: ../../sphinx/doc/domains.rst:820
 msgid "For linking to non-templated declarations the name must be a nested name, e.g., ``f`` or ``MyClass::f``."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:807
+#: ../../sphinx/doc/domains.rst:824
 msgid "Templated declarations"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:809
-#: ../../sphinx/doc/domains.rst:837
+#: ../../sphinx/doc/domains.rst:826
+#: ../../sphinx/doc/domains.rst:854
 msgid "Assume the following declarations."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:819
+#: ../../sphinx/doc/domains.rst:836
 msgid "In general the reference must include the template paraemter declarations, e.g., ``template\\<typename TOuter> Wrapper::Outer`` (:cpp:class:`template\\<typename TOuter> Wrapper::Outer`). Currently the lookup only succeed if the template parameter identifiers are equal strings. That is, ``template\\<typename UOuter> Wrapper::Outer`` will not work."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:824
+#: ../../sphinx/doc/domains.rst:841
 msgid "The inner template class can not be directly referenced, unless the current namespace is changed or the following shorthand is used. If a template parameter list is omitted, then the lookup will assume either a template or a non-template, but not a partial template specialisation. This means the following references work."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:830
+#: ../../sphinx/doc/domains.rst:847
 msgid "``Wrapper::Outer`` (:cpp:class:`Wrapper::Outer`)"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:831
+#: ../../sphinx/doc/domains.rst:848
 msgid "``Wrapper::Outer::Inner`` (:cpp:class:`Wrapper::Outer::Inner`)"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:832
+#: ../../sphinx/doc/domains.rst:849
 msgid "``template\\<typename TInner> Wrapper::Outer::Inner`` (:cpp:class:`template\\<typename TInner> Wrapper::Outer::Inner`)"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:835
+#: ../../sphinx/doc/domains.rst:852
 msgid "(Full) Template Specialisations"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:854
+#: ../../sphinx/doc/domains.rst:871
 msgid "In general the reference must include a template parameter list for each template argument list. The full specialisation above can therefore be referenced with ``template\\<> Outer\\<int>`` (:cpp:class:`template\\<> Outer\\<int>`) and ``template\\<> template\\<> Outer\\<int>::Inner\\<bool>`` (:cpp:class:`template\\<> template\\<> Outer\\<int>::Inner\\<bool>`). As a shorthand the empty template parameter list can be omitted, e.g., ``Outer\\<int>`` (:cpp:class:`Outer\\<int>`) and ``Outer\\<int>::Inner\\<bool>`` (:cpp:class:`Outer\\<int>::Inner\\<bool>`)."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:862
+#: ../../sphinx/doc/domains.rst:879
 msgid "Partial Template Specialisations"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:864
+#: ../../sphinx/doc/domains.rst:881
 msgid "Assume the following declaration."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:869
+#: ../../sphinx/doc/domains.rst:886
 msgid "References to partial specialisations must always include the template parameter lists, e.g., ``template\\<typename T> Outer\\<T*>`` (:cpp:class:`template\\<typename T> Outer\\<T*>`). Currently the lookup only succeed if the template parameter identifiers are equal strings."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:876
+#: ../../sphinx/doc/domains.rst:893
 msgid "The Standard Domain"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:878
+#: ../../sphinx/doc/domains.rst:895
 msgid "The so-called \"standard\" domain collects all markup that doesn't warrant a domain of its own.  Its directives and roles are not prefixed with a domain name."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:882
+#: ../../sphinx/doc/domains.rst:899
 msgid "The standard domain is also where custom object descriptions, added using the :func:`~sphinx.application.Sphinx.add_object_type` API, are placed."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:885
+#: ../../sphinx/doc/domains.rst:902
 msgid "There is a set of directives allowing documenting command-line programs:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:889
+#: ../../sphinx/doc/domains.rst:906
 msgid "Describes a command line argument or switch.  Option argument names should be enclosed in angle brackets.  Examples::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:900
+#: ../../sphinx/doc/domains.rst:917
 msgid "The directive will create cross-reference targets for the given options, referencable by :rst:role:`option` (in the example case, you'd use something like ``:option:`dest_dir```, ``:option:`-m```, or ``:option:`--module```)."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:904
+#: ../../sphinx/doc/domains.rst:921
 msgid "``cmdoption`` directive is a deprecated alias for the ``option`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:908
+#: ../../sphinx/doc/domains.rst:925
 msgid "Describes an environment variable that the documented code or program uses or defines.  Referencable by :rst:role:`envvar`."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:913
+#: ../../sphinx/doc/domains.rst:930
 msgid "Like :rst:dir:`py:currentmodule`, this directive produces no output. Instead, it serves to notify Sphinx that all following :rst:dir:`option` directives document options for the program called *name*."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:917
+#: ../../sphinx/doc/domains.rst:934
 msgid "If you use :rst:dir:`program`, you have to qualify the references in your :rst:role:`option` roles by the program name, so if you have the following situation ::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:933
+#: ../../sphinx/doc/domains.rst:950
 msgid "then ``:option:`rm -r``` would refer to the first option, while ``:option:`svn -r``` would refer to the second one."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:936
+#: ../../sphinx/doc/domains.rst:953
 msgid "The program name may contain spaces (in case you want to document subcommands like ``svn add`` and ``svn commit`` separately)."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:942
+#: ../../sphinx/doc/domains.rst:959
 msgid "There is also a very generic object description directive, which is not tied to any domain:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:948
+#: ../../sphinx/doc/domains.rst:965
 msgid "This directive produces the same formatting as the specific ones provided by domains, but does not create index entries or cross-referencing targets. Example::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:958
+#: ../../sphinx/doc/domains.rst:975
 msgid "The JavaScript Domain"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:960
+#: ../../sphinx/doc/domains.rst:977
 msgid "The JavaScript domain (name **js**) provides the following directives:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:964
+#: ../../sphinx/doc/domains.rst:981
 msgid "Describes a JavaScript function or method.  If you want to describe arguments as optional use square brackets as :ref:`documented <signatures>` for Python signatures."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:968
+#: ../../sphinx/doc/domains.rst:985
 msgid "You can use fields to give more details about arguments and their expected types, errors which may be thrown by the function, and the value being returned::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:982
-#: ../../sphinx/doc/domains.rst:1004
+#: ../../sphinx/doc/domains.rst:999
+#: ../../sphinx/doc/domains.rst:1021
 msgid "This is rendered as:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:986
+#: ../../sphinx/doc/domains.rst:1003
 msgid "An URI to the location of the resource."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:987
+#: ../../sphinx/doc/domains.rst:1004
 msgid "Gets called with the object."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:988
+#: ../../sphinx/doc/domains.rst:1005
 msgid "Gets called in case the request fails. And a lot of other text so we need multiple lines."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:991
+#: ../../sphinx/doc/domains.rst:1008
 msgid "For whatever reason in that case."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:992
+#: ../../sphinx/doc/domains.rst:1009
 msgid "Something."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:996
+#: ../../sphinx/doc/domains.rst:1013
 msgid "Describes a constructor that creates an object.  This is basically like a function but will show up with a `class` prefix::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1008
+#: ../../sphinx/doc/domains.rst:1025
 msgid "The name of the animal"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1009
+#: ../../sphinx/doc/domains.rst:1026
 msgid "an optional age for the animal"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1013
+#: ../../sphinx/doc/domains.rst:1030
 msgid "Describes a global variable or constant."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1017
+#: ../../sphinx/doc/domains.rst:1034
 msgid "Describes the attribute *name* of *object*."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1021
-#: ../../sphinx/doc/domains.rst:1074
+#: ../../sphinx/doc/domains.rst:1038
+#: ../../sphinx/doc/domains.rst:1091
 msgid "These roles are provided to refer to the described objects:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1030
+#: ../../sphinx/doc/domains.rst:1047
 msgid "The reStructuredText domain"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1032
+#: ../../sphinx/doc/domains.rst:1049
 msgid "The reStructuredText domain (name **rst**) provides the following directives:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1036
+#: ../../sphinx/doc/domains.rst:1053
 msgid "Describes a reST directive.  The *name* can be a single directive name or actual directive syntax (`..` prefix and `::` suffix) with arguments that will be rendered differently.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1048
-#: ../../sphinx/doc/domains.rst:1066
+#: ../../sphinx/doc/domains.rst:1065
+#: ../../sphinx/doc/domains.rst:1083
 msgid "will be rendered as:"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1052
-#: ../../sphinx/doc/domains.rst:1070
+#: ../../sphinx/doc/domains.rst:1069
+#: ../../sphinx/doc/domains.rst:1087
 msgid "Foo description."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1056
+#: ../../sphinx/doc/domains.rst:1073
 msgid "Bar description."
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1060
+#: ../../sphinx/doc/domains.rst:1077
 msgid "Describes a reST role.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1081
+#: ../../sphinx/doc/domains.rst:1098
 msgid "More domains"
 msgstr ""
 
-#: ../../sphinx/doc/domains.rst:1083
+#: ../../sphinx/doc/domains.rst:1100
 msgid "The sphinx-contrib_ repository contains more domains available as extensions; currently Ada_, CoffeeScript_, Erlang_, HTTP_, Lasso_, MATLAB_, PHP_, and Ruby_ domains. Also available are domains for `Chapel`_, `Common Lisp`_, dqn_, Go_, Jinja_, Operation_, and Scala_."
 msgstr ""
 

@@ -1,4 +1,4 @@
-export SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-1_4
+export SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-1_5
 
 cd `dirname $0`
 rm -R pot

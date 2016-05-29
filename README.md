@@ -79,20 +79,27 @@ After that, you should commit updated po files.
 
 ## How to add a version
 
-1. branch from master:
+1. init submodules:
+
+   ```
+   git submodule init
+   git submodule update
+   ```
+
+2. branch from master:
 
    ```
    git checkout -b 1.3
    ```
 
-2. update submodule:
+3. update submodule:
 
    ```
    cd sphinx
    git checkout 1.3.3
    ```
 
-3. commit it:
+4. commit it:
 
    ```
    cd ..
@@ -100,9 +107,9 @@ After that, you should commit updated po files.
    git commit -m "use sphinx-1.3.3"
    ```
 
-4. update po files
+5. update po files
 
-5. enable version 1.3 on RTD:
+6. enable version 1.3 on RTD:
 
    https://readthedocs.org/dashboard/shimizukawa-sphinx-ja/versions/
 

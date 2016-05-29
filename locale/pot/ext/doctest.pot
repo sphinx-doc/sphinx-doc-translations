@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.4.1\n"
+"Project-Id-Version: Sphinx 1.4.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 22:54+0900\n"
+"POT-Creation-Date: 2016-05-29 18:36+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,124 +52,132 @@ msgstr ""
 msgid "*code-output-style* blocks consist of an ordinary piece of Python code, and optionally, a piece of output for that code."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:36
-msgid "The doctest extension provides four directives.  The *group* argument is interpreted as follows: if it is empty, the block is assigned to the group named ``default``.  If it is ``*``, the block is assigned to all groups (including the ``default`` group).  Otherwise, it must be a comma-separated list of group names."
+#: ../../sphinx/doc/ext/doctest.rst:38
+msgid "Directives"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:44
+#: ../../sphinx/doc/ext/doctest.rst:40
+msgid "The *group* argument below is interpreted as follows: if it is empty, the block is assigned to the group named ``default``.  If it is ``*``, the block is assigned to all groups (including the ``default`` group).  Otherwise, it must be a comma-separated list of group names."
+msgstr ""
+
+#: ../../sphinx/doc/ext/doctest.rst:47
 msgid "A setup code block.  This code is not shown in the output for other builders, but executed before the doctests of the group(s) it belongs to."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:50
+#: ../../sphinx/doc/ext/doctest.rst:53
 msgid "A cleanup code block.  This code is not shown in the output for other builders, but executed after the doctests of the group(s) it belongs to."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:58
+#: ../../sphinx/doc/ext/doctest.rst:61
 msgid "A doctest-style code block.  You can use standard :mod:`doctest` flags for controlling how actual output is compared with what you give as output.  By default, these options are enabled: ``ELLIPSIS`` (allowing you to put ellipses in the expected output that match anything in the actual output), ``IGNORE_EXCEPTION_DETAIL`` (not comparing tracebacks), ``DONT_ACCEPT_TRUE_FOR_1`` (by default, doctest accepts \"True\" in the output where \"1\" is given -- this is a relic of pre-Python 2.2 times)."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:66
-#: ../../sphinx/doc/ext/doctest.rst:123
+#: ../../sphinx/doc/ext/doctest.rst:69
+#: ../../sphinx/doc/ext/doctest.rst:126
 msgid "This directive supports two options:"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:68
+#: ../../sphinx/doc/ext/doctest.rst:71
 msgid "``hide``, a flag option, hides the doctest block in other builders.  By default it is shown as a highlighted doctest block."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:71
+#: ../../sphinx/doc/ext/doctest.rst:74
 msgid "``options``, a string option, can be used to give a comma-separated list of doctest flags that apply to each example in the tests.  (You still can give explicit flags per example, with doctest comments, but they will show up in other builders too.)"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:76
+#: ../../sphinx/doc/ext/doctest.rst:79
 msgid "Note that like with standard doctests, you have to use ``<BLANKLINE>`` to signal a blank line in the expected output.  The ``<BLANKLINE>`` is removed when building presentation output (HTML, LaTeX etc.)."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:80
+#: ../../sphinx/doc/ext/doctest.rst:83
 msgid "Also, you can give inline doctest options, like in doctest::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:85
+#: ../../sphinx/doc/ext/doctest.rst:88
 msgid "They will be respected when the test is run, but stripped from presentation output."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:91
+#: ../../sphinx/doc/ext/doctest.rst:94
 msgid "A code block for a code-output-style test."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:93
+#: ../../sphinx/doc/ext/doctest.rst:96
 msgid "This directive supports one option:"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:95
+#: ../../sphinx/doc/ext/doctest.rst:98
 msgid "``hide``, a flag option, hides the code block in other builders.  By default it is shown as a highlighted code block."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:100
+#: ../../sphinx/doc/ext/doctest.rst:103
 msgid "Code in a ``testcode`` block is always executed all at once, no matter how many statements it contains.  Therefore, output will *not* be generated for bare expressions -- use ``print``.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:113
+#: ../../sphinx/doc/ext/doctest.rst:116
 msgid "Also, please be aware that since the doctest module does not support mixing regular output and an exception message in the same snippet, this applies to testcode/testoutput as well."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:120
+#: ../../sphinx/doc/ext/doctest.rst:123
 msgid "The corresponding output, or the exception message, for the last :rst:dir:`testcode` block."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:125
+#: ../../sphinx/doc/ext/doctest.rst:128
 msgid "``hide``, a flag option, hides the output block in other builders.  By default it is shown as a literal block without highlighting."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:128
+#: ../../sphinx/doc/ext/doctest.rst:131
 msgid "``options``, a string option, can be used to give doctest flags (comma-separated) just like in normal doctest blocks."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:131
+#: ../../sphinx/doc/ext/doctest.rst:134
 msgid "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:144
+#: ../../sphinx/doc/ext/doctest.rst:147
 msgid "The following is an example for the usage of the directives.  The test via :rst:dir:`doctest` and the test via :rst:dir:`testcode` and :rst:dir:`testoutput` are equivalent. ::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:177
-msgid "There are also these config values for customizing the doctest extension:"
+#: ../../sphinx/doc/ext/doctest.rst:181
+msgid "Configuration"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:181
+#: ../../sphinx/doc/ext/doctest.rst:183
+msgid "The doctest extension uses the following configuration values:"
+msgstr ""
+
+#: ../../sphinx/doc/ext/doctest.rst:187
 msgid "A list of directories that will be added to :data:`sys.path` when the doctest builder is used.  (Make sure it contains absolute paths.)"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:186
+#: ../../sphinx/doc/ext/doctest.rst:192
 msgid "Python code that is treated like it were put in a ``testsetup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. import modules you will always need in your doctests."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:194
+#: ../../sphinx/doc/ext/doctest.rst:200
 msgid "Python code that is treated like it were put in a ``testcleanup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. remove any temporary files that the tests leave behind."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:202
+#: ../../sphinx/doc/ext/doctest.rst:208
 msgid "If this is a nonempty string (the default is ``'default'``), standard reST doctest blocks will be tested too.  They will be assigned to the group name given."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:206
+#: ../../sphinx/doc/ext/doctest.rst:212
 msgid "reST doctest blocks are simply doctests put into a paragraph of their own, like so::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:216
+#: ../../sphinx/doc/ext/doctest.rst:222
 msgid "(Note that no special ``::`` is used to introduce a doctest block; docutils recognizes them from the leading ``>>>``.  Also, no additional indentation is used, though it doesn't hurt.)"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:220
+#: ../../sphinx/doc/ext/doctest.rst:226
 msgid "If this value is left at its default value, the above snippet is interpreted by the doctest builder exactly like the following::"
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:232
+#: ../../sphinx/doc/ext/doctest.rst:238
 msgid "This feature makes it easy for you to test doctests in docstrings included with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a special directive."
 msgstr ""
 
-#: ../../sphinx/doc/ext/doctest.rst:236
+#: ../../sphinx/doc/ext/doctest.rst:242
 msgid "Note though that you can't have blank lines in reST doctest blocks.  They will be interpreted as one block ending and another one starting.  Also, removal of ``<BLANKLINE>`` and ``# doctest:`` options only works in :rst:dir:`doctest` blocks, though you may set :confval:`trim_doctest_flags` to achieve that in all code blocks with Python console content."
 msgstr ""
 

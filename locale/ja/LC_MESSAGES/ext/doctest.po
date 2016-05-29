@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 13:56+0000\n"
-"PO-Revision-Date: 2015-09-13 05:35+0000\n"
-"Last-Translator: Arihiro TAKASE <artakase@gmail.com>\n"
+"POT-Creation-Date: 2016-05-29 09:08+0000\n"
+"PO-Revision-Date: 2016-05-09 01:20+0000\n"
+"Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,37 +65,37 @@ msgid ""
 "optionally, a piece of output for that code."
 msgstr "通常のPythonコードと、出力を1つから構成される、\\ *コード-出力スタイル*\\ のブロック"
 
-#: ../../ext/doctest.rst:36
-msgid ""
-"The doctest extension provides four directives.  The *group* argument is "
-"interpreted as follows: if it is empty, the block is assigned to the group "
-"named ``default``.  If it is ``*``, the block is assigned to all groups "
-"(including the ``default`` group).  Otherwise, it must be a comma-separated "
-"list of group names."
-msgstr "doctest拡張は4つのディレクティブを提供します。 *グループ*\\ 引数は以下のように解釈されます: もしも何も指定されなかった場合には、\\ ``default``\\ というグループ名が指定されたとみなします。もしも\\ ``*``\\ が指定されると、そのブロックは\\ ``default``\\ を含む、すべてのグループに対して割り当てられたものとみなします。そうでなければ、これ以外の場合はグループ名は、カンマ区切りのリストでなければなりません。"
+#: ../../ext/doctest.rst:38
+msgid "Directives"
+msgstr "ディレクティブ"
 
-#: ../../ext/doctest.rst:44
+#: ../../ext/doctest.rst:40
+msgid ""
+"The *group* argument below is interpreted as follows: if it is empty, the "
+"block is assigned to the group named ``default``.  If it is ``*``, the block"
+" is assigned to all groups (including the ``default`` group).  Otherwise, it"
+" must be a comma-separated list of group names."
+msgstr ""
+
+#: ../../ext/doctest.rst:47
 msgid ""
 "A setup code block.  This code is not shown in the output for other "
 "builders, but executed before the doctests of the group(s) it belongs to."
 msgstr "セットアップのためのコードブロックです。このコードは他のビルダーを使用したときには出力されませんが、それが所属するグループのdoctestが実行される前に実行されます。"
 
-#: ../../ext/doctest.rst:50
+#: ../../ext/doctest.rst:53
 msgid ""
 "A cleanup code block.  This code is not shown in the output for other "
 "builders, but executed after the doctests of the group(s) it belongs to."
 msgstr "片付けをするためのコードブロックです。このコードは他のビルダーを使用したときには出力されませんが、それが所属するグループのdoctestが実行された後に実行されます。"
 
-#: ../../ext/doctest.rst:58
+#: ../../ext/doctest.rst:61
 msgid ""
 "A doctest-style code block.  You can use standard :mod:`doctest` flags for "
-"controlling how actual output is compared with what you give as output.  By "
-"default, these options are enabled: ``ELLIPSIS`` (allowing you to put "
-"ellipses in the expected output that match anything in the actual output), "
-"``IGNORE_EXCEPTION_DETAIL`` (not comparing tracebacks), "
-"``DONT_ACCEPT_TRUE_FOR_1`` (by default, doctest accepts \"True\" in the "
-"output where \"1\" is given -- this is a relic of pre-Python 2.2 times)."
-msgstr "doctestスタイルのコードブロックです。標準の :mod:`doctest` のフラグを使用すると、ユーザが指定した理想の出力と、実際に出力したものをどのように比較するのか、というのを制御できます。デフォルトでは以下のオプションが有効です: ``ELLIPSIS`` 省略記号(...)を期待される出力の中に書くことができます。どのような結果が来てもマッチします。 ``IGNORE_EXCEPTION_DETAIL`` 例外の詳細を省略して比較します。トレースバックの詳細までは比較しないようになります。 ``DONT_ACCEPT_TRUE_FOR_1`` デフォルトでは、実際の出力が\"True\"で、理想の結果が\"1\"となっていた場合、デフォルトではこれもテスト成功とみなします。Python 2.2以前の名残です。"
+"controlling how actual output is compared with what you give as output.  The"
+" default set of flags is specified by the :confval:`doctest_default_flags` "
+"configuration variable."
+msgstr ""
 
 #: ../../ext/doctest.rst:66 ../../ext/doctest.rst:123
 msgid "This directive supports two options:"
@@ -189,65 +189,91 @@ msgid ""
 ":rst:dir:`testoutput` are equivalent. ::"
 msgstr "以下のコードはこれらのディレクティブの使用方法のサンプルです。 :rst:dir:`doctest` を使用したテストと、 :rst:dir:`testcode` および :rst:dir:`testoutput` の二つで構成されたテストは等価です. ::"
 
-#: ../../ext/doctest.rst:177
-msgid ""
-"There are also these config values for customizing the doctest extension:"
-msgstr "doctest拡張の動作をカスタマイズする設定がいくつかあります:"
+#: ../../ext/doctest.rst:178
+msgid "Configuration"
+msgstr ""
 
-#: ../../ext/doctest.rst:181
+#: ../../ext/doctest.rst:180
+msgid "The doctest extension uses the following configuration values:"
+msgstr ""
+
+#: ../../ext/doctest.rst:184
+msgid "By default, these options are enabled:"
+msgstr ""
+
+#: ../../ext/doctest.rst:186
+msgid ""
+"``ELLIPSIS``, allowing you to put ellipses in the expected output that match"
+" anything in the actual output;"
+msgstr ""
+
+#: ../../ext/doctest.rst:188
+msgid ""
+"``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon"
+" and any module information in the exception name to be ignored;"
+msgstr ""
+
+#: ../../ext/doctest.rst:190
+msgid ""
+"``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is "
+"given -- the default behavior of accepting this substitution is a relic of "
+"pre-Python 2.2 times."
+msgstr ""
+
+#: ../../ext/doctest.rst:198
 msgid ""
 "A list of directories that will be added to :data:`sys.path` when the "
 "doctest builder is used.  (Make sure it contains absolute paths.)"
 msgstr "doctestビルダーが使用されるときに、 :data:`sys.path` に対して追加されるディレクトリのリストです。必ず絶対パスで記述してください。"
 
-#: ../../ext/doctest.rst:186
+#: ../../ext/doctest.rst:203
 msgid ""
 "Python code that is treated like it were put in a ``testsetup`` directive "
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. import modules you will always need in your doctests."
 msgstr "Pythonコードを記述します。このコードはテストされる\\ *すべての*\\ ファイルの\\ ``testsetup``\\ ディレクティブに書き込んだのと同じように扱われます。例えば、doctest時にいつでも必要となるモジュールをimportするといった用途に使用できます。"
 
-#: ../../ext/doctest.rst:194
+#: ../../ext/doctest.rst:211
 msgid ""
 "Python code that is treated like it were put in a ``testcleanup`` directive "
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. remove any temporary files that the tests leave behind."
 msgstr "すべてのテストグループがテストを終了したあとに呼ばれる、 ``testcleanup`` ディレクティブを、*すべての*\\ ファイルに作ります。この設定にはPythonのコードを書きます。すべてのテンポラリファイルを削除などの使い方ができます。"
 
-#: ../../ext/doctest.rst:202
+#: ../../ext/doctest.rst:219
 msgid ""
 "If this is a nonempty string (the default is ``'default'``), standard reST "
 "doctest blocks will be tested too.  They will be assigned to the group name "
 "given."
 msgstr "この値に空でない文字列(デフォルトは\\ ``'default'``)が設定されると、標準のreSTのdoctestブロックもテストされるようになります。それらのテストには、ここで与えられたグループ名が設定されます。"
 
-#: ../../ext/doctest.rst:206
+#: ../../ext/doctest.rst:223
 msgid ""
 "reST doctest blocks are simply doctests put into a paragraph of their own, "
 "like so::"
 msgstr "reSTのdoctestブロックは、reSTの中のパラグラフとして単純にdoctestが置かれます::"
 
-#: ../../ext/doctest.rst:216
+#: ../../ext/doctest.rst:233
 msgid ""
 "(Note that no special ``::`` is used to introduce a doctest block; docutils "
 "recognizes them from the leading ``>>>``.  Also, no additional indentation "
 "is used, though it doesn't hurt.)"
 msgstr "reSTの場合は、doctestブロックを表現するのに特別な\\ ``::``\\ は使用されません。docutilsは\\ ``>>>``\\ から始まる行を識別します。そのため、doctestのために追加でインデントを設定する必要はありません。"
 
-#: ../../ext/doctest.rst:220
+#: ../../ext/doctest.rst:237
 msgid ""
 "If this value is left at its default value, the above snippet is interpreted"
 " by the doctest builder exactly like the following::"
 msgstr "この設定値がデフォルトのままであったとすると、上記のコード片は、下記のように書いた場合と同じようにdoctestビルダーから解釈されます::"
 
-#: ../../ext/doctest.rst:232
+#: ../../ext/doctest.rst:249
 msgid ""
 "This feature makes it easy for you to test doctests in docstrings included "
 "with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a"
 " special directive."
 msgstr "この機能があるおかげで :mod:`~sphinx.ext.autodoc` 拡張を使用して取り込んだdocstring中のdoctestを簡単に実行できます。特別なディレクティブでマークアップする必要はありません。"
 
-#: ../../ext/doctest.rst:236
+#: ../../ext/doctest.rst:253
 msgid ""
 "Note though that you can't have blank lines in reST doctest blocks.  They "
 "will be interpreted as one block ending and another one starting.  Also, "

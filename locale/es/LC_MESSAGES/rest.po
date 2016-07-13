@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-12 13:12+0000\n"
-"PO-Revision-Date: 2016-05-26 12:04+0000\n"
+"POT-Creation-Date: 2016-07-04 23:33+0000\n"
+"PO-Revision-Date: 2016-06-27 02:24+0000\n"
 "Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -568,18 +568,18 @@ msgstr ""
 msgid ""
 "Interpretation of image size options (``width`` and ``height``) is as "
 "follows: if the size has no unit or the unit is pixels, the given size will "
-"only be respected for output channels that support pixels (i.e. not in LaTeX"
-" output). Other units (like ``pt`` for points) will be used for HTML and "
-"LaTeX output."
+"only be respected for output channels that support pixels. Other units (like"
+" ``pt`` for points) will be used for HTML and LaTeX output (the latter "
+"replaces ``pt`` by ``bp`` as this is the TeX unit such that ``72bp=1in``)."
 msgstr ""
 
-#: ../../rest.rst:369
+#: ../../rest.rst:370
 msgid ""
 "Sphinx extends the standard docutils behavior by allowing an asterisk for "
 "the extension::"
 msgstr ""
 
-#: ../../rest.rst:374
+#: ../../rest.rst:375
 msgid ""
 "Sphinx then searches for all images matching the provided pattern and "
 "determines their type.  Each builder then chooses the best image out of "
@@ -590,57 +590,61 @@ msgid ""
 ":ref:`builders`."
 msgstr ""
 
-#: ../../rest.rst:381
+#: ../../rest.rst:382
 msgid "Note that image file names should not contain spaces."
 msgstr ""
 
-#: ../../rest.rst:383
+#: ../../rest.rst:384
 msgid "Added the support for file names ending in an asterisk."
 msgstr ""
 
-#: ../../rest.rst:386
+#: ../../rest.rst:387
 msgid "Image paths can now be absolute."
 msgstr ""
 
-#: ../../rest.rst:391 ../../rest.rst:491
+#: ../../rest.rst:390
+msgid "latex target supports pixels (default is ``96px=1in``)."
+msgstr ""
+
+#: ../../rest.rst:395 ../../rest.rst:495
 msgid "Footnotes"
 msgstr "Notas a pie de página"
 
-#: ../../rest.rst:393
+#: ../../rest.rst:397
 msgid ""
 "For footnotes (:duref:`ref <footnotes>`), use ``[#name]_`` to mark the "
 "footnote location, and add the footnote body at the bottom of the document "
 "after a \"Footnotes\" rubric heading, like so::"
 msgstr ""
 
-#: ../../rest.rst:404
+#: ../../rest.rst:408
 msgid ""
 "You can also explicitly number the footnotes (``[1]_``) or use auto-numbered"
 " footnotes without names (``[#]_``)."
 msgstr ""
 
-#: ../../rest.rst:409
+#: ../../rest.rst:413
 msgid "Citations"
 msgstr ""
 
-#: ../../rest.rst:411
+#: ../../rest.rst:415
 msgid ""
 "Standard reST citations (:duref:`ref <citations>`) are supported, with the "
 "additional feature that they are \"global\", i.e. all citations can be "
 "referenced from all files.  Use them like so::"
 msgstr ""
 
-#: ../../rest.rst:419
+#: ../../rest.rst:423
 msgid ""
 "Citation usage is similar to footnote usage, but with a label that is not "
 "numeric or begins with ``#``."
 msgstr ""
 
-#: ../../rest.rst:424
+#: ../../rest.rst:428
 msgid "Substitutions"
 msgstr ""
 
-#: ../../rest.rst:426
+#: ../../rest.rst:430
 msgid ""
 "reST supports \"substitutions\" (:duref:`ref <substitution-definitions>`), "
 "which are pieces of text and/or markup referred to in the text by "
@@ -648,17 +652,17 @@ msgid ""
 "like this::"
 msgstr ""
 
-#: ../../rest.rst:432
+#: ../../rest.rst:436
 msgid "or this::"
 msgstr ""
 
-#: ../../rest.rst:437
+#: ../../rest.rst:441
 msgid ""
 "See the :duref:`reST reference for substitutions <substitution-definitions>`"
 " for details."
 msgstr ""
 
-#: ../../rest.rst:440
+#: ../../rest.rst:444
 msgid ""
 "If you want to use some substitutions for all documents, put them into "
 ":confval:`rst_prolog` or put them into a separate file and include it into "
@@ -668,31 +672,31 @@ msgid ""
 "standalone document.)"
 msgstr ""
 
-#: ../../rest.rst:446
+#: ../../rest.rst:450
 msgid ""
 "Sphinx defines some default substitutions, see :ref:`default-substitutions`."
 msgstr ""
 
-#: ../../rest.rst:450
+#: ../../rest.rst:454
 msgid "Comments"
 msgstr ""
 
-#: ../../rest.rst:452
+#: ../../rest.rst:456
 msgid ""
 "Every explicit markup block which isn't a valid markup construct (like the "
 "footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For "
 "example::"
 msgstr ""
 
-#: ../../rest.rst:458
+#: ../../rest.rst:462
 msgid "You can indent text after a comment start to form multiline comments::"
 msgstr ""
 
-#: ../../rest.rst:468
+#: ../../rest.rst:472
 msgid "Source encoding"
 msgstr ""
 
-#: ../../rest.rst:470
+#: ../../rest.rst:474
 msgid ""
 "Since the easiest way to include special characters like em dashes or "
 "copyright signs in reST is to directly write them as Unicode characters, one"
@@ -701,17 +705,17 @@ msgid ""
 "config value."
 msgstr ""
 
-#: ../../rest.rst:477
+#: ../../rest.rst:481
 msgid "Gotchas"
 msgstr ""
 
-#: ../../rest.rst:479
+#: ../../rest.rst:483
 msgid ""
 "There are some problems one commonly runs into while authoring reST "
 "documents:"
 msgstr ""
 
-#: ../../rest.rst:481
+#: ../../rest.rst:485
 msgid ""
 "**Separation of inline markup:** As said above, inline markup spans must be "
 "separated from the surrounding text by non-word characters, you have to use "
@@ -719,13 +723,13 @@ msgid ""
 "<substitution-definitions>` for the details."
 msgstr ""
 
-#: ../../rest.rst:486
+#: ../../rest.rst:490
 msgid ""
 "**No nested inline markup:** Something like ``*see :func:`foo`*`` is not "
 "possible."
 msgstr ""
 
-#: ../../rest.rst:492
+#: ../../rest.rst:496
 msgid ""
 "When the default domain contains a :rst:dir:`class` directive, this "
 "directive will be shadowed.  Therefore, Sphinx re-exports it as :rst:dir"

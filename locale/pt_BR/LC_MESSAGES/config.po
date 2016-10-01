@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: sphinx-doc-1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-04 23:33+0000\n"
-"PO-Revision-Date: 2016-08-09 19:55+0000\n"
+"PO-Revision-Date: 2016-08-25 18:55+0000\n"
 "Last-Translator: gilberto dos santos alves <gsavix@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgid ""
 ":file:`conf.py`. This file (containing Python code) is called the \"build "
 "configuration file\" and contains all configuration needed to customize "
 "Sphinx input and output behavior."
-msgstr ""
+msgstr "O :term:`diretório configuração` deve conter um nome de arquivo :file:`conf.py`. Esse arquivo (contendo códificação Python) é chamado de \"arquivo de configuração do construtor\" e contém todas as configurações necessárias para personalizar o comportamento da entrada e saída."
 
 #: ../../config.rst:15
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 ":func:`execfile`, and with the current directory set to its containing "
 "directory), and therefore can execute arbitrarily complex code.  Sphinx then"
 " reads simple names from the file's namespace as its configuration."
-msgstr ""
+msgstr "O arquivo de configuração é executado com código Python em tempo de construção (usando :func:`execfile`, e com o diretório corrente sendo definico como  diretório base) e suporta a execução arbitrária de códigos complexos. Sphinx então faz a leitura de simples nomes de arquivos do namespace como sua configuração."
 
 #: ../../config.rst:20
 msgid "Important points to note:"
@@ -61,7 +61,7 @@ msgstr "O termo \"nome integralmente qualificado\" refere-se a uma string que no
 msgid ""
 "Remember that document names use ``/`` as the path separator and don't "
 "contain the file name extension."
-msgstr ""
+msgstr "Lembrar que o nome do documento usa ``/`` como separador do caminho e não contém o nome da extensão do arquivo."
 
 #: ../../config.rst:33
 msgid ""
@@ -77,7 +77,7 @@ msgid ""
 "out when configuration changes), so it may not contain unpickleable values "
 "-- delete them from the namespace with ``del`` if appropriate.  Modules are "
 "removed automatically, so you don't need to ``del`` your imports after use."
-msgstr ""
+msgstr "O conteúdo do namespace config é obtido (é assim que Sphinx pode encontrar modificações externas da configuração), portando não pode conter valores impossíveis de interpretação -- remova esses no namespace com o comando ``del`` conforme apropriado. Módulos são removidos automaticamente, portanto não precisa usar ``del`` após uso em seus comandos import."
 
 #: ../../config.rst:45
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "``tags.add('tag')`` can be queried using ``tags.has('tag')``. Note that the "
 "current builder tag is not available in ``conf.py``, as it is created "
 "*after* the builder is initialized."
-msgstr ""
+msgstr "Existe um objeto especial chamado ``tags`` disponível no arquivo config. Pode ser usado para consultar e modificar tags (ver :ref:`tags`). Usar ``tags.has('tag')``  para consultar e ``tags.add('tag')`` e ``tags.remove('tag')`` para atualizar. Note que o construtor corrent não está disponível em ``conf.py``, quando foi criado *após* o construtor ser inicializado."
 
 #: ../../config.rst:55
 msgid "General configuration"
@@ -98,7 +98,7 @@ msgstr "Configuração Geral"
 msgid ""
 "A list of strings that are module names of :ref:`extensions`. These can be "
 "extensions coming with Sphinx (named ``sphinx.ext.*``) or custom ones."
-msgstr ""
+msgstr "Uma lista de strings que são nomes de módulos de :ref:`extensions`.  Essas podem ser extensões nativas do Sphinx (chamadas ``sphinx.ext.*`) or outras configuradas."
 
 #: ../../config.rst:62
 msgid ""
@@ -106,25 +106,25 @@ msgid ""
 "extensions live in another directory -- but make sure you use absolute "
 "paths. If your extension path is relative to the :term:`configuration "
 "directory`, use :func:`os.path.abspath` like so::"
-msgstr ""
+msgstr "Notar que   :data:`sys.path`  pode ser extendidodentro do arquivo conf se suas extensões estão em outro diretório -- mas confirme o caminho real. Se o caminho de sua extensão é relativo ao :term:`diretório de configuração`, usar :func:`os.path.abspath` como::"
 
 #: ../../config.rst:73
 msgid ""
 "That way, you can load an extension called ``extname`` from the subdirectory"
 " ``sphinxext``."
-msgstr ""
+msgstr "Dessa maneira, pode ser carregada a extensão chamada ``extname`` do subdiretório ``sphinxext``."
 
 #: ../../config.rst:76
 msgid ""
 "The configuration file itself can be an extension; for that, you only need "
 "to provide a :func:`setup` function in it."
-msgstr ""
+msgstr "O próprio arquivo de configuração pode ser uma extensão; para isso é necessário usar a função :func:`setup` no arquivo."
 
 #: ../../config.rst:81
 msgid ""
 "The file name extension, or list of extensions, of source files.  Only files"
 " with this suffix will be read as sources.  Default is ``'.rst'``."
-msgstr ""
+msgstr "O nome do arquivo de extensão, ou lista de extensões, fonte dos arquivos. Só arquivos com esse sufixo serão lidos como fontes. Padrão é  ``'.rst'``."
 
 #: ../../config.rst:84
 msgid "Can now be a list of extensions."
@@ -148,7 +148,7 @@ msgid ""
 "``docutils.parsers.Parser`` or :class:`sphinx.parsers.Parser`.  Files with a"
 " suffix that is not in the dictionary will be parsed with the default "
 "reStructuredText parser."
-msgstr ""
+msgstr "Se informado o dicionário de classes passadas para diferentes sufixos de fontes. As chaves são sufixos, os valores podem ser uma classe ou uma string informando o nome completamente qualificado da classe informada. A classe passada pode ser ``docutils.parsers.Parser`` ou :class:`sphinx.parsers.Parser`. Arquivos com sufixos que não estão no dicionário serão tratados como reStructuredText padrão."
 
 #: ../../config.rst:105 ../../config.rst:1026
 msgid "For example::"
@@ -166,7 +166,7 @@ msgid ""
 "source files. [1]_ They are matched against the source file names relative "
 "to the source directory, using slashes as directory separators on all "
 "platforms."
-msgstr ""
+msgstr "Uma lista de padrões estilo global que deve ser desconsiderada quando buscando arquivos fonte. [1]_ Eles são verificados contra arquivos fonte relativos ao diretório fonte, usando barras com separador de diretório em todas as plataformas."
 
 #: ../../config.rst:122
 msgid "Example patterns:"
@@ -2555,47 +2555,47 @@ msgstr ""
 
 #: ../../config.rst:1922
 msgid "Options for the linkcheck builder"
-msgstr ""
+msgstr "Opções para construtor linkcheck"
 
 #: ../../config.rst:1926
 msgid ""
 "A list of regular expressions that match URIs that should not be checked "
 "when doing a ``linkcheck`` build.  Example::"
-msgstr ""
+msgstr "A lista de expressões regulares que combinam com as URIs que não precisam ser verificadas com o construtor `linkcheck``. Exemplo::"
 
 #: ../../config.rst:1935
 msgid ""
 "The number of times the linkcheck builder will attempt to check a URL before"
 " declaring it broken. Defaults to 1 attempt."
-msgstr ""
+msgstr "O número de vezes que o construtor linkcheck irá tentar verificar a URL antes de assumir que está quebrada. Padrão 1 tentativa."
 
 #: ../../config.rst:1942
 msgid ""
 "A timeout value, in seconds, for the linkcheck builder.  **Only works in "
 "Python 2.6 and higher.**  The default is to use Python's global socket "
 "timeout."
-msgstr ""
+msgstr "Tempo decorrido, em segundos, para o construtor linkcheck. **Só funciona com Python 2.6 ou posterior.**. O padrão é usar o timeout do soquete global Python."
 
 #: ../../config.rst:1950
 msgid ""
 "The number of worker threads to use when checking links.  Default is 5 "
 "threads."
-msgstr ""
+msgstr "O número de threads concomitantes para usar quando verificando links. Padrão 5 threads."
 
 #: ../../config.rst:1957
 msgid ""
 "If true, check the validity of ``#anchor``\\ s in links. Since this requires"
 " downloading the whole document, it's considerably slower when enabled. "
 "Default is ``True``."
-msgstr ""
+msgstr "Se verdadeiro, o validador do link ``#anchor``\\. Isso requer download do documento por inteiro e é consideravelmente mais lento quando habilitado. Padrão é ``Verdadeiro``."
 
 #: ../../config.rst:1965
 msgid "Options for the XML builder"
-msgstr ""
+msgstr "Opções para construtor XML"
 
 #: ../../config.rst:1969
 msgid "If true, pretty-print the XML.  Default is ``True``."
-msgstr ""
+msgstr "Se verdadeiro, impressão formatada de XML. Padrão é  ``Verdadeiro``."
 
 #: ../../config.rst:1975
 msgid "Footnotes"
@@ -2607,4 +2607,4 @@ msgid ""
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
 "these all don't match slashes.  A double star ``**`` can be used to match "
 "any sequence of characters *including* slashes."
-msgstr ""
+msgstr "Anotação sobre sintaxe global disponível: podem ser usadas construções ``*``, ``?``, ``[...]`` e ``[!...]`` com funcionalidade que não combinem com barras. Asterisco duplo ``**``  pode ser usada para combinar com qualquer sequência de caracteres *incluindo* barras."

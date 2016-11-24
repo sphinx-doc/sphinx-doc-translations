@@ -13,6 +13,7 @@ BRANCH=`echo $RELEASE | cut -d . -f 1,2`
 git submodule init
 git submodule update
 (cd sphinx; git fetch origin)
+find sphinx -name "*.pyc" -exec rm {} \;
 
 # update x.y branch
 git co $BRANCH

@@ -1,0 +1,739 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# 
+# Translators:
+# Takaaki AOKI <aoki@sakura.nucleng.kyoto-u.ac.jp>, 2016
+# tomo, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinx-doc-1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-04 23:33+0000\n"
+"PO-Revision-Date: 2016-07-23 12:56+0000\n"
+"Last-Translator: sphinx-users.jp <shimizukawa+sphinxjp@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/sphinx-doc/sphinx-doc-1_4/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../rest.rst:6
+msgid "reStructuredText Primer"
+msgstr "reStructuredText入門"
+
+#: ../../rest.rst:8
+msgid ""
+"This section is a brief introduction to reStructuredText (reST) concepts and"
+" syntax, intended to provide authors with enough information to author "
+"documents productively.  Since reST was designed to be a simple, unobtrusive"
+" markup language, this will not take too long."
+msgstr "このセクションは、reStructuredText(reST)の考え方や文法についての短いイントロダクションです。Sphinxユーザがドキュメントを作成するために十分な情報を提供します。reSTはシンプルに設計された、控えめなマークアップ言語ですので、理解するのにそれほど時間はかからないでしょう。"
+
+#: ../../rest.rst:15
+msgid ""
+"The authoritative `reStructuredText User Documentation "
+"<http://docutils.sourceforge.net/rst.html>`_.  The \"ref\" links in this "
+"document link to the description of the individual constructs in the reST "
+"reference."
+msgstr "本家 `reStructuredTextユーザドキュメント <http://docutils.sourceforge.net/rst.html>`_ このドキュメント中の参照リンクは、reSTのリファレンスの個々の要素の説明にリンクしています。"
+
+#: ../../rest.rst:22
+msgid "Paragraphs"
+msgstr "段落(パラグラフ)"
+
+#: ../../rest.rst:24
+msgid ""
+"The paragraph (:duref:`ref <paragraphs>`) is the most basic block in a reST "
+"document.  Paragraphs are simply chunks of text separated by one or more "
+"blank lines.  As in Python, indentation is significant in reST, so all lines"
+" of the same paragraph must be left-aligned to the same level of "
+"indentation."
+msgstr "段落(:duref:`ref <paragraphs>`)はreSTドキュメントにおける、もっとも基本的な要素です。段落は1行以上の空行で区切られた、シンプルなテキストの固まりです。 Pythonにおいてインデントが重要な意味を持つのと同様、reSTでもインデントは重要です。同じ段落のすべての行は、インデントを同じ高さにそろえて、左揃えにしなければなりません。"
+
+#: ../../rest.rst:33
+msgid "Inline markup"
+msgstr "インラインマークアップ"
+
+#: ../../rest.rst:35
+msgid "The standard reST inline markup is quite simple: use"
+msgstr "標準のreSTインラインマークアップは極めてシンプルです。"
+
+#: ../../rest.rst:37
+msgid "one asterisk: ``*text*`` for emphasis (italics),"
+msgstr "アスタリスク1つ: ``*テキスト*`` 強調(イタリック)"
+
+#: ../../rest.rst:38
+msgid "two asterisks: ``**text**`` for strong emphasis (boldface), and"
+msgstr "アスタリスク2つ: ``**テキスト**`` 強い強調(太文字)"
+
+#: ../../rest.rst:39
+msgid "backquotes: ````text```` for code samples."
+msgstr "バッククオート: ````テキスト```` コードサンプル"
+
+#: ../../rest.rst:41
+msgid ""
+"If asterisks or backquotes appear in running text and could be confused with"
+" inline markup delimiters, they have to be escaped with a backslash."
+msgstr "もしも、アスタリスクかバッククオートがテキスト中に使用する場合は、インラインマークアップの区切り文字と間違ってしまうことがあります。そのような場合には、バックスラッシュ(訳注:日本語フォントだと円記号)を使ってエスケープしてください。"
+
+#: ../../rest.rst:44
+msgid "Be aware of some restrictions of this markup:"
+msgstr "このマークアップにはいくつかの制限があります。"
+
+#: ../../rest.rst:46
+msgid "it may not be nested,"
+msgstr "ネストすることはできません"
+
+#: ../../rest.rst:47
+msgid "content may not start or end with whitespace: ``* text*`` is wrong,"
+msgstr "中のテキストの最初、もしくは最後にスペースを入れることもできません。 ``* text*`` と書くことはできません"
+
+#: ../../rest.rst:48
+msgid ""
+"it must be separated from surrounding text by non-word characters.  Use a "
+"backslash escaped space to work around that: ``thisis\\ *one*\\ word``."
+msgstr "周囲のテキストとは、テキスト以外の文字(スペース、カッコなど)で区切る必要があります。もしも空白を空けずに、続けて表記したい場合には、 ``thisis\\ *one*\\ word`` と、バックスラッシュでエスケープしたテキスト(スペースは表示されません)を使用してください。"
+
+#: ../../rest.rst:51
+msgid "These restrictions may be lifted in future versions of the docutils."
+msgstr "これらの制限は、docutilsの将来のバージョンでも残るでしょう。"
+
+#: ../../rest.rst:53
+msgid ""
+"reST also allows for custom \"interpreted text roles\", which signify that "
+"the enclosed text should be interpreted in a specific way.  Sphinx uses this"
+" to provide semantic markup and cross-referencing of identifiers, as "
+"described in the appropriate section.  The general syntax is "
+"``:rolename:`content```."
+msgstr "reSTには、\"解釈済みテキストロール\"というものが許されています。これは、 ``:ロール名:`解釈済みテキスト``` という文法になります。これは、囲まれているテキストは特別な方法で解釈させることができる、というものです。Sphinxはこれをつかって、意味のマークアップと、識別子のマークアップを行っています。これに関しては別のセクションで説明します。"
+
+#: ../../rest.rst:58
+msgid "Standard reST provides the following roles:"
+msgstr "標準のreSTは次のようなロールを提供しています:"
+
+#: ../../rest.rst:60
+msgid ":durole:`emphasis` -- alternate spelling for ``*emphasis*``"
+msgstr ":durole:`emphasis` -- ``*emphasis*`` の代替表現"
+
+#: ../../rest.rst:61
+msgid ":durole:`strong` -- alternate spelling for ``**strong**``"
+msgstr ":durole:`strong` -- ``**strong**`` の代替表現"
+
+#: ../../rest.rst:62
+msgid ":durole:`literal` -- alternate spelling for ````literal````"
+msgstr ":durole:`literal` -- ````literal```` の代替表現"
+
+#: ../../rest.rst:63
+msgid ":durole:`subscript` -- subscript text"
+msgstr ":durole:`subscript` -- 下付き文字"
+
+#: ../../rest.rst:64
+msgid ":durole:`superscript` -- superscript text"
+msgstr ":durole:`superscript` -- 上付き文字"
+
+#: ../../rest.rst:65
+msgid ""
+":durole:`title-reference` -- for titles of books, periodicals, and other "
+"materials"
+msgstr ":durole:`title-reference` -- 書籍、定期刊行物などのタイトル"
+
+#: ../../rest.rst:68
+msgid "See :ref:`inline-markup` for roles added by Sphinx."
+msgstr "Sphinxによって追加されたロールに関しては :ref:`inline-markup` を参照してください。"
+
+#: ../../rest.rst:72
+msgid "Lists and Quote-like blocks"
+msgstr "リストと引用のようなブロック"
+
+#: ../../rest.rst:74
+msgid ""
+"List markup (:duref:`ref <bullet-lists>`) is natural: just place an asterisk"
+" at the start of a paragraph and indent properly.  The same goes for "
+"numbered lists; they can also be autonumbered using a ``#`` sign::"
+msgstr "リストを表現するマークアップ (:duref:`ref <bullet-lists>`) はほぼ結果の見た目通りです。パラグラフの最初をアスタリスクで開始して、適切にインデントをしてやるだけです。ナンバー付きのリストも同様です。 ``#`` を使うことで、ナンバリングを自動で行うこともできます::"
+
+#: ../../rest.rst:89
+msgid ""
+"Nested lists are possible, but be aware that they must be separated from the"
+" parent list items by blank lines::"
+msgstr "ネストされたリストも使用できますが、親のリストとは空白行で区切る必要があります::"
+
+#: ../../rest.rst:100
+msgid ""
+"Definition lists (:duref:`ref <definition-lists>`) are created as follows::"
+msgstr "定義リスト(:duref:`ref <definition-lists>`)は以下のようにして作成します::"
+
+#: ../../rest.rst:110
+msgid "Note that the term cannot have more than one line of text."
+msgstr "用語のテキストは複数行書くことができないことに注意してください。"
+
+#: ../../rest.rst:112
+msgid ""
+"Quoted paragraphs (:duref:`ref <block-quotes>`) are created by just "
+"indenting them more than the surrounding paragraphs."
+msgstr "引用パラグラフ(:duref:`ref <block-quotes>`)は周囲のパラグラフよりもインデントすることで作成できます。"
+
+#: ../../rest.rst:115
+msgid ""
+"Line blocks (:duref:`ref <line-blocks>`) are a way of preserving line "
+"breaks::"
+msgstr "ラインブロック(:duref:`ref <line-blocks>`)を利用すると、改行状態をそのまま維持したまま出力できます::"
+
+#: ../../rest.rst:121
+msgid "There are also several more special blocks available:"
+msgstr "次のような特別なブロックも利用できます:"
+
+#: ../../rest.rst:123
+msgid "field lists (:duref:`ref <field-lists>`)"
+msgstr "フィールドリスト (:duref:`ref <field-lists>`)"
+
+#: ../../rest.rst:124
+msgid "option lists (:duref:`ref <option-lists>`)"
+msgstr "オプションリスト (:duref:`ref <option-lists>`)"
+
+#: ../../rest.rst:125
+msgid "quoted literal blocks (:duref:`ref <quoted-literal-blocks>`)"
+msgstr "引用リテラルブロック (:duref:`ref <quoted-literal-blocks>`)"
+
+#: ../../rest.rst:126
+msgid "doctest blocks (:duref:`ref <doctest-blocks>`)"
+msgstr "doctestブロック (:duref:`ref <doctest-blocks>`)"
+
+#: ../../rest.rst:130
+msgid "Source Code"
+msgstr "ソースコード"
+
+#: ../../rest.rst:132
+msgid ""
+"Literal code blocks (:duref:`ref <literal-blocks>`) are introduced by ending"
+" a paragraph with the special marker ``::``.  The literal block must be "
+"indented (and, like all paragraphs, separated from the surrounding ones by "
+"blank lines)::"
+msgstr "リテラルコードブロック(:duref:`ref <literal-blocks>`)は、前の段落の行末を特別な記号 ``::`` にすることで開始できます。リテラルコードブロックはインデントする必要があります。また、他のパラグラフ同様、空白行で前後をかこう必要があります::"
+
+#: ../../rest.rst:145
+msgid "The handling of the ``::`` marker is smart:"
+msgstr "``::`` マーカーの扱いはとてもスマートです:"
+
+#: ../../rest.rst:147
+msgid ""
+"If it occurs as a paragraph of its own, that paragraph is completely left "
+"out of the document."
+msgstr "もしマーカーがリテラルコードブロックのパラグラフの中に出てきた場合には、そのパラグラフは完全にそのままドキュメント中に残されます。"
+
+#: ../../rest.rst:149
+msgid "If it is preceded by whitespace, the marker is removed."
+msgstr "もしもマーカーの前がホワイトスペースだった場合には、マーカー自身は非表示になります。"
+
+#: ../../rest.rst:150
+msgid ""
+"If it is preceded by non-whitespace, the marker is replaced by a single "
+"colon."
+msgstr "もしもマーカーの前がホワイトスペース以外だった場合には、コロン(:)1つだけが表示されます。"
+
+#: ../../rest.rst:153
+msgid ""
+"That way, the second sentence in the above example's first paragraph would "
+"be rendered as \"The next paragraph is a code sample:\"."
+msgstr "3つ目のルールが適用されるため、上記のサンプルの最初の段落中の２つめの文をレンダリングすると、 \"次のパラグラフはコードサンプルです:\" という表記になります。"
+
+#: ../../rest.rst:160
+msgid "Tables"
+msgstr "テーブル"
+
+#: ../../rest.rst:162
+msgid ""
+"Two forms of tables are supported.  For *grid tables* (:duref:`ref <grid-"
+"tables>`), you have to \"paint\" the cell grid yourself.  They look like "
+"this::"
+msgstr "テーブルの表現方法には2通りあります。 *グリッドテーブル* (:duref:`ref <grid-tables>`)は、セルのグリッドを自分で線描する必要があります。これは次のようになります::"
+
+#: ../../rest.rst:175
+msgid ""
+"*Simple tables* (:duref:`ref <simple-tables>`) are easier to write, but "
+"limited: they must contain more than one row, and the first column cannot "
+"contain multiple lines.  They look like this::"
+msgstr "*シンプルテーブル* (:duref:`ref <simple-tables>`)はより書くのが簡単な方法ですが、制限があります。1つ以上の列を含み、最初のカラムには複数行のテキストを書くことができません。次のように表現されます::"
+
+#: ../../rest.rst:190
+msgid "Hyperlinks"
+msgstr "ハイパーリンク"
+
+#: ../../rest.rst:193
+msgid "External links"
+msgstr "外部リンク"
+
+#: ../../rest.rst:195
+msgid ""
+"Use ```Link text <http://example.com/>`_`` for inline web links.  If the "
+"link text should be the web address, you don't need special markup at all, "
+"the parser finds links and mail addresses in ordinary text."
+msgstr "```リンクテキスト <http://ターゲットURL>`_`` という書くことで、外部のウェブサイトへのリンクを埋め込むことができます。もしリンクテキストがウェブのアドレスである場合には、特別なマークアップは必要ありません。パーサーが通常のテキスト中でリンクか、メールアドレスを見つけると、そのままそれにリンクを埋め込んでくれます。"
+
+#: ../../rest.rst:199
+msgid ""
+"There must be a space between the link text and the opening \\< for the URL."
+msgstr "リンクテキストとURLの開き括弧 \\< の間には空白がなければなりません。"
+
+#: ../../rest.rst:201
+msgid ""
+"You can also separate the link and the target definition (:duref:`ref "
+"<hyperlink-targets>`), like this::"
+msgstr "次のようにして、ターゲット定義(:duref:`ref <hyperlink-targets>`)と、リンクを分割することもできます::"
+
+#: ../../rest.rst:210
+msgid "Internal links"
+msgstr "内部リンク"
+
+#: ../../rest.rst:212
+msgid ""
+"Internal linking is done via a special reST role provided by Sphinx, see the"
+" section on specific markup, :ref:`ref-role`."
+msgstr "内部リンクはSphinxの提供する、特別なreSTのロールを通じて行われます。詳しくは、特別なマークアップ :ref:`ref-role` のセクションを見てください。"
+
+#: ../../rest.rst:217
+msgid "Sections"
+msgstr "セクション"
+
+#: ../../rest.rst:219
+msgid ""
+"Section headers (:duref:`ref <sections>`) are created by underlining (and "
+"optionally overlining) the section title with a punctuation character, at "
+"least as long as the text::"
+msgstr "セクションのヘッダ(:duref:`ref <sections>`)は、セクションのタイトルを句読点などの記号の文字でアンダーラインを引くことで設定します。必要に応じてでオーバーラインも併用できます。アンダーラインはテキストと同じか、それ以上の長さにする必要があります::"
+
+#: ../../rest.rst:227
+msgid ""
+"Normally, there are no heading levels assigned to certain characters as the "
+"structure is determined from the succession of headings.  However, this "
+"convention is used in `Python's Style Guide for documentating "
+"<https://docs.python.org/devguide/documenting.html#style-guide>`_ which you "
+"may follow:"
+msgstr "通常は、文字の種類と見出しのレベルは関係ないため、どの文字でも使用することができます。使用していない種類のアンダーラインが出てくると、見出しのレベルが一段変わる、というルールになっています。参考までに、 `Pythonドキュメントでのスタイルガイド<https://docs.python.org/devguide/documenting.html#style-guide>`_ で用いられる慣例について紹介しておきます:"
+
+#: ../../rest.rst:233
+msgid "``#`` with overline, for parts"
+msgstr "``#`` 部: オーバーライン付き"
+
+#: ../../rest.rst:234
+msgid "``*`` with overline, for chapters"
+msgstr "``*`` 章: オーバーライン付き"
+
+#: ../../rest.rst:235
+msgid "``=``, for sections"
+msgstr "``=``, セクション"
+
+#: ../../rest.rst:236
+msgid "``-``, for subsections"
+msgstr "``-``, サブセクション"
+
+#: ../../rest.rst:237
+msgid "``^``, for subsubsections"
+msgstr "``^``, サブサブセクション"
+
+#: ../../rest.rst:238
+msgid "``\"``, for paragraphs"
+msgstr "``\"``, パラグラフ"
+
+#: ../../rest.rst:240
+msgid ""
+"Of course, you are free to use your own marker characters (see the reST "
+"documentation), and use a deeper nesting level, but keep in mind that most "
+"target formats (HTML, LaTeX) have a limited supported nesting depth."
+msgstr "もちろん、どのようなマークアップ文字を選択しても自由ですし、組み合わせることで、より深いネストレベルも使用できます。reSTの文章を参照してください。ただし、ほとんどの対象となる出力フォーマット(HTML, LaTeX)は、ネストできる深さには限界が設定されている、ということは忘れないでください。"
+
+#: ../../rest.rst:246
+msgid "Explicit Markup"
+msgstr "明示的なマークアップ"
+
+#: ../../rest.rst:248
+msgid ""
+"\"Explicit markup\" (:duref:`ref <explicit-markup-blocks>`) is used in reST "
+"for most constructs that need special handling, such as footnotes, "
+"specially-highlighted paragraphs, comments, and generic directives."
+msgstr "\"明示的なマークアップ\"(:duref:`ref <explicit-markup-blocks>`)というのは、reSTの中では特別な操作の必要な多くの構成要素のために使用されます。例えば脚注や、言語別のハイライトをする特別な段落、コメントや処理系(Sphinx)に対する指示などです。"
+
+#: ../../rest.rst:252
+msgid ""
+"An explicit markup block begins with a line starting with ``..`` followed by"
+" whitespace and is terminated by the next paragraph at the same level of "
+"indentation.  (There needs to be a blank line between explicit markup and "
+"normal paragraphs.  This may all sound a bit complicated, but it is "
+"intuitive enough when you write it.)"
+msgstr "明示的なマークアップのブロックは ``..`` で始まる行から始まります。先頭の記号の後ろにはホワイトスペースが一つ入ります。そして、インデントが同じレベルになる次の段落までが１つのブロックとして扱われます。通常のパラグラフと、明示的なマークアップのブロックの間には一行以上のスペースを空ける必要があります。このような説明を聞くとわかりにくいと感じる人も多いと思いますが、実際に自分で書いてみると十分に直感的であるということがわかるでしょう。"
+
+#: ../../rest.rst:262
+msgid "Directives"
+msgstr "ディレクティブ"
+
+#: ../../rest.rst:264
+msgid ""
+"A directive (:duref:`ref <directives>`) is a generic block of explicit "
+"markup. Besides roles, it is one of the extension mechanisms of reST, and "
+"Sphinx makes heavy use of it."
+msgstr "ディレクティブ(:duref:`ref <directives>`)は汎用の明示的マークアップです。reSTの拡張のためのメカニズムの一つで、ロールが指定されることがあります。Sphinxはこのディレクティブをかなり多用しています。"
+
+#: ../../rest.rst:268
+msgid "Docutils supports the following directives:"
+msgstr "Docutilsは次のようなディレクティブを含みます:"
+
+#: ../../rest.rst:270
+msgid ""
+"Admonitions: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`, "
+":dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`, "
+":dudir:`tip`, :dudir:`warning` and the generic :dudir:`admonition "
+"<admonitions>`.  (Most themes style only \"note\" and \"warning\" "
+"specially.)"
+msgstr "警告: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`, :dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`, :dudir:`tip`, :dudir:`warning` ,および、一般的な用途の :dudir:`admonition <admonitions>` (ほとんどのテーマは、\"note\"と\"warning\"にだけスタイルを適用します)。"
+
+#: ../../rest.rst:276
+msgid "Images:"
+msgstr "イメージ:"
+
+#: ../../rest.rst:278
+msgid ":dudir:`image` (see also Images_ below)"
+msgstr ":dudir:`image` (`画像`_ も参照してください)"
+
+#: ../../rest.rst:279
+msgid ":dudir:`figure` (an image with caption and optional legend)"
+msgstr ":dudir:`figure` (キャプション、反例を含むイメージ)"
+
+#: ../../rest.rst:281
+msgid "Additional body elements:"
+msgstr "追加の本体要素:"
+
+#: ../../rest.rst:283
+msgid ""
+":dudir:`contents <table-of-contents>` (a local, i.e. for the current file "
+"only, table of contents)"
+msgstr ":dudir:`contents <table-of-contents>` (ローカルな、つまり現在のファイル内だけの、目次)"
+
+#: ../../rest.rst:285
+msgid ""
+":dudir:`container` (a container with a custom class, useful to generate an "
+"outer ``<div>`` in HTML)"
+msgstr ":dudir:`container` (カスタムのクラスを付加できるコンテナ。HTMLで外部の ``<div>`` を生成するのに便利)"
+
+#: ../../rest.rst:287
+msgid ""
+":dudir:`rubric` (a heading without relation to the document sectioning)"
+msgstr ":dudir:`rubric` (ドキュメントのセクションと関係のない見出し)"
+
+#: ../../rest.rst:288
+msgid ":dudir:`topic`, :dudir:`sidebar` (special highlighted body elements)"
+msgstr ":dudir:`topic`, :dudir:`sidebar` (特別に強調されたなボディ要素)"
+
+#: ../../rest.rst:289
+msgid ":dudir:`parsed-literal` (literal block that supports inline markup)"
+msgstr ":dudir:`parsed-literal` (インラインマークアップをサポートしたリテラルブロック)"
+
+#: ../../rest.rst:290
+msgid ":dudir:`epigraph` (a block quote with optional attribution line)"
+msgstr ":dudir:`epigraph` (追加の属性行を付加できるブロック引用)"
+
+#: ../../rest.rst:291
+msgid ""
+":dudir:`highlights`, :dudir:`pull-quote` (block quotes with their own class "
+"attribute)"
+msgstr ":dudir:`highlights`, :dudir:`pull-quote` (特有のクラス属性を持つブロック引用)"
+
+#: ../../rest.rst:293
+msgid ":dudir:`compound <compound-paragraph>` (a compound paragraph)"
+msgstr ":dudir:`compound <compound-paragraph>` (複合パラグラフ)"
+
+#: ../../rest.rst:295
+msgid "Special tables:"
+msgstr "特別なテーブル:"
+
+#: ../../rest.rst:297
+msgid ":dudir:`table` (a table with title)"
+msgstr ":dudir:`table` (タイトル付きのテーブル)"
+
+#: ../../rest.rst:298
+msgid ":dudir:`csv-table` (a table generated from comma-separated values)"
+msgstr ":dudir:`csv-table` (カンマ区切りの値からテーブル生成)"
+
+#: ../../rest.rst:299
+msgid ":dudir:`list-table` (a table generated from a list of lists)"
+msgstr ":dudir:`list-table` (リストのリストからテーブル生成)"
+
+#: ../../rest.rst:301
+msgid "Special directives:"
+msgstr "特別なディレクティブ:"
+
+#: ../../rest.rst:303
+msgid ""
+":dudir:`raw <raw-data-pass-through>` (include raw target-format markup)"
+msgstr ":dudir:`raw <raw-data-pass-through>` (ターゲットの書式のマークアップを挿入)"
+
+#: ../../rest.rst:304
+msgid ""
+":dudir:`include` (include reStructuredText from another file) -- in Sphinx, "
+"when given an absolute include file path, this directive takes it as "
+"relative to the source directory"
+msgstr ":dudir:`include` (他のファイルからreStructuredTextを取り込み) -- Sphinxでは、絶対パスが指定されると、ソースディレクトリからの相対パスが利用されます。"
+
+#: ../../rest.rst:307
+msgid ":dudir:`class` (assign a class attribute to the next element) [1]_"
+msgstr ":dudir:`class` (次の要素へのクラス属性の設定) [1]_"
+
+#: ../../rest.rst:309
+msgid "HTML specifics:"
+msgstr "HTML定義"
+
+#: ../../rest.rst:311
+msgid ":dudir:`meta` (generation of HTML ``<meta>`` tags)"
+msgstr ":dudir:`meta` (HTMLの ``<meta>`` タグの生成)"
+
+#: ../../rest.rst:312
+msgid ":dudir:`title <metadata-document-title>` (override document title)"
+msgstr ":dudir:`title <metadata-document-title>` (ドキュメントのタイトルの上書き)"
+
+#: ../../rest.rst:314
+msgid "Influencing markup:"
+msgstr "疑似命令マークアップ:"
+
+#: ../../rest.rst:316
+msgid ":dudir:`default-role` (set a new default role)"
+msgstr ":dudir:`default-role` (デフォルトのロールをセット)"
+
+#: ../../rest.rst:317
+msgid ":dudir:`role` (create a new role)"
+msgstr ":dudir:`role` (新しいロールの作成)"
+
+#: ../../rest.rst:319
+msgid ""
+"Since these are only per-file, better use Sphinx's facilities for setting "
+"the :confval:`default_role`."
+msgstr "これらのマークアップの影響範囲は、そのマークアップが書かれたファイルだけに限定されるため、Sphinxが提供する :confval:`default_role` を設定する方が良いでしょう。"
+
+#: ../../rest.rst:322
+msgid ""
+"Do *not* use the directives :dudir:`sectnum`, :dudir:`header` and "
+":dudir:`footer`."
+msgstr ":dudir:`sectnum`, :dudir:`header`, :dudir:`footer` の3つのディレクティブは使用 *しない* で下さい。"
+
+#: ../../rest.rst:325
+msgid "Directives added by Sphinx are described in :ref:`sphinxmarkup`."
+msgstr "Sphinxによって追加されたディレクティブに関しては :ref:`sphinxmarkup` を参照してください。"
+
+#: ../../rest.rst:327
+msgid ""
+"Basically, a directive consists of a name, arguments, options and content. "
+"(Keep this terminology in mind, it is used in the next chapter describing "
+"custom directives.)  Looking at this example, ::"
+msgstr "基本的に、ディレクティブは名前、引数、オプション、コンテンツなどで構成されています。これらの用語を覚えておいてください。これらは次の章でカスタムディレクティブの紹介を行う際に利用します。以下にサンプルを示します::"
+
+#: ../../rest.rst:337
+msgid ""
+"``function`` is the directive name.  It is given two arguments here, the "
+"remainder of the first line and the second line, as well as one option "
+"``module`` (as you can see, options are given in the lines immediately "
+"following the arguments and indicated by the colons).  Options must be "
+"indented to the same level as the directive content."
+msgstr "``function`` がディレクティブの名前です。ここでは二つの引数が与えられています。1行目の残りの部分と、2行目が引数です。そして1つのオプション ``module`` も同様に設定されています。見ての通り、オプションは引数のある行のすぐ次の行に書かれていています。そして、目印としてコロンが付いています。オプションは、ディレクティブのコンテンツと同じインデントの高さにします。"
+
+#: ../../rest.rst:343
+msgid ""
+"The directive content follows after a blank line and is indented relative to"
+" the directive start."
+msgstr "ディレクティブのコンテンツというのは、空白行の後に続くブロックで、ディレクティブが開始された地点よりも深いインデントでくくられています。"
+
+#: ../../rest.rst:348
+msgid "Images"
+msgstr "画像"
+
+#: ../../rest.rst:350
+msgid ""
+"reST supports an image directive (:dudir:`ref <image>`), used like so::"
+msgstr "reSTは画像に関するディレクティブ(:dudir:`ref <image>`)もサポートしています。以下のように使用します。::"
+
+#: ../../rest.rst:355
+msgid ""
+"When used within Sphinx, the file name given (here ``gnu.png``) must either "
+"be relative to the source file, or absolute which means that they are "
+"relative to the top source directory.  For example, the file "
+"``sketch/spam.rst`` could refer to the image ``images/spam.png`` as "
+"``../images/spam.png`` or ``/images/spam.png``."
+msgstr "Sphinx内で使用する場合には、ソースファイルからの相対パスか、トップのソースディレクトリからの絶対パスでファイル名(ここでは ``gnu.png``)を指定します。例えば、 ``sketch/spam.rst`` というソースファイルからは、 ``images/spam.png``, ``../images/spam.png``, ``/images/spam.png`` というように書くことができます。"
+
+#: ../../rest.rst:361
+msgid ""
+"Sphinx will automatically copy image files over to a subdirectory of the "
+"output directory on building (e.g. the ``_static`` directory for HTML "
+"output.)"
+msgstr "このディレクティブを使用すると、Sphinxはビルド時に、指定された画像ファイルを出力ディレクトリのサブディレクトリにコピーします。HTML出力の場合には、 ``_static`` といったディレクトリにコピーされます。"
+
+#: ../../rest.rst:364
+msgid ""
+"Interpretation of image size options (``width`` and ``height``) is as "
+"follows: if the size has no unit or the unit is pixels, the given size will "
+"only be respected for output channels that support pixels. Other units (like"
+" ``pt`` for points) will be used for HTML and LaTeX output (the latter "
+"replaces ``pt`` by ``bp`` as this is the TeX unit such that ``72bp=1in``)."
+msgstr "イメージサイズに関するオプション(``width`` と ``height``)は以下のように解釈されます。もし単位が無い、もしくは単位がpixelsの場合には、与えられたサイズは出力するチャンネルがピクセルをサポートしているかどうかだけが考慮されます。他の単位(ポイントを表す ``pt`` など)はHTMLでもLaTeXでも使用されます(後者では ``72bp=1in`` が成り立つTeXの単位となるように ``pt`` を ``bp`` に置き換えます)。"
+
+#: ../../rest.rst:370
+msgid ""
+"Sphinx extends the standard docutils behavior by allowing an asterisk for "
+"the extension::"
+msgstr "Sphinxは標準のdocutilsを拡張していて、拡張子としてアスタリスク(*)を受け取れるようになっています::"
+
+#: ../../rest.rst:375
+msgid ""
+"Sphinx then searches for all images matching the provided pattern and "
+"determines their type.  Each builder then chooses the best image out of "
+"these candidates. For instance, if the file name ``gnu.*`` was given and two"
+" files :file:`gnu.pdf` and :file:`gnu.png` existed in the source tree, the "
+"LaTeX builder would choose the former, while the HTML builder would prefer "
+"the latter. Supported image types and choosing priority are defined at "
+":ref:`builders`."
+msgstr "アスタリスクが指定されると、Sphinxは指定されたパターンにマッチするすべての画像フォーマットを検索して、使用するタイプを決定します。それぞれのビルダーは、候補となるベストのイメージを選択します。 ``gnu.*`` にマッチするファイル名として、 :file:`gnu.pdf` と、 :file:`gnu.png` がソースツリーの中に存在していたとします。LaTeXビルダーは前者のPDFを、HTMLビルダーは後者のPNGを優先的に利用します。サポートされている画像タイプと使用優先度は、 :ref:`builders` で定義されています。"
+
+#: ../../rest.rst:382
+msgid "Note that image file names should not contain spaces."
+msgstr "画像ファイルのファイル名にはスペースを含んではいけないことに注意してください。"
+
+#: ../../rest.rst:384
+msgid "Added the support for file names ending in an asterisk."
+msgstr "ファイル名の末尾をアスタリスク（*）にできる機能が追加されました。"
+
+#: ../../rest.rst:387
+msgid "Image paths can now be absolute."
+msgstr "イメージパスとして、ソースフォルダのルートからの絶対パスが指定できるようになりました。"
+
+#: ../../rest.rst:390
+msgid "latex target supports pixels (default is ``96px=1in``)."
+msgstr "latexターゲットがピクセルをサポートするようになりました(デフォルトは ``96px=1in`` です)。"
+
+#: ../../rest.rst:395 ../../rest.rst:495
+msgid "Footnotes"
+msgstr "脚注"
+
+#: ../../rest.rst:397
+msgid ""
+"For footnotes (:duref:`ref <footnotes>`), use ``[#name]_`` to mark the "
+"footnote location, and add the footnote body at the bottom of the document "
+"after a \"Footnotes\" rubric heading, like so::"
+msgstr "脚注(:duref:`ref <footnotes>`)を作成するためには、脚注を書きたい場所で ``[#name]_`` というマークアップを書きます。そして、脚注の本体をドキュメントの下の方の \"脚注\" のためのrubric見出しの中に書きます::"
+
+#: ../../rest.rst:408
+msgid ""
+"You can also explicitly number the footnotes (``[1]_``) or use auto-numbered"
+" footnotes without names (``[#]_``)."
+msgstr "脚注の数値を明示的に指定(``[1]_``)することもできますし、名前を指定しないで脚注の自動採番(``[#]_``)をさせることも可能です。"
+
+#: ../../rest.rst:413
+msgid "Citations"
+msgstr "引用"
+
+#: ../../rest.rst:415
+msgid ""
+"Standard reST citations (:duref:`ref <citations>`) are supported, with the "
+"additional feature that they are \"global\", i.e. all citations can be "
+"referenced from all files.  Use them like so::"
+msgstr "標準のreSTでも引用(:duref:`ref <citations>`)はサポートしていますが、Sphinx独自の追加の機能としては、引用が\"グローバル\"ということです。そのため、全ての引用はすべてのファイルから参照できます。以下のように使用します::"
+
+#: ../../rest.rst:423
+msgid ""
+"Citation usage is similar to footnote usage, but with a label that is not "
+"numeric or begins with ``#``."
+msgstr "引用は、脚注と同じように使用できますが、ラベルは数字ではありませんし、 ``#`` でも始まりません。"
+
+#: ../../rest.rst:428
+msgid "Substitutions"
+msgstr "置換"
+
+#: ../../rest.rst:430
+msgid ""
+"reST supports \"substitutions\" (:duref:`ref <substitution-definitions>`), "
+"which are pieces of text and/or markup referred to in the text by "
+"``|name|``.  They are defined like footnotes with explicit markup blocks, "
+"like this::"
+msgstr "reSTは\"置換\"(:duref:`ref <substitution-definitions>`)をサポートしています。これは、テキスト中の ``|名前|`` で指定された箇所に、テキストや、マークアップを挿入します。脚注と同じように明示的なマークアップブロックを使って定義します::"
+
+#: ../../rest.rst:436
+msgid "or this::"
+msgstr "もしくはこのように書きます::"
+
+#: ../../rest.rst:441
+msgid ""
+"See the :duref:`reST reference for substitutions <substitution-definitions>`"
+" for details."
+msgstr "詳しくは :duref:`reSTリファレンスの置換の説明 <substitution-definitions>` を参照してください。"
+
+#: ../../rest.rst:444
+msgid ""
+"If you want to use some substitutions for all documents, put them into "
+":confval:`rst_prolog` or put them into a separate file and include it into "
+"all documents you want to use them in, using the :rst:dir:`include` "
+"directive.  (Be sure to give the include file a file name extension "
+"differing from that of other source files, to avoid Sphinx finding it as a "
+"standalone document.)"
+msgstr "いくつかの置換をすべてのドキュメントで使用したい場合には、置換の宣言を別のファイルに切り出して、 :confval:`rst_prolog` に書くか、その置換を行いたいすべてのドキュメントの冒頭で :rst:dir:`include` ディレクティブを使用してインクルードする方法があります。この場合は、他のソースファイルとは別の拡張子を付けるようにしましょう。同じ拡張子にすると、Sphinxはリンクされていないドキュメントとして警告を出力してしまいます。"
+
+#: ../../rest.rst:450
+msgid ""
+"Sphinx defines some default substitutions, see :ref:`default-substitutions`."
+msgstr "Sphinxはデフォルトの置換をいくつか定義しています。詳しくは :ref:`default-substitutions` を参照してください。"
+
+#: ../../rest.rst:454
+msgid "Comments"
+msgstr "コメント"
+
+#: ../../rest.rst:456
+msgid ""
+"Every explicit markup block which isn't a valid markup construct (like the "
+"footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For "
+"example::"
+msgstr "上記の脚注のような適切な構造をしていない明示的マークアップのブロックはすべてコメント(:duref:`ref <comments>`)とみなされます::"
+
+#: ../../rest.rst:462
+msgid "You can indent text after a comment start to form multiline comments::"
+msgstr "コメントがスタートした行からインデントすることによって、複数行コメントにできます::"
+
+#: ../../rest.rst:472
+msgid "Source encoding"
+msgstr "ソースエンコーディング"
+
+#: ../../rest.rst:474
+msgid ""
+"Since the easiest way to include special characters like em dashes or "
+"copyright signs in reST is to directly write them as Unicode characters, one"
+" has to specify an encoding.  Sphinx assumes source files to be encoded in "
+"UTF-8 by default; you can change this with the :confval:`source_encoding` "
+"config value."
+msgstr "エムダッシュ(アルファベットのMと同じ幅を持つダッシュ)や、コピーライトの記号などの特殊記号をreSTに入れる場合にはユニコードの文字として直接入れるのが一番簡単な方法です。Sphinxはデフォルトでは、UTF-8であるとみないしてソースコードを読み込みます。 :confval:`source_encoding` の設定値を変更することで、このデフォルトのエンコーディングを変更できます。"
+
+#: ../../rest.rst:481
+msgid "Gotchas"
+msgstr "分かっていること"
+
+#: ../../rest.rst:483
+msgid ""
+"There are some problems one commonly runs into while authoring reST "
+"documents:"
+msgstr "reSTのドキュメントを書いていると、良く遭遇する問題がいくつかあります:"
+
+#: ../../rest.rst:485
+msgid ""
+"**Separation of inline markup:** As said above, inline markup spans must be "
+"separated from the surrounding text by non-word characters, you have to use "
+"a backslash-escaped space to get around that.  See :duref:`the reference "
+"<substitution-definitions>` for the details."
+msgstr "**インラインマークアップの分離:** 上記の説明でも触れていますが、インラインマークアップを付ける領域の前後はテキスト以外の文字(スペース、カッコなど)や、バックスラッシュ(日本語フォントだと円記号)でエスケープしたスペースでくくる必要があります。詳しくは、  :duref:`the reference <substitution-definitions>` を参照してください。"
+
+#: ../../rest.rst:490
+msgid ""
+"**No nested inline markup:** Something like ``*see :func:`foo`*`` is not "
+"possible."
+msgstr "**インラインマークアップのネストはできない:** ``*:func:`foo` 参照*`` といった書き方はできません。"
+
+#: ../../rest.rst:496
+msgid ""
+"When the default domain contains a :rst:dir:`class` directive, this "
+"directive will be shadowed.  Therefore, Sphinx re-exports it as :rst:dir"
+":`rst-class`."
+msgstr "デフォルトドメインに :rst:dir:`class` ディレクティブが存在するため、このディレクティブはそのままでは使用できません。そのため、Sphinxでは、 :rst:dir:`rst-class` という名前で再定義しています。"

@@ -16,9 +16,9 @@ git submodule update
 find sphinx -name "*.pyc" -exec rm {} \;
 
 # update x.y branch
-git co $BRANCH
+git checkout $BRANCH
 cd sphinx
-git co $RELEASE
+git checkout $RELEASE
 cd ../locale
 pip install -r requirements.txt
 sphinx-intl create-transifexrc
@@ -28,9 +28,9 @@ git add locale sphinx
 git commit -am "use sphinx-$RELEASE"
 
 # update stable branch
-git co stable
+git checkout stable
 cd sphinx
-git co $RELEASE
+git checkout $RELEASE
 cd ../locale
 pip install -r requirements.txt
 sphinx-intl create-transifexrc
@@ -40,6 +40,6 @@ git add locale sphinx
 git commit -am "use sphinx-$RELEASE"
 
 # push changes
-git co master
+git checkout master
 git submodule update
 git push origin stable $BRANCH

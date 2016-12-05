@@ -70,11 +70,11 @@ After that, you should commit updated po files.
 
 5. add new project on Read The Docs like:
 
-   https://readthedocs.org/projects/shimizukawa-sphinx-pt-br/
+   https://readthedocs.org/projects/sphinx-pt-br/
 
 6. add translation project to parent project like:
 
-   https://readthedocs.org/dashboard/shimizukawa-sphinx-ja/translations/
+   https://readthedocs.org/dashboard/sphinx-ja/translations/
 
 
 ## How to add a version
@@ -111,5 +111,5 @@ After that, you should commit updated po files.
 
 6. enable version 1.3 on RTD:
 
-   https://readthedocs.org/dashboard/shimizukawa-sphinx-ja/versions/
+   https://readthedocs.org/dashboard/sphinx-ja/versions/
 

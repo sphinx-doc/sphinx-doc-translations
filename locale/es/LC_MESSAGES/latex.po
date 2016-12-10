@@ -1,0 +1,667 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-28 15:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Alvarez Alejandro <eliluminado00@gmail.com>, 2016\n"
+"Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../sphinx/doc/latex.rst:6
+msgid "LaTeX customization"
+msgstr "Personalización de LaTex"
+
+#: ../../sphinx/doc/latex.rst:11
+msgid ""
+"The *latex* target does not benefit from pre-prepared themes like the *html*"
+" target does (see :doc:`theming`)."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:28
+msgid "Basic customization"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:30
+msgid ""
+"It is available from ``conf.py`` via usage of the :ref:`latex-options` as "
+"described in :doc:`config` (backslashes must be doubled in Python string "
+"literals to reach latex.) For example::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:58
+msgid ""
+"More advanced customization will be obtained via insertion into the LaTeX "
+"preamble of relevant ``\\renewcommand``, ``\\renewenvironment``, "
+"``\\setlength``, or ``\\definecolor`` commands. The ``'preamble'`` key of "
+":confval:`latex_elements` will serve for inserting these commands. If they "
+"are numerous, it may prove more convenient to assemble them into a "
+"specialized file :file:`mystyle.tex` and then use::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:67
+msgid ""
+"or, better, to set up a style file :file:`mystyle.sty` which can then be "
+"loaded via::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:72
+msgid ""
+"The :ref:`build configuration file <build-config>` file for the project "
+"needs to have its variable :confval:`latex_additional_files` appropriately "
+"configured, for example::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:79
+msgid "The Sphinx LaTeX style package options"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:81
+msgid ""
+"The ``'sphinxsetup'`` key to :confval:`latex_elements` provides a more "
+"convenient interface to various style parameters. It is a comma separated "
+"string of ``key=value`` instructions::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:87
+msgid "if a key is repeated, it is its last occurence which counts,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:88
+msgid "spaces around the commas and equal signs are ignored."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:90
+msgid ""
+"If non-empty, it will be passed as argument to the ``\\sphinxsetup`` "
+"command::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:99
+msgid ""
+"Most options described next could also have been positioned as "
+":file:`sphinx.sty` package options. But for those where the key value "
+"contains some LaTeX code the use of ``\\sphinxsetup`` is mandatory. Hence "
+"the whole ``'sphinxsetup'`` string is passed as argument to "
+"``\\sphinxsetup``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:105
+msgid ""
+"As an alternative to the ``'sphinxsetup'`` key, it is possibly to insert "
+"explicitely the ``\\\\sphinxsetup{key=value,..}`` inside the ``'preamble'`` "
+"key. It is even possible to use the ``\\sphinxsetup`` in the body of the "
+"document, via the :rst:dir:`raw` directive, to modify dynamically the option"
+" values: this is actually what we did for the duration of this chapter for "
+"the PDF output, which is styled using::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:120
+msgid ""
+"and with the ``svgnames`` option having been passed to \"xcolor\" package::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:127
+msgid ""
+"Here are the currently available options together with their default values."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:131
+msgid ""
+"These options correspond to what has been so far the default LaTeX rendering"
+" by Sphinx; if in future Sphinx offers various *themes* for LaTeX, the "
+"interface may change."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:143
+msgid "``verbatimwithframe``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:136
+msgid ""
+"default ``true``. Boolean to specify if :rst:dir:`code-block`\\ s and "
+"literal includes are framed. Setting it to ``false`` does not deactivate use"
+" of package \"framed\", because it is still in use for the optional "
+"background colour (see below)."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:143
+msgid "LaTeX requires ``true`` or ``false`` to be specified in *lowercase*."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:152
+msgid "``verbatimwrapslines``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:146
+msgid ""
+"default ``true``. Tells whether long lines in :rst:dir:`code-block`\\ s "
+"should be wrapped."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:163
+msgid "``inlineliteralwraps``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:155
+msgid ""
+"default ``true``. Allows linebreaks inside inline literals: but extra "
+"potential break-points (additionally to those allowed by LaTeX at spaces or "
+"for hyphenation) are currently inserted only after the characters ``. , ; ? "
+"! /``. Due to TeX internals, white space in the line will be stretched (or "
+"shrinked) in order to accomodate the linebreak."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:162
+msgid "set this option to ``false`` to recover former behaviour."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:168
+msgid "``verbatimvisiblespace``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:166
+msgid ""
+"default ``\\textcolor{red}{\\textvisiblespace}``. When a long code line is "
+"split, space characters located at end of the line before the break are "
+"displayed using this code."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:189
+msgid "``verbatimcontinued``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:171
+msgid "The default is::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:175
+msgid ""
+"It is printed at start of continuation lines. This rather formidable "
+"expression reserves twice the width of a typical character in the current "
+"(monospaced) font and puts there a small red hook pointing to the right."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:179
+msgid ""
+"The breaking of long code lines was introduced at 1.4.2. The space reserved "
+"to the continuation symbol was changed at 1.5 to obey the current font "
+"characteristics (this was needed as Sphinx 1.5 LaTeX allows code-blocks in "
+"footnotes which use a smaller font size)."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:187
+msgid "This specification gives the same spacing as before 1.5::"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:195
+msgid "``TitleColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:192
+msgid ""
+"default ``{rgb}{0.126,0.263,0.361}``. The colour for titles (as configured "
+"via use of package \"titlesec\".) It must obey the syntax of the "
+"``\\definecolor`` command. Check the documentation of packages ``color`` or "
+"``xcolor``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:199
+msgid "``InnerLinkColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:198
+msgid ""
+"default ``{rgb}{0.208,0.374,0.486}``. A colour passed to ``hyperref`` as "
+"value of ``linkcolor``  and ``citecolor``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:203
+msgid "``OuterLinkColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:202
+msgid ""
+"default ``{rgb}{0.216,0.439,0.388}``. A colour passed to ``hyperref`` as "
+"value of ``filecolor``, ``menucolor``, and ``urlcolor``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:207
+msgid "``VerbatimColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:206
+msgid ""
+"default ``{rgb}{1,1,1}``. The background colour for :rst:dir:`code-block`\\ "
+"s. The default is white."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:210
+msgid "``VerbatimBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:210
+msgid "default ``{rgb}{0,0,0}``. The frame color, defaults to black."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:213
+msgid "``verbatimsep``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:213
+msgid "default ``\\fboxsep``. The separation between code lines and the frame."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:217
+msgid "``verbatimborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:216
+msgid ""
+"default ``\\fboxrule``. The width of the frame around :rst:dir:`code-"
+"block`\\ s."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:221
+msgid "``shadowsep``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:220
+msgid ""
+"default ``5pt``. The separation between contents and frame for "
+":dudir:`contents` and :dudir:`topic` boxes."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:224
+msgid "``shadowsize``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:224
+msgid "default ``4pt``. The width of the lateral \"shadow\" to the right."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:227
+msgid "``shadowrule``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:227
+msgid ""
+"default ``\\fboxrule``. The width of the frame around :dudir:`topic` boxes."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:238
+msgid "``noteBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:230
+msgid ""
+"default ``{rgb}{0,0,0}``. The colour for the two horizontal rules used by "
+"Sphinx in LaTeX for styling a :dudir:`note` admonition. Defaults to black."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:236
+msgid ""
+"The actual name of the colour as declared to \"color\" or \"xcolor\" is "
+"``sphinxnoteBorderColor``. The same \"sphinx\" prefix applies to all colours"
+" for notices and admonitions."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:241
+msgid "``hintBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:241 ../../sphinx/doc/latex.rst:244
+#: ../../sphinx/doc/latex.rst:247 ../../sphinx/doc/latex.rst:266
+#: ../../sphinx/doc/latex.rst:269 ../../sphinx/doc/latex.rst:272
+#: ../../sphinx/doc/latex.rst:275
+msgid "default ``{rgb}{0,0,0}``. id."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:244
+msgid "``importantBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:247
+msgid "``tipBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:250
+msgid "``noteborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:250
+msgid "default ``0.5pt``. The width of the two horizontal rules."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:253
+msgid "``hintborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:253 ../../sphinx/doc/latex.rst:256
+#: ../../sphinx/doc/latex.rst:259
+msgid "default ``0.5pt``. id."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:256
+msgid "``importantborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:259
+msgid "``tipborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:263
+msgid "``warningBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:262
+msgid ""
+"default ``{rgb}{0,0,0}``. The colour of the frame for :dudir:`warning` type "
+"admonitions. Defaults to black."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:266
+msgid "``cautionBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:269
+msgid "``attentionBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:272
+msgid "``dangerBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:275
+msgid "``errorBorderColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:279
+msgid "``warningBgColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:278
+msgid ""
+"default ``{rgb}{1,1,1}``. The background colour for :dudir:`warning` type "
+"admonition, defaults to white."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:282
+msgid "``cautionBgColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:282 ../../sphinx/doc/latex.rst:285
+#: ../../sphinx/doc/latex.rst:288 ../../sphinx/doc/latex.rst:291
+msgid "default ``{rgb}{1,1,1}``. id."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:285
+msgid "``attentionBgColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:288
+msgid "``dangerBgColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:291
+msgid "``errorBgColor``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:294
+msgid "``warningborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:294
+msgid "default ``1pt``. The width of the frame."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:297
+msgid "``cautionborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:297 ../../sphinx/doc/latex.rst:300
+#: ../../sphinx/doc/latex.rst:303 ../../sphinx/doc/latex.rst:306
+msgid "default ``1pt``. id."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:300
+msgid "``attentionborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:303
+msgid "``dangerborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:306
+msgid "``errorborder``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:310
+msgid "``AtStartFootnote``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:309
+msgid ""
+"default ``\\mbox{ }``. LaTeX macros inserted at the start of the footnote "
+"text at bottom of page, after the footnote number."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:324
+msgid "``BeforeFootnote``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:313
+msgid ""
+"default ``\\leavevmode\\unskip``. LaTeX macros inserted before the footnote "
+"mark. The default removes possible space before it."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:316
+msgid ""
+"It can be set to empty (``BeforeFootnote={},``) to recover the earlier "
+"behaviour of Sphinx, or alternatively contain a ``\\nobreak\\space`` or a "
+"``\\thinspace`` after the ``\\unskip`` to insert some chosen (non-breakable)"
+" space."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:321
+msgid ""
+"formerly, footnotes from explicit mark-up were preceded by a space (hence a "
+"linebreak there was possible), but automatically generated footnotes had no "
+"such space."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:327
+msgid "``HeaderFamily``"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:327
+msgid "default ``\\sffamily\\bfseries``. Sets the font used by headings."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:329
+msgid ""
+"As seen above, key values may even be used for LaTeX commands. But don't "
+"forget to double the backslashes if not using \"raw\" Python strings."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:333
+msgid "The LaTeX environments defined by Sphinx"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:335
+msgid ""
+"Let us now list some macros from the package file :file:`sphinx.sty` and "
+"class file :file:`sphinxhowto.cls` or :file:`sphinxmanual.cls`, which can be"
+" entirely redefined, if desired."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:339
+msgid ""
+"text styling commands (they have one argument): ``\\sphinx<foo>`` with "
+"``<foo>`` being one of ``strong``, ``bfcode``, ``email``, "
+"``tablecontinued``, ``titleref``, ``menuselection``, ``accelerator``, "
+"``crossref``, ``termref``, ``optional``. By default and for backwards "
+"compatibility the ``\\sphinx<foo>`` expands to ``\\<foo>`` hence the user "
+"can choose to customize rather the latter (the non-prefixed macros will be "
+"left undefined if option :confval:`latex_keep_old_macro_names` is set to "
+"``False`` in :file:`conf.py`.)"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:347
+msgid ""
+"use of ``\\sphinx`` prefixed macro names to limit possibilities of conflict "
+"with user added packages: if :confval:`latex_keep_old_macro_names` is set to"
+" ``False`` in :file:`conf.py` only the prefixed names are defined."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:352
+msgid ""
+"more text styling commands: ``\\sphinxstyle<bar>`` with ``<bar>`` one of "
+"``indexentry``, ``indexextra``, ``indexpageref``, ``topictitle``, "
+"``sidebartitle``, ``othertitle``, ``sidebarsubtitle``, ``thead``, "
+"``emphasis``, ``literalemphasis``, ``strong``, ``literalstrong``, "
+"``abbreviation``, ``literalintitle``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:358
+msgid ""
+"the new macros are wrappers of the formerly hard-coded ``\\texttt``, "
+"``\\emph``, ... The default definitions can be found in :file:`sphinx.sty`."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:362
+msgid ""
+"paragraph level environments: for each admonition type ``<foo>``, the used "
+"environment is named ``sphinx<foo>``. They may be ``\\renewenvironment`` 'd "
+"individually, and must then be defined with one argument (it is the heading "
+"of the notice, for example ``Warning:`` for :dudir:`warning` directive, if "
+"English is the document language). Their default definitions use either the "
+"*sphinxheavybox* (for the first listed directives) or the *sphinxlightbox* "
+"environments, configured to use the parameters (colours, border thickness) "
+"specific to each type, which can be set via ``'sphinxsetup'`` string."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:371
+msgid ""
+"use of public environment names, separate customizability of the parameters."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:373
+msgid ""
+"the :dudir:`contents` directive (with ``:local:`` option) and the "
+":dudir:`topic` directive are implemented by environment ``sphinxShadowBox``."
+" See above for the three dimensions associated with it."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:377
+msgid ""
+"use of public names for the three lengths. The environment itself was "
+"redefined to allow page breaks at release 1.4.2."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:380
+msgid ""
+"the literal blocks (:rst:dir:`code-block` directives, etc ...), are "
+"implemented using ``sphinxVerbatim`` environment which is a wrapper of "
+"``Verbatim`` environment from package ``fancyvrb.sty``. It adds the handling"
+" of the top caption and the wrapping of long lines, and a frame which allows"
+" pagebreaks. Inside tables the used environment is ``sphinxVerbatimintable``"
+" (it does not draw a frame, but allows a caption)."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:388
+msgid ""
+"``Verbatim`` keeps exact same meaning as in ``fancyvrb.sty`` (meaning which "
+"is the one of ``OriginalVerbatim`` too), and custom one is called "
+"``sphinxVerbatim``. Also, earlier version of Sphinx used "
+"``OriginalVerbatim`` inside tables (captions were lost, long code lines were"
+" not wrapped), it now uses there ``sphinxVerbatimintable``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:394
+msgid ""
+"the two customizable lengths, the ``sphinxVerbatimintable``, the boolean "
+"toggles described above."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:397
+msgid ""
+"by default the Sphinx style file ``sphinx.sty`` includes the command "
+"``\\fvset{fontsize=\\small}`` as part of its configuration of "
+"``fancyvrb.sty``. The user may override this for example via "
+"``\\fvset{fontsize=auto}`` which will use for listings the ambient font "
+"size. Refer to ``fancyvrb.sty``'s documentation for further keys."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:403
+msgid "formerly, the use of ``\\small`` for code listings was not customizable."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:405
+msgid ""
+"the section, subsection, ...  headings are set using  *titlesec*'s "
+"``\\titleformat`` command. Check :file:`sphinx.sty` for the definitions."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:407
+msgid ""
+"for the ``'sphinxmanual'`` class (corresponding to the fifth element of "
+":confval:`latex_documents` being set to ``'manual'``), the chapter headings "
+"can be customized using *fncychap*'s commands ``\\ChNameVar``, "
+"``\\ChNumVar``, ``\\ChTitleVar``. Check :file:`sphinx.sty` for the default "
+"definitions. They are applied only if *fncychap* is loaded with option "
+"``Bjarne``. It is also possible to use an empty ``'fncychap'`` key, and use "
+"the *titlesec* ``\\titleformat`` command to style the chapter titles."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:415
+msgid ""
+"formerly, use of *fncychap* with other styles than ``Bjarne`` was "
+"dysfunctional."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:418
+msgid ""
+"the table of contents is typeset via ``\\sphinxtableofcontents`` which is a "
+"wrapper (whose definition can be found in :file:`sphinxhowto.cls` or in "
+":file:`sphinxmanual.cls`) of standard ``\\tableofcontents``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:422
+msgid "formerly, the meaning of ``\\tableofcontents`` was modified by Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:424
+msgid ""
+"the bibliography and Python Module index are typeset respectively within "
+"environments ``sphinxthebibliography`` and ``sphinxtheindex``, which are "
+"simple wrappers of the non-modified ``thebibliography`` and ``theindex`` "
+"environments."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:429
+msgid "formerly, the original environments were modified by Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:432
+msgid "the list is not exhaustive: refer to :file:`sphinx.sty` for more."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:436
+msgid ""
+"As an experimental feature, Sphinx can use user-defined template file for "
+"LaTeX source if you have a file named ``_templates/latex.tex_t`` on your "
+"project.  Now all template variables are unstable and undocumented.  They "
+"will be changed in future version."
+msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sphinx-doc-1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 14:23+0000\n"
+"POT-Creation-Date: 2016-11-28 15:45+0000\n"
 "PO-Revision-Date: 2016-03-06 15:43+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish (http://www.transifex.com/sphinx-doc/sphinx-doc-1_5/language/es/)\n"
@@ -17,49 +17,49 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../../extdev/appapi.rst:4
+#: ../../sphinx/doc/extdev/appapi.rst:4
 msgid "Application API"
 msgstr ""
 
-#: ../../extdev/appapi.rst:10
+#: ../../sphinx/doc/extdev/appapi.rst:10
 msgid ""
 "Each Sphinx extension is a Python module with at least a :func:`setup` "
 "function. This function is called at initialization time with one argument, "
 "the application object representing the Sphinx process."
 msgstr ""
 
-#: ../../extdev/appapi.rst:16
+#: ../../sphinx/doc/extdev/appapi.rst:16
 msgid "This application object has the public API described in the following."
 msgstr ""
 
-#: ../../extdev/appapi.rst:19
+#: ../../sphinx/doc/extdev/appapi.rst:19
 msgid "Extension setup"
 msgstr ""
 
-#: ../../extdev/appapi.rst:21
+#: ../../sphinx/doc/extdev/appapi.rst:21
 msgid ""
 "These methods are usually called in an extension's ``setup()`` function."
 msgstr ""
 
-#: ../../extdev/appapi.rst:23
+#: ../../sphinx/doc/extdev/appapi.rst:23
 msgid ""
 "Examples of using the Sphinx extension API can be seen in the "
 ":mod:`sphinx.ext` package."
 msgstr ""
 
-#: ../../extdev/appapi.rst:28
+#: ../../sphinx/doc/extdev/appapi.rst:28
 msgid ""
 "Load the extension given by the module *name*.  Use this if your extension "
 "needs the features provided by another extension."
 msgstr ""
 
-#: ../../extdev/appapi.rst:33
+#: ../../sphinx/doc/extdev/appapi.rst:33
 msgid ""
 "Register a new builder.  *builder* must be a class that inherits from "
 ":class:`~sphinx.builders.Builder`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:38
+#: ../../sphinx/doc/extdev/appapi.rst:38
 msgid ""
 "Register a configuration value.  This is necessary for Sphinx to recognize "
 "new values and set default values accordingly.  The *name* should be "
@@ -68,60 +68,60 @@ msgid ""
 "values:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:43
+#: ../../sphinx/doc/extdev/appapi.rst:43
 msgid ""
 "``'env'`` if a change in the setting only takes effect when a document is "
 "parsed -- this means that the whole environment must be rebuilt."
 msgstr ""
 
-#: ../../extdev/appapi.rst:45
+#: ../../sphinx/doc/extdev/appapi.rst:45
 msgid ""
 "``'html'`` if a change in the setting needs a full rebuild of HTML "
 "documents."
 msgstr ""
 
-#: ../../extdev/appapi.rst:47
+#: ../../sphinx/doc/extdev/appapi.rst:47
 msgid "``''`` if a change in the setting will not need any special rebuild."
 msgstr ""
 
-#: ../../extdev/appapi.rst:49
+#: ../../sphinx/doc/extdev/appapi.rst:49
 msgid ""
 "If the *default* value is a callable, it will be called with the config "
 "object as its argument in order to get the default value.  This can be used "
 "to implement config values whose default depends on other values."
 msgstr ""
 
-#: ../../extdev/appapi.rst:54
+#: ../../sphinx/doc/extdev/appapi.rst:54
 msgid ""
 "Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) "
 "to a string.  However, booleans are still accepted and converted internally."
 msgstr ""
 
-#: ../../extdev/appapi.rst:61
+#: ../../sphinx/doc/extdev/appapi.rst:61
 msgid ""
 "Make the given *domain* (which must be a class; more precisely, a subclass "
 "of :class:`~sphinx.domains.Domain`) known to Sphinx."
 msgstr ""
 
-#: ../../extdev/appapi.rst:68
+#: ../../sphinx/doc/extdev/appapi.rst:68
 msgid ""
 "Make the given *domain* class known to Sphinx, assuming that there is "
 "already a domain with its ``.name``.  The new domain must be a subclass of "
 "the existing one."
 msgstr ""
 
-#: ../../extdev/appapi.rst:76
+#: ../../sphinx/doc/extdev/appapi.rst:76
 msgid ""
 "Add a custom *index* class to the domain named *domain*.  *index* must be a "
 "subclass of :class:`~sphinx.domains.Index`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:83
+#: ../../sphinx/doc/extdev/appapi.rst:83
 msgid ""
 "Register an event called *name*.  This is needed to be able to emit it."
 msgstr ""
 
-#: ../../extdev/appapi.rst:87
+#: ../../sphinx/doc/extdev/appapi.rst:87
 msgid ""
 "Register or override a Docutils translator class. This is used to register a"
 " custom output translator or to replace a builtin translator. This allows "
@@ -129,7 +129,7 @@ msgid ""
 "translator (see :meth:`add_node`)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:92
+#: ../../sphinx/doc/extdev/appapi.rst:92
 msgid ""
 "This is a API version of :confval:`html_translator_class` for all other "
 "builders. Note that if :confval:`html_translator_class` is specified and "
@@ -137,13 +137,13 @@ msgid ""
 "precedence."
 msgstr ""
 
-#: ../../extdev/appapi.rst:101
+#: ../../sphinx/doc/extdev/appapi.rst:101
 msgid ""
 "Register a Docutils node class.  This is necessary for Docutils internals. "
 "It may also be used in the future to validate nodes in the parsed documents."
 msgstr ""
 
-#: ../../extdev/appapi.rst:104
+#: ../../sphinx/doc/extdev/appapi.rst:104
 msgid ""
 "Node visitor functions for the Sphinx HTML, LaTeX, text and manpage writers "
 "can be given as keyword arguments: the keyword should be one or more of "
@@ -153,23 +153,23 @@ msgid ""
 ":exc:`docutils.nodes.SkipNode`.  Example:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:122
+#: ../../sphinx/doc/extdev/appapi.rst:122
 msgid ""
 "Obviously, translators for which you don't specify visitor methods will "
 "choke on the node when encountered in a document to translate."
 msgstr ""
 
-#: ../../extdev/appapi.rst:125
+#: ../../sphinx/doc/extdev/appapi.rst:125
 msgid "Added the support for keyword arguments giving visit functions."
 msgstr ""
 
-#: ../../extdev/appapi.rst:130
+#: ../../sphinx/doc/extdev/appapi.rst:130
 msgid ""
 "Register a Docutils node class as a numfig target.  Sphinx numbers the node "
 "automatically. And then the users can refer it using :rst:role:`numref`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:133
+#: ../../sphinx/doc/extdev/appapi.rst:133
 msgid ""
 "*figtype* is a type of enumerable nodes.  Each figtypes have individual "
 "numbering sequences.  As a system figtypes, ``figure``, ``table`` and "
@@ -178,7 +178,7 @@ msgid ""
 "given."
 msgstr ""
 
-#: ../../extdev/appapi.rst:139
+#: ../../sphinx/doc/extdev/appapi.rst:139
 msgid ""
 "*title_getter* is a getter function to obtain the title of node.  It takes "
 "an instance of the enumerable node, and it must return its title as string. "
@@ -187,19 +187,19 @@ msgid ""
 "``docutils.nodes.title`` from the node as a title."
 msgstr ""
 
-#: ../../extdev/appapi.rst:145
+#: ../../sphinx/doc/extdev/appapi.rst:145
 msgid ""
 "Other keyword arguments are used for node visitor functions. See the "
 ":meth:`Sphinx.add_node` for details."
 msgstr ""
 
-#: ../../extdev/appapi.rst:153
+#: ../../sphinx/doc/extdev/appapi.rst:153
 msgid ""
 "Register a Docutils directive.  *name* must be the prospective directive "
 "name.  There are two possible ways to write a directive:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:156
+#: ../../sphinx/doc/extdev/appapi.rst:156
 msgid ""
 "In the docutils 0.4 style, *obj* is the directive function.  *content*, "
 "*arguments* and *options* are set as attributes on the function and "
@@ -207,7 +207,7 @@ msgid ""
 "respectively.  **This style is deprecated.**"
 msgstr ""
 
-#: ../../extdev/appapi.rst:161
+#: ../../sphinx/doc/extdev/appapi.rst:161
 msgid ""
 "In the docutils 0.5 style, *directiveclass* is the directive class.  It must"
 " already have attributes named *has_content*, *required_arguments*, "
@@ -217,53 +217,53 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../../extdev/appapi.rst:168
+#: ../../sphinx/doc/extdev/appapi.rst:168
 msgid ""
 "The directive class must inherit from the class "
 "``docutils.parsers.rst.Directive``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:171
+#: ../../sphinx/doc/extdev/appapi.rst:171
 msgid ""
 "For example, the (already existing) :rst:dir:`literalinclude` directive "
 "would be added like this:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:183
+#: ../../sphinx/doc/extdev/appapi.rst:183
 msgid "Docutils 0.5-style directive classes are now supported."
 msgstr ""
 
-#: ../../extdev/appapi.rst:189
+#: ../../sphinx/doc/extdev/appapi.rst:189
 msgid ""
 "Like :meth:`add_directive`, but the directive is added to the domain named "
 "*domain*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:196
+#: ../../sphinx/doc/extdev/appapi.rst:196
 msgid ""
 "Register a Docutils role.  *name* must be the role name that occurs in the "
 "source, *role* the role function (see the `Docutils documentation "
 "<http://docutils.sourceforge.net/docs/howto/rst-roles.html>`_ on details)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:202
+#: ../../sphinx/doc/extdev/appapi.rst:202
 msgid ""
 "Like :meth:`add_role`, but the role is added to the domain named *domain*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:208
+#: ../../sphinx/doc/extdev/appapi.rst:208
 msgid ""
 "Register a Docutils role that does nothing but wrap its contents in the node"
 " given by *nodeclass*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:216
+#: ../../sphinx/doc/extdev/appapi.rst:216
 msgid ""
 "This method is a very convenient way to add a new :term:`object` type that "
 "can be cross-referenced.  It will do this:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:219
+#: ../../sphinx/doc/extdev/appapi.rst:219
 msgid ""
 "Create a new directive (called *directivename*) for documenting an object. "
 "It will automatically add index entries if *indextemplate* is nonempty; if "
@@ -271,13 +271,13 @@ msgid ""
 "below for how the template will be interpreted."
 msgstr ""
 
-#: ../../extdev/appapi.rst:223
+#: ../../sphinx/doc/extdev/appapi.rst:223
 msgid ""
 "Create a new role (called *rolename*) to cross-reference to these object "
 "descriptions."
 msgstr ""
 
-#: ../../extdev/appapi.rst:225
+#: ../../sphinx/doc/extdev/appapi.rst:225
 msgid ""
 "If you provide *parse_node*, it must be a function that takes a string and a"
 " docutils node, and it must populate the node with children parsed from the "
@@ -286,27 +286,27 @@ msgid ""
 "for this documentation for an example."
 msgstr ""
 
-#: ../../extdev/appapi.rst:230
+#: ../../sphinx/doc/extdev/appapi.rst:230
 msgid ""
 "The *objname* (if not given, will default to *directivename*) names the type"
 " of object.  It is used when listing objects, e.g. in search results."
 msgstr ""
 
-#: ../../extdev/appapi.rst:233
+#: ../../sphinx/doc/extdev/appapi.rst:233
 msgid "For example, if you have this call in a custom Sphinx extension::"
 msgstr ""
 
-#: ../../extdev/appapi.rst:237
+#: ../../sphinx/doc/extdev/appapi.rst:237
 msgid "you can use this markup in your documents::"
 msgstr ""
 
-#: ../../extdev/appapi.rst:247
+#: ../../sphinx/doc/extdev/appapi.rst:247
 msgid ""
 "For the directive, an index entry will be generated as if you had prepended "
 "::"
 msgstr ""
 
-#: ../../extdev/appapi.rst:251
+#: ../../sphinx/doc/extdev/appapi.rst:251
 msgid ""
 "The reference node will be of class ``literal`` (so it will be rendered in a"
 " proportional font, as appropriate for code) unless you give the "
@@ -318,48 +318,48 @@ msgid ""
 " ``sphinx.addnodes.literal_strong``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:260
+#: ../../sphinx/doc/extdev/appapi.rst:260
 msgid ""
 "For the role content, you have the same syntactical possibilities as for "
 "standard Sphinx roles (see :ref:`xref-syntax`)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:263
+#: ../../sphinx/doc/extdev/appapi.rst:263
 msgid ""
 "This method is also available under the deprecated alias "
 "``add_description_unit``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:268
+#: ../../sphinx/doc/extdev/appapi.rst:268
 msgid ""
 "This method is very similar to :meth:`add_object_type` except that the "
 "directive it generates must be empty, and will produce no output."
 msgstr ""
 
-#: ../../extdev/appapi.rst:271
+#: ../../sphinx/doc/extdev/appapi.rst:271
 msgid ""
 "That means that you can add semantic targets to your sources, and refer to "
 "them using custom roles instead of generic ones (like :rst:role:`ref`). "
 "Example call::"
 msgstr ""
 
-#: ../../extdev/appapi.rst:277
+#: ../../sphinx/doc/extdev/appapi.rst:277
 msgid "Example usage::"
 msgstr ""
 
-#: ../../extdev/appapi.rst:288
+#: ../../sphinx/doc/extdev/appapi.rst:288
 msgid ""
 "(Of course, the element following the ``topic`` directive needn't be a "
 "section.)"
 msgstr ""
 
-#: ../../extdev/appapi.rst:293
+#: ../../sphinx/doc/extdev/appapi.rst:293
 msgid ""
 "Add the standard docutils :class:`Transform` subclass *transform* to the "
 "list of transforms that are applied after Sphinx parses a reST document."
 msgstr ""
 
-#: ../../extdev/appapi.rst:298
+#: ../../sphinx/doc/extdev/appapi.rst:298
 msgid ""
 "Add *filename* to the list of JavaScript files that the default HTML "
 "template will include.  The filename must be relative to the HTML static "
@@ -367,27 +367,27 @@ msgid ""
 "full URI with scheme, like ``http://example.org/foo.js``, is also supported."
 msgstr ""
 
-#: ../../extdev/appapi.rst:307
+#: ../../sphinx/doc/extdev/appapi.rst:307
 msgid ""
 "Add *filename* to the list of CSS files that the default HTML template will "
 "include.  Like for :meth:`add_javascript`, the filename must be relative to "
 "the HTML static path, or a full URI with scheme."
 msgstr ""
 
-#: ../../extdev/appapi.rst:315
+#: ../../sphinx/doc/extdev/appapi.rst:315
 msgid ""
 "Add *packagename* to the list of packages that LaTeX source code will "
 "include. If you provide *options*, it will be taken to `\\usepackage` "
 "declaration."
 msgstr ""
 
-#: ../../extdev/appapi.rst:327
+#: ../../sphinx/doc/extdev/appapi.rst:327
 msgid ""
 "Use *lexer*, which must be an instance of a Pygments lexer class, to "
 "highlight code blocks with the given language *alias*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:334
+#: ../../sphinx/doc/extdev/appapi.rst:334
 msgid ""
 "Add *cls* as a new documenter class for the :mod:`sphinx.ext.autodoc` "
 "extension.  It must be a subclass of :class:`sphinx.ext.autodoc.Documenter`."
@@ -395,7 +395,7 @@ msgid ""
 "autodoc module for examples on how to subclass :class:`Documenter`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:345
+#: ../../sphinx/doc/extdev/appapi.rst:345
 msgid ""
 "Add *getter*, which must be a function with an interface compatible to the "
 ":func:`getattr` builtin, as the autodoc attribute getter for objects that "
@@ -403,7 +403,7 @@ msgid ""
 "of a type are then handled by this function instead of :func:`getattr`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:354
+#: ../../sphinx/doc/extdev/appapi.rst:354
 msgid ""
 "Add *cls*, which must be a subclass of "
 ":class:`sphinx.search.SearchLanguage`, as a support language for building "
@@ -412,162 +412,169 @@ msgid ""
 ":confval:`html_search_language`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:363
+#: ../../sphinx/doc/extdev/appapi.rst:363
 msgid "Register a parser class for specified *suffix*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:369
+#: ../../sphinx/doc/extdev/appapi.rst:369
 msgid ""
 "Compare *version* (which must be a ``major.minor`` version string, e.g. "
 "``'1.1'``) with the version of the running Sphinx, and abort the build when "
 "it is too old."
 msgstr ""
 
-#: ../../extdev/appapi.rst:377
+#: ../../sphinx/doc/extdev/appapi.rst:377
 msgid ""
 "Register *callback* to be called when *event* is emitted.  For details on "
 "available core events and the arguments of callback functions, please see "
 ":ref:`events`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:381
+#: ../../sphinx/doc/extdev/appapi.rst:381
 msgid ""
 "The method returns a \"listener ID\" that can be used as an argument to "
 ":meth:`disconnect`."
 msgstr ""
 
-#: ../../extdev/appapi.rst:386
+#: ../../sphinx/doc/extdev/appapi.rst:386
 msgid "Unregister callback *listener_id*."
 msgstr ""
 
-#: ../../extdev/appapi.rst:391
+#: ../../sphinx/doc/extdev/appapi.rst:391
 msgid ""
 "All these methods raise this exception if something went wrong with the "
 "extension API."
 msgstr ""
 
-#: ../../extdev/appapi.rst:396
+#: ../../sphinx/doc/extdev/appapi.rst:396
 msgid "Emitting events"
 msgstr ""
 
-#: ../../extdev/appapi.rst:400
+#: ../../sphinx/doc/extdev/appapi.rst:400
 msgid ""
 "Emit *event* and pass *arguments* to the callback functions.  Return the "
 "return values of all callbacks as a list.  Do not emit core Sphinx events in"
 " extensions!"
 msgstr ""
 
-#: ../../extdev/appapi.rst:406
+#: ../../sphinx/doc/extdev/appapi.rst:406
 msgid ""
 "Emit *event* and pass *arguments* to the callback functions.  Return the "
 "result of the first callback that doesn't return ``None``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:413
+#: ../../sphinx/doc/extdev/appapi.rst:413
 msgid "Producing messages / logging"
 msgstr ""
 
-#: ../../extdev/appapi.rst:415
+#: ../../sphinx/doc/extdev/appapi.rst:415
 msgid ""
 "The application object also provides support for emitting leveled messages."
 msgstr ""
 
-#: ../../extdev/appapi.rst:419
+#: ../../sphinx/doc/extdev/appapi.rst:419
 msgid ""
 "There is no \"error\" call: in Sphinx, errors are defined as things that "
 "stop the build; just raise an exception (:exc:`sphinx.errors.SphinxError` or"
 " a custom subclass) to do that."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.warn:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.warn:1
 msgid "Emit a warning."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.warn:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.warn:3
 msgid ""
 "If *location* is given, it should either be a tuple of (docname, lineno) or "
 "a string describing the location of the warning as well as possible."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.warn:6
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.warn:6
 msgid "*prefix* usually should not be changed."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.warn:8
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.warn:8
 msgid ""
 "*type* and *subtype* are used to suppress warnings with "
 ":confval:`suppress_warnings`."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.warn:12
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.warn:12
 msgid ""
 "For warnings emitted during parsing, you should use "
 ":meth:`.BuildEnvironment.warn` since that will collect all warnings during "
 "parsing for later output."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.info:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.info:1
 msgid "Emit an informational message."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of sphinx.application.Sphinx.info:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.info:3
 msgid ""
 "If *nonl* is true, don't emit a newline at the end (which implies that more "
 "info output will follow soon.)"
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.verbose:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.verbose:1
 msgid "Emit a verbose informational message."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.verbose:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.verbose:3
 msgid ""
 "The message will only be emitted for verbosity levels >= 1 (i.e. at least "
 "one ``-v`` option was given)."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.verbose:6 ../../../sphinx/application.pydocstring
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.verbose:6
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
 #: of sphinx.application.Sphinx.debug:6
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.debug2:6
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.debug2:6
 msgid ""
 "The message can contain %-style interpolation placeholders, which is "
 "formatted with either the ``*args`` or ``**kwargs`` when output."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.debug:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.debug:1
 msgid "Emit a debug-level informational message."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.debug:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.debug:3
 msgid ""
 "The message will only be emitted for verbosity levels >= 2 (i.e. at least "
 "two ``-v`` options were given)."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.debug2:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.debug2:1
 msgid "Emit a lowlevel debug-level informational message."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.debug2:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.Sphinx.debug2:3
 msgid ""
 "The message will only be emitted for verbosity level 3 (i.e. three ``-v`` "
 "options were given)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:437
+#: ../../sphinx/doc/extdev/appapi.rst:437
 msgid "Sphinx core events"
 msgstr ""
 
-#: ../../extdev/appapi.rst:439
+#: ../../sphinx/doc/extdev/appapi.rst:439
 msgid ""
 "These events are known to the core.  The arguments shown are given to the "
 "registered event handlers.  Use :meth:`.connect` in an extension's ``setup``"
@@ -575,13 +582,13 @@ msgid ""
 "connect handlers to the events.  Example:"
 msgstr ""
 
-#: ../../extdev/appapi.rst:455
+#: ../../sphinx/doc/extdev/appapi.rst:455
 msgid ""
 "Emitted when the builder object has been created.  It is available as "
 "``app.builder``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:460
+#: ../../sphinx/doc/extdev/appapi.rst:460
 msgid ""
 "Emitted when the environment determines which source files have changed and "
 "should be re-read.  *added*, *changed* and *removed* are sets of docnames "
@@ -589,7 +596,7 @@ msgid ""
 "re-read in addition to these."
 msgstr ""
 
-#: ../../extdev/appapi.rst:469
+#: ../../sphinx/doc/extdev/appapi.rst:469
 msgid ""
 "Emitted when all traces of a source file should be cleaned from the "
 "environment, that is, if the source file is removed or before it is freshly "
@@ -597,14 +604,14 @@ msgid ""
 "the environment."
 msgstr ""
 
-#: ../../extdev/appapi.rst:474
+#: ../../sphinx/doc/extdev/appapi.rst:474
 msgid ""
 "For example, there is a cache of all modules on the environment.  When a "
 "source file has been changed, the cache's entries for the file are cleared, "
 "since the module declarations could have been removed from the file."
 msgstr ""
 
-#: ../../extdev/appapi.rst:482
+#: ../../sphinx/doc/extdev/appapi.rst:482
 msgid ""
 "Emitted after the environment has determined the list of all added and "
 "changed files and just before it reads them.  It allows extension authors to"
@@ -613,13 +620,13 @@ msgid ""
 "that are not in ``env.found_docs``)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:488
+#: ../../sphinx/doc/extdev/appapi.rst:488
 msgid ""
 "You can also remove document names; do this with caution since it will make "
 "Sphinx treat changed files as unchanged."
 msgstr ""
 
-#: ../../extdev/appapi.rst:495
+#: ../../sphinx/doc/extdev/appapi.rst:495
 msgid ""
 "Emitted when a source file has been read.  The *source* argument is a list "
 "whose single element is the contents of the source file.  You can process "
@@ -627,20 +634,20 @@ msgid ""
 "transformations."
 msgstr ""
 
-#: ../../extdev/appapi.rst:499
+#: ../../sphinx/doc/extdev/appapi.rst:499
 msgid ""
 "For example, if you want to use ``$`` signs to delimit inline math, like in "
 "LaTeX, you can use a regular expression to replace ``$...$`` by "
 "``:math:`...```."
 msgstr ""
 
-#: ../../extdev/appapi.rst:507
+#: ../../sphinx/doc/extdev/appapi.rst:507
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled.  The *doctree* can be modified in-place."
 msgstr ""
 
-#: ../../extdev/appapi.rst:512
+#: ../../sphinx/doc/extdev/appapi.rst:512
 msgid ""
 "Emitted when a cross-reference to a Python module or object cannot be "
 "resolved.  If the event handler can resolve the reference, it should return "
@@ -649,58 +656,58 @@ msgid ""
 "*contnode* as a child."
 msgstr ""
 
-#: ../../extdev/appapi.rst:518
+#: ../../sphinx/doc/extdev/appapi.rst:518
 msgid "The build environment (``app.builder.env``)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:519
+#: ../../sphinx/doc/extdev/appapi.rst:519
 msgid ""
 "The :class:`pending_xref` node to be resolved.  Its attributes ``reftype``, "
 "``reftarget``, ``modname`` and ``classname`` attributes determine the type "
 "and target of the reference."
 msgstr ""
 
-#: ../../extdev/appapi.rst:522
+#: ../../sphinx/doc/extdev/appapi.rst:522
 msgid ""
 "The node that carries the text and formatting inside the future reference "
 "and should be a child of the returned reference node."
 msgstr ""
 
-#: ../../extdev/appapi.rst:529
+#: ../../sphinx/doc/extdev/appapi.rst:529
 msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
 "*doctree* can be modified in place."
 msgstr ""
 
-#: ../../extdev/appapi.rst:533
+#: ../../sphinx/doc/extdev/appapi.rst:533
 msgid ""
 "Here is the place to replace custom nodes that don't have visitor methods in"
 " the writers, so that they don't cause errors when the writers encounter "
 "them."
 msgstr ""
 
-#: ../../extdev/appapi.rst:538
+#: ../../sphinx/doc/extdev/appapi.rst:538
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr ""
 
-#: ../../extdev/appapi.rst:541
+#: ../../sphinx/doc/extdev/appapi.rst:541
 msgid ""
 "You must handle this event in an extension that stores data in the "
 "environment in a custom location.  Otherwise the environment in the main "
 "process will not be aware of the information stored in the subprocess."
 msgstr ""
 
-#: ../../extdev/appapi.rst:545
+#: ../../sphinx/doc/extdev/appapi.rst:545
 msgid ""
 "*other* is the environment object from the subprocess, *env* is the "
 "environment from the main process.  *docnames* is a set of document names "
 "that have been read in the subprocess."
 msgstr ""
 
-#: ../../extdev/appapi.rst:549
+#: ../../sphinx/doc/extdev/appapi.rst:549
 msgid ""
 "For a sample of how to deal with this event, look at the standard "
 "``sphinx.ext.todo`` extension.  The implementation is often similar to that "
@@ -708,37 +715,37 @@ msgid ""
 "to the main environment from the other environment."
 msgstr ""
 
-#: ../../extdev/appapi.rst:558
+#: ../../sphinx/doc/extdev/appapi.rst:558
 msgid ""
 "Emitted when the :meth:`update` method of the build environment has "
 "completed, that is, the environment and all doctrees are now up-to-date."
 msgstr ""
 
-#: ../../extdev/appapi.rst:561
+#: ../../sphinx/doc/extdev/appapi.rst:561
 msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
 " phase."
 msgstr ""
 
-#: ../../extdev/appapi.rst:567
+#: ../../sphinx/doc/extdev/appapi.rst:567
 msgid "The handlers' return value is now used."
 msgstr ""
 
-#: ../../extdev/appapi.rst:572
+#: ../../sphinx/doc/extdev/appapi.rst:572
 msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
 "of ``(pagename, context, templatename)``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:580
+#: ../../sphinx/doc/extdev/appapi.rst:580
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr ""
 
-#: ../../extdev/appapi.rst:583
+#: ../../sphinx/doc/extdev/appapi.rst:583
 msgid ""
 "The *pagename* argument is the canonical name of the page being rendered, "
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
@@ -746,31 +753,31 @@ msgid ""
 "``'page.html'`` for all pages from reST documents."
 msgstr ""
 
-#: ../../extdev/appapi.rst:588
+#: ../../sphinx/doc/extdev/appapi.rst:588
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
 "values.  Keys must be strings."
 msgstr ""
 
-#: ../../extdev/appapi.rst:592
+#: ../../sphinx/doc/extdev/appapi.rst:592
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
 "template alone."
 msgstr ""
 
-#: ../../extdev/appapi.rst:596
+#: ../../sphinx/doc/extdev/appapi.rst:596
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
 msgstr ""
 
-#: ../../extdev/appapi.rst:601
+#: ../../sphinx/doc/extdev/appapi.rst:601
 msgid "The return value can now specify a template name."
 msgstr ""
 
-#: ../../extdev/appapi.rst:606
+#: ../../sphinx/doc/extdev/appapi.rst:606
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -780,139 +787,139 @@ msgid ""
 " cleanup actions depending on the exception status."
 msgstr ""
 
-#: ../../extdev/appapi.rst:617
+#: ../../sphinx/doc/extdev/appapi.rst:617
 msgid "Checking the Sphinx version"
 msgstr ""
 
-#: ../../extdev/appapi.rst:621
+#: ../../sphinx/doc/extdev/appapi.rst:621
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr ""
 
-#: ../../extdev/appapi.rst:625
+#: ../../sphinx/doc/extdev/appapi.rst:625
 msgid ""
 "A tuple of five elements; for Sphinx version 1.2.1 beta 3 this would be "
 "``(1, 2, 1, 'beta', 3)``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:628
+#: ../../sphinx/doc/extdev/appapi.rst:628
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:633
+#: ../../sphinx/doc/extdev/appapi.rst:633
 msgid "The Config object"
 msgstr ""
 
-#: ../../extdev/appapi.rst:639
+#: ../../sphinx/doc/extdev/appapi.rst:639
 msgid ""
 "The config object makes the values of all config values available as "
 "attributes."
 msgstr ""
 
-#: ../../extdev/appapi.rst:642
+#: ../../sphinx/doc/extdev/appapi.rst:642
 msgid ""
 "It is available as the ``config`` attribute on the application and "
 "environment objects.  For example, to get the value of :confval:`language`, "
 "use either ``app.config.language`` or ``env.config.language``."
 msgstr ""
 
-#: ../../extdev/appapi.rst:650
+#: ../../sphinx/doc/extdev/appapi.rst:650
 msgid "The template bridge"
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge:1
 msgid ""
 "This class defines the interface for a \"template bridge\", that is, a class"
 " that renders templates given a template name and a context."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.init:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.init:1
 msgid "Called by the builder to initialize the template system."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.init:3
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.init:3
 msgid ""
 "*builder* is the builder object; you'll probably want to look at the value "
 "of ``builder.config.templates_path``."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.init:6
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.init:6
 msgid ""
 "*theme* is a :class:`sphinx.theming.Theme` object or None; in the latter "
 "case, *dirs* can be list of fixed directories to look for templates."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.newest_template_mtime:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.newest_template_mtime:1
 msgid ""
 "Called by the builder to determine if output files are outdated because of "
 "template changes.  Return the mtime of the newest template file that was "
 "changed.  The default implementation returns ``0``."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.render:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.render:1
 msgid ""
 "Called by the builder to render a template given as a filename with a "
 "specified context (a Python dictionary)."
 msgstr ""
 
-#: ../../../sphinx/application.pydocstring of
-#: sphinx.application.TemplateBridge.render_string:1
+#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/application.pydocstring
+#: of sphinx.application.TemplateBridge.render_string:1
 msgid ""
 "Called by the builder to render a template given as a string with a "
 "specified context (a Python dictionary)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:661
+#: ../../sphinx/doc/extdev/appapi.rst:661
 msgid "Exceptions"
 msgstr ""
 
-#: ../../extdev/appapi.rst:667
+#: ../../sphinx/doc/extdev/appapi.rst:667
 msgid ""
 "This is the base class for \"nice\" exceptions.  When such an exception is "
 "raised, Sphinx will abort the build and present the exception category and "
 "message to the user."
 msgstr ""
 
-#: ../../extdev/appapi.rst:671
+#: ../../sphinx/doc/extdev/appapi.rst:671
 msgid ""
 "Extensions are encouraged to derive from this exception for their custom "
 "errors."
 msgstr ""
 
-#: ../../extdev/appapi.rst:674
+#: ../../sphinx/doc/extdev/appapi.rst:674
 msgid ""
 "Exceptions *not* derived from :exc:`SphinxError` are treated as unexpected "
 "and shown to the user with a part of the traceback (and the full traceback "
 "saved in a temporary file)."
 msgstr ""
 
-#: ../../extdev/appapi.rst:680
+#: ../../sphinx/doc/extdev/appapi.rst:680
 msgid ""
 "Description of the exception \"category\", used in converting the exception "
 "to a string (\"category: message\").  Should be set accordingly in "
 "subclasses."
 msgstr ""
 
-#: ../../extdev/appapi.rst:686
+#: ../../sphinx/doc/extdev/appapi.rst:686
 msgid ""
 "Used for erroneous values or nonsensical combinations of configuration "
 "values."
 msgstr ""
 
-#: ../../extdev/appapi.rst:691
+#: ../../sphinx/doc/extdev/appapi.rst:691
 msgid "Used for errors in setting up extensions."
 msgstr ""
 
-#: ../../extdev/appapi.rst:695
+#: ../../sphinx/doc/extdev/appapi.rst:695
 msgid "Used for errors to do with themes."
 msgstr ""
 
-#: ../../extdev/appapi.rst:699
+#: ../../sphinx/doc/extdev/appapi.rst:699
 msgid ""
 "Raised when the docs require a higher Sphinx version than the current one."
 msgstr ""

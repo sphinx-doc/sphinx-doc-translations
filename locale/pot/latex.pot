@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.5.5\n"
+"Project-Id-Version: Sphinx 1.5.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-04 00:39+0900\n"
+"POT-Creation-Date: 2017-05-15 00:22+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -492,74 +492,82 @@ msgid "the new macros are wrappers of the formerly hard-coded ``\\texttt``, ``\\
 msgstr ""
 
 #: ../../sphinx/doc/latex.rst:441
-msgid "paragraph level environments: for each admonition type ``<foo>``, the used environment is named ``sphinx<foo>``. They may be ``\\renewenvironment`` 'd individually, and must then be defined with one argument (it is the heading of the notice, for example ``Warning:`` for :dudir:`warning` directive, if English is the document language). Their default definitions use either the *sphinxheavybox* (for the first listed directives) or the *sphinxlightbox* environments, configured to use the parameters (colours, border thickness) specific to each type, which can be set via ``'sphinxsetup'`` string."
+msgid "a :dudir:`figure` may have an optional legend with arbitrary body elements: they are rendered in a ``sphinxlegend`` environment. The default definition issues ``\\small``, and ends with ``\\par``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:450
+#: ../../sphinx/doc/latex.rst:445
+msgid "formerly, the ``\\small`` was hardcoded in LaTeX writer and the ending ``\\par`` was lacking."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:448
+msgid "for each admonition type ``<foo>``, the used environment is named ``sphinx<foo>``. They may be ``\\renewenvironment`` 'd individually, and must then be defined with one argument (it is the heading of the notice, for example ``Warning:`` for :dudir:`warning` directive, if English is the document language). Their default definitions use either the *sphinxheavybox* (for the first listed directives) or the *sphinxlightbox* environments, configured to use the parameters (colours, border thickness) specific to each type, which can be set via ``'sphinxsetup'`` string."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:457
 msgid "use of public environment names, separate customizability of the parameters."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:452
+#: ../../sphinx/doc/latex.rst:459
 msgid "the :dudir:`contents` directive (with ``:local:`` option) and the :dudir:`topic` directive are implemented by environment ``sphinxShadowBox``. See above for the three dimensions associated with it."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:456
+#: ../../sphinx/doc/latex.rst:463
 msgid "use of public names for the three lengths. The environment itself was redefined to allow page breaks at release 1.4.2."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:459
+#: ../../sphinx/doc/latex.rst:466
 msgid "the literal blocks (:rst:dir:`code-block` directives, etc ...), are implemented using ``sphinxVerbatim`` environment which is a wrapper of ``Verbatim`` environment from package ``fancyvrb.sty``. It adds the handling of the top caption and the wrapping of long lines, and a frame which allows pagebreaks. Inside tables the used environment is ``sphinxVerbatimintable`` (it does not draw a frame, but allows a caption)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:467
+#: ../../sphinx/doc/latex.rst:474
 msgid "``Verbatim`` keeps exact same meaning as in ``fancyvrb.sty`` (meaning which is the one of ``OriginalVerbatim`` too), and custom one is called ``sphinxVerbatim``. Also, earlier version of Sphinx used ``OriginalVerbatim`` inside tables (captions were lost, long code lines were not wrapped), it now uses there ``sphinxVerbatimintable``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:473
+#: ../../sphinx/doc/latex.rst:480
 msgid "the two customizable lengths, the ``sphinxVerbatimintable``, the boolean toggles described above."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:476
+#: ../../sphinx/doc/latex.rst:483
 msgid "by default the Sphinx style file ``sphinx.sty`` includes the command ``\\fvset{fontsize=\\small}`` as part of its configuration of ``fancyvrb.sty``. The user may override this for example via ``\\fvset{fontsize=auto}`` which will use for listings the ambient font size. Refer to ``fancyvrb.sty``'s documentation for further keys."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:482
+#: ../../sphinx/doc/latex.rst:489
 msgid "formerly, the use of ``\\small`` for code listings was not customizable."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:484
+#: ../../sphinx/doc/latex.rst:491
 msgid "the section, subsection, ...  headings are set using  *titlesec*'s ``\\titleformat`` command. Check :file:`sphinx.sty` for the definitions."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:486
+#: ../../sphinx/doc/latex.rst:493
 msgid "for the ``'sphinxmanual'`` class (corresponding to the fifth element of :confval:`latex_documents` being set to ``'manual'``), the chapter headings can be customized using *fncychap*'s commands ``\\ChNameVar``, ``\\ChNumVar``, ``\\ChTitleVar``. Check :file:`sphinx.sty` for the default definitions. They are applied only if *fncychap* is loaded with option ``Bjarne``. It is also possible to use an empty ``'fncychap'`` key, and use the *titlesec* ``\\titleformat`` command to style the chapter titles."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:494
+#: ../../sphinx/doc/latex.rst:501
 msgid "formerly, use of *fncychap* with other styles than ``Bjarne`` was dysfunctional."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:497
+#: ../../sphinx/doc/latex.rst:504
 msgid "the table of contents is typeset via ``\\sphinxtableofcontents`` which is a wrapper (whose definition can be found in :file:`sphinxhowto.cls` or in :file:`sphinxmanual.cls`) of standard ``\\tableofcontents``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:501
+#: ../../sphinx/doc/latex.rst:508
 msgid "formerly, the meaning of ``\\tableofcontents`` was modified by Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:503
+#: ../../sphinx/doc/latex.rst:510
 msgid "the bibliography and Python Module index are typeset respectively within environments ``sphinxthebibliography`` and ``sphinxtheindex``, which are simple wrappers of the non-modified ``thebibliography`` and ``theindex`` environments."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:508
+#: ../../sphinx/doc/latex.rst:515
 msgid "formerly, the original environments were modified by Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:511
+#: ../../sphinx/doc/latex.rst:518
 msgid "the list is not exhaustive: refer to :file:`sphinx.sty` for more."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:515
+#: ../../sphinx/doc/latex.rst:522
 msgid "As an experimental feature, Sphinx can use user-defined template file for LaTeX source if you have a file named ``_templates/latex.tex_t`` on your project.  Now all template variables are unstable and undocumented.  They will be changed in future version."
 msgstr ""
 

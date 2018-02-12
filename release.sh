@@ -12,7 +12,7 @@ git checkout master
 git submodule init
 git submodule update
 # checkout sphinx master
-(cd sphinx; git fetch origin; git checkout master)
+(cd sphinx; git fetch origin; git checkout -b 1.7 origin/1.7)
 pip install -r requirements.txt
 
 

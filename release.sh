@@ -2,44 +2,28 @@
 
 set -ex
 
-if [ -z "$1" ]; then
-    echo "$0 [version]"
-    exit 1
-fi
+RELEASE=1_7
 
-RELEASE=$1
-BRANCH=`echo $RELEASE | cut -d . -f 1,2`
-
+# setup environment
+SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
+SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-${RELEASE}
+find sphinx -name "*.pyc" -exec rm {} \;
+git checkout master
 git submodule init
 git submodule update
-(cd sphinx; git fetch origin)
-find sphinx -name "*.pyc" -exec rm {} \;
-
-# update x.y branch
-git checkout $BRANCH
-cd sphinx
-git checkout $RELEASE
-cd ../locale
+# checkout sphinx master
+(cd sphinx; git fetch origin; git checkout master)
 pip install -r requirements.txt
-sphinx-intl create-transifexrc
-sh update.sh
-cd ..
-git add locale sphinx
-git commit -am "use sphinx-$RELEASE"
 
-# update stable branch
-git checkout stable
-cd sphinx
-git checkout $RELEASE
-cd ../locale
-pip install -r requirements.txt
-sphinx-intl create-transifexrc
-sh update.sh
-cd ..
+
+# update transifex pot and local po files
+sh ./locale/update.sh
+
+# commit po(t) files
 git add locale sphinx
-git commit -am "use sphinx-$RELEASE"
+git commit -m "[skip ci] update po(t) files"
 
 # push changes
 git checkout master
 git submodule update
-git push origin stable $BRANCH
+git push origin master

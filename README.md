@@ -35,10 +35,7 @@ Points are:
 ## How to update po files
 
 ```
-cd locale
-pip install -r requirements.txt
-sphinx-intl create-transifexrc  # to setup transifex account
-sh update.sh  # to update po files for each languages
+sh ./locale/update.sh
 ```
 
 After that, you should commit updated po files.
@@ -57,59 +54,39 @@ After that, you should commit updated po files.
 
 2. update po files
 
-3. add language directory in languages/ as:
+3. commit them
 
-   ```
-   cd languages
-   mkdir pt_BR
-   cp ja/conf.py pt_BR/conf.py
-   vi pt_BR/conf.py  # to set 'pt_BR' to 'language' conf value
-   ```
-
-4. commit them
-
-5. add new project on Read The Docs like:
+4. add new project on Read The Docs like:
 
    https://readthedocs.org/projects/sphinx-pt-br/
 
-6. add translation project to parent project like:
+5. add translation project to parent project like:
 
-   https://readthedocs.org/dashboard/sphinx-ja/translations/
+   https://readthedocs.org/dashboard/sphinx/translations/
 
 
-## How to add a version
+## How to add a new version
 
-1. init submodules:
-
-   ```
-   git submodule init
-   git submodule update
-   ```
-
-2. branch from master:
+1. add tag `1.7`
 
    ```
-   git checkout -b 1.3
+   git tag 1.7
    ```
 
-3. update submodule:
+2. replace old version `1_7` with `1_8` in:
+
+   - release.sh
+   - .travis.yml
+
+3. commit it and push them:
 
    ```
-   cd sphinx
-   git checkout 1.3.3
+   git add release.sh .travis.yml
+   git commit -m "add new version: 1.8"
+   git push --tags
    ```
 
-4. commit it:
-
-   ```
-   cd ..
-   git add sphinx
-   git commit -m "use sphinx-1.3.3"
-   ```
-
-5. update po files
-
-6. enable version 1.3 on RTD:
+4. enable version 1.7 on RTD:
 
    https://readthedocs.org/dashboard/sphinx-ja/versions/
 

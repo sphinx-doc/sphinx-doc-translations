@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2018, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.6+\n"
+"Project-Id-Version: Sphinx 1.7.1+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 17:21+0000\n"
+"POT-Creation-Date: 2018-02-12 16:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,86 +217,162 @@ msgid "Added the name of the builder and the prefixes."
 msgstr ""
 
 #: ../../sphinx/doc/markup/misc.rst:206
+msgid "This directive is designed to control only content of document.  It could not control sections, labels and so on."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:211
 msgid "Tables"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:208
-msgid "Use :ref:`standard reStructuredText tables <rst-tables>`.  They work fine in HTML output, however there are some gotchas when using tables in LaTeX: the column width is hard to determine correctly automatically.  For this reason, the following directive exists:"
+#: ../../sphinx/doc/markup/misc.rst:213
+msgid "Use :ref:`reStructuredText tables <rst-tables>`, i.e. either"
 msgstr ""
 
 #: ../../sphinx/doc/markup/misc.rst:215
+msgid "grid table syntax (:duref:`ref <grid-tables>`),"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:216
+msgid "simple table syntax (:duref:`ref <simple-tables>`),"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:217
+msgid ":dudir:`csv-table` syntax,"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:218
+msgid "or :dudir:`list-table` syntax."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:220
+msgid "The :dudir:`table` directive serves as optional wrapper of the *grid* and *simple* syntaxes."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:223
+msgid "They work fine in HTML output, however there are some gotchas when using tables in LaTeX: the column width is hard to determine correctly automatically.  For this reason, the following directive exists:"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:230
 msgid "This directive gives a \"column spec\" for the next table occurring in the source file.  The spec is the second argument to the LaTeX ``tabulary`` package's environment (which Sphinx uses to translate tables).  It can have values like ::"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:222
+#: ../../sphinx/doc/markup/misc.rst:237
 msgid "which means three left-adjusted, nonbreaking columns.  For columns with longer text that should automatically be broken, use either the standard ``p{width}`` construct, or tabulary's automatic specifiers:"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:227
+#: ../../sphinx/doc/markup/misc.rst:242
 msgid "``L``"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:227
+#: ../../sphinx/doc/markup/misc.rst:242
 msgid "flush left column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:229
+#: ../../sphinx/doc/markup/misc.rst:244
 msgid "``R``"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:229
+#: ../../sphinx/doc/markup/misc.rst:244
 msgid "flush right column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:231
+#: ../../sphinx/doc/markup/misc.rst:246
 msgid "``C``"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:231
+#: ../../sphinx/doc/markup/misc.rst:246
 msgid "centered column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:233
+#: ../../sphinx/doc/markup/misc.rst:248
 msgid "``J``"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:233
+#: ../../sphinx/doc/markup/misc.rst:248
 msgid "justified column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:236
-msgid "The automatic width is determined by rendering the content in the table, and scaling them according to their share of the total width."
-msgstr ""
-
-#: ../../sphinx/doc/markup/misc.rst:239
-msgid "By default, Sphinx uses a table layout with ``L`` for every column."
-msgstr ""
-
-#: ../../sphinx/doc/markup/misc.rst:243
-msgid "For columns which are known to be much narrower than the others it is recommended to use the lowercase specifiers. For more information, check the ``tabulary`` manual."
-msgstr ""
-
 #: ../../sphinx/doc/markup/misc.rst:251
-msgid "Tables with more than 30 rows are rendered using ``longtable``, not ``tabulary``, in order to allow pagebreaks."
+msgid "The automatic widths of the ``LRCJ`` columns are attributed by ``tabulary`` in proportion to the observed shares in a first pass where the table cells are rendered at their natural \"horizontal\" widths."
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:254
-msgid "Tables that contain list-like elements such as object descriptions, blockquotes or any kind of lists cannot be set out of the box with ``tabulary``.  They are therefore set with the standard LaTeX ``tabular`` environment if you don't give a ``tabularcolumns`` directive.  If you do, the table will be set with ``tabulary``, but you must use the ``p{width}`` construct for the columns that contain these elements."
+#: ../../sphinx/doc/markup/misc.rst:255
+msgid "By default, Sphinx uses a table layout with ``J`` for every column."
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:261
-msgid "Literal blocks do not work with ``tabulary`` at all, so tables containing a literal block are always set with ``tabular``.  Also, the verbatim environment used for literal blocks only works in ``p{width}`` columns, which means that by default, Sphinx generates such column specs for such tables."
+#: ../../sphinx/doc/markup/misc.rst:259
+msgid "Merged cells may now contain multiple paragraphs and are much better handled, thanks to custom Sphinx LaTeX macros. This novel situation motivated the switch to ``J`` specifier and not ``L`` by default."
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:267
+#: ../../sphinx/doc/markup/misc.rst:266
+msgid "Sphinx actually uses ``T`` specifier having done ``\\newcolumntype{T}{J}``. To revert to previous default, insert ``\\newcolumntype{T}{L}`` in the LaTeX preamble (see :confval:`latex_elements`)."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:270
+msgid "A frequent issue with tabulary is that columns with little contents are \"squeezed\". The minimal column width is a tabulary parameter called ``\\tymin``. You may set it globally in the LaTeX preamble via ``\\setlength{\\tymin}{40pt}`` for example."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:275
+msgid "Else, use the :rst:dir:`tabularcolumns` directive with an explicit ``p{40pt}`` (for example) for that column. You may use also ``l`` specifier but this makes the task of setting column widths more difficult if some merged cell intersects that column."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:282
+msgid "Tables with more than 30 rows are rendered using ``longtable``, not ``tabulary``, in order to allow pagebreaks. The ``L``, ``R``, ... specifiers do not work for these tables."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:286
+msgid "Tables that contain list-like elements such as object descriptions, blockquotes or any kind of lists cannot be set out of the box with ``tabulary``. They are therefore set with the standard LaTeX ``tabular`` (or ``longtable``) environment if you don't give a ``tabularcolumns`` directive. If you do, the table will be set with ``tabulary`` but you must use the ``p{width}`` construct (or Sphinx's ``\\X`` and ``\\Y`` specifiers described below) for the columns containing these elements."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:294
+msgid "Literal blocks do not work with ``tabulary`` at all, so tables containing a literal block are always set with ``tabular``. The verbatim environment used for literal blocks only works in ``p{width}`` (and ``\\X`` or ``\\Y``) columns, hence Sphinx generates such column specs for tables containing literal blocks."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:300
+msgid "Since Sphinx 1.5, the ``\\X{a}{b}`` specifier is used (there *is* a backslash in the specifier letter). It is like ``p{width}`` with the width set to a fraction ``a/b`` of the current line width. You can use it in the :rst:dir:`tabularcolumns` (it is not a problem if some LaTeX macro is also called ``\\X``.)"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:306
+msgid "It is *not* needed for ``b`` to be the total number of columns, nor for the sum of the fractions of the ``\\X`` specifiers to add  up to one. For example ``|\\X{2}{5}|\\X{1}{5}|\\X{1}{5}|`` is legitimate and the table will occupy 80% of the line width, the first of its three columns having the same width as the sum  of the next two."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:312
+msgid "This is used by the ``:widths:`` option of the :dudir:`table` directive."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:314
+msgid "Since Sphinx 1.6, there is also the ``\\Y{f}`` specifier which admits a decimal argument, such has ``\\Y{0.15}``: this would have the same effect as ``\\X{3}{20}``."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:320
+msgid "Merged cells from complex grid tables (either multi-row, multi-column, or both) now allow blockquotes, lists, literal blocks, ... as do regular cells."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:323
+msgid "Sphinx's merged cells interact well with ``p{width}``, ``\\X{a}{b}``, ``Y{f}`` and tabulary's columns."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:328
+msgid ":rst:dir:`tabularcolumns` conflicts with ``:widths:`` option of table directives.  If both are specified, ``:widths:`` option will be ignored."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:332
+msgid "Math"
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:334
+msgid "See :ref:`math-support`."
+msgstr ""
+
+#: ../../sphinx/doc/markup/misc.rst:337
 msgid "Footnotes"
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:268
+#: ../../sphinx/doc/markup/misc.rst:338
 msgid "For most builders name and format are the same. At the moment only builders derived from the html builder distinguish between the builder format and the builder name."
 msgstr ""
 
-#: ../../sphinx/doc/markup/misc.rst:272
+#: ../../sphinx/doc/markup/misc.rst:342
 msgid "Note that the current builder tag is not available in ``conf.py``, it is only available after the builder is initialized."
 msgstr ""
 

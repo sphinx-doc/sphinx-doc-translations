@@ -1,16 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2018, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.6+\n"
+"Project-Id-Version: Sphinx 1.7.1+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 17:21+0000\n"
+"POT-Creation-Date: 2018-02-12 16:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2016\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,10 +21,6 @@ msgstr ""
 msgid "Builder API"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:0
-msgid "Todo"
-msgstr "Por fazer"
-
 #: ../../sphinx/doc/extdev/builderapi.rst:6
 msgid "Expand this."
 msgstr ""
@@ -35,99 +30,127 @@ msgid "This is the base class for all builders."
 msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:14
+msgid "These attributes should be set on builder classes:"
+msgstr ""
+
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.name:1
+msgid "The builder's name, for the -b command line option."
+msgstr ""
+
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.format:1
+msgid "The builder's output format, or '' if no document output is produced."
+msgstr ""
+
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.epilog:1
+msgid ""
+"The message emitted upon successful build completion. This can be a printf-"
+"style template string with the following keys: ``outdir``, ``project``"
+msgstr ""
+
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.supported_image_types:1
+msgid ""
+"The list of MIME types of image formats supported by the builder. Image "
+"files are searched in the order in which they appear here."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:21
 msgid "These methods are predefined and will be called from the application:"
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_relative_uri:1
 msgid "Return a relative URI between two source filenames."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:3
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_relative_uri:3
 msgid ""
 "May raise environment.NoUri if there's no way to return a sensible URI."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.build_all:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.build_all:1
 msgid "Build all source files."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.build_specific:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.build_specific:1
 msgid "Only rebuild as much as needed for changes in the *filenames*."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.build_update:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.build_update:1
 msgid "Only rebuild what was changed or added since last build."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.build:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.build:1
 msgid "Main build method."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.build:3
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.build:3
 msgid "First updates the environment, and then calls :meth:`write`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:22
+#: ../../sphinx/doc/extdev/builderapi.rst:29
 msgid "These methods can be overridden in concrete builder classes:"
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.init:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.init:1
 msgid ""
 "Load necessary templates and perform initialization.  The default "
 "implementation does nothing."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_outdated_docs:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_outdated_docs:1
 msgid ""
 "Return an iterable of output files that are outdated, or a string describing"
 " what an update build will build."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_outdated_docs:4
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_outdated_docs:4
 msgid ""
 "If the builder does not output individual files corresponding to source "
 "files, return a string here.  If it does, return an iterable of those files "
 "that need to be written."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_target_uri:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_target_uri:1
 msgid "Return the target URI for a document name."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_target_uri:3
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.get_target_uri:3
 msgid ""
 "*typ* can be used to qualify the link characteristic for individual "
 "builders."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.prepare_writing:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.prepare_writing:1
 msgid "A place where you can add logic before :meth:`write_doc` is run"
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.write_doc:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.write_doc:1
 msgid "Where you actually write something to the filesystem."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.finish:1
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.finish:1
 msgid "Finish the building process."
 msgstr ""
 
-#: ../../../../usr/local/lib/python3.5/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.finish:3
+#: ../../sphinx/sphinx/builders/__init__.pydocstring of
+#: sphinx.builders.Builder.finish:3
 msgid "The default implementation does nothing."
 msgstr ""

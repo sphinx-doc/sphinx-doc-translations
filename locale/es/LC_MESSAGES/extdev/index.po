@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2016, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2018, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.6+\n"
+"Project-Id-Version: Sphinx 1.7.1+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 17:21+0000\n"
+"POT-Creation-Date: 2018-02-12 16:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
 "MIME-Version: 1.0\n"
@@ -53,16 +53,43 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/extdev/index.rst:26
-msgid "Extension metadata"
+msgid "Discovery of builders by entry point"
 msgstr ""
 
 #: ../../sphinx/doc/extdev/index.rst:30
+msgid ""
+":term:`Builder` extensions can be discovered by means of `entry points`_ so "
+"that they do not have to be listed in the :confval:`extensions` "
+"configuration value."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:34
+msgid ""
+"Builder extensions should define an entry point in the ``sphinx.builders`` "
+"group. The name of the entry point needs to match your builder's "
+":attr:`~.Builder.name` attribute, which is the name passed to the :option"
+":`sphinx-build -b` option. The entry point value should equal the dotted "
+"name of the extension module. Here is an example of how an entry point for "
+"'mybuilder' can be defined in the extension's ``setup.py``::"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:50
+msgid ""
+"Note that it is still necessary to register the builder using "
+":meth:`~.Sphinx.add_builder` in the extension's :func:`setup` function."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:56
+msgid "Extension metadata"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:60
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:33
+#: ../../sphinx/doc/extdev/index.rst:63
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -70,7 +97,7 @@ msgid ""
 "substituted."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:36
+#: ../../sphinx/doc/extdev/index.rst:66
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -78,13 +105,13 @@ msgid ""
 "parallel-read-safe after checking that it is."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:40
+#: ../../sphinx/doc/extdev/index.rst:70
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
 "usually don't negatively influence the process, this defaults to ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:45
+#: ../../sphinx/doc/extdev/index.rst:75
 msgid "APIs used for writing extensions"
 msgstr ""

@@ -8,10 +8,9 @@ RELEASE=1_7
 SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
 SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-${RELEASE}
 find sphinx -name "*.pyc" -exec rm {} \;
-git checkout master
+git checkout 1.7
 git submodule init
 git submodule update
-# checkout sphinx master
 (cd sphinx; git fetch origin; git checkout -b 1.7 origin/1.7)
 pip install -r requirements.txt
 
@@ -24,6 +23,6 @@ git add locale sphinx
 git commit -m "[skip ci] update po(t) files"
 
 # push changes
-git checkout master
+git checkout 1.7
 git submodule update
-git push origin master
+git push origin 1.7

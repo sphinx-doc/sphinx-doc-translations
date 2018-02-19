@@ -26,7 +26,7 @@ script:
 - sh ./locale/update.sh
 after_success:
 - git branch -a
-- git checkout master  # attach this repo to master
+- git checkout 1.7  # attach this repo
 - git config --global user.email "sphinx-auto-update"
 - git config --global user.name "sphinx-auto-update"
 - git add .
@@ -35,4 +35,4 @@ after_success:
   https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
 - git remote -v
 - git remote add github git@github.com:sphinx-doc/sphinx-doc-translations.git
-- git push github master
+- git push github 1.7

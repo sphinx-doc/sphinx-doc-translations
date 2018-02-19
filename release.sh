@@ -2,7 +2,7 @@
 
 set -ex
 
-RELEASE=1_7
+RELEASE=1_8
 
 # setup environment
 SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
@@ -11,8 +11,7 @@ find sphinx -name "*.pyc" -exec rm {} \;
 git checkout master
 git submodule init
 git submodule update
-# checkout sphinx master
-(cd sphinx; git fetch origin; git checkout -b 1.7 origin/1.7)
+(cd sphinx; git fetch origin; git checkout -b master origin/master)
 pip install -r requirements.txt
 
 

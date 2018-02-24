@@ -16,6 +16,7 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 install:
+- git checkout 1.6  # attach this repo
 - git submodule init
 - git submodule update
 - (cd sphinx; git fetch origin; git checkout 1.6; git branch -a)

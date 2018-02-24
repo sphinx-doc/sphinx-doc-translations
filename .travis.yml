@@ -16,9 +16,11 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 install:
+- git branch -a
+- git checkout 1.7  # attach this repo
 - git submodule init
 - git submodule update
-- (cd sphinx; git fetch origin; git checkout -b 1.7 origin/1.7; git branch -a)
+- (cd sphinx; git fetch origin; git checkout 1.7; git reset origin/1.7; git branch -a)
 - git branch -a
 - pip install -U pip setuptools
 - pip install -r ./requirements.txt

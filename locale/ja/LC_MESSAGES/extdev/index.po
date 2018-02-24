@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.7.1+\n"
+"Project-Id-Version: Sphinx 1.8.0+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 14:51+0000\n"
+"POT-Creation-Date: 2018-02-24 13:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -90,11 +90,11 @@ msgid ""
 ":meth:`~.Sphinx.add_builder` in the extension's :func:`setup` function."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:56
+#: ../../sphinx/doc/extdev/index.rst:58
 msgid "Extension metadata"
 msgstr "拡張機能のメタデータ"
 
-#: ../../sphinx/doc/extdev/index.rst:60
+#: ../../sphinx/doc/extdev/index.rst:62
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
@@ -102,7 +102,7 @@ msgstr ""
 "\\ ``setup()``\\ 関数は、ディクショナリを返すよう定義します。Sphinxはそのディクショナリを拡張機能のメタデータとして解釈します。\n"
 "メタデータのキーとして解釈可能なものは以下のとおりです。"
 
-#: ../../sphinx/doc/extdev/index.rst:63
+#: ../../sphinx/doc/extdev/index.rst:65
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -112,7 +112,17 @@ msgstr ""
 "\\ ``'version'``\\ : 拡張機能のバージョンを示す文字列。\n"
 "拡張機能の必要バージョンのチェック(\\ :confval:`needs_extensions`\\ を参考)に利用されたり、参照目的で使われたりします。指定がない場合には、\\ ``\"unknown version\"``\\ が代わりに指定されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:66
+#: ../../sphinx/doc/extdev/index.rst:68
+msgid ""
+"``'env_version'``: an integer that identifies the version of env data "
+"structure if the extension stores any data to environment.  It is used to "
+"detect the data structure has been changed from last build.  The extensions "
+"have to increment the version when data structure has changed.  If not "
+"given, Sphinx considers the extension does not stores any data to "
+"environment."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:73
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -123,7 +133,7 @@ msgstr ""
 "拡張をロードする際に、ソースファイルの並列読み込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が "
 "parallel-read-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:70
+#: ../../sphinx/doc/extdev/index.rst:77
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
@@ -133,6 +143,6 @@ msgstr ""
 "拡張をロードする際に、出力ファイルの並列書き込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が parallel-"
 "write-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:75
+#: ../../sphinx/doc/extdev/index.rst:82
 msgid "APIs used for writing extensions"
 msgstr "拡張機能を書く際に利用するAPI"

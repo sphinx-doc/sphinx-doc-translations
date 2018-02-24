@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-19 15:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2016\n"
+"Last-Translator: Nozomu Kaneko <nozom.kaneko@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,13 +20,13 @@ msgstr ""
 
 #: ../../sphinx/doc/markup/para.rst:4
 msgid "Paragraph-level markup"
-msgstr ""
+msgstr "パラグラフ階層のマークアップ"
 
 #: ../../sphinx/doc/markup/para.rst:9
 msgid ""
 "These directives create short paragraphs and can be used inside information "
 "units as well as normal text:"
-msgstr ""
+msgstr "これらのディレクティブは短いパラグラフ(段落)を作成します。通常のテキスト同様、情報の固まりに対して使用できます。"
 
 #: ../../sphinx/doc/markup/para.rst:14
 msgid ""
@@ -35,6 +35,7 @@ msgid ""
 "content of the directive should be written in complete sentences and include"
 " all appropriate punctuation."
 msgstr ""
+"特別に重要な情報が少しだけある場合に使用します。APIを使用する際に、ユーザが気をつけなければならないことの説明をする場合などに使うと良いでしょう。このディレクティブの中身には、適切に句読点が付いた、完全な文章を書くべきです。"
 
 #: ../../sphinx/doc/markup/para.rst:19 ../../sphinx/doc/markup/para.rst:42
 msgid "Example::"
@@ -48,6 +49,9 @@ msgid ""
 " all appropriate punctuation. This differs from :rst:dir:`note` in that it "
 "is recommended over :rst:dir:`note` for information regarding security."
 msgstr ""
+"noteよりも重要な情報があり、APIを使用する際に、気をつけなければならない警告情報をユーザに伝えるために使用するのに適しています。このディレクティブの中身には、適切に句読点が付いた、完全な文章を書くべきです。"
+" :rst:dir:`note` との違いで言えば、セキュリティに関する情報は :rst:dir:`note` "
+"よりもこのディレクティブを使用する方が良いでしょう。"
 
 #: ../../sphinx/doc/markup/para.rst:35
 msgid ""
@@ -56,24 +60,28 @@ msgid ""
 "module, it should be placed at the top of the module section before any "
 "prose."
 msgstr ""
+"このディレクティブは説明している機能がライブラリ、もしくはC "
+"APIに追加された時のプロジェクトのバージョンについて記述するのに使用します。このディレクティブがモジュール全体に対して適用する場合には、モジュールセクションの先頭の、文章が始まる前の位置に置くべきです。"
 
 #: ../../sphinx/doc/markup/para.rst:39
 msgid ""
 "The first argument must be given and is the version in question; you can add"
 " a second argument consisting of a *brief* explanation of the change."
-msgstr ""
+msgstr "最初の引数は必須で、バージョン番号を書く必要があります。2番目の引数も追加でき、変化に対する *短い* 説明を書くことができます。"
 
 #: ../../sphinx/doc/markup/para.rst:47
 msgid ""
 "Note that there must be no blank line between the directive head and the "
 "explanation; this is to make these blocks visually continuous in the markup."
-msgstr ""
+msgstr "ディレクティブヘッドと説明の間には空行を入れてはいけません。マークアップの中では見た目上つながっているようにしなければなりません。"
 
 #: ../../sphinx/doc/markup/para.rst:52
 msgid ""
 "Similar to :rst:dir:`versionadded`, but describes when and what changed in "
 "the named feature in some way (new parameters, changed side effects, etc.)."
 msgstr ""
+":rst:dir:`versionadded` "
+"と似ていますが、現在説明している機能がいつどのように変化したのか(新しい引数、副作用の変更など)を説明するのに使用します。"
 
 #: ../../sphinx/doc/markup/para.rst:57
 msgid ""
@@ -81,6 +89,8 @@ msgid ""
 "deprecated.  An explanation can also be given, for example to inform the "
 "reader what should be used instead.  Example::"
 msgstr ""
+":rst:dir:`versionchanged` "
+"と似ていますが、このディレクティブは、この機能がすでに古くて非推奨になったことを示しています。代替として、今後何を使っていくべきなのかといった説明文を付けることができます::"
 
 #: ../../sphinx/doc/markup/para.rst:69
 msgid ""
@@ -88,6 +98,8 @@ msgid ""
 "external documents.  These lists are created using the :rst:dir:`seealso` "
 "directive."
 msgstr ""
+"多くのセクションがモジュールのドキュメントへの参照やが、外部ドキュメントへの参照を含む場合、このようなリストは :rst:dir:`seealso` "
+"ディレクティブを使用して作ることができます。"
 
 #: ../../sphinx/doc/markup/para.rst:73
 msgid ""
@@ -95,26 +107,28 @@ msgid ""
 "before any subsections.  For the HTML output, it is shown boxed off from the"
 " main flow of the text."
 msgstr ""
+":rst:dir:`seealso` "
+"ディレクティブはサブセクションの直前のセクションに置かれることが多いです。HTMLアウトプットにおいては、メインのテキストの流れから離されて、箱に囲まれて表示されます。"
 
 #: ../../sphinx/doc/markup/para.rst:77
 msgid ""
 "The content of the :rst:dir:`seealso` directive should be a reST definition "
 "list. Example::"
-msgstr ""
+msgstr ":rst:dir:`seealso` の中身は、reSTの定義リストを使用しなければなりません。 サンプル::"
 
 #: ../../sphinx/doc/markup/para.rst:88
 msgid "There's also a \"short form\" allowed that looks like this::"
-msgstr ""
+msgstr "\"短縮形\"の書き方もサポートされており、以下のように書くことができます::"
 
 #: ../../sphinx/doc/markup/para.rst:92
 msgid "The short form."
-msgstr ""
+msgstr "“短縮形”を追加。"
 
 #: ../../sphinx/doc/markup/para.rst:97
 msgid ""
 "This directive creates a paragraph heading that is not used to create a "
 "table of contents node."
-msgstr ""
+msgstr "このディレクティブは、目次に表示されないパラグラフの見出しを作成します。(訳注:rubricは注釈の意味です)"
 
 #: ../../sphinx/doc/markup/para.rst:102
 msgid ""
@@ -123,18 +137,22 @@ msgid ""
 " to only contain footnote definitions and therefore would create an empty "
 "heading."
 msgstr ""
+"もし rubricディレクティブの *タイトル* "
+"が\"Footnotes\"(もしくは選択された言語で指定されている、同様の言葉)だった場合には、脚注の定義だけが含まれていると見なして、LaTeXライターでは無視されます。この場合は空の見出しだけが作成されます。"
 
 #: ../../sphinx/doc/markup/para.rst:110
 msgid ""
 "This directive creates a centered boldfaced line of text.  Use it as "
 "follows::"
-msgstr ""
+msgstr "このディレクティブはセンターに置かれた、太字のテキストを作成するのに使用します。以下のように使用されます::"
 
 #: ../../sphinx/doc/markup/para.rst:115
 msgid ""
 "This presentation-only directive is a legacy from older versions.  Use a "
 ":rst:dir:`rst-class` directive instead and add an appropriate style."
 msgstr ""
+"この表示専用のディレクティブは古いバージョンからの遺産です。代わりに :rst:dir:`rst-class` "
+"ディレクティブを使い、適切なスタイルを追加してください。"
 
 #: ../../sphinx/doc/markup/para.rst:122
 msgid ""
@@ -142,6 +160,7 @@ msgid ""
 " compact list by either distributing more than one item horizontally, or "
 "reducing spacing between items, depending on the builder."
 msgstr ""
+"このディレクティブは短い文章のリストを含みます。このディレクティブは、水平にも数カラム展開することで、よりコンパクトなリストに変換するか、アイテム間のスペースを小さくします。どちらになるかはビルダー次第です。"
 
 #: ../../sphinx/doc/markup/para.rst:126
 msgid ""
@@ -149,22 +168,28 @@ msgid ""
 "``columns`` option that specifies the number of columns; it defaults to 2.  "
 "Example::"
 msgstr ""
+"水平に展開する機能をサポートしたビルダーでは、 ``columns`` "
+"オプションを使用して、水平のカラム数の設定できます。デフォルトでは2になっています。サンプルを示します::"
 
 #: ../../sphinx/doc/markup/para.rst:142
 msgid "Table-of-contents markup"
-msgstr ""
+msgstr "目次のマークアップ"
 
 #: ../../sphinx/doc/markup/para.rst:144
 msgid ""
 "The :rst:dir:`toctree` directive, which generates tables of contents of "
 "subdocuments, is described in :ref:`toctree-directive`."
 msgstr ""
+"サブドキュメントの目次を作る :rst:dir:`toctree` ディレクティブに関しては :ref:`toctree-directive` "
+"のドキュメントを読んでください。"
 
 #: ../../sphinx/doc/markup/para.rst:147
 msgid ""
 "For local tables of contents, use the standard reST :dudir:`contents "
 "directive <table-of-contents>`."
 msgstr ""
+"ローカルな目次を作成する場合には、標準 reSTの :dudir:`contents ディレクティブ <table-of-contents>` "
+"を使用してください。"
 
 #: ../../sphinx/doc/markup/para.rst:154
 msgid "Glossary"
@@ -176,6 +201,8 @@ msgid ""
 "and definitions.  The definitions will then be referencable with the "
 ":rst:role:`term` role.  Example::"
 msgstr ""
+"このディレクティブは、用語と定義が一緒になった、マークアップのようなreST定義リストを含みます。定義は :rst:role:`term` "
+"というロールを利用することで参照が可能になります。 サンプル::"
 
 #: ../../sphinx/doc/markup/para.rst:174
 msgid ""
@@ -183,11 +210,13 @@ msgid ""
 "allowed, and inline markup is allowed in terms.  You can link to all of the "
 "terms.  For example::"
 msgstr ""
+"通常の定義リストとは異なり、一つのエントリーに対して、*複数の* "
+"用語を定義できます。それぞれの用語に対してインラインマークアップを使えます。また、すべての用語への参照も可能です::"
 
 #: ../../sphinx/doc/markup/para.rst:184
 msgid ""
 "(When the glossary is sorted, the first term determines the sort order.)"
-msgstr ""
+msgstr "(用語集がソートされる場合、最初の項がソート順序を決定します。)"
 
 #: ../../sphinx/doc/markup/para.rst:186
 msgid ""
@@ -215,10 +244,11 @@ msgid ""
 "You can now give the glossary directive a ``:sorted:`` flag that will "
 "automatically sort the entries alphabetically."
 msgstr ""
+"glossary ディレクティブに ``:sorted:`` フラグを追加することで、アルファベット順に自動的にソートされるようになりました。"
 
 #: ../../sphinx/doc/markup/para.rst:208
 msgid "Now supports multiple terms and inline markup in terms."
-msgstr ""
+msgstr "複数の用語をサポートし、また、用語の中でインラインマークアップを使えるようになりました。"
 
 #: ../../sphinx/doc/markup/para.rst:211
 msgid "Index key for glossary term should be considered *experimental*."
@@ -226,7 +256,7 @@ msgstr ""
 
 #: ../../sphinx/doc/markup/para.rst:215
 msgid "Grammar production displays"
-msgstr ""
+msgstr "文法規則表示"
 
 #: ../../sphinx/doc/markup/para.rst:217
 msgid ""
@@ -237,6 +267,7 @@ msgid ""
 "rendered as hyperlinks to the definition of the symbol.  There is this "
 "directive:"
 msgstr ""
+"形式がきちんとした文法の規則を表示するための特別なマークアップを利用できます。マークアップはシンプルに作られています。その代わりに、BNFや、BNFの派生の記法をすべてのモデル化することは目標とされていませんが、文脈自由文法を表現するには十分な機能を持っていて、シンボルを書くと、定義にリンクが張られるようにレンダリングされます。以下のディレクティブがあります:"
 
 #: ../../sphinx/doc/markup/para.rst:225
 msgid ""
@@ -246,17 +277,19 @@ msgid ""
 "continuation line must begin with a colon placed at the same column as in "
 "the first line."
 msgstr ""
+"このディレクティブは文法の規則を表現するためのものです。それぞれの規則は一行で表現され、コロン(:)の前が名前で、その後ろが定義になります。定義を複数行で書くこともできますが、この場合は、それぞれの定義の行の先頭に、最初の行と同じ高さにそろえてコロンを書く必要があります。"
 
 #: ../../sphinx/doc/markup/para.rst:231
 msgid ""
 "The argument to :rst:dir:`productionlist` serves to distinguish different "
 "sets of production lists that belong to different grammars."
 msgstr ""
+":rst:dir:`productionlist` に与える名前によって、異なる文法に属する、異なる規則セットのグループと区別できるようになります。"
 
 #: ../../sphinx/doc/markup/para.rst:234
 msgid ""
 "Blank lines are not allowed within ``productionlist`` directive arguments."
-msgstr ""
+msgstr "ディレクティブの引数の ``規則リスト`` の中には空行を入れることはできません。"
 
 #: ../../sphinx/doc/markup/para.rst:236
 msgid ""
@@ -265,13 +298,16 @@ msgid ""
 "references to the productions of these tokens.  Outside of the production "
 "list, you can reference to token productions using :rst:role:`token`."
 msgstr ""
+"定義には解釈済みのテキストとしてマークされたトークン名を含むことができます。これらのトークンの規則との間にクロスリファレンスが生成されます。(例 "
+"``sum ::= `integer` \"+\" `integer```) 文法規則のリストその外では、 :rst:role:`token` "
+"ロールを使って、文法への参照を取ることができます。"
 
 #: ../../sphinx/doc/markup/para.rst:241
 msgid ""
 "Note that no further reST parsing is done in the production, so that you "
 "don't have to escape ``*`` or ``|`` characters."
-msgstr ""
+msgstr "規則の中ではreSTパーサは動作しないため、 ``*`` や、 ``|`` といった文字をエスケープすることはできません。"
 
 #: ../../sphinx/doc/markup/para.rst:244
 msgid "The following is an example taken from the Python Reference Manual::"
-msgstr ""
+msgstr "次のサンプルは、Pythonのリファレンスマニュアルにあった構文をSphinxで表現したものです::"

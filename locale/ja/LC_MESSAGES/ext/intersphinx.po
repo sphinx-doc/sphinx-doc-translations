@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+/f485502\n"
+"Project-Id-Version: Sphinx 1.8.0+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-24 14:52+0000\n"
+"POT-Creation-Date: 2018-02-25 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -85,22 +85,24 @@ msgid ""
 msgstr ""
 "デフォルトの設定では、マッピングファイルはドキュメントと同じ位置にあるとみなされます。マッピングファイルの場所は個別に指定できます。例えば、インターネットのアクセスができない環境でビルドできるようにする場合などです。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:41
+#: ../../sphinx/doc/ext/intersphinx.rst:42
+msgid "Configuring Intersphinx"
+msgstr ""
+
+#: ../../sphinx/doc/ext/intersphinx.rst:44
 msgid ""
-"To use intersphinx linking, add ``'sphinx.ext.intersphinx'`` to your "
+"To use Intersphinx linking, add ``'sphinx.ext.intersphinx'`` to your "
 ":confval:`extensions` config value, and use these new config values to "
 "activate linking:"
 msgstr ""
-"Sphinx間リンクを使用する場合には、 :confval:`extensions` 設定値に\\  "
-"``'sphinx.ext.intersphinx'`` \\ を追加します。追加すると、リンクを有効にするための新しい設定値が追加されます。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:47
+#: ../../sphinx/doc/ext/intersphinx.rst:50
 msgid ""
 "This config value contains the locations and names of other projects that "
 "should be linked to in this documentation."
 msgstr "この設定値には、このドキュメントからリンクさせる他のプロジェクトの場所と名前を設定します。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:50
+#: ../../sphinx/doc/ext/intersphinx.rst:53
 msgid ""
 "Relative local paths for target locations are taken as relative to the base "
 "of the built documentation, while relative local paths for inventory "
@@ -108,7 +110,7 @@ msgid ""
 msgstr ""
 "相対的なローカルパスがキーに設定された場合には、ビルドドキュメントに対して相対的な場所であるとみなされます。値側に相対パスが設定された場合には、ソースディレクトリからの相対パスになります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:54
+#: ../../sphinx/doc/ext/intersphinx.rst:57
 msgid ""
 "When fetching remote inventory files, proxy settings will be read from the "
 "``$HTTP_PROXY`` environment variable."
@@ -116,15 +118,15 @@ msgstr ""
 "リモートでインベントリーファイルを取得する場合には、環境変数の ``$HTTP_PROXY`` "
 "を設定しておくと、プロキシーを経由してアクセスを行います。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:57
+#: ../../sphinx/doc/ext/intersphinx.rst:60
 msgid "**Old format for this config value**"
 msgstr "**この設定値の古いフォーマット**"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:59
+#: ../../sphinx/doc/ext/intersphinx.rst:62
 msgid "This is the format used before Sphinx 1.0.  It is still recognized."
 msgstr "このフォーマットはSphinx 1.0以前で使用されていました。これは現在でも使用できます。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:61
+#: ../../sphinx/doc/ext/intersphinx.rst:64
 msgid ""
 "A dictionary mapping URIs to either ``None`` or an URI.  The keys are the "
 "base URI of the foreign Sphinx documentation sets and can be local paths or "
@@ -136,11 +138,11 @@ msgstr ""
 "``None``)をマッピングする辞書になります。キーは外部のSphinxのドキュメントのベースのURIを設定します。ローカルのパス、もしくはHTTPのURIが使用できます。値はインベントリファイル(.inv)がある場所を設定します。これに設定できるのは、\\"
 " ``None``\\ (base UIと同じ場所にあるとみなされます)、もしくはローカルのパス、HTTPのURIのどれかになります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:67
+#: ../../sphinx/doc/ext/intersphinx.rst:70
 msgid "**New format for this config value**"
 msgstr "**この設定値の新しいフォーマット**"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:71
+#: ../../sphinx/doc/ext/intersphinx.rst:74
 msgid ""
 "A dictionary mapping unique identifiers to a tuple ``(target, inventory)``. "
 "Each ``target`` is the base URI of a foreign Sphinx documentation set and "
@@ -153,7 +155,7 @@ msgstr ""
 "はインベントリファイル(.inv)がある場所を設定します。これに設定できるのは、\\ ``None``\\ "
 "(ベースURIと同じ場所にあるとみなされます)、もしくはローカルのパス、HTTPのURIのどれかになります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:77
+#: ../../sphinx/doc/ext/intersphinx.rst:80
 msgid ""
 "The unique identifier can be used to prefix cross-reference targets, so that"
 " it is clear which intersphinx set the target belongs to.  A link like "
@@ -164,17 +166,17 @@ msgstr ""
 " ``:ref:`比較のマニュアル <python:comparisons>``` "
 "という項目があれば、この\"comparisons\"というラベルは\"python\"のドキュメントセットの中にあるドキュメントに対してリンクが作成されます。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:82
+#: ../../sphinx/doc/ext/intersphinx.rst:85
 msgid "**Example**"
 msgstr "**サンプル**"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:84
+#: ../../sphinx/doc/ext/intersphinx.rst:87
 msgid ""
 "To add links to modules and objects in the Python standard library "
 "documentation, use::"
 msgstr "Pythonの標準のライブラリドキュメントの中のモジュールやオブジェクトに対してリンクが張りたい場合には次のようにします::"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:89
+#: ../../sphinx/doc/ext/intersphinx.rst:92
 msgid ""
 "This will download the corresponding :file:`objects.inv` file from the "
 "Internet and generate links to the pages under the given URI.  The "
@@ -185,28 +187,25 @@ msgstr ""
 "``http://docs.python.org/3.4`` "
 "以下のページに対するリンクを作成します。ダウンロードされたインベントリ情報はキャッシュされるので、もしもPythonのドキュメントに新しいオブジェクトが追加された場合には、自分でアップデートする必要があります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:94
+#: ../../sphinx/doc/ext/intersphinx.rst:97
 msgid ""
 "A second example, showing the meaning of a non-``None`` value of the second "
 "tuple item::"
 msgstr "2番目のサンプルは、2つ目のタプルの要素に ``None`` ではない値を与える場合です::"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:100
+#: ../../sphinx/doc/ext/intersphinx.rst:103
 msgid ""
 "This will read the inventory from :file:`python-inv.txt` in the source "
 "directory, but still generate links to the pages under "
-"``https://docs.python.org/3.4``.  It is up to you to update the inventory "
-"file as new objects are added to the Python documentation."
+"``https://docs.python.org/3``.  It is up to you to update the inventory file"
+" as new objects are added to the Python documentation."
 msgstr ""
-"これを設定すると、ソースディレクトリの中の :file:`python-inv.txt` からインベントリー情報を読み込みますが、先ほどの例と同じように"
-" ``https://docs.python.org/3.4`` "
-"以下のページに対するリンクを作成します。もしもPythonのドキュメントに新しいオブジェクトが追加された場合には、自分でアップデートする必要があります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:105
+#: ../../sphinx/doc/ext/intersphinx.rst:108
 msgid "**Multiple target for the inventory**"
 msgstr "**インベントリへの複数ターゲット**"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:109
+#: ../../sphinx/doc/ext/intersphinx.rst:112
 msgid ""
 "Alternative files can be specified for each inventory. One can give a tuple "
 "for the second inventory tuple item as shown in the following example. This "
@@ -217,7 +216,7 @@ msgstr ""
 "各インベントリへの代替ファイルを指定できます。次の例に示すように、1つは、二番目のインベントリタプル項目に対してもタプルを与えることができます。これは最初に成功したフェッチまで、"
 " (次の)タプルを反復処理で読みこみます。この記法の基本ユースケースはプライマリインベントリのサーバーダウン時用のミラーサイトを指定することです。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:121
+#: ../../sphinx/doc/ext/intersphinx.rst:124
 msgid ""
 "The maximum number of days to cache remote inventories.  The default is "
 "``5``, meaning five days.  Set this to a negative value to cache inventories"
@@ -226,16 +225,29 @@ msgstr ""
 "リモートのインベントリーをキャッシュする最長の日数を設定します。デフォルトは\\ ``5``\\ "
 "で、5日間という意味になります。マイナスの値を設定すると、インベントリーのキャッシュの日数による制限がなくなります。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:127
+#: ../../sphinx/doc/ext/intersphinx.rst:130
 msgid ""
 "The number of seconds for timeout.  The default is ``None``, meaning do not "
 "timeout."
 msgstr "タイムアウトの秒数を設定します。デフォルトは ``None`` で、タイムアウトしません。"
 
-#: ../../sphinx/doc/ext/intersphinx.rst:132
+#: ../../sphinx/doc/ext/intersphinx.rst:135
 msgid ""
 "timeout is not a time limit on the entire response download; rather, an "
 "exception is raised if the server has not issued a response for timeout "
 "seconds."
 msgstr ""
 "タイムアウト時間は、通信時間全体の時間ではなく、サーバーが応答を返し始めるまでの時間です。指定した秒数位内に応答を開始しない場合、例外が発生します。"
+
+#: ../../sphinx/doc/ext/intersphinx.rst:140
+msgid "Showing all links of an Intersphinx mapping file"
+msgstr ""
+
+#: ../../sphinx/doc/ext/intersphinx.rst:142
+msgid ""
+"To show all Intersphinx links and their targets of an Intersphinx mapping "
+"file, run ``python -msphinx.ext.intersphinx url-or-path``.  This is helpful "
+"when searching for the root cause of a broken Intersphinx link in a "
+"documentation project. The following example prints the Intersphinx mapping "
+"of the Python 3 documentation::"
+msgstr ""

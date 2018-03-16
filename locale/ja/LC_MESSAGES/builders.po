@@ -6,11 +6,11 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+\n"
+"Project-Id-Version: Sphinx 1.8.0+/f1eeefa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 14:59+0000\n"
+"POT-Creation-Date: 2018-03-16 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Takeshi KOMIYA <i.tkomiya@gmail.com>, 2018\n"
+"Last-Translator: Takaaki AOKI <aoki@sakura.nucleng.kyoto-u.ac.jp>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,6 +189,9 @@ msgid ""
 "``xcolor.sty`` included in latex-recommended, earlier ones have it in latex-"
 "xcolor. Unicode engines will need texlive-luatex or texlive-xetex."
 msgstr ""
+"Shpinx は ``xcolor.sty`` が存在する場合、これを使います: "
+"最近のUbuntuディストリビューションでは、``xcolor.sty`` は latex-recommended に、古いものでは latex-"
+"xcolor パッケージに含まれます。ユニコードエンジンは、texlibe-luatex か texlive-xetex を必要とします。"
 
 #: ../../sphinx/doc/builders.rst:175
 msgid ""
@@ -196,16 +199,18 @@ msgid ""
 "mentioned packages, which are from a TeXLive 2013 snapshot dated February "
 "2014."
 msgstr ""
+"Sphinx LaTeX ビルダーのテストは、Ubuntu trusty の上で、2014年2月のTeXLive 2013 "
+"より取得した上記のパッケージを用いて行われています。"
 
 #: ../../sphinx/doc/builders.rst:179
 msgid ""
 "Formerly, testing had been done for some years on Ubuntu precise (based on "
 "TeXLive 2009)."
-msgstr ""
+msgstr "それ以前の数年間は(TeXLive 2009 をベースにした) Ubuntu precise でテストを行ってきました。"
 
 #: ../../sphinx/doc/builders.rst:182
 msgid "Use of ``latexmk`` for ``make latexpdf`` on GNU/Linux and Mac OS X"
-msgstr ""
+msgstr "GNU/Linux 及び Mac OS X の` `make latexpdf`` コマンド用に ``latexmk`` を使う"
 
 #: ../../sphinx/doc/builders.rst:185
 msgid ""
@@ -213,6 +218,9 @@ msgid ""
 "``sphinx-build`` run) uses ``latexmk`` (not on Windows). One can pass to "
 "``latexmk`` options via the ``LATEXMKOPTS`` Makefile variable. For example:"
 msgstr ""
+"バージョン1.6より、  ``make latexpdf`` (あるいは ``sphinx-build`` 実行後の ``make -C "
+"\"<builddir>/latex\"``)コマンドは ``latexmk`` を利用します(Windows以外の場合)。このため、Makefile "
+"の変数 ``LATEXMKOPTS`` に ``latexmk`` オプションを渡してください。例:"
 
 #: ../../sphinx/doc/builders.rst:195
 msgid ""
@@ -220,6 +228,9 @@ msgid ""
 "or higher (Jan 17) and ``xelatex`` is the :confval:`latex_engine`, then "
 "``LATEXMKOPTS=\"-xelatex\"`` will speed up PDF builds."
 msgstr ""
+"このオプションは、コンソールへの出力を最小限に抑えます。また、``latexmk`` のバージョンが 4.52b (2017年1月) "
+"かそれよりも高く、かつ ``xelatex`` が :confval:`latex_engine` "
+"に指定されている場合、``LATEXMKOPTS=\"-xelatex\"`` を与えることで、PDFのビルドが速くなります。"
 
 #: ../../sphinx/doc/builders.rst:199
 msgid ""
@@ -227,6 +238,8 @@ msgid ""
 "variable ``LATEXOPTS`` (for example ``LATEXOPTS=\"--"
 "interaction=nonstopmode\"``)."
 msgstr ""
+"``(pdf|xe|lua)latex``実行ファイルに直接オプションを渡すには、``LATEXOPTS`` 変数をつかいます (例えば "
+"``LATEXOPTS=\"--interaction=nonstopmode\"``)。"
 
 #: ../../sphinx/doc/builders.rst:209
 msgid ""
@@ -270,6 +283,10 @@ msgid ""
 "by the GNU project.  More information on Texinfo can be found at "
 "`<https://www.gnu.org/software/texinfo/>`_."
 msgstr ""
+"InfoフォーマットはGNU Emacsやターミナルベースの :program:`info` "
+"プログラムで使用される、オンラインヘルプシステムの基盤となっています。詳しくは、 :ref:`texinfo-faq` "
+"を参照してください。Texinfoフォーマットは、GNUプロジェクトの、公式なドキュメントシステムです。Texinfoについての詳細は、 "
+"`<https://www.gnu.org/software/texinfo/>`_ で見ることができます。"
 
 #: ../../sphinx/doc/builders.rst:272
 msgid ""
@@ -388,10 +405,13 @@ msgid ""
 " ``requests``, and writes an overview which ones are broken and redirected "
 "to standard output and to :file:`output.txt` in the output directory."
 msgstr ""
+"このビルダーは、すべてのドキュメントの外部リンクをチェックして、 :mod:`requests` "
+"モジュールを使用してきちんと開けるかどうか確認を行います。壊れたリンク、および、リダイレクトされるリンクの情報を、標準出力と、出力ディレクトリの "
+":file:`output.txt` というファイルに出力します。"
 
 #: ../../sphinx/doc/builders.rst:411
 msgid "Since Sphinx-1.5, the linkcheck builder comes to use requests module."
-msgstr ""
+msgstr "Sphinx-1.5より、linkcheck ビルダーは requests モジュールを使用するようになっています。"
 
 #: ../../sphinx/doc/builders.rst:416
 msgid ""

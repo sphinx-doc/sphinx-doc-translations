@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+/b8e20ed\n"
+"Project-Id-Version: Sphinx 1.8.0+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-28 15:07+0000\n"
+"POT-Creation-Date: 2018-03-29 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -68,8 +68,8 @@ msgstr ""
 "reSturcturedTextのマークアップの要素で、特別な意味を持つコンテンツのブロックを表現できます。ディレクティブはDocutils由来のものだけでなく、Sphinx、カスタムの拡張機能によって定義されたものも使用できます。基本的なディレクティブの文法は次のようになります:"
 
 #: ../../sphinx/doc/glossary.rst:35
-msgid "See :ref:`directives` for more information."
-msgstr "より詳しい情報は :ref:`directives` を参照してください。"
+msgid "See :ref:`rst-directives` for more information."
+msgstr ""
 
 #: ../../sphinx/doc/glossary.rst:36
 msgid "document name"
@@ -121,17 +121,19 @@ msgid ""
 "Having domains means that there are no naming problems when one set of "
 "documentation wants to refer to e.g. C++ and Python classes.  It also means "
 "that extensions that support the documentation of whole new languages are "
-"much easier to write.  For more information about domains, see the chapter "
-":ref:`domains`."
+"much easier to write."
 msgstr ""
-"ドメインを使用すると、ドキュメント内でC++とPythonの両方のクラスに言及したい場合などに、名前の衝突の問題を避けることができます。また、まったく新しい言語のドキュメント作成をサポートする拡張機能も作りやすくなります。ドメインに関する詳細な情報は、"
-" :ref:`domains` の章を参照してください。"
+"ドメインがあるということは、C++とPythonの両方のクラスに言及したいようなドキュメントを書く場合でも、名前が衝突する問題がない、ということです。まったく新しい言語のドキュメントをサポートするのも簡単になります。"
 
 #: ../../sphinx/doc/glossary.rst:61
+msgid "For more information, refer to :doc:`/usage/restructuredtext/domains`."
+msgstr ""
+
+#: ../../sphinx/doc/glossary.rst:62
 msgid "environment"
 msgstr "環境"
 
-#: ../../sphinx/doc/glossary.rst:63
+#: ../../sphinx/doc/glossary.rst:64
 msgid ""
 "A structure where information about all documents under the root is saved, "
 "and used for cross-referencing.  The environment is pickled after the "
@@ -140,19 +142,19 @@ msgid ""
 msgstr ""
 "ルート以下のすべてのドキュメントの情報が格納される場所です。この情報はクロスリファレンスを作成する際に利用されます。この環境には、パース段階の後の結果のpickleされたものが入ります。ソースファイルが新規で作成されたり、変更されて、読み込んだりパースする必要がない限りはこの中のデータが更新されることはありません。"
 
-#: ../../sphinx/doc/glossary.rst:67
+#: ../../sphinx/doc/glossary.rst:68
 msgid "master document"
 msgstr "マスタードキュメント"
 
-#: ../../sphinx/doc/glossary.rst:69
+#: ../../sphinx/doc/glossary.rst:70
 msgid "The document that contains the root :rst:dir:`toctree` directive."
 msgstr "ルートとなる :rst:dir:`toctree` ディレクティブを含むドキュメントです。"
 
-#: ../../sphinx/doc/glossary.rst:70
+#: ../../sphinx/doc/glossary.rst:71
 msgid "object"
 msgstr "オブジェクト"
 
-#: ../../sphinx/doc/glossary.rst:72
+#: ../../sphinx/doc/glossary.rst:73
 msgid ""
 "The basic building block of Sphinx documentation.  Every \"object "
 "directive\" (e.g. :rst:dir:`function` or :rst:dir:`object`) creates such a "
@@ -161,11 +163,11 @@ msgstr ""
 "Sphinxドキュメントを構築する、基本構成単位です。すべての \"オブジェクトディレクティブ\"(:rst:dir:`function`, "
 ":rst:dir:`object`)はこのユニットを作成します。ほとんどのオブジェクトに対して、クロスリファレンスを行えます。"
 
-#: ../../sphinx/doc/glossary.rst:75
+#: ../../sphinx/doc/glossary.rst:76
 msgid "RemoveInSphinxXXXWarning"
 msgstr "RemoveInSphinxXXXWarning"
 
-#: ../../sphinx/doc/glossary.rst:77
+#: ../../sphinx/doc/glossary.rst:78
 msgid ""
 "The feature which is warned will be removed in Sphinx-XXX version. It "
 "usually caused from Sphinx extensions which is using deprecated. See also "
@@ -174,35 +176,33 @@ msgstr ""
 "SphinxのXXXバージョンでこの機能が削除される警告です。通常、Sphinx拡張で利用しているAPIが非推奨となった場合等に発生します。参考: "
 ":ref:`when-deprecation-warnings-are-displayed`."
 
-#: ../../sphinx/doc/glossary.rst:80
+#: ../../sphinx/doc/glossary.rst:81
 msgid "role"
 msgstr "ロール"
 
-#: ../../sphinx/doc/glossary.rst:82
+#: ../../sphinx/doc/glossary.rst:83
 msgid ""
 "A reStructuredText markup element that allows marking a piece of text. Like "
 "directives, roles are extensible.  The basic syntax looks like this: "
-"``:rolename:`content```.  See :ref:`inlinemarkup` for details."
+"``:rolename:`content```.  See :ref:`rst-inline-markup` for details."
 msgstr ""
-"reStuructredTextのマークアップの要素で、テキスト片にマーキングを行えます。ディレクティブと同様に、ロールも拡張できます。基本的な文法は次のようになります:"
-" ``:ロール名:`コンテンツ``` 。詳しくは :ref:`inlinemarkup` を参照してください。"
 
-#: ../../sphinx/doc/glossary.rst:85
+#: ../../sphinx/doc/glossary.rst:86
 msgid "source directory"
 msgstr "ソースディレクトリ"
 
-#: ../../sphinx/doc/glossary.rst:87
+#: ../../sphinx/doc/glossary.rst:88
 msgid ""
 "The directory which, including its subdirectories, contains all source files"
 " for one Sphinx project."
 msgstr ""
 "ひとつのSphinxプロジェクトにおいて、すべてのソースファイルを含むディレクトリ。このディレクトリ直下だけではなく、サブディレクトリを使用してソースファイルを分類して入れておくことも可能です。"
 
-#: ../../sphinx/doc/glossary.rst:89
+#: ../../sphinx/doc/glossary.rst:90
 msgid "reStructuredText"
 msgstr "reStructuredText"
 
-#: ../../sphinx/doc/glossary.rst:91
+#: ../../sphinx/doc/glossary.rst:92
 msgid ""
 "An easy-to-read, what-you-see-is-what-you-get plaintext markup syntax and "
 "parser system."

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+/dfcbde5\n"
+"Project-Id-Version: Sphinx 1.8.0+/5ffc463\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 15:15+0000\n"
+"POT-Creation-Date: 2018-03-31 15:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
@@ -1134,7 +1134,7 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/config.rst:781 ../../sphinx/doc/config.rst:1424
-#: ../../sphinx/doc/config.rst:2270
+#: ../../sphinx/doc/config.rst:2279
 msgid ""
 "A dictionary of options that influence the look and feel of the selected "
 "theme.  These are theme-specific.  For the options understood by the builtin"
@@ -1384,7 +1384,7 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/config.rst:985 ../../sphinx/doc/config.rst:1743
-#: ../../sphinx/doc/config.rst:2182
+#: ../../sphinx/doc/config.rst:2191
 msgid ""
 "If true, generate domain-specific indices in addition to the general index. "
 "For e.g. the Python domain, this is the global module index.  Default is "
@@ -2169,7 +2169,7 @@ msgstr ""
 msgid "``'footnote'`` -- display URLs in footnotes"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1603 ../../sphinx/doc/config.rst:2196
+#: ../../sphinx/doc/config.rst:1603 ../../sphinx/doc/config.rst:2205
 msgid "``'no'`` -- do not display URLs"
 msgstr ""
 
@@ -2386,11 +2386,11 @@ msgid ""
 "numbers continuously ``\\chapter`` (or ``\\section`` for ``howto``.)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1739 ../../sphinx/doc/config.rst:2176
+#: ../../sphinx/doc/config.rst:1739 ../../sphinx/doc/config.rst:2185
 msgid "A list of document names to append as an appendix to all manuals."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1747 ../../sphinx/doc/config.rst:2186
+#: ../../sphinx/doc/config.rst:1747 ../../sphinx/doc/config.rst:2195
 msgid ""
 "This value can be a bool or a list of index names that should be generated, "
 "like for :confval:`html_domain_indices`."
@@ -2412,7 +2412,7 @@ msgstr ""
 msgid "``'no'`` -- do not display URLs (default)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1766 ../../sphinx/doc/config.rst:2197
+#: ../../sphinx/doc/config.rst:1766 ../../sphinx/doc/config.rst:2206
 msgid "``'inline'`` -- display URLs inline in parentheses"
 msgstr ""
 
@@ -2452,7 +2452,7 @@ msgid ""
 "avoid interpretation as escape sequences."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1799 ../../sphinx/doc/config.rst:2213
+#: ../../sphinx/doc/config.rst:1799 ../../sphinx/doc/config.rst:2222
 msgid "Keys that you may want to override include:"
 msgstr ""
 
@@ -2533,35 +2533,47 @@ msgstr ""
 msgid "``'lualatex'`` uses same default setting as ``'xelatex'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1848
+#: ../../sphinx/doc/config.rst:1857
 msgid "``'fontpkg'``"
 msgstr ""
 
 #: ../../sphinx/doc/config.rst:1839
 msgid ""
 "Font package inclusion, default ``'\\\\usepackage{times}'`` (which uses "
-"Times and Helvetica).  You can set this to ``''`` to use the Computer Modern"
-" fonts."
+"Times for text, Helvetica for sans serif and Courier for code-blocks)."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1843
+#: ../../sphinx/doc/config.rst:1844
+msgid ""
+"Courier is much wider than Times, and Sphinx emits LaTeX command ``\\small``"
+" in code-blocks to compensate.  Since ``1.5`` this is not hard-coded "
+"anymore: ``\\fvset{fontsize=auto}`` can be added to preamble to not change "
+"font size in code-blocks.  Since ``1.8`` a separate ``'fvset'`` key is "
+"provided for this."
+msgstr ""
+
+#: ../../sphinx/doc/config.rst:1850
 msgid ""
 "Defaults to ``''`` when the :confval:`language` uses the Cyrillic script."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1846
+#: ../../sphinx/doc/config.rst:1853
 msgid "Defaults to ``''`` when :confval:`latex_engine` is ``'xelatex'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1848
+#: ../../sphinx/doc/config.rst:1855
 msgid "Defaults to ``''`` also with ``'lualatex'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1856
+#: ../../sphinx/doc/config.rst:1857
+msgid "``'xelatex'`` and ``'lualatex'`` do ``\\fvset{fontsize=auto}``."
+msgstr ""
+
+#: ../../sphinx/doc/config.rst:1865
 msgid "``'fncychap'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1851
+#: ../../sphinx/doc/config.rst:1860
 msgid ""
 "Inclusion of the \"fncychap\" package (which makes fancy chapter titles), "
 "default ``'\\\\usepackage[Bjarne]{fncychap}'`` for English documentation "
@@ -2573,27 +2585,27 @@ msgid ""
 "fncychap."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1858 ../../sphinx/doc/config.rst:2224
+#: ../../sphinx/doc/config.rst:1867 ../../sphinx/doc/config.rst:2233
 msgid "``'preamble'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1859
+#: ../../sphinx/doc/config.rst:1868
 msgid "Additional preamble content, default empty. See :doc:`latex`."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1862
+#: ../../sphinx/doc/config.rst:1871
 msgid "``'atendofbody'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1861
+#: ../../sphinx/doc/config.rst:1870
 msgid "Additional document content (right before the indices), default empty."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1870
+#: ../../sphinx/doc/config.rst:1879
 msgid "``'figure_align'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1865
+#: ../../sphinx/doc/config.rst:1874
 msgid ""
 "Latex figure float alignment, default 'htbp' (here, top, bottom, page). "
 "Whenever an image doesn't fit into the current page, it will be 'floated' "
@@ -2602,42 +2614,42 @@ msgid ""
 "strictly in the order they appear in the source."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1876
+#: ../../sphinx/doc/config.rst:1885
 msgid "``'footer'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1873
+#: ../../sphinx/doc/config.rst:1882
 msgid "Additional footer content (before the indices), default empty."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1875
+#: ../../sphinx/doc/config.rst:1884
 msgid "Use ``'atendofbody'`` key instead."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1878
+#: ../../sphinx/doc/config.rst:1887
 msgid "Keys that don't need to be overridden unless in special cases are:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1886
+#: ../../sphinx/doc/config.rst:1895
 msgid "``'extraclassoptions'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1881
+#: ../../sphinx/doc/config.rst:1890
 msgid ""
 "The default is the empty string. Example: ``'extraclassoptions': 'openany'``"
 " will allow chapters (for documents of the ``'manual'`` type) to start on "
 "any page."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1886
+#: ../../sphinx/doc/config.rst:1895
 msgid "Added this documentation."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1903
+#: ../../sphinx/doc/config.rst:1912
 msgid "``'maxlistdepth'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1889
+#: ../../sphinx/doc/config.rst:1898
 msgid ""
 "LaTeX allows by default at most 6 levels for nesting list and quote-like "
 "environments, with at most 4 enumerated lists, and 4 bullet lists. Setting "
@@ -2646,99 +2658,99 @@ msgid ""
 "LaTeX default."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1897
+#: ../../sphinx/doc/config.rst:1906
 msgid ""
 "Using this key may prove incompatible with some LaTeX packages or special "
 "document classes which do their own list customization."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1900
+#: ../../sphinx/doc/config.rst:1909
 msgid ""
 "The key setting is silently *ignored* if ``\\usepackage{enumitem}`` is "
 "executed inside the document preamble. Use then rather the dedicated "
 "commands of this LaTeX package."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1911
+#: ../../sphinx/doc/config.rst:1920
 msgid "``'inputenc'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1906
+#: ../../sphinx/doc/config.rst:1915
 msgid ""
 "\"inputenc\" package inclusion, defaults to "
 "``'\\\\usepackage[utf8]{inputenc}'`` when using pdflatex. Otherwise empty."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1910
+#: ../../sphinx/doc/config.rst:1919
 msgid ""
 "Previously ``'\\\\usepackage[utf8]{inputenc}'`` was used for all compilers."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1915
+#: ../../sphinx/doc/config.rst:1924
 msgid "``'cmappkg'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1914
+#: ../../sphinx/doc/config.rst:1923
 msgid "\"cmap\" package inclusion, default ``'\\\\usepackage{cmap}'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1923
+#: ../../sphinx/doc/config.rst:1932
 msgid "``'fontenc'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1918
+#: ../../sphinx/doc/config.rst:1927
 msgid "\"fontenc\" package inclusion, default ``'\\\\usepackage[T1]{fontenc}'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1920
+#: ../../sphinx/doc/config.rst:1929
 msgid ""
 "Defaults to ``'\\\\usepackage{fontspec}'`` when :confval:`latex_engine` is "
 "``'xelatex'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1923
+#: ../../sphinx/doc/config.rst:1932
 msgid "``'lualatex'`` also uses ``fontspec`` per default."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1953
+#: ../../sphinx/doc/config.rst:1962
 msgid "``'geometry'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1926
+#: ../../sphinx/doc/config.rst:1935
 msgid "\"geometry\" package inclusion, the default definition is:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1928
+#: ../../sphinx/doc/config.rst:1937
 msgid "``'\\\\usepackage{geometry}'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1930
+#: ../../sphinx/doc/config.rst:1939
 msgid ""
 "with an additional ``[dvipdfm]`` for Japanese documents. The Sphinx LaTeX "
 "style file executes:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1933
+#: ../../sphinx/doc/config.rst:1942
 msgid ""
 "``\\PassOptionsToPackage{hmargin=1in,vmargin=1in,marginpar=0.5in}{geometry}``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1935
+#: ../../sphinx/doc/config.rst:1944
 msgid ""
 "which can be customized via corresponding :ref:`'sphinxsetup' options "
 "<latexsphinxsetup>`."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1940
+#: ../../sphinx/doc/config.rst:1949
 msgid "``dvipdfm`` option if :confval:`latex_engine` is ``'platex'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1943
+#: ../../sphinx/doc/config.rst:1952
 msgid ""
 "The :ref:`'sphinxsetup' keys for the margins <latexsphinxsetuphmargin>`."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1947
+#: ../../sphinx/doc/config.rst:1956
 msgid ""
 "The location in the LaTeX file has been moved to after "
 "``\\usepackage{sphinx}`` and ``\\sphinxsetup{..}``, hence also after "
@@ -2749,52 +2761,52 @@ msgid ""
 "<latexsphinxsetuphmargin>` documentation for more."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1964
+#: ../../sphinx/doc/config.rst:1973
 msgid "``'hyperref'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1956
+#: ../../sphinx/doc/config.rst:1965
 msgid ""
 "\"hyperref\" package inclusion; also loads package \"hypcap\" and issues "
 "``\\urlstyle{same}``. This is done after :file:`sphinx.sty` file is loaded "
 "and before executing the contents of ``'preamble'`` key."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1962
+#: ../../sphinx/doc/config.rst:1971
 msgid "Loading of packages \"hyperref\" and \"hypcap\" is mandatory."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1964
+#: ../../sphinx/doc/config.rst:1973
 msgid "Previously this was done from inside :file:`sphinx.sty`."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1969
+#: ../../sphinx/doc/config.rst:1978
 msgid "``'maketitle'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1967
+#: ../../sphinx/doc/config.rst:1976
 msgid ""
 "\"maketitle\" call, default ``'\\\\maketitle'`` (but it has been redefined "
 "by the Sphinx ``manual`` and ``howto`` classes.) Override if you want to "
 "generate a differently-styled title page."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1973
+#: ../../sphinx/doc/config.rst:1982
 msgid "``'releasename'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1972
+#: ../../sphinx/doc/config.rst:1981
 msgid ""
 "value that prefixes ``'release'`` element on title page, default "
 "``'Release'``. As for *title* and *author* used in the tuples of "
 ":confval:`latex_documents`, it is inserted as LaTeX markup."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1985
+#: ../../sphinx/doc/config.rst:1994
 msgid "``'tableofcontents'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1976
+#: ../../sphinx/doc/config.rst:1985
 msgid ""
 "\"tableofcontents\" call, default ``'\\\\sphinxtableofcontents'`` (it is a "
 "wrapper of unmodified ``\\tableofcontents``, which may itself be customized "
@@ -2802,33 +2814,33 @@ msgid ""
 " of contents or put content between the title page and the TOC."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1983
+#: ../../sphinx/doc/config.rst:1992
 msgid ""
 "Previously the meaning of ``\\tableofcontents`` itself was modified by "
 "Sphinx. This created an incompatibility with dedicated packages modifying it"
 " also such as \"tocloft\" or \"etoc\"."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1993
+#: ../../sphinx/doc/config.rst:2002
 msgid "``'transition'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1988
+#: ../../sphinx/doc/config.rst:1997
 msgid ""
 "Commands used to display transitions, default "
 "``'\\n\\n\\\\bigskip\\\\hrule\\\\bigskip\\n\\n'``.  Override if you want to "
 "display transitions differently."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1993
+#: ../../sphinx/doc/config.rst:2002
 msgid "Remove unneeded ``{}`` after ``\\\\hrule``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1999
+#: ../../sphinx/doc/config.rst:2008
 msgid "``'printindex'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:1996
+#: ../../sphinx/doc/config.rst:2005
 msgid ""
 "\"printindex\" call, the last thing in the file, default "
 "``'\\\\printindex'``.  Override if you want to generate the index "
@@ -2837,50 +2849,50 @@ msgid ""
 "index is full of long entries."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2009
+#: ../../sphinx/doc/config.rst:2018
 msgid "``'fvset'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2002
+#: ../../sphinx/doc/config.rst:2011
 msgid ""
 "Customization of ``fancyvrb`` LaTeX package. Defaults to "
 "``'\\\\fvset{fontsize=\\\\small}'``, because default font (Courier) used in "
 "code-blocks is wider and taller than default text font (Times)."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2006
+#: ../../sphinx/doc/config.rst:2015
 msgid ""
 "For ``'xelatex'`` and ``'lualatex'``, defaults to "
 "``'\\\\fvset{fontsize=auto}'``, because the default fonts are part of one "
 "unified typeface family (Latin Modern OpenType)."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2011 ../../sphinx/doc/config.rst:2231
+#: ../../sphinx/doc/config.rst:2020 ../../sphinx/doc/config.rst:2240
 msgid ""
 "Keys that are set by other options and therefore should not be overridden "
 "are:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2014
+#: ../../sphinx/doc/config.rst:2023
 msgid ""
 "``'docclass'`` ``'classoptions'`` ``'title'`` ``'date'`` ``'release'`` "
 "``'author'`` ``'logo'`` ``'makeindex'`` ``'shorthandoff'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2026
+#: ../../sphinx/doc/config.rst:2035
 msgid ""
 "A dictionary mapping ``'howto'`` and ``'manual'`` to names of real document "
 "classes that will be used as the base for the two Sphinx classes.  Default "
 "is to use ``'article'`` for ``'howto'`` and ``'report'`` for ``'manual'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2034
+#: ../../sphinx/doc/config.rst:2043
 msgid ""
 "In Japanese docs (:confval:`language` is ``'ja'``), by default ``'jreport'``"
 " is used for ``'howto'`` and ``'jsbook'`` for ``'manual'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2039
+#: ../../sphinx/doc/config.rst:2048
 msgid ""
 "A list of file names, relative to the configuration directory, to copy to "
 "the build directory when building LaTeX output.  This is useful to copy "
@@ -2889,86 +2901,86 @@ msgid ""
 "in source files (e.g. via ``.. image::``) are copied automatically."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2045
+#: ../../sphinx/doc/config.rst:2054
 msgid ""
 "You have to make sure yourself that the filenames don't collide with those "
 "of any automatically copied files."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2050
+#: ../../sphinx/doc/config.rst:2059
 msgid ""
 "This overrides the files which is provided from Sphinx such as sphinx.sty."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2057
+#: ../../sphinx/doc/config.rst:2066
 msgid "Options for text output"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2059
+#: ../../sphinx/doc/config.rst:2068
 msgid "These options influence text output."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2063
+#: ../../sphinx/doc/config.rst:2072
 msgid "Determines which end-of-line character(s) are used in text output."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2065
+#: ../../sphinx/doc/config.rst:2074
 msgid "``'unix'``: use Unix-style line endings (``\\n``)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2066
+#: ../../sphinx/doc/config.rst:2075
 msgid "``'windows'``: use Windows-style line endings (``\\r\\n``)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2067
+#: ../../sphinx/doc/config.rst:2076
 msgid ""
 "``'native'``: use the line ending style of the platform the documentation is"
 " built on"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2070
+#: ../../sphinx/doc/config.rst:2079
 msgid "Default: ``'unix'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2076
+#: ../../sphinx/doc/config.rst:2085
 msgid ""
 "A string of 7 characters that should be used for underlining sections. The "
 "first character is used for first-level headings, the second for second-"
 "level headings and so on."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2080
+#: ../../sphinx/doc/config.rst:2089
 msgid "The default is ``'*=-~\"+`'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2086
+#: ../../sphinx/doc/config.rst:2095
 msgid ""
 "A boolean that decides whether section numbers are included in text output. "
 "Default is ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2093
+#: ../../sphinx/doc/config.rst:2102
 msgid ""
 "Suffix for section numbers in text output.  Default: ``\". \"``. Set to ``\""
 " \"`` to suppress the final dot on section numbers."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2102
+#: ../../sphinx/doc/config.rst:2111
 msgid "Options for manual page output"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2104
+#: ../../sphinx/doc/config.rst:2113
 msgid "These options influence manual page output."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2108
+#: ../../sphinx/doc/config.rst:2117
 msgid ""
 "This value determines how to group the document tree into manual pages.  It "
 "must be a list of tuples ``(startdocname, name, description, authors, "
 "section)``, where the items are:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2112
+#: ../../sphinx/doc/config.rst:2121
 msgid ""
 "*startdocname*: document name that is the \"root\" of the manual page.  All "
 "documents referenced by it in TOC trees will be included in the manual file "
@@ -2976,45 +2988,45 @@ msgid ""
 "here.)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2116
+#: ../../sphinx/doc/config.rst:2125
 msgid ""
 "*name*: name of the manual page.  This should be a short string without "
 "spaces or special characters.  It is used to determine the file name as well"
 " as the name of the manual page (in the NAME section)."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2119
+#: ../../sphinx/doc/config.rst:2128
 msgid ""
 "*description*: description of the manual page.  This is used in the NAME "
 "section."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2121
+#: ../../sphinx/doc/config.rst:2130
 msgid ""
 "*authors*: A list of strings with authors, or a single string.  Can be an "
 "empty string or list if you do not want to automatically generate an AUTHORS"
 " section in the manual page."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2124
+#: ../../sphinx/doc/config.rst:2133
 msgid ""
 "*section*: The manual page section.  Used for the output file name as well "
 "as in the manual page header."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2131
+#: ../../sphinx/doc/config.rst:2140
 msgid "If true, add URL addresses after links.  Default is ``False``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2139
+#: ../../sphinx/doc/config.rst:2148
 msgid "Options for Texinfo output"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2141
+#: ../../sphinx/doc/config.rst:2150
 msgid "These options influence Texinfo output."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2145
+#: ../../sphinx/doc/config.rst:2154
 msgid ""
 "This value determines how to group the document tree into Texinfo source "
 "files.  It must be a list of tuples ``(startdocname, targetname, title, "
@@ -3022,7 +3034,7 @@ msgid ""
 "are:"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2150
+#: ../../sphinx/doc/config.rst:2159
 msgid ""
 "*startdocname*: document name that is the \"root\" of the Texinfo file.  All"
 " documents referenced by it in TOC trees will be included in the Texinfo "
@@ -3030,43 +3042,43 @@ msgid ""
 ":confval:`master_doc` here.)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2154
+#: ../../sphinx/doc/config.rst:2163
 msgid ""
 "*targetname*: file name (no extension) of the Texinfo file in the output "
 "directory."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2156
+#: ../../sphinx/doc/config.rst:2165
 msgid ""
 "*title*: Texinfo document title.  Can be empty to use the title of the "
 "*startdoc*.  Inserted as Texinfo markup, so special characters like @ and {}"
 " will need to be escaped to be inserted literally."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2159
+#: ../../sphinx/doc/config.rst:2168
 msgid ""
 "*author*: Author for the Texinfo document.  Inserted as Texinfo markup. Use "
 "``@*`` to separate multiple authors, as in: ``'John@*Sarah'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2161
+#: ../../sphinx/doc/config.rst:2170
 msgid ""
 "*dir_entry*: The name that will appear in the top-level ``DIR`` menu file."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2162
+#: ../../sphinx/doc/config.rst:2171
 msgid ""
 "*description*: Descriptive text to appear in the top-level ``DIR`` menu "
 "file."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2164
+#: ../../sphinx/doc/config.rst:2173
 msgid ""
 "*category*: Specifies the section which this entry will appear in the top-"
 "level ``DIR`` menu file."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2166
+#: ../../sphinx/doc/config.rst:2175
 msgid ""
 "*toctree_only*: Must be ``True`` or ``False``.  If true, the *startdoc* "
 "document itself is not included in the output, only the documents referenced"
@@ -3074,129 +3086,129 @@ msgid ""
 "master document that shows up in the HTML, but not the Texinfo output."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2193
+#: ../../sphinx/doc/config.rst:2202
 msgid "Control how to display URL addresses."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2195
+#: ../../sphinx/doc/config.rst:2204
 msgid "``'footnote'`` -- display URLs in footnotes (default)"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2203
+#: ../../sphinx/doc/config.rst:2212
 msgid ""
 "If true, do not generate a ``@detailmenu`` in the \"Top\" node's menu "
 "containing entries for each sub-node in the document.  Default is ``False``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2210
+#: ../../sphinx/doc/config.rst:2219
 msgid ""
 "A dictionary that contains Texinfo snippets that override those Sphinx "
 "usually puts into the generated ``.texi`` files."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2217
+#: ../../sphinx/doc/config.rst:2226
 msgid "``'paragraphindent'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2216
+#: ../../sphinx/doc/config.rst:2225
 msgid ""
 "Number of spaces to indent the first line of each paragraph, default ``2``."
 "  Specify ``0`` for no indentation."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2221
+#: ../../sphinx/doc/config.rst:2230
 msgid "``'exampleindent'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2220
+#: ../../sphinx/doc/config.rst:2229
 msgid ""
 "Number of spaces to indent the lines for examples or literal blocks, default"
 " ``4``.  Specify ``0`` for no indentation."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2224
+#: ../../sphinx/doc/config.rst:2233
 msgid "Texinfo markup inserted near the beginning of the file."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2229
+#: ../../sphinx/doc/config.rst:2238
 msgid "``'copying'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2227
+#: ../../sphinx/doc/config.rst:2236
 msgid ""
 "Texinfo markup inserted within the ``@copying`` block and displayed after "
 "the title.  The default value consists of a simple title page identifying "
 "the project."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2234
+#: ../../sphinx/doc/config.rst:2243
 msgid ""
 "``'author'`` ``'body'`` ``'date'`` ``'direntry'`` ``'filename'`` "
 "``'project'`` ``'release'`` ``'title'``"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2249
+#: ../../sphinx/doc/config.rst:2258
 msgid "Options for QtHelp output"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2251
+#: ../../sphinx/doc/config.rst:2260
 msgid ""
 "These options influence qthelp output.  As this builder derives from the "
 "HTML builder, the HTML options also apply where appropriate."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2256
+#: ../../sphinx/doc/config.rst:2265
 msgid ""
 "The basename for the qthelp file.  It defaults to the :confval:`project` "
 "name."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2260
+#: ../../sphinx/doc/config.rst:2269
 msgid ""
 "The namespace for the qthelp file.  It defaults to "
 "``org.sphinx.<project_name>.<project_version>``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2265
+#: ../../sphinx/doc/config.rst:2274
 msgid "The HTML theme for the qthelp output. This defaults to ``'nonav'``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2276
+#: ../../sphinx/doc/config.rst:2285
 msgid "Options for the linkcheck builder"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2280
+#: ../../sphinx/doc/config.rst:2289
 msgid ""
 "A list of regular expressions that match URIs that should not be checked "
 "when doing a ``linkcheck`` build.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2289
+#: ../../sphinx/doc/config.rst:2298
 msgid ""
 "The number of times the linkcheck builder will attempt to check a URL before"
 " declaring it broken. Defaults to 1 attempt."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2296
+#: ../../sphinx/doc/config.rst:2305
 msgid ""
 "A timeout value, in seconds, for the linkcheck builder.  The default is to "
 "use Python's global socket timeout."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2303
+#: ../../sphinx/doc/config.rst:2312
 msgid ""
 "The number of worker threads to use when checking links.  Default is 5 "
 "threads."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2310
+#: ../../sphinx/doc/config.rst:2319
 msgid ""
 "If true, check the validity of ``#anchor``\\ s in links. Since this requires"
 " downloading the whole document, it's considerably slower when enabled. "
 "Default is ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2318
+#: ../../sphinx/doc/config.rst:2327
 msgid ""
 "A list of regular expressions that match URIs that should skip checking the "
 "validity of anchors in links. This allows skipping entire sites, where "
@@ -3206,19 +3218,19 @@ msgid ""
 "``[\"/#!\"]``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2329
+#: ../../sphinx/doc/config.rst:2338
 msgid "Options for the XML builder"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2333
+#: ../../sphinx/doc/config.rst:2342
 msgid "If true, pretty-print the XML.  Default is ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2339
+#: ../../sphinx/doc/config.rst:2348
 msgid "Footnotes"
 msgstr "Notas a pie de página"
 
-#: ../../sphinx/doc/config.rst:2340
+#: ../../sphinx/doc/config.rst:2349
 msgid ""
 "A note on available globbing syntax: you can use the standard shell "
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
@@ -3226,24 +3238,24 @@ msgid ""
 "any sequence of characters *including* slashes."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2349
+#: ../../sphinx/doc/config.rst:2358
 msgid "Options for the C++ domain"
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2353
+#: ../../sphinx/doc/config.rst:2362
 msgid ""
 "A list of prefixes that will be ignored when sorting C++ objects in the "
 "global index. For example ``['awesome_lib::']``."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2360
+#: ../../sphinx/doc/config.rst:2369
 msgid ""
 "A list of strings that the parser additionally should accept as attributes. "
 "This can for example be used when attributes have been ``#define`` d for "
 "portability."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2367
+#: ../../sphinx/doc/config.rst:2376
 msgid ""
 "A list of strings that the parser additionally should accept as attributes "
 "with one argument. That is, if ``my_align_as`` is in the list, then "
@@ -3252,6 +3264,6 @@ msgid ""
 " when attributes have been ``#define`` d for portability."
 msgstr ""
 
-#: ../../sphinx/doc/config.rst:2375
+#: ../../sphinx/doc/config.rst:2384
 msgid "Example of configuration file"
 msgstr ""

@@ -2,11 +2,9 @@
 
 set -ex
 
-RELEASE=1_8
-
 # setup environment
 SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
-SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-${RELEASE}
+SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
 find sphinx -name "*.pyc" -exec rm {} \;
 git checkout master
 git submodule init

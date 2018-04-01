@@ -5,7 +5,7 @@ set -ex
 
 # required environment variables
 # SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
-# SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-1_7
+# SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
 
 
 # pull po files from transifex

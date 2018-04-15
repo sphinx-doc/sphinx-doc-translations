@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+/795fcb1\n"
+"Project-Id-Version: Sphinx 1.8.0+/d22005b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 15:17+0000\n"
+"POT-Creation-Date: 2018-04-15 15:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -728,7 +728,7 @@ msgid "latex target supports pixels (default is ``96px=1in``)."
 msgstr "latexターゲットがピクセルをサポートするようになりました(デフォルトは ``96px=1in`` です)。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:462
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:562
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:565
 msgid "Footnotes"
 msgstr "脚注"
 
@@ -791,30 +791,27 @@ msgid ""
 " for details."
 msgstr "詳しくは :duref:`reSTリファレンスの置換の説明 <substitution-definitions>` を参照してください。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:511
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:513
 msgid ""
 "If you want to use some substitutions for all documents, put them into "
-":confval:`rst_prolog` or put them into a separate file and include it into "
-"all documents you want to use them in, using the :rst:dir:`include` "
-"directive.  (Be sure to give the include file a file name extension "
-"differing from that of other source files, to avoid Sphinx finding it as a "
-"standalone document.)"
+":confval:`rst_prolog` or :confval:`rst_epilog` or put them into a separate "
+"file and include it into all documents you want to use them in, using the "
+":rst:dir:`include` directive.  (Be sure to give the include file a file name"
+" extension differing from that of other source files, to avoid Sphinx "
+"finding it as a standalone document.)"
 msgstr ""
-"いくつかの置換をすべてのドキュメントで使用したい場合には、置換の宣言を別のファイルに切り出して、 :confval:`rst_prolog` "
-"に書くか、その置換を行いたいすべてのドキュメントの冒頭で :rst:dir:`include` "
-"ディレクティブを使用してインクルードする方法があります。この場合は、他のソースファイルとは別の拡張子を付けるようにしましょう。同じ拡張子にすると、Sphinxはリンクされていないドキュメントとして警告を出力してしまいます。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:517
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:520
 msgid ""
 "Sphinx defines some default substitutions, see :ref:`default-substitutions`."
 msgstr ""
 "Sphinxはデフォルトの置換をいくつか定義しています。詳しくは :ref:`default-substitutions` を参照してください。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:521
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:524
 msgid "Comments"
 msgstr "コメント"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:523
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:526
 msgid ""
 "Every explicit markup block which isn't a valid markup construct (like the "
 "footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For "
@@ -822,15 +819,15 @@ msgid ""
 msgstr ""
 "上記の脚注のような適切な構造をしていない明示的マークアップのブロックはすべてコメント(:duref:`ref <comments>`)とみなされます::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:529
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:532
 msgid "You can indent text after a comment start to form multiline comments::"
 msgstr "コメントがスタートした行からインデントすることによって、複数行コメントにできます::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:539
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:542
 msgid "Source encoding"
 msgstr "ソースエンコーディング"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:541
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:544
 msgid ""
 "Since the easiest way to include special characters like em dashes or "
 "copyright signs in reST is to directly write them as Unicode characters, one"
@@ -842,17 +839,17 @@ msgstr ""
 "、UTF-8であるとみないしてソースコードを読み込みます。 :confval:`source_encoding` "
 "の設定値を変更することで、このデフォルトのエンコーディングを変更できます。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:548
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:551
 msgid "Gotchas"
 msgstr "分かっていること"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:550
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:553
 msgid ""
 "There are some problems one commonly runs into while authoring reST "
 "documents:"
 msgstr "reSTのドキュメントを書いていると、良く遭遇する問題がいくつかあります:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:552
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:555
 msgid ""
 "**Separation of inline markup:** As said above, inline markup spans must be "
 "separated from the surrounding text by non-word characters, you have to use "
@@ -863,13 +860,13 @@ msgstr ""
 "上記の説明でも触れていますが、インラインマークアップを付ける領域の前後はテキスト以外の文字(スペース、カッコなど)や、バックスラッシュ(日本語フォントだと円記号)でエスケープしたスペースでくくる必要があります。詳しくは、"
 "  :duref:`the reference <substitution-definitions>` を参照してください。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:557
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:560
 msgid ""
 "**No nested inline markup:** Something like ``*see :func:`foo`*`` is not "
 "possible."
 msgstr "**インラインマークアップのネストはできない:** ``*:func:`foo` 参照*`` といった書き方はできません。"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:563
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:566
 msgid ""
 "When the default domain contains a :rst:dir:`class` directive, this "
 "directive will be shadowed.  Therefore, Sphinx re-exports it as :rst:dir"

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 1.8.0+/b1a5f35\n"
+"Project-Id-Version: Sphinx 1.8.0+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 16:24+0000\n"
+"POT-Creation-Date: 2018-08-16 16:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,62 +181,134 @@ msgid "The following is an example for the usage of the directives.  The test vi
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:202
-msgid "Configuration"
+msgid "Skipping tests conditionally"
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:204
-msgid "The doctest extension uses the following configuration values:"
+msgid "``skipif``, a string option, can be used to skip directives conditionally. This may be useful e.g. when a different set of tests should be run depending on the environment (hardware, network/VPN, optional dependencies or different versions of dependencies). The ``skipif`` option is supported by all of the doctest directives. Below are typical use cases for ``skipif`` when used for different directives:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:208
-msgid "By default, these options are enabled:"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:211
+msgid ":rst:dir:`testsetup` and :rst:dir:`testcleanup`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:210
-msgid "``ELLIPSIS``, allowing you to put ellipses in the expected output that match anything in the actual output;"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:212
-msgid "``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon and any module information in the exception name to be ignored;"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:213
+msgid "conditionally skip test setup and/or cleanup"
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:214
-msgid "``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is given -- the default behavior of accepting this substitution is a relic of pre-Python 2.2 times."
+msgid "customize setup/cleanup code per environment"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:216
+msgid ":rst:dir:`doctest`"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:218
+msgid "conditionally skip both a test and its output verification"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:220
+msgid ":rst:dir:`testcode`"
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:222
-msgid "A list of directories that will be added to :data:`sys.path` when the doctest builder is used.  (Make sure it contains absolute paths.)"
+msgid "conditionally skip a test"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:223
+msgid "customize test code per environment"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:225
+msgid ":rst:dir:`testoutput`"
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:227
-msgid "Python code that is treated like it were put in a ``testsetup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. import modules you will always need in your doctests."
+msgid "conditionally skip output assertion for a skipped test"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:235
-msgid "Python code that is treated like it were put in a ``testcleanup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. remove any temporary files that the tests leave behind."
+#: ../../sphinx/doc/usage/extensions/doctest.rst:228
+msgid "expect different output depending on the environment"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:243
-msgid "If this is a nonempty string (the default is ``'default'``), standard reST doctest blocks will be tested too.  They will be assigned to the group name given."
+#: ../../sphinx/doc/usage/extensions/doctest.rst:230
+msgid "The value of the ``skipif`` option is evaluated as a Python expression. If the result is a true value, the directive is omitted from the test run just as if it wasn't present in the file at all."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:247
-msgid "reST doctest blocks are simply doctests put into a paragraph of their own, like so::"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:234
+msgid "Instead of repeating an expression, the :confval:`doctest_global_setup` configuration option can be used to assign it to a variable which can then be used instead."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:257
-msgid "(Note that no special ``::`` is used to introduce a doctest block; docutils recognizes them from the leading ``>>>``.  Also, no additional indentation is used, though it doesn't hurt.)"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:238
+msgid "Here's an example which skips some tests if Pandas is not installed:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:261
-msgid "If this value is left at its default value, the above snippet is interpreted by the doctest builder exactly like the following::"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:240
+msgid "conf.py"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:273
-msgid "This feature makes it easy for you to test doctests in docstrings included with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a special directive."
+#: ../../sphinx/doc/usage/extensions/doctest.rst:251
+msgid "contents.rst"
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:277
+msgid "Configuration"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:279
+msgid "The doctest extension uses the following configuration values:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:283
+msgid "By default, these options are enabled:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:285
+msgid "``ELLIPSIS``, allowing you to put ellipses in the expected output that match anything in the actual output;"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:287
+msgid "``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon and any module information in the exception name to be ignored;"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:289
+msgid "``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is given -- the default behavior of accepting this substitution is a relic of pre-Python 2.2 times."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:297
+msgid "A list of directories that will be added to :data:`sys.path` when the doctest builder is used.  (Make sure it contains absolute paths.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:302
+msgid "Python code that is treated like it were put in a ``testsetup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. import modules you will always need in your doctests."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:310
+msgid "Python code that is treated like it were put in a ``testcleanup`` directive for *every* file that is tested, and for every group.  You can use this to e.g. remove any temporary files that the tests leave behind."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:318
+msgid "If this is a nonempty string (the default is ``'default'``), standard reST doctest blocks will be tested too.  They will be assigned to the group name given."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:322
+msgid "reST doctest blocks are simply doctests put into a paragraph of their own, like so::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:332
+msgid "(Note that no special ``::`` is used to introduce a doctest block; docutils recognizes them from the leading ``>>>``.  Also, no additional indentation is used, though it doesn't hurt.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:336
+msgid "If this value is left at its default value, the above snippet is interpreted by the doctest builder exactly like the following::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:348
+msgid "This feature makes it easy for you to test doctests in docstrings included with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a special directive."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:352
 msgid "Note though that you can't have blank lines in reST doctest blocks.  They will be interpreted as one block ending and another one starting.  Also, removal of ``<BLANKLINE>`` and ``# doctest:`` options only works in :rst:dir:`doctest` blocks, though you may set :confval:`trim_doctest_flags` to achieve that in all code blocks with Python console content."
 msgstr ""
 

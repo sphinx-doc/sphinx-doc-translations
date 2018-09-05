@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/4434439\n"
+"Project-Id-Version: Sphinx 2.0.0+/38d5980\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-04 16:32+0000\n"
+"POT-Creation-Date: 2018-09-05 16:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -586,134 +586,78 @@ msgid "Return the result of the first callback that doesn't return ``None``."
 msgstr ""
 
 #: ../../sphinx/doc/extdev/appapi.rst:119
-msgid "Producing messages / logging"
-msgstr ""
-
-#: ../../sphinx/doc/extdev/appapi.rst:121
-msgid "The application object also provides support for emitting leveled messages."
-msgstr ""
-
-#: ../../sphinx/doc/extdev/appapi.rst:125
-msgid "There is no \"error\" call: in Sphinx, errors are defined as things that stop the build; just raise an exception (:exc:`sphinx.errors.SphinxError` or a custom subclass) to do that."
-msgstr ""
-
-#: ../../sphinx/doc/extdev/appapi.rst:131
-msgid "Please use :ref:`logging-api` instead."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.warn:1
-msgid "Emit a warning."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.warn:3
-msgid "If *location* is given, it should either be a tuple of (*docname*, *lineno*) or a string describing the location of the warning as well as possible."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.warn:7
-msgid "*type* and *subtype* are used to suppress warnings with :confval:`suppress_warnings`."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.warn:10
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.info:6
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.verbose:3
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.debug:3
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.debug2:3
-msgid "Use :mod:`sphinx.util.logging` instead."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.info:1
-msgid "Emit an informational message."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.info:3
-msgid "If *nonl* is true, don't emit a newline at the end (which implies that more info output will follow soon.)"
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.verbose:1
-msgid "Emit a verbose informational message."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.debug:1
-msgid "Emit a debug-level informational message."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.py:docstring of sphinx.application.Sphinx.debug2:1
-msgid "Emit a lowlevel debug-level informational message."
-msgstr ""
-
-#: ../../sphinx/doc/extdev/appapi.rst:145
 msgid "Sphinx runtime information"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:147
+#: ../../sphinx/doc/extdev/appapi.rst:121
 msgid "The application object also provides runtime information as attributes."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:151
+#: ../../sphinx/doc/extdev/appapi.rst:125
 msgid "Source directory."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:155
+#: ../../sphinx/doc/extdev/appapi.rst:129
 msgid "Directory containing ``conf.py``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:159
+#: ../../sphinx/doc/extdev/appapi.rst:133
 msgid "Directory for storing pickled doctrees."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:163
+#: ../../sphinx/doc/extdev/appapi.rst:137
 msgid "Directory for storing built document."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:169
+#: ../../sphinx/doc/extdev/appapi.rst:143
 msgid "Sphinx core events"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:171
+#: ../../sphinx/doc/extdev/appapi.rst:145
 msgid "These events are known to the core.  The arguments shown are given to the registered event handlers.  Use :meth:`.connect` in an extension's ``setup`` function (note that ``conf.py`` can also have a ``setup`` function) to connect handlers to the events.  Example:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:187
+#: ../../sphinx/doc/extdev/appapi.rst:161
 msgid "Emitted when the builder object has been created.  It is available as ``app.builder``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:192
+#: ../../sphinx/doc/extdev/appapi.rst:166
 msgid "Emitted when the config object has been initialized."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:198
+#: ../../sphinx/doc/extdev/appapi.rst:172
 msgid "Emitted when the environment determines which source files have changed and should be re-read.  *added*, *changed* and *removed* are sets of docnames that the environment has determined.  You can return a list of docnames to re-read in addition to these."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:207
+#: ../../sphinx/doc/extdev/appapi.rst:181
 msgid "Emitted when all traces of a source file should be cleaned from the environment, that is, if the source file is removed or before it is freshly read.  This is for extensions that keep their own caches in attributes of the environment."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:212
+#: ../../sphinx/doc/extdev/appapi.rst:186
 msgid "For example, there is a cache of all modules on the environment.  When a source file has been changed, the cache's entries for the file are cleared, since the module declarations could have been removed from the file."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:220
+#: ../../sphinx/doc/extdev/appapi.rst:194
 msgid "Emitted after the environment has determined the list of all added and changed files and just before it reads them.  It allows extension authors to reorder the list of docnames (*inplace*) before processing, or add more docnames that Sphinx did not consider changed (but never add any docnames that are not in ``env.found_docs``)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:226
+#: ../../sphinx/doc/extdev/appapi.rst:200
 msgid "You can also remove document names; do this with caution since it will make Sphinx treat changed files as unchanged."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:233
+#: ../../sphinx/doc/extdev/appapi.rst:207
 msgid "Emitted when a source file has been read.  The *source* argument is a list whose single element is the contents of the source file.  You can process the contents and replace this item to implement source-level transformations."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:237
+#: ../../sphinx/doc/extdev/appapi.rst:211
 msgid "For example, if you want to use ``$`` signs to delimit inline math, like in LaTeX, you can use a regular expression to replace ``$...$`` by ``:math:`...```."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:245
+#: ../../sphinx/doc/extdev/appapi.rst:219
 msgid "Emitted when a doctree has been parsed and read by the environment, and is about to be pickled.  The *doctree* can be modified in-place."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:250
+#: ../../sphinx/doc/extdev/appapi.rst:224
 msgid "Emitted when a cross-reference to a Python module or object cannot be resolved.  If the event handler can resolve the reference, it should return a new docutils node to be inserted in the document tree in place of the node *node*.  Usually this node is a :class:`reference` node containing *contnode* as a child."
 msgstr ""
 
@@ -721,99 +665,99 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:256
+#: ../../sphinx/doc/extdev/appapi.rst:230
 msgid "The build environment (``app.builder.env``)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:257
+#: ../../sphinx/doc/extdev/appapi.rst:231
 msgid "The :class:`pending_xref` node to be resolved.  Its attributes ``reftype``, ``reftarget``, ``modname`` and ``classname`` attributes determine the type and target of the reference."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:260
+#: ../../sphinx/doc/extdev/appapi.rst:234
 msgid "The node that carries the text and formatting inside the future reference and should be a child of the returned reference node."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:267
+#: ../../sphinx/doc/extdev/appapi.rst:241
 msgid "Emitted when a doctree has been \"resolved\" by the environment, that is, all references have been resolved and TOCs have been inserted.  The *doctree* can be modified in place."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:271
+#: ../../sphinx/doc/extdev/appapi.rst:245
 msgid "Here is the place to replace custom nodes that don't have visitor methods in the writers, so that they don't cause errors when the writers encounter them."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:276
+#: ../../sphinx/doc/extdev/appapi.rst:250
 msgid "This event is only emitted when parallel reading of documents is enabled.  It is emitted once for every subprocess that has read some documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:279
+#: ../../sphinx/doc/extdev/appapi.rst:253
 msgid "You must handle this event in an extension that stores data in the environment in a custom location.  Otherwise the environment in the main process will not be aware of the information stored in the subprocess."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:283
+#: ../../sphinx/doc/extdev/appapi.rst:257
 msgid "*other* is the environment object from the subprocess, *env* is the environment from the main process.  *docnames* is a set of document names that have been read in the subprocess."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:287
+#: ../../sphinx/doc/extdev/appapi.rst:261
 msgid "For a sample of how to deal with this event, look at the standard ``sphinx.ext.todo`` extension.  The implementation is often similar to that of :event:`env-purge-doc`, only that information is not removed, but added to the main environment from the other environment."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:296
+#: ../../sphinx/doc/extdev/appapi.rst:270
 msgid "Emitted when the :meth:`update` method of the build environment has completed, that is, the environment and all doctrees are now up-to-date."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:299
+#: ../../sphinx/doc/extdev/appapi.rst:273
 msgid "You can return an iterable of docnames from the handler.  These documents will then be considered updated, and will be (re-)written during the writing phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:305
+#: ../../sphinx/doc/extdev/appapi.rst:279
 msgid "The handlers' return value is now used."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:310
+#: ../../sphinx/doc/extdev/appapi.rst:284
 msgid "Emitted when Consistency checks phase.  You can check consistency of metadata for whole of documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:315
+#: ../../sphinx/doc/extdev/appapi.rst:289
 msgid "As a **experimental** event"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:319
+#: ../../sphinx/doc/extdev/appapi.rst:293
 msgid "Emitted when the HTML builder is starting to write non-document pages.  You can add pages to write by returning an iterable from this event consisting of ``(pagename, context, templatename)``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:327
+#: ../../sphinx/doc/extdev/appapi.rst:301
 msgid "Emitted when the HTML builder has created a context dictionary to render a template with -- this can be used to add custom elements to the context."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:330
+#: ../../sphinx/doc/extdev/appapi.rst:304
 msgid "The *pagename* argument is the canonical name of the page being rendered, that is, without ``.html`` suffix and using slashes as path separators.  The *templatename* is the name of the template to render, this will be ``'page.html'`` for all pages from reST documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:335
+#: ../../sphinx/doc/extdev/appapi.rst:309
 msgid "The *context* argument is a dictionary of values that are given to the template engine to render the page and can be modified to include custom values.  Keys must be strings."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:339
+#: ../../sphinx/doc/extdev/appapi.rst:313
 msgid "The *doctree* argument will be a doctree when the page is created from a reST documents; it will be ``None`` when the page is created from an HTML template alone."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:343
+#: ../../sphinx/doc/extdev/appapi.rst:317
 msgid "You can return a string from the handler, it will then replace ``'page.html'`` as the HTML template for this page."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:348
+#: ../../sphinx/doc/extdev/appapi.rst:322
 msgid "The return value can now specify a template name."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:353
+#: ../../sphinx/doc/extdev/appapi.rst:327
 msgid "Emitted when a build has finished, before Sphinx exits, usually used for cleanup.  This event is emitted even when the build process raised an exception, given as the *exception* argument.  The exception is reraised in the application after the event handlers have run.  If the build process raised no exception, *exception* will be ``None``.  This allows to customize cleanup actions depending on the exception status."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:364
+#: ../../sphinx/doc/extdev/appapi.rst:338
 msgid "Checking the Sphinx version"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:368
+#: ../../sphinx/doc/extdev/appapi.rst:342
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr ""
 
@@ -829,7 +773,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:374
+#: ../../sphinx/doc/extdev/appapi.rst:348
 msgid "The Config object"
 msgstr ""
 
@@ -845,7 +789,7 @@ msgstr ""
 msgid "It is exposed via the :py:attr:`sphinx.application.Application.config` and :py:attr:`sphinx.environment.Environment.config` attributes. For example, to get the value of :confval:`language`, use either ``app.config.language`` or ``env.config.language``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:384
+#: ../../sphinx/doc/extdev/appapi.rst:358
 msgid "The template bridge"
 msgstr ""
 
@@ -877,7 +821,7 @@ msgstr ""
 msgid "Called by the builder to render a template given as a string with a specified context (a Python dictionary)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:395
+#: ../../sphinx/doc/extdev/appapi.rst:369
 msgid "Exceptions"
 msgstr ""
 

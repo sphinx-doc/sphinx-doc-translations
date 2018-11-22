@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/b0d085e\n"
+"Project-Id-Version: Sphinx 2.0.0+/4241c3c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-20 17:11+0000\n"
+"POT-Creation-Date: 2018-11-22 17:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,336 +77,352 @@ msgid "This builder produces a bunch of LaTeX files in the output directory.  Yo
 msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:160
-msgid "The produced LaTeX file uses several LaTeX packages that may not be present in a \"minimal\" TeX distribution installation.  For example, on Ubuntu, the following packages need to be installed for successful PDF builds:"
+msgid "The produced LaTeX file uses several LaTeX packages that may not be present in a \"minimal\" TeX distribution installation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:164
-msgid "``texlive-latex-recommended``"
-msgstr ""
-
-#: ../../sphinx/doc/usage/builders/index.rst:165
-msgid "``texlive-fonts-recommended``"
+#: ../../sphinx/doc/usage/builders/index.rst:163
+msgid "On Ubuntu xenial, the following packages need to be installed for successful PDF builds:"
 msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:166
-msgid "``texlive-latex-extra``"
+msgid "``texlive-latex-recommended``"
 msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:167
-msgid "``latexmk`` (for ``make latexpdf`` on GNU/Linux and MacOS X)"
+msgid "``texlive-fonts-recommended``"
 msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:168
-msgid "``texlive-luatex``, ``texlive-xetex`` (see :confval:`latex_engine`)"
+msgid "``texlive-latex-extra``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:170
-msgid "The testing of Sphinx LaTeX is done on Ubuntu xenial with the above mentioned packages, which are from a TeXLive 2015 snapshot dated March 2016."
+#: ../../sphinx/doc/usage/builders/index.rst:169
+msgid "``latexmk`` (this is a Sphinx requirement on GNU/Linux and MacOS X for functioning of ``make latexpdf``)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:173
+#: ../../sphinx/doc/usage/builders/index.rst:172
+msgid "Additional packages are needed in some circumstances (see the discussion of the ``'fontpkg'`` key of :confval:`latex_elements` for more information):"
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:175
+msgid "to support occasional Cyrillic letters or words, and a fortiori if :confval:`language` is set to a Cyrillic language, the package ``texlive-lang-cyrillic`` is required, and, with unmodified ``'fontpkg'``, also ``cm-super`` or ``cm-super-minimal``,"
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:179
+msgid "to support occasional Greek letters or words (in text, not in :rst:dir:`math` directive contents), ``texlive-lang-greek`` is required, and, with unmodified ``'fontpkg'``, also ``cm-super`` or ``cm-super-minimal``,"
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:183
+msgid "for ``'xelatex'`` or ``'lualatex'`` (see :confval:`latex_engine`), ``texlive-xetex`` resp. ``texlive-luatex``, and, if leaving unchanged ``'fontpkg'``, ``fonts-freefont-otf``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:187
+msgid "The testing of Sphinx LaTeX is done on Ubuntu xenial whose TeX distribution is based on a TeXLive 2015 snapshot dated March 2016."
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:190
 msgid "Formerly, testing had been done on Ubuntu precise (TeXLive 2009)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:176
+#: ../../sphinx/doc/usage/builders/index.rst:193
 msgid "Formerly, testing had been done on Ubuntu trusty (TeXLive 2013)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:181
+#: ../../sphinx/doc/usage/builders/index.rst:198
 msgid "Since 1.6, ``make latexpdf`` uses ``latexmk`` (not on Windows).  This makes sure the needed number of runs is automatically executed to get the cross-references, bookmarks, indices, and tables of contents right."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:185
+#: ../../sphinx/doc/usage/builders/index.rst:202
 msgid "One can pass to ``latexmk`` options via the ``LATEXMKOPTS`` Makefile variable. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:192
+#: ../../sphinx/doc/usage/builders/index.rst:209
 msgid "reduces console output to a minimum."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:194
-msgid "Also, if ``latexmk`` version is 4.52b or higher (Jan 17) ``LATEXMKOPTS=\"-xelatex\"`` will speed up PDF builds via XeLateX in case of numerous graphics inclusions."
-msgstr ""
-
-#: ../../sphinx/doc/usage/builders/index.rst:202
-msgid "To pass options directly to the ``(pdf|xe|lua)latex`` executable, use variable ``LATEXOPTS``."
+#: ../../sphinx/doc/usage/builders/index.rst:211
+msgid "Also, if ``latexmk`` is at version 4.52b or higher (January 2017) ``LATEXMKOPTS=\"-xelatex\"`` speeds up PDF builds via XeLateX in case of numerous graphics inclusions."
 msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:215
+msgid "To pass options directly to the ``(pdf|xe|lua)latex`` binary, use variable ``LATEXOPTS``, for example:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:228
 msgid "Note that a direct PDF builder is being provided by `rinohtype`_. The builder's name is ``rinoh``. Refer to the `rinohtype manual`_ for details."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:224
+#: ../../sphinx/doc/usage/builders/index.rst:237
 msgid "This builder produces a text file for each reST file -- this is almost the same as the reST source, but with much of the markup stripped for better readability."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:239
+#: ../../sphinx/doc/usage/builders/index.rst:252
 msgid "This builder produces manual pages in the groff format.  You have to specify which documents are to be included in which manual pages via the :confval:`man_pages` configuration value."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:255
+#: ../../sphinx/doc/usage/builders/index.rst:268
 msgid "This builder produces Texinfo files that can be processed into Info files by the :program:`makeinfo` program.  You have to specify which documents are to be included in which Texinfo files via the :confval:`texinfo_documents` configuration value."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:260
+#: ../../sphinx/doc/usage/builders/index.rst:273
 msgid "The Info format is the basis of the on-line help system used by GNU Emacs and the terminal-based program :program:`info`.  See :ref:`texinfo-faq` for more details.  The Texinfo format is the official documentation system used by the GNU project.  More information on Texinfo can be found at `<https://www.gnu.org/software/texinfo/>`_."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:278
+#: ../../sphinx/doc/usage/builders/index.rst:291
 msgid "This builder uses a module that implements the Python serialization API (`pickle`, `simplejson`, `phpserialize`, and others) to dump the generated HTML documentation.  The pickle builder is a subclass of it."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:282
+#: ../../sphinx/doc/usage/builders/index.rst:295
 msgid "A concrete subclass of this builder serializing to the `PHP serialization`_ format could look like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:298
+#: ../../sphinx/doc/usage/builders/index.rst:311
 msgid "A module that implements `dump()`, `load()`, `dumps()` and `loads()` functions that conform to the functions with the same names from the pickle module.  Known modules implementing this interface are `simplejson`, `phpserialize`, `plistlib`, and others."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:305
+#: ../../sphinx/doc/usage/builders/index.rst:318
 msgid "The suffix for all regular files."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:309
+#: ../../sphinx/doc/usage/builders/index.rst:322
 msgid "The filename for the file that contains the \"global context\".  This is a dict with some general configuration values such as the name of the project."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:315
+#: ../../sphinx/doc/usage/builders/index.rst:328
 msgid "The filename for the search index Sphinx generates."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:317
-#: ../../sphinx/doc/usage/builders/index.rst:327
-#: ../../sphinx/doc/usage/builders/index.rst:346
+#: ../../sphinx/doc/usage/builders/index.rst:330
+#: ../../sphinx/doc/usage/builders/index.rst:340
+#: ../../sphinx/doc/usage/builders/index.rst:359
 msgid "See :ref:`serialization-details` for details about the output format."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:323
+#: ../../sphinx/doc/usage/builders/index.rst:336
 msgid "This builder produces a directory with pickle files containing mostly HTML fragments and TOC information, for use of a web application (or custom postprocessing tool) that doesn't use the standard HTML templates."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:331
+#: ../../sphinx/doc/usage/builders/index.rst:344
 msgid "The old name ``web`` still works as well."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:337
+#: ../../sphinx/doc/usage/builders/index.rst:350
 msgid "The file suffix is ``.fpickle``.  The global context is called ``globalcontext.pickle``, the search index ``searchindex.pickle``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:342
+#: ../../sphinx/doc/usage/builders/index.rst:355
 msgid "This builder produces a directory with JSON files containing mostly HTML fragments and TOC information, for use of a web application (or custom postprocessing tool) that doesn't use the standard HTML templates."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:354
+#: ../../sphinx/doc/usage/builders/index.rst:367
 msgid "The file suffix is ``.fjson``.  The global context is called ``globalcontext.json``, the search index ``searchindex.json``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:362
+#: ../../sphinx/doc/usage/builders/index.rst:375
 msgid "This builder produces gettext-style message catalogs.  Each top-level file or subdirectory grows a single ``.pot`` catalog template."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:365
+#: ../../sphinx/doc/usage/builders/index.rst:378
 msgid "See the documentation on :ref:`intl` for further reference."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:378
+#: ../../sphinx/doc/usage/builders/index.rst:391
 msgid "This builder produces an HTML overview of all :rst:dir:`versionadded`, :rst:dir:`versionchanged` and :rst:dir:`deprecated` directives for the current :confval:`version`.  This is useful to generate a ChangeLog file, for example."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:392
+#: ../../sphinx/doc/usage/builders/index.rst:405
 msgid "This builder produces no output.  The input is only parsed and checked for consistency.  This is useful for linting purposes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:404
+#: ../../sphinx/doc/usage/builders/index.rst:417
 msgid "This builder scans all documents for external links, tries to open them with ``requests``, and writes an overview which ones are broken and redirected to standard output and to :file:`output.txt` in the output directory."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:416
+#: ../../sphinx/doc/usage/builders/index.rst:429
 msgid "Since Sphinx-1.5, the linkcheck builder comes to use requests module."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:421
+#: ../../sphinx/doc/usage/builders/index.rst:434
 msgid "This builder produces Docutils-native XML files.  The output can be transformed with standard XML tools such as XSLT processors into arbitrary final forms."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:435
+#: ../../sphinx/doc/usage/builders/index.rst:448
 msgid "This builder is used for debugging the Sphinx/Docutils \"Reader to Transform to Writer\" pipeline. It produces compact pretty-printed \"pseudo-XML\", files where nesting is indicated by indentation (no end-tags). External attributes for all elements are output, and internal attributes for any leftover \"pending\" elements are also given."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:450
+#: ../../sphinx/doc/usage/builders/index.rst:463
 msgid "Built-in Sphinx extensions that offer more builders are:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:452
+#: ../../sphinx/doc/usage/builders/index.rst:465
 msgid ":mod:`~sphinx.ext.doctest`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:453
+#: ../../sphinx/doc/usage/builders/index.rst:466
 msgid ":mod:`~sphinx.ext.coverage`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:459
+#: ../../sphinx/doc/usage/builders/index.rst:472
 msgid "Serialization builder details"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:461
+#: ../../sphinx/doc/usage/builders/index.rst:474
 msgid "All serialization builders outputs one file per source file and a few special files.  They also copy the reST source files in the directory ``_sources`` under the output directory."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:465
+#: ../../sphinx/doc/usage/builders/index.rst:478
 msgid "The :class:`.PickleHTMLBuilder` is a builtin subclass that implements the pickle serialization interface."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:468
+#: ../../sphinx/doc/usage/builders/index.rst:481
 msgid "The files per source file have the extensions of :attr:`~.SerializingHTMLBuilder.out_suffix`, and are arranged in directories just as the source files are.  They unserialize to a dictionary (or dictionary like structure) with these keys:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:475
+#: ../../sphinx/doc/usage/builders/index.rst:488
 msgid "``body``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:474
+#: ../../sphinx/doc/usage/builders/index.rst:487
 msgid "The HTML \"body\" (that is, the HTML rendering of the source file), as rendered by the HTML translator."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:478
+#: ../../sphinx/doc/usage/builders/index.rst:491
 msgid "``title``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:478
+#: ../../sphinx/doc/usage/builders/index.rst:491
 msgid "The title of the document, as HTML (may contain markup)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:481
+#: ../../sphinx/doc/usage/builders/index.rst:494
 msgid "``toc``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:481
+#: ../../sphinx/doc/usage/builders/index.rst:494
 msgid "The table of contents for the file, rendered as an HTML ``<ul>``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:484
+#: ../../sphinx/doc/usage/builders/index.rst:497
 msgid "``display_toc``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:484
+#: ../../sphinx/doc/usage/builders/index.rst:497
 msgid "A boolean that is ``True`` if the ``toc`` contains more than one entry."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:487
+#: ../../sphinx/doc/usage/builders/index.rst:500
 msgid "``current_page_name``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:487
+#: ../../sphinx/doc/usage/builders/index.rst:500
 msgid "The document name of the current file."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:493
+#: ../../sphinx/doc/usage/builders/index.rst:506
 msgid "``parents``, ``prev`` and ``next``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:490
+#: ../../sphinx/doc/usage/builders/index.rst:503
 msgid "Information about related chapters in the TOC tree.  Each relation is a dictionary with the keys ``link`` (HREF for the relation) and ``title`` (title of the related document, as HTML).  ``parents`` is a list of relations, while ``prev`` and ``next`` are a single relation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:496
+#: ../../sphinx/doc/usage/builders/index.rst:509
 msgid "``sourcename``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:496
+#: ../../sphinx/doc/usage/builders/index.rst:509
 msgid "The name of the source file under ``_sources``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:498
+#: ../../sphinx/doc/usage/builders/index.rst:511
 msgid "The special files are located in the root output directory.  They are:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:517
+#: ../../sphinx/doc/usage/builders/index.rst:530
 msgid ":attr:`.SerializingHTMLBuilder.globalcontext_filename`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:501
+#: ../../sphinx/doc/usage/builders/index.rst:514
 msgid "A pickled dict with these keys:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:504
+#: ../../sphinx/doc/usage/builders/index.rst:517
 msgid "``project``, ``copyright``, ``release``, ``version``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:504
+#: ../../sphinx/doc/usage/builders/index.rst:517
 msgid "The same values as given in the configuration file."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:507
+#: ../../sphinx/doc/usage/builders/index.rst:520
 msgid "``style``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:507
+#: ../../sphinx/doc/usage/builders/index.rst:520
 msgid ":confval:`html_style`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:510
+#: ../../sphinx/doc/usage/builders/index.rst:523
 msgid "``last_updated``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:510
+#: ../../sphinx/doc/usage/builders/index.rst:523
 msgid "Date of last build."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:514
+#: ../../sphinx/doc/usage/builders/index.rst:527
 msgid "``builder``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:513
+#: ../../sphinx/doc/usage/builders/index.rst:526
 msgid "Name of the used builder, in the case of pickles this is always ``'pickle'``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:517
+#: ../../sphinx/doc/usage/builders/index.rst:530
 msgid "``titles``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:517
+#: ../../sphinx/doc/usage/builders/index.rst:530
 msgid "A dictionary of all documents' titles, as HTML strings."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:527
+#: ../../sphinx/doc/usage/builders/index.rst:540
 msgid ":attr:`.SerializingHTMLBuilder.searchindex_filename`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:520
+#: ../../sphinx/doc/usage/builders/index.rst:533
 msgid "An index that can be used for searching the documentation.  It is a pickled list with these entries:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:523
+#: ../../sphinx/doc/usage/builders/index.rst:536
 msgid "A list of indexed docnames."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:524
+#: ../../sphinx/doc/usage/builders/index.rst:537
 msgid "A list of document titles, as HTML strings, in the same order as the first list."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:526
+#: ../../sphinx/doc/usage/builders/index.rst:539
 msgid "A dict mapping word roots (processed by an English-language stemmer) to a list of integers, which are indices into the first list."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:536
+#: ../../sphinx/doc/usage/builders/index.rst:549
 msgid "``environment.pickle``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:530
+#: ../../sphinx/doc/usage/builders/index.rst:543
 msgid "The build environment.  This is always a pickle file, independent of the builder and a copy of the environment that was used when the builder was started."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:534
+#: ../../sphinx/doc/usage/builders/index.rst:547
 msgid "Todo"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:534
+#: ../../sphinx/doc/usage/builders/index.rst:547
 msgid "Document common members."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:536
+#: ../../sphinx/doc/usage/builders/index.rst:549
 msgid "Unlike the other pickle files this pickle file requires that the ``sphinx`` package is available on unpickling."
 msgstr ""
 

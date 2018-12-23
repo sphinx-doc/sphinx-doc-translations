@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2018, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# gilberto dos santos alves <gsavix@gmail.com>, 2018
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 2.0.0+/2b2daa7a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-23 17:27+0000\n"
+"PO-Revision-Date: 2018-12-23 17:28+0000\n"
+"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2018\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:2
+msgid "Developing a \"Hello world\" directive"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:4
+msgid ""
+"The objective of this tutorial is to create a very basic extension that adds"
+" a new directive that outputs a paragraph containing `hello world`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:7
+msgid ""
+"Only basic information is provided in this tutorial. For more information, "
+"refer to the :doc:`other tutorials <index>` that go into more details."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:11
+msgid ""
+"For this extension, you will need some basic understanding of docutils_ and "
+"Python."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:15
+msgid "Creating a new extension file"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:17
+msgid ""
+"Your extension file could be in any folder of your project. In our case, "
+"let's do the following:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:20
+msgid "Create an :file:`_ext` folder in :file:`source`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:21
+msgid ""
+"Create a new Python file in the :file:`_ext` folder called "
+":file:`helloworld.py`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:24
+msgid "Here is an example of the folder structure you might obtain:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:39
+msgid "Writing the extension"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:41
+msgid "Open :file:`helloworld.py` and paste the following code in it:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:59
+msgid ""
+"Some essential things are happening in this example, and you will see them "
+"in all directives:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:63
+msgid "Directive declaration"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:64
+msgid ""
+"Our new directive is declared in the ``HelloWorld`` class, it extends "
+"docutils_' ``Directive`` class. All extensions that create directives should"
+" extend this class."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:69
+msgid "``run`` method"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:70
+msgid ""
+"This method is a requirement and it is part of every directive. It contains "
+"the main logic of the directive and it returns a list of docutils nodes to "
+"be processed by Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:76
+msgid ":doc:`todo`"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:79
+msgid "docutils nodes"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:80
+msgid ""
+"The ``run`` method returns a list of nodes. Nodes are docutils' way of "
+"representing the content of a document. There are many types of nodes "
+"available: text, paragraph, reference, table, etc."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:86
+msgid "`The docutils documentation on nodes <docutils nodes>`_"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:88
+msgid ""
+"The ``nodes.paragraph`` class creates a new paragraph node. A paragraph node"
+" typically contains some text that we can set during instantiation using the"
+" ``text`` parameter."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:93
+msgid "``setup`` function"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:94
+msgid ""
+"This function is a requirement. We use it to plug our new directive into "
+"Sphinx. The simplest thing you can do it call the ``app.add_directive`` "
+"method."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:100
+msgid ""
+"The first argument is the name of the directive itself as used in an rST "
+"file."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:102
+msgid "In our case, we would use ``helloworld``:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:114
+msgid "Updating the conf.py file"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:116
+msgid ""
+"The extension file has to be declared in your :file:`conf.py` file to make "
+"Sphinx aware of it:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:119
+msgid "Open :file:`conf.py`. It is in the :file:`source` folder by default."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:120
+msgid ""
+"Add ``sys.path.append(os.path.abspath(\"./_ext\"))`` before the "
+"``extensions`` variable declaration (if it exists)."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:122
+msgid ""
+"Update or create the ``extensions`` list and add the extension file name to "
+"the list:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:129
+msgid "You can now use the extension."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:131
+msgid "Example"
+msgstr "Exemplo"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:141
+msgid "The sample above would generate:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:151
+msgid ""
+"This is the very basic principle of an extension that creates a new "
+"directive."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:153
+msgid "For a more advanced example, refer to :doc:`todo`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:156
+msgid "Further reading"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:158
+msgid ""
+"You can create your own nodes if needed, refer to the :doc:`todo` for more "
+"information."
+msgstr ""

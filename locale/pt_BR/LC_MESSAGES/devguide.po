@@ -6,8 +6,8 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2017
 # Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2017
-# Claudio Rogerio, 2017
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-12 09:42+0000\n"
 "PO-Revision-Date: 2017-07-04 15:52+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,6 +46,8 @@ msgstr ""
 #: ../../sphinx/CONTRIBUTING.rst:15
 msgid "The Sphinx source code is managed using Git and is hosted on GitHub."
 msgstr ""
+"O código fonte do ``Sphinx`` é gerenciado usando o Git e está hospedado no "
+"GitHub."
 
 #: ../../sphinx/CONTRIBUTING.rst:17
 msgid "git clone git://github.com/sphinx-doc/sphinx"
@@ -89,6 +91,9 @@ msgid ""
 "feature, please submit it to the `issue tracker`_ on GitHub or discuss it on"
 " the `sphinx-dev`_ mailing list."
 msgstr ""
+"Se você encontrou um problema no ``Sphinx`` ou tem uma ideia para um novo "
+"recurso, envie-o para o `issue tracker`_ no GitHub ou discuta-o na lista de "
+"discussão `sphinx-dev`_."
 
 #: ../../sphinx/CONTRIBUTING.rst:38
 msgid ""
@@ -97,6 +102,10 @@ msgid ""
 "exception.  The location of this file should be shown towards the end of the"
 " error message."
 msgstr ""
+"Para relatórios de bugs, inclua a saída produzida durante o processo de "
+"compilação e também o arquivo de log criado pelo ``Sphinx`` após encontrar "
+"uma exceção não tratada. A localização deste arquivo deve ser mostrada no "
+"final da mensagem de erro."
 
 #: ../../sphinx/CONTRIBUTING.rst:43
 msgid ""
@@ -138,6 +147,9 @@ msgid ""
 "If you feel uncomfortable or uncertain about an issue or your changes, feel "
 "free to email the *sphinx-dev* mailing list."
 msgstr ""
+"Se você se sentir desconfortável ou incerto sobre um problema ou suas "
+"alterações, sinta-se à vontade para enviar e-mail para a lista de e-mail "
+"*sphinx-dev."
 
 #: ../../sphinx/CONTRIBUTING.rst:63
 msgid ""
@@ -206,7 +218,7 @@ msgstr ""
 
 #: ../../sphinx/CONTRIBUTING.rst:103
 msgid "Setup a virtual environment."
-msgstr ""
+msgstr "Configurar um ambiente virtual."
 
 #: ../../sphinx/CONTRIBUTING.rst:105
 msgid ""
@@ -214,6 +226,9 @@ msgid ""
 "necessary if you wish to run ``sphinx-build`` locally or run unit tests "
 "without the help of ``tox``. ::"
 msgstr ""
+"Isto não é necessário para testes unitários, graças ao ``tox``, mas é "
+"necessário se você deseja executar ``sphinx-build`` localmente ou executar "
+"testes unitários sem a ajuda do ``tox``::"
 
 #: ../../sphinx/CONTRIBUTING.rst:113
 msgid "Create a new working branch.  Choose any name you like. ::"
@@ -229,56 +244,68 @@ msgstr "Para dicas como codificar, ver `Coding Guide`_."
 
 #: ../../sphinx/CONTRIBUTING.rst:121
 msgid "Test, test, test."
-msgstr ""
+msgstr "Teste, teste, teste."
 
 #: ../../sphinx/CONTRIBUTING.rst:123
 msgid ""
 "Testing is best done through ``tox``, which provides a number of targets and"
 " allows testing against multiple different Python environments:"
 msgstr ""
+"O teste é feito melhor através do ``tox``, que fornece vários alvos e "
+"permite testar vários ambientes diferentes do Python:"
 
 #: ../../sphinx/CONTRIBUTING.rst:126
 msgid "To list all possible targets::"
-msgstr ""
+msgstr "Para listar todos os alvos possíveis::"
 
 #: ../../sphinx/CONTRIBUTING.rst:130
 msgid "To run unit tests for a specific Python version, such as 3.6::"
 msgstr ""
+"Para executar testes de unidade para uma versão específica do Python, como "
+"3.6::"
 
 #: ../../sphinx/CONTRIBUTING.rst:134
 msgid ""
 "To run unit tests for a specific Python version and turn on deprecation "
 "warnings on so they're shown in the test output::"
 msgstr ""
+"Para executar testes de unidade para uma versão específica do Python e "
+"ativar os avisos de descontinuação para que eles sejam mostrados na saída de"
+" teste::"
 
 #: ../../sphinx/CONTRIBUTING.rst:139
 msgid "To run code style and type checks::"
-msgstr ""
+msgstr "Para executar o estilo de código e tipo de verificações::"
 
 #: ../../sphinx/CONTRIBUTING.rst:144
 msgid ""
 "Arguments to ``pytest`` can be passed via ``tox``, e.g. in order to run a "
 "particular test::"
 msgstr ""
+"Argumentos para ``pytest`` podem ser passados via ``tox``, por exemplo, a "
+"fim de executar um teste específico::"
 
 #: ../../sphinx/CONTRIBUTING.rst:149
 msgid "To build the documentation::"
-msgstr ""
+msgstr "Para construir a documentação::"
 
 #: ../../sphinx/CONTRIBUTING.rst:153
 msgid "To build the documentation in multiple formats::"
-msgstr ""
+msgstr "Para construir a documentação em vários formatos::"
 
 #: ../../sphinx/CONTRIBUTING.rst:157
 msgid ""
 "You can also test by installing dependencies in your local environment. ::"
 msgstr ""
+"Você também pode testar instalando dependências em seu ambiente local::"
 
 #: ../../sphinx/CONTRIBUTING.rst:161
 msgid ""
 "New unit tests should be included in the ``tests`` directory where "
 "necessary:"
 msgstr ""
+"Novos testes unitários devem ser incluídos no diretório ``tests`` onde "
+"necessário:"
 
 #: ../../sphinx/CONTRIBUTING.rst:164
 msgid ""
@@ -295,6 +322,11 @@ msgid ""
 " ``build_all`` for a few assertions are not good since *the test suite "
 "should not take more than a minute to run*."
 msgstr ""
+"Os testes que precisam de uma execução ``sphinx-build`` devem ser integrados"
+" em um dos módulos de teste existentes, se possível. Novos testes que para "
+"``@with_app`` e depois ``build_all`` para algumas asserções não são bons "
+"desde *o conjunto de testes não deve demorar mais de um minuto para ser "
+"executado*."
 
 #: ../../sphinx/CONTRIBUTING.rst:172
 msgid ""
@@ -310,6 +342,8 @@ msgid ""
 "GitHub recognizes certain phrases that can be used to automatically update "
 "the issue tracker."
 msgstr ""
+"O GitHub reconhece certas frases que podem ser usadas para atualizar "
+"automaticamente o rastreador de problemas."
 
 #: ../../sphinx/CONTRIBUTING.rst:180
 msgid "For example::"
@@ -322,12 +356,15 @@ msgstr "pode fechar requerimento #42."
 #: ../../sphinx/CONTRIBUTING.rst:186
 msgid "Push changes in the branch to your forked repository on GitHub. ::"
 msgstr ""
+"Empurre as alterações no branch para o seu repositório forkado no GitHub::"
 
 #: ../../sphinx/CONTRIBUTING.rst:190
 msgid ""
 "Submit a pull request from your branch to the respective branch (``master`` "
 "or ``X.Y``)."
 msgstr ""
+"Envie um *pull request* de seu branch para o respectivo branch (``master`` "
+"ou ``X.Y``)."
 
 #: ../../sphinx/CONTRIBUTING.rst:193
 msgid "Wait for a core developer to review your changes."
@@ -412,6 +449,8 @@ msgid ""
 "Sphinx uses `Babel <http://babel.pocoo.org/en/latest/>`_ to extract messages"
 " and maintain the catalog files.  It is integrated in ``setup.py``:"
 msgstr ""
+"O ``Sphinx`` usa o `Babel <http://babel.pocoo.org/en/latest/>`_ para extrair"
+" mensagens e manter os arquivos de catálogo. Está integrado no ``setup.py``:"
 
 #: ../../sphinx/CONTRIBUTING.rst:230
 msgid ""
@@ -544,6 +583,7 @@ msgstr ""
 #: ../../sphinx/CONTRIBUTING.rst:284
 msgid "Use the :option:`sphinx-build -P` option to run ``pdb`` on exceptions."
 msgstr ""
+"Use a opção :option:`sphinx-build -P` para executar ``pd`` em exceções."
 
 #: ../../sphinx/CONTRIBUTING.rst:286
 msgid ""
@@ -586,10 +626,16 @@ msgid ""
 "<https://github.com/shibukawa/snowball-stemmer.jsx>`_. You can get the "
 "resulting JavaScript files using the following command::"
 msgstr ""
+"Os algoritmos de stemming de JavaScript em ``sphinx/search/*.py`` (exceto "
+"``en.py``) são gerados por este ``gerador de snowballcode modificado "
+"<https://github.com/shibukawa/snowball>`_. Os arquivos `JSX "
+"<https://jsx.github.io/>`_ gerados estão neste repositório "
+"<https://github.com/shibukawa/snowball-stemmer.jsx>`_. Você pode obter os "
+"arquivos JavaScript resultantes usando o seguinte comando::"
 
 #: ../../sphinx/CONTRIBUTING.rst:310
 msgid "Branch Model"
-msgstr ""
+msgstr "Modelo de Branch"
 
 #: ../../sphinx/CONTRIBUTING.rst:312
 msgid "Sphinx project uses following branches for developing."
@@ -597,7 +643,7 @@ msgstr ""
 
 #: ../../sphinx/CONTRIBUTING.rst:316
 msgid "``master``"
-msgstr ""
+msgstr "``master``"
 
 #: ../../sphinx/CONTRIBUTING.rst:315
 msgid ""
@@ -607,7 +653,7 @@ msgstr ""
 
 #: ../../sphinx/CONTRIBUTING.rst:324
 msgid "``X.Y``"
-msgstr ""
+msgstr "``X.Y``"
 
 #: ../../sphinx/CONTRIBUTING.rst:319
 msgid ""
@@ -620,17 +666,21 @@ msgstr ""
 
 #: ../../sphinx/CONTRIBUTING.rst:327
 msgid "Deprecating a feature"
-msgstr ""
+msgstr "Recurso em Desuso"
 
 #: ../../sphinx/CONTRIBUTING.rst:329
 msgid "There are a couple reasons that code in Sphinx might be deprecated:"
 msgstr ""
+"Existem alguns motivos pelos quais o código no ``Sphinx`` pode ser "
+"descontinuado:"
 
 #: ../../sphinx/CONTRIBUTING.rst:331
 msgid ""
 "If a feature has been improved or modified in a backwards-incompatible way, "
 "the old feature or behavior will be deprecated."
 msgstr ""
+"Se um recurso foi aprimorado ou modificado de maneira incompatível com "
+"versões anteriores, o recurso ou comportamento antigo será descontinuado."
 
 #: ../../sphinx/CONTRIBUTING.rst:334
 msgid ""
@@ -639,6 +689,10 @@ msgid ""
 "no longer needs to support the older version of Python that doesn't include "
 "the library, the library will be deprecated in Sphinx."
 msgstr ""
+"Às vezes, o ``Sphinx`` incluirá um backport de uma biblioteca Python que não"
+" está incluída em uma versão do Python que o ``Sphinx`` atualmente suporta. "
+"Quando o ``Sphinx`` não precisa mais suportar a versão mais antiga do Python"
+" que não inclui a biblioteca, a biblioteca será descontinuada no ``Sphinx``."
 
 #: ../../sphinx/CONTRIBUTING.rst:339
 msgid ""
@@ -649,16 +703,24 @@ msgid ""
 "these warnings are converted to errors when running the test suite with "
 "warnings enabled::"
 msgstr ""
+"Como o :ref:`deprecation-policy` descreve, o primeiro release do ``Sphinx`` "
+"que marcou um recurso como estando em desuso (``A.B``) deve gerar um "
+"``RemovedInSphinxXXWarning`` (em que ``XX`` é a versão do ``Sphinx`` em que "
+"o recurso será removido) quando o recurso em desuso for chamado. Supondo que"
+" tenhamos uma boa cobertura de teste, esses avisos serão convertidos em "
+"erros ao executar o conjunto de testes com avisos ativados::"
 
 #: ../../sphinx/CONTRIBUTING.rst:348
 msgid ""
 "Thus, when adding a ``RemovedInSphinxXXWarning`` you need to eliminate or "
 "silence any warnings generated when running the tests."
 msgstr ""
+"Assim, ao adicionar um ``RemovedInSphinxXXWarning``, você precisa eliminar "
+"ou silenciar quaisquer avisos gerados ao executar os testes."
 
 #: ../../sphinx/CONTRIBUTING.rst:354
 msgid "Deprecation policy"
-msgstr ""
+msgstr "Política de Desuso"
 
 #: ../../sphinx/CONTRIBUTING.rst:356
 msgid ""
@@ -697,6 +759,8 @@ msgid ""
 "The warnings are displayed by default. You can turn off display of these "
 "warnings with:"
 msgstr ""
+"Os avisos são exibidos por padrão. Você pode desativar a exibição desses "
+"avisos com:"
 
 #: ../../sphinx/CONTRIBUTING.rst:377
 msgid "``PYTHONWARNINGS= make html`` (Linux/Mac)"
@@ -712,7 +776,7 @@ msgstr "``set PYTHONWARNINGS=`` e executar ``make html`` (Windows)"
 
 #: ../../sphinx/CONTRIBUTING.rst:382
 msgid "Unit Testing"
-msgstr ""
+msgstr "Testes Unitários"
 
 #: ../../sphinx/CONTRIBUTING.rst:384
 msgid ""
@@ -722,6 +786,12 @@ msgid ""
 " extensions, you can write unit tests with using pytest. At this time, "
 "``sphinx.testing`` will help your test implementation."
 msgstr ""
+"O ``Sphinx`` foi testado com runner do ``PyTest``. Os desenvolvedores do "
+"``Sphinx`` escrevem testes unitários usando a notação ``PyTest``. As funções"
+" de utilidade e os dispositivos de teste ``PyTest`` para testes são "
+"fornecidos em ``sphinx.testing``. Se você é um desenvolvedor de extensões "
+"``Sphinx``, você pode escrever testes de unidade usando o ``PyTest``. Neste "
+"momento, o ``sphinx.testing`` ajudará sua implementação de teste."
 
 #: ../../sphinx/CONTRIBUTING.rst:390
 msgid ""
@@ -729,6 +799,9 @@ msgid ""
 "require ``'sphinx.testing.fixtures'`` in your test modules or "
 "``conftest.py`` files like this::"
 msgstr ""
+"Como usar as ``fixtures`` do ``PyTest`` que são fornecidos pelo "
+"``sphinx.testing``? Você pode requer ``'sphinx.testing.fixtures'`` em seus "
+"módulos de teste ou arquivos ``conftest.py`` como este::"
 
 #: ../../sphinx/CONTRIBUTING.rst:396
 msgid ""
@@ -736,11 +809,13 @@ msgid ""
 "``tests/conftest.py`` and other ``test_*.py`` files under ``tests`` "
 "directory."
 msgstr ""
+"Se você quiser saber o uso mais detalhado, consulte ``tests/conftest.py`` e "
+"outros arquivos ``test_*.py`` sob o diretório ``tests``."
 
 #: ../../sphinx/CONTRIBUTING.rst:401
 msgid "Prior to Sphinx - 1.5.2, Sphinx was running the test with nose."
-msgstr ""
+msgstr "Antes do Sphinx - 1.5.2, o ``Sphinx`` fazia o teste com o ``Nose``."
 
 #: ../../sphinx/CONTRIBUTING.rst:403
 msgid "``sphinx.testing`` as a experimental."
-msgstr ""
+msgstr "``sphinx.testing`` como experimental."

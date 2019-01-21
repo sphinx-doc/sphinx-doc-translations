@@ -6,15 +6,16 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2018
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/bc959382\n"
+"Project-Id-Version: Sphinx 2.0.0+/74d6ea26\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 17:38+0000\n"
+"POT-Creation-Date: 2019-01-21 17:40+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2018\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +75,7 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/index.rst:26
 msgid "Discovery of builders by entry point"
-msgstr ""
+msgstr "Descoberta de construtores por ponto de entrada"
 
 #: ../../sphinx/doc/extdev/index.rst:30
 msgid ""
@@ -82,6 +83,9 @@ msgid ""
 "that they do not have to be listed in the :confval:`extensions` "
 "configuration value."
 msgstr ""
+"As extensões do :term:`Builder` podem ser descobertas por meio de `entry "
+"points`_, para que não precisem ser listadas no valor de configuração "
+":confval:`extensions`."
 
 #: ../../sphinx/doc/extdev/index.rst:34
 msgid ""
@@ -92,12 +96,21 @@ msgid ""
 "name of the extension module. Here is an example of how an entry point for "
 "'mybuilder' can be defined in the extension's ``setup.py``::"
 msgstr ""
+"As extensões do construtor devem definir um ponto de entrada no grupo "
+"``sphinx.builders``. O nome do ponto de entrada precisa corresponder ao "
+"atributo :attr:`~.Builder.name` do seu construtor, que é o nome passado para"
+" a opção :option:`sphinx-build -b`. O valor do ponto de entrada deve ser "
+"igual ao nome pontilhado do módulo de extensão. Aqui está um exemplo de como"
+" um ponto de entrada para 'mybuilder' pode ser definido no ``setup.py`` da "
+"extensão::"
 
 #: ../../sphinx/doc/extdev/index.rst:50
 msgid ""
 "Note that it is still necessary to register the builder using "
 ":meth:`~.Sphinx.add_builder` in the extension's :func:`setup` function."
 msgstr ""
+"Observe que ainda é necessário registrar o construtor usando "
+":meth:`~.Sphinx.add_builder` na função :func:`setup` da extensão."
 
 #: ../../sphinx/doc/extdev/index.rst:58
 msgid "Important objects"
@@ -108,6 +121,8 @@ msgid ""
 "There are several key objects whose API you will use while writing an "
 "extension. These are:"
 msgstr ""
+"Existem vários objetos-chave cuja API você usará ao escrever uma extensão. "
+"São eles:"
 
 #: ../../sphinx/doc/extdev/index.rst:69
 msgid "**Application**"
@@ -119,12 +134,18 @@ msgid ""
 ":class:`.Sphinx`.  It controls most high-level functionality, such as the "
 "setup of extensions, event dispatching and producing output (logging)."
 msgstr ""
+"O objeto de aplicação (geralmente chamado ``app``) é uma instância de "
+":class:`.Sphinx`. Ele controla a maioria das funcionalidades de alto nível, "
+"como a configuração de extensões, o despacho de eventos e a produção de "
+"saída (logging)."
 
 #: ../../sphinx/doc/extdev/index.rst:68
 msgid ""
 "If you have the environment object, the application is available as "
 "``env.app``."
 msgstr ""
+"Se você tiver o objeto de ambiente, o aplicativo estará disponível como "
+"``env.app``."
 
 #: ../../sphinx/doc/extdev/index.rst:82
 msgid "**Environment**"
@@ -137,6 +158,10 @@ msgid ""
 "documents, stores all metadata about the document collection and is "
 "serialized to disk after each build."
 msgstr ""
+"O objeto do ambiente de construção (geralmente chamado ``env``) é uma "
+"instância de :class:`.BuildEnvironment`. Ele é responsável por analisar os "
+"documentos de origem, armazena todos os metadados sobre a coleção de "
+"documentos e é serializado em disco após cada compilação."
 
 #: ../../sphinx/doc/extdev/index.rst:77
 msgid ""
@@ -144,12 +169,17 @@ msgid ""
 "references, etc.  It can also be used by extensions to cache information "
 "that should persist for incremental rebuilds."
 msgstr ""
+"Sua API fornece métodos para acessar metadados, resolver referências, etc. "
+"Também pode ser usada por extensões para armazenar em cache informações que "
+"devem persistir para recriações incrementais."
 
 #: ../../sphinx/doc/extdev/index.rst:81
 msgid ""
 "If you have the application or builder object, the environment is available "
 "as ``app.env`` or ``builder.env``."
 msgstr ""
+"Se você tiver o objeto do aplicativo ou construtor, o ambiente estará "
+"disponível como ``app.env`` ou ``builder.env``."
 
 #: ../../sphinx/doc/extdev/index.rst:91
 msgid "**Builder**"
@@ -162,12 +192,18 @@ msgid ""
 " parsed documents into an output format, or otherwise process them (e.g. "
 "check external links)."
 msgstr ""
+"O objeto construtor (geralmente chamado ``builder``) é uma instância de uma "
+"subclasse específica de :class:`.Builder`. Cada classe de construtor sabe "
+"como converter os documentos analisados em um formato de saída ou processá-"
+"los (por exemplo, verificar links externos)."
 
 #: ../../sphinx/doc/extdev/index.rst:90
 msgid ""
 "If you have the application object, the builder is available as "
 "``app.builder``."
 msgstr ""
+"Se você tiver o objeto do aplicativo, o construtor estará disponível como "
+"``app.builder``."
 
 #: ../../sphinx/doc/extdev/index.rst:98
 msgid "**Config**"
@@ -179,16 +215,21 @@ msgid ""
 "configuration values set in :file:`conf.py` as attributes.  It is an "
 "instance of :class:`.Config`."
 msgstr ""
+"O objeto de configuração (geralmente chamado ``config``) fornece os valores "
+"dos valores de configuração definidos em :file:`conf.py` como atributos. É "
+"uma instância de :class:`.Config`."
 
 #: ../../sphinx/doc/extdev/index.rst:98
 msgid "The config is available as ``app.config`` or ``env.config``."
-msgstr ""
+msgstr "A configuração está disponível como ``app.config`` ou ``env.config``."
 
 #: ../../sphinx/doc/extdev/index.rst:100
 msgid ""
 "To see an example of use of these objects, refer to "
 ":doc:`../development/tutorials/index`."
 msgstr ""
+"Para ver um exemplo de uso desses objetos, consulte "
+":doc:`../development/tutorials/index`."
 
 #: ../../sphinx/doc/extdev/index.rst:105
 msgid "Build Phases"
@@ -199,6 +240,8 @@ msgid ""
 "One thing that is vital in order to understand extension mechanisms is the "
 "way in which a Sphinx project is built: this works in several phases."
 msgstr ""
+"Uma coisa que é vital para entender os mecanismos de extensão é a maneira "
+"como um projeto ``Sphinx`` é construído: isso funciona em várias fases."
 
 #: ../../sphinx/doc/extdev/index.rst:110
 msgid "**Phase 0: Initialization**"
@@ -211,6 +254,10 @@ msgid ""
 "Should a stored build environment exist, it is loaded, otherwise a new one "
 "is created."
 msgstr ""
+"Nesta fase, quase nada de interessante para nós acontece. O diretório de "
+"origem é pesquisado por arquivos de origem e as extensões são inicializadas."
+" Se existir um ambiente de compilação armazenado, ele será carregado, caso "
+"contrário, um novo será criado."
 
 #: ../../sphinx/doc/extdev/index.rst:117
 msgid "**Phase 1: Reading**"
@@ -225,6 +272,13 @@ msgid ""
 " of docutils nodes.  For document elements that aren't fully known until all"
 " existing files are read, temporary nodes are created."
 msgstr ""
+"Na Fase 1, todos os arquivos de origem (e em compilações subsequentes, "
+"aqueles que são novos ou alterados) são lidos e analisados. Esta é a fase em"
+" que diretivas e funções são encontradas pelos ``docutils`` e o código "
+"correspondente é executado. A saída desta fase é um *doctree* para cada "
+"arquivo de origem; isso é uma árvore de nós ``docutils``. Para elementos de "
+"documento que não são totalmente conhecidos até que todos os arquivos "
+"existentes sejam lidos, nós temporários são criados."
 
 #: ../../sphinx/doc/extdev/index.rst:126
 msgid ""
@@ -232,6 +286,10 @@ msgid ""
 "documentation <http://docutils.sourceforge.net/docs/ref/doctree.html>`__. "
 "Additional nodes are provided by Sphinx and :ref:`documented here <nodes>`."
 msgstr ""
+"Existem nós fornecidos por ``docutils``, que são documentados `na "
+"documentação do docutils "
+"<http://docutils.sourceforge.net/docs/ref/doctree.html>`__. Nós adicionais "
+"são fornecidos pelo ``Sphinx`` e :ref:`documented here <nodes>`."
 
 #: ../../sphinx/doc/extdev/index.rst:130
 msgid ""
@@ -240,12 +298,18 @@ msgid ""
 " described Python objects and index entries.  This will later be used to "
 "replace the temporary nodes."
 msgstr ""
+"Durante a leitura, o ambiente de compilação é atualizado com todos os dados "
+"de meta e referência cruzada dos documentos lidos, como labels, os nomes dos"
+" títulos, objetos descritos do Python e entradas de índice. Isso será usado "
+"posteriormente para substituir os nós temporários."
 
 #: ../../sphinx/doc/extdev/index.rst:135
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
 msgstr ""
+"Os ``doctrees`` analisados são armazenados no disco, porque não é possível "
+"manter todos eles na memória."
 
 #: ../../sphinx/doc/extdev/index.rst:138
 msgid "**Phase 2: Consistency checks**"
@@ -254,6 +318,8 @@ msgstr "**Phase 2: Verificações e consistências**"
 #: ../../sphinx/doc/extdev/index.rst:140
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr ""
+"Alguma verificação é feita para garantir que não haja surpresas nos "
+"documentos construídos."
 
 #: ../../sphinx/doc/extdev/index.rst:142
 msgid "**Phase 3: Resolving**"
@@ -267,6 +333,12 @@ msgid ""
 "for object references that exist, and simple literal nodes are created for "
 "those that don't."
 msgstr ""
+"Agora que os metadados e os dados de referência cruzada de todos os "
+"documentos existentes são conhecidos, todos os nós temporários são "
+"substituídos por nós que podem ser convertidos em saída usando componentes "
+"chamados de transformações. Por exemplo, links são criados para referências "
+"de objetos existentes e nós literais simples são criados para aqueles que "
+"não existem."
 
 #: ../../sphinx/doc/extdev/index.rst:150
 msgid "**Phase 4: Writing**"
@@ -279,6 +351,10 @@ msgid ""
 " the individual nodes of each doctree and produces some output in the "
 "process."
 msgstr ""
+"Esta fase converte os ``doctrees`` resolvidos no formato de saída desejado, "
+"como HTML ou LaTeX. Isso acontece por meio de um escritor chamado "
+"``docutils``, que visita os nós individuais de cada ``doctree`` e produz "
+"alguma saída no processo."
 
 #: ../../sphinx/doc/extdev/index.rst:158
 msgid ""
@@ -286,12 +362,17 @@ msgid ""
 " that checks external links does not need anything more than the parsed "
 "doctrees and therefore does not have phases 2--4."
 msgstr ""
+"Alguns construtores se desviam desse plano de construção geral, por exemplo,"
+" o construtor que verifica links externos não precisa de nada além dos "
+"``doctrees`` analisados e, portanto, não possui as fases 2-4."
 
 #: ../../sphinx/doc/extdev/index.rst:162
 msgid ""
 "To see an example of application, refer to "
 ":doc:`../development/tutorials/todo`."
 msgstr ""
+"Para ver um exemplo de aplicação, consulte "
+":doc:`../development/tutorials/todo`."
 
 #: ../../sphinx/doc/extdev/index.rst:167
 msgid "Extension metadata"
@@ -327,6 +408,12 @@ msgid ""
 "given, Sphinx considers the extension does not stores any data to "
 "environment."
 msgstr ""
+"``'env_version'``: um inteiro que identifica a versão da estrutura de dados "
+"``env`` se a extensão armazena dados no ambiente. Ele é usado para detectar "
+"que a estrutura de dados foi alterada da última construção. As extensões "
+"precisam incrementar a versão quando a estrutura de dados for alterada. Se "
+"não for fornecido, o ``Sphinx`` considera que a extensão não armazena dados "
+"no ambiente."
 
 #: ../../sphinx/doc/extdev/index.rst:182
 msgid ""
@@ -357,7 +444,7 @@ msgstr "APIs usadas para gravar extensões"
 
 #: ../../sphinx/doc/extdev/index.rst:212
 msgid "Deprecated APIs"
-msgstr ""
+msgstr "APIs em Desuso"
 
 #: ../../sphinx/doc/extdev/index.rst:214
 msgid ""
@@ -367,30 +454,35 @@ msgid ""
 " two major versions (for more details, please see :ref:`deprecation-"
 "policy`)."
 msgstr ""
+"No desenvolvimento do ``Sphinx``, estamos sempre atentos à compatibilidade "
+"de nossas APIs. Mas, às vezes, a mudança de interface é necessária por "
+"alguns motivos. Nesses casos, as marcamos como obsoletas. E elas são "
+"mantidos durante as duas versões principais (para mais detalhes, consulte "
+":ref:`deprecation-policy`)."
 
 #: ../../sphinx/doc/extdev/index.rst:219
 msgid "The following is a list of deprecated interfaces."
-msgstr ""
+msgstr "A seguir, uma lista de interfaces obsoletas."
 
 #: ../../sphinx/doc/extdev/index.rst:227
 msgid "deprecated APIs"
-msgstr ""
+msgstr "APIs em desuso"
 
 #: ../../sphinx/doc/extdev/index.rst:232
 msgid "Target"
-msgstr ""
+msgstr "Target"
 
 #: ../../sphinx/doc/extdev/index.rst:233
 msgid "|LaTeXHyphenate|\\ Deprecated"
-msgstr ""
+msgstr "|LaTeXHyphenate|\\ Deprecated"
 
 #: ../../sphinx/doc/extdev/index.rst:234
 msgid "(will be) Removed"
-msgstr ""
+msgstr "(will be) Removed"
 
 #: ../../sphinx/doc/extdev/index.rst:235
 msgid "Alternatives"
-msgstr ""
+msgstr "Alternatives"
 
 #: ../../sphinx/doc/extdev/index.rst:237
 msgid ""
@@ -399,6 +491,10 @@ msgid ""
 "``autodoc.DocstringSignatureMixin._find_signature()``, and "
 "``autodoc.ClassDocumenter.get_doc()``"
 msgstr ""
+"``encoding`` argument of ``autodoc.Documenter.get_doc()``, "
+"``autodoc.DocstringSignatureMixin.get_doc()``, "
+"``autodoc.DocstringSignatureMixin._find_signature()``, and "
+"``autodoc.ClassDocumenter.get_doc()``"
 
 #: ../../sphinx/doc/extdev/index.rst:241 ../../sphinx/doc/extdev/index.rst:248
 #: ../../sphinx/doc/extdev/index.rst:253 ../../sphinx/doc/extdev/index.rst:259
@@ -437,7 +533,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:976 ../../sphinx/doc/extdev/index.rst:981
 #: ../../sphinx/doc/extdev/index.rst:986
 msgid "2.0"
-msgstr ""
+msgstr "2.0"
 
 #: ../../sphinx/doc/extdev/index.rst:242 ../../sphinx/doc/extdev/index.rst:249
 #: ../../sphinx/doc/extdev/index.rst:254 ../../sphinx/doc/extdev/index.rst:260
@@ -464,7 +560,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:521 ../../sphinx/doc/extdev/index.rst:526
 #: ../../sphinx/doc/extdev/index.rst:531 ../../sphinx/doc/extdev/index.rst:536
 msgid "4.0"
-msgstr ""
+msgstr "4.0"
 
 #: ../../sphinx/doc/extdev/index.rst:243 ../../sphinx/doc/extdev/index.rst:250
 #: ../../sphinx/doc/extdev/index.rst:255 ../../sphinx/doc/extdev/index.rst:261
@@ -498,7 +594,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:729 ../../sphinx/doc/extdev/index.rst:734
 #: ../../sphinx/doc/extdev/index.rst:739 ../../sphinx/doc/extdev/index.rst:832
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../sphinx/doc/extdev/index.rst:245
 msgid ""
@@ -506,160 +602,165 @@ msgid ""
 "``EpubBuilder.build_container()``, ``EpubBuilder.build_content()``, "
 "``EpubBuilder.build_toc()`` and ``EpubBuilder.build_epub()``"
 msgstr ""
+"arguments of ``EpubBuilder.build_mimetype()``, "
+"``EpubBuilder.build_container()``, ``EpubBuilder.build_content()``, "
+"``EpubBuilder.build_toc()`` e  ``EpubBuilder.build_epub()``"
 
 #: ../../sphinx/doc/extdev/index.rst:252
 msgid "arguments of ``Epub3Builder.build_navigation_doc()``"
-msgstr ""
+msgstr "o argumento de ``Epub3Builder.build_navigation_doc()``"
 
 #: ../../sphinx/doc/extdev/index.rst:257
 msgid ""
 "``nodetype`` argument of ``sphinx.search.WordCollector.is_meta_keywords()``"
 msgstr ""
+"``nodetype`` argument of ``sphinx.search.WordCollector.is_meta_keywords()``"
 
 #: ../../sphinx/doc/extdev/index.rst:263
 msgid "``suffix`` argument of ``BuildEnvironment.doc2path()``"
-msgstr ""
+msgstr "``suffix`` argument of ``BuildEnvironment.doc2path()``"
 
 #: ../../sphinx/doc/extdev/index.rst:268
 msgid "string style ``base`` argument of ``BuildEnvironment.doc2path()``"
 msgstr ""
+"argumento ``base`` de estilo string de ``BuildEnvironment.doc2path()``"
 
 #: ../../sphinx/doc/extdev/index.rst:271
 msgid "``os.path.join()``"
-msgstr ""
+msgstr "``os.path.join()``"
 
 #: ../../sphinx/doc/extdev/index.rst:273
 msgid "``sphinx.addnodes.abbreviation``"
-msgstr ""
+msgstr "``sphinx.addnodes.abbreviation``"
 
 #: ../../sphinx/doc/extdev/index.rst:276
 msgid "``docutils.nodes.abbreviation``"
-msgstr ""
+msgstr "``docutils.nodes.abbreviation``"
 
 #: ../../sphinx/doc/extdev/index.rst:278
 msgid "``sphinx.builders.epub3.Epub3Builder.validate_config_value()``"
-msgstr ""
+msgstr "``sphinx.builders.epub3.Epub3Builder.validate_config_value()``"
 
 #: ../../sphinx/doc/extdev/index.rst:281
 msgid "``sphinx.builders.epub3.validate_config_values()``"
-msgstr ""
+msgstr "``sphinx.builders.epub3.validate_config_values()``"
 
 #: ../../sphinx/doc/extdev/index.rst:283
 msgid "``sphinx.builders.html.SingleFileHTMLBuilder``"
-msgstr ""
+msgstr "``sphinx.builders.html.SingleFileHTMLBuilder``"
 
 #: ../../sphinx/doc/extdev/index.rst:286
 msgid "``sphinx.builders.singlehtml.SingleFileHTMLBuilder``"
-msgstr ""
+msgstr "``sphinx.builders.singlehtml.SingleFileHTMLBuilder``"
 
 #: ../../sphinx/doc/extdev/index.rst:288
 msgid "``sphinx.builders.htmlhelp.HTMLHelpBuilder.open_file()``"
-msgstr ""
+msgstr "``sphinx.builders.htmlhelp.HTMLHelpBuilder.open_file()``"
 
 #: ../../sphinx/doc/extdev/index.rst:291
 msgid "``open()``"
-msgstr ""
+msgstr "``open()``"
 
 #: ../../sphinx/doc/extdev/index.rst:293
 msgid "``sphinx.builders.qthelp``"
-msgstr ""
+msgstr "``sphinx.builders.qthelp``"
 
 #: ../../sphinx/doc/extdev/index.rst:296
 msgid "``sphinxcontrib.qthelp``"
-msgstr ""
+msgstr "``sphinxcontrib.qthelp``"
 
 #: ../../sphinx/doc/extdev/index.rst:298
 msgid "``sphinx.cmd.quickstart.term_decode()``"
-msgstr ""
+msgstr "``sphinx.cmd.quickstart.term_decode()``"
 
 #: ../../sphinx/doc/extdev/index.rst:303
 msgid "``sphinx.cmd.quickstart.TERM_ENCODING``"
-msgstr ""
+msgstr "``sphinx.cmd.quickstart.TERM_ENCODING``"
 
 #: ../../sphinx/doc/extdev/index.rst:306
 msgid "``sys.stdin.encoding``"
-msgstr ""
+msgstr "``sys.stdin.encoding``"
 
 #: ../../sphinx/doc/extdev/index.rst:308 ../../sphinx/doc/extdev/index.rst:754
 msgid "``sphinx.config.check_unicode()``"
-msgstr ""
+msgstr "``sphinx.config.check_unicode()``"
 
 #: ../../sphinx/doc/extdev/index.rst:313
 msgid "``sphinx.config.string_classes``"
-msgstr ""
+msgstr "``sphinx.config.string_classes``"
 
 #: ../../sphinx/doc/extdev/index.rst:316
 msgid "``[str]``"
-msgstr ""
+msgstr "``[str]``"
 
 #: ../../sphinx/doc/extdev/index.rst:318
 msgid "``sphinx.domains.cpp.DefinitionError.description``"
-msgstr ""
+msgstr "``sphinx.domains.cpp.DefinitionError.description``"
 
 #: ../../sphinx/doc/extdev/index.rst:321 ../../sphinx/doc/extdev/index.rst:326
 #: ../../sphinx/doc/extdev/index.rst:331
 msgid "``str(exc)``"
-msgstr ""
+msgstr "``str(exc)``"
 
 #: ../../sphinx/doc/extdev/index.rst:323
 msgid "``sphinx.domains.cpp.NoOldIdError.description``"
-msgstr ""
+msgstr "``sphinx.domains.cpp.NoOldIdError.description``"
 
 #: ../../sphinx/doc/extdev/index.rst:328
 msgid "``sphinx.domains.cpp.UnsupportedMultiCharacterCharLiteral.decoded``"
-msgstr ""
+msgstr "``sphinx.domains.cpp.UnsupportedMultiCharacterCharLiteral.decoded``"
 
 #: ../../sphinx/doc/extdev/index.rst:333
 msgid "``sphinx.ext.autosummary.Autosummary.warn()``"
-msgstr ""
+msgstr "``sphinx.ext.autosummary.Autosummary.warn()``"
 
 #: ../../sphinx/doc/extdev/index.rst:338
 msgid "``sphinx.ext.autosummary.Autosummary.genopt``"
-msgstr ""
+msgstr "``sphinx.ext.autosummary.Autosummary.genopt``"
 
 #: ../../sphinx/doc/extdev/index.rst:343
 msgid "``sphinx.ext.autosummary.Autosummary.warnings``"
-msgstr ""
+msgstr "``sphinx.ext.autosummary.Autosummary.warnings``"
 
 #: ../../sphinx/doc/extdev/index.rst:348
 msgid "``sphinx.ext.autosummary.Autosummary.result``"
-msgstr ""
+msgstr "``sphinx.ext.autosummary.Autosummary.result``"
 
 #: ../../sphinx/doc/extdev/index.rst:353
 msgid "``sphinx.ext.doctest.doctest_encode()``"
-msgstr ""
+msgstr "``sphinx.ext.doctest.doctest_encode()``"
 
 #: ../../sphinx/doc/extdev/index.rst:358
 msgid "``sphinx.ext.jsmath``"
-msgstr ""
+msgstr "``sphinx.ext.jsmath``"
 
 #: ../../sphinx/doc/extdev/index.rst:361
 msgid "``sphinxcontrib.jsmath``"
-msgstr ""
+msgstr "``sphinxcontrib.jsmath``"
 
 #: ../../sphinx/doc/extdev/index.rst:363
 msgid "``sphinx.testing.util.remove_unicode_literal()``"
-msgstr ""
+msgstr "``sphinx.testing.util.remove_unicode_literal()``"
 
 #: ../../sphinx/doc/extdev/index.rst:368
 msgid "``sphinx.util.attrdict``"
-msgstr ""
+msgstr "``sphinx.util.attrdict``"
 
 #: ../../sphinx/doc/extdev/index.rst:373
 msgid "``sphinx.util.force_decode()``"
-msgstr ""
+msgstr "``sphinx.util.force_decode()``"
 
 #: ../../sphinx/doc/extdev/index.rst:378
 msgid "``sphinx.util.get_matching_docs()``"
-msgstr ""
+msgstr "``sphinx.util.get_matching_docs()``"
 
 #: ../../sphinx/doc/extdev/index.rst:381
 msgid "``sphinx.util.get_matching_files()``"
-msgstr ""
+msgstr "``sphinx.util.get_matching_files()``"
 
 #: ../../sphinx/doc/extdev/index.rst:383
 msgid "``sphinx.util.inspect.Parameter``"
-msgstr ""
+msgstr "``sphinx.util.inspect.Parameter``"
 
 #: ../../sphinx/doc/extdev/index.rst:385 ../../sphinx/doc/extdev/index.rst:461
 #: ../../sphinx/doc/extdev/index.rst:466 ../../sphinx/doc/extdev/index.rst:471
@@ -704,158 +805,161 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:891 ../../sphinx/doc/extdev/index.rst:896
 #: ../../sphinx/doc/extdev/index.rst:901 ../../sphinx/doc/extdev/index.rst:906
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: ../../sphinx/doc/extdev/index.rst:388
 msgid "``sphinx.util.osutil.EEXIST``"
-msgstr ""
+msgstr "``sphinx.util.osutil.EEXIST``"
 
 #: ../../sphinx/doc/extdev/index.rst:391
 msgid "``errno.EEXIST`` or ``FileExistsError``"
-msgstr ""
+msgstr "``errno.EEXIST`` or ``FileExistsError``"
 
 #: ../../sphinx/doc/extdev/index.rst:393
 msgid "``sphinx.util.osutil.EINVAL``"
-msgstr ""
+msgstr "``sphinx.util.osutil.EINVAL``"
 
 #: ../../sphinx/doc/extdev/index.rst:396
 msgid "``errno.EINVAL``"
-msgstr ""
+msgstr "``errno.EINVAL``"
 
 #: ../../sphinx/doc/extdev/index.rst:398
 msgid "``sphinx.util.osutil.ENOENT``"
-msgstr ""
+msgstr "``sphinx.util.osutil.ENOENT``"
 
 #: ../../sphinx/doc/extdev/index.rst:401
 msgid "``errno.ENOENT`` or ``FileNotFoundError``"
-msgstr ""
+msgstr "``errno.ENOENT`` or ``FileNotFoundError``"
 
 #: ../../sphinx/doc/extdev/index.rst:403
 msgid "``sphinx.util.osutil.EPIPE``"
-msgstr ""
+msgstr "``sphinx.util.osutil.EPIPE``"
 
 #: ../../sphinx/doc/extdev/index.rst:406
 msgid "``errno.ENOENT`` or ``BrokenPipeError``"
-msgstr ""
+msgstr "``errno.ENOENT`` or ``BrokenPipeError``"
 
 #: ../../sphinx/doc/extdev/index.rst:408
 msgid "``sphinx.util.osutil.walk()``"
-msgstr ""
+msgstr "``sphinx.util.osutil.walk()``"
 
 #: ../../sphinx/doc/extdev/index.rst:411
 msgid "``os.walk()``"
-msgstr ""
+msgstr "``os.walk()``"
 
 #: ../../sphinx/doc/extdev/index.rst:413
 msgid "``sphinx.util.pycompat.TextIOWrapper``"
-msgstr ""
+msgstr "``sphinx.util.pycompat.TextIOWrapper``"
 
 #: ../../sphinx/doc/extdev/index.rst:416
 msgid "``io.TextIOWrapper``"
-msgstr ""
+msgstr "``io.TextIOWrapper``"
 
 #: ../../sphinx/doc/extdev/index.rst:418
 msgid "``sphinx.util.pycompat.UnicodeMixin``"
-msgstr ""
+msgstr "``sphinx.util.pycompat.UnicodeMixin``"
 
 #: ../../sphinx/doc/extdev/index.rst:423
 msgid "``sphinx.util.pycompat.htmlescape()``"
-msgstr ""
+msgstr "``sphinx.util.pycompat.htmlescape()``"
 
 #: ../../sphinx/doc/extdev/index.rst:426
 msgid "``html.escape()``"
-msgstr ""
+msgstr "``html.escape()``"
 
 #: ../../sphinx/doc/extdev/index.rst:428
 msgid "``sphinx.util.pycompat.indent()``"
-msgstr ""
+msgstr "``sphinx.util.pycompat.indent()``"
 
 #: ../../sphinx/doc/extdev/index.rst:431
 msgid "``textwrap.indent()``"
-msgstr ""
+msgstr "``textwrap.indent()``"
 
 #: ../../sphinx/doc/extdev/index.rst:433
 msgid "``sphinx.util.pycompat.u``"
-msgstr ""
+msgstr "``sphinx.util.pycompat.u``"
 
 #: ../../sphinx/doc/extdev/index.rst:438
 msgid "``sphinx.util.PeekableIterator``"
-msgstr ""
+msgstr "``sphinx.util.PeekableIterator``"
 
 #: ../../sphinx/doc/extdev/index.rst:443
 msgid ""
 "Omitting the ``filename`` argument in an overriddent ``IndexBuilder.feed()``"
 " method."
 msgstr ""
+"Omitindo o argumento ``filename`` em um método sobrescrito "
+"``IndexBuilder.feed()``."
 
 #: ../../sphinx/doc/extdev/index.rst:447
 msgid "``IndexBuilder.feed(docname, filename, title, doctree)``"
-msgstr ""
+msgstr "``IndexBuilder.feed(docname, filename, title, doctree)``"
 
 #: ../../sphinx/doc/extdev/index.rst:449
 msgid "``sphinx.writers.latex.ExtBabel``"
-msgstr ""
+msgstr "``sphinx.writers.latex.ExtBabel``"
 
 #: ../../sphinx/doc/extdev/index.rst:452
 msgid "``sphinx.builders.latex.util.ExtBabel``"
-msgstr ""
+msgstr "``sphinx.builders.latex.util.ExtBabel``"
 
 #: ../../sphinx/doc/extdev/index.rst:454
 msgid "``sphinx.writers.latex.LaTeXTranslator.babel_defmacro()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.babel_defmacro()``"
 
 #: ../../sphinx/doc/extdev/index.rst:459
 msgid "``sphinx.application.Sphinx._setting_up_extension``"
-msgstr ""
+msgstr "``sphinx.application.Sphinx._setting_up_extension``"
 
 #: ../../sphinx/doc/extdev/index.rst:464
 msgid ""
 "The ``importer`` argument of ``sphinx.ext.autodoc.importer._MockModule``"
 msgstr ""
+"O argumento ``importer`` de ``sphinx.ext.autodoc.importer._MockModule``"
 
 #: ../../sphinx/doc/extdev/index.rst:469
 msgid "``sphinx.ext.autodoc.importer._MockImporter``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.importer._MockImporter``"
 
 #: ../../sphinx/doc/extdev/index.rst:474
 msgid "``sphinx.io.SphinxBaseFileInput``"
-msgstr ""
+msgstr "``sphinx.io.SphinxBaseFileInput``"
 
 #: ../../sphinx/doc/extdev/index.rst:479
 msgid "``sphinx.io.SphinxFileInput.supported``"
-msgstr ""
+msgstr "``sphinx.io.SphinxFileInput.supported``"
 
 #: ../../sphinx/doc/extdev/index.rst:484
 msgid "``sphinx.io.SphinxRSTFileInput``"
-msgstr ""
+msgstr "``sphinx.io.SphinxRSTFileInput``"
 
 #: ../../sphinx/doc/extdev/index.rst:489
 msgid "``sphinx.registry.SphinxComponentRegistry.add_source_input()``"
-msgstr ""
+msgstr "``sphinx.registry.SphinxComponentRegistry.add_source_input()``"
 
 #: ../../sphinx/doc/extdev/index.rst:494
 msgid "``sphinx.writers.latex.LaTeXTranslator._make_visit_admonition()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator._make_visit_admonition()``"
 
 #: ../../sphinx/doc/extdev/index.rst:499
 msgid "``sphinx.writers.latex.LaTeXTranslator.collect_footnotes()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.collect_footnotes()``"
 
 #: ../../sphinx/doc/extdev/index.rst:504
 msgid "``sphinx.writers.texinfo.TexinfoTranslator._make_visit_admonition()``"
-msgstr ""
+msgstr "``sphinx.writers.texinfo.TexinfoTranslator._make_visit_admonition()``"
 
 #: ../../sphinx/doc/extdev/index.rst:509
 msgid "``sphinx.writers.text.TextTranslator._make_depart_admonition()``"
-msgstr ""
+msgstr "``sphinx.writers.text.TextTranslator._make_depart_admonition()``"
 
 #: ../../sphinx/doc/extdev/index.rst:514
 msgid "``sphinx.writers.latex.LaTeXTranslator.generate_numfig_format()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.generate_numfig_format()``"
 
 #: ../../sphinx/doc/extdev/index.rst:519
 msgid ":rst:dir:`highlightlang`"
-msgstr ""
+msgstr ":rst:dir:`highlightlang`"
 
 #: ../../sphinx/doc/extdev/index.rst:520 ../../sphinx/doc/extdev/index.rst:525
 #: ../../sphinx/doc/extdev/index.rst:530 ../../sphinx/doc/extdev/index.rst:535
@@ -897,488 +1001,494 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:895 ../../sphinx/doc/extdev/index.rst:900
 #: ../../sphinx/doc/extdev/index.rst:990 ../../sphinx/doc/extdev/index.rst:991
 msgid "1.8"
-msgstr ""
+msgstr "1.8"
 
 #: ../../sphinx/doc/extdev/index.rst:522
 msgid ":rst:dir:`highlight`"
-msgstr ""
+msgstr ":rst:dir:`highlight`"
 
 #: ../../sphinx/doc/extdev/index.rst:524 ../../sphinx/doc/extdev/index.rst:987
 msgid ":meth:`~sphinx.application.Sphinx.add_stylesheet()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_stylesheet()`"
 
 #: ../../sphinx/doc/extdev/index.rst:527
 msgid ":meth:`~sphinx.application.Sphinx.add_css_file()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_css_file()`"
 
 #: ../../sphinx/doc/extdev/index.rst:529
 msgid ":meth:`~sphinx.application.Sphinx.add_javascript()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_javascript()`"
 
 #: ../../sphinx/doc/extdev/index.rst:532
 msgid ":meth:`~sphinx.application.Sphinx.add_js_file()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_js_file()`"
 
 #: ../../sphinx/doc/extdev/index.rst:534
 msgid ":confval:`autodoc_default_flags`"
-msgstr ""
+msgstr ":confval:`autodoc_default_flags`"
 
 #: ../../sphinx/doc/extdev/index.rst:537
 msgid ":confval:`autodoc_default_options`"
-msgstr ""
+msgstr ":confval:`autodoc_default_options`"
 
 #: ../../sphinx/doc/extdev/index.rst:539
 msgid "``content`` arguments of ``sphinx.util.image.guess_mimetype()``"
-msgstr ""
+msgstr "``content`` arguments of ``sphinx.util.image.guess_mimetype()``"
 
 #: ../../sphinx/doc/extdev/index.rst:544
 msgid ""
 "``gettext_compact`` arguments of "
 "``sphinx.util.i18n.find_catalog_source_files()``"
 msgstr ""
+"``gettext_compact`` arguments of "
+"``sphinx.util.i18n.find_catalog_source_files()``"
 
 #: ../../sphinx/doc/extdev/index.rst:550
 msgid "``sphinx.io.SphinxI18nReader.set_lineno_for_reporter()``"
-msgstr ""
+msgstr "``sphinx.io.SphinxI18nReader.set_lineno_for_reporter()``"
 
 #: ../../sphinx/doc/extdev/index.rst:555
 msgid "``sphinx.io.SphinxI18nReader.line``"
-msgstr ""
+msgstr "``sphinx.io.SphinxI18nReader.line``"
 
 #: ../../sphinx/doc/extdev/index.rst:560
 msgid "``sphinx.directives.other.VersionChanges``"
-msgstr ""
+msgstr "``sphinx.directives.other.VersionChanges``"
 
 #: ../../sphinx/doc/extdev/index.rst:563
 msgid "``sphinx.domains.changeset.VersionChanges``"
-msgstr ""
+msgstr "``sphinx.domains.changeset.VersionChanges``"
 
 #: ../../sphinx/doc/extdev/index.rst:565
 msgid "``sphinx.highlighting.PygmentsBridge.unhighlight()``"
-msgstr ""
+msgstr "``sphinx.highlighting.PygmentsBridge.unhighlight()``"
 
 #: ../../sphinx/doc/extdev/index.rst:570
 msgid ""
 "``trim_doctest_flags`` arguments of ``sphinx.highlighting.PygmentsBridge``"
 msgstr ""
+"``trim_doctest_flags`` arguments of ``sphinx.highlighting.PygmentsBridge``"
 
 #: ../../sphinx/doc/extdev/index.rst:576
 msgid "``sphinx.ext.mathbase``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase``"
 
 #: ../../sphinx/doc/extdev/index.rst:581
 msgid "``sphinx.ext.mathbase.MathDomain``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.MathDomain``"
 
 #: ../../sphinx/doc/extdev/index.rst:584
 msgid "``sphinx.domains.math.MathDomain``"
-msgstr ""
+msgstr "``sphinx.domains.math.MathDomain``"
 
 #: ../../sphinx/doc/extdev/index.rst:586
 msgid "``sphinx.ext.mathbase.MathDirective``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.MathDirective``"
 
 #: ../../sphinx/doc/extdev/index.rst:589
 msgid "``sphinx.directives.patches.MathDirective``"
-msgstr ""
+msgstr "``sphinx.directives.patches.MathDirective``"
 
 #: ../../sphinx/doc/extdev/index.rst:591
 msgid "``sphinx.ext.mathbase.math_role()``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.math_role()``"
 
 #: ../../sphinx/doc/extdev/index.rst:594
 msgid "``docutils.parsers.rst.roles.math_role()``"
-msgstr ""
+msgstr "``docutils.parsers.rst.roles.math_role()``"
 
 #: ../../sphinx/doc/extdev/index.rst:596
 msgid "``sphinx.ext.mathbase.setup_math()``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.setup_math()``"
 
 #: ../../sphinx/doc/extdev/index.rst:599
 msgid ":meth:`~sphinx.application.Sphinx.add_html_math_renderer()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_html_math_renderer()`"
 
 #: ../../sphinx/doc/extdev/index.rst:601
 msgid "``sphinx.ext.mathbase.is_in_section_title()``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.is_in_section_title()``"
 
 #: ../../sphinx/doc/extdev/index.rst:606
 msgid "``sphinx.ext.mathbase.get_node_equation_number()``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.get_node_equation_number()``"
 
 #: ../../sphinx/doc/extdev/index.rst:609
 msgid "``sphinx.util.math.get_node_equation_number()``"
-msgstr ""
+msgstr "``sphinx.util.math.get_node_equation_number()``"
 
 #: ../../sphinx/doc/extdev/index.rst:611
 msgid "``sphinx.ext.mathbase.wrap_displaymath()``"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.wrap_displaymath()``"
 
 #: ../../sphinx/doc/extdev/index.rst:614
 msgid "``sphinx.util.math.wrap_displaymath()``"
-msgstr ""
+msgstr "``sphinx.util.math.wrap_displaymath()``"
 
 #: ../../sphinx/doc/extdev/index.rst:616
 msgid "``sphinx.ext.mathbase.math`` (node)"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.math`` (node)"
 
 #: ../../sphinx/doc/extdev/index.rst:619
 msgid "``docutils.nodes.math``"
-msgstr ""
+msgstr "``docutils.nodes.math``"
 
 #: ../../sphinx/doc/extdev/index.rst:621
 msgid "``sphinx.ext.mathbase.displaymath`` (node)"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.displaymath`` (node)"
 
 #: ../../sphinx/doc/extdev/index.rst:624
 msgid "``docutils.nodes.math_block``"
-msgstr ""
+msgstr "``docutils.nodes.math_block``"
 
 #: ../../sphinx/doc/extdev/index.rst:626
 msgid "``sphinx.ext.mathbase.eqref`` (node)"
-msgstr ""
+msgstr "``sphinx.ext.mathbase.eqref`` (node)"
 
 #: ../../sphinx/doc/extdev/index.rst:629
 msgid "``sphinx.builders.latex.nodes.math_reference``"
-msgstr ""
+msgstr "``sphinx.builders.latex.nodes.math_reference``"
 
 #: ../../sphinx/doc/extdev/index.rst:631
 msgid "``viewcode_import`` (config value)"
-msgstr ""
+msgstr "``viewcode_import`` (config value)"
 
 #: ../../sphinx/doc/extdev/index.rst:634
 msgid ":confval:`viewcode_follow_imported_members`"
-msgstr ""
+msgstr ":confval:`viewcode_follow_imported_members`"
 
 #: ../../sphinx/doc/extdev/index.rst:636
 msgid "``sphinx.writers.latex.Table.caption_footnotetexts``"
-msgstr ""
+msgstr "``sphinx.writers.latex.Table.caption_footnotetexts``"
 
 #: ../../sphinx/doc/extdev/index.rst:641
 msgid "``sphinx.writers.latex.Table.header_footnotetexts``"
-msgstr ""
+msgstr "``sphinx.writers.latex.Table.header_footnotetexts``"
 
 #: ../../sphinx/doc/extdev/index.rst:646
 msgid "``sphinx.writers.latex.LaTeXTranslator.footnotestack``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.footnotestack``"
 
 #: ../../sphinx/doc/extdev/index.rst:651
 msgid "``sphinx.writers.latex.LaTeXTranslator.in_container_literal_block``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.in_container_literal_block``"
 
 #: ../../sphinx/doc/extdev/index.rst:656
 msgid "``sphinx.writers.latex.LaTeXTranslator.next_section_ids``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.next_section_ids``"
 
 #: ../../sphinx/doc/extdev/index.rst:661
 msgid "``sphinx.writers.latex.LaTeXTranslator.next_hyperlink_ids``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.next_hyperlink_ids``"
 
 #: ../../sphinx/doc/extdev/index.rst:666
 msgid "``sphinx.writers.latex.LaTeXTranslator.restrict_footnote()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.restrict_footnote()``"
 
 #: ../../sphinx/doc/extdev/index.rst:671
 msgid "``sphinx.writers.latex.LaTeXTranslator.unrestrict_footnote()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.unrestrict_footnote()``"
 
 #: ../../sphinx/doc/extdev/index.rst:676
 msgid "``sphinx.writers.latex.LaTeXTranslator.push_hyperlink_ids()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.push_hyperlink_ids()``"
 
 #: ../../sphinx/doc/extdev/index.rst:681
 msgid "``sphinx.writers.latex.LaTeXTranslator.pop_hyperlink_ids()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.pop_hyperlink_ids()``"
 
 #: ../../sphinx/doc/extdev/index.rst:686
 msgid "``sphinx.writers.latex.LaTeXTranslator.bibitems``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.bibitems``"
 
 #: ../../sphinx/doc/extdev/index.rst:691
 msgid "``sphinx.writers.latex.LaTeXTranslator.hlsettingstack``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.hlsettingstack``"
 
 #: ../../sphinx/doc/extdev/index.rst:696
 msgid "``sphinx.writers.latex.ExtBabel.get_shorthandoff()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.ExtBabel.get_shorthandoff()``"
 
 #: ../../sphinx/doc/extdev/index.rst:701
 msgid "``sphinx.writers.html.HTMLTranslator.highlightlang()``"
-msgstr ""
+msgstr "``sphinx.writers.html.HTMLTranslator.highlightlang()``"
 
 #: ../../sphinx/doc/extdev/index.rst:706
 msgid "``sphinx.writers.html.HTMLTranslator.highlightlang_base()``"
-msgstr ""
+msgstr "``sphinx.writers.html.HTMLTranslator.highlightlang_base()``"
 
 #: ../../sphinx/doc/extdev/index.rst:711
 msgid "``sphinx.writers.html.HTMLTranslator.highlightlangopts()``"
-msgstr ""
+msgstr "``sphinx.writers.html.HTMLTranslator.highlightlangopts()``"
 
 #: ../../sphinx/doc/extdev/index.rst:716
 msgid "``sphinx.writers.html.HTMLTranslator.highlightlinenothreshold()``"
-msgstr ""
+msgstr "``sphinx.writers.html.HTMLTranslator.highlightlinenothreshold()``"
 
 #: ../../sphinx/doc/extdev/index.rst:721
 msgid "``sphinx.writers.html5.HTMLTranslator.highlightlang()``"
-msgstr ""
+msgstr "``sphinx.writers.html5.HTMLTranslator.highlightlang()``"
 
 #: ../../sphinx/doc/extdev/index.rst:726
 msgid "``sphinx.writers.html5.HTMLTranslator.highlightlang_base()``"
-msgstr ""
+msgstr "``sphinx.writers.html5.HTMLTranslator.highlightlang_base()``"
 
 #: ../../sphinx/doc/extdev/index.rst:731
 msgid "``sphinx.writers.html5.HTMLTranslator.highlightlangopts()``"
-msgstr ""
+msgstr "``sphinx.writers.html5.HTMLTranslator.highlightlangopts()``"
 
 #: ../../sphinx/doc/extdev/index.rst:736
 msgid "``sphinx.writers.html5.HTMLTranslator.highlightlinenothreshold()``"
-msgstr ""
+msgstr "``sphinx.writers.html5.HTMLTranslator.highlightlinenothreshold()``"
 
 #: ../../sphinx/doc/extdev/index.rst:741
 msgid "``sphinx.writers.latex.LaTeXTranslator.check_latex_elements()``"
-msgstr ""
+msgstr "``sphinx.writers.latex.LaTeXTranslator.check_latex_elements()``"
 
 #: ../../sphinx/doc/extdev/index.rst:744
 msgid "Nothing"
-msgstr ""
+msgstr "Nada"
 
 #: ../../sphinx/doc/extdev/index.rst:746
 msgid "``sphinx.application.CONFIG_FILENAME``"
-msgstr ""
+msgstr "``sphinx.application.CONFIG_FILENAME``"
 
 #: ../../sphinx/doc/extdev/index.rst:749
 msgid "``sphinx.config.CONFIG_FILENAME``"
-msgstr ""
+msgstr "``sphinx.config.CONFIG_FILENAME``"
 
 #: ../../sphinx/doc/extdev/index.rst:751
 msgid "``Config.check_unicode()``"
-msgstr ""
+msgstr "``Config.check_unicode()``"
 
 #: ../../sphinx/doc/extdev/index.rst:756
 msgid "``Config.check_types()``"
-msgstr ""
+msgstr "``Config.check_types()``"
 
 #: ../../sphinx/doc/extdev/index.rst:759
 msgid "``sphinx.config.check_confval_types()``"
-msgstr ""
+msgstr "``sphinx.config.check_confval_types()``"
 
 #: ../../sphinx/doc/extdev/index.rst:761
 msgid ""
 "``dirname``, ``filename`` and ``tags`` arguments of ``Config.__init__()``"
 msgstr ""
+"``dirname``, ``filename`` and ``tags`` arguments of ``Config.__init__()``"
 
 #: ../../sphinx/doc/extdev/index.rst:765
 msgid "``Config.read()``"
-msgstr ""
+msgstr "``Config.read()``"
 
 #: ../../sphinx/doc/extdev/index.rst:767
 msgid "The value of :confval:`html_search_options`"
-msgstr ""
+msgstr "O valor de :confval:`html_search_options`"
 
 #: ../../sphinx/doc/extdev/index.rst:770
 msgid "see :confval:`html_search_options`"
-msgstr ""
+msgstr "veja :confval:`html_search_options`"
 
 #: ../../sphinx/doc/extdev/index.rst:772
 msgid "``sphinx.versioning.prepare()``"
-msgstr ""
+msgstr "``sphinx.versioning.prepare()``"
 
 #: ../../sphinx/doc/extdev/index.rst:775
 msgid "``sphinx.versioning.UIDTransform``"
-msgstr ""
+msgstr "``sphinx.versioning.UIDTransform``"
 
 #: ../../sphinx/doc/extdev/index.rst:777
 msgid "``Sphinx.override_domain()``"
-msgstr ""
+msgstr "``Sphinx.override_domain()``"
 
 #: ../../sphinx/doc/extdev/index.rst:780
 msgid ":meth:`~sphinx.application.Sphinx.add_domain()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_domain()`"
 
 #: ../../sphinx/doc/extdev/index.rst:782
 msgid "``Sphinx.import_object()``"
-msgstr ""
+msgstr "``Sphinx.import_object()``"
 
 #: ../../sphinx/doc/extdev/index.rst:785
 msgid "``sphinx.util.import_object()``"
-msgstr ""
+msgstr "``sphinx.util.import_object()``"
 
 #: ../../sphinx/doc/extdev/index.rst:787
 msgid ""
 "``suffix`` argument of "
 ":meth:`~sphinx.application.Sphinx.add_source_parser()`"
 msgstr ""
+"``suffix`` argument of "
+":meth:`~sphinx.application.Sphinx.add_source_parser()`"
 
 #: ../../sphinx/doc/extdev/index.rst:791
 msgid ":meth:`~sphinx.application.Sphinx.add_source_suffix()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_source_suffix()`"
 
 #: ../../sphinx/doc/extdev/index.rst:794
 msgid "``BuildEnvironment.load()``"
-msgstr ""
+msgstr "``BuildEnvironment.load()``"
 
 #: ../../sphinx/doc/extdev/index.rst:797 ../../sphinx/doc/extdev/index.rst:807
 msgid "``pickle.load()``"
-msgstr ""
+msgstr "``pickle.load()``"
 
 #: ../../sphinx/doc/extdev/index.rst:799
 msgid "``BuildEnvironment.loads()``"
-msgstr ""
+msgstr "``BuildEnvironment.loads()``"
 
 #: ../../sphinx/doc/extdev/index.rst:802
 msgid "``pickle.loads()``"
-msgstr ""
+msgstr "``pickle.loads()``"
 
 #: ../../sphinx/doc/extdev/index.rst:804
 msgid "``BuildEnvironment.frompickle()``"
-msgstr ""
+msgstr "``BuildEnvironment.frompickle()``"
 
 #: ../../sphinx/doc/extdev/index.rst:809
 msgid "``BuildEnvironment.dump()``"
-msgstr ""
+msgstr "``BuildEnvironment.dump()``"
 
 #: ../../sphinx/doc/extdev/index.rst:812 ../../sphinx/doc/extdev/index.rst:822
 msgid "``pickle.dump()``"
-msgstr ""
+msgstr "``pickle.dump()``"
 
 #: ../../sphinx/doc/extdev/index.rst:814
 msgid "``BuildEnvironment.dumps()``"
-msgstr ""
+msgstr "``BuildEnvironment.dumps()``"
 
 #: ../../sphinx/doc/extdev/index.rst:817
 msgid "``pickle.dumps()``"
-msgstr ""
+msgstr "``pickle.dumps()``"
 
 #: ../../sphinx/doc/extdev/index.rst:819
 msgid "``BuildEnvironment.topickle()``"
-msgstr ""
+msgstr "``BuildEnvironment.topickle()``"
 
 #: ../../sphinx/doc/extdev/index.rst:824
 msgid "``BuildEnvironment._nitpick_ignore``"
-msgstr ""
+msgstr "``BuildEnvironment._nitpick_ignore``"
 
 #: ../../sphinx/doc/extdev/index.rst:827
 msgid ":confval:`nitpick_ignore`"
-msgstr ""
+msgstr ":confval:`nitpick_ignore`"
 
 #: ../../sphinx/doc/extdev/index.rst:829
 msgid "``BuildEnvironment.versionchanges``"
-msgstr ""
+msgstr "``BuildEnvironment.versionchanges``"
 
 #: ../../sphinx/doc/extdev/index.rst:834
 msgid "``BuildEnvironment.update()``"
-msgstr ""
+msgstr "``BuildEnvironment.update()``"
 
 #: ../../sphinx/doc/extdev/index.rst:837 ../../sphinx/doc/extdev/index.rst:847
 #: ../../sphinx/doc/extdev/index.rst:852
 msgid "``Builder.read()``"
-msgstr ""
+msgstr "``Builder.read()``"
 
 #: ../../sphinx/doc/extdev/index.rst:839
 msgid "``BuildEnvironment.read_doc()``"
-msgstr ""
+msgstr "``BuildEnvironment.read_doc()``"
 
 #: ../../sphinx/doc/extdev/index.rst:842
 msgid "``Builder.read_doc()``"
-msgstr ""
+msgstr "``Builder.read_doc()``"
 
 #: ../../sphinx/doc/extdev/index.rst:844
 msgid "``BuildEnvironment._read_serial()``"
-msgstr ""
+msgstr "``BuildEnvironment._read_serial()``"
 
 #: ../../sphinx/doc/extdev/index.rst:849
 msgid "``BuildEnvironment._read_parallel()``"
-msgstr ""
+msgstr "``BuildEnvironment._read_parallel()``"
 
 #: ../../sphinx/doc/extdev/index.rst:854
 msgid "``BuildEnvironment.write_doctree()``"
-msgstr ""
+msgstr "``BuildEnvironment.write_doctree()``"
 
 #: ../../sphinx/doc/extdev/index.rst:857
 msgid "``Builder.write_doctree()``"
-msgstr ""
+msgstr "``Builder.write_doctree()``"
 
 #: ../../sphinx/doc/extdev/index.rst:859
 msgid "``BuildEnvironment.note_versionchange()``"
-msgstr ""
+msgstr "``BuildEnvironment.note_versionchange()``"
 
 #: ../../sphinx/doc/extdev/index.rst:862
 msgid "``ChangesDomain.note_changeset()``"
-msgstr ""
+msgstr "``ChangesDomain.note_changeset()``"
 
 #: ../../sphinx/doc/extdev/index.rst:864
 msgid "``warn()`` (template helper function)"
-msgstr ""
+msgstr "``warn()`` (template helper function)"
 
 #: ../../sphinx/doc/extdev/index.rst:867
 msgid "``warning()``"
-msgstr ""
+msgstr "``warning()``"
 
 #: ../../sphinx/doc/extdev/index.rst:869
 msgid ":confval:`source_parsers`"
-msgstr ""
+msgstr ":confval:`source_parsers`"
 
 #: ../../sphinx/doc/extdev/index.rst:872
 msgid ":meth:`~sphinx.application.Sphinx.add_source_parser()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_source_parser()`"
 
 #: ../../sphinx/doc/extdev/index.rst:874
 #: ../../sphinx/doc/extdev/index.rst:1007
 msgid "``sphinx.util.docutils.directive_helper()``"
-msgstr ""
+msgstr "``sphinx.util.docutils.directive_helper()``"
 
 #: ../../sphinx/doc/extdev/index.rst:877
 msgid "``Directive`` class of docutils"
-msgstr ""
+msgstr "``Directive`` classe de ``docutils``"
 
 #: ../../sphinx/doc/extdev/index.rst:879
 msgid "``sphinx.cmdline``"
-msgstr ""
+msgstr "``sphinx.cmdline``"
 
 #: ../../sphinx/doc/extdev/index.rst:882
 msgid "``sphinx.cmd.build``"
-msgstr ""
+msgstr "``sphinx.cmd.build``"
 
 #: ../../sphinx/doc/extdev/index.rst:884
 msgid "``sphinx.make_mode``"
-msgstr ""
+msgstr "``sphinx.make_mode``"
 
 #: ../../sphinx/doc/extdev/index.rst:887
 msgid "``sphinx.cmd.make_mode``"
-msgstr ""
+msgstr "``sphinx.cmd.make_mode``"
 
 #: ../../sphinx/doc/extdev/index.rst:889
 msgid "``sphinx.locale.l_()``"
-msgstr ""
+msgstr "``sphinx.locale.l_()``"
 
 #: ../../sphinx/doc/extdev/index.rst:892 ../../sphinx/doc/extdev/index.rst:897
 #: ../../sphinx/doc/extdev/index.rst:902
 msgid ":func:`sphinx.locale._()`"
-msgstr ""
+msgstr ":func:`sphinx.locale._()`"
 
 #: ../../sphinx/doc/extdev/index.rst:894
 msgid "``sphinx.locale.lazy_gettext()``"
-msgstr ""
+msgstr "``sphinx.locale.lazy_gettext()``"
 
 #: ../../sphinx/doc/extdev/index.rst:899
 msgid "``sphinx.locale.mygettext()``"
-msgstr ""
+msgstr "``sphinx.locale.mygettext()``"
 
 #: ../../sphinx/doc/extdev/index.rst:904
 msgid "``sphinx.util.copy_static_entry()``"
-msgstr ""
+msgstr "``sphinx.util.copy_static_entry()``"
 
 #: ../../sphinx/doc/extdev/index.rst:905
 msgid "1.5"
-msgstr ""
+msgstr "1.5"
 
 #: ../../sphinx/doc/extdev/index.rst:907
 msgid "``sphinx.util.fileutil.copy_asset()``"
-msgstr ""
+msgstr "``sphinx.util.fileutil.copy_asset()``"
 
 #: ../../sphinx/doc/extdev/index.rst:909
 msgid "``sphinx.build_main()``"
-msgstr ""
+msgstr "``sphinx.build_main()``"
 
 #: ../../sphinx/doc/extdev/index.rst:910 ../../sphinx/doc/extdev/index.rst:915
 #: ../../sphinx/doc/extdev/index.rst:920 ../../sphinx/doc/extdev/index.rst:925
@@ -1390,63 +1500,63 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:1011
 #: ../../sphinx/doc/extdev/index.rst:1016
 msgid "1.7"
-msgstr ""
+msgstr "1.7"
 
 #: ../../sphinx/doc/extdev/index.rst:912
 msgid "``sphinx.cmd.build.build_main()``"
-msgstr ""
+msgstr "``sphinx.cmd.build.build_main()``"
 
 #: ../../sphinx/doc/extdev/index.rst:914
 msgid "``sphinx.ext.intersphinx.debug()``"
-msgstr ""
+msgstr "``sphinx.ext.intersphinx.debug()``"
 
 #: ../../sphinx/doc/extdev/index.rst:917
 msgid "``sphinx.ext.intersphinx.inspect_main()``"
-msgstr ""
+msgstr "``sphinx.ext.intersphinx.inspect_main()``"
 
 #: ../../sphinx/doc/extdev/index.rst:919
 msgid "``sphinx.ext.autodoc.format_annotation()``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.format_annotation()``"
 
 #: ../../sphinx/doc/extdev/index.rst:922 ../../sphinx/doc/extdev/index.rst:927
 msgid "``sphinx.util.inspect.Signature``"
-msgstr ""
+msgstr "``sphinx.util.inspect.Signature``"
 
 #: ../../sphinx/doc/extdev/index.rst:924
 msgid "``sphinx.ext.autodoc.formatargspec()``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.formatargspec()``"
 
 #: ../../sphinx/doc/extdev/index.rst:929
 msgid "``sphinx.ext.autodoc.AutodocReporter``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.AutodocReporter``"
 
 #: ../../sphinx/doc/extdev/index.rst:932
 msgid "``sphinx.util.docutils.switch_source_input()``"
-msgstr ""
+msgstr "``sphinx.util.docutils.switch_source_input()``"
 
 #: ../../sphinx/doc/extdev/index.rst:934
 msgid "``sphinx.ext.autodoc.add_documenter()``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.add_documenter()``"
 
 #: ../../sphinx/doc/extdev/index.rst:937 ../../sphinx/doc/extdev/index.rst:942
 msgid ":meth:`~sphinx.application.Sphinx.add_autodocumenter()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_autodocumenter()`"
 
 #: ../../sphinx/doc/extdev/index.rst:939
 msgid "``sphinx.ext.autodoc.AutoDirective._register``"
-msgstr ""
+msgstr "``sphinx.ext.autodoc.AutoDirective._register``"
 
 #: ../../sphinx/doc/extdev/index.rst:944
 msgid "``AutoDirective._special_attrgetters``"
-msgstr ""
+msgstr "``AutoDirective._special_attrgetters``"
 
 #: ../../sphinx/doc/extdev/index.rst:947
 msgid ":meth:`~sphinx.application.Sphinx.add_autodoc_attrgetter()`"
-msgstr ""
+msgstr ":meth:`~sphinx.application.Sphinx.add_autodoc_attrgetter()`"
 
 #: ../../sphinx/doc/extdev/index.rst:949
 msgid "``Sphinx.warn()``, ``Sphinx.info()``"
-msgstr ""
+msgstr "``Sphinx.warn()``, ``Sphinx.info()``"
 
 #: ../../sphinx/doc/extdev/index.rst:950 ../../sphinx/doc/extdev/index.rst:955
 #: ../../sphinx/doc/extdev/index.rst:960 ../../sphinx/doc/extdev/index.rst:965
@@ -1458,111 +1568,119 @@ msgstr ""
 #: ../../sphinx/doc/extdev/index.rst:1010
 #: ../../sphinx/doc/extdev/index.rst:1015
 msgid "1.6"
-msgstr ""
+msgstr "1.6"
 
 #: ../../sphinx/doc/extdev/index.rst:952 ../../sphinx/doc/extdev/index.rst:957
 msgid ":ref:`logging-api`"
-msgstr ""
+msgstr ":ref:`logging-api`"
 
 #: ../../sphinx/doc/extdev/index.rst:954
 msgid "``BuildEnvironment.set_warnfunc()``"
-msgstr ""
+msgstr "``BuildEnvironment.set_warnfunc()``"
 
 #: ../../sphinx/doc/extdev/index.rst:959
 msgid "``BuildEnvironment.note_toctree()``"
-msgstr ""
+msgstr "``BuildEnvironment.note_toctree()``"
 
 #: ../../sphinx/doc/extdev/index.rst:962
 msgid "``Toctree.note()`` (in ``sphinx.environment.adapters.toctree``)"
-msgstr ""
+msgstr "``Toctree.note()`` (em ``sphinx.environment.adapters.toctree``)"
 
 #: ../../sphinx/doc/extdev/index.rst:964
 msgid "``BuildEnvironment.get_toc_for()``"
-msgstr ""
+msgstr "``BuildEnvironment.get_toc_for()``"
 
 #: ../../sphinx/doc/extdev/index.rst:967
 msgid "``Toctree.get_toc_for()`` (in ``sphinx.environment.adapters.toctree``)"
 msgstr ""
+"``Toctree.get_toc_for()`` (em ``sphinx.environment.adapters.toctree``)"
 
 #: ../../sphinx/doc/extdev/index.rst:969
 msgid "``BuildEnvironment.get_toctree_for()``"
-msgstr ""
+msgstr "``BuildEnvironment.get_toctree_for()``"
 
 #: ../../sphinx/doc/extdev/index.rst:972
 msgid ""
 "``Toctree.get_toctree_for()`` (in ``sphinx.environment.adapters.toctree``)"
 msgstr ""
+"``Toctree.get_toctree_for()`` (em ``sphinx.environment.adapters.toctree``)"
 
 #: ../../sphinx/doc/extdev/index.rst:974
 msgid "``BuildEnvironment.create_index()``"
-msgstr ""
+msgstr "``BuildEnvironment.create_index()``"
 
 #: ../../sphinx/doc/extdev/index.rst:977
 msgid ""
 "``IndexEntries.create_index()`` (in "
 "``sphinx.environment.adapters.indexentries``)"
 msgstr ""
+"``IndexEntries.create_index()`` (em "
+"``sphinx.environment.adapters.indexentries``)"
 
 #: ../../sphinx/doc/extdev/index.rst:979
 msgid "``sphinx.websupport``"
-msgstr ""
+msgstr "``sphinx.websupport``"
 
 #: ../../sphinx/doc/extdev/index.rst:982
 msgid ""
 "`sphinxcontrib-websupport <https://pypi.org/project/sphinxcontrib-"
 "websupport/>`_"
 msgstr ""
+"`sphinxcontrib-websupport <https://pypi.org/project/sphinxcontrib-"
+"websupport/>`_"
 
 #: ../../sphinx/doc/extdev/index.rst:984
 msgid "``StandaloneHTMLBuilder.css_files``"
-msgstr ""
+msgstr "``StandaloneHTMLBuilder.css_files``"
 
 #: ../../sphinx/doc/extdev/index.rst:989
 msgid "``document.settings.gettext_compact``"
-msgstr ""
+msgstr "``document.settings.gettext_compact``"
 
 #: ../../sphinx/doc/extdev/index.rst:992
 msgid ":confval:`gettext_compact`"
-msgstr ""
+msgstr ":confval:`gettext_compact`"
 
 #: ../../sphinx/doc/extdev/index.rst:994
 msgid "``Sphinx.status_iterator()``"
-msgstr ""
+msgstr "``Sphinx.status_iterator()``"
 
 #: ../../sphinx/doc/extdev/index.rst:997
 msgid "``sphinx.util.status_iterator()``"
-msgstr ""
+msgstr "``sphinx.util.status_iterator()``"
 
 #: ../../sphinx/doc/extdev/index.rst:999
 msgid "``Sphinx.old_status_iterator()``"
-msgstr ""
+msgstr "``Sphinx.old_status_iterator()``"
 
 #: ../../sphinx/doc/extdev/index.rst:1002
 msgid "``sphinx.util.old_status_iterator()``"
-msgstr ""
+msgstr "``sphinx.util.old_status_iterator()``"
 
 #: ../../sphinx/doc/extdev/index.rst:1004
 msgid "``Sphinx._directive_helper()``"
-msgstr ""
+msgstr "``Sphinx._directive_helper()``"
 
 #: ../../sphinx/doc/extdev/index.rst:1009
 msgid "``sphinx.util.compat.Directive``"
-msgstr ""
+msgstr "``sphinx.util.compat.Directive``"
 
 #: ../../sphinx/doc/extdev/index.rst:1012
 msgid "``docutils.parsers.rst.Directive``"
-msgstr ""
+msgstr "``docutils.parsers.rst.Directive``"
 
 #: ../../sphinx/doc/extdev/index.rst:1014
 msgid "``sphinx.util.compat.docutils_version``"
-msgstr ""
+msgstr "``sphinx.util.compat.docutils_version``"
 
 #: ../../sphinx/doc/extdev/index.rst:1017
 msgid "``sphinx.util.docutils.__version_info__``"
-msgstr ""
+msgstr "``sphinx.util.docutils.__version_info__``"
 
 #: ../../sphinx/doc/extdev/index.rst:1019
 msgid ""
 "On deprecating on public APIs (internal functions and classes), we also "
 "follow the policy as much as possible."
 msgstr ""
+"Ao desativar as APIs públicas (funções e classes internas), também seguimos "
+"a política o máximo possível."

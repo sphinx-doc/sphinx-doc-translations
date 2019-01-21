@@ -6,15 +6,16 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/bc959382\n"
+"Project-Id-Version: Sphinx 2.0.0+/74d6ea26\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 17:38+0000\n"
+"POT-Creation-Date: 2019-01-21 17:40+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,17 +25,19 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:4
 msgid ":mod:`sphinx.ext.inheritance_diagram` -- Include inheritance diagrams"
-msgstr ""
+msgstr ":mod:`sphinx.ext.inheritance_diagram` -- Incluir diagramas de herança"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:11
 msgid ""
 "This extension allows you to include inheritance diagrams, rendered via the "
 ":mod:`Graphviz extension <sphinx.ext.graphviz>`."
 msgstr ""
+"Esta extensão permite incluir diagramas de herança, renderizados através do "
+":mod:`Graphviz extension <sphinx.ext.graphviz>`."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:14
 msgid "It adds this directive:"
-msgstr ""
+msgstr "Acrescente esta diretiva:"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:18
 msgid ""
@@ -42,6 +45,10 @@ msgid ""
 "name.  Class names can be unqualified; in that case they are taken to exist "
 "in the currently described module (see :rst:dir:`py:module`)."
 msgstr ""
+"Esta diretiva possui um ou mais argumentos, cada um dando um nome de módulo "
+"ou classe. Nomes de classes podem ser desqualificados; Nesse caso, eles são "
+"levados a existir no módulo descrito atualmente (consulte "
+":rst:dir:`py:module`)."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:22
 msgid ""
@@ -50,6 +57,10 @@ msgid ""
 "generated which is then rendered via the graphviz extension to a directed "
 "graph."
 msgstr ""
+"Para cada classe fornecida e cada classe em cada módulo fornecido, as "
+"classes base são determinadas. Então, de todas as classes e suas classes "
+"base, um gráfico é gerado, o qual é então renderizado através da extensão "
+"``graphviz`` para um grafo direcionado."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:27
 msgid ""
@@ -59,25 +70,35 @@ msgid ""
 " ``lib.``, you can give ``:parts: 1`` to remove that prefix from the "
 "displayed node names.)"
 msgstr ""
+"Essa diretiva suporta uma opção chamada ``parts`` que, se fornecida, deve "
+"ser um inteiro, aconselhando a diretiva a remover tantas partes de nomes de "
+"módulos dos nomes exibidos. (Por exemplo, se todos os nomes de classes "
+"começarem com ``lib.``, você poderá fornecer ``:parts: 1`` para remover esse"
+" prefixo dos nomes de nós exibidos.)"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:33
 msgid ""
 "It also supports a ``private-bases`` flag option; if given, private base "
 "classes (those whose name starts with ``_``) will be included."
 msgstr ""
+"Ele também suporta uma ``flag`` opcional ``private-base``; se fornecido, "
+"classes de base privadas (aquelas cujo nome começa com ``_``) serão "
+"incluídas."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:36
 msgid "You can use ``caption`` option to give a caption to the diagram."
-msgstr ""
+msgstr "Você pode usar a opção ``caption`` para dar uma legenda ao diagrama."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:38
 msgid ""
 "Added ``private-bases`` option; previously, all bases were always included."
 msgstr ""
+"Adicionado a opção ``private-bases``; anteriormente, todas as bases eram "
+"sempre incluídas."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:42
 msgid "Added ``caption`` option"
-msgstr ""
+msgstr "Adicionado a opção ``caption``"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:45
 msgid ""
@@ -85,10 +106,14 @@ msgid ""
 "names separated by comma. If specified inheritance traversal will stop at "
 "the specified class names. Given the following Python module::"
 msgstr ""
+"Ele também suporta uma opção ``top-classes`` que requer um ou mais nomes de "
+"classes separados por vírgula. Se o percurso de herança especificado for "
+"interrompido nos nomes das classes especificadas. Dado o seguinte módulo "
+"*Python*::"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:75
 msgid "If you have specified a module in the inheritance diagram like this::"
-msgstr ""
+msgstr "Se você especificou um módulo no diagrama de herança assim::"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:80
 msgid ""
@@ -97,6 +122,11 @@ msgid ""
 "class A will be rendered as stand alone node in the graph. This is a known "
 "issue due to how this extension works internally."
 msgstr ""
+"quaisquer classes base que sejam ancestrais de ``top-classes`` e também "
+"estejam definidas no mesmo módulo serão renderizadas como nós independentes."
+" Neste exemplo, a classe ``A`` será renderizada como nó independente no "
+"gráfico. Esse é um problema conhecido devido a como essa extensão funciona "
+"internamente."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:85
 msgid ""
@@ -104,10 +134,15 @@ msgid ""
 "specify only the classes you would like to generate the diagram for like "
 "this::"
 msgstr ""
+"Se você não quiser que a classe ``A`` (ou qualquer outro ancestral) esteja "
+"visível, especifique apenas as classes para as quais você gostaria de gerar "
+"o diagrama::"
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:91
 msgid "Added ``top-classes`` option to limit the scope of inheritance graphs."
 msgstr ""
+"Adicionado a opção ``top-classes`` para limitar o escopo de gráficos de "
+"herança."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:96
 msgid "Configuration"
@@ -116,6 +151,7 @@ msgstr "Configuração"
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:100
 msgid "A dictionary of graphviz graph attributes for inheritance diagrams."
 msgstr ""
+"Um dicionário de atributos ``graphviz`` ``graphv para diagramas de herança."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:102
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:111
@@ -126,10 +162,12 @@ msgstr "Por exemplo::"
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:109
 msgid "A dictionary of graphviz node attributes for inheritance diagrams."
 msgstr ""
+"Um dicionário de atributos do nó ``graphviz`` para diagramas de herança."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:118
 msgid "A dictionary of graphviz edge attributes for inheritance diagrams."
 msgstr ""
+"Um dicionário de atributos ``graphviz`` ``edge`` para diagramas de herança."
 
 #: ../../sphinx/doc/usage/extensions/inheritance.rst:122
 msgid ""
@@ -137,3 +175,7 @@ msgid ""
 " when exposing the underlying path of a class is not desirable, e.g. it's a "
 "private class and should not be instantiated by the user)."
 msgstr ""
+"Permite mapear o nome completo qualificado da classe para valores "
+"personalizados (útil quando a exposição do path subjacente de uma classe não"
+" é desejável, por exemplo, é uma classe privada e não deve ser instanciada "
+"pelo usuário)."

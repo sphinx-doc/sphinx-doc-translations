@@ -6,15 +6,16 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/bc959382\n"
+"Project-Id-Version: Sphinx 2.0.0+/74d6ea26\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 17:38+0000\n"
+"POT-Creation-Date: 2019-01-21 17:40+0000\n"
 "PO-Revision-Date: 2018-11-20 17:14+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,6 +44,8 @@ msgid ""
 "Workflow visualization of translations in Sphinx.  (The stick-figure is "
 "taken from an `XKCD comic <https://xkcd.com/779/>`_.)"
 msgstr ""
+"Visualização de fluxo de trabalho de traduções no *Sphinx*. (O bonequinho é "
+"tirado de um `XKCD comic <https://xkcd.com/779/>`_.)"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:22
 msgid "Sphinx internationalization details"
@@ -119,6 +122,10 @@ msgid ""
 "discoverable with :confval:`locale_dirs` for your :confval:`language`, "
 "Sphinx will pick them up automatically."
 msgstr ""
+"O *gettext* os compila em um formato binário conhecido como **binary "
+"catalogs** :program:`msgfmt` por motivos de eficiência. Se você tornar esses"
+" arquivos detectáveis com o :confval:`locale_dirs` para o seu "
+":confval:`language`, o ``Sphinx`` irá buscá-los automaticamente."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:54
 msgid ""
@@ -127,6 +134,11 @@ msgid ""
 "have Spanish translations [2]_ stored in ``usage.po`` --- for your builds to"
 " be translated you need to follow these instructions:"
 msgstr ""
+"Um exemplo: você tem um documento ``usage.rst`` no seu projeto ``Sphinx``. O"
+" construtor *gettext* colocará suas mensagens em ``usage.pot``. Imagine que "
+"você tenha as traduções para espanhol [2]_ armazenadas em ``usage.po`` --- "
+"para que suas construções sejam traduzidas, é necessário seguir estas "
+"instruções:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:59
 msgid ""
@@ -169,14 +181,17 @@ msgid ""
 "`sphinx-intl`_ is a useful tool to work with Sphinx translation flow.  This "
 "section describe an easy way to translate with *sphinx-intl*."
 msgstr ""
+"*sphinx-intl* é uma ferramenta útil para trabalhar com o fluxo de tradução "
+"do ``Sphinx``. Esta seção descreve uma maneira fácil de traduzir com "
+"*sphinx-intl*."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:80
 msgid "Install `sphinx-intl`_."
-msgstr ""
+msgstr "Instale `sphinx-intl`_."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:86
 msgid "Add configurations to ``conf.py``."
-msgstr ""
+msgstr "Adicione configurações ao ``conf.py``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:93
 msgid ""
@@ -184,41 +199,47 @@ msgid ""
 "and :confval:`gettext_compact` is set to ``False`` (the Sphinx document is "
 "already configured as such)."
 msgstr ""
+"Este estudo de caso assume que :confval:`locale_dirs` está definida como "
+"``locale/`` e :confval:`gettext_compact` está definida como ``False`` (o "
+"documento ``Sphinx`` já está configurado como tal)."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:97
 msgid "Extract translatable messages into pot files."
-msgstr ""
+msgstr "Extrair mensagens traduzíveis em arquivos pot."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:103
 msgid ""
 "The generated pot files will be placed in the ``_build/gettext`` directory."
 msgstr ""
+"Os arquivos ``pot`` gerados serão colocados no diretório ``build/gettext``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:105
 msgid "Generate po files."
-msgstr ""
+msgstr "Gere arquivos ``po``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:107
 msgid "We'll use the pot files generated in the above step."
-msgstr ""
+msgstr "Nós vamos usar os arquivos ``pot`` gerados na etapa acima."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:113
 msgid ""
 "Once completed, the generated po files will be placed in the below "
 "directories:"
 msgstr ""
+"Uma vez completados, os arquivos ``po`` gerados serão colocados nos "
+"diretórios abaixo:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:116
 msgid "``./locale/de/LC_MESSAGES/``"
-msgstr ""
+msgstr "``./locale/de/LC_MESSAGES/``"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:117
 msgid "``./locale/ja/LC_MESSAGES/``"
-msgstr ""
+msgstr "``./locale/ja/LC_MESSAGES/``"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:119
 msgid "Translate po files."
-msgstr ""
+msgstr "Traduzir arquivos ``po``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:121
 msgid ""
@@ -226,6 +247,9 @@ msgid ""
 "directory.  An example of one such file, from Sphinx, ``builders.po``, is "
 "given below."
 msgstr ""
+"Como mencionado acima, eles estão localizados no diretório "
+"``./locale/<lang>/LC_MESSAGES``. Um exemplo de um tal arquivo, do "
+"``Sphinx``, ``builders.po``, é fornecido abaixo."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:132
 msgid ""
@@ -244,25 +268,27 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:148
 msgid "Build translated document."
-msgstr ""
+msgstr "Construa documento traduzido."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:150
 msgid ""
 "You need a :confval:`language` parameter in ``conf.py`` or you may also "
 "specify the parameter on the command line."
 msgstr ""
+"Você precisa de um parâmetro :confval:`language` em ``conf.py`` ou também "
+"pode especificar o parâmetro na linha de comando."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:153
 msgid "For for BSD/GNU make, run:"
-msgstr ""
+msgstr "Para o BSD / GNU make, execute:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:159
 msgid "For Windows :command:`cmd.exe`, run:"
-msgstr ""
+msgstr "Para o Windows :command:`cmd.exe`, execute:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:166
 msgid "For PowerShell, run:"
-msgstr ""
+msgstr "Para o PowerShell, execute:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:173
 msgid ""
@@ -275,12 +301,16 @@ msgid ""
 ":program:`sphinx-build` that is invoked by make command will build po files "
 "into mo files."
 msgstr ""
+":program:`sphinx-build` que é invocado pelo comando ``make`` e irá construir"
+" arquivos ``po`` em arquivos ``mo``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:181
 msgid ""
 "If you are using 1.2.x or earlier, please invoke :command:`sphinx-intl "
 "build` command before :command:`make` command."
 msgstr ""
+"Se você estiver usando 1.2.x ou anterior, invoque o comando :command"
+":`sphinx-intl build` antes do comando :command:`make`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:185
 msgid "Translating"
@@ -297,6 +327,10 @@ msgid ""
 "from a pot file to the po file, use the :command:`sphinx-intl update` "
 "command."
 msgstr ""
+"Se um documento for atualizado, é necessário gerar arquivos ``pot`` "
+"atualizados e aplicar as diferenças aos arquivos ``po`` traduzidos. Para "
+"aplicar as atualizações de um arquivo ``pot`` ao arquivo ``po``, use o "
+"comando :command:`sphinx-intl update`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:200
 msgid "Using Transifex service for team translation"
@@ -314,7 +348,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:209
 msgid "Install `transifex-client`_."
-msgstr ""
+msgstr "Instale `transifex-client`_."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:211
 msgid "You need :command:`tx` command to upload resources (pot files)."
@@ -330,6 +364,7 @@ msgstr "`Transifex Client documentation`_"
 msgid ""
 "Create your transifex_ account and create new project for your document."
 msgstr ""
+"Crie sua conta transifex_ e crie um novo projeto para o seu documento."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:221
 msgid ""
@@ -363,7 +398,7 @@ msgstr "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:230
 msgid "Create config files for :command:`tx` command."
-msgstr ""
+msgstr "Crie arquivos de configuração para o comando :command:`tx`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:232
 msgid ""
@@ -375,7 +410,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:246
 msgid "Upload pot files to transifex service."
-msgstr ""
+msgstr "Carregue arquivos ``pot`` para o serviço transifex."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:248
 msgid "Register pot files to ``.tx/config`` file:"
@@ -387,21 +422,23 @@ msgstr "e upload arquivos pot:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:267
 msgid "Forward the translation on transifex."
-msgstr ""
+msgstr "Encaminhe a tradução no transifex."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:271
 msgid "Pull translated po files and make translated HTML."
-msgstr ""
+msgstr "Puxe arquivos ``PO`` traduzidos e gere o HTML traduzido.'"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:273
 msgid ""
 "Get translated catalogs and build mo files. For example, to build mo files "
 "for German (de):"
 msgstr ""
+"Obtenha catálogos traduzidos e crie arquivos ``mo``. Por exemplo, para "
+"construir arquivos ``mo`` para o alemão (de):"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:285
 msgid "Invoke :command:`make html` (for BSD/GNU make):"
-msgstr ""
+msgstr "Invoque :command:`make html` (para BSD/GNU make):"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:291
 msgid "That's all!"
@@ -417,6 +454,9 @@ msgid ""
 ":command:`tx push -t` command.  Watch out! This operation overwrites "
 "translations in transifex."
 msgstr ""
+"Se você quer empurrar os arquivos ``po`` de todos os idiomas, poderás fazê-"
+"lo usando o comando :command:`tx push -t`. Cuidado! Esta operação substitui "
+"as traduções no transifex."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:299
 msgid ""
@@ -462,7 +502,7 @@ msgstr "Aguarde o retorno com a aceitação vinda dos mantenedores do projeto."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:315
 msgid "(After acceptance) Translate on transifex."
-msgstr ""
+msgstr "(Depois da aceitação) Traduza no transifex."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:318
 msgid "Footnotes"
@@ -474,6 +514,9 @@ msgid ""
 "<https://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ "
 "for details on that software suite."
 msgstr ""
+"Consulte o `GNU gettext utilities "
+"<https://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ "
+"para obter detalhes sobre esse pacote de software."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:322
 msgid "Because nobody expects the Spanish Inquisition!"

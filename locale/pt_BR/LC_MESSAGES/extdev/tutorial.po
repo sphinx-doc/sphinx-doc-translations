@@ -5,6 +5,7 @@
 # 
 # Translators:
 # gilberto dos santos alves <gsavix@gmail.com>, 2018
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-22 17:26+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2018\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,12 +60,18 @@ msgid ""
 ":class:`.Sphinx`.  It controls most high-level functionality, such as the "
 "setup of extensions, event dispatching and producing output (logging)."
 msgstr ""
+"O objeto de aplicação (geralmente chamado ``app``) é uma instância de "
+":class:`.Sphinx`. Ele controla a maioria das funcionalidades de alto nível, "
+"como a configuração de extensões, o despacho de eventos e a produção de "
+"saída (logging)."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:26
 msgid ""
 "If you have the environment object, the application is available as "
 "``env.app``."
 msgstr ""
+"Se você tiver o objeto de ambiente, o aplicativo estará disponível como "
+"``env.app``."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:40
 msgid "**Environment**"
@@ -77,6 +84,10 @@ msgid ""
 "documents, stores all metadata about the document collection and is "
 "serialized to disk after each build."
 msgstr ""
+"O objeto do ambiente de construção (geralmente chamado ``env``) é uma "
+"instância de :class:`.BuildEnvironment`. Ele é responsável por analisar os "
+"documentos de origem, armazena todos os metadados sobre a coleção de "
+"documentos e é serializado em disco após cada compilação."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:35
 msgid ""
@@ -84,12 +95,17 @@ msgid ""
 "references, etc.  It can also be used by extensions to cache information "
 "that should persist for incremental rebuilds."
 msgstr ""
+"Sua API fornece métodos para acessar metadados, resolver referências, etc. "
+"Também pode ser usada por extensões para armazenar em cache informações que "
+"devem persistir para recriações incrementais."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:39
 msgid ""
 "If you have the application or builder object, the environment is available "
 "as ``app.env`` or ``builder.env``."
 msgstr ""
+"Se você tiver o objeto do aplicativo ou construtor, o ambiente estará "
+"disponível como ``app.env`` ou ``builder.env``."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:49
 msgid "**Builder**"
@@ -102,12 +118,18 @@ msgid ""
 " parsed documents into an output format, or otherwise process them (e.g. "
 "check external links)."
 msgstr ""
+"O objeto construtor (geralmente chamado ``builder``) é uma instância de uma "
+"subclasse específica de :class:`.Builder`. Cada classe de construtor sabe "
+"como converter os documentos analisados em um formato de saída ou processá-"
+"los (por exemplo, verificar links externos)."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:48
 msgid ""
 "If you have the application object, the builder is available as "
 "``app.builder``."
 msgstr ""
+"Se você tiver o objeto do aplicativo, o construtor estará disponível como "
+"``app.builder``."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:57
 msgid "**Config**"
@@ -119,10 +141,13 @@ msgid ""
 "configuration values set in :file:`conf.py` as attributes.  It is an "
 "instance of :class:`.Config`."
 msgstr ""
+"O objeto de configuração (geralmente chamado ``config``) fornece os valores "
+"dos valores de configuração definidos em :file:`conf.py` como atributos. É "
+"uma instância de :class:`.Config`."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:56
 msgid "The config is available as ``app.config`` or ``env.config``."
-msgstr ""
+msgstr "A configuração está disponível como ``app.config`` ou ``env.config``."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:60
 msgid "Build Phases"
@@ -133,6 +158,8 @@ msgid ""
 "One thing that is vital in order to understand extension mechanisms is the "
 "way in which a Sphinx project is built: this works in several phases."
 msgstr ""
+"Uma coisa que é vital para entender os mecanismos de extensão é a maneira "
+"como um projeto ``Sphinx`` é construído: isso funciona em várias fases."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:65
 msgid "**Phase 0: Initialization**"
@@ -145,6 +172,10 @@ msgid ""
 "Should a stored build environment exist, it is loaded, otherwise a new one "
 "is created."
 msgstr ""
+"Nesta fase, quase nada de interessante para nós acontece. O diretório de "
+"origem é pesquisado por arquivos de origem e as extensões são inicializadas."
+" Se existir um ambiente de compilação armazenado, ele será carregado, caso "
+"contrário, um novo será criado."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:72
 msgid "**Phase 1: Reading**"
@@ -159,6 +190,13 @@ msgid ""
 " of docutils nodes.  For document elements that aren't fully known until all"
 " existing files are read, temporary nodes are created."
 msgstr ""
+"Na Fase 1, todos os arquivos de origem (e em compilações subsequentes, "
+"aqueles que são novos ou alterados) são lidos e analisados. Esta é a fase em"
+" que diretivas e funções são encontradas pelos ``docutils`` e o código "
+"correspondente é executado. A saída desta fase é um *doctree* para cada "
+"arquivo de origem; isso é uma árvore de nós ``docutils``. Para elementos de "
+"documento que não são totalmente conhecidos até que todos os arquivos "
+"existentes sejam lidos, nós temporários são criados."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:81
 msgid ""
@@ -166,6 +204,10 @@ msgid ""
 "documentation <http://docutils.sourceforge.net/docs/ref/doctree.html>`__. "
 "Additional nodes are provided by Sphinx and :ref:`documented here <nodes>`."
 msgstr ""
+"Existem nós fornecidos por ``docutils``, que são documentados `na "
+"documentação do docutils "
+"<http://docutils.sourceforge.net/docs/ref/doctree.html>`__. Nós adicionais "
+"são fornecidos pelo ``Sphinx`` e :ref:`documented here <nodes>`."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:85
 msgid ""
@@ -174,12 +216,18 @@ msgid ""
 " described Python objects and index entries.  This will later be used to "
 "replace the temporary nodes."
 msgstr ""
+"Durante a leitura, o ambiente de compilação é atualizado com todos os dados "
+"de meta e referência cruzada dos documentos lidos, como labels, os nomes dos"
+" títulos, objetos descritos do Python e entradas de índice. Isso será usado "
+"posteriormente para substituir os nós temporários."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:90
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
 msgstr ""
+"Os ``doctrees`` analisados são armazenados no disco, porque não é possível "
+"manter todos eles na memória."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:93
 msgid "**Phase 2: Consistency checks**"
@@ -188,6 +236,8 @@ msgstr "**Phase 2: Verificações e consistências**"
 #: ../../sphinx/doc/extdev/tutorial.rst:95
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr ""
+"Alguma verificação é feita para garantir que não haja surpresas nos "
+"documentos construídos."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:97
 msgid "**Phase 3: Resolving**"
@@ -213,6 +263,10 @@ msgid ""
 " the individual nodes of each doctree and produces some output in the "
 "process."
 msgstr ""
+"Esta fase converte os ``doctrees`` resolvidos no formato de saída desejado, "
+"como HTML ou LaTeX. Isso acontece por meio de um escritor chamado "
+"``docutils``, que visita os nós individuais de cada ``doctree`` e produz "
+"alguma saída no processo."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:113
 msgid ""
@@ -220,6 +274,9 @@ msgid ""
 " that checks external links does not need anything more than the parsed "
 "doctrees and therefore does not have phases 2--4."
 msgstr ""
+"Alguns construtores se desviam desse plano de construção geral, por exemplo,"
+" o construtor que verifica links externos não precisa de nada além dos "
+"``doctrees`` analisados e, portanto, não possui as fases 2-4."
 
 #: ../../sphinx/doc/extdev/tutorial.rst:119
 msgid "Extension Design"

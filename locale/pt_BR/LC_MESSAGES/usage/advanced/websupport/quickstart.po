@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.0.0+/bc959382\n"
+"Project-Id-Version: Sphinx 2.0.0+/74d6ea26\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 17:38+0000\n"
+"POT-Creation-Date: 2019-01-21 17:40+0000\n"
 "PO-Revision-Date: 2018-11-20 17:15+0000\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,6 +55,12 @@ msgid ""
 "other directory will be called \"static\" and contains static files that "
 "should be served from \"/static\"."
 msgstr ""
+"Isto irá ler as fontes reStructuredText de ``srcdir`` e colocar os dados "
+"necessários em ``builddir``. O ``builddir`` conterá dois subdiretórios: um "
+"denominado \"data\" que contém todos os dados necessários para exibir "
+"documentos, pesquisar documentos e adicionar comentários a documentos. O "
+"outro diretório será chamado de \"estático\" e contém arquivos estáticos que"
+" devem ser atendidos a partir de \"/static\"."
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:31
 msgid ""
@@ -206,6 +213,13 @@ msgid ""
 "method to retrieve search results. In `Flask <http://flask.pocoo.org/>`_ "
 "that would be like this::"
 msgstr ""
+"Para usar o formulário de pesquisa integrado à barra lateral do ``Sphinx``, "
+"crie uma função para manipular solicitações para a URL 'search' em relação à"
+" raiz da documentação. A consulta de pesquisa do usuário estará nos "
+"parâmetros ``GET``, com a chave `q`.  Em seguida use o método  "
+":meth:`~sphinxcontrib.websupport.WebSupport.get_search_results` para "
+"recuperar os resultados da pesquisa. Em `Flask <http://flask.pocoo.org/>`_ "
+"seria assim::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:164
 msgid ""
@@ -244,6 +258,13 @@ msgid ""
 "comments for a specific node, and is aptly named "
 ":meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 msgstr ""
+"Você notará que tanto um ``parent_id`` quanto um ``node_id`` são enviados "
+"com a solicitação. Se o comentário estiver sendo anexado diretamente a um "
+"nó, ``parent_id`` estará vazia. Se o comentário for filho de outro "
+"comentário, então ``node_id`` estará vazia. Em seguida, a próxima função "
+"manipula a recuperação de comentários para um nó específico e é "
+"apropriadamente denominada "
+":meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:205
 msgid ""
@@ -263,6 +284,10 @@ msgid ""
 "automatically displayed.  If you wish to have some form of moderation, you "
 "can pass the ``displayed`` keyword argument::"
 msgstr ""
+"Por padrão, todos os comentários adicionados através do "
+":meth:`~.WebSupport.add_comment` são exibidos automaticamente. Se você "
+"deseja ter alguma forma de moderação, você pode passar o argumento de "
+"palavra-chave ``displayed``::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:232
 msgid ""

@@ -7,6 +7,7 @@
 # Georg Brandl <g.brandl@gmx.net>, 2017
 # gilberto dos santos alves <gsavix@gmail.com>, 2018
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# Claudio Rogerio, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-12 09:42+0000\n"
 "PO-Revision-Date: 2017-07-04 15:52+0000\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
+"Last-Translator: Claudio Rogerio, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3052,6 +3053,13 @@ msgid ""
 "``72px=1in``, simply use ``'1bp'``; for ``90px=1in``, use ``'0.8bp'`` or "
 "``'0.803pt'``."
 msgstr ""
+"o valor do ``px`` quando usado nos atributos de imagem ``width`` e "
+"``height``. O valor padrão é ``'0.75bp'`` que atinge ``96px=1in`` (em TeX "
+"``1in = 72bp = 72.27pt``.) Para obter, por exemplo ``100px=1in``, use "
+"``'0.01in'`` ou ``'0.7227pt'`` (o último leva o cálculo do TeX a um valor "
+"mais preciso, devido à unidade menor usada na especificação); para "
+"``72px=1in``, simplesmente use ``'1bp'``; para ``90px=1in``, use ``'0.8bp'``"
+" ou ``'0.803pt'``."
 
 #: ../../sphinx/doc/config.rst:1805
 msgid "``'sphinxsetup'``"
@@ -3088,6 +3096,10 @@ msgid ""
 " is used if no language.) For Japanese documents, the default is the empty "
 "string."
 msgstr ""
+"Inclusão do pacote ``babel``, padrão ``'\\\\usepackage{babel}'`` (a string "
+"adequada do idioma do documento é transmitida como opção de classe e "
+"``english`` é utilizada se não houver linguagem.) Para documentos em "
+"japonês, o padrão é a cadeia vazia."
 
 #: ../../sphinx/doc/config.rst:1818
 msgid ""
@@ -3153,6 +3165,14 @@ msgid ""
 "\"Rejne\" and \"Bjornstrup\".  You can also set this to ``''`` to disable "
 "fncychap."
 msgstr ""
+"Inclusão do pacote \"fncychap\" (que cria títulos de capítulos "
+"extravagantes), padrão ``'\\\\usepackage[Bjarne]{fncychap}'`` ​​para "
+"documentação em inglês (esta opção é ligeiramente customizada pelo Sphinx), "
+"``'\\\\usepackage[Sonny]{fncychap}'`` para documentos internacionalizados "
+"(porque o estilo \"Bjarne\" usa números escritos em inglês). Outros estilos "
+"\"fncychap\" que você pode experimentar são \"Lenny\", \"Glenn\", \"Conny\","
+" \"Rejne\" e \"Bjornstrup\". Você também pode definir isso para ``''`` para "
+"desabilitar o fncychap."
 
 #: ../../sphinx/doc/config.rst:1855 ../../sphinx/doc/config.rst:2212
 msgid "``'preamble'``"
@@ -3430,6 +3450,11 @@ msgid ""
 "by user loaded packages.) Override if you want to generate a different table"
 " of contents or put content between the title page and the TOC."
 msgstr ""
+"Chamada ``tableofcontents``, padrão ``'\\\\sphinxtableofcontents'`` (é um "
+"invólucro de ``\\tableofcontents`` não modificado, que pode ser "
+"personalizado por pacotes carregados pelo usuário.) Substitua se você deseja"
+" gerar um índice diferente ou colocar conteúdo entre a página de título e o "
+"sumário."
 
 #: ../../sphinx/doc/config.rst:1980
 msgid ""
@@ -3437,6 +3462,9 @@ msgid ""
 "Sphinx. This created an incompatibility with dedicated packages modifying it"
 " also such as \"tocloft\" or \"etoc\"."
 msgstr ""
+"Anteriormente, o significado de ``\\tableofcontents`` foi modificado pelo "
+"Sphinx. Isso criou uma incompatibilidade com pacotes dedicados, "
+"modificando-o também como ``tocloft`` ou ``etoc``."
 
 #: ../../sphinx/doc/config.rst:1990
 msgid "``'transition'``"
@@ -3451,7 +3479,7 @@ msgstr ""
 
 #: ../../sphinx/doc/config.rst:1990
 msgid "Remove unneeded ``{}`` after ``\\\\hrule``."
-msgstr ""
+msgstr "Remova o ``{}`` desnecessário após ``\\\\hrule``."
 
 #: ../../sphinx/doc/config.rst:1997
 msgid "``'printindex'``"

@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 2.1.0+/2dc59e89\n"
+"Project-Id-Version: Sphinx 2.1.0+/21612ba6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-04 18:00+0000\n"
+"POT-Creation-Date: 2019-03-05 17:59+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -692,16 +692,21 @@ msgid ""
 "sub-section (but still ``x.1``, ``x.2``, ... if located directly under a "
 "section and ``1``, ``2``, ... if not in any top level section.)"
 msgstr ""
+"``2`` significa que números serão ``x.y.1``, ``x.y.2``, ... se existirem em "
+"uma sub-seção (mas aparedcem ``x.1``, ``x.2``, ... se existirem sob uma "
+"seção e ``1``, ``2``, ... se não existirem em nenhuma seção nível superior.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:432
 msgid "etc..."
-msgstr ""
+msgstr "etc."
 
 #: ../../sphinx/doc/usage/configuration.rst:436
 msgid ""
 "The LaTeX builder obeys this setting (if :confval:`numfig` is set to "
 "``True``)."
 msgstr ""
+"O construtor LaTeX obedece essa configuração (se :confval:`numfig` é "
+"``True``)."
 
 #: ../../sphinx/doc/usage/configuration.rst:442
 msgid ""
@@ -710,6 +715,10 @@ msgid ""
 "languages, will be used to convert quotes and dashes to typographically "
 "correct entities.  Default: ``True``."
 msgstr ""
+"Se verdadeiro, a `Docutils Smart Quotes transform`__, originalmente baseada "
+"em  `SmartyPants`__ (limitada ao Inglês) e atualmente aplica-se para "
+"diversos idiomas, será usada para converter aspas e traços para entidades "
+"tipograficamente corretas.  Padrão: ``True``."
 
 #: ../../sphinx/doc/usage/configuration.rst:450
 msgid ""
@@ -717,6 +726,9 @@ msgid ""
 "default to all builders except ``man`` and ``text`` (see "
 ":confval:`smartquotes_excludes`.)"
 msgstr ""
+"Substitui o obsoleto :confval:`html_use_smartypants`. Aplica-se por padrão "
+"para todos os construtores exceto ``man`` e ``text`` (ver "
+":confval:`smartquotes_excludes`.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:455
 msgid ""
@@ -725,6 +737,11 @@ msgid ""
 "smart quotes via the corresponding `Docutils option`__.  But if it "
 "*activates* them, then :confval:`smartquotes` does prevail."
 msgstr ""
+"Arquivo `docutils.conf`__ localizado no diretório de configuração (ou "
+"arquivo global :file:`~/.docutils` ) é respeitado incondicionalmente se ele "
+"*desativa* aspas diferentes através da opção correspondente `Docutils "
+"option`__.  Mas se for *ativada* então  :confval:`smartquotes` , não "
+"prevalece."
 
 #: ../../sphinx/doc/usage/configuration.rst:465
 msgid ""
@@ -757,6 +774,13 @@ msgid ""
 " usage of :program:`sphinx-build` as it caches (in its default usage) the "
 "parsed source files in per builder locations."
 msgstr ""
+"Atualmente, em caso de chamada do :program:`make` com múltiplos alvos, o "
+"primeiro nome será o único validado nas opções ``'builders'`` e decidirá por"
+" todos.  Também um ``make text`` seguido por ``make html`` aninhado será "
+"emitido no formato ``make text O=\"-E\"`` para forçar a transmissão dos "
+"arquivos fonte, como cache que já foi transformado.  De outra maneira o "
+"requerimento não se realizará no uso do :program:`sphinx-build` como cache "
+"(que é o uso padrão) dos arquivos fontes submetidos para cada construtor."
 
 #: ../../sphinx/doc/usage/configuration.rst:499
 msgid "If true, Sphinx verifies server certifications.  Default is ``True``."
@@ -1294,42 +1318,54 @@ msgid ""
 "``dirname/filename.en.png`` from ``.. image:: dirname/filename.png``. The "
 "available format tokens are:"
 msgstr ""
+"O nome do arquivo de imagem no idioma específico.  O padrão é "
+"``{root}.{idioma}{ext}``.  Será expandido para ``diretório/arquivo.en.png`` "
+"derivado de ``.. image:: diretório/nomearquivo.png``. Os códigos disponíveis"
+" são:"
 
 #: ../../sphinx/doc/usage/configuration.rst:767
 msgid ""
 "``{root}`` - the filename, including any path component, without the file "
 "extension, e.g. ``dirname/filename``"
 msgstr ""
+"``{root}`` - O nome do arquivo, incluindo componentes de caminho, porem sem "
+"a extensão do arquivo, ex. ``diretório/arquivo``"
 
 #: ../../sphinx/doc/usage/configuration.rst:769
 msgid ""
 "``{path}`` - the directory path component of the filename, with a trailing "
 "slash if non-empty, e.g. ``dirname/``"
 msgstr ""
+"``{path}`` - o caminho do diretório do nome do arquivo, com barra final se "
+"não for vazio, ex. ``diretório/``"
 
 #: ../../sphinx/doc/usage/configuration.rst:771
 msgid ""
 "``{basename}`` - the filename without the directory path or file extension "
 "components, e.g. ``filename``"
 msgstr ""
+"``{basename}`` - nome do arquivo sem o caminho do diretório e sem a extensão"
+" do arquivo, ex.  ``arquivo``"
 
 #: ../../sphinx/doc/usage/configuration.rst:773
 msgid "``{ext}`` - the file extension, e.g. ``.png``"
-msgstr ""
+msgstr "``{ext}`` - a extensão do arquivo, ex. ``.png``"
 
 #: ../../sphinx/doc/usage/configuration.rst:774
 msgid "``{language}`` - the translation language, e.g. ``en``"
-msgstr ""
+msgstr "``{language}`` - idioma da tradução, ex.  ``en``"
 
 #: ../../sphinx/doc/usage/configuration.rst:776
 msgid ""
 "For example, setting this to ``{path}{language}/{basename}{ext}`` will "
 "expand to ``dirname/en/filename.png`` instead."
 msgstr ""
+"Por exemplo, configurado isso para ``{path}{language}/{basename}{ext}`` irão"
+" ser expandidas para ``dirname/en/filename.png``."
 
 #: ../../sphinx/doc/usage/configuration.rst:781
 msgid "Added ``{path}`` and ``{basename}`` tokens."
-msgstr ""
+msgstr "Adic. ``{path}`` e ``{basename}`` termos."
 
 #: ../../sphinx/doc/usage/configuration.rst:788
 msgid "Options for Math"
@@ -1605,10 +1641,12 @@ msgid ""
 "If true, quotes and dashes are converted to typographically correct "
 "entities.  Default: ``True``."
 msgstr ""
+"Se verdadeiro, aspas e traços são convertidos para entidades "
+"tipograficamente corretas. Padrão ``True``."
 
 #: ../../sphinx/doc/usage/configuration.rst:1003
 msgid "To disable smart quotes, use rather :confval:`smartquotes`."
-msgstr ""
+msgstr "Para desabilitar aspas smart, usar :confval:`smartquotes`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1008
 msgid ""
@@ -3510,7 +3548,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:2262
 msgid "The HTML theme for the qthelp output. This defaults to ``'nonav'``."
-msgstr ""
+msgstr "Tema HTML para saída qthelp. Padrão ``'nonav'``."
 
 #: ../../sphinx/doc/usage/configuration.rst:2273
 msgid "Options for the linkcheck builder"
@@ -3537,6 +3575,8 @@ msgid ""
 "A timeout value, in seconds, for the linkcheck builder.  The default is to "
 "use Python's global socket timeout."
 msgstr ""
+"Tempo para timeout, em segundos, para o construtor de verificação de links. "
+"O padrão é usar o tempo padrão do soquete Python."
 
 #: ../../sphinx/doc/usage/configuration.rst:2300
 msgid ""

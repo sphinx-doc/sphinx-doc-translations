@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/1f843865\n"
+"Project-Id-Version: Sphinx 3.0.0+/2e4644dc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-29 18:10+0000\n"
+"POT-Creation-Date: 2019-03-30 18:11+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Takeshi KOMIYA <i.tkomiya@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -123,7 +123,7 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.set_translator:8
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:48
+#: sphinx.application.Sphinx.add_directive:34
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:8
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -305,39 +305,14 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:3
 msgid ""
-"*name* must be the prospective directive name.  There are two possible ways "
-"to write a directive:"
+"*name* must be the prospective directive name.  *cls* is a directive class "
+"which inherits ``docutils.parsers.rst.Directive``.  For more details, see "
+"`the Docutils docs <http://docutils.sourceforge.net/docs/howto/rst-"
+"directives.html>`_ ."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:6
-msgid ""
-"In the docutils 0.4 style, *obj* is the directive function. *content*, "
-"*arguments* and *options* are set as attributes on the function and "
-"determine whether the directive has content, arguments and options, "
-"respectively.  **This style is deprecated.**"
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:11
-msgid ""
-"In the docutils 0.5 style, *obj* is the directive class. It must already "
-"have attributes named *has_content*, *required_arguments*, "
-"*optional_arguments*, *final_argument_whitespace* and *option_spec* that "
-"correspond to the options for the function way.  See `the Docutils docs "
-"<http://docutils.sourceforge.net/docs/howto/rst-directives.html>`_ for "
-"details."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:19
-msgid ""
-"The directive class must inherit from the class "
-"``docutils.parsers.rst.Directive``."
-msgstr "directiveクラスは ``docutils.parsers.rst.Directive`` を継承する必要があります。"
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:22
+#: sphinx.application.Sphinx.add_directive:8
 msgid ""
 "For example, the (already existing) :rst:dir:`literalinclude` directive "
 "would be added like this:"
@@ -345,12 +320,12 @@ msgstr ""
 "例えば、 :rst:dir:`literalinclude` というディレクティブを追加する場合には(既に存在していますが)、以下のように書きます:"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:44
+#: sphinx.application.Sphinx.add_directive:30
 msgid "Docutils 0.5-style directive classes are now supported."
 msgstr "Docutils 0.5 スタイルのディレクティブクラスをサポートしました。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive:46
+#: sphinx.application.Sphinx.add_directive:32
 msgid "Docutils 0.4-style (function based) directives support is deprecated."
 msgstr ""
 
@@ -394,26 +369,6 @@ msgid ""
 msgstr ""
 "与えられた *domain* (クラスです。おそらく :class:`~sphinx.domains.Domain` "
 "のサブクラスになるでしょう)をSphinxに知らせます。"
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.override_domain:1
-msgid "Override a registered domain."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.override_domain:3
-msgid ""
-"Make the given *domain* class known to Sphinx, assuming that there is "
-"already a domain with its ``.name``.  The new domain must be a subclass of "
-"the existing one."
-msgstr ""
-"与えられた *domain* クラスをSphinxに知らせますが、指定されたクラスの ``.name`` "
-"属性がすでに登録されている場合に使用します。新しい *domain* クラスは、既存のクラスのサブクラスでなければなりません。"
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.override_domain:8
-msgid "Integrated to :meth:`add_domain`."
-msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:1
@@ -927,13 +882,13 @@ msgstr ""
 msgid "``typ`` is a type of processing; ``'read'`` or ``'write'``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:104
+#: ../../sphinx/doc/extdev/appapi.rst:102
 msgid ""
 "All these methods raise this exception if something went wrong with the "
 "extension API."
 msgstr "ここで説明したすべてのメソッドは、もし拡張APIの中で何か想定外のことが発生した時には、この例外を投げます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:109
+#: ../../sphinx/doc/extdev/appapi.rst:107
 msgid "Emitting events"
 msgstr "イベントの発行"
 
@@ -956,40 +911,40 @@ msgstr ""
 msgid "Return the result of the first callback that doesn't return ``None``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:119
+#: ../../sphinx/doc/extdev/appapi.rst:117
 msgid "Sphinx runtime information"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:121
+#: ../../sphinx/doc/extdev/appapi.rst:119
 msgid ""
 "The application object also provides runtime information as attributes."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:125
+#: ../../sphinx/doc/extdev/appapi.rst:123
 msgid "Target project.  See :class:`.Project`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:129
+#: ../../sphinx/doc/extdev/appapi.rst:127
 msgid "Source directory."
 msgstr "ソースディレクトリ。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:133
+#: ../../sphinx/doc/extdev/appapi.rst:131
 msgid "Directory containing ``conf.py``."
 msgstr " ``conf.py`` が含まれるディレクトリ。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:137
+#: ../../sphinx/doc/extdev/appapi.rst:135
 msgid "Directory for storing pickled doctrees."
 msgstr "pickle化された doctree を格納するディレクトリ"
 
-#: ../../sphinx/doc/extdev/appapi.rst:141
+#: ../../sphinx/doc/extdev/appapi.rst:139
 msgid "Directory for storing built document."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:147
+#: ../../sphinx/doc/extdev/appapi.rst:145
 msgid "Sphinx core events"
 msgstr "Sphinxコアイベント"
 
-#: ../../sphinx/doc/extdev/appapi.rst:149
+#: ../../sphinx/doc/extdev/appapi.rst:147
 msgid ""
 "These events are known to the core.  The arguments shown are given to the "
 "registered event handlers.  Use :meth:`.connect` in an extension's ``setup``"
@@ -1000,17 +955,17 @@ msgstr ""
 "``setup`` 関数 ( 注 ``conf.py`` 中でも ``setup`` 関数を記述すことができます) 内にて "
 ":meth:`.connect` メソッドを使用することで、イベントをイベントハンドラーと関連付けます。例えば:"
 
-#: ../../sphinx/doc/extdev/appapi.rst:165
+#: ../../sphinx/doc/extdev/appapi.rst:163
 msgid ""
 "Emitted when the builder object has been created.  It is available as "
 "``app.builder``."
 msgstr "ビルダーオブジェクトが作成された時に発行されます。ビルダーオブジェクトは ``app.builder`` とすることで参照できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:170
+#: ../../sphinx/doc/extdev/appapi.rst:168
 msgid "Emitted when the config object has been initialized."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:176
+#: ../../sphinx/doc/extdev/appapi.rst:174
 msgid ""
 "Emitted when the environment determines which source files have changed and "
 "should be re-read.  *added*, *changed* and *removed* are sets of docnames "
@@ -1020,7 +975,7 @@ msgstr ""
 "ソースファイルが変更されたりして、再読み込みする必要がある場合に発行されます。 *added*, *changed*, *removed* "
 "には、ドキュメント名のセットです。さらに追加で読み込み直すべきドキュメントのリストを返すことができます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:185
+#: ../../sphinx/doc/extdev/appapi.rst:183
 msgid ""
 "Emitted when all traces of a source file should be cleaned from the "
 "environment, that is, if the source file is removed or before it is freshly "
@@ -1029,7 +984,7 @@ msgid ""
 msgstr ""
 "ソースファイルが削除されたり、新たに読み込まる場合など、環境の中に含まれるソースファイルの関連情報をクリアすべき状況になった場合に発行されます。環境の属性の中に情報をキャッシュしておくような拡張機能ためのイベントです。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:190
+#: ../../sphinx/doc/extdev/appapi.rst:188
 msgid ""
 "For example, there is a cache of all modules on the environment.  When a "
 "source file has been changed, the cache's entries for the file are cleared, "
@@ -1037,7 +992,7 @@ msgid ""
 msgstr ""
 "例えば、環境の中にすべてのモジュールのキャッシュが存在してる場合、ソースファイルが変更されると、ファイルからモジュール宣言から削除されてから、そのファイルに関するキャッシュのエントリーはクリアされます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:198
+#: ../../sphinx/doc/extdev/appapi.rst:196
 msgid ""
 "Emitted after the environment has determined the list of all added and "
 "changed files and just before it reads them.  It allows extension authors to"
@@ -1048,7 +1003,7 @@ msgstr ""
 "環境がすべての追加および変更されたファイルのリストを決定し、そのリストを読み込む直前に発行されるイベントです。拡張機能の作者は処理の直前にドキュメント名リストの順序を(*インプレイスで*)変更したり、Sphinxが変更を把握出来なかったドキュメント名を追加(ただし"
 " ``env.found_doc`` にないドキュメント名は決して追加しないでください)することができます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:204
+#: ../../sphinx/doc/extdev/appapi.rst:202
 msgid ""
 "You can also remove document names; do this with caution since it will make "
 "Sphinx treat changed files as unchanged."
@@ -1056,7 +1011,7 @@ msgstr ""
 "イベントハンドラはドキュメント名をリストから削除することもできます; "
 "注意深くこの方法を利用することで、Sphinxに変更済みのファイルを未変更であるとして扱わせることができます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:211
+#: ../../sphinx/doc/extdev/appapi.rst:209
 msgid ""
 "Emitted when a source file has been read.  The *source* argument is a list "
 "whose single element is the contents of the source file.  You can process "
@@ -1066,7 +1021,7 @@ msgstr ""
 "ソースファイルが読み込まれる時に発行されます。 *source* "
 "引数はリストで、ひとつの要素はソースファイルのコンテンツを表します。コンテンツに関する処理を行ったり、要素に関してソースレベルでの変換を実装したりできます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:215
+#: ../../sphinx/doc/extdev/appapi.rst:213
 msgid ""
 "For example, if you want to use ``$`` signs to delimit inline math, like in "
 "LaTeX, you can use a regular expression to replace ``$...$`` by "
@@ -1075,13 +1030,13 @@ msgstr ""
 "もしも、LaTeXと同じように、 ``$`` 記号を、インラインの数式の区切り文字にしたい場合には、このイベントハンドラの中で、正規表現を使用して "
 "``$...$`` を ``:math:`...``` に置き換えることで実現できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:223
+#: ../../sphinx/doc/extdev/appapi.rst:221
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled.  The *doctree* can be modified in-place."
 msgstr "doctreeがパースされ、環境から読み込まれ、pickle化される時に発行されます。 *doctree* をその場で変更できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:228
+#: ../../sphinx/doc/extdev/appapi.rst:226
 msgid ""
 "Emitted when a cross-reference to a Python module or object cannot be "
 "resolved.  If the event handler can resolve the reference, it should return "
@@ -1097,11 +1052,11 @@ msgstr ""
 msgid "Parameters"
 msgstr "パラメータ"
 
-#: ../../sphinx/doc/extdev/appapi.rst:234
+#: ../../sphinx/doc/extdev/appapi.rst:232
 msgid "The build environment (``app.builder.env``)."
 msgstr "ビルド環境 (``app.builder.env``)"
 
-#: ../../sphinx/doc/extdev/appapi.rst:235
+#: ../../sphinx/doc/extdev/appapi.rst:233
 msgid ""
 "The :class:`pending_xref` node to be resolved.  Its attributes ``reftype``, "
 "``reftarget``, ``modname`` and ``classname`` attributes determine the type "
@@ -1110,13 +1065,13 @@ msgstr ""
 "これから解決される :class:`pending_xref` ノード。この属性は ``reftype`` 、 ``reftarget`` 、 "
 "``modname`` 、``classname`` 属性であり、これらの属性によって、型と参照先ターゲットが決定されます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:238
+#: ../../sphinx/doc/extdev/appapi.rst:236
 msgid ""
 "The node that carries the text and formatting inside the future reference "
 "and should be a child of the returned reference node."
 msgstr "このノードは、将来の参照が持つ、テキストとフォーマット情報を持ちます。これは返される参照ノードの子供にならなければなりません。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:245
+#: ../../sphinx/doc/extdev/appapi.rst:243
 msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
@@ -1125,7 +1080,7 @@ msgstr ""
 "環境がdoctreeに関して\"resolved(解決)\"と判断したときに発行されます。これは、すべての参照が解決され、目次が挿入された時、ということになります。"
 " *doctree* はこのイベントハンドラ内で操作できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:249
+#: ../../sphinx/doc/extdev/appapi.rst:247
 msgid ""
 "Here is the place to replace custom nodes that don't have visitor methods in"
 " the writers, so that they don't cause errors when the writers encounter "
@@ -1133,14 +1088,14 @@ msgid ""
 msgstr ""
 "このイベントは、ライタークラスにビジターメソッドが存在しない、カスタムのノードを置換して処理するのに使用できます。もしもここで設定しない場合、未知のノードを見つけると、ライターはエラーを出しますが、設定することでエラーが出なくなります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:254
+#: ../../sphinx/doc/extdev/appapi.rst:252
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr ""
 "このイベントはドキュメントの並列読み込みが有効の場合にのみ発行されます。それぞれのサブプロセスがドキュメントを読み込んだ場合に一度だけ発行されます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:257
+#: ../../sphinx/doc/extdev/appapi.rst:255
 msgid ""
 "You must handle this event in an extension that stores data in the "
 "environment in a custom location.  Otherwise the environment in the main "
@@ -1148,7 +1103,7 @@ msgid ""
 msgstr ""
 "このイベントは拡張機能が特定の場所の環境中にデータを保存する場合に使用される必要があります。使用しないと、サブプロセス中で保存された情報をメインプロセスの環境内で利用できなくなります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:261
+#: ../../sphinx/doc/extdev/appapi.rst:259
 msgid ""
 "*other* is the environment object from the subprocess, *env* is the "
 "environment from the main process.  *docnames* is a set of document names "
@@ -1157,7 +1112,7 @@ msgstr ""
 "*other* はサブプロセス中での環境、*env* はメインプロセスでの環境です。*docnames* "
 "はこのサブプロセスにおいて読み込まれたドキュメント名のセットです。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:265
+#: ../../sphinx/doc/extdev/appapi.rst:263
 msgid ""
 "For a sample of how to deal with this event, look at the standard "
 "``sphinx.ext.todo`` extension.  The implementation is often similar to that "
@@ -1167,13 +1122,13 @@ msgstr ""
 "このイベントの使用例については、 標準で提供されている ``sphinx.ext.todo`` を参照してください。この実装方法は :event"
 ":`env-purge-doc` に似ています、ただし、情報が削除されるだけではなく、他の環境からの情報をメインプロセス環境に追加することができます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:274
+#: ../../sphinx/doc/extdev/appapi.rst:272
 msgid ""
 "Emitted when the :meth:`update` method of the build environment has "
 "completed, that is, the environment and all doctrees are now up-to-date."
 msgstr "ビルダーの :meth:`update` メソッドの実行が完了し、環境とすべてのdoctreeが最新になった時に発行されます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:277
+#: ../../sphinx/doc/extdev/appapi.rst:275
 msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
@@ -1181,21 +1136,21 @@ msgid ""
 msgstr ""
 "イベントハンドラより、ドキュメント名のイテレータを返すことができます。これらのドキュメントはアップデートされたとみなされ、書き込みフェイズにて新規書き込み(または書き換え)が行われます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:283
+#: ../../sphinx/doc/extdev/appapi.rst:281
 msgid "The handlers' return value is now used."
 msgstr "イベントハンドラからの戻り値が利用されるようになりました。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:288
+#: ../../sphinx/doc/extdev/appapi.rst:286
 msgid ""
 "Emitted when Consistency checks phase.  You can check consistency of "
 "metadata for whole of documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:293
+#: ../../sphinx/doc/extdev/appapi.rst:291
 msgid "As a **experimental** event"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:297
+#: ../../sphinx/doc/extdev/appapi.rst:295
 msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
@@ -1204,14 +1159,14 @@ msgstr ""
 "HTMLビルダーが、ドキュメント以外のページの書き込みを開始するときに発行されます。 ``(pagename, context, "
 "templatename)`` という構成の要素を含むシーケンスを返すと、ページを追加できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:305
+#: ../../sphinx/doc/extdev/appapi.rst:303
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr ""
 "HTMLビルダーがコンテキストの辞書を作り、テンプレートを使用してレンダリングを行う時に発行されます。このイベントは、追加のカスタムの要素をコンテキストに追加する場合に使用できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:308
+#: ../../sphinx/doc/extdev/appapi.rst:306
 msgid ""
 "The *pagename* argument is the canonical name of the page being rendered, "
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
@@ -1222,7 +1177,7 @@ msgstr ""
 "が付かず、パス区切りとしてスラッシュ(/)が使われている状態です。 *templatename* はレンダリングに使用するテンプレートの名前です。 "
 "reSTドキュメントのページのレンダリング時には、必ず ``'page.html'`` となります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:313
+#: ../../sphinx/doc/extdev/appapi.rst:311
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
@@ -1231,7 +1186,7 @@ msgstr ""
 "*context* "
 "引数はテンプレートエンジンがページをレンダリングする際に与えられる値の辞書になります。カスタムの値を持つように、変更することが可能です。キーは必ず文字列です。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:317
+#: ../../sphinx/doc/extdev/appapi.rst:315
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
@@ -1241,7 +1196,7 @@ msgstr ""
 "引数はreSTドキュメントから作成する場合にはdoctreeとなります。もしもHTMLテンプレートからのみ作成されるページの場合には、 ``None``"
 " となります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:321
+#: ../../sphinx/doc/extdev/appapi.rst:319
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
@@ -1249,11 +1204,11 @@ msgstr ""
 "イベントハンドラは文字列を返すことができます、この文字列は ``'page.html'`` "
 "に代わりHTMLテンプレートとして、このページのレンダリングに利用されるテンプレート名になります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:326
+#: ../../sphinx/doc/extdev/appapi.rst:324
 msgid "The return value can now specify a template name."
 msgstr "戻り値により使用するテンプレート名を指定できるようになりました。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:331
+#: ../../sphinx/doc/extdev/appapi.rst:329
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -1267,11 +1222,11 @@ msgstr ""
 "引数が渡されます。アプリケーションの中で発生した例外は、このイベントハンドラが終了した段階で、再度投げられます。もしもビルドプロセスが例外を発生しなかった場合には、"
 " *exception* は ``None`` になります。これによって、例外の種類ごとの、クリーンアップの処理をカスタム化できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:342
+#: ../../sphinx/doc/extdev/appapi.rst:340
 msgid "Checking the Sphinx version"
 msgstr "Sphinx のバージョン確認"
 
-#: ../../sphinx/doc/extdev/appapi.rst:346
+#: ../../sphinx/doc/extdev/appapi.rst:344
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr "作製した拡張をSphinxのAPI変更に追従させる為、この仕組みを使用してください。"
 
@@ -1293,7 +1248,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr "バージョン1.2より前では ``sphinx.__version__`` (文字列) を参照してください。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:352
+#: ../../sphinx/doc/extdev/appapi.rst:350
 msgid "The Config object"
 msgstr "Config オブジェクト"
 
@@ -1315,7 +1270,7 @@ msgid ""
 " ``env.config.language``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:362
+#: ../../sphinx/doc/extdev/appapi.rst:360
 msgid "The template bridge"
 msgstr "テンプレートブリッジ"
 
@@ -1377,7 +1332,7 @@ msgstr ""
 "指定された **context** (Python辞書)を使用して、 **template** "
 "で指定された文字列形式のテンプレートのレンダリングを行います。ビルダーから呼ばれます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:373
+#: ../../sphinx/doc/extdev/appapi.rst:371
 msgid "Exceptions"
 msgstr "例外"
 

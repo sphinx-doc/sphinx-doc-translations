@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/cebdf463\n"
+"Project-Id-Version: Sphinx 3.0.0+/c96becf2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-06 18:14+0000\n"
+"POT-Creation-Date: 2019-04-07 18:14+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -36,14 +36,16 @@ msgstr ""
 #: ../../sphinx/doc/usage/extensions/math.rst:17
 msgid ""
 "Since mathematical notation isn't natively supported by HTML in any way, "
-"Sphinx gives a math support to HTML document with several extensions."
-msgstr "HTMLそのものは数式の記法をサポートしていないため、Sphinxでは拡張機能を通してHTMLドキュメントでの数式入力を支援します。"
+"Sphinx gives a math support to HTML document with several extensions.  These"
+" use the reStructuredText math :rst:dir:`directive <math>` and "
+":rst:role:`role <math>`."
+msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:21
+#: ../../sphinx/doc/usage/extensions/math.rst:22
 msgid ":mod:`sphinx.ext.imgmath` -- Render math as images"
 msgstr ":mod:`sphinx.ext.imgmath` -- 数式を画像にレンダリングします"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:28
+#: ../../sphinx/doc/usage/extensions/math.rst:29
 msgid ""
 "This extension renders math via LaTeX and dvipng_ or dvisvgm_ into PNG or "
 "SVG images. This of course means that the computer where the docs are built "
@@ -52,20 +54,20 @@ msgstr ""
 "この拡張機能は LaTeX と dvipng_ または dvisvg_ を用い、数式を PNG または SVG "
 "画像に変換します。当然ながら文書をビルドするコンピュータではこれらのプログラムが動作する必要があります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:32
+#: ../../sphinx/doc/usage/extensions/math.rst:33
 msgid ""
 "There are various config values you can set to influence how the images are "
 "built:"
 msgstr "この拡張用の設定値がいくつかあります。これらの設定値を変更することで、画像のビルドをカスタマイズしたりできます:"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:37
+#: ../../sphinx/doc/usage/extensions/math.rst:38
 msgid ""
 "The output image format. The default is ``'png'``.  It should be either "
 "``'png'`` or ``'svg'``."
 msgstr ""
 "出力する画像のフォーマット。デフォルトは ``'png'`` です。 ``'png'`` または ``'svg'`` のいずれかの値をとります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:42
+#: ../../sphinx/doc/usage/extensions/math.rst:43
 msgid ""
 "The command name with which to invoke LaTeX.  The default is ``'latex'``; "
 "you may need to set this to a full path if ``latex`` is not in the "
@@ -74,7 +76,7 @@ msgstr ""
 "LaTeXを呼び出す場合のコマンド名です。デフォルトでは ``'latex'`` となります。もしも ``latex`` "
 "コマンドが実行ファイルの検索パスにない場合には、フルパスを指定する必要があります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:46
+#: ../../sphinx/doc/usage/extensions/math.rst:47
 msgid ""
 "Since this setting is not portable from system to system, it is normally not"
 " useful to set it in ``conf.py``; rather, giving it on the :program:`sphinx-"
@@ -85,7 +87,7 @@ msgstr ""
 ":`sphinx-build` コマンドの :option:`-D <sphinx-build -D>`  "
 "オプションとして与えるほうが望ましいでしょう。 ::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:53
+#: ../../sphinx/doc/usage/extensions/math.rst:54
 msgid ""
 "This value should only contain the path to the latex executable, not further"
 " arguments; use :confval:`imgmath_latex_args` for that purpose."
@@ -93,7 +95,7 @@ msgstr ""
 "この値にはLaTeXの実行ファイルのパスだけを含むようにして下さい。LaTeXに追加で渡したい引数は、こちらに入れないで、 "
 ":confval:`imgmath_latex_args` を使用してください。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:58
+#: ../../sphinx/doc/usage/extensions/math.rst:59
 msgid ""
 "The command name with which to invoke ``dvipng``.  The default is "
 "``'dvipng'``; you may need to set this to a full path if ``dvipng`` is not "
@@ -104,7 +106,7 @@ msgstr ""
 "が実行ファイルの検索パス外にある場合には、絶対パスを指定してください。このオプションは``imgmath_image_format`` が "
 "``'png'`` の場合にのみ有効です。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:65
+#: ../../sphinx/doc/usage/extensions/math.rst:66
 msgid ""
 "The command name with which to invoke ``dvisvgm``.  The default is "
 "``'dvisvgm'``; you may need to set this to a full path if ``dvisvgm`` is not"
@@ -115,13 +117,13 @@ msgstr ""
 "が実行ファイルの検索パス外にある場合には、絶対パスを指定してください。このオプションは``imgmath_image_format`` が "
 "``'svg'`` の場合にのみ有効です。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:72
+#: ../../sphinx/doc/usage/extensions/math.rst:73
 msgid ""
 "Additional arguments to give to latex, as a list.  The default is an empty "
 "list."
 msgstr "LaTeXに渡す追加の引数です。リストで渡します。デフォルト値は空のリストになります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:77
+#: ../../sphinx/doc/usage/extensions/math.rst:78
 msgid ""
 "Additional LaTeX code to put into the preamble of the short LaTeX files that"
 " are used to translate the math snippets.  This is empty by default.  Use it"
@@ -129,7 +131,7 @@ msgid ""
 msgstr ""
 "数式のコード片を変換するのに使用する、短いLaTeXファイルの中の前置きとして入れる、追加のLaTeXコードです。デフォルトでは空です。このオプションは、例えば、数式の中で使いたいコマンドのためのパッケージを追加するのに使えます。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:83
+#: ../../sphinx/doc/usage/extensions/math.rst:84
 msgid ""
 "Additional arguments to give to dvipng, as a list.  The default value is "
 "``['-gamma', '1.5', '-D', '110', '-bg', 'Transparent']`` which makes the "
@@ -142,7 +144,7 @@ msgstr ""
 "で、画像をデフォルトよりも、多少暗く、サイズは少々大きく、背景を透過にしたPNGを生成します。このオプションは``imgmath_image_format``"
 " が ``'png'`` の場合にのみ有効です。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:91
+#: ../../sphinx/doc/usage/extensions/math.rst:92
 msgid ""
 "Additional arguments to give to dvisvgm, as a list.  The default value is "
 "``['--no-fonts']``.  This option is used only when ``imgmath_image_format`` "
@@ -151,7 +153,7 @@ msgstr ""
 "dvisvgmに与える、追加の引数をリストで渡します。デフォルト値は ``['--no-fonts']`` "
 "です。このオプションは``imgmath_image_format`` が ``'svg'`` の場合にのみ有効です。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:97
+#: ../../sphinx/doc/usage/extensions/math.rst:98
 msgid ""
 "``dvipng`` has the ability to determine the \"depth\" of the rendered text: "
 "for example, when typesetting a fraction inline, the baseline of surrounding"
@@ -164,7 +166,7 @@ msgstr ""
 "は、レンダリングされたテキストの\"深さ\"を決定できます。例えば、行の文章の中に分数を写植する場合、テキストのベースラインと、生成された画像の底辺の高さが同じであってはならず、画像はベースラインよりも少し低い位置になるべでしょう。これがTeXの世界でいう\"深さ\"です。もしもこのオプションが有効になっていると、ベースラインからの正しいオフセット量の"
 " ``垂直揃え`` のスタイルで画像が生成され、HTMLドキュメントに入れられます。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:104
+#: ../../sphinx/doc/usage/extensions/math.rst:105
 msgid ""
 "Unfortunately, this only works when the `preview-latex package`_ is "
 "installed. Therefore, the default for this option is ``False``."
@@ -172,29 +174,29 @@ msgstr ""
 "残念ながら、このオプションは、 `preview-latex package`_ がインストールされていなければ動作しません。そのため、デフォルトの値は"
 " ``False`` になっています。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:107
+#: ../../sphinx/doc/usage/extensions/math.rst:108
 msgid ""
 "Currently this option is only used when ``imgmath_image_format`` is "
 "``'png'``."
 msgstr "現在このオプションは``imgmath_image_format`` が ``'png'`` の場合にのみ有効です。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:112
+#: ../../sphinx/doc/usage/extensions/math.rst:113
 msgid ""
 "Default: ``True``.  If false, do not add the LaTeX code as an \"alt\" "
 "attribute for math images."
 msgstr "デフォルトは ``True`` 。Falseの時は、画像の\"alt\"属性に、LaTeXのコードを埋め込みません。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:117
+#: ../../sphinx/doc/usage/extensions/math.rst:118
 msgid ""
 "The font size (in ``pt``) of the displayed math.  The default value is "
 "``12``.  It must be a positive integer."
 msgstr "表示する数式のフォントサイズです(単位は ``pt``)。デフォルト値は ``12`` です。この値は正の整数値でなければなりません。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:122
+#: ../../sphinx/doc/usage/extensions/math.rst:123
 msgid ":mod:`sphinx.ext.mathjax` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.mathjax` -- JavaScriptを使った数式のレンダリング"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:129
+#: ../../sphinx/doc/usage/extensions/math.rst:130
 msgid ""
 "This extension puts math as-is into the HTML files.  The JavaScript package "
 "MathJax_ is then loaded and transforms the LaTeX markup to readable math "
@@ -203,38 +205,42 @@ msgstr ""
 "この拡張機能は、HTMLの中に数式を埋め込みます。JavaScriptの MathJax_ "
 "パッケージは、ブラウザの中で、LaTeXのマークアップを読める数式に、動的に変換します。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:133
+#: ../../sphinx/doc/usage/extensions/math.rst:134
 msgid ""
 "Because MathJax (and the necessary fonts) is very large, it is not included "
-"in Sphinx."
-msgstr "MathJax(と必要なフォント)はとても大きいため、これはSphinxには組み込まれていません。"
+"in Sphinx but is set to automatically include it from a third-party site."
+msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:138
+#: ../../sphinx/doc/usage/extensions/math.rst:139
+msgid ""
+"You should use the math :rst:dir:`directive <math>` and :rst:role:`role "
+"<math>`, not the native MathJax ``$$``, ``\\(``, etc."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:145
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load MathJax."
 msgstr "HTMLにJSMathをロードして読み込ませるための、JavaScriptファイルへのパスを設定します。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:141
+#: ../../sphinx/doc/usage/extensions/math.rst:148
 msgid ""
 "The default is the ``https://`` URL that loads the JS files from the "
 "`cdnjs`__ Content Delivery Network. See the `MathJax Getting Started page`__"
-" for details. If you want MathJax to be available offline, you have to "
-"download it and set this value to a different path."
+" for details. If you want MathJax to be available offline or without "
+"including resources from a third-party site, you have to download it and set"
+" this value to a different path."
 msgstr ""
-" デフォルトは``https://`` URLで、`cdnjs`__コンテントデリバリーネットワークから JSファイル群をロードします。詳しくは "
-"`MathJax Getting Started page`__を見てください。 "
-"MathJaxをオフラインで利用したい場合は、MathJaxをダウンロードし、この値を別のパスに設定しなければなりません。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:150
-#: ../../sphinx/doc/usage/extensions/math.rst:202
+#: ../../sphinx/doc/usage/extensions/math.rst:158
+#: ../../sphinx/doc/usage/extensions/math.rst:210
 msgid ""
 "The path can be absolute or relative; if it is relative, it is relative to "
 "the ``_static`` directory of the built docs."
 msgstr ""
 "パスは、絶対パスでも相対パスでも指定ができます。相対パスの場合、ビルドした出力の ``_static`` ディレクトリへのパスになっています。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:153
+#: ../../sphinx/doc/usage/extensions/math.rst:161
 msgid ""
 "For example, if you put MathJax into the static path of the Sphinx docs, "
 "this value would be ``MathJax/MathJax.js``.  If you host more than one "
@@ -244,21 +250,21 @@ msgstr ""
 "例えば、MathjaxをSphinxのstaticパスに置いた場合、この値は ``MathJax/MathJax.js`` "
 "となります。もし、一つ以上のSphinxドキュメントをサーバー上にホストしている場合、共通の場所にMathjaxをインストールしておくといいでしょう。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:158
+#: ../../sphinx/doc/usage/extensions/math.rst:166
 msgid "You can also give a full ``https://`` URL different from the CDN URL."
 msgstr "また、CDN URLではなく別の ``https://`` 等で始まるURLを指定してもいいでしょう。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:162
+#: ../../sphinx/doc/usage/extensions/math.rst:170
 msgid ""
 "The options to script tag for mathjax.  For example, you can set integrity "
 "option with following setting::"
 msgstr "mathjax における script タグへのオプションです。例えば、integrity オプションを次のように設定できます::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:169
+#: ../../sphinx/doc/usage/extensions/math.rst:177
 msgid "The default is empty (``{}``)."
 msgstr "デフォルトは空です (``{}``) 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:173
+#: ../../sphinx/doc/usage/extensions/math.rst:181
 msgid ""
 "The inline configuration options for mathjax.  The value is used as a "
 "parameter of ``MathJax.Hub.Config()``.  For more information, please read "
@@ -267,32 +273,32 @@ msgstr ""
 "mathjax のインライン設定のオプションです。値は ``MathJax.Hub.Config()`` "
 "のパラメータとして用いられます。詳細は次をお読みください  `Using in-line configuration options`_ 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:177
+#: ../../sphinx/doc/usage/extensions/math.rst:185
 msgid "For example::"
 msgstr "例えば::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:184
+#: ../../sphinx/doc/usage/extensions/math.rst:192
 msgid "The default is empty (not configured)."
 msgstr "デフォルトは空です (not configured) 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:189
+#: ../../sphinx/doc/usage/extensions/math.rst:197
 msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.jsmath` -- JavaScriptを使用して数式をレンダリングします"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:194
+#: ../../sphinx/doc/usage/extensions/math.rst:202
 msgid ""
 "This extension works just as the MathJax extension does, but uses the older "
 "package jsMath_.  It provides this config value:"
 msgstr ""
 "この拡張機能はMathJax拡張と同じように動作しますが、古い jsMath_ パッケージを利用します。この拡張機能には、次のような設定があります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:199
+#: ../../sphinx/doc/usage/extensions/math.rst:207
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load JSMath.  There is no default."
 msgstr "HTMLにJSMathをロードして読み込ませるための、JavaScriptファイルへのパスを設定します。デフォルト値はありません。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:205
+#: ../../sphinx/doc/usage/extensions/math.rst:213
 msgid ""
 "For example, if you put JSMath into the static path of the Sphinx docs, this"
 " value would be ``jsMath/easy/load.js``.  If you host more than one Sphinx "

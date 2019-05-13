@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/605cd42a\n"
+"Project-Id-Version: Sphinx 3.0.0+/a8d5e64f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-12 18:31+0000\n"
+"POT-Creation-Date: 2019-05-13 18:32+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -196,22 +196,22 @@ msgid ""
 ":doc:`../development/tutorials/index`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:105
+#: ../../sphinx/doc/extdev/index.rst:106
 msgid "Build Phases"
 msgstr "ビルド・フェーズ"
 
-#: ../../sphinx/doc/extdev/index.rst:107
+#: ../../sphinx/doc/extdev/index.rst:108
 msgid ""
 "One thing that is vital in order to understand extension mechanisms is the "
 "way in which a Sphinx project is built: this works in several phases."
 msgstr ""
 "Sphinxのプロジェクトがビルドされる過程で、拡張機能がどのように実行されるのかということを理解することは、拡張機能の開発をするうえで必要不可欠です。この作業は以下のいくつかのフェーズから構成されています。"
 
-#: ../../sphinx/doc/extdev/index.rst:110
+#: ../../sphinx/doc/extdev/index.rst:111
 msgid "**Phase 0: Initialization**"
 msgstr "**フェーズ 0: 初期化**"
 
-#: ../../sphinx/doc/extdev/index.rst:112
+#: ../../sphinx/doc/extdev/index.rst:113
 msgid ""
 "In this phase, almost nothing of interest to us happens.  The source "
 "directory is searched for source files, and extensions are initialized. "
@@ -221,11 +221,11 @@ msgstr ""
 "このフェーズでは拡張作成者にとって面白いものは何もありません。 ソースディレクトリ内のソースファイルを探索し、拡張機能を初期化します。 "
 "保存されたビルド環境があればそれをロードし、なければ新しいビルド環境を作成します。"
 
-#: ../../sphinx/doc/extdev/index.rst:117
+#: ../../sphinx/doc/extdev/index.rst:118
 msgid "**Phase 1: Reading**"
 msgstr "**フェーズ 1: 読み込み**"
 
-#: ../../sphinx/doc/extdev/index.rst:119
+#: ../../sphinx/doc/extdev/index.rst:120
 msgid ""
 "In Phase 1, all source files (and on subsequent builds, those that are new "
 "or changed) are read and parsed.  This is the phase where directives and "
@@ -239,7 +239,7 @@ msgstr ""
 " *doctree*\\ "
 "です。これは、docutilsのノードがツリー上に構成されているものです。すべてのファイルを読み込むまでは完全に解釈できないドキュメントの要素に関しては、一時的なノードが作られます。"
 
-#: ../../sphinx/doc/extdev/index.rst:126
+#: ../../sphinx/doc/extdev/index.rst:127
 msgid ""
 "There are nodes provided by docutils, which are documented `in the docutils "
 "documentation <http://docutils.sourceforge.net/docs/ref/doctree.html>`__. "
@@ -249,7 +249,7 @@ msgstr ""
 "users.jp/docutils/docs/ref/doctree.html>`__. "
 "で説明されています。追加のノードはSphinxによって提供され、 :ref:`ドキュメントはここ <nodes>` にあります。"
 
-#: ../../sphinx/doc/extdev/index.rst:130
+#: ../../sphinx/doc/extdev/index.rst:131
 msgid ""
 "During reading, the build environment is updated with all meta- and cross "
 "reference data of the read documents, such as labels, the names of headings,"
@@ -258,25 +258,25 @@ msgid ""
 msgstr ""
 "ソースを読み込んでいる間は、ラベルや見出し名、説明されているPythonオブジェクト、索引のエントリーなどのメタな情報やクロスファンレスの情報がビルド環境に出力されます。これらの情報は、後で一時的なノードと置き換えられます。"
 
-#: ../../sphinx/doc/extdev/index.rst:135
+#: ../../sphinx/doc/extdev/index.rst:136
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
 msgstr "パースされたDOCツリーはすべてのメモリ上で保存しておくことができないため、ディスク上に保存されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:138
+#: ../../sphinx/doc/extdev/index.rst:139
 msgid "**Phase 2: Consistency checks**"
 msgstr "**フェーズ 2: 一貫性チェック**"
 
-#: ../../sphinx/doc/extdev/index.rst:140
+#: ../../sphinx/doc/extdev/index.rst:141
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr "ビルドされたドキュメントの中に、びっくりするようなものがないか、いくつかのチェックを行います。"
 
-#: ../../sphinx/doc/extdev/index.rst:142
+#: ../../sphinx/doc/extdev/index.rst:143
 msgid "**Phase 3: Resolving**"
 msgstr "**フェーズ 3: 解決**"
 
-#: ../../sphinx/doc/extdev/index.rst:144
+#: ../../sphinx/doc/extdev/index.rst:145
 msgid ""
 "Now that the metadata and cross-reference data of all existing documents is "
 "known, all temporary nodes are replaced by nodes that can be converted into "
@@ -285,11 +285,11 @@ msgid ""
 "those that don't."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:150
+#: ../../sphinx/doc/extdev/index.rst:151
 msgid "**Phase 4: Writing**"
 msgstr "**フェーズ 4: 書き出し**"
 
-#: ../../sphinx/doc/extdev/index.rst:152
+#: ../../sphinx/doc/extdev/index.rst:153
 msgid ""
 "This phase converts the resolved doctrees to the desired output format, such"
 " as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
@@ -298,7 +298,7 @@ msgid ""
 msgstr ""
 "このフェーズでは参照が解決されたDOCツリーを、HTMLやLaTeXなどの指定された出力フォーマットに変換します。このプロセス中では、docutilsのライターと呼ばれるものがDOCツリーの個々のノードをたどって、出力を行っていきます。"
 
-#: ../../sphinx/doc/extdev/index.rst:158
+#: ../../sphinx/doc/extdev/index.rst:159
 msgid ""
 "Some builders deviate from this general build plan, for example, the builder"
 " that checks external links does not need anything more than the parsed "
@@ -307,17 +307,17 @@ msgstr ""
 "いくつかのビルダーの中には、この一般的なビルド計画から外れているものもあります。 "
 "例えば、外部リンクチェックのビルダーはdoctreeのパースをする以上の情報は不要なので、フェーズ2～4を行いません。"
 
-#: ../../sphinx/doc/extdev/index.rst:162
+#: ../../sphinx/doc/extdev/index.rst:163
 msgid ""
 "To see an example of application, refer to "
 ":doc:`../development/tutorials/todo`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:167
+#: ../../sphinx/doc/extdev/index.rst:168
 msgid "Extension metadata"
 msgstr "拡張機能のメタデータ"
 
-#: ../../sphinx/doc/extdev/index.rst:171
+#: ../../sphinx/doc/extdev/index.rst:172
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
@@ -325,7 +325,7 @@ msgstr ""
 "\\ ``setup()``\\ 関数は、ディクショナリを返すよう定義します。Sphinxはそのディクショナリを拡張機能のメタデータとして解釈します。\n"
 "メタデータのキーとして解釈可能なものは以下のとおりです。"
 
-#: ../../sphinx/doc/extdev/index.rst:174
+#: ../../sphinx/doc/extdev/index.rst:175
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -335,7 +335,7 @@ msgstr ""
 "\\ ``'version'``\\ : 拡張機能のバージョンを示す文字列。\n"
 "拡張機能の必要バージョンのチェック(\\ :confval:`needs_extensions`\\ を参考)に利用されたり、参照目的で使われたりします。指定がない場合には、\\ ``\"unknown version\"``\\ が代わりに指定されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:177
+#: ../../sphinx/doc/extdev/index.rst:178
 msgid ""
 "``'env_version'``: an integer that identifies the version of env data "
 "structure if the extension stores any data to environment.  It is used to "
@@ -345,7 +345,7 @@ msgid ""
 "environment."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:182
+#: ../../sphinx/doc/extdev/index.rst:183
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -356,7 +356,7 @@ msgstr ""
 "拡張をロードする際に、ソースファイルの並列読み込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が "
 "parallel-read-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:186
+#: ../../sphinx/doc/extdev/index.rst:187
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
@@ -366,6 +366,6 @@ msgstr ""
 "拡張をロードする際に、出力ファイルの並列書き込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が parallel-"
 "write-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:192
+#: ../../sphinx/doc/extdev/index.rst:193
 msgid "APIs used for writing extensions"
 msgstr "拡張機能を書く際に利用するAPI"

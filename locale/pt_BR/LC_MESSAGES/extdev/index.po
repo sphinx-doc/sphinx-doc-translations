@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/605cd42a\n"
+"Project-Id-Version: Sphinx 3.0.0+/a8d5e64f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-12 18:31+0000\n"
+"POT-Creation-Date: 2019-05-13 18:32+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Claudio Rogerio Carvalho Filho, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -231,11 +231,11 @@ msgstr ""
 "Para ver um exemplo de uso desses objetos, consulte "
 ":doc:`../development/tutorials/index`."
 
-#: ../../sphinx/doc/extdev/index.rst:105
+#: ../../sphinx/doc/extdev/index.rst:106
 msgid "Build Phases"
 msgstr "Fases Construção"
 
-#: ../../sphinx/doc/extdev/index.rst:107
+#: ../../sphinx/doc/extdev/index.rst:108
 msgid ""
 "One thing that is vital in order to understand extension mechanisms is the "
 "way in which a Sphinx project is built: this works in several phases."
@@ -243,11 +243,11 @@ msgstr ""
 "Uma coisa que é vital para entender os mecanismos de extensão é a maneira "
 "como um projeto ``Sphinx`` é construído: isso funciona em várias fases."
 
-#: ../../sphinx/doc/extdev/index.rst:110
+#: ../../sphinx/doc/extdev/index.rst:111
 msgid "**Phase 0: Initialization**"
 msgstr "**Phase 0: Inicialização**"
 
-#: ../../sphinx/doc/extdev/index.rst:112
+#: ../../sphinx/doc/extdev/index.rst:113
 msgid ""
 "In this phase, almost nothing of interest to us happens.  The source "
 "directory is searched for source files, and extensions are initialized. "
@@ -259,11 +259,11 @@ msgstr ""
 " Se existir um ambiente de compilação armazenado, ele será carregado, caso "
 "contrário, um novo será criado."
 
-#: ../../sphinx/doc/extdev/index.rst:117
+#: ../../sphinx/doc/extdev/index.rst:118
 msgid "**Phase 1: Reading**"
 msgstr "**Phase 1: Leitura**"
 
-#: ../../sphinx/doc/extdev/index.rst:119
+#: ../../sphinx/doc/extdev/index.rst:120
 msgid ""
 "In Phase 1, all source files (and on subsequent builds, those that are new "
 "or changed) are read and parsed.  This is the phase where directives and "
@@ -280,7 +280,7 @@ msgstr ""
 "documento que não são totalmente conhecidos até que todos os arquivos "
 "existentes sejam lidos, nós temporários são criados."
 
-#: ../../sphinx/doc/extdev/index.rst:126
+#: ../../sphinx/doc/extdev/index.rst:127
 msgid ""
 "There are nodes provided by docutils, which are documented `in the docutils "
 "documentation <http://docutils.sourceforge.net/docs/ref/doctree.html>`__. "
@@ -291,7 +291,7 @@ msgstr ""
 "<http://docutils.sourceforge.net/docs/ref/doctree.html>`__. Nós adicionais "
 "são fornecidos pelo ``Sphinx`` e :ref:`documented here <nodes>`."
 
-#: ../../sphinx/doc/extdev/index.rst:130
+#: ../../sphinx/doc/extdev/index.rst:131
 msgid ""
 "During reading, the build environment is updated with all meta- and cross "
 "reference data of the read documents, such as labels, the names of headings,"
@@ -303,7 +303,7 @@ msgstr ""
 " títulos, objetos descritos do Python e entradas de índice. Isso será usado "
 "posteriormente para substituir os nós temporários."
 
-#: ../../sphinx/doc/extdev/index.rst:135
+#: ../../sphinx/doc/extdev/index.rst:136
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
@@ -311,21 +311,21 @@ msgstr ""
 "Os ``doctrees`` analisados são armazenados no disco, porque não é possível "
 "manter todos eles na memória."
 
-#: ../../sphinx/doc/extdev/index.rst:138
+#: ../../sphinx/doc/extdev/index.rst:139
 msgid "**Phase 2: Consistency checks**"
 msgstr "**Phase 2: Verificações e consistências**"
 
-#: ../../sphinx/doc/extdev/index.rst:140
+#: ../../sphinx/doc/extdev/index.rst:141
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr ""
 "Alguma verificação é feita para garantir que não haja surpresas nos "
 "documentos construídos."
 
-#: ../../sphinx/doc/extdev/index.rst:142
+#: ../../sphinx/doc/extdev/index.rst:143
 msgid "**Phase 3: Resolving**"
 msgstr "**Fase 3: Resolução**"
 
-#: ../../sphinx/doc/extdev/index.rst:144
+#: ../../sphinx/doc/extdev/index.rst:145
 msgid ""
 "Now that the metadata and cross-reference data of all existing documents is "
 "known, all temporary nodes are replaced by nodes that can be converted into "
@@ -340,11 +340,11 @@ msgstr ""
 "de objetos existentes e nós literais simples são criados para aqueles que "
 "não existem."
 
-#: ../../sphinx/doc/extdev/index.rst:150
+#: ../../sphinx/doc/extdev/index.rst:151
 msgid "**Phase 4: Writing**"
 msgstr "**Fase 4: Gravação**"
 
-#: ../../sphinx/doc/extdev/index.rst:152
+#: ../../sphinx/doc/extdev/index.rst:153
 msgid ""
 "This phase converts the resolved doctrees to the desired output format, such"
 " as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
@@ -356,7 +356,7 @@ msgstr ""
 "``docutils``, que visita os nós individuais de cada ``doctree`` e produz "
 "alguma saída no processo."
 
-#: ../../sphinx/doc/extdev/index.rst:158
+#: ../../sphinx/doc/extdev/index.rst:159
 msgid ""
 "Some builders deviate from this general build plan, for example, the builder"
 " that checks external links does not need anything more than the parsed "
@@ -366,7 +366,7 @@ msgstr ""
 " o construtor que verifica links externos não precisa de nada além dos "
 "``doctrees`` analisados e, portanto, não possui as fases 2-4."
 
-#: ../../sphinx/doc/extdev/index.rst:162
+#: ../../sphinx/doc/extdev/index.rst:163
 msgid ""
 "To see an example of application, refer to "
 ":doc:`../development/tutorials/todo`."
@@ -374,11 +374,11 @@ msgstr ""
 "Para ver um exemplo de aplicação, consulte "
 ":doc:`../development/tutorials/todo`."
 
-#: ../../sphinx/doc/extdev/index.rst:167
+#: ../../sphinx/doc/extdev/index.rst:168
 msgid "Extension metadata"
 msgstr "Extensões Metadados"
 
-#: ../../sphinx/doc/extdev/index.rst:171
+#: ../../sphinx/doc/extdev/index.rst:172
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
@@ -387,7 +387,7 @@ msgstr ""
 " como extensão de metadados. Chaves dos Metadados normalmente reconhecidas "
 "são: "
 
-#: ../../sphinx/doc/extdev/index.rst:174
+#: ../../sphinx/doc/extdev/index.rst:175
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -399,7 +399,7 @@ msgstr ""
 ":confval:`needs_extensions`) e finalidades de informação. Se não informado "
 "será apresentado  ``\"versão desconhecida\"``"
 
-#: ../../sphinx/doc/extdev/index.rst:177
+#: ../../sphinx/doc/extdev/index.rst:178
 msgid ""
 "``'env_version'``: an integer that identifies the version of env data "
 "structure if the extension stores any data to environment.  It is used to "
@@ -415,7 +415,7 @@ msgstr ""
 "não for fornecido, o ``Sphinx`` considera que a extensão não armazena dados "
 "no ambiente."
 
-#: ../../sphinx/doc/extdev/index.rst:182
+#: ../../sphinx/doc/extdev/index.rst:183
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -427,7 +427,7 @@ msgstr ""
 "valor padrão é ``False``, ex. deve ser explicitado que sua função pode usar "
 "processamento paralelo, após a devida comprovação através dos testes."
 
-#: ../../sphinx/doc/extdev/index.rst:186
+#: ../../sphinx/doc/extdev/index.rst:187
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
@@ -438,6 +438,6 @@ msgstr ""
 "Normalmente extensões não influenciam negativamente o processo, o valor "
 "padrão é ``True``."
 
-#: ../../sphinx/doc/extdev/index.rst:192
+#: ../../sphinx/doc/extdev/index.rst:193
 msgid "APIs used for writing extensions"
 msgstr "APIs usadas para gravar extensões"

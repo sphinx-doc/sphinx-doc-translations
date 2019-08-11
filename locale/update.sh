@@ -16,7 +16,7 @@ sphinx-build -T -b gettext ../sphinx/doc pot
 sphinx-intl update-txconfig-resources -p pot -d .
 cat .tx/config
 tx push -s --skip
-rm -R es ja pt_BR
+rm -Rf es ja pt_BR
 tx pull -l es,ja,pt_BR
 git checkout .tx/config
 

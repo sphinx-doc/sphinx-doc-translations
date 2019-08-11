@@ -4,12 +4,12 @@ set -ex
 
 # setup environment
 SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
-SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
+SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-18
 find sphinx -name "*.pyc" -exec rm {} \;
 git checkout master
 git submodule init
 git submodule update
-(cd sphinx; git fetch origin; git checkout -b master origin/master)
+(cd sphinx; git fetch origin; git checkout 1.8)
 pip install -r requirements.txt
 
 

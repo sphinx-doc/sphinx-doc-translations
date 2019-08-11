@@ -9,7 +9,7 @@ python:
 env:
   global:
   - SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
-  - SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
+  - SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc-18
   - secure: LaN0wzEXaR1Rk6VFZ0CwBmG+xL8X0AipkUfu3FJzamUFlLYLvCKSX+DrxfZ8hQSLhJq6VNyvLl8IVkipb/hp9uXbqoiS3WN7mHy2slXwBBQAFZVTdpNnpx8BcQ3GpdLJ5uQT9m+fx5+x/cGp3pfkGfBEZyPUGOx+ztpsZ2UV0ZOPIzrXtpB/AFpTHUmvzpok5Tvr7R0DFdt40D3quV650pC1JDg0RvcOiXUBNRlTSAUijh0mvojC7crrLkGiDUnrmu1JYBm6oCQtluJrLjvwjbcDSPtIRttr5Ymv+ddo89WTHd4C8Ne4b+/O91kyP3CXexQ5JZg1AVBA9taNxVq7zVDLBh/hdsuucMEdoty+YeLgRg5JtGrweg5mSQGSXDuF4Ufu8moMQXpYeqFS+QaUg2PrbMPq+S4zx7UEUeoAo4W6S84rQfMVROhqql09oKVZNxQSGNDRItHwrzI3VqZoIUl2TNnDkleZX64BvcmpOv7sNNweN+XWggcVWarZkV9L2F+562pOC6ywosGE71CWPCeBo2Gc8o5dLzCj8VapZ2eIsiWBh05RNZgfYEIhCxb2mgTejnevLikgZ22A54oBQOdYYTpzuaA3VB+FQ1napjYSnrCENe3w4e8Rgvlb/9L+3CNtyoFs3wx8N3WAnyWy+UMqe7hvLAj9ESHE5Xjk3Ys=
 before_install:
 - openssl aes-256-cbc -K $encrypted_e0adcd9bc1c7_key -iv $encrypted_e0adcd9bc1c7_iv -in .secrets/key.enc -out ~/.ssh/id_rsa -d
@@ -17,17 +17,17 @@ before_install:
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 install:
 - git branch -a
-- git checkout master  # attach this repo
+- git checkout 1.8  # attach this repo
 - git submodule init
 - git submodule update
-- (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
+- (cd sphinx; git fetch origin; git checkout 1.8; git branch -a)
 - pip install -U pip setuptools
 - pip install -r ./requirements.txt
 script:
 - sh ./locale/update.sh
 after_success:
 - git branch -a
-- git checkout master  # attach this repo
+- git checkout 1.8  # attach this repo
 - git config --global user.email "sphinx-auto-update"
 - git config --global user.name "sphinx-auto-update"
 - git add .
@@ -36,4 +36,4 @@ after_success:
   https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
 - git remote -v
 - git remote add github git@github.com:sphinx-doc/sphinx-doc-translations.git
-- git push github master
+- git push github 1.8

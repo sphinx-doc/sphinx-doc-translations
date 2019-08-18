@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/a27ee1df\n"
+"Project-Id-Version: Sphinx 3.0.0+/3bbff089\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 19:20+0000\n"
+"POT-Creation-Date: 2019-08-18 19:21+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Last-Translator: Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -155,13 +155,22 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/math.rst:85
 msgid ""
+"Some fancy LaTeX mark-up (an example was reported which used TikZ to add "
+"various decorations to the equation) require multiple runs of the LaTeX "
+"executable.  To handle this, set this configuration setting to ``'latexmk'``"
+" (or a full path to it) as this Perl script reliably chooses dynamically how"
+" many latex runs are needed."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:93
+msgid ""
 "Additional arguments to give to latex, as a list.  The default is an empty "
 "list."
 msgstr ""
 "Argumentos adicionais passados para latex, como uma lista. O padrão é uma "
 "lista vazia."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:90
+#: ../../sphinx/doc/usage/extensions/math.rst:98
 msgid ""
 "Additional LaTeX code to put into the preamble of the LaTeX files used to "
 "translate the math snippets.  This is left empty by default.  Use it e.g. to"
@@ -179,7 +188,7 @@ msgstr ""
 "verdade, as fontes matemáticas padrão do *LaTeX* têm glifos bastante finos "
 "que (na saída *HTML*) geralmente não combinam bem com a fonte do texto."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:100
+#: ../../sphinx/doc/usage/extensions/math.rst:108
 msgid ""
 "The command name to invoke ``dvipng``.  The default is ``'dvipng'``; you may"
 " need to set this to a full path if ``dvipng`` is not in the executable "
@@ -191,7 +200,7 @@ msgstr ""
 "estiver no caminho de pesquisa executável. Esta opção só é usada quando "
 "``imgmath_image_format`` é definido como ``'png'``."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:107
+#: ../../sphinx/doc/usage/extensions/math.rst:115
 msgid ""
 "Additional arguments to give to dvipng, as a list.  The default value is "
 "``['-gamma', '1.5', '-D', '110', '-bg', 'Transparent']`` which makes the "
@@ -207,7 +216,7 @@ msgstr ""
 "um plano de fundo transparente. Esta opção é usada somente quando "
 "``imgmath_image_format`` é ``'png'``."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:116
+#: ../../sphinx/doc/usage/extensions/math.rst:124
 msgid ""
 "The command name to invoke ``dvisvgm``.  The default is ``'dvisvgm'``; you "
 "may need to set this to a full path if ``dvisvgm`` is not in the executable "
@@ -219,7 +228,7 @@ msgstr ""
 "estiver no caminho de pesquisa executável. Esta opção é usada somente quando"
 " ``imgmath_image_format`` é ``'svg'``."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:123
+#: ../../sphinx/doc/usage/extensions/math.rst:131
 msgid ""
 "Additional arguments to give to dvisvgm, as a list. The default value is "
 "``['--no-fonts']``, which means that ``dvisvgm`` will render glyphs as path "
@@ -231,11 +240,11 @@ msgstr ""
 "glifos como elementos de caminho (cf o `dvisvgm FAQ`_). Esta opção é usada "
 "somente quando ``imgmath_image_format`` é ``'svg'``."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:130
+#: ../../sphinx/doc/usage/extensions/math.rst:138
 msgid ":mod:`sphinx.ext.mathjax` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.mathjax` -- Renderizado via math JavaScript"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:137
+#: ../../sphinx/doc/usage/extensions/math.rst:145
 msgid ""
 "This extension puts math as-is into the HTML files.  The JavaScript package "
 "MathJax_ is then loaded and transforms the LaTeX markup to readable math "
@@ -245,7 +254,7 @@ msgstr ""
 " é carregado e transforma marcações LaTeX  em math lidas na hora no "
 "navegador."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:141
+#: ../../sphinx/doc/usage/extensions/math.rst:149
 msgid ""
 "Because MathJax (and the necessary fonts) is very large, it is not included "
 "in Sphinx but is set to automatically include it from a third-party site."
@@ -254,7 +263,7 @@ msgstr ""
 "incluído no Sphinx, mas é configurado para incluí-lo automaticamente em um "
 "site de terceiros."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:146
+#: ../../sphinx/doc/usage/extensions/math.rst:154
 msgid ""
 "You should use the math :rst:dir:`directive <math>` and :rst:role:`role "
 "<math>`, not the native MathJax ``$$``, ``\\(``, etc."
@@ -262,7 +271,7 @@ msgstr ""
 "Você deve usar as contas :rst:dir:`directive <math>` e :rst:role:`role "
 "<math>`, não as nativas ``MathJax`` ``$$``, ``\\(``, etc."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:152
+#: ../../sphinx/doc/usage/extensions/math.rst:160
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load MathJax."
@@ -270,7 +279,7 @@ msgstr ""
 "O caminho para arquivo JavaScript incluído no arquivo HTML que chama "
 "MathJax."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:155
+#: ../../sphinx/doc/usage/extensions/math.rst:163
 msgid ""
 "The default is the ``https://`` URL that loads the JS files from the "
 "`cdnjs`__ Content Delivery Network. See the `MathJax Getting Started page`__"
@@ -284,8 +293,8 @@ msgstr ""
 "incluir recursos de um site de terceiros, é necessário fazer o download e "
 "definir esse valor para um caminho diferente."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:165
-#: ../../sphinx/doc/usage/extensions/math.rst:217
+#: ../../sphinx/doc/usage/extensions/math.rst:173
+#: ../../sphinx/doc/usage/extensions/math.rst:225
 msgid ""
 "The path can be absolute or relative; if it is relative, it is relative to "
 "the ``_static`` directory of the built docs."
@@ -293,7 +302,7 @@ msgstr ""
 "O caminho pode ser absoluto ou relativo; se relativo, ele será em relação ao"
 " diretório ``_static`` onde foram construidos os documentos."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:168
+#: ../../sphinx/doc/usage/extensions/math.rst:176
 msgid ""
 "For example, if you put MathJax into the static path of the Sphinx docs, "
 "this value would be ``MathJax/MathJax.js``.  If you host more than one "
@@ -305,13 +314,13 @@ msgstr ""
 "Sphinx definidos em um único servidor, é aconselhável usar um local "
 "compartilhado."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:173
+#: ../../sphinx/doc/usage/extensions/math.rst:181
 msgid "You can also give a full ``https://`` URL different from the CDN URL."
 msgstr ""
 "Você também pode fornecer uma URL ``https://`` completa diferente da URL da "
 "CDN."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:177
+#: ../../sphinx/doc/usage/extensions/math.rst:185
 msgid ""
 "The options to script tag for mathjax.  For example, you can set integrity "
 "option with following setting::"
@@ -319,11 +328,11 @@ msgstr ""
 "As opções para rotular tag para o ``mathjax``. Por exemplo, você pode "
 "definir a opção de integridade com a seguinte configuração::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:184
+#: ../../sphinx/doc/usage/extensions/math.rst:192
 msgid "The default is empty (``{}``)."
 msgstr "O padrão é vazio (``{}``)."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:188
+#: ../../sphinx/doc/usage/extensions/math.rst:196
 msgid ""
 "The inline configuration options for mathjax.  The value is used as a "
 "parameter of ``MathJax.Hub.Config()``.  For more information, please read "
@@ -333,19 +342,19 @@ msgstr ""
 "um parâmetro de ``MathJax.Hub.Config()``. Para mais informações, por favor "
 "leia  `Using in-line configuration options`_."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:192
+#: ../../sphinx/doc/usage/extensions/math.rst:200
 msgid "For example::"
 msgstr "Por exemplo::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:199
+#: ../../sphinx/doc/usage/extensions/math.rst:207
 msgid "The default is empty (not configured)."
 msgstr "O padrão é vazio (não configurado)."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:204
+#: ../../sphinx/doc/usage/extensions/math.rst:212
 msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.jsmath` -- Renderiza math via JavaScript"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:209
+#: ../../sphinx/doc/usage/extensions/math.rst:217
 msgid ""
 "This extension works just as the MathJax extension does, but uses the older "
 "package jsMath_.  It provides this config value:"
@@ -353,7 +362,7 @@ msgstr ""
 "Essa extensão trabalho como a extensão MathJax, mas usa antigo pacote "
 "jsMath_. Permite valor de config:"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:214
+#: ../../sphinx/doc/usage/extensions/math.rst:222
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load JSMath.  There is no default."
@@ -361,7 +370,7 @@ msgstr ""
 "O caminho do arquivo JavaScript para incluir em arquivos HTML para carregar "
 "JSMath. Não há definição por padrão."
 
-#: ../../sphinx/doc/usage/extensions/math.rst:220
+#: ../../sphinx/doc/usage/extensions/math.rst:228
 msgid ""
 "For example, if you put JSMath into the static path of the Sphinx docs, this"
 " value would be ``jsMath/easy/load.js``.  If you host more than one Sphinx "

@@ -90,5 +90,5 @@ After that, you should commit updated po files.
 
 4. enable version 1.7 on RTD:
 
-   https://readthedocs.org/dashboard/sphinx-ja/versions/
+   https://readthedocs.org/projects/sphinx-ja/versions/
 

@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/ec246d6f\n"
+"Project-Id-Version: Sphinx 3.0.0+/4eda7f87\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-16 20:05+0000\n"
+"POT-Creation-Date: 2019-11-17 20:06+0000\n"
 "PO-Revision-Date: 2019-02-26 17:58+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:2
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:2
 msgid "Developing a \"recipe\" extension"
 msgstr "\"recipe\"  拡張機能の開発"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:4
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:4
 msgid ""
 "The objective of this tutorial is to illustrate roles, directives and "
 "domains. Once complete, we will be able to use this extension to describe a "
@@ -34,96 +34,96 @@ msgid ""
 msgstr ""
 "このチュートリアルは、ロール、ディレクティブ、ドメインの解説を目的としています。修了後には、レシピを記述する拡張の利用と、レシピをドキュメント内の別の場所から参照できるようになります。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:10
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:10
 msgid ""
 "This tutorial is based on a guide first published on `opensource.com`_ and "
 "is provided here with the original author's permission."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:17
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:17
 msgid "Overview"
 msgstr "概要"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:19
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:19
 msgid "We want the extension to add the following to Sphinx:"
 msgstr "以下のような拡張機能をSphinxに追加したいと考えているとします:"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:21
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:21
 msgid ""
 "A ``recipe`` :term:`directive`, containing some content describing the "
 "recipe steps, along with a ``:contains:`` option highlighting the main "
 "ingredients of the recipe."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:25
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:25
 msgid ""
 "A ``ref`` :term:`role`, which provides a cross-reference to the recipe "
 "itself."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:28
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:28
 msgid ""
 "A ``recipe`` :term:`domain`, which allows us to tie together the above role "
 "and domain, along with things like indices."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:31
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:31
 msgid "For that, we will need to add the following elements to Sphinx:"
 msgstr "これを実現するためには、Sphinxに以下の項目を追加する必要があるでしょう:"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:33
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:33
 msgid "A new directive called ``recipe``"
 msgstr "``recipe`` と呼ばれる新しいディレクティブ "
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:35
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:35
 msgid "New indexes to allow us to reference ingredient and recipes"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:37
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:37
 msgid ""
 "A new domain called ``recipe``, which will contain the ``recipe`` directive "
 "and ``ref`` role"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:42
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:42
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:44
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:44
 msgid ""
 "We need the same setup as in :doc:`the previous extensions <todo>`. This "
 "time, we will be putting out extension in a file called :file:`recipe.py`."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:47
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:47
 msgid "Here is an example of the folder structure you might obtain:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:59
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:59
 msgid "Writing the extension"
 msgstr "拡張機能の書き方"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:61
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:61
 msgid ""
 "Open :file:`recipe.py` and paste the following code in it, all of which we "
 "will explain in detail shortly:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:68
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:68
 msgid ""
 "Let's look at each piece of this extension step-by-step to explain what's "
 "going on."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:72
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:72
 msgid "The directive class"
 msgstr "ディレクティブクラス"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:73
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:73
 msgid "The first thing to examine is the ``RecipeDirective`` directive:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:80
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:80
 msgid ""
 "Unlike :doc:`helloworld` and :doc:`todo`, this directive doesn't derive from"
 " :class:`docutils.parsers.rst.Directive` and doesn't define a ``run`` "
@@ -138,7 +138,7 @@ msgid ""
 " for this node."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:91
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:91
 msgid ""
 "We also see that this directive defines ``has_content``, "
 "``required_arguments`` and ``option_spec``. Unlike the ``TodoDirective`` "
@@ -147,19 +147,19 @@ msgid ""
 "addition to the nested reStructuredText in the body."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:98
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:98
 msgid "The index classes"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:101
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:101
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:101
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:101
 msgid "Add brief overview of indices"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:108
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:108
 msgid ""
 "Both ``IngredientIndex`` and ``RecipeIndex`` are derived from "
 ":class:`Index`. They implement custom logic to generate a tuple of values "
@@ -168,7 +168,7 @@ msgid ""
 "the code."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:113
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:113
 msgid ""
 "Both indices use the method :meth:`Index.generate` to do their work. This "
 "method combines the information from our domain, sorts it, and returns it in"
@@ -178,18 +178,18 @@ msgid ""
 " guide </extdev/domainapi>` for more information on this API."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:121
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:121
 msgid "The domain"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:122
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:122
 msgid ""
 "A Sphinx domain is a specialized container that ties together roles, "
 "directives, and indices, among other things. Let's look at the domain we're "
 "creating here."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:131
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:131
 msgid ""
 "There are some interesting things to note about this ``recipe`` domain and "
 "domains in general. Firstly, we actually register our directives, roles and "
@@ -203,7 +203,7 @@ msgid ""
 "our domain's ``recipes`` because we currently have only one type of node."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:142
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:142
 msgid ""
 "Moving on, we can see that we've defined ``initial_data``. The values "
 "defined in ``initial_data`` will be copied to "
@@ -221,18 +221,18 @@ msgid ""
 "our indices and our cross-referencing code use this feature."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:157
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:157
 msgid "The ``setup`` function"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:160
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:160
 msgid ""
 ":doc:`As always <todo>`, the ``setup`` function is a requirement and is used"
 " to hook the various parts of our extension into Sphinx. Let's look at the "
 "``setup`` function for this extension."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:169
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:169
 msgid ""
 "This looks a little different to what we're used to seeing. There are no "
 "calls to :meth:`~Sphinx.add_directive` or even :meth:`~Sphinx.add_role`. "
@@ -242,34 +242,34 @@ msgid ""
 "of the directive itself."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:178
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:178
 msgid "Using the extension"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:180
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:180
 msgid "You can now use the extension throughout your project. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:182
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:182
 msgid "index.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:195
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:195
 msgid "tomato-soup.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:206
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:206
 msgid ""
 "The important things to note are the use of the ``:recipe:ref:`` role to "
 "cross-reference the recipe actually defined elsewhere (using the "
 "``:recipe:recipe:`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:212
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:212
 msgid "Further reading"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:214
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/recipe.rst:214
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."

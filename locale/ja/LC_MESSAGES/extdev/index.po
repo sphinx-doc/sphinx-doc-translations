@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/ec246d6f\n"
+"Project-Id-Version: Sphinx 3.0.0+/4eda7f87\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-16 20:05+0000\n"
+"POT-Creation-Date: 2019-11-17 20:06+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../sphinx/doc/extdev/index.rst:4
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:4
 msgid "Developing extensions for Sphinx"
 msgstr "Sphinx拡張機能の開発"
 
-#: ../../sphinx/doc/extdev/index.rst:6
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:6
 msgid ""
 "Since many projects will need special features in their documentation, "
 "Sphinx is designed to be extensible on several levels."
 msgstr ""
 "多くのプロジェクトはドキュメントの作成に関して特別な機能を必要とするでしょう。Sphinxはさまざまなレベルで拡張ができるように設計されています。"
 
-#: ../../sphinx/doc/extdev/index.rst:9
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:9
 msgid ""
 "This is what you can do in an extension: First, you can add new "
 ":term:`builder`\\s to support new output formats or actions on the parsed "
@@ -46,7 +46,7 @@ msgstr ""
 ":term:`ビルダー`\\ "
 "を追加できます。二つ目は、reStructuredText用の、新しいカスタムのロールやディレクティブを追加したり、マークアップを拡張したりできます。三つ目は\"フックポイント\"と呼ばれるもので、ビルドプロセスのさまざまな箇所に存在していて、特別なコードを実行するためのフックを登録できます。"
 
-#: ../../sphinx/doc/extdev/index.rst:16
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:16
 msgid ""
 "An extension is simply a Python module.  When an extension is loaded, Sphinx"
 " imports this module and executes its ``setup()`` function, which in turn "
@@ -57,7 +57,7 @@ msgstr ""
 " ``setup()``\\ "
 "関数を呼び出します。この関数の中では拡張機能が提供するものをSphinxに知らせます。詳しくはSphinx拡張のチュートリアルの例を見てください。"
 
-#: ../../sphinx/doc/extdev/index.rst:21
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:21
 msgid ""
 "The configuration file itself can be treated as an extension if it contains "
 "a ``setup()`` function.  All other extensions to load must be listed in the "
@@ -67,18 +67,18 @@ msgstr ""
 "関数を持っている場合には拡張機能として扱われます。それ以外のロードが必要なすべての拡張機能は、設定ファイルの中の "
 ":confval:`extensions` の中にリストアップしてください。"
 
-#: ../../sphinx/doc/extdev/index.rst:26
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:26
 msgid "Discovery of builders by entry point"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:30
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:30
 msgid ""
 ":term:`Builder` extensions can be discovered by means of `entry points`_ so "
 "that they do not have to be listed in the :confval:`extensions` "
 "configuration value."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:34
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:34
 msgid ""
 "Builder extensions should define an entry point in the ``sphinx.builders`` "
 "group. The name of the entry point needs to match your builder's "
@@ -88,27 +88,27 @@ msgid ""
 "'mybuilder' can be defined in the extension's ``setup.py``::"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:50
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:50
 msgid ""
 "Note that it is still necessary to register the builder using "
 ":meth:`~.Sphinx.add_builder` in the extension's :func:`setup` function."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:58
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:58
 msgid "Important objects"
 msgstr "重要なオブジェクト"
 
-#: ../../sphinx/doc/extdev/index.rst:60
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:60
 msgid ""
 "There are several key objects whose API you will use while writing an "
 "extension. These are:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:69
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:69
 msgid "**Application**"
 msgstr "**アプリケーション**"
 
-#: ../../sphinx/doc/extdev/index.rst:64
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:64
 msgid ""
 "The application object (usually called ``app``) is an instance of "
 ":class:`.Sphinx`.  It controls most high-level functionality, such as the "
@@ -117,17 +117,17 @@ msgstr ""
 "アプリケーションオブジェクト(通常 ``app`` と呼ばれる)は :class:`.Sphinx` "
 "のインスタンスです。これは高位の機能をコントロールします。例えば、拡張のセットアップや、イベントのディスパッチ、アウトプットの生成(ロギング)等です。"
 
-#: ../../sphinx/doc/extdev/index.rst:68
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:68
 msgid ""
 "If you have the environment object, the application is available as "
 "``env.app``."
 msgstr "もし、環境オブジェクトがあれば、 ``env.app`` のようにアプリケーションが提供されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:82
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:82
 msgid "**Environment**"
 msgstr "**Environment**"
 
-#: ../../sphinx/doc/extdev/index.rst:72
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:72
 msgid ""
 "The build environment object (usually called ``env``) is an instance of "
 ":class:`.BuildEnvironment`.  It is responsible for parsing the source "
@@ -137,7 +137,7 @@ msgstr ""
 "ビルド環境オブジェクト(通常 ``env`` と呼ばれる)は :class:`.BuildEnvironment` "
 "のインスタンスです。これはドキュメントソースのパースを行い、ドキュメントセットに関する全てのメタデータを保持し、それらをビルド後にディスクにシリアライズする責任を持っています。"
 
-#: ../../sphinx/doc/extdev/index.rst:77
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:77
 msgid ""
 "Its API provides methods to do with access to metadata, resolving "
 "references, etc.  It can also be used by extensions to cache information "
@@ -145,7 +145,7 @@ msgid ""
 msgstr ""
 "環境オブジェクトはメタデータにアクセスするためのAPIや、参照を解決するAPIなどを持っています。それはまた、拡張から情報のキャッシュとして使われ、それによって漸進的な再ビルドができます。"
 
-#: ../../sphinx/doc/extdev/index.rst:81
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:81
 msgid ""
 "If you have the application or builder object, the environment is available "
 "as ``app.env`` or ``builder.env``."
@@ -153,11 +153,11 @@ msgstr ""
 "もしアプリケーションかビルダーのオブジェクトがあれば、 ``app.env`` や ``builder.env`` "
 "のように環境オブジェクトが提供されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:91
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:91
 msgid "**Builder**"
 msgstr "**ビルダー**"
 
-#: ../../sphinx/doc/extdev/index.rst:85
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:85
 msgid ""
 "The builder object (usually called ``builder``) is an instance of a specific"
 " subclass of :class:`.Builder`.  Each builder class knows how to convert the"
@@ -167,17 +167,17 @@ msgstr ""
 "ビルダーオブジェクト(通常 ``builder`` と呼ばれる)は :class:`.Builder` "
 "のサブクラスのインスタンスです。各ビルダークラスはパースしたドキュメントを使って、出力フォーマットに変換したり、データ処理したりします(例えば、外部リンクのチェックなど)。"
 
-#: ../../sphinx/doc/extdev/index.rst:90
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:90
 msgid ""
 "If you have the application object, the builder is available as "
 "``app.builder``."
 msgstr "もしアプリケーションオブジェクトがあれば、 ``app.builder`` のようにビルダーオブジェクトが提供されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:98
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:98
 msgid "**Config**"
 msgstr "**Config**"
 
-#: ../../sphinx/doc/extdev/index.rst:94
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:94
 msgid ""
 "The config object (usually called ``config``) provides the values of "
 "configuration values set in :file:`conf.py` as attributes.  It is an "
@@ -186,32 +186,32 @@ msgstr ""
 "コンフィグオブジェクト(通常 ``config`` と呼ばれる)は :file:`conf.py` の設定値を属性として提供します。これは "
 ":class:`.Config` のインスタンスです。"
 
-#: ../../sphinx/doc/extdev/index.rst:98
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:98
 msgid "The config is available as ``app.config`` or ``env.config``."
 msgstr "コンフィグオブジェクトは ``app.config`` や ``env.config`` として提供されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:100
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:100
 msgid ""
 "To see an example of use of these objects, refer to "
 ":doc:`../development/tutorials/index`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:106
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:106
 msgid "Build Phases"
 msgstr "ビルド・フェーズ"
 
-#: ../../sphinx/doc/extdev/index.rst:108
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:108
 msgid ""
 "One thing that is vital in order to understand extension mechanisms is the "
 "way in which a Sphinx project is built: this works in several phases."
 msgstr ""
 "Sphinxのプロジェクトがビルドされる過程で、拡張機能がどのように実行されるのかということを理解することは、拡張機能の開発をするうえで必要不可欠です。この作業は以下のいくつかのフェーズから構成されています。"
 
-#: ../../sphinx/doc/extdev/index.rst:111
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:111
 msgid "**Phase 0: Initialization**"
 msgstr "**フェーズ 0: 初期化**"
 
-#: ../../sphinx/doc/extdev/index.rst:113
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:113
 msgid ""
 "In this phase, almost nothing of interest to us happens.  The source "
 "directory is searched for source files, and extensions are initialized. "
@@ -221,11 +221,11 @@ msgstr ""
 "このフェーズでは拡張作成者にとって面白いものは何もありません。 ソースディレクトリ内のソースファイルを探索し、拡張機能を初期化します。 "
 "保存されたビルド環境があればそれをロードし、なければ新しいビルド環境を作成します。"
 
-#: ../../sphinx/doc/extdev/index.rst:118
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:118
 msgid "**Phase 1: Reading**"
 msgstr "**フェーズ 1: 読み込み**"
 
-#: ../../sphinx/doc/extdev/index.rst:120
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:120
 msgid ""
 "In Phase 1, all source files (and on subsequent builds, those that are new "
 "or changed) are read and parsed.  This is the phase where directives and "
@@ -239,7 +239,7 @@ msgstr ""
 " *doctree*\\ "
 "です。これは、docutilsのノードがツリー上に構成されているものです。すべてのファイルを読み込むまでは完全に解釈できないドキュメントの要素に関しては、一時的なノードが作られます。"
 
-#: ../../sphinx/doc/extdev/index.rst:127
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:127
 msgid ""
 "There are nodes provided by docutils, which are documented `in the docutils "
 "documentation <http://docutils.sourceforge.net/docs/ref/doctree.html>`__. "
@@ -249,7 +249,7 @@ msgstr ""
 "users.jp/docutils/docs/ref/doctree.html>`__. "
 "で説明されています。追加のノードはSphinxによって提供され、 :ref:`ドキュメントはここ <nodes>` にあります。"
 
-#: ../../sphinx/doc/extdev/index.rst:131
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:131
 msgid ""
 "During reading, the build environment is updated with all meta- and cross "
 "reference data of the read documents, such as labels, the names of headings,"
@@ -258,25 +258,25 @@ msgid ""
 msgstr ""
 "ソースを読み込んでいる間は、ラベルや見出し名、説明されているPythonオブジェクト、索引のエントリーなどのメタな情報やクロスファンレスの情報がビルド環境に出力されます。これらの情報は、後で一時的なノードと置き換えられます。"
 
-#: ../../sphinx/doc/extdev/index.rst:136
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:136
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
 msgstr "パースされたDOCツリーはすべてのメモリ上で保存しておくことができないため、ディスク上に保存されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:139
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:139
 msgid "**Phase 2: Consistency checks**"
 msgstr "**フェーズ 2: 一貫性チェック**"
 
-#: ../../sphinx/doc/extdev/index.rst:141
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:141
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr "ビルドされたドキュメントの中に、びっくりするようなものがないか、いくつかのチェックを行います。"
 
-#: ../../sphinx/doc/extdev/index.rst:143
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:143
 msgid "**Phase 3: Resolving**"
 msgstr "**フェーズ 3: 解決**"
 
-#: ../../sphinx/doc/extdev/index.rst:145
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:145
 msgid ""
 "Now that the metadata and cross-reference data of all existing documents is "
 "known, all temporary nodes are replaced by nodes that can be converted into "
@@ -285,11 +285,11 @@ msgid ""
 "those that don't."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:151
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:151
 msgid "**Phase 4: Writing**"
 msgstr "**フェーズ 4: 書き出し**"
 
-#: ../../sphinx/doc/extdev/index.rst:153
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:153
 msgid ""
 "This phase converts the resolved doctrees to the desired output format, such"
 " as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
@@ -298,7 +298,7 @@ msgid ""
 msgstr ""
 "このフェーズでは参照が解決されたDOCツリーを、HTMLやLaTeXなどの指定された出力フォーマットに変換します。このプロセス中では、docutilsのライターと呼ばれるものがDOCツリーの個々のノードをたどって、出力を行っていきます。"
 
-#: ../../sphinx/doc/extdev/index.rst:159
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:159
 msgid ""
 "Some builders deviate from this general build plan, for example, the builder"
 " that checks external links does not need anything more than the parsed "
@@ -307,17 +307,17 @@ msgstr ""
 "いくつかのビルダーの中には、この一般的なビルド計画から外れているものもあります。 "
 "例えば、外部リンクチェックのビルダーはdoctreeのパースをする以上の情報は不要なので、フェーズ2～4を行いません。"
 
-#: ../../sphinx/doc/extdev/index.rst:163
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:163
 msgid ""
 "To see an example of application, refer to "
 ":doc:`../development/tutorials/todo`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:168
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:168
 msgid "Extension metadata"
 msgstr "拡張機能のメタデータ"
 
-#: ../../sphinx/doc/extdev/index.rst:172
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:172
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
@@ -325,7 +325,7 @@ msgstr ""
 "\\ ``setup()``\\ 関数は、ディクショナリを返すよう定義します。Sphinxはそのディクショナリを拡張機能のメタデータとして解釈します。\n"
 "メタデータのキーとして解釈可能なものは以下のとおりです。"
 
-#: ../../sphinx/doc/extdev/index.rst:175
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:175
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -335,7 +335,7 @@ msgstr ""
 "\\ ``'version'``\\ : 拡張機能のバージョンを示す文字列。\n"
 "拡張機能の必要バージョンのチェック(\\ :confval:`needs_extensions`\\ を参考)に利用されたり、参照目的で使われたりします。指定がない場合には、\\ ``\"unknown version\"``\\ が代わりに指定されます。"
 
-#: ../../sphinx/doc/extdev/index.rst:178
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:178
 msgid ""
 "``'env_version'``: an integer that identifies the version of env data "
 "structure if the extension stores any data to environment.  It is used to "
@@ -345,7 +345,7 @@ msgid ""
 "environment."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:183
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:183
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -356,7 +356,7 @@ msgstr ""
 "拡張をロードする際に、ソースファイルの並列読み込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が "
 "parallel-read-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:187
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:187
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
@@ -366,6 +366,6 @@ msgstr ""
 "拡張をロードする際に、出力ファイルの並列書き込みをサポートするかどうかを示す真偽値。デフォルトは ``False`` で、拡張機能が parallel-"
 "write-safe であるであることを確認してから明示的に指定をすべきです。"
 
-#: ../../sphinx/doc/extdev/index.rst:193
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/extdev/index.rst:193
 msgid "APIs used for writing extensions"
 msgstr "拡張機能を書く際に利用するAPI"

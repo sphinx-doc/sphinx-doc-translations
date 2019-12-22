@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/a80e35f6\n"
+"Project-Id-Version: Sphinx 3.0.0+/71fe7abf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 20:23+0000\n"
+"POT-Creation-Date: 2019-12-22 20:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,7 +125,7 @@ msgid "The option can now take arguments, i.e. the special members to document."
 msgstr ""
 
 #: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:158
-msgid "For classes and exceptions, members inherited from base classes will be left out when documenting all members, unless you give the ``inherited-members`` flag option, in addition to ``members``::"
+msgid "For classes and exceptions, members inherited from base classes will be left out when documenting all members, unless you give the ``inherited-members`` option, in addition to ``members``::"
 msgstr ""
 
 #: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:166
@@ -133,238 +133,254 @@ msgid "This can be combined with ``undoc-members`` to document *all* available m
 msgstr ""
 
 #: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:169
+msgid "It can take an anchestor class not to document inherited members from it. By default, members of ``object`` class are not documented.  To show them all, give ``None`` to the option."
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:173
+msgid "For example; If your class ``Foo`` is derived from ``list`` class and you don't want to document ``list.__len__()``, you should specify a option ``:inherited-members: list`` to avoid special members of list class."
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:178
+msgid "Another example; If your class Foo has ``__str__`` special method and autodoc directive has both ``inherited-members`` and ``special-members``, ``__str__`` will be documented as in the past, but other special method that are not implemented in your class ``Foo``."
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:183
 msgid "Note: this will lead to markup errors if the inherited members come from a module whose docstrings are not reST formatted."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:174
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:190
+msgid "It takes an anchestor class name as an argument."
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:192
 msgid "It's possible to override the signature for explicitly documented callable objects (functions, methods, classes) with the regular syntax that will override the signature gained from introspection::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:182
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:200
 msgid "This is useful if the signature from the method is hidden by a decorator."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:186
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:204
 msgid "The :rst:dir:`automodule`, :rst:dir:`autoclass` and :rst:dir:`autoexception` directives also support a flag option called ``show-inheritance``.  When given, a list of base classes will be inserted just below the class signature (when used with :rst:dir:`automodule`, this will be inserted for every class that is documented in the module)."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:194
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:212
 msgid "All autodoc directives support the ``noindex`` flag option that has the same effect as for standard :rst:dir:`py:function` etc. directives: no index entries are generated for the documented object (and all autodocumented members)."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:201
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:219
 msgid ":rst:dir:`automodule` also recognizes the ``synopsis``, ``platform`` and ``deprecated`` options that the standard :rst:dir:`py:module` directive supports."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:207
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:225
 msgid ":rst:dir:`automodule` and :rst:dir:`autoclass` also has an ``member-order`` option that can be used to override the global value of :confval:`autodoc_member_order` for one directive."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:213
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:231
 msgid "The directives supporting member documentation also have a ``exclude-members`` option that can be used to exclude single member names from documentation, if all members are to be documented."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:219
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:237
 msgid "In an :rst:dir:`automodule` directive with the ``members`` option set, only module members whose ``__module__`` attribute is equal to the module name as given to ``automodule`` will be documented.  This is to prevent documentation of imported classes or functions.  Set the ``imported-members`` option if you want to prevent this behavior and document all available members.  Note that attributes from imported modules will not be documented, because attribute documentation is discovered by parsing the source file of the current module."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:230
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:248
 msgid "Add a list of modules in the :confval:`autodoc_mock_imports` to prevent import errors to halt the building process when some external dependencies are not importable at build time."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:243
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:261
 msgid "These work exactly like :rst:dir:`autoclass` etc., but do not offer the options used for automatic member documentation."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:246
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:264
 msgid ":rst:dir:`autodata` and :rst:dir:`autoattribute` support the ``annotation`` option.  The option controls how the value of variable is shown.  If specified without arguments, only the name of the variable will be printed, and its value is not shown::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:254
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:272
 msgid "If the option specified with arguments, it is printed after the name as a value of the variable::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:260
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:278
 msgid "By default, without ``annotation`` option, Sphinx tries to obtain the value of the variable and print it after the name."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:263
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:281
 msgid "For module data members and class attributes, documentation can either be put into a comment with special formatting (using a ``#:`` to start the comment instead of just ``#``), or in a docstring *after* the definition.  Comments need to be either on a line of their own *before* the definition, or immediately after the assignment *on the same line*.  The latter form is restricted to one line only."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:270
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:288
 msgid "This means that in the following class definition, all attributes can be autodocumented::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:292
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:310
 msgid ":rst:dir:`autodata` and :rst:dir:`autoattribute` can now extract docstrings."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:295
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:313
 msgid "Comment docs are now allowed on the same line after an assignment."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:297
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:315
 msgid ":rst:dir:`autodata` and :rst:dir:`autoattribute` have an ``annotation`` option."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:300
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:318
 msgid ":rst:dir:`autodecorator` added."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:305
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:323
 msgid "If you document decorated functions or methods, keep in mind that autodoc retrieves its docstrings by importing the module and inspecting the ``__doc__`` attribute of the given function or method.  That means that if a decorator replaces the decorated function with another, it must copy the original ``__doc__`` to the new function."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:311
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:329
 msgid "From Python 2.5, :func:`functools.wraps` can be used to create well-behaved decorating functions."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:316
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:334
 msgid "Configuration"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:318
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:336
 msgid "There are also config values that you can set:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:322
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:340
 msgid "This value selects what content will be inserted into the main body of an :rst:dir:`autoclass` directive.  The possible values are:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:327
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:345
 msgid "``\"class\"``"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:326
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:344
 msgid "Only the class' docstring is inserted.  This is the default.  You can still document ``__init__`` as a separate method using :rst:dir:`automethod` or the ``members`` option to :rst:dir:`autoclass`."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:330
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:348
 msgid "``\"both\"``"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:330
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:348
 msgid "Both the class' and the ``__init__`` method's docstring are concatenated and inserted."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:333
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:351
 msgid "``\"init\"``"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:333
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:351
 msgid "Only the ``__init__`` method's docstring is inserted."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:337
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:355
 msgid "If the class has no ``__init__`` method or if the ``__init__`` method's docstring is empty, but the class has a ``__new__`` method's docstring, it is used instead."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:345
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:363
 msgid "This value selects if automatically documented members are sorted alphabetical (value ``'alphabetical'``), by member type (value ``'groupwise'``) or by source order (value ``'bysource'``).  The default is alphabetical."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:350
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:368
 msgid "Note that for source order, the module must be a Python module with the source code available."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:354
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:372
 msgid "Support for ``'bysource'``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:359
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:377
 msgid "This value is a list of autodoc directive flags that should be automatically applied to all autodoc directives.  The supported flags are ``'members'``, ``'undoc-members'``, ``'private-members'``, ``'special-members'``, ``'inherited-members'``, ``'show-inheritance'``, ``'ignore-module-all'`` and ``'exclude-members'``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:369
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:387
 msgid "Integrated into :confval:`autodoc_default_options`."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:373
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:391
 msgid "The default options for autodoc directives.  They are applied to all autodoc directives automatically.  It must be a dictionary which maps option names to the values.  For example::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:385
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:403
 msgid "Setting ``None`` or ``True`` to the value is equivalent to giving only the option name to the directives."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:388
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:406
 msgid "The supported options are ``'members'``, ``'member-order'``, ``'undoc-members'``, ``'private-members'``, ``'special-members'``, ``'inherited-members'``, ``'show-inheritance'``, ``'ignore-module-all'``, ``'imported-members'`` and ``'exclude-members'``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:395
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:413
 msgid "Accepts ``True`` as a value."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:398
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:416
 msgid "Added ``'imported-members'``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:403
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:421
 msgid "Functions imported from C modules cannot be introspected, and therefore the signature for such functions cannot be automatically determined.  However, it is an often-used convention to put the signature into the first line of the function's docstring."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:408
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:426
 msgid "If this boolean value is set to ``True`` (which is the default), autodoc will look at the first line of the docstring for functions and methods, and if it looks like a signature, use the line as the signature and remove it from the docstring content."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:417
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:435
 msgid "This value contains a list of modules to be mocked up. This is useful when some external dependencies are not met at build time and break the building process. You may only specify the root package of the dependencies themselves and omit the sub-modules:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:426
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:444
 msgid "Will mock all imports under the ``django`` package."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:430
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:448
 msgid "This config value only requires to declare the top-level modules that should be mocked."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:436
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:454
 msgid "This value controls how to represents typehints.  The setting takes the following values:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:439
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:457
 msgid "``'signature'`` -- Show typehints as its signature (default)"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:440
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:458
 msgid "``'none'`` -- Do not show typehints"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:446
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:464
 msgid "This value controls the behavior of :option:`sphinx-build -W` during importing modules. If ``False`` is given, autodoc forcedly suppresses the error if the imported module emits warnings.  By default, ``True``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:453
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:471
 msgid "This value controls the docstrings inheritance. If set to True the docstring for classes or methods, if not explicitly set, is inherited form parents."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:457
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:475
 msgid "The default is ``True``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:464
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:482
 msgid ":mod:`autodoc` supports to suppress warning messages via :confval:`suppress_warnings`.  It allows following warnings types in addition:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:468
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:486
 msgid "autodoc"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:469
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:487
 msgid "autodoc.import_object"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:473
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:491
 msgid "Docstring preprocessing"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:475
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:493
 msgid "autodoc provides the following additional events:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:481
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:499
 msgid "Emitted when autodoc has read and processed a docstring.  *lines* is a list of strings -- the lines of the processed docstring -- that the event handler can modify **in place** to change what Sphinx puts into the output."
 msgstr ""
 
@@ -374,53 +390,53 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:485
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:505
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:547
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:503
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:523
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:565
 msgid "the Sphinx application object"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:486
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:506
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:548
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:504
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:524
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:566
 msgid "the type of the object which the docstring belongs to (one of ``\"module\"``, ``\"class\"``, ``\"exception\"``, ``\"function\"``, ``\"method\"``, ``\"attribute\"``)"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:489
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:509
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:551
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:507
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:527
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:569
 msgid "the fully qualified name of the object"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:490
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:510
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:552
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:508
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:528
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:570
 msgid "the object itself"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:491
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:511
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:555
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:509
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:529
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:573
 msgid "the options given to the directive: an object with attributes ``inherited_members``, ``undoc_members``, ``show_inheritance`` and ``noindex`` that are true if the flag option of same name was given to the auto directive"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:495
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:513
 msgid "the lines of the docstring, see above"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:501
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:519
 msgid "Emitted when autodoc has formatted a signature for an object. The event handler can return a new tuple ``(signature, return_annotation)`` to change what Sphinx puts into the output."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:515
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:533
 msgid "function signature, as a string of the form ``\"(parameter_1, parameter_2)\"``, or ``None`` if introspection didn't succeed and signature wasn't specified in the directive."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:518
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:536
 msgid "function return annotation as a string of the form ``\" -> annotation\"``, or ``None`` if there is no return annotation"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:521
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:539
 msgid "The :mod:`sphinx.ext.autodoc` module provides factory functions for commonly needed docstring processing in event :event:`autodoc-process-docstring`:"
 msgstr ""
 
@@ -444,22 +460,22 @@ msgstr ""
 msgid "If *what* is a sequence of strings, only docstrings of a type in *what* will be processed."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:529
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:547
 msgid "Skipping members"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:531
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:549
 msgid "autodoc allows the user to define a custom method for determining whether a member should be included in the documentation by using the following event:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:538
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:556
 msgid "Emitted when autodoc has to decide whether a member should be included in the documentation.  The member is excluded if a handler returns ``True``.  It is included if the handler returns ``False``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:542
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:560
 msgid "If more than one enabled extension handles the ``autodoc-skip-member`` event, autodoc will use the first non-``None`` value returned by a handler. Handlers should return ``None`` to fall back to the skipping behavior of autodoc and other enabled extensions."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:553
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/usage/extensions/autodoc.rst:571
 msgid "a boolean indicating if autodoc will skip this member if the user handler does not override the decision"
 msgstr ""

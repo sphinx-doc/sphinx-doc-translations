@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/ec8f0603\n"
+"Project-Id-Version: Sphinx 3.0.0+/d3b1eab6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 20:33+0000\n"
+"POT-Creation-Date: 2020-01-13 20:33+0000\n"
 "PO-Revision-Date: 2018-12-23 17:28+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
@@ -166,11 +166,35 @@ msgid ""
 "<nodes>`."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:111
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:112
+msgid ""
+"It is important to know that while you can extend Sphinx without leaving "
+"your ``conf.py``, if you declare an inherited node right there, you'll hit "
+"an unobvious :py:class:`PickleError`. So if something goes wrong, please "
+"make sure that you put inherited nodes into a separate Python module."
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:118
+msgid "For more details, see:"
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:120
+msgid "https://github.com/sphinx-doc/sphinx/issues/6751"
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:121
+msgid "https://github.com/sphinx-doc/sphinx/issues/1493"
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:122
+msgid "https://github.com/sphinx-doc/sphinx/issues/1424"
+msgstr ""
+
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:125
 msgid "The directive classes"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:112
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:126
 msgid ""
 "A directive class is a class deriving usually from "
 ":class:`docutils.parsers.rst.Directive`. The directive interface is also "
@@ -179,11 +203,11 @@ msgid ""
 " a ``run`` method that returns a list of nodes."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:118
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:132
 msgid "Looking first at the ``TodolistDirective`` directive:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:125
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:139
 msgid ""
 "It's very simple, creating and returning an instance of our ``todolist`` "
 "node class.  The ``TodolistDirective`` directive itself has neither content "
@@ -191,7 +215,7 @@ msgid ""
 "``TodoDirective`` directive:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:135
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:149
 msgid ""
 "Several important things are covered here. First, as you can see, we're now "
 "subclassing the :class:`~sphinx.util.docutils.SphinxDirective` helper class "
@@ -207,7 +231,7 @@ msgid ""
 "without any text (the first two arguments)."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:147
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:161
 msgid ""
 "On creating admonition node, the content body of the directive are parsed "
 "using ``self.state.nested_parse``.  The first argument gives the content "
@@ -223,21 +247,21 @@ msgid ""
 "stored along with a copy of the node."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:159
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:173
 msgid ""
 "In the last line, the nodes that should be put into the doctree are "
 "returned: the target node and the admonition node."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:162
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:176
 msgid "The node structure that the directive returns looks like this::"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:179
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:193
 msgid "The event handlers"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:180
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:194
 msgid ""
 "Event handlers are one of Sphinx's most powerful features, providing a way "
 "to do hook into any part of the documentation process. There are many events"
@@ -245,13 +269,13 @@ msgid ""
 "and we're going to use a subset of them here."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:185
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:199
 msgid ""
 "Let's look at the event handlers used in the above example.  First, the one "
 "for the :event:`env-purge-doc` event:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:193
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:207
 msgid ""
 "Since we store information from source files in the environment, which is "
 "persistent, it may become out of date when the source file changes.  "
@@ -262,11 +286,11 @@ msgid ""
 "document, they will be added again during parsing."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:201
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:215
 msgid "The other handler belongs to the :event:`doctree-resolved` event:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:208
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:222
 msgid ""
 "The :event:`doctree-resolved` event is emitted at the end of :ref:`phase 3 "
 "(resolving) <build-phases>` and allows custom resolving to be done. The "
@@ -284,11 +308,11 @@ msgid ""
 "(the target's) ID as the anchor name."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:224
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:238
 msgid "The ``setup`` function"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:227
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:241
 msgid ""
 "As noted :doc:`previously <helloworld>`, the ``setup`` function is a "
 "requirement and is used to plug directives into Sphinx. However, we also use"
@@ -296,27 +320,27 @@ msgid ""
 " function:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:236
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:250
 msgid ""
 "The calls in this function refer to the classes and functions we added "
 "earlier. What the individual calls do is the following:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:239
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:253
 msgid ""
 ":meth:`~Sphinx.add_config_value` lets Sphinx know that it should recognize "
 "the new *config value* ``todo_include_todos``, whose default value should be"
 " ``False`` (this also tells Sphinx that it is a boolean value)."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:243
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:257
 msgid ""
 "If the third argument was ``'html'``, HTML documents would be full rebuild "
 "if the config value changed its value.  This is needed for config values "
 "that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:247
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:261
 msgid ""
 ":meth:`~Sphinx.add_node` adds a new *node class* to the build system.  It "
 "also can specify visitor functions for each supported output format.  These "
@@ -325,72 +349,72 @@ msgid ""
 " :ref:`phase 3 (resolving) <build-phases>`, it doesn't need any."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:253
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:267
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:255
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:269
 msgid ""
 "Finally, :meth:`~Sphinx.connect` adds an *event handler* to the event whose "
 "name is given by the first argument.  The event handler function is called "
 "with several arguments which are documented with the event."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:259
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:273
 msgid "With this, our extension is complete."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:263
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:277
 msgid "Using the extension"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:265
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:279
 msgid ""
 "As before, we need to enable the extension by declaring it in our "
 ":file:`conf.py` file. There are two steps necessary here:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:268
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:282
 msgid ""
 "Add the :file:`_ext` directory to the `Python path`_ using "
 "``sys.path.append``. This should be placed at the top of the file."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:271
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:285
 msgid ""
 "Update or create the :confval:`extensions` list and add the extension file "
 "name to the list"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:274
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:288
 msgid ""
 "In addition, we may wish to set the ``todo_include_todos`` config value. As "
 "noted above, this defaults to ``False`` but we can set it explicitly."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:277
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:291
 msgid "For example:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:290
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:304
 msgid "You can now use the extension throughout your project. For example:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:292
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:306
 msgid "index.rst"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:306
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:320
 msgid "somefile.rst"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:316
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:330
 msgid "someotherfile.rst"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:326
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:340
 msgid ""
 "Because we have configured ``todo_include_todos`` to ``False``, we won't "
 "actually see anything rendered for the ``todo`` and ``todolist`` directives."
@@ -398,11 +422,11 @@ msgid ""
 "previously."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:333
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:347
 msgid "Further reading"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:335
+#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/todo.rst:349
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."

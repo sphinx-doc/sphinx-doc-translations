@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 3.0.0+/1cb41820\n"
+"Project-Id-Version: Sphinx 3.0.0+/6a528631\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 20:41+0000\n"
+"POT-Creation-Date: 2020-01-30 20:41+0000\n"
 "PO-Revision-Date: 2018-12-23 17:28+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:2
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:2
 msgid "Developing a \"Hello world\" extension"
 msgstr "\"Hello world\"  拡張機能の開発"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:4
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:4
 msgid ""
 "The objective of this tutorial is to create a very basic extension that adds"
 " a new directive. This directive will output a paragraph containing \"hello "
@@ -35,7 +35,7 @@ msgstr ""
 "このチュートリアルの目的はとても基本的な拡張を作成することです。拡張では新たなディレクティブを追加し、そこで”hello "
 "world”を含んだパラグラフが出力されます。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:7
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:7
 msgid ""
 "Only basic information is provided in this tutorial. For more information, "
 "refer to the :doc:`other tutorials <index>` that go into more details."
@@ -43,31 +43,31 @@ msgstr ""
 "基本的な情報だけを、このチュートリアルでは扱います。さらに情報が必要な場合は、 :doc:`other tutorials <index>` "
 "を参照してください。こちらで細部が述べられています。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:12
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:12
 msgid ""
 "For this extension, you will need some basic understanding of docutils_ and "
 "Python."
 msgstr "この拡張については、docutils_ と Python の基礎知識が必要になります。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:17
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:17
 msgid "Overview"
 msgstr "概要"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:19
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:19
 msgid "We want the extension to add the following to Sphinx:"
 msgstr "以下のような拡張機能をSphinxに追加したいとします:"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:21
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:21
 msgid ""
 "A ``helloworld`` directive, that will simply output the text \"hello "
 "world\"."
 msgstr "``helloworld`` ディレクティブ,  \"hello world\" というテキストを単に出力するもの."
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:25
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:25
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:27
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:27
 msgid ""
 "We will not be distributing this plugin via `PyPI`_ and will instead include"
 " it as part of an existing project. This means you will need to use an "
@@ -77,7 +77,7 @@ msgstr ""
 "を通して配布せず、代わりに既存プロジェクトへ、その一部としてこのプラグインを加えることにしましょう。すなわち、みなさんは既存プロジェクトを使用するか、 "
 ":program:`sphinx-quickstart` を利用して新しいものを作成する必要があります。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:31
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:31
 msgid ""
 "We assume you are using separate source (:file:`source`) and build "
 "(:file:`build`) folders. Your extension file could be in any folder of your "
@@ -86,43 +86,43 @@ msgstr ""
 "ソース (:file:`source`) と ビルド (:file:`build`) "
 "のフォルダーをみなさんが分けて使用していることを想定します。みなさんの拡張ファイルはプロジェクト内のどこかのフォルダに入っているかもしれません。ここでは、次のようにします:"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:35
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:35
 msgid "Create an :file:`_ext` folder in :file:`source`"
 msgstr ":file:`source` 内に :file:`_ext` フォルダーを作成します "
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:36
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:36
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called "
 ":file:`helloworld.py`"
 msgstr " :file:`_ext` フォルダ内に :file:`helloworld.py` という新しいPythonファイルを作成します"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:39
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:39
 msgid "Here is an example of the folder structure you might obtain:"
 msgstr "フォルダ構造として次のようなものが得られるでしょう:"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:55
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:55
 msgid "Writing the extension"
 msgstr "拡張機能の書き方"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:57
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:57
 msgid "Open :file:`helloworld.py` and paste the following code in it:"
 msgstr " :file:`helloworld.py` を開いて、次のコードを貼り付けてください:"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:63
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:63
 msgid ""
 "Some essential things are happening in this example, and you will see them "
 "for all directives."
 msgstr "いくつかの本質的なことがこの例の中にはあり、すべてのディレクティブでそれらを確認することができます。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:67
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:67
 msgid "The directive class"
 msgstr "ディレクティブクラス"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:68
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:68
 msgid "Our new directive is declared in the ``HelloWorld`` class."
 msgstr "新しいディレクティブを`HelloWorld`` クラス内で宣言しています。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:75
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:75
 msgid ""
 "This class extends the docutils_' ``Directive`` class. All extensions that "
 "create directives should extend this class."
@@ -130,12 +130,12 @@ msgstr ""
 "このクラスは docutils_' ``Directive`` "
 "クラスを拡張しています。ディレクティブを生成するすべての拡張機能は、このクラスを拡張すべきです。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:80
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:80
 msgid ""
 "`The docutils documentation on creating directives <docutils directives_>`_"
 msgstr "`ディレクティブ生成に関する docutils ドキュメンテーション <docutils directives_>`_"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:82
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:82
 msgid ""
 "This class contains a ``run`` method.  This method is a requirement and it "
 "is part of every directive.  It contains the main logic of the directive and"
@@ -149,11 +149,11 @@ msgstr ""
 "でのドキュメントコンテクストの表現法であらわされています。多くの利用可能ノードのタイプがあります。text、paragraph、 reference、 "
 "table などです。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:90
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:90
 msgid "`The docutils documentation on nodes <docutils nodes_>`_"
 msgstr "`ノードに関する docutils ドキュメンテーション <docutils nodes_>`_"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:92
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:92
 msgid ""
 "The ``nodes.paragraph`` class creates a new paragraph node. A paragraph node"
 " typically contains some text that we can set during instantiation using the"
@@ -162,17 +162,17 @@ msgstr ""
 " ``nodes.paragraph`` クラスは新たなパラグラフノードを生成します。パラグラフノードには通常、インスタンス化の際に``text`` "
 "パラメータを使用して設定できるいくつかのテキストが含まれています。"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:97
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:97
 msgid "The ``setup`` function"
 msgstr "``setup`` 関数"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:100
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:100
 msgid ""
 "This function is a requirement. We use it to plug our new directive into "
 "Sphinx."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:108
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:108
 msgid ""
 "The simplest thing you can do it call the :meth:`~Sphinx.add_directive` "
 "method, which is what we've done here. For this particular call, the first "
@@ -180,64 +180,64 @@ msgid ""
 " case, we would use ``helloworld``. For example:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:121
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:121
 msgid ""
 "We also return the :ref:`extension metadata <ext-metadata>` that indicates "
 "the version of our extension, along with the fact that it is safe to use the"
 " extension for both parallel reading and writing."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:127
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:127
 msgid "Using the extension"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:129
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:129
 msgid ""
 "The extension has to be declared in your :file:`conf.py` file to make Sphinx"
 " aware of it. There are two steps necessary here:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:132
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:132
 msgid ""
 "Add the :file:`_ext` directory to the `Python path`_ using "
 "``sys.path.append``. This should be placed at the top of the file."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:135
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:135
 msgid ""
 "Update or create the :confval:`extensions` list and add the extension file "
 "name to the list"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:138
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:138
 msgid "For example:"
 msgstr "例:"
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:151
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:151
 msgid ""
 "We're not distributing this extension as a `Python package`_, we need to "
 "modify the `Python path`_ so Sphinx can find our extension. This is why we "
 "need the call to ``sys.path.append``."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:155
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:155
 msgid "You can now use the extension in a file. For example:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:165
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:165
 msgid "The sample above would generate:"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:177
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:177
 msgid "Further reading"
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:179
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:179
 msgid ""
 "This is the very basic principle of an extension that creates a new "
 "directive."
 msgstr ""
 
-#: /home/travis/build/sphinx-doc/sphinx-doc-translations/sphinx/doc/development/tutorials/helloworld.rst:181
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:181
 msgid "For a more advanced example, refer to :doc:`todo`."
 msgstr ""

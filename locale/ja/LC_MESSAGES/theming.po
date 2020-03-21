@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/b924e62b\n"
+"Project-Id-Version: Sphinx 4.0.0+/7307157b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-20 21:12+0000\n"
+"POT-Creation-Date: 2020-03-21 21:12+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -116,12 +116,20 @@ msgstr ""
 
 #: ../../sphinx/doc/theming.rst:66
 msgid ""
+"The **pygments_dark_style** setting gives the name of a Pygments style to "
+"use for highlighting when the CSS media query ``(prefers-color-scheme: "
+"dark)`` evaluates to true. It is injected into the page using "
+":meth:`~Sphinx.add_css_file()`."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:71
+msgid ""
 "The **sidebars** setting gives the comma separated list of sidebar templates"
 " for constructing sidebars.  This can be overridden by the user in the "
 ":confval:`html_sidebars` config value."
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:70
+#: ../../sphinx/doc/theming.rst:75
 msgid ""
 "The **options** section contains pairs of variable names and default values."
 " These options can be overridden by the user in "
@@ -132,21 +140,21 @@ msgstr ""
 ":confval:`html_theme_options` を設定することで、ユーザ側で上書きできます。また、すべてのテンプレートからは、 "
 "``theme_<名前>`` として、この設定値にアクセスできます。"
 
-#: ../../sphinx/doc/theming.rst:74
+#: ../../sphinx/doc/theming.rst:79
 msgid "sidebar settings"
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:81
+#: ../../sphinx/doc/theming.rst:86
 msgid "Distribute your theme as a Python package"
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:83
+#: ../../sphinx/doc/theming.rst:88
 msgid ""
 "As a way to distribute your theme, you can use Python package.  Python "
 "package brings to users easy setting up ways."
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:86
+#: ../../sphinx/doc/theming.rst:91
 msgid ""
 "To distribute your theme as a Python package, please define an entry point "
 "called ``sphinx.html_themes`` in your ``setup.py`` file, and write a "
@@ -154,29 +162,29 @@ msgid ""
 "in it::"
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:107
+#: ../../sphinx/doc/theming.rst:112
 msgid ""
 "If your theme package contains two or more themes, please call "
 "``add_html_theme()`` twice or more."
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:110
+#: ../../sphinx/doc/theming.rst:115
 msgid "'sphinx_themes' entry_points feature."
 msgstr "entry_points の `sphinx_themes` 機能"
 
-#: ../../sphinx/doc/theming.rst:113
+#: ../../sphinx/doc/theming.rst:118
 msgid "``sphinx_themes`` entry_points has been deprecated."
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:116
+#: ../../sphinx/doc/theming.rst:121
 msgid "``sphinx.html_themes`` entry_points feature."
 msgstr ""
 
-#: ../../sphinx/doc/theming.rst:121
+#: ../../sphinx/doc/theming.rst:126
 msgid "Templating"
 msgstr "テンプレート"
 
-#: ../../sphinx/doc/theming.rst:123
+#: ../../sphinx/doc/theming.rst:128
 msgid ""
 "The :doc:`guide to templating <templating>` is helpful if you want to write "
 "your own templates.  What is important to keep in mind is the order in which"
@@ -185,19 +193,19 @@ msgstr ""
 "もし自分でテンプレートを書こうと思っている場合には、 :doc:`テンプレートガイド <templating>` "
 "を読むと参考になるでしょう。テンプレートに関して知っておくべきことは、Sphinxがテンプレートを探索する順序です:"
 
-#: ../../sphinx/doc/theming.rst:127
+#: ../../sphinx/doc/theming.rst:132
 msgid "First, in the user's ``templates_path`` directories."
 msgstr "最初は、ユーザの ``templates_path`` ディレクトリ"
 
-#: ../../sphinx/doc/theming.rst:128
+#: ../../sphinx/doc/theming.rst:133
 msgid "Then, in the selected theme."
 msgstr "その次は、選択されたテーマ内"
 
-#: ../../sphinx/doc/theming.rst:129
+#: ../../sphinx/doc/theming.rst:134
 msgid "Then, in its base theme, its base's base theme, etc."
 msgstr "それから先は、テーマの継承元のテーマを順に探索"
 
-#: ../../sphinx/doc/theming.rst:131
+#: ../../sphinx/doc/theming.rst:136
 msgid ""
 "When extending a template in the base theme with the same name, use the "
 "theme name as an explicit directory: ``{% extends \"basic/layout.html\" "
@@ -209,11 +217,11 @@ msgstr ""
 "``templates_path`` の中のテンプレートでも、 \"エクスクラメーションマーク(!)\" "
 "のシンタックスを使用して、テンプレートのドキュメント内であると指定することもできます。"
 
-#: ../../sphinx/doc/theming.rst:137
+#: ../../sphinx/doc/theming.rst:142
 msgid "Static templates"
 msgstr "静的テンプレート"
 
-#: ../../sphinx/doc/theming.rst:139
+#: ../../sphinx/doc/theming.rst:144
 msgid ""
 "Since theme options are meant for the user to configure a theme more easily,"
 " without having to write a custom stylesheet, it is necessary to be able to "
@@ -222,7 +230,7 @@ msgid ""
 msgstr ""
 "テーマオプションを使用すると、ユーザがカスタムのスタイルシートを書く必要もなく、テーマを簡単にカスタマイズできるようになります。これはHTMLファイルと同じように、テンプレート静的ファイルでも行えます。Sphinxはこのために、\"静的テンプレート\"と呼ばれるものをサポートしています。"
 
-#: ../../sphinx/doc/theming.rst:144
+#: ../../sphinx/doc/theming.rst:149
 msgid ""
 "If the name of a file in the ``static/`` directory of a theme (or in the "
 "user's static path, for that matter) ends with ``_t``, it will be processed "
@@ -239,7 +247,7 @@ msgstr ""
 "というファイルを持っていますが、これは色のオプションを持ったスタイルシートのテンプレートです。ドキュメントがビルドされる時に、すべてのテンプレートタグが処理されて、色のオプションがスタイルシートに書き込まれて、出力ディレクトリには"
 " ``_static/classic.css`` ファイルとして出力されます。"
 
-#: ../../sphinx/doc/theming.rst:152
+#: ../../sphinx/doc/theming.rst:157
 msgid ""
 "It is not an executable Python file, as opposed to :file:`conf.py`, because "
 "that would pose an unnecessary security risk if themes are shared."

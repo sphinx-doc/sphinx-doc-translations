@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/7307157b\n"
+"Project-Id-Version: Sphinx 4.0.0+/a6d91e21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-21 21:12+0000\n"
+"POT-Creation-Date: 2020-03-22 21:13+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
@@ -81,22 +81,31 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:51
 msgid ""
+"The representation of \"TOC tree\" is changed in each output format.  The "
+"builders that output multiple files (ex. HTML) treat it as a collection of "
+"hyperlinks.  On the other hand, the builders that output a single file (ex. "
+"LaTeX, man page, etc.) replace it with the content of the documents on the "
+"TOC tree."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:57
+msgid ""
 "Consider this example (taken from the Python docs' library reference "
 "index)::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:62
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:68
 msgid "This accomplishes two things:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:64
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:70
 msgid ""
 "Tables of contents from all those documents are inserted, with a maximum "
 "depth of two, that means one nested heading.  ``toctree`` directives in "
 "those documents are also taken into account."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:67
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:73
 msgid ""
 "Sphinx knows the relative order of the documents ``intro``, ``strings`` and "
 "so forth, and it knows that they are children of the shown document, the "
@@ -104,11 +113,11 @@ msgid ""
 "\"previous chapter\" and \"parent chapter\" links."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:72
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:78
 msgid "**Entries**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:74
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:80
 msgid ""
 "Document titles in the :rst:dir:`toctree` will be automatically read from "
 "the title of the referenced document. If that isn't what you want, you can "
@@ -117,92 +126,92 @@ msgid ""
 "This looks like::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:86
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:92
 msgid ""
 "The second line above will link to the ``strings`` document, but will use "
 "the title \"All about strings\" instead of the title of the ``strings`` "
 "document."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:89
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:95
 msgid ""
 "You can also add external links, by giving an HTTP URL instead of a document"
 " name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:92
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:98
 msgid "**Section numbering**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:94
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:100
 msgid ""
 "If you want to have section numbers even in HTML output, give the "
 "**toplevel** toctree a ``numbered`` option.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:103
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:109
 msgid ""
 "Numbering then starts at the heading of ``foo``.  Sub-toctrees are "
 "automatically numbered (don't give the ``numbered`` flag to those)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:106
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:112
 msgid ""
 "Numbering up to a specific depth is also possible, by giving the depth as a "
 "numeric argument to ``numbered``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:109
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:600
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:115
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:606
 msgid "**Additional options**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:111
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:117
 msgid ""
 "You can use ``caption`` option to provide a toctree caption and you can use "
 "``name`` option to provide implicit target name that can be referenced by "
 "using :rst:role:`ref`::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:121
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:127
 msgid ""
 "If you want only the titles of documents in the tree to show up, not other "
 "headings of the same level, you can use the ``titlesonly`` option::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:130
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:136
 msgid ""
 "You can use \"globbing\" in toctree directives, by giving the ``glob`` flag "
 "option.  All entries are then matched against the list of available "
 "documents, and matches are inserted into the list alphabetically.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:141
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:147
 msgid ""
 "This includes first all documents whose names start with ``intro``, then all"
 " documents in the ``recipe`` folder, then all remaining documents (except "
 "the one containing the directive, of course.) [#]_"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:145
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:151
 msgid ""
 "The special entry name ``self`` stands for the document containing the "
 "toctree directive.  This is useful if you want to generate a \"sitemap\" "
 "from the toctree."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:149
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:155
 msgid ""
 "You can use the ``reversed`` flag option to reverse the order of the entries"
 " in the list. This can be useful when using the ``glob`` flag option to "
 "reverse the ordering of the files.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:159
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:165
 msgid "You can also give a \"hidden\" option to the directive, like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:167
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:173
 msgid ""
 "This will still notify Sphinx of the document hierarchy, but not insert "
 "links into the document at the location of the directive -- this makes sense"
@@ -210,18 +219,18 @@ msgid ""
 "the HTML sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:172
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:178
 msgid ""
 "In cases where you want to have only one top-level toctree and hide all "
 "other lower level toctrees you can add the \"includehidden\" option to the "
 "top-level toctree entry::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:182
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:188
 msgid "All other toctree entries can then be eliminated by the \"hidden\" option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:184
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:190
 msgid ""
 "In the end, all documents in the :term:`source directory` (or "
 "subdirectories) must occur in some ``toctree`` directive; Sphinx will emit a"
@@ -229,7 +238,7 @@ msgid ""
 "this file will not be reachable through standard navigation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:189
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:195
 msgid ""
 "Use :confval:`exclude_patterns` to explicitly exclude documents or "
 "directories from building completely.  Use :ref:`the \"orphan\" metadata "
@@ -237,123 +246,123 @@ msgid ""
 "reachable via a toctree."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:194
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:200
 msgid ""
 "The \"master document\" (selected by :confval:`master_doc`) is the \"root\" "
 "of the TOC tree hierarchy.  It can be used as the documentation's main page,"
 " or as a \"full table of contents\" if you don't give a ``maxdepth`` option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:198
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:204
 msgid "Added \"globbing\" option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:201
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:207
 msgid ""
 "Added \"numbered\" and \"hidden\" options as well as external links and "
 "support for \"self\" references."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:205
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:211
 msgid "Added \"titlesonly\" option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:208
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:214
 msgid "Added numeric argument to \"numbered\"."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:211
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:217
 msgid "Added \"includehidden\" option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:214
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:220
 msgid "Added \"caption\" and \"name\" option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:218
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:224
 msgid "Special names"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:220
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:226
 msgid ""
 "Sphinx reserves some document names for its own use; you should not try to "
 "create documents with these names -- it will cause problems."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:223
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:229
 msgid "The special document names (and pages generated for them) are:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:225
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:231
 msgid "``genindex``, ``modindex``, ``search``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:227
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:233
 msgid ""
 "These are used for the general index, the Python module index, and the "
 "search page, respectively."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:230
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:236
 msgid ""
 "The general index is populated with entries from modules, all index-"
 "generating :ref:`object descriptions <basic-domain-markup>`, and from "
 ":rst:dir:`index` directives."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:234
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:240
 msgid ""
 "The Python module index contains one entry per :rst:dir:`py:module` "
 "directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:237
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:243
 msgid ""
 "The search page contains a form that uses the generated JSON search index "
 "and JavaScript to full-text search the generated documents for search words;"
 " it should work on every major browser that supports modern JavaScript."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:241
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:247
 msgid "every name beginning with ``_``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:243
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:249
 msgid ""
 "Though only few such names are currently used by Sphinx, you should not "
 "create documents or document-containing directories with such names.  (Using"
 " ``_`` as a prefix for a custom template directory is fine.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:249
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:255
 msgid ""
 "Be careful with unusual characters in filenames.  Some formats may interpret"
 " these characters in unexpected ways:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:252
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:258
 msgid ""
 "Do not use the colon ``:`` for HTML based formats.  Links to other parts may"
 " not work."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:255
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:261
 msgid ""
 "Do not use the plus ``+`` for the ePub format.  Some resources may not be "
 "found."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:260
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:266
 msgid "Paragraph-level markup"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:265
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:271
 msgid ""
 "These directives create short paragraphs and can be used inside information "
 "units as well as normal text."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:270
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:276
 msgid ""
 "An especially important bit of information about an API that a user should "
 "be aware of when using whatever bit of API the note pertains to.  The "
@@ -361,15 +370,15 @@ msgid ""
 " all appropriate punctuation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:275
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:298
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:448
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:468
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:482
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:281
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:304
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:454
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:474
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:488
 msgid "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:283
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:289
 msgid ""
 "An important bit of information about an API that a user should be very "
 "aware of when using whatever bit of API the warning pertains to.  The "
@@ -378,7 +387,7 @@ msgid ""
 "is recommended over :rst:dir:`note` for information regarding security."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:291
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:297
 msgid ""
 "This directive documents the version of the project which added the "
 "described feature to the library or C API. When this applies to an entire "
@@ -386,66 +395,66 @@ msgid ""
 "prose."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:295
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:301
 msgid ""
 "The first argument must be given and is the version in question; you can add"
 " a second argument consisting of a *brief* explanation of the change."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:303
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:309
 msgid ""
 "Note that there must be no blank line between the directive head and the "
 "explanation; this is to make these blocks visually continuous in the markup."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:308
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:314
 msgid ""
 "Similar to :rst:dir:`versionadded`, but describes when and what changed in "
 "the named feature in some way (new parameters, changed side effects, etc.)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:313
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:319
 msgid ""
 "Similar to :rst:dir:`versionchanged`, but describes when the feature was "
 "deprecated.  An explanation can also be given, for example to inform the "
 "reader what should be used instead.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:322
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:328
 msgid ""
 "Many sections include a list of references to module documentation or "
 "external documents.  These lists are created using the :rst:dir:`seealso` "
 "directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:326
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:332
 msgid ""
 "The :rst:dir:`seealso` directive is typically placed in a section just "
 "before any subsections.  For the HTML output, it is shown boxed off from the"
 " main flow of the text."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:330
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:336
 msgid ""
 "The content of the :rst:dir:`seealso` directive should be a reST definition "
 "list. Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:341
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:347
 msgid "There's also a \"short form\" allowed that looks like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:345
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:351
 msgid "The short form."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:350
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:356
 msgid ""
 "This directive creates a paragraph heading that is not used to create a "
 "table of contents node."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:355
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:361
 msgid ""
 "If the *title* of the rubric is \"Footnotes\" (or the selected language's "
 "equivalent), this rubric is ignored by the LaTeX writer, since it is assumed"
@@ -453,37 +462,37 @@ msgid ""
 "heading."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:362
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:368
 msgid ""
 "This directive creates a centered boldfaced line of text.  Use it as "
 "follows::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:367
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:373
 msgid ""
 "This presentation-only directive is a legacy from older versions.  Use a "
 ":rst:dir:`rst-class` directive instead and add an appropriate style."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:373
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:379
 msgid ""
 "This directive must contain a bullet list.  It will transform it into a more"
 " compact list by either distributing more than one item horizontally, or "
 "reducing spacing between items, depending on the builder."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:377
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:383
 msgid ""
 "For builders that support the horizontal distribution, there is a "
 "``columns`` option that specifies the number of columns; it defaults to 2.  "
 "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:395
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:401
 msgid "Showing code examples"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:400
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:406
 msgid ""
 "There are multiple ways to show syntax-highlighted literal code blocks in "
 "Sphinx: using :ref:`reST doctest blocks <rst-doctest-blocks>`; using "
@@ -501,7 +510,7 @@ msgid ""
 "entire code files in your documentation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:415
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:421
 msgid ""
 "In all cases, Syntax highlighting is provided by `Pygments "
 "<http://pygments.org>`_. When using literal blocks, this is configured using"
@@ -514,70 +523,70 @@ msgid ""
 "supported:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:424
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:430
 msgid "``none`` (no highlighting)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:425
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:431
 msgid ""
 "``default`` (similar to ``python3`` but with a fallback to ``none`` without "
 "warning highlighting fails; the default when :confval:`highlight_language` "
 "isn't set)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:428
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:434
 msgid ""
 "``guess`` (let Pygments guess the lexer based on contents, only works with "
 "certain well-recognizable languages)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:430
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:436
 msgid "``python``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:431
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:437
 msgid "``rest``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:432
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:438
 msgid "``c``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:433
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:439
 msgid "... and any other `lexer alias that Pygments supports`__"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:435
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:441
 msgid ""
 "If highlighting with the selected language fails (i.e. Pygments emits an "
 "\"Error\" token), the block is not highlighted in any way."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:440
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:446
 msgid ""
 "The list of lexer aliases supported is tied to the Pygment version. If you "
 "want to ensure consistent highlighting, you should fix your version of "
 "Pygments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:452
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:458
 msgid ""
 "This language is used until the next ``highlight`` directive is encountered."
 " As discussed previously, *language* can be any lexer alias supported by "
 "Pygments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:457
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:498
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:878
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:463
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:504
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:884
 msgid "options"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:461
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:467
 msgid "Enable to generate line numbers for code blocks."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:463
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:469
 msgid ""
 "This option takes an optional number as threshold parameter.  If any "
 "threshold given, the directive will produce line numbers only for the code "
@@ -585,12 +594,12 @@ msgid ""
 " all of code blocks."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:476
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:583
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:482
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:589
 msgid "If given, minor errors on highlighting are ignored."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:488
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:494
 msgid ""
 "The directive's alias name :rst:dir:`sourcecode` works as well.  This "
 "directive takes a language name as an argument.  It can be any lexer alias "
@@ -599,44 +608,44 @@ msgid ""
 ":confval:`highlight_language` will be used."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:494
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:500
 msgid "The ``language`` argument becomes optional."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:502
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:508
 msgid "Enable to generate line numbers for the code block::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:512
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:518
 msgid ""
 "Set the first line number of the code block.  If present, ``linenos`` option"
 " is also automatically activated::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:525
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:531
 msgid "Emphasize particular lines of the code block::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:537
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:543
 msgid "LaTeX supports the ``emphasize-lines`` option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:550
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:556
 msgid "Set a caption to the code block."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:557
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:882
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:563
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:888
 msgid ""
 "Define implicit target name that can be referenced by using :rst:role:`ref`."
 "  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:571
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:577
 msgid "Strip indentation characters from the code block. For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:589
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:595
 msgid ""
 "Longer displays of verbatim text may be included by storing the example text"
 " in an external file containing only plain text.  The file may be included "
@@ -644,14 +653,14 @@ msgid ""
 "Python source file :file:`example.py`, use::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:596
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:602
 msgid ""
 "The file name is usually relative to the current file's path.  However, if "
 "it is absolute (starting with ``/``), it is relative to the top source "
 "directory."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:602
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:608
 msgid ""
 "Like :rst:dir:`code-block`, the directive supports the ``linenos`` flag "
 "option to switch on line numbers, the ``lineno-start`` option to select the "
@@ -664,43 +673,43 @@ msgid ""
 "Example with options::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:617
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:623
 msgid ""
 "Tabs in the input are expanded if you give a ``tab-width`` option with the "
 "desired tab width."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:620
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:626
 msgid ""
 "Include files are assumed to be encoded in the :confval:`source_encoding`. "
 "If the file has a different encoding, you can specify it with the "
 "``encoding`` option::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:627
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:633
 msgid ""
 "The directive also supports including only parts of the file.  If it is a "
 "Python module, you can select a class, function or method to include using "
 "the ``pyobject`` option::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:634
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:640
 msgid ""
 "This would only include the code lines belonging to the ``start()`` method "
 "in the ``Timer`` class within the file."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:637
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:643
 msgid ""
 "Alternately, you can specify exactly which lines to include by giving a "
 "``lines`` option::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:643
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:649
 msgid "This includes the lines 1, 3, 5 to 10 and lines 20 to the last line."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:645
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:651
 msgid ""
 "Another way to control which part of the file is included is to use the "
 "``start-after`` and ``end-before`` options (or only one of them).  If "
@@ -711,21 +720,21 @@ msgid ""
 "similar way, but the lines containing the matched string are included."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:653
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:659
 msgid ""
 "With lines selected using ``start-after`` it is still possible to use "
 "``lines``, the first allowed line having by convention the line number "
 "``1``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:657
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:663
 msgid ""
 "When lines have been selected in any of the ways described above, the line "
 "numbers in ``emphasize-lines`` refer to those selected lines, counted "
 "consecutively starting at ``1``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:661
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:667
 msgid ""
 "When specifying particular parts of a file to display, it can be useful to "
 "display the original line numbers. This can be done using the ``lineno-"
@@ -733,93 +742,93 @@ msgid ""
 " contiguous lines."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:666
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:672
 msgid ""
 "You can prepend and/or append a line to the included code, using the "
 "``prepend`` and ``append`` option, respectively.  This is useful e.g. for "
 "highlighting PHP code that doesn't include the ``<?php``/``?>`` markers."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:670
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:676
 msgid ""
 "If you want to show the diff of the code, you can specify the old file by "
 "giving a ``diff`` option::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:676
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:682
 msgid ""
 "This shows the diff between ``example.py`` and ``example.py.orig`` with "
 "unified diff format."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:679
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:685
 msgid "A ``force`` option can ignore minor errors on highlighting."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:681
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:687
 msgid "Added the ``encoding`` option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:684
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:690
 msgid ""
 "Added the ``pyobject``, ``lines``, ``start-after`` and ``end-before`` "
 "options, as well as support for absolute filenames."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:688
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:694
 msgid "Added the ``prepend``, ``append``, and ``tab-width`` options."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:691
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:697
 msgid ""
 "Added the ``diff``, ``lineno-match``, ``caption``, ``name``, and ``dedent`` "
 "options."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:695
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:701
 msgid "Added the ``start-at``, and ``end-at`` options."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:698
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:704
 msgid ""
 "With both ``start-after`` and ``lines`` in use, the first line as per "
 "``start-after`` is considered to be with line number ``1`` for ``lines``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:702
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:708
 msgid "Added the ``force`` option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:708
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:714
 msgid "Glossary"
 msgstr "Glosario"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:712
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:718
 msgid ""
 "This directive must contain a reST definition-list-like markup with terms "
 "and definitions.  The definitions will then be referenceable with the "
 ":rst:role:`term` role.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:728
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:734
 msgid ""
 "In contrast to regular definition lists, *multiple* terms per entry are "
 "allowed, and inline markup is allowed in terms.  You can link to all of the "
 "terms.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:738
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:744
 msgid ""
 "(When the glossary is sorted, the first term determines the sort order.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:740
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:746
 msgid ""
 "If you want to specify \"grouping key\" for general index entries, you can "
 "put a \"key\" as \"term : key\". For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:749
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:755
 msgid ""
 "Note that \"key\" is used for grouping key as is. The \"key\" isn't "
 "normalized; key \"A\" and \"a\" become different groups. The whole "
@@ -827,32 +836,32 @@ msgid ""
 "\"Combining Character Sequence\" and \"Surrogate Pairs\" grouping key."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:754
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:760
 msgid ""
 "In i18n situation, you can specify \"localized term : key\" even if original"
 " text only have \"term\" part. In this case, translated \"localized term\" "
 "will be categorized in \"key\" group."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:758
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:764
 msgid ""
 "You can now give the glossary directive a ``:sorted:`` flag that will "
 "automatically sort the entries alphabetically."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:762
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:768
 msgid "Now supports multiple terms and inline markup in terms."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:765
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:771
 msgid "Index key for glossary term should be considered *experimental*."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:770
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:776
 msgid "Meta-information markup"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:774
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:780
 msgid ""
 "Identifies the author of the current section.  The argument should include "
 "the author's name such that it can be used for presentation and email "
@@ -860,7 +869,7 @@ msgid ""
 "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:781
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:787
 msgid ""
 "By default, this markup isn't reflected in the output in any way (it helps "
 "keep track of contributions), but you can set the configuration value "
@@ -868,7 +877,7 @@ msgid ""
 "output."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:789
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:795
 msgid ""
 "The :rst:dir:`codeauthor` directive, which can appear multiple times, names "
 "the authors of the described code, just like :rst:dir:`sectionauthor` names "
@@ -876,152 +885,152 @@ msgid ""
 "the :confval:`show_authors` configuration value is ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:796
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:802
 msgid "Index-generating markup"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:798
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:804
 msgid ""
 "Sphinx automatically creates index entries from all object descriptions "
 "(like functions, classes or attributes) like discussed in "
 ":doc:`/usage/restructuredtext/domains`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:802
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:808
 msgid ""
 "However, there is also explicit markup available, to make the index more "
 "comprehensive and enable index entries in documents where information is not"
 " mainly contained in information units, such as the language reference."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:808
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:814
 msgid ""
 "This directive contains one or more index entries.  Each entry consists of a"
 " type and a value, separated by a colon."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:811
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:817
 msgid "For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:824
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:830
 msgid ""
 "This directive contains five entries, which will be converted to entries in "
 "the generated index which link to the exact location of the index statement "
 "(or, in case of offline media, the corresponding page number)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:828
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:834
 msgid ""
 "Since index directives generate cross-reference targets at their location in"
 " the source, it makes sense to put them *before* the thing they refer to -- "
 "e.g. a heading, as in the example above."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:832
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:838
 msgid "The possible entry types are:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:836
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:842
 msgid "single"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:835
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:841
 msgid ""
 "Creates a single index entry.  Can be made a subentry by separating the "
 "subentry text with a semicolon (this notation is also used below to describe"
 " what entries are created)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:839
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:845
 msgid "pair"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:839
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:845
 msgid ""
 "``pair: loop; statement`` is a shortcut that creates two index entries, "
 "namely ``loop; statement`` and ``statement; loop``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:843
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:849
 msgid "triple"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:842
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:848
 msgid ""
 "Likewise, ``triple: module; search; path`` is a shortcut that creates three "
 "index entries, which are ``module; search path``, ``search; path, module`` "
 "and ``path; module search``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:846
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:852
 msgid "see"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:846
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:852
 msgid ""
 "``see: entry; other`` creates an index entry that refers from ``entry`` to "
 "``other``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:848
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:854
 msgid "seealso"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:849
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:855
 msgid "Like ``see``, but inserts \"see also\" instead of \"see\"."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:853
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:859
 msgid "module, keyword, operator, object, exception, statement, builtin"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:851
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:857
 msgid ""
 "These all create two index entries.  For example, ``module: hashlib`` "
 "creates the entries ``module; hashlib`` and ``hashlib; module``.  (These are"
 " Python-specific and therefore deprecated.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:855
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:861
 msgid ""
 "You can mark up \"main\" index entries by prefixing them with an exclamation"
 " mark.  The references to \"main\" entries are emphasized in the generated "
 "index.  For example, if two pages contain ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:861
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:867
 msgid "and one page contains ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:865
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:871
 msgid ""
 "then the backlink to the latter page is emphasized among the three "
 "backlinks."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:867
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:873
 msgid ""
 "For index directives containing only \"single\" entries, there is a "
 "shorthand notation::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:872
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:878
 msgid "This creates four index entries."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:874
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:880
 msgid "Added ``see`` and ``seealso`` types, as well as marking main entries."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:892
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:898
 msgid ""
 "While the :rst:dir:`index` directive is a block-level markup and links to "
 "the beginning of the next paragraph, there is also a corresponding role that"
 " sets the link target directly where it is used."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:896
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:902
 msgid ""
 "The content of the role can be a simple phrase, which is then kept in the "
 "text and used as an index entry.  It can also be a combination of text and "
@@ -1030,17 +1039,17 @@ msgid ""
 "directive above.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:911
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:917
 msgid "Including content based on tags"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:915
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:921
 msgid ""
 "Include the content of the directive only if the *expression* is true.  The "
 "expression should consist of tags, like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:920
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:926
 msgid ""
 "Undefined tags are false, defined tags (via the ``-t`` command-line option "
 "or within :file:`conf.py`, see :ref:`here <conf-tags>`) are true.  Boolean "
@@ -1048,7 +1057,7 @@ msgid ""
 " supported."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:925
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:931
 msgid ""
 "The *format* and the *name* of the current builder (``html``, ``latex`` or "
 "``text``) are always set as a tag [#]_.  To make the distinction between "
@@ -1057,13 +1066,13 @@ msgid ""
 "``epub``, ``format_html`` and ``builder_epub``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:931
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:937
 msgid ""
 "These standard tags are set *after* the configuration file is read, so they "
 "are not available there."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:934
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:940
 msgid ""
 "All tags must follow the standard Python identifier syntax as set out in the"
 " `Identifiers and keywords "
@@ -1074,54 +1083,54 @@ msgid ""
 "and, except for the first character, the digits ``0`` through ``9``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:943
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:949
 msgid "Added the name of the builder and the prefixes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:948
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:954
 msgid ""
 "This directive is designed to control only content of document.  It could "
 "not control sections, labels and so on."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:954
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:960
 msgid "Tables"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:956
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:962
 msgid "Use :ref:`reStructuredText tables <rst-tables>`, i.e. either"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:958
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:964
 msgid "grid table syntax (:duref:`ref <grid-tables>`),"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:959
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:965
 msgid "simple table syntax (:duref:`ref <simple-tables>`),"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:960
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:966
 msgid ":dudir:`csv-table` syntax,"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:961
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:967
 msgid "or :dudir:`list-table` syntax."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:963
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:969
 msgid ""
 "The :dudir:`table` directive serves as optional wrapper of the *grid* and "
 "*simple* syntaxes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:966
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:972
 msgid ""
 "They work fine in HTML output, however there are some gotchas when using "
 "tables in LaTeX: the column width is hard to determine correctly "
 "automatically.  For this reason, the following directive exists:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:972
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:978
 msgid ""
 "This directive gives a \"column spec\" for the next table occurring in the "
 "source file.  The spec is the second argument to the LaTeX ``tabulary`` "
@@ -1129,71 +1138,71 @@ msgid ""
 "values like ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:979
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:985
 msgid ""
 "which means three left-adjusted, nonbreaking columns.  For columns with "
 "longer text that should automatically be broken, use either the standard "
 "``p{width}`` construct, or tabulary's automatic specifiers:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:984
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:990
 msgid "``L``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:984
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:990
 msgid "flush left column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:986
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:992
 msgid "``R``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:986
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:992
 msgid "flush right column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:988
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:994
 msgid "``C``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:988
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:994
 msgid "centered column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:990
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:996
 msgid "``J``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:990
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:996
 msgid "justified column with automatic width"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:993
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:999
 msgid ""
 "The automatic widths of the ``LRCJ`` columns are attributed by ``tabulary`` "
 "in proportion to the observed shares in a first pass where the table cells "
 "are rendered at their natural \"horizontal\" widths."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:997
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1003
 msgid "By default, Sphinx uses a table layout with ``J`` for every column."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1001
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1007
 msgid ""
 "Merged cells may now contain multiple paragraphs and are much better "
 "handled, thanks to custom Sphinx LaTeX macros. This novel situation "
 "motivated the switch to ``J`` specifier and not ``L`` by default."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1008
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1014
 msgid ""
 "Sphinx actually uses ``T`` specifier having done ``\\newcolumntype{T}{J}``. "
 "To revert to previous default, insert ``\\newcolumntype{T}{L}`` in the LaTeX"
 " preamble (see :confval:`latex_elements`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1012
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1018
 msgid ""
 "A frequent issue with tabulary is that columns with little contents are "
 "\"squeezed\". The minimal column width is a tabulary parameter called "
@@ -1201,7 +1210,7 @@ msgid ""
 "``\\setlength{\\tymin}{40pt}`` for example."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1017
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1023
 msgid ""
 "Else, use the :rst:dir:`tabularcolumns` directive with an explicit "
 "``p{40pt}`` (for example) for that column. You may use also ``l`` specifier "
@@ -1209,14 +1218,14 @@ msgid ""
 "merged cell intersects that column."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1024
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1030
 msgid ""
 "Tables with more than 30 rows are rendered using ``longtable``, not "
 "``tabulary``, in order to allow pagebreaks. The ``L``, ``R``, ... specifiers"
 " do not work for these tables."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1028
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1034
 msgid ""
 "Tables that contain list-like elements such as object descriptions, "
 "blockquotes or any kind of lists cannot be set out of the box with "
@@ -1227,7 +1236,7 @@ msgid ""
 "described below) for the columns containing these elements."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1036
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1042
 msgid ""
 "Literal blocks do not work with ``tabulary`` at all, so tables containing a "
 "literal block are always set with ``tabular``. The verbatim environment used"
@@ -1236,7 +1245,7 @@ msgid ""
 "literal blocks."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1042
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1048
 msgid ""
 "Since Sphinx 1.5, the ``\\X{a}{b}`` specifier is used (there *is* a "
 "backslash in the specifier letter). It is like ``p{width}`` with the width "
@@ -1245,7 +1254,7 @@ msgid ""
 "called ``\\X``.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1048
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1054
 msgid ""
 "It is *not* needed for ``b`` to be the total number of columns, nor for the "
 "sum of the fractions of the ``\\X`` specifiers to add  up to one. For "
@@ -1254,85 +1263,85 @@ msgid ""
 "same width as the sum  of the next two."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1054
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1060
 msgid ""
 "This is used by the ``:widths:`` option of the :dudir:`table` directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1056
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1062
 msgid ""
 "Since Sphinx 1.6, there is also the ``\\Y{f}`` specifier which admits a "
 "decimal argument, such has ``\\Y{0.15}``: this would have the same effect as"
 " ``\\X{3}{20}``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1062
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1068
 msgid ""
 "Merged cells from complex grid tables (either multi-row, multi-column, or "
 "both) now allow blockquotes, lists, literal blocks, ... as do regular cells."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1066
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1072
 msgid ""
 "Sphinx's merged cells interact well with ``p{width}``, ``\\X{a}{b}``, "
 "``\\Y{f}`` and tabulary's columns."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1071
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1077
 msgid ""
 ":rst:dir:`tabularcolumns` conflicts with ``:widths:`` option of table "
 "directives.  If both are specified, ``:widths:`` option will be ignored."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1076
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1082
 msgid "Math"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1078
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1084
 msgid ""
 "The input language for mathematics is LaTeX markup.  This is the de-facto "
 "standard for plain-text math notation and has the added advantage that no "
 "further translation is necessary when building LaTeX output."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1082
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1088
 msgid ""
 "Keep in mind that when you put math markup in **Python docstrings** read by "
 ":mod:`autodoc <sphinx.ext.autodoc>`, you either have to double all "
 "backslashes, or use Python raw strings (``r\"raw\"``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1088
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1094
 msgid ""
 "Directive for displayed math (math that takes the whole line for itself)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1090
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1096
 msgid ""
 "The directive supports multiple equations, which should be separated by a "
 "blank line::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1099
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1105
 msgid ""
 "In addition, each single equation is set within a ``split`` environment, "
 "which means that you can have multiple aligned lines in an equation, aligned"
 " at ``&`` and separated by ``\\\\``::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1108
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1114
 msgid ""
 "For more details, look into the documentation of the `AmSMath LaTeX "
 "package`_."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1111
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1117
 msgid ""
 "When the math is only one line of text, it can also be given as a directive "
 "argument::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1116
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1122
 msgid ""
 "Normally, equations are not numbered.  If you want your equation to get a "
 "number, use the ``label`` option.  When given, it selects an internal label "
@@ -1341,36 +1350,36 @@ msgid ""
 "numbering style depends on the output format."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1122
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1128
 msgid ""
 "There is also an option ``nowrap`` that prevents any wrapping of the given "
 "math in a math environment.  When you give this option, you must make sure "
 "yourself that the math is properly set up.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1139
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1145
 msgid ":ref:`math-support`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1139
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1145
 msgid "Rendering options for math with HTML builders."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1142
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1148
 msgid ":confval:`latex_engine`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1142
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1148
 msgid ""
 "Explains how to configure LaTeX builder to support Unicode literals in math "
 "mark-up."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1147
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1153
 msgid "Grammar production displays"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1149
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1155
 msgid ""
 "Special markup is available for displaying the productions of a formal "
 "grammar. The markup is simple and does not attempt to model all aspects of "
@@ -1380,7 +1389,7 @@ msgid ""
 "directive:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1157
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1163
 msgid ""
 "This directive is used to enclose a group of productions.  Each production "
 "is given on a single line and consists of a name, separated by a colon from "
@@ -1389,7 +1398,7 @@ msgid ""
 "the first line."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1163
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1169
 msgid ""
 "The *productionGroup* argument to :rst:dir:`productionlist` serves to "
 "distinguish different sets of production lists that belong to different "
@@ -1397,12 +1406,12 @@ msgid ""
 "define rules in the same scope."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1168
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1174
 msgid ""
 "Blank lines are not allowed within ``productionlist`` directive arguments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1170
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1176
 msgid ""
 "The definition can contain token names which are marked as interpreted text "
 "(e.g. \"``sum ::= `integer` \"+\" `integer```\") -- this generates cross-"
@@ -1416,27 +1425,27 @@ msgid ""
 "(e.g., \"``~myGroup:sum``\")."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1182
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1188
 msgid ""
 "Note that no further reST parsing is done in the production, so that you "
 "don't have to escape ``*`` or ``|`` characters."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1185
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1191
 msgid "The following is an example taken from the Python Reference Manual::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1198
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1204
 msgid "Footnotes"
 msgstr "Notas a pie de página"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1199
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1205
 msgid ""
 "The LaTeX writer only refers the ``maxdepth`` option of first toctree "
 "directive in the document."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1202
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1208
 msgid ""
 "A note on available globbing syntax: you can use the standard shell "
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
@@ -1444,20 +1453,20 @@ msgid ""
 "any sequence of characters *including* slashes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1207
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1213
 msgid ""
 "There is a standard ``.. include`` directive, but it raises errors if the "
 "file is not found.  This one only emits a warning."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1210
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1216
 msgid ""
 "For most builders name and format are the same. At the moment only builders "
 "derived from the html builder distinguish between the builder format and the"
 " builder name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1214
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1220
 msgid ""
 "Note that the current builder tag is not available in ``conf.py``, it is "
 "only available after the builder is initialized."

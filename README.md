@@ -12,15 +12,37 @@ conf.py files for each languages have 'language' and 'locale_dirs' values withou
 * RTD project pages for Sphinx:
 
   * https://readthedocs.org/projects/sphinx/  (Master)
+  * https://readthedocs.org/projects/sphinx-ar/
+  * https://readthedocs.org/projects/sphinx-ca-es/
+  * https://readthedocs.org/projects/sphinx-zh-cn/
+  * https://readthedocs.org/projects/sphinx-fr/
+  * https://readthedocs.org/projects/sphinx-de/
+  * https://readthedocs.org/projects/sphinx-it-it/
   * https://readthedocs.org/projects/sphinx-ja/
+  * https://readthedocs.org/projects/sphinx-ko/
+  * https://readthedocs.org/projects/sphinx-pl-pl/
   * https://readthedocs.org/projects/sphinx-pt-br/
+  * https://readthedocs.org/projects/sphinx-doc-ru/ (Other project "sphinx-ru" is already exist.)
+  * https://readthedocs.org/projects/sphinx-sr/
+  * https://readthedocs.org/projects/sphinx-sr-rs/
   * https://readthedocs.org/projects/sphinx-es/
 
 * Documentation pages for each languages:
 
   * http://www.sphinx-doc.org/
+  * http://www.sphinx-doc.org/ar
+  * http://www.sphinx-doc.org/ca_ES
+  * http://www.sphinx-doc.org/zh_CN
+  * http://www.sphinx-doc.org/fr
+  * http://www.sphinx-doc.org/de
+  * http://www.sphinx-doc.org/it_IT
   * http://www.sphinx-doc.org/ja
+  * http://www.sphinx-doc.org/ko
+  * http://www.sphinx-doc.org/pl_PL
   * http://www.sphinx-doc.org/pt_BR
+  * http://www.sphinx-doc.org/ru (Other project "sphinx-ru" is already exist.)
+  * http://www.sphinx-doc.org/sr
+  * http://www.sphinx-doc.org/sr_RS
   * http://www.sphinx-doc.org/es
 
 ## How to setup a translated documentation project on RTD

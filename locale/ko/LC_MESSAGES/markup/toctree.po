@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2018, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Georg Brandl <g.brandl@gmx.net>, 2018
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 1.8.0+/b8e20ed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-28 15:07+0000\n"
+"PO-Revision-Date: 2018-02-12 13:49+0000\n"
+"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2018\n"
+"Language-Team: Korean (https://www.transifex.com/sphinx-doc/teams/15434/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/markup/toctree.rst:5
+msgid "The TOC tree"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:9
+msgid ""
+"Since reST does not have facilities to interconnect several documents, or "
+"split documents into multiple output files, Sphinx uses a custom directive "
+"to add relations between the single files the documentation is made of, as "
+"well as tables of contents.  The ``toctree`` directive is the central "
+"element."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:16
+msgid ""
+"Simple \"inclusion\" of one file in another can be done with the "
+":dudir:`include` directive."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:21
+msgid ""
+"This directive inserts a \"TOC tree\" at the current location, using the "
+"individual TOCs (including \"sub-TOC trees\") of the documents given in the "
+"directive body.  Relative document names (not beginning with a slash) are "
+"relative to the document the directive occurs in, absolute names are "
+"relative to the source directory.  A numeric ``maxdepth`` option may be "
+"given to indicate the depth of the tree; by default, all levels are "
+"included. [#]_"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:28
+msgid ""
+"Consider this example (taken from the Python docs' library reference "
+"index)::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:39
+msgid "This accomplishes two things:"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:41
+msgid ""
+"Tables of contents from all those documents are inserted, with a maximum "
+"depth of two, that means one nested heading.  ``toctree`` directives in "
+"those documents are also taken into account."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:44
+msgid ""
+"Sphinx knows the relative order of the documents ``intro``, ``strings`` and "
+"so forth, and it knows that they are children of the shown document, the "
+"library index.  From this information it generates \"next chapter\", "
+"\"previous chapter\" and \"parent chapter\" links."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:49
+msgid "**Entries**"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:51
+msgid ""
+"Document titles in the :rst:dir:`toctree` will be automatically read from "
+"the title of the referenced document. If that isn't what you want, you can "
+"specify an explicit title and target using a similar syntax to reST "
+"hyperlinks (and Sphinx's :ref:`cross-referencing syntax <xref-syntax>`). "
+"This looks like::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:63
+msgid ""
+"The second line above will link to the ``strings`` document, but will use "
+"the title \"All about strings\" instead of the title of the ``strings`` "
+"document."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:66
+msgid ""
+"You can also add external links, by giving an HTTP URL instead of a document"
+" name."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:69
+msgid "**Section numbering**"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:71
+msgid ""
+"If you want to have section numbers even in HTML output, give the "
+"**toplevel** toctree a ``numbered`` option.  For example::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:80
+msgid ""
+"Numbering then starts at the heading of ``foo``.  Sub-toctrees are "
+"automatically numbered (don't give the ``numbered`` flag to those)."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:83
+msgid ""
+"Numbering up to a specific depth is also possible, by giving the depth as a "
+"numeric argument to ``numbered``."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:86
+msgid "**Additional options**"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:88
+msgid ""
+"You can use ``caption`` option to provide a toctree caption and you can use "
+"``name`` option to provide implicit target name that can be referenced by "
+"using :rst:role:`ref`::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:98
+msgid ""
+"If you want only the titles of documents in the tree to show up, not other "
+"headings of the same level, you can use the ``titlesonly`` option::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:107
+msgid ""
+"You can use \"globbing\" in toctree directives, by giving the ``glob`` flag "
+"option.  All entries are then matched against the list of available "
+"documents, and matches are inserted into the list alphabetically.  Example::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:118
+msgid ""
+"This includes first all documents whose names start with ``intro``, then all"
+" documents in the ``recipe`` folder, then all remaining documents (except "
+"the one containing the directive, of course.) [#]_"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:122
+msgid ""
+"The special entry name ``self`` stands for the document containing the "
+"toctree directive.  This is useful if you want to generate a \"sitemap\" "
+"from the toctree."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:126
+msgid ""
+"You can use the ``reversed`` flag option to reverse the order of the entries"
+" in the list. This can be useful when using the ``glob`` flag option to "
+"reverse the ordering of the files.  Example::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:136
+msgid "You can also give a \"hidden\" option to the directive, like this::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:144
+msgid ""
+"This will still notify Sphinx of the document hierarchy, but not insert "
+"links into the document at the location of the directive -- this makes sense"
+" if you intend to insert these links yourself, in a different style, or in "
+"the HTML sidebar."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:149
+msgid ""
+"In cases where you want to have only one top-level toctree and hide all "
+"other lower level toctrees you can add the \"includehidden\" option to the "
+"top-level toctree entry::"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:159
+msgid "All other toctree entries can then be eliminated by the \"hidden\" option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:161
+msgid ""
+"In the end, all documents in the :term:`source directory` (or "
+"subdirectories) must occur in some ``toctree`` directive; Sphinx will emit a"
+" warning if it finds a file that is not included, because that means that "
+"this file will not be reachable through standard navigation."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:166
+msgid ""
+"Use :confval:`exclude_patterns` to explicitly exclude documents or "
+"directories from building completely.  Use :ref:`the \"orphan\" metadata "
+"<metadata>` to let a document be built, but notify Sphinx that it is not "
+"reachable via a toctree."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:171
+msgid ""
+"The \"master document\" (selected by :confval:`master_doc`) is the \"root\" "
+"of the TOC tree hierarchy.  It can be used as the documentation's main page,"
+" or as a \"full table of contents\" if you don't give a ``maxdepth`` option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:175
+msgid "Added \"globbing\" option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:178
+msgid ""
+"Added \"numbered\" and \"hidden\" options as well as external links and "
+"support for \"self\" references."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:182
+msgid "Added \"titlesonly\" option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:185
+msgid "Added numeric argument to \"numbered\"."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:188
+msgid "Added \"includehidden\" option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:191
+msgid "Added \"caption\" and \"name\" option."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:195
+msgid "Special names"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:197
+msgid ""
+"Sphinx reserves some document names for its own use; you should not try to "
+"create documents with these names -- it will cause problems."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:200
+msgid "The special document names (and pages generated for them) are:"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:202
+msgid "``genindex``, ``modindex``, ``search``"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:204
+msgid ""
+"These are used for the general index, the Python module index, and the "
+"search page, respectively."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:207
+msgid ""
+"The general index is populated with entries from modules, all index-"
+"generating :ref:`object descriptions <basic-domain-markup>`, and from "
+":rst:dir:`index` directives."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:211
+msgid ""
+"The Python module index contains one entry per :rst:dir:`py:module` "
+"directive."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:213
+msgid ""
+"The search page contains a form that uses the generated JSON search index "
+"and JavaScript to full-text search the generated documents for search words;"
+" it should work on every major browser that supports modern JavaScript."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:217
+msgid "every name beginning with ``_``"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:219
+msgid ""
+"Though only few such names are currently used by Sphinx, you should not "
+"create documents or document-containing directories with such names.  (Using"
+" ``_`` as a prefix for a custom template directory is fine.)"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:225
+msgid ""
+"Be careful with unusual characters in filenames.  Some formats may interpret"
+" these characters in unexpected ways:"
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:228
+msgid ""
+"Do not use the colon ``:`` for HTML based formats.  Links to other parts may"
+" not work."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:231
+msgid ""
+"Do not use the plus ``+`` for the ePub format.  Some resources may not be "
+"found."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:235
+msgid "Footnotes"
+msgstr "참고"
+
+#: ../../sphinx/doc/markup/toctree.rst:236
+msgid ""
+"The LaTeX writer only refers the ``maxdepth`` option of first toctree "
+"directive in the document."
+msgstr ""
+
+#: ../../sphinx/doc/markup/toctree.rst:239
+msgid ""
+"A note on available globbing syntax: you can use the standard shell "
+"constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
+"these all don't match slashes.  A double star ``**`` can be used to match "
+"any sequence of characters *including* slashes."
+msgstr ""

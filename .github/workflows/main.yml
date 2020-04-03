@@ -1,0 +1,60 @@
+name: sphinx-auto-update
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get Job URL
+      uses: Tiryoh/gha-jobid-action@v0
+      id: jobs
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        job_name: script
+    - name: checkout with submodule
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        token: ${{ secrets.PERSONAL_ACCESSTOKEN }}
+    - name: Setup SSH
+      uses: MrSquaare/ssh-setup-action@v1
+      with:
+        host: github.com
+        private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: update
+      env:
+        ACCOUNT: sphinxjp
+        ORGANIZATION: sphinx-doc
+        NAME: "sphinx-auto-update"
+        EMAIL: "sphinx-auto-update"
+        REPO: sphinx-doc-translations
+        JOB_ID: ${{ steps.jobs.outputs.job_id }}
+        HTML_URL: ${{ steps.jobs.outputs.html_url }}
+        SPHINXINTL_TRANSIFEX_USERNAME: sphinxjp
+        SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
+        TX_TOKEN: ${{ secrets.TX_TOKEN }}
+      run: |
+        sudo apt-get install python3-venv
+        python3 -m venv ../.venv
+        source ../.venv/bin/activate
+        git submodule update
+        (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
+        pip install -U pip setuptools
+        pip install -r ./requirements.txt
+        sh ./locale/update.sh
+        git branch -a
+        git checkout master
+        git config --global user.email $EMAIL
+        git config --global user.name $NAME
+        git add .
+        git commit --allow-empty -m ":green_heart: $JOB_ID
+        $HTML_URL"
+        git remote -v
+        git remote add github git@github.com:$ORGANIZATION/$REPO.git
+        git push github master
+        deactivate

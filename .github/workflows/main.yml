@@ -25,8 +25,6 @@ jobs:
     - name: update
       env:
         ACCOUNT: sphinxjp
-        ORGANIZATION: sphinx-doc
-        REPO: sphinx-doc-translations
         JOB_ID: ${{ steps.jobs.outputs.job_id }}
         HTML_URL: ${{ steps.jobs.outputs.html_url }}
         SPHINXINTL_TRANSIFEX_USERNAME: sphinxjp
@@ -48,5 +46,5 @@ jobs:
         git commit --allow-empty -m "[ci skip] $JOB_ID
         $HTML_URL"
         git remote -v
-        git remote add github git@github.com:$ORGANIZATION/$REPO.git
+        git remote add github git@github.com:$GITHUB_REPOSITORY.git
         git push github master

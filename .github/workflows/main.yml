@@ -22,26 +22,29 @@ jobs:
       with:
         host: github.com
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: update
-      env:
-        ACCOUNT: sphinxjp
-        JOB_ID: ${{ steps.jobs.outputs.job_id }}
-        HTML_URL: ${{ steps.jobs.outputs.html_url }}
-        SPHINXINTL_TRANSIFEX_USERNAME: sphinxjp
-        SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
-        TX_TOKEN: ${{ secrets.TX_TOKEN }}
+    - name: install
       run: |
-        source ../.venv/bin/activate
         (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
         pip3 install -U pip setuptools
         pip3 install -r ./requirements.txt
+    - name: script
+      env:
+        TX_TOKEN: ${{ secrets.TX_TOKEN }}
+        SPHINXINTL_TRANSIFEX_USERNAME: sphinxjp
+        SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
+      run: |
         sh ./locale/update.sh
-    - name: commit
+    - name: git_config
       run: |
         git branch -a
         git checkout master
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
+    - name: after_success
+      env:
+        JOB_ID: ${{ steps.jobs.outputs.job_id }}
+        HTML_URL: ${{ steps.jobs.outputs.html_url }}
+      run: |
         git add .
         git commit --allow-empty -m "[ci skip] $JOB_ID
         $HTML_URL"

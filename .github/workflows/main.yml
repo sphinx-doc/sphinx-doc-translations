@@ -26,8 +26,6 @@ jobs:
       env:
         ACCOUNT: sphinxjp
         ORGANIZATION: sphinx-doc
-        NAME: "sphinx-auto-update"
-        EMAIL: "sphinx-auto-update"
         REPO: sphinx-doc-translations
         JOB_ID: ${{ steps.jobs.outputs.job_id }}
         HTML_URL: ${{ steps.jobs.outputs.html_url }}
@@ -35,22 +33,18 @@ jobs:
         SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
         TX_TOKEN: ${{ secrets.TX_TOKEN }}
       run: |
-        sudo apt-get install python3-venv
-        python3 -m venv ../.venv
         source ../.venv/bin/activate
-        git submodule update
         (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
-        pip install -U pip setuptools
-        pip install -r ./requirements.txt
+        pip3 install -U pip setuptools
+        pip3 install -r ./requirements.txt
         sh ./locale/update.sh
         git branch -a
         git checkout master
-        git config --global user.email $EMAIL
-        git config --global user.name $NAME
+        git config --global user.email $GITHUB_REPOSITORY
+        git config --global user.name $GITHUB_REPOSITORY
         git add .
-        git commit --allow-empty -m ":green_heart: $JOB_ID
+        git commit --allow-empty -m "[ci skip] $JOB_ID
         $HTML_URL"
         git remote -v
         git remote add github git@github.com:$ORGANIZATION/$REPO.git
         git push github master
-        deactivate

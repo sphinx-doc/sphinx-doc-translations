@@ -40,7 +40,7 @@ jobs:
         git checkout master
         git config --global user.email $GITHUB_REPOSITORY
         git config --global user.name $GITHUB_REPOSITORY
-    - name: after_success
+    - name: commit
       env:
         JOB_ID: ${{ steps.jobs.outputs.job_id }}
         HTML_URL: ${{ steps.jobs.outputs.html_url }}

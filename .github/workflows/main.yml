@@ -38,6 +38,8 @@ jobs:
         pip3 install -U pip setuptools
         pip3 install -r ./requirements.txt
         sh ./locale/update.sh
+    - name: commit
+      run: |
         git branch -a
         git checkout master
         git config --global user.email $GITHUB_REPOSITORY

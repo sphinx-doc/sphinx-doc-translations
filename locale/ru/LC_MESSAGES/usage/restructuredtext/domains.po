@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/b0a597a0\n"
+"Project-Id-Version: Sphinx 4.0.0+/88bb5677\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 21:28+0000\n"
+"POT-Creation-Date: 2020-04-13 21:29+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/sphinx-doc/teams/15434/ru/)\n"
@@ -199,7 +199,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:199
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:245
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:264
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1606
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1677
 msgid "options"
 msgstr ""
 
@@ -400,7 +400,7 @@ msgid "It is customary to put the opening bracket before the comma."
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:378
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1204
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1275
 msgid "Info field lists"
 msgstr ""
 
@@ -719,7 +719,7 @@ msgid "The var, struct, union, enum, and enumerator roles."
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:640
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:952
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1023
 msgid "Anonymous Entities"
 msgstr ""
 
@@ -733,12 +733,12 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:650
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:962
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1033
 msgid "Example::"
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:662
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:974
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1045
 msgid "This will be rendered as:"
 msgstr ""
 
@@ -747,7 +747,7 @@ msgid "Explicit ref: :c:var:`Data.@data.a`. Short-hand ref: :c:var:`Data.a`."
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:678
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1083
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1154
 msgid "Inline Expressions and Types"
 msgstr ""
 
@@ -758,7 +758,7 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:695
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1100
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1171
 msgid "will be rendered as follows:"
 msgstr ""
 
@@ -770,182 +770,268 @@ msgstr ""
 msgid "A type: :c:expr:`const Data*` (or as text :c:texpr:`const Data*`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:712
-msgid "The C++ Domain"
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:710
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1189
+msgid "Namespacing"
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:714
-msgid "The C++ domain (name **cpp**) supports documenting C++ projects."
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:717
-msgid "Directives for Declaring Entities"
+msgid ""
+"The C language it self does not support namespacing, but it can sometimes be"
+" useful to emulate it in documentation, e.g., to show alternate "
+"declarations. The feature may also be used to document members of "
+"structs/unions/enums separate from their parent declaration."
 msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/domains.rst:719
+msgid ""
+"The current scope can be changed using three namespace directives.  They "
+"manage a stack declarations where ``c:namespace`` resets the stack and "
+"changes a given scope."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:723
+msgid ""
+"The ``c:namespace-push`` directive changes the scope to a given inner scope "
+"of the current one."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:726
+msgid ""
+"The ``c:namespace-pop`` directive undoes the most recent ``c:namespace-"
+"push`` directive."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:731
+msgid ""
+"Changes the current scope for the subsequent objects to the given scope, and"
+" resets the namespace directive stack. Note that nested scopes can be "
+"specified by separating with a dot, e.g.::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:737
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1210
+msgid ""
+"All subsequent objects will be defined as if their name were declared with "
+"the scope prepended. The subsequent cross-references will be searched for "
+"starting in the current scope."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:741
+msgid "Using ``NULL`` or ``0`` as the scope will change to global scope."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:745
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1241
+msgid "Change the scope relatively to the current scope. For example, after::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:751
+msgid "the current scope will be ``A.B.C.D``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:755
+msgid ""
+"Undo the previous ``c:namespace-push`` directive (*not* just pop a scope). "
+"For example, after::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:764
+msgid "the current scope will be ``A.B`` (*not* ``A.B.C``)."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:766
+msgid ""
+"If no previous ``c:namespace-push`` directive has been used, but only a "
+"``c:namespace`` directive, then the current scope will be reset to global "
+"scope.  That is, ``.. c:namespace:: A.B`` is equivalent to::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:775
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1444
+msgid "Configuration Variables"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:777
+msgid "See :ref:`c-config`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:783
+msgid "The C++ Domain"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:785
+msgid "The C++ domain (name **cpp**) supports documenting C++ projects."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:788
+msgid "Directives for Declaring Entities"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:790
 msgid ""
 "The following directives are available. All declarations can start with a "
 "visibility statement (``public``, ``private`` or ``protected``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:725
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:796
 msgid ""
 "Describe a class/struct, possibly with specification of inheritance, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:729
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:800
 msgid ""
 "The difference between :rst:dir:`cpp:class` and :rst:dir:`cpp:struct` is "
 "only cosmetic: the prefix rendered in the output, and the specifier shown in"
 " the index."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:733
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:804
 msgid "The class can be directly declared inside a nested scope, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:737
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:808
 msgid "A class template can be declared::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:741
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:812
 msgid "or with a line break::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:746
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:817
 msgid "Full and partial template specialisations can be declared::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:754
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:825
 msgid "The :rst:dir:`cpp:struct` directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:759
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:830
 msgid "Describe a function or member function, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:785
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:856
 msgid "Function templates can also be described::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:790
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:861
 msgid "and function template specialisations::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:798
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:869
 msgid "Describe a variable or member variable, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:806
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:877
 msgid "Variable templates can also be described::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:815
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:886
 msgid ""
 "Describe a type as in a typedef declaration, a type alias declaration, or "
 "simply the name of a type with unspecified type, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:830
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:901
 msgid "A type alias can also be templated::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:835
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:906
 msgid "The example are rendered as follows."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:839
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:910
 msgid "A typedef-like declaration of a type."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:843
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:914
 msgid "Declaration of a type alias with unspecified type."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:847
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:918
 msgid "Declaration of a type alias."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:856
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:927
 msgid ""
 "Describe a (scoped) enum, possibly with the underlying type specified.  Any "
 "enumerators declared inside an unscoped enum will be declared both in the "
 "enum scope and in the parent scope.  Examples::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:880
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:951
 msgid "Describe an enumerator, optionally with its value defined, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:888
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:959
 msgid "Describe a union."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:894
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1029
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:965
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1100
 msgid ""
 "The support for concepts is experimental. It is based on the current draft "
 "standard and the Concepts Technical Specification. The features may change "
 "as they evolve."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:898
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:969
 msgid ""
 "Describe a concept. It must have exactly 1 template parameter list. The name"
 " may be a nested name. Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:918
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:989
 msgid "This will render as follows:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:922
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:993
 msgid ""
 "Proxy to an element of a notional sequence that can be compared, indirected,"
 " or incremented."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:925
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:996
 msgid "**Notation**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:929
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1000
 msgid "An lvalue."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:931
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1002
 msgid "**Valid Expressions**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:933
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1004
 msgid ":cpp:expr:`*r`, when :cpp:expr:`r` is dereferenceable."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:934
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1005
 msgid ""
 ":cpp:expr:`++r`, with return type :cpp:expr:`It&`, when :cpp:expr:`r` is "
 "incrementable."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:941
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1012
 msgid "Options"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:943
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1014
 msgid "Some directives support options:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:945
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1016
 msgid "``:noindex:``, see :ref:`basic-domain-markup`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:946
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1017
 msgid ""
 "``:tparam-line-spec:``, for templated declarations. If specified, each "
 "template parameter will be rendered on a separate line."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:954
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1025
 msgid ""
 "C++ supports anonymous namespaces, classes, enums, and unions. For the sake "
 "of documentation they must be given some name that starts with ``@``, e.g., "
@@ -955,23 +1041,23 @@ msgid ""
 "link)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:984
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1055
 msgid ""
 "Explicit ref: :cpp:var:`Data::@data::a`. Short-hand ref: :cpp:var:`Data::a`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:990
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1061
 msgid "Aliasing Declarations"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:992
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1063
 msgid ""
 "Sometimes it may be helpful list declarations elsewhere than their main "
 "documentation, e.g., when creating a synopsis of a class interface. The "
 "following directive can be used for this purpose."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:998
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1069
 msgid ""
 "Insert one or more alias declarations. Each entity can be specified as they "
 "can in the :rst:role:`cpp:any` role. If the name of a function is given (as "
@@ -979,101 +1065,97 @@ msgid ""
 "be listed."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1003
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1612
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1074
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1683
 msgid "For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1008
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1018
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1079
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1089
 msgid "becomes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1013
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1084
 msgid "whereas::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1027
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1098
 msgid "Constrained Templates"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1033
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1104
 msgid "Sphinx does not currently support ``requires`` clauses."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1036
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1107
 msgid "Placeholders"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1038
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1109
 msgid ""
 "Declarations may use the name of a concept to introduce constrained template"
 " parameters, or the keyword ``auto`` to introduce unconstrained template "
 "parameters::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1052
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1123
 msgid "Template Introductions"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1054
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1125
 msgid ""
 "Simple constrained function or class templates can be declared with a "
 "`template introduction` instead of a template parameter list::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1067
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1138
 msgid "They are rendered as follows."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1071
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1142
 msgid ""
 "A function template with a template parameter constrained to be an Iterator."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1075
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1146
 msgid ""
 "A class template with a template parameter constrained to be "
 "LessThanComparable."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1078
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1149
 msgid ""
 "Note however that no checking is performed with respect to parameter "
 "compatibility. E.g., ``Iterator{A, B, C}`` will be accepted as an "
 "introduction even though it would not be valid C++."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1088
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1159
 msgid ""
 "Insert a C++ expression or type either as inline code (``cpp:expr``) or "
 "inline text (``cpp:texpr``). For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1106
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1177
 msgid ""
 "An expression: :cpp:expr:`a * f(a)` (or as text: :cpp:texpr:`a * f(a)`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1108
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1179
 msgid ""
 "A type: :cpp:expr:`const MySortedContainer<int>&` (or as text "
 ":cpp:texpr:`const MySortedContainer<int>&`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1111
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1182
 msgid "The :rst:role:`cpp:expr` role."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1114
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1185
 msgid "The :rst:role:`cpp:texpr` role."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1118
-msgid "Namespacing"
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1120
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1191
 msgid ""
 "Declarations in the C++ domain are as default placed in global scope.  The "
 "current scope can be changed using three namespace directives.  They manage "
@@ -1081,19 +1163,19 @@ msgid ""
 "given scope."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1125
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1196
 msgid ""
 "The ``cpp:namespace-push`` directive changes the scope to a given inner "
 "scope of the current one."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1128
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1199
 msgid ""
 "The ``cpp:namespace-pop`` directive undoes the most recent ``cpp:namespace-"
 "push`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1133
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1204
 msgid ""
 "Changes the current scope for the subsequent objects to the given scope, and"
 " resets the namespace directive stack.  Note that the namespace does not "
@@ -1101,105 +1183,94 @@ msgid ""
 "e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1139
-msgid ""
-"All subsequent objects will be defined as if their name were declared with "
-"the scope prepended. The subsequent cross-references will be searched for "
-"starting in the current scope."
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1143
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1214
 msgid ""
 "Using ``NULL``, ``0``, or ``nullptr`` as the scope will change to global "
 "scope."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1146
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1217
 msgid "A namespace declaration can also be templated, e.g.,::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1155
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1226
 msgid ""
 "declares ``size`` as a member function of the class template "
 "``std::vector``.  Equivalently this could have been declared using::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1163
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1234
 msgid "or::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1170
-msgid "Change the scope relatively to the current scope. For example, after::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1176
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1247
 msgid "the current scope will be ``A::B::C::D``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1182
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1253
 msgid ""
 "Undo the previous ``cpp:namespace-push`` directive (*not* just pop a scope)."
 " For example, after::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1191
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1262
 msgid "the current scope will be ``A::B`` (*not* ``A::B::C``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1193
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1264
 msgid ""
 "If no previous ``cpp:namespace-push`` directive has been used, but only a "
 "``cpp:namespace`` directive, then the current scope will be reset to global "
 "scope.  That is, ``.. cpp:namespace:: A::B`` is equivalent to::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1206
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1277
 msgid ""
 "The C++ directives support the following info fields (see also :ref:`info-"
 "field-lists`):"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1209
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1280
 msgid "`param`, `parameter`, `arg`, `argument`: Description of a parameter."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1210
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1281
 msgid "`tparam`: Description of a template parameter."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1211
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1282
 msgid "`returns`, `return`: Description of a return value."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1212
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1283
 msgid ""
 "`throws`, `throw`, `exception`: Description of a possibly thrown exception."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1217
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1288
 msgid "Cross-referencing"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1219
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1290
 msgid "These roles link to the given declaration types:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1232
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1303
 msgid ""
 "Reference a C++ declaration by name (see below for details).  The name must "
 "be properly qualified relative to the position of the link."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1235
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1306
 msgid ""
 "The :rst:role:`cpp:struct` role as alias for the :rst:role:`cpp:class` role."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1239
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1310
 msgid "Note on References with Templates Parameters/Arguments"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1241
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1312
 msgid ""
 "These roles follow the Sphinx :ref:`xref-syntax` rules. This means care must"
 " be taken when referencing a (partial) template specialization, e.g. if the "
@@ -1209,28 +1280,28 @@ msgid ""
 "``:cpp:class:`MyClass\\<int>```."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1248
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1319
 msgid ""
 "When a custom title is not needed it may be useful to use the roles for "
 "inline expressions, :rst:role:`cpp:expr` and :rst:role:`cpp:texpr`, where "
 "angle brackets do not need escaping."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1253
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1324
 msgid "Declarations without template parameters and template arguments"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1255
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1326
 msgid ""
 "For linking to non-templated declarations the name must be a nested name, "
 "e.g., ``f`` or ``MyClass::f``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1260
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1331
 msgid "Overloaded (member) functions"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1262
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1333
 msgid ""
 "When a (member) function is referenced using just its name, the reference "
 "will point to an arbitrary matching overload. The :rst:role:`cpp:any` and "
@@ -1239,79 +1310,79 @@ msgid ""
 "overload. As example, consider the following class declaration:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1277
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1348
 msgid "References using the :rst:role:`cpp:func` role:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1279
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1350
 msgid "Arbitrary overload: ``C::f``, :cpp:func:`C::f`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1280
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1351
 msgid "Also arbitrary overload: ``C::f()``, :cpp:func:`C::f()`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1281
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1352
 msgid "Specific overload: ``void C::f()``, :cpp:func:`void C::f()`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1282
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1353
 msgid "Specific overload: ``void C::f(int)``, :cpp:func:`void C::f(int)`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1283
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1354
 msgid ""
 "Specific overload: ``void C::f(double)``, :cpp:func:`void C::f(double)`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1284
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1355
 msgid ""
 "Specific overload: ``void C::f(double) const``, :cpp:func:`void C::f(double)"
 " const`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1287
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1358
 msgid ""
 "Note that the :confval:`add_function_parentheses` configuration variable "
 "does not influence specific overload references."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1294
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1365
 msgid "Templated declarations"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1296
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1333
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1367
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1404
 msgid "Assume the following declarations."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1306
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1377
 msgid ""
 "In general the reference must include the template parameter declarations, "
 "and template arguments for the prefix of qualified names. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1309
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1380
 msgid ""
 "``template\\<typename TOuter> Wrapper::Outer`` "
 "(:cpp:class:`template\\<typename TOuter> Wrapper::Outer`)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1311
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1382
 msgid ""
 "``template\\<typename TOuter> template\\<typename TInner> "
 "Wrapper::Outer<TOuter>::Inner`` (:cpp:class:`template\\<typename TOuter> "
 "template\\<typename TInner> Wrapper::Outer<TOuter>::Inner`)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1314
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1385
 msgid ""
 "Currently the lookup only succeed if the template parameter identifiers are "
 "equal strings.  That is, ``template\\<typename UOuter> Wrapper::Outer`` will"
 " not work."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1318
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1389
 msgid ""
 "As a shorthand notation, if a template parameter list is omitted, then the "
 "lookup will assume either a primary template or a non-template, but not a "
@@ -1319,25 +1390,25 @@ msgid ""
 " well:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1323
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1394
 msgid "``Wrapper::Outer`` (:cpp:class:`Wrapper::Outer`)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1325
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1396
 msgid "``Wrapper::Outer::Inner`` (:cpp:class:`Wrapper::Outer::Inner`)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1327
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1398
 msgid ""
 "``template\\<typename TInner> Wrapper::Outer::Inner`` "
 "(:cpp:class:`template\\<typename TInner> Wrapper::Outer::Inner`)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1331
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1402
 msgid "(Full) Template Specialisations"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1350
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1421
 msgid ""
 "In general the reference must include a template parameter list for each "
 "template argument list.  The full specialisation above can therefore be "
@@ -1349,15 +1420,15 @@ msgid ""
 "``Outer\\<int>::Inner\\<bool>`` (:cpp:class:`Outer\\<int>::Inner\\<bool>`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1360
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1431
 msgid "Partial Template Specialisations"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1362
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1433
 msgid "Assume the following declaration."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1367
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1438
 msgid ""
 "References to partial specialisations must always include the template "
 "parameter lists, e.g., ``template\\<typename T> Outer\\<T*>`` "
@@ -1365,43 +1436,39 @@ msgid ""
 "only succeed if the template parameter identifiers are equal strings."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1373
-msgid "Configuration Variables"
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1375
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1446
 msgid "See :ref:`cpp-config`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1380
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1451
 msgid "The Standard Domain"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1382
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1453
 msgid ""
 "The so-called \"standard\" domain collects all markup that doesn't warrant a"
 " domain of its own.  Its directives and roles are not prefixed with a domain"
 " name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1386
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1457
 msgid ""
 "The standard domain is also where custom object descriptions, added using "
 "the :func:`~sphinx.application.Sphinx.add_object_type` API, are placed."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1389
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1460
 msgid ""
 "There is a set of directives allowing documenting command-line programs:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1393
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1464
 msgid ""
 "Describes a command line argument or switch.  Option argument names should "
 "be enclosed in angle brackets.  Examples::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1404
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1475
 msgid ""
 "The directive will create cross-reference targets for the given options, "
 "referenceable by :rst:role:`option` (in the example case, you'd use "
@@ -1409,65 +1476,65 @@ msgid ""
 "``:option:`--module```)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1408
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1479
 msgid ""
 "``cmdoption`` directive is a deprecated alias for the ``option`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1412
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1483
 msgid ""
 "Describes an environment variable that the documented code or program uses "
 "or defines.  Referenceable by :rst:role:`envvar`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1417
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1488
 msgid ""
 "Like :rst:dir:`py:currentmodule`, this directive produces no output. "
 "Instead, it serves to notify Sphinx that all following :rst:dir:`option` "
 "directives document options for the program called *name*."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1421
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1492
 msgid ""
 "If you use :rst:dir:`program`, you have to qualify the references in your "
 ":rst:role:`option` roles by the program name, so if you have the following "
 "situation ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1437
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1508
 msgid ""
 "then ``:option:`rm -r``` would refer to the first option, while "
 "``:option:`svn -r``` would refer to the second one."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1440
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1511
 msgid ""
 "The program name may contain spaces (in case you want to document "
 "subcommands like ``svn add`` and ``svn commit`` separately)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1445
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1516
 msgid ""
 "There is also a very generic object description directive, which is not tied"
 " to any domain:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1451
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1522
 msgid ""
 "This directive produces the same formatting as the specific ones provided by"
 " domains, but does not create index entries or cross-referencing targets. "
 "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1461
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1532
 msgid "The JavaScript Domain"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1463
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1534
 msgid "The JavaScript domain (name **js**) provides the following directives:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1467
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1538
 msgid ""
 "This directive sets the module name for object declarations that follow "
 "after. The module name is used in the global module index and in cross "
@@ -1475,7 +1542,7 @@ msgid ""
 ":rst:dir:`py:class` would, for example."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1472
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1543
 msgid ""
 "By default, this directive will create a linkable entity and will cause an "
 "entry in the global module index, unless the ``noindex`` option is "
@@ -1483,22 +1550,22 @@ msgid ""
 "current module name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1481
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1552
 msgid ""
 "Describes a JavaScript function or method.  If you want to describe "
 "arguments as optional use square brackets as :ref:`documented <signatures>` "
 "for Python signatures."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1485
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1556
 msgid ""
 "You can use fields to give more details about arguments and their expected "
 "types, errors which may be thrown by the function, and the value being "
 "returned::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1499
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1528
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1570
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1599
 msgid "This is rendered as:"
 msgstr ""
 
@@ -1507,15 +1574,15 @@ msgstr ""
 msgid "Arguments"
 msgstr "Аргументы"
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1503
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1574
 msgid "An URI to the location of the resource."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1504
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1575
 msgid "Gets called with the object."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1505
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1576
 msgid ""
 "Gets called in case the request fails. And a lot of other text so we need "
 "multiple lines."
@@ -1525,113 +1592,113 @@ msgstr ""
 msgid "Throws"
 msgstr "Бросает исключение"
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1508
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1579
 msgid "For whatever reason in that case."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1509
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1580
 msgid "Something."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1513
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1584
 msgid ""
 "This directive is an alias for :rst:dir:`js:function`, however it describes "
 "a function that is implemented as a method on a class object."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1520
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1591
 msgid ""
 "Describes a constructor that creates an object.  This is basically like a "
 "function but will show up with a `class` prefix::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1532
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1603
 msgid "The name of the animal"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1533
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1604
 msgid "an optional age for the animal"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1537
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1608
 msgid "Describes a global variable or constant."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1541
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1612
 msgid "Describes the attribute *name* of *object*."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1545
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1637
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1616
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1708
 msgid "These roles are provided to refer to the described objects:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1556
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1627
 msgid "The reStructuredText domain"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1558
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1629
 msgid ""
 "The reStructuredText domain (name **rst**) provides the following "
 "directives:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1562
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1633
 msgid ""
 "Describes a reST directive.  The *name* can be a single directive name or "
 "actual directive syntax (`..` prefix and `::` suffix) with arguments that "
 "will be rendered differently.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1574
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1596
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1629
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1645
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1667
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1700
 msgid "will be rendered as:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1578
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1633
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1649
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1704
 msgid "Foo description."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1582
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1653
 msgid "Bar description."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1586
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1657
 msgid ""
 "Describes an option for reST directive.  The *name* can be a single option "
 "name or option name with arguments which separated with colon (``:``). For "
 "example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1610
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1681
 msgid "Describe the type of option value."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1623
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1694
 msgid "Describes a reST role.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1645
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1716
 msgid "The Math Domain"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1647
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1718
 msgid "The math domain (name **math**) provides the following roles:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1651
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1722
 msgid ""
 "Role for cross-referencing equations defined by :rst:dir:`math` directive "
 "via their label.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1663
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1734
 msgid "More domains"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1665
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1736
 msgid ""
 "The sphinx-contrib_ repository contains more domains available as "
 "extensions; currently Ada_, CoffeeScript_, Erlang_, HTTP_, Lasso_, MATLAB_, "

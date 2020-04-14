@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/88bb5677\n"
+"Project-Id-Version: Sphinx 4.0.0+/dab2949b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-13 21:29+0000\n"
+"POT-Creation-Date: 2020-04-14 21:30+0000\n"
 "PO-Revision-Date: 2018-11-20 17:15+0000\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,6 +52,10 @@ msgid ""
 "other directory will be called \"static\" and contains static files that "
 "should be served from \"/static\"."
 msgstr ""
+"このコードは、reStructuredTextのソースコードを ``srcdir`` から読み込み、必要なデータを ``builddir`` "
+"に書き出します。 ``builddir`` は二つのサブディレクトリを含みます。 \"data\" "
+"には、ドキュメントを表示したり、ドキュメントを検索したり、ドキュメントにコメントを付けるのに必要なデータがすべて含まれます。もう一つの "
+"\"static\" ディレクトリは、 \"/static\" からファイルを配信するための、静的ファイルを含みます。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:31
 msgid ""
@@ -191,6 +196,10 @@ msgid ""
 "method to retrieve search results. In `Flask <http://flask.pocoo.org/>`_ "
 "that would be like this::"
 msgstr ""
+"Sphinxサイドバーの検索機能を使うと、ドキュメントルート以下の 'search' "
+"というパスに対するリクエストが発生します。ユーザの検索クエリーは、GETパラメータの `q` キーに格納されています。 "
+":meth:`~sphinxcontrib.websupport.WebSupport.get_search_results` "
+"メソッドに渡すと、検索結果が得られます。 `Flask <http://flask.pocoo.org/>`_ では次のようになります::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:164
 msgid ""
@@ -226,6 +235,10 @@ msgid ""
 "comments for a specific node, and is aptly named "
 ":meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 msgstr ""
+"リクエストには、 ``parent_id`` と ``node_id`` を送っています。コメントが他のノードに直接追加された場合には、 "
+"``parent_id`` は空になります。また、コメントが他のコメントの子供として付加された場合には、 ``node_id`` "
+"が空になります。次の関数は、 :meth:`~sphinxcontrib.websupport.WebSupport.get_data` "
+"メソッドを利用して、特定のノードに対するコメントを取り扱います::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:205
 msgid ""
@@ -244,6 +257,9 @@ msgid ""
 "automatically displayed.  If you wish to have some form of moderation, you "
 "can pass the ``displayed`` keyword argument::"
 msgstr ""
+"デフォルトでは、 :meth:`~.WebSupport.add_comment` "
+"を使って追加したすべてのコメントは表示されます。もし、モデレーションを行って、承認されたコメントだけを表示したいのであれば、 ``displayed``"
+" キーワード引数を渡します::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:232
 msgid ""

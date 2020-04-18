@@ -16,9 +16,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/a230a185\n"
+"Project-Id-Version: Sphinx 4.0.0+/72015418\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 21:31+0000\n"
+"POT-Creation-Date: 2020-04-18 21:32+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -166,6 +166,8 @@ msgid ""
 "you give the ``ignore-module-all`` flag option.  Without ``ignore-module-"
 "all``, the order of the members will also be the order in ``__all__``."
 msgstr ""
+"モジュールに関しては、 ``ignore-module-all`` フラグオプションを指定しない限り、メンバーを探すのに ``__all__`` "
+"があれば利用されます。 ``ignore-module-all`` がなければ、出力されるメンバーの順序も、 ``__all__`` の順序になります。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:113
 msgid ""
@@ -588,6 +590,7 @@ msgid ""
 "process. You may only specify the root package of the dependencies "
 "themselves and omit the sub-modules:"
 msgstr ""
+"この値はモックアップされるモジュールのリストを含みます。これはビルド時もしくはビルド過程の中断時にいくつかの外部依存が満たされない時に有用です。依存関係自体のルートパッケージのみを指定し、サブモジュールを省略できます:"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:455
 msgid "Will mock all imports under the ``django`` package."
@@ -597,7 +600,7 @@ msgstr " ``django`` パッケージの下でインポートされたすべての
 msgid ""
 "This config value only requires to declare the top-level modules that should"
 " be mocked."
-msgstr ""
+msgstr "この設定値は、モックされるべきトップレベルモジュールを宣言するためだけに必要です。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:465
 msgid ""
@@ -633,6 +636,7 @@ msgid ""
 "This value controls the docstrings inheritance. If set to True the docstring"
 " for classes or methods, if not explicitly set, is inherited form parents."
 msgstr ""
+"この値はdocstringの継承を制御します。Trueに設定すると、明示的に設定されていない場合、クラスまたはメソッドのdocstringは親クラスから継承されます。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:490
 msgid "The default is ``True``."
@@ -836,6 +840,9 @@ msgid ""
 "Handlers should return ``None`` to fall back to the skipping behavior of "
 "autodoc and other enabled extensions."
 msgstr ""
+"複数の有効な拡張モジュールが ``autodoc-skip-member`` イベントを処理する場合、autodocはハンドラが返す最初の非 "
+"``None`` 値を使用します。ハンドラは、autodocおよびその他の有効な拡張モジュールのスキップ動作に戻るには、  ``None`` "
+"を返す必要があります。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:597
 msgid ""

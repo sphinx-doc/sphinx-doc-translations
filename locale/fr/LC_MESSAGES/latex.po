@@ -5,15 +5,16 @@
 # 
 # Translators:
 # LAURENT Raphaël <laurent@ined.fr>, 2019
+# niconil <laurent.combe@free.fr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/257550a54\n"
+"Project-Id-Version: Sphinx 4.0.0+/1c33824ae\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 21:39+0000\n"
+"POT-Creation-Date: 2020-05-03 21:39+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
-"Last-Translator: LAURENT Raphaël <laurent@ined.fr>, 2019\n"
+"Last-Translator: niconil <laurent.combe@free.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +67,7 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:79
 msgid "Keys that you may want to override include:"
-msgstr ""
+msgstr "Keys that you may want to override include:"
 
 #: ../../sphinx/doc/latex.rst:83
 msgid "``'papersize'``"
@@ -77,6 +78,8 @@ msgid ""
 "Paper size option of the document class (``'a4paper'`` or "
 "``'letterpaper'``), default ``'letterpaper'``."
 msgstr ""
+"Paper size option of the document class (``'a4paper'`` or "
+"``'letterpaper'``), default ``'letterpaper'``."
 
 #: ../../sphinx/doc/latex.rst:87
 msgid "``'pointsize'``"
@@ -87,6 +90,8 @@ msgid ""
 "Point size option of the document class (``'10pt'``, ``'11pt'`` or "
 "``'12pt'``), default ``'10pt'``."
 msgstr ""
+"Point size option of the document class (``'10pt'``, ``'11pt'`` or "
+"``'12pt'``), default ``'10pt'``."
 
 #: ../../sphinx/doc/latex.rst:98
 msgid "``'pxunit'``"
@@ -102,6 +107,13 @@ msgid ""
 "``72px=1in``, simply use ``'1bp'``; for ``90px=1in``, use ``'0.8bp'`` or "
 "``'0.803pt'``."
 msgstr ""
+"the value of the ``px`` when used in image attributes ``width`` and "
+"``height``. The default value is ``'0.75bp'`` which achieves ``96px=1in`` "
+"(in TeX ``1in = 72bp = 72.27pt``.) To obtain for example ``100px=1in`` use "
+"``'0.01in'`` or ``'0.7227pt'`` (the latter leads to TeX computing a more "
+"precise value, due to the smaller unit used in the specification); for "
+"``72px=1in``, simply use ``'1bp'``; for ``90px=1in``, use ``'0.8bp'`` or "
+"``'0.803pt'``."
 
 #: ../../sphinx/doc/latex.rst:104
 msgid "``'passoptionstopackages'``"
@@ -112,6 +124,8 @@ msgid ""
 "A string which will be positioned early in the preamble, designed to contain"
 " ``\\\\PassOptionsToPackage{options}{foo}`` commands. Default empty."
 msgstr ""
+"A string which will be positioned early in the preamble, designed to contain"
+" ``\\\\PassOptionsToPackage{options}{foo}`` commands. Default empty."
 
 #: ../../sphinx/doc/latex.rst:133
 msgid "``'babel'``"
@@ -124,6 +138,10 @@ msgid ""
 " is used if no language.) For Japanese documents, the default is the empty "
 "string."
 msgstr ""
+"\"babel\" package inclusion, default ``'\\\\usepackage{babel}'`` (the "
+"suitable document language string is passed as class option, and ``english``"
+" is used if no language.) For Japanese documents, the default is the empty "
+"string."
 
 #: ../../sphinx/doc/latex.rst:112
 msgid ""
@@ -145,6 +163,8 @@ msgid ""
 "For :confval:`latex_engine` set to ``'xelatex'``, the default is "
 "``'\\\\usepackage{polyglossia}\\n\\\\setmainlanguage{<language>}'``."
 msgstr ""
+"For :confval:`latex_engine` set to ``'xelatex'``, the default is "
+"``'\\\\usepackage{polyglossia}\\n\\\\setmainlanguage{<language>}'``."
 
 #: ../../sphinx/doc/latex.rst:129
 msgid "``'lualatex'`` uses same default setting as ``'xelatex'``"
@@ -171,6 +191,7 @@ msgstr ""
 msgid ""
 "Defaults to ``''`` when the :confval:`language` uses the Cyrillic script."
 msgstr ""
+"Defaults to ``''`` when the :confval:`language` uses the Cyrillic script."
 
 #: ../../sphinx/doc/latex.rst:142
 msgid "Support for individual Greek and Cyrillic letters:"
@@ -239,6 +260,14 @@ msgid ""
 "\"Rejne\" and \"Bjornstrup\".  You can also set this to ``''`` to disable "
 "fncychap."
 msgstr ""
+"Inclusion of the \"fncychap\" package (which makes fancy chapter titles), "
+"default ``'\\\\usepackage[Bjarne]{fncychap}'`` for English documentation "
+"(this option is slightly customized by Sphinx), "
+"``'\\\\usepackage[Sonny]{fncychap}'`` for internationalized docs (because "
+"the \"Bjarne\" style uses numbers spelled out in English).  Other "
+"\"fncychap\" styles you can try are \"Lenny\", \"Glenn\", \"Conny\", "
+"\"Rejne\" and \"Bjornstrup\".  You can also set this to ``''`` to disable "
+"fncychap."
 
 #: ../../sphinx/doc/latex.rst:198
 msgid "The default is ``''`` for Japanese documents."
@@ -246,7 +275,7 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:213
 msgid "``'preamble'``"
-msgstr ""
+msgstr "``'preamble'``"
 
 #: ../../sphinx/doc/latex.rst:201
 msgid ""
@@ -273,6 +302,11 @@ msgid ""
 "this behavior, use 'H' which will disable floating and position figures "
 "strictly in the order they appear in the source."
 msgstr ""
+"Latex figure float alignment, default 'htbp' (here, top, bottom, page). "
+"Whenever an image doesn't fit into the current page, it will be 'floated' "
+"into the next page but may be preceded by any other text. If you don't like "
+"this behavior, use 'H' which will disable floating and position figures "
+"strictly in the order they appear in the source."
 
 #: ../../sphinx/doc/latex.rst:227
 msgid "``'atendofbody'``"
@@ -281,6 +315,7 @@ msgstr "``'atendofbody'``"
 #: ../../sphinx/doc/latex.rst:225
 msgid "Additional document content (right before the indices), default empty."
 msgstr ""
+"Additional document content (right before the indices), default empty."
 
 #: ../../sphinx/doc/latex.rst:246
 msgid "``'extrapackages'``"
@@ -312,15 +347,15 @@ msgstr "``'footer'``"
 
 #: ../../sphinx/doc/latex.rst:249
 msgid "Additional footer content (before the indices), default empty."
-msgstr ""
+msgstr "Additional footer content (before the indices), default empty."
 
 #: ../../sphinx/doc/latex.rst:251
 msgid "Use ``'atendofbody'`` key instead."
-msgstr ""
+msgstr "Use ``'atendofbody'`` key instead."
 
 #: ../../sphinx/doc/latex.rst:254
 msgid "Keys that don't need to be overridden unless in special cases are:"
-msgstr ""
+msgstr "Keys that don't need to be overridden unless in special cases are:"
 
 #: ../../sphinx/doc/latex.rst:263
 msgid "``'extraclassoptions'``"
@@ -332,10 +367,13 @@ msgid ""
 " will allow chapters (for documents of the ``'manual'`` type) to start on "
 "any page."
 msgstr ""
+"The default is the empty string. Example: ``'extraclassoptions': 'openany'``"
+" will allow chapters (for documents of the ``'manual'`` type) to start on "
+"any page."
 
 #: ../../sphinx/doc/latex.rst:262
 msgid "Added this documentation."
-msgstr ""
+msgstr "Added this documentation."
 
 #: ../../sphinx/doc/latex.rst:281
 msgid "``'maxlistdepth'``"
@@ -349,12 +387,19 @@ msgid ""
 "levels (of all sorts). Leaving it to the empty string means to obey the "
 "LaTeX default."
 msgstr ""
+"LaTeX allows by default at most 6 levels for nesting list and quote-like "
+"environments, with at most 4 enumerated lists, and 4 bullet lists. Setting "
+"this key for example to ``'10'`` (as a string) will allow up to 10 nested "
+"levels (of all sorts). Leaving it to the empty string means to obey the "
+"LaTeX default."
 
 #: ../../sphinx/doc/latex.rst:274
 msgid ""
 "Using this key may prove incompatible with some LaTeX packages or special "
 "document classes which do their own list customization."
 msgstr ""
+"Using this key may prove incompatible with some LaTeX packages or special "
+"document classes which do their own list customization."
 
 #: ../../sphinx/doc/latex.rst:277
 msgid ""
@@ -362,6 +407,9 @@ msgid ""
 "executed inside the document preamble. Use then rather the dedicated "
 "commands of this LaTeX package."
 msgstr ""
+"The key setting is silently *ignored* if ``\\usepackage{enumitem}`` is "
+"executed inside the document preamble. Use then rather the dedicated "
+"commands of this LaTeX package."
 
 #: ../../sphinx/doc/latex.rst:290
 msgid "``'inputenc'``"
@@ -372,11 +420,14 @@ msgid ""
 "\"inputenc\" package inclusion, defaults to "
 "``'\\\\usepackage[utf8]{inputenc}'`` when using pdflatex. Otherwise empty."
 msgstr ""
+"\"inputenc\" package inclusion, defaults to "
+"``'\\\\usepackage[utf8]{inputenc}'`` when using pdflatex. Otherwise empty."
 
 #: ../../sphinx/doc/latex.rst:288
 msgid ""
 "Previously ``'\\\\usepackage[utf8]{inputenc}'`` was used for all compilers."
 msgstr ""
+"Previously ``'\\\\usepackage[utf8]{inputenc}'`` was used for all compilers."
 
 #: ../../sphinx/doc/latex.rst:295
 msgid "``'cmappkg'``"
@@ -384,7 +435,7 @@ msgstr "``'cmappkg'``"
 
 #: ../../sphinx/doc/latex.rst:293
 msgid "\"cmap\" package inclusion, default ``'\\\\usepackage{cmap}'``."
-msgstr ""
+msgstr "\"cmap\" package inclusion, default ``'\\\\usepackage{cmap}'``."
 
 #: ../../sphinx/doc/latex.rst:349
 msgid "``'fontenc'``"
@@ -430,6 +481,8 @@ msgid ""
 "Defaults to ``'\\\\usepackage{fontspec}'`` when :confval:`latex_engine` is "
 "``'xelatex'``."
 msgstr ""
+"Defaults to ``'\\\\usepackage{fontspec}'`` when :confval:`latex_engine` is "
+"``'xelatex'``."
 
 #: ../../sphinx/doc/latex.rst:332
 msgid "``'lualatex'`` uses ``fontspec`` per default like ``'xelatex'``."
@@ -497,7 +550,7 @@ msgstr "``'geometry'``"
 
 #: ../../sphinx/doc/latex.rst:374
 msgid "\"geometry\" package inclusion, the default definition is:"
-msgstr ""
+msgstr "\"geometry\" package inclusion, the default definition is:"
 
 #: ../../sphinx/doc/latex.rst:376
 msgid "``'\\\\usepackage{geometry}'``"
@@ -508,6 +561,8 @@ msgid ""
 "with an additional ``[dvipdfm]`` for Japanese documents. The Sphinx LaTeX "
 "style file executes:"
 msgstr ""
+"with an additional ``[dvipdfm]`` for Japanese documents. The Sphinx LaTeX "
+"style file executes:"
 
 #: ../../sphinx/doc/latex.rst:381
 msgid ""
@@ -520,15 +575,18 @@ msgid ""
 "which can be customized via corresponding :ref:`'sphinxsetup' options "
 "<latexsphinxsetup>`."
 msgstr ""
+"which can be customized via corresponding :ref:`'sphinxsetup' options "
+"<latexsphinxsetup>`."
 
 #: ../../sphinx/doc/latex.rst:388
 msgid "``dvipdfm`` option if :confval:`latex_engine` is ``'platex'``."
-msgstr ""
+msgstr "``dvipdfm`` option if :confval:`latex_engine` is ``'platex'``."
 
 #: ../../sphinx/doc/latex.rst:391
 msgid ""
 "The :ref:`'sphinxsetup' keys for the margins <latexsphinxsetuphmargin>`."
 msgstr ""
+"The :ref:`'sphinxsetup' keys for the margins <latexsphinxsetuphmargin>`."
 
 #: ../../sphinx/doc/latex.rst:395
 msgid ""
@@ -540,6 +598,13 @@ msgid ""
 "integer multiple of the baseline. See the :ref:`hmargin "
 "<latexsphinxsetuphmargin>` documentation for more."
 msgstr ""
+"The location in the LaTeX file has been moved to after "
+"``\\usepackage{sphinx}`` and ``\\sphinxsetup{..}``, hence also after "
+"insertion of ``'fontpkg'`` key. This is in order to handle the paper layout "
+"options in a special way for Japanese documents: the text width will be set "
+"to an integer multiple of the *zenkaku* width, and the text height to an "
+"integer multiple of the baseline. See the :ref:`hmargin "
+"<latexsphinxsetuphmargin>` documentation for more."
 
 #: ../../sphinx/doc/latex.rst:414
 msgid "``'hyperref'``"
@@ -551,14 +616,17 @@ msgid ""
 "``\\urlstyle{same}``. This is done after :file:`sphinx.sty` file is loaded "
 "and before executing the contents of ``'preamble'`` key."
 msgstr ""
+"\"hyperref\" package inclusion; also loads package \"hypcap\" and issues "
+"``\\urlstyle{same}``. This is done after :file:`sphinx.sty` file is loaded "
+"and before executing the contents of ``'preamble'`` key."
 
 #: ../../sphinx/doc/latex.rst:411
 msgid "Loading of packages \"hyperref\" and \"hypcap\" is mandatory."
-msgstr ""
+msgstr "Loading of packages \"hyperref\" and \"hypcap\" is mandatory."
 
 #: ../../sphinx/doc/latex.rst:413
 msgid "Previously this was done from inside :file:`sphinx.sty`."
-msgstr ""
+msgstr "Previously this was done from inside :file:`sphinx.sty`."
 
 #: ../../sphinx/doc/latex.rst:432
 msgid "``'maketitle'``"
@@ -599,6 +667,9 @@ msgid ""
 "``'Release'``. As for *title* and *author* used in the tuples of "
 ":confval:`latex_documents`, it is inserted as LaTeX markup."
 msgstr ""
+"value that prefixes ``'release'`` element on title page, default "
+"``'Release'``. As for *title* and *author* used in the tuples of "
+":confval:`latex_documents`, it is inserted as LaTeX markup."
 
 #: ../../sphinx/doc/latex.rst:450
 msgid "``'tableofcontents'``"
@@ -611,6 +682,10 @@ msgid ""
 "by user loaded packages.) Override if you want to generate a different table"
 " of contents or put content between the title page and the TOC."
 msgstr ""
+"\"tableofcontents\" call, default ``'\\\\sphinxtableofcontents'`` (it is a "
+"wrapper of unmodified ``\\tableofcontents``, which may itself be customized "
+"by user loaded packages.) Override if you want to generate a different table"
+" of contents or put content between the title page and the TOC."
 
 #: ../../sphinx/doc/latex.rst:447
 msgid ""
@@ -618,6 +693,9 @@ msgid ""
 "Sphinx. This created an incompatibility with dedicated packages modifying it"
 " also such as \"tocloft\" or \"etoc\"."
 msgstr ""
+"Previously the meaning of ``\\tableofcontents`` itself was modified by "
+"Sphinx. This created an incompatibility with dedicated packages modifying it"
+" also such as \"tocloft\" or \"etoc\"."
 
 #: ../../sphinx/doc/latex.rst:459
 msgid "``'transition'``"
@@ -629,10 +707,13 @@ msgid ""
 "``'\\n\\n\\\\bigskip\\\\hrule\\\\bigskip\\n\\n'``.  Override if you want to "
 "display transitions differently."
 msgstr ""
+"Commands used to display transitions, default "
+"``'\\n\\n\\\\bigskip\\\\hrule\\\\bigskip\\n\\n'``.  Override if you want to "
+"display transitions differently."
 
 #: ../../sphinx/doc/latex.rst:458
 msgid "Remove unneeded ``{}`` after ``\\\\hrule``."
-msgstr ""
+msgstr "Remove unneeded ``{}`` after ``\\\\hrule``."
 
 #: ../../sphinx/doc/latex.rst:466
 msgid "``'printindex'``"
@@ -646,6 +727,11 @@ msgid ""
 "``'\\\\footnotesize\\\\raggedright\\\\printindex'`` is advisable when the "
 "index is full of long entries."
 msgstr ""
+"\"printindex\" call, the last thing in the file, default "
+"``'\\\\printindex'``.  Override if you want to generate the index "
+"differently or append some content after the index. For example "
+"``'\\\\footnotesize\\\\raggedright\\\\printindex'`` is advisable when the "
+"index is full of long entries."
 
 #: ../../sphinx/doc/latex.rst:478
 msgid "``'fvset'``"
@@ -671,6 +757,8 @@ msgid ""
 "Keys that are set by other options and therefore should not be overridden "
 "are:"
 msgstr ""
+"Keys that are set by other options and therefore should not be overridden "
+"are:"
 
 #: ../../sphinx/doc/latex.rst:483
 msgid ""

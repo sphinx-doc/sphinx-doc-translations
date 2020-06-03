@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/88a3548a8\n"
+"Project-Id-Version: Sphinx 4.0.0+/ba93a41a7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 21:52+0000\n"
+"POT-Creation-Date: 2020-06-03 21:54+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Language-Team: Serbian (https://www.transifex.com/sphinx-doc/teams/15434/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -695,7 +695,13 @@ msgstr ""
 msgid ""
 "Add *packagename* to the list of packages that LaTeX source code will "
 "include.  If you provide *options*, it will be taken to `\\usepackage` "
-"declaration."
+"declaration.  If you set *after_hyperref* truthy, the package will be loaded"
+" after ``hyperref`` package."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_latex_package:18
+msgid "*after_hyperref* option."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -877,6 +883,13 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit:8
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit_firstresult:8
+msgid "Added *allowed_exceptions* to specify path-through exceptions"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit_firstresult:3
 msgid "Return the result of the first callback that doesn't return ``None``."
 msgstr ""
@@ -1001,109 +1014,112 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/appapi.rst:233
 msgid ""
-"Emitted when a cross-reference to a Python module or object cannot be "
-"resolved.  If the event handler can resolve the reference, it should return "
-"a new docutils node to be inserted in the document tree in place of the node"
-" *node*.  Usually this node is a :class:`reference` node containing "
-"*contnode* as a child."
+"Emitted when a cross-reference to an object cannot be resolved. If the event"
+" handler can resolve the reference, it should return a new docutils node to "
+"be inserted in the document tree in place of the node *node*.  Usually this "
+"node is a :class:`reference` node containing *contnode* as a child. If the "
+"handler can not resolve the cross-reference, it can either return ``None`` "
+"to let other handlers try, or raise :class:`NoUri` to prevent other handlers"
+" in trying and suppress a warning about this cross-reference being "
+"unresolved."
 msgstr ""
 
 #: ../../sphinx/doc/extdev/appapi.rst:0
 msgid "Parameters"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:239
+#: ../../sphinx/doc/extdev/appapi.rst:243
 msgid "The build environment (``app.builder.env``)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:240
+#: ../../sphinx/doc/extdev/appapi.rst:244
 msgid ""
 "The :class:`pending_xref` node to be resolved.  Its attributes ``reftype``, "
 "``reftarget``, ``modname`` and ``classname`` attributes determine the type "
 "and target of the reference."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:243
+#: ../../sphinx/doc/extdev/appapi.rst:247
 msgid ""
 "The node that carries the text and formatting inside the future reference "
 "and should be a child of the returned reference node."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:250
+#: ../../sphinx/doc/extdev/appapi.rst:254
 msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
 "*doctree* can be modified in place."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:254
+#: ../../sphinx/doc/extdev/appapi.rst:258
 msgid ""
 "Here is the place to replace custom nodes that don't have visitor methods in"
 " the writers, so that they don't cause errors when the writers encounter "
 "them."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:259
+#: ../../sphinx/doc/extdev/appapi.rst:263
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:262
+#: ../../sphinx/doc/extdev/appapi.rst:266
 msgid ""
 "You must handle this event in an extension that stores data in the "
 "environment in a custom location.  Otherwise the environment in the main "
 "process will not be aware of the information stored in the subprocess."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:266
+#: ../../sphinx/doc/extdev/appapi.rst:270
 msgid ""
 "*other* is the environment object from the subprocess, *env* is the "
 "environment from the main process.  *docnames* is a set of document names "
 "that have been read in the subprocess."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:274
+#: ../../sphinx/doc/extdev/appapi.rst:278
 msgid ""
 "Emitted when the :meth:`update` method of the build environment has "
 "completed, that is, the environment and all doctrees are now up-to-date."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:277
+#: ../../sphinx/doc/extdev/appapi.rst:281
 msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
 " phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:283
+#: ../../sphinx/doc/extdev/appapi.rst:287
 msgid "The handlers' return value is now used."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:288
+#: ../../sphinx/doc/extdev/appapi.rst:292
 msgid ""
 "Emitted when Consistency checks phase.  You can check consistency of "
 "metadata for whole of documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:293
+#: ../../sphinx/doc/extdev/appapi.rst:297
 msgid "As a **experimental** event"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:297
+#: ../../sphinx/doc/extdev/appapi.rst:301
 msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
 "of ``(pagename, context, templatename)``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:305
+#: ../../sphinx/doc/extdev/appapi.rst:309
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:308
+#: ../../sphinx/doc/extdev/appapi.rst:312
 msgid ""
 "The *pagename* argument is the canonical name of the page being rendered, "
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
@@ -1111,31 +1127,31 @@ msgid ""
 "``'page.html'`` for all pages from reST documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:313
+#: ../../sphinx/doc/extdev/appapi.rst:317
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
 "values.  Keys must be strings."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:317
+#: ../../sphinx/doc/extdev/appapi.rst:321
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
 "template alone."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:321
+#: ../../sphinx/doc/extdev/appapi.rst:325
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:326
+#: ../../sphinx/doc/extdev/appapi.rst:330
 msgid "The return value can now specify a template name."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:331
+#: ../../sphinx/doc/extdev/appapi.rst:335
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -1145,11 +1161,11 @@ msgid ""
 " cleanup actions depending on the exception status."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:342
+#: ../../sphinx/doc/extdev/appapi.rst:346
 msgid "Checking the Sphinx version"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:346
+#: ../../sphinx/doc/extdev/appapi.rst:350
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr ""
 
@@ -1168,7 +1184,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:352
+#: ../../sphinx/doc/extdev/appapi.rst:356
 msgid "The Config object"
 msgstr ""
 
@@ -1190,7 +1206,7 @@ msgid ""
 " ``env.config.language``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:362
+#: ../../sphinx/doc/extdev/appapi.rst:366
 msgid "The template bridge"
 msgstr ""
 
@@ -1242,7 +1258,7 @@ msgid ""
 "specified context (a Python dictionary)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:373
+#: ../../sphinx/doc/extdev/appapi.rst:377
 msgid "Exceptions"
 msgstr ""
 

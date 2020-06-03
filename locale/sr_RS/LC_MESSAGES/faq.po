@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/88a3548a8\n"
+"Project-Id-Version: Sphinx 4.0.0+/ba93a41a7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 21:52+0000\n"
+"POT-Creation-Date: 2020-06-03 21:54+0000\n"
 "PO-Revision-Date: 2018-02-12 13:46+0000\n"
 "Language-Team: Serbian (Serbia) (https://www.transifex.com/sphinx-doc/teams/15434/sr_RS/)\n"
 "MIME-Version: 1.0\n"
@@ -216,26 +216,70 @@ msgid ""
 "Add ``searchbox.html`` to the :confval:`html_sidebars` configuration value."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:154
-msgid "Epub info"
+#: ../../sphinx/doc/faq.rst:152
+msgid "Sphinx vs. Docutils"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:156
-msgid "The following list gives some hints for the creation of epub files:"
+#: ../../sphinx/doc/faq.rst:154
+msgid ""
+"tl;dr: *docutils* converts reStructuredText to multiple output formats. "
+"Sphinx builds upon docutils to allow construction of cross-referenced and "
+"indexed bodies of documentation."
 msgstr ""
 
 #: ../../sphinx/doc/faq.rst:158
+msgid ""
+"`docutils`__ is a text processing system for converting plain text "
+"documentation into other, richer formats. As noted in the `docutils "
+"documentation`__, docutils uses *readers* to read a document, *parsers* for "
+"parsing plain text formats into an internal tree representation made up of "
+"different types of *nodes*, and *writers* to output this tree in various "
+"document formats.  docutils provides parsers for one plain text format - "
+"`reStructuredText`__ - though other, *out-of-tree* parsers have been "
+"implemented including Sphinx's :doc:`Markdown parser </usage/markdown>`. On "
+"the other hand, it provides writers for many different formats including "
+"HTML, LaTeX, man pages, Open Document Format and XML."
+msgstr ""
+
+#: ../../sphinx/doc/faq.rst:169
+msgid ""
+"docutils exposes all of its functionality through a variety of `front-end "
+"tools`__, such as ``rst2html``, ``rst2odt`` and ``rst2xml``. Crucially "
+"though, all of these tools, and docutils itself, are concerned with "
+"individual documents.  They don't support concepts such as cross-"
+"referencing, indexing of documents, or the construction of a document "
+"hierarchy (typically manifesting in a table of contents)."
+msgstr ""
+
+#: ../../sphinx/doc/faq.rst:176
+msgid ""
+"Sphinx builds upon docutils by harnessing docutils' readers and parsers and "
+"providing its own :doc:`/usage/builders/index`. As a result, Sphinx wraps "
+"some of the *writers* provided by docutils. This allows Sphinx to provide "
+"many features that would simply not be possible with docutils, such as those"
+" outlined above."
+msgstr ""
+
+#: ../../sphinx/doc/faq.rst:191
+msgid "Epub info"
+msgstr ""
+
+#: ../../sphinx/doc/faq.rst:193
+msgid "The following list gives some hints for the creation of epub files:"
+msgstr ""
+
+#: ../../sphinx/doc/faq.rst:195
 msgid ""
 "Split the text into several files. The longer the individual HTML files are,"
 " the longer it takes the ebook reader to render them.  In extreme cases, the"
 " rendering can take up to one minute."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:162
+#: ../../sphinx/doc/faq.rst:199
 msgid "Try to minimize the markup.  This also pays in rendering time."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:164
+#: ../../sphinx/doc/faq.rst:201
 msgid ""
 "For some readers you can use embedded or external fonts using the CSS "
 "``@font-face`` directive.  This is *extremely* useful for code listings "
@@ -247,11 +291,11 @@ msgid ""
 "characters on a line."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:173
+#: ../../sphinx/doc/faq.rst:210
 msgid "You may have to experiment a little until you get reasonable results."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:175
+#: ../../sphinx/doc/faq.rst:212
 msgid ""
 "Test the created epubs. You can use several alternatives.  The ones I am "
 "aware of are Epubcheck_, Calibre_, FBreader_ (although it does not render "
@@ -259,7 +303,7 @@ msgid ""
 "https://code.google.com/archive/p/threepress and run your own local server."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:180
+#: ../../sphinx/doc/faq.rst:217
 msgid ""
 "Large floating divs are not displayed properly. If they cover more than one "
 "page, the div is only shown on the first page. In that case you can copy the"
@@ -267,7 +311,7 @@ msgid ""
 "local ``_static/`` directory and remove the float settings."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:186
+#: ../../sphinx/doc/faq.rst:223
 msgid ""
 "Files that are inserted outside of the ``toctree`` directive must be "
 "manually included. This sometimes applies to appendixes, e.g. the glossary "
@@ -275,7 +319,7 @@ msgid ""
 "option."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:190
+#: ../../sphinx/doc/faq.rst:227
 msgid ""
 "The handling of the epub cover page differs from the reStructuredText "
 "procedure which automatically resolves image paths and puts the images into "
@@ -284,34 +328,34 @@ msgid ""
 " the :confval:`epub_cover` config option."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:196
+#: ../../sphinx/doc/faq.rst:233
 msgid ""
 "kindlegen_ command can convert from epub3 resulting file to ``.mobi`` file "
 "for Kindle. You can get ``yourdoc.mobi`` under ``_build/epub`` after the "
 "following command:"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:205
+#: ../../sphinx/doc/faq.rst:242
 msgid ""
 "The kindlegen command doesn't accept documents that have section titles "
 "surrounding ``toctree`` directive:"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:220
+#: ../../sphinx/doc/faq.rst:257
 msgid ""
 "kindlegen assumes all documents order in line, but the resulting document "
 "has complicated order for kindlegen::"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:225
+#: ../../sphinx/doc/faq.rst:262
 msgid "If you get the following error, fix your document structure::"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:239
+#: ../../sphinx/doc/faq.rst:276
 msgid "Texinfo info"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:241
+#: ../../sphinx/doc/faq.rst:278
 msgid ""
 "There are two main programs for reading Info files, ``info`` and GNU Emacs."
 "  The ``info`` program has less features but is available in most Unix "
@@ -320,29 +364,29 @@ msgid ""
 "course)."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:249
+#: ../../sphinx/doc/faq.rst:286
 msgid "Displaying Links"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:251
+#: ../../sphinx/doc/faq.rst:288
 msgid ""
 "One noticeable problem you may encounter with the generated Info files is "
 "how references are displayed.  If you read the source of an Info file, a "
 "reference to this section would look like::"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:257
+#: ../../sphinx/doc/faq.rst:294
 msgid ""
 "In the stand-alone reader, ``info``, references are displayed just as they "
 "appear in the source.  Emacs, on the other-hand, will by default replace "
 "``*note:`` with ``see`` and hide the ``target-id``.  For example:"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:261
+#: ../../sphinx/doc/faq.rst:298
 msgid ":ref:`texinfo-links`"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:263
+#: ../../sphinx/doc/faq.rst:300
 msgid ""
 "The exact behavior of how Emacs displays references is dependent on the "
 "variable ``Info-hide-note-references``.  If set to the value of ``hide``, "
@@ -353,7 +397,7 @@ msgid ""
 " and most do take this behavior into account."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:271
+#: ../../sphinx/doc/faq.rst:308
 msgid ""
 "If you want Emacs to display Info files produced by Sphinx using the value "
 "``hide`` for ``Info-hide-note-references`` and the default value for all "
@@ -361,36 +405,36 @@ msgid ""
 "file, ``~/.emacs.d/init.el``."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:297
+#: ../../sphinx/doc/faq.rst:334
 msgid "Notes"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:299
+#: ../../sphinx/doc/faq.rst:336
 msgid ""
 "The following notes may be helpful if you want to create Texinfo files:"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:301
+#: ../../sphinx/doc/faq.rst:338
 msgid "Each section corresponds to a different ``node`` in the Info file."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:303
+#: ../../sphinx/doc/faq.rst:340
 msgid ""
 "Colons (``:``) cannot be properly escaped in menu entries and xrefs. They "
 "will be replaced with semicolons (``;``)."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:306
+#: ../../sphinx/doc/faq.rst:343
 msgid ""
 "Links to external Info files can be created using the somewhat official URI "
 "scheme ``info``.  For example::"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:311
+#: ../../sphinx/doc/faq.rst:348
 msgid "Inline markup"
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:313
+#: ../../sphinx/doc/faq.rst:350
 msgid ""
 "The standard formatting for ``*strong*`` and ``_emphasis_`` can result in "
 "ambiguous output when used to markup parameter names and other values.  "
@@ -399,7 +443,7 @@ msgid ""
 "```literal'``\\s."
 msgstr ""
 
-#: ../../sphinx/doc/faq.rst:319
+#: ../../sphinx/doc/faq.rst:356
 msgid ""
 "The standard formatting can be re-enabled by adding the following to your "
 ":file:`conf.py`::"

@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2020, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 4.0.0+/ba93a41a7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 21:54+0000\n"
+"PO-Revision-Date: 2020-06-03 21:56+0000\n"
+"Language-Team: Russian (https://www.transifex.com/sphinx-doc/teams/15434/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ../../sphinx/doc/internals/release-process.rst:3
+msgid "Sphinx's release process"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:6
+msgid "Branch Model"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:8
+msgid ""
+"Sphinx project uses following branches for developing that conforms to "
+"Semantic Versioning 2.0.0 (refs: https://semver.org/ )."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:14
+msgid "``master``"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:12
+msgid ""
+"Development for MAJOR version. All changes including incompatible behaviors "
+"and public API updates are allowed."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:23
+msgid "``A.x`` (ex. ``2.x``)"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:17
+msgid ""
+"Where ``A.x`` is the ``MAJOR.MINOR`` release.  Used to maintain current "
+"MINOR release. All changes are allowed if the change preserves backwards-"
+"compatibility of API and features."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:21
+msgid ""
+"Only the most recent ``MAJOR.MINOR`` branch is currently retained. When a "
+"new MAJOR version is released, the old ``MAJOR.MINOR`` branch will be "
+"deleted and replaced by an equivalent tag."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:34
+msgid "``A.B.x`` (ex. ``2.4.x``)"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:26
+msgid ""
+"Where ``A.B.x`` is the ``MAJOR.MINOR.PATCH`` release.  Only backwards-"
+"compatible bug fixes are allowed. In Sphinx project, PATCH version is used "
+"for urgent bug fix."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:30
+msgid ""
+"``MAJOR.MINOR.PATCH`` branch will be branched from the ``v`` prefixed "
+"release tag (ex. make 2.3.1 that branched from v2.3.0) when a urgent release"
+" is needed. When new PATCH version is released, the branch will be deleted "
+"and replaced by an equivalent tag (ex. v2.3.1)."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:37
+msgid "Deprecating a feature"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:39
+msgid "There are a couple reasons that code in Sphinx might be deprecated:"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:41
+msgid ""
+"If a feature has been improved or modified in a backwards-incompatible way, "
+"the old feature or behavior will be deprecated."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:44
+msgid ""
+"Sometimes Sphinx will include a backport of a Python library that's not "
+"included in a version of Python that Sphinx currently supports. When Sphinx "
+"no longer needs to support the older version of Python that doesn't include "
+"the library, the library will be deprecated in Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:49
+msgid ""
+"As the :ref:`deprecation-policy` describes, the first release of Sphinx that"
+" deprecates a feature (``A.B``) should raise a ``RemovedInSphinxXXWarning`` "
+"(where ``XX`` is the Sphinx version where the feature will be removed) when "
+"the deprecated feature is invoked. Assuming we have good test coverage, "
+"these warnings are converted to errors when running the test suite with "
+"warnings enabled::"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:58
+msgid ""
+"Thus, when adding a ``RemovedInSphinxXXWarning`` you need to eliminate or "
+"silence any warnings generated when running the tests."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:65
+msgid "Deprecation policy"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:67
+msgid ""
+"MAJOR and MINOR releases may deprecate certain features from previous "
+"releases. If a feature is deprecated in a release A.x, it will continue to "
+"work in all A.x.x versions (for all versions of x). It will continue to work"
+" in all B.x.x versions but raise deprecation warnings. Deprecated features "
+"will be removed at the C.0.0. It means the deprecated feature will work "
+"during 2 MAJOR releases at least."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:74
+msgid ""
+"So, for example, if we decided to start the deprecation of a function in "
+"Sphinx 2.x:"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:77
+msgid ""
+"Sphinx 2.x will contain a backwards-compatible replica of the function which"
+" will raise a ``RemovedInSphinx40Warning``. This is a subclass of "
+":exc:`python:PendingDeprecationWarning`, i.e. it will not get displayed by "
+"default."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:82
+msgid ""
+"Sphinx 3.x will still contain the backwards-compatible replica, but "
+"``RemovedInSphinx40Warning`` will be a subclass of "
+":exc:`python:DeprecationWarning` then, and gets displayed by default."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:86
+msgid "Sphinx 4.0 will remove the feature outright."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:89
+msgid "Deprecation warnings"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:91
+msgid ""
+"Sphinx will enable its ``RemovedInNextVersionWarning`` warnings by default, "
+"if :envvar:`python:PYTHONWARNINGS` is not set.  Therefore you can disable "
+"them using:"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:95
+msgid "``PYTHONWARNINGS= make html`` (Linux/Mac)"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:96
+msgid "``export PYTHONWARNINGS=`` and do ``make html`` (Linux/Mac)"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:97
+msgid "``set PYTHONWARNINGS=`` and do ``make html`` (Windows)"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:99
+msgid ""
+"But you can also explicitly enable the pending ones using e.g. "
+"``PYTHONWARNINGS=default`` (see the :ref:`Python docs on configuring "
+"warnings <python:describing-warning-filters>`) for more details."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:104
+msgid "Release procedures"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:106
+msgid "The release procedures are listed in ``utils/release-checklist``."
+msgstr ""

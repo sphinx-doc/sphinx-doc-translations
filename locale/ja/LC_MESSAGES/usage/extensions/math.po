@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/dc63eaf19\n"
+"Project-Id-Version: Sphinx 4.0.0+/208cb8ab8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 22:16+0000\n"
+"POT-Creation-Date: 2020-07-24 22:18+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -191,7 +191,15 @@ msgstr ""
 msgid ":mod:`sphinx.ext.mathjax` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.mathjax` -- JavaScriptを使った数式のレンダリング"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:145
+#: ../../sphinx/doc/usage/extensions/math.rst:144
+msgid ""
+"Version 4.0 changes the version of MathJax used to version 3. You may need "
+"to override ``mathjax_path`` to "
+"``https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-"
+"MML_HTMLorMML`` or update your configuration options for version 3."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:151
 msgid ""
 "This extension puts math as-is into the HTML files.  The JavaScript package "
 "MathJax_ is then loaded and transforms the LaTeX markup to readable math "
@@ -200,42 +208,42 @@ msgstr ""
 "この拡張機能は、HTMLの中に数式を埋め込みます。JavaScriptの MathJax_ "
 "パッケージは、ブラウザの中で、LaTeXのマークアップを読める数式に、動的に変換します。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:149
+#: ../../sphinx/doc/usage/extensions/math.rst:155
 msgid ""
 "Because MathJax (and the necessary fonts) is very large, it is not included "
 "in Sphinx but is set to automatically include it from a third-party site."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:154
+#: ../../sphinx/doc/usage/extensions/math.rst:160
 msgid ""
 "You should use the math :rst:dir:`directive <math>` and :rst:role:`role "
 "<math>`, not the native MathJax ``$$``, ``\\(``, etc."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:160
+#: ../../sphinx/doc/usage/extensions/math.rst:166
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load MathJax."
 msgstr "HTMLにJSMathをロードして読み込ませるための、JavaScriptファイルへのパスを設定します。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:163
+#: ../../sphinx/doc/usage/extensions/math.rst:169
 msgid ""
 "The default is the ``https://`` URL that loads the JS files from the "
-"`cdnjs`__ Content Delivery Network. See the `MathJax Getting Started page`__"
-" for details. If you want MathJax to be available offline or without "
+"`jsdelivr`__ Content Delivery Network. See the `MathJax Getting Started "
+"page`__ for details. If you want MathJax to be available offline or without "
 "including resources from a third-party site, you have to download it and set"
 " this value to a different path."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:173
-#: ../../sphinx/doc/usage/extensions/math.rst:229
+#: ../../sphinx/doc/usage/extensions/math.rst:179
+#: ../../sphinx/doc/usage/extensions/math.rst:235
 msgid ""
 "The path can be absolute or relative; if it is relative, it is relative to "
 "the ``_static`` directory of the built docs."
 msgstr ""
 "パスは、絶対パスでも相対パスでも指定ができます。相対パスの場合、ビルドした出力の ``_static`` ディレクトリへのパスになっています。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:176
+#: ../../sphinx/doc/usage/extensions/math.rst:182
 msgid ""
 "For example, if you put MathJax into the static path of the Sphinx docs, "
 "this value would be ``MathJax/MathJax.js``.  If you host more than one "
@@ -245,21 +253,21 @@ msgstr ""
 "例えば、MathjaxをSphinxのstaticパスに置いた場合、この値は ``MathJax/MathJax.js`` "
 "となります。もし、一つ以上のSphinxドキュメントをサーバー上にホストしている場合、共通の場所にMathjaxをインストールしておくといいでしょう。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:181
+#: ../../sphinx/doc/usage/extensions/math.rst:187
 msgid "You can also give a full ``https://`` URL different from the CDN URL."
 msgstr "また、CDN URLではなく別の ``https://`` 等で始まるURLを指定してもいいでしょう。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:185
+#: ../../sphinx/doc/usage/extensions/math.rst:191
 msgid ""
 "The options to script tag for mathjax.  For example, you can set integrity "
 "option with following setting::"
 msgstr "mathjax における script タグへのオプションです。例えば、integrity オプションを次のように設定できます::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:192
+#: ../../sphinx/doc/usage/extensions/math.rst:198
 msgid "The default is empty (``{}``)."
 msgstr "デフォルトは空です (``{}``) 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:198
+#: ../../sphinx/doc/usage/extensions/math.rst:204
 msgid ""
 "The inline configuration options for mathjax.  The value is used as a "
 "parameter of ``MathJax.Hub.Config()``.  For more information, please read "
@@ -268,32 +276,32 @@ msgstr ""
 "mathjax のインライン設定のオプションです。値は ``MathJax.Hub.Config()`` "
 "のパラメータとして用いられます。詳細は次をお読みください  `Using in-line configuration options`_ 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:202
+#: ../../sphinx/doc/usage/extensions/math.rst:208
 msgid "For example::"
 msgstr "例えば::"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:209
+#: ../../sphinx/doc/usage/extensions/math.rst:215
 msgid "The default is empty (not configured)."
 msgstr "デフォルトは空です (not configured) 。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:216
+#: ../../sphinx/doc/usage/extensions/math.rst:222
 msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"
 msgstr ":mod:`sphinx.ext.jsmath` -- JavaScriptを使用して数式をレンダリングします"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:221
+#: ../../sphinx/doc/usage/extensions/math.rst:227
 msgid ""
 "This extension works just as the MathJax extension does, but uses the older "
 "package jsMath_.  It provides this config value:"
 msgstr ""
 "この拡張機能はMathJax拡張と同じように動作しますが、古い jsMath_ パッケージを利用します。この拡張機能には、次のような設定があります。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:226
+#: ../../sphinx/doc/usage/extensions/math.rst:232
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load JSMath.  There is no default."
 msgstr "HTMLにJSMathをロードして読み込ませるための、JavaScriptファイルへのパスを設定します。デフォルト値はありません。"
 
-#: ../../sphinx/doc/usage/extensions/math.rst:232
+#: ../../sphinx/doc/usage/extensions/math.rst:238
 msgid ""
 "For example, if you put JSMath into the static path of the Sphinx docs, this"
 " value would be ``jsMath/easy/load.js``.  If you host more than one Sphinx "

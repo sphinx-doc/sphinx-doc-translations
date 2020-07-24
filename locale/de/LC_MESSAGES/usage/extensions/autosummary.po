@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/dc63eaf19\n"
+"Project-Id-Version: Sphinx 4.0.0+/208cb8ab8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 22:16+0000\n"
+"POT-Creation-Date: 2020-07-24 22:18+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Language-Team: German (https://www.transifex.com/sphinx-doc/teams/15434/de/)\n"
 "MIME-Version: 1.0\n"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:178
 msgid ""
-"If true, autosummary already overwrites stub files by generated contents. "
+"If true, autosummary overwrites existing files by generated stub pages. "
 "Defaults to true (enabled)."
 msgstr ""
 
@@ -242,158 +242,166 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:200
+msgid ""
+"A dict mapping object names to filenames. This is necessary to avoid "
+"filename conflicts where multiple objects have names that are "
+"indistinguishable when case is ignored, on file systems where filenames are "
+"case-insensitive."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:209
 msgid "Customizing templates"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:204
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:213
 msgid ""
 "You can customize the stub page templates, in a similar way as the HTML "
 "Jinja templates, see :ref:`templating`. "
 "(:class:`~sphinx.application.TemplateBridge` is not supported.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:210
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:219
 msgid ""
 "If you find yourself spending much time tailoring the stub templates, this "
 "may indicate that it's a better idea to write custom narrative documentation"
 " instead."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:214
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:223
 msgid "Autosummary uses the following Jinja template files:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:216
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:225
 msgid ":file:`autosummary/base.rst` -- fallback template"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:217
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:226
 msgid ":file:`autosummary/module.rst` -- template for modules"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:218
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:227
 msgid ":file:`autosummary/class.rst` -- template for classes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:219
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:228
 msgid ":file:`autosummary/function.rst` -- template for functions"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:220
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:229
 msgid ":file:`autosummary/attribute.rst` -- template for class attributes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:221
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:230
 msgid ":file:`autosummary/method.rst` -- template for class methods"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:223
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:232
 msgid "The following variables available in the templates:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:229
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:238
 msgid "Name of the documented object, excluding the module and class parts."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:233
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:242
 msgid "Name of the documented object, excluding the module parts."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:237
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:246
 msgid "Full name of the documented object, including module and class parts."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:241
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:250
 msgid "Name of the module the documented object belongs to."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:245
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:254
 msgid ""
 "Name of the class the documented object belongs to.  Only available for "
 "methods and attributes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:250
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:259
 msgid ""
 "A string containing ``len(full_name) * '='``. Use the ``underline`` filter "
 "instead."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:255
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:264
 msgid ""
 "List containing names of all members of the module or class.  Only available"
 " for modules and classes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:260
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:269
 msgid ""
 "List containing names of all inherited members of class.  Only available for"
 " classes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:267
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:276
 msgid ""
 "List containing names of \"public\" functions in the module.  Here, "
 "\"public\" here means that the name does not start with an underscore. Only "
 "available for modules."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:273
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:282
 msgid ""
 "List containing names of \"public\" classes in the module.  Only available "
 "for modules."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:278
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:287
 msgid ""
 "List containing names of \"public\" exceptions in the module.  Only "
 "available for modules."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:283
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:292
 msgid ""
 "List containing names of \"public\" methods in the class.  Only available "
 "for classes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:288
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:297
 msgid ""
 "List containing names of \"public\" attributes in the class/module.  Only "
 "available for classes and modules."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:293
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:302
 msgid "Attributes of modules are supported."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:297
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:306
 msgid ""
 "List containing names of \"public\" modules in the package.  Only available "
 "for modules that are packages."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:302
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:311
 msgid "Additionally, the following filters are available"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:306
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:315
 msgid ""
 "Escape any special characters in the text to be used in formatting RST "
 "contexts. For instance, this prevents asterisks making things bold. This "
 "replaces the builtin Jinja `escape filter`_ that does html-escaping."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:313
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:322
 msgid "Add a title underline to a piece of text."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:315
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:324
 msgid ""
 "For instance, ``{{ fullname | escape | underline }}`` should be used to "
 "produce the title of a page."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:320
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:329
 msgid ""
 "You can use the :rst:dir:`autosummary` directive in the stub pages. Stub "
 "pages are generated also based on these directives."

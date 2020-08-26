@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# wendi cao <651645601@qq.com>, 2020
 # Melia Lee <lixiuyu97@163.com>, 2020
+# wendi cao <651645601@qq.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-25 15:55+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
-"Last-Translator: Melia Lee <lixiuyu97@163.com>, 2020\n"
+"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,51 +24,51 @@ msgstr ""
 
 #: ../../sphinx/doc/ext/doctest.rst:4
 msgid ":mod:`sphinx.ext.doctest` -- Test snippets in the documentation"
-msgstr ""
+msgstr "：模式：`sphinx.ext.doctest`--文档中的测试片段"
 
 #: ../../sphinx/doc/ext/doctest.rst:14
 msgid ""
 "This extension allows you to test snippets in the documentation in a natural"
 " way.  It works by collecting specially-marked up code blocks and running "
 "them as doctest tests."
-msgstr ""
+msgstr "此扩展允许您以自然的方式测试文档中的代码段。它通过收集特别标记的代码块并将其作为doctest测试运行。"
 
 #: ../../sphinx/doc/ext/doctest.rst:18
 msgid ""
 "Within one document, test code is partitioned in *groups*, where each group "
 "consists of:"
-msgstr ""
+msgstr "在一个文档中，测试代码被划分为*组*，其中每个组包括："
 
 #: ../../sphinx/doc/ext/doctest.rst:21
 msgid "zero or more *setup code* blocks (e.g. importing the module to test)"
-msgstr ""
+msgstr "零个或多个*设置代码*块（例如导入要测试的模块）"
 
 #: ../../sphinx/doc/ext/doctest.rst:22
 msgid "one or more *test* blocks"
-msgstr ""
+msgstr "一个或多个*测试*块"
 
 #: ../../sphinx/doc/ext/doctest.rst:24
 msgid ""
 "When building the docs with the ``doctest`` builder, groups are collected "
 "for each document and run one after the other, first executing setup code "
 "blocks, then the test blocks in the order they appear in the file."
-msgstr ""
+msgstr "当使用“doctest”构建器构建文档时，将为每个文档收集组并逐个运行，首先执行安装代码块，然后按它们在文件中出现的顺序执行测试块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:28
 msgid "There are two kinds of test blocks:"
-msgstr ""
+msgstr "有两种测试块："
 
 #: ../../sphinx/doc/ext/doctest.rst:30
 msgid ""
 "*doctest-style* blocks mimic interactive sessions by interleaving Python "
 "code (including the interpreter prompt) and output."
-msgstr ""
+msgstr "*doctest style*块通过交错Python代码（包括解释器提示）和输出来模拟交互式会话。"
 
 #: ../../sphinx/doc/ext/doctest.rst:33
 msgid ""
 "*code-output-style* blocks consist of an ordinary piece of Python code, and "
 "optionally, a piece of output for that code."
-msgstr ""
+msgstr "*代码输出样式*块由一段普通的Python代码和一段可选的该代码的输出组成。"
 
 #: ../../sphinx/doc/ext/doctest.rst:38
 msgid "Directives"
@@ -81,18 +81,19 @@ msgid ""
 " is assigned to all groups (including the ``default`` group).  Otherwise, it"
 " must be a comma-separated list of group names."
 msgstr ""
+"下面的*group*参数解释如下：如果它为空，则块被分配给名为“default”的组。如果它是`*`，则块被分配给所有组（包括``default``组）。否则，它必须是以逗号分隔的组名列表。"
 
 #: ../../sphinx/doc/ext/doctest.rst:47
 msgid ""
 "A setup code block.  This code is not shown in the output for other "
 "builders, but executed before the doctests of the group(s) it belongs to."
-msgstr ""
+msgstr "设置代码块。此代码不会显示在其他生成器的输出中，而是在它所属组的doctest之前执行。"
 
 #: ../../sphinx/doc/ext/doctest.rst:53
 msgid ""
 "A cleanup code block.  This code is not shown in the output for other "
 "builders, but executed after the doctests of the group(s) it belongs to."
-msgstr ""
+msgstr "清除代码块。此代码不会显示在其他生成器的输出中，而是在它所属组的doctest之后执行。"
 
 #: ../../sphinx/doc/ext/doctest.rst:61
 msgid ""
@@ -101,16 +102,17 @@ msgid ""
 " default set of flags is specified by the :confval:`doctest_default_flags` "
 "configuration variable."
 msgstr ""
+"doctest样式的代码块。您可以使用标准：mod:`doctest`标志来控制实际输出与输出结果的比较方式。默认标志集由：confval:`doctest_default_flags`配置变量指定。"
 
 #: ../../sphinx/doc/ext/doctest.rst:66
 msgid "This directive supports three options:"
-msgstr ""
+msgstr "此指令支持三个选项："
 
 #: ../../sphinx/doc/ext/doctest.rst:68
 msgid ""
 "``hide``, a flag option, hides the doctest block in other builders.  By "
 "default it is shown as a highlighted doctest block."
-msgstr ""
+msgstr "``hide```，一个标志选项，在其他构建器中隐藏doctest块。默认情况下，它显示为高亮显示的doctest块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:71
 msgid ""
@@ -119,6 +121,7 @@ msgid ""
 "explicit flags per example, with doctest comments, but they will show up in "
 "other builders too.)"
 msgstr ""
+"``options```，一个字符串选项，可用于提供一个逗号分隔的doctest标志列表，该列表适用于测试中的每个示例。（您仍然可以为每个示例提供显式标志，并带有doctest注释，但它们也会显示在其他构建器中。）"
 
 #: ../../sphinx/doc/ext/doctest.rst:76
 msgid ""
@@ -126,111 +129,113 @@ msgid ""
 "version for the example to be tested. For instance, in the following case "
 "the example will be tested only for Python versions greather than 3.3::"
 msgstr ""
+"``pyversion```是一个字符串选项，可用于指定要测试的示例所需的Python版本。例如，在下面的例子中，将只对高于3.3的Python版本进行测试："
 
 #: ../../sphinx/doc/ext/doctest.rst:83
 msgid "The following operands are supported:"
-msgstr ""
+msgstr "支持以下操作数："
 
 #: ../../sphinx/doc/ext/doctest.rst:85
 msgid "``~=``: Compatible release clause"
-msgstr ""
+msgstr "``~=```：兼容释放子句"
 
 #: ../../sphinx/doc/ext/doctest.rst:86
 msgid "``==``: Version matching clause"
-msgstr ""
+msgstr "``=```：版本匹配子句"
 
 #: ../../sphinx/doc/ext/doctest.rst:87
 msgid "``!=``: Version exclusion clause"
-msgstr ""
+msgstr "`=``：版本排除子句"
 
 #: ../../sphinx/doc/ext/doctest.rst:88
 msgid "``<=``, ``>=``: Inclusive ordered comparison clause"
-msgstr ""
+msgstr "``<=``，`>=``：包含有序比较子句"
 
 #: ../../sphinx/doc/ext/doctest.rst:89
 msgid "``<``, ``>``: Exclusive ordered comparison clause"
-msgstr ""
+msgstr "``<``，`>``：排他有序比较子句"
 
 #: ../../sphinx/doc/ext/doctest.rst:90
 msgid "``===``: Arbitrary equality clause."
-msgstr ""
+msgstr "``==```：任意等式子句。"
 
 #: ../../sphinx/doc/ext/doctest.rst:92
 msgid ""
 "``pyversion`` option is followed `PEP-440: Version Specifiers "
 "<https://www.python.org/dev/peps/pep-0440/#version-specifiers>`__."
 msgstr ""
+"`遵循“pyversion”选项`PEP-440：版本说明符<https://www.python.org/dev/peps/pep-0440/'35；版本规范。"
 
 #: ../../sphinx/doc/ext/doctest.rst:99
 msgid "Supported PEP-440 operands and notations"
-msgstr ""
+msgstr "支持的PEP-440操作数和符号"
 
 #: ../../sphinx/doc/ext/doctest.rst:101
 msgid ""
 "Note that like with standard doctests, you have to use ``<BLANKLINE>`` to "
 "signal a blank line in the expected output.  The ``<BLANKLINE>`` is removed "
 "when building presentation output (HTML, LaTeX etc.)."
-msgstr ""
+msgstr "注意，与标准doctest一样，您必须使用````在预期输出中发出空行信号。生成表示输出（HTML、LaTeX等）时，会删除“``”。"
 
 #: ../../sphinx/doc/ext/doctest.rst:105
 msgid "Also, you can give inline doctest options, like in doctest::"
-msgstr ""
+msgstr "此外，还可以提供内联doctest选项，如doctest:："
 
 #: ../../sphinx/doc/ext/doctest.rst:110
 msgid ""
 "They will be respected when the test is run, but stripped from presentation "
 "output."
-msgstr ""
+msgstr "当测试运行时，它们将被尊重，但从表示输出中剥离。"
 
 #: ../../sphinx/doc/ext/doctest.rst:116
 msgid "A code block for a code-output-style test."
-msgstr ""
+msgstr "代码输出样式测试的代码块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:118
 msgid "This directive supports one option:"
-msgstr ""
+msgstr "此指令支持一个选项："
 
 #: ../../sphinx/doc/ext/doctest.rst:120
 msgid ""
 "``hide``, a flag option, hides the code block in other builders.  By default"
 " it is shown as a highlighted code block."
-msgstr ""
+msgstr "``hide```，一个标志选项，在其他生成器中隐藏代码块。默认情况下，它显示为高亮显示的代码块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:125
 msgid ""
 "Code in a ``testcode`` block is always executed all at once, no matter how "
 "many statements it contains.  Therefore, output will *not* be generated for "
 "bare expressions -- use ``print``.  Example::"
-msgstr ""
+msgstr "“testcode”块中的代码总是一次执行，不管它包含多少条语句。因此，将*不*为裸表达式生成输出--使用“print”。例子：："
 
 #: ../../sphinx/doc/ext/doctest.rst:138
 msgid ""
 "Also, please be aware that since the doctest module does not support mixing "
 "regular output and an exception message in the same snippet, this applies to"
 " testcode/testoutput as well."
-msgstr ""
+msgstr "另外，请注意，由于doctest模块不支持在同一代码段中混合常规输出和异常消息，这也适用于testcode/testoutput。"
 
 #: ../../sphinx/doc/ext/doctest.rst:145
 msgid ""
 "The corresponding output, or the exception message, for the last "
 ":rst:dir:`testcode` block."
-msgstr ""
+msgstr "最后一个的相应输出或异常消息：rst:方向：`testcode`块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:148
 msgid "This directive supports two options:"
-msgstr ""
+msgstr "此指令支持两个选项："
 
 #: ../../sphinx/doc/ext/doctest.rst:150
 msgid ""
 "``hide``, a flag option, hides the output block in other builders.  By "
 "default it is shown as a literal block without highlighting."
-msgstr ""
+msgstr "``hide```，一个标志选项，在其他构建器中隐藏输出块。默认情况下，它显示为不加亮显的文本块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:153
 msgid ""
 "``options``, a string option, can be used to give doctest flags (comma-"
 "separated) just like in normal doctest blocks."
-msgstr ""
+msgstr "``options```，一个字符串选项，可用于提供doctest标志（逗号分隔），就像在普通doctest块中一样。"
 
 #: ../../sphinx/doc/ext/doctest.rst:156
 msgid "Example::"
@@ -242,6 +247,7 @@ msgid ""
 ":rst:dir:`doctest` and the test via :rst:dir:`testcode` and "
 ":rst:dir:`testoutput` are equivalent. ::"
 msgstr ""
+"下面是指令用法的示例。测试通过：rst:方向：`doctest`和测试通过：rst:方向：`testcode`和：rst:方向：`testoutput`是等效的。::"
 
 #: ../../sphinx/doc/ext/doctest.rst:203
 msgid "Configuration"
@@ -249,36 +255,36 @@ msgstr "配置"
 
 #: ../../sphinx/doc/ext/doctest.rst:205
 msgid "The doctest extension uses the following configuration values:"
-msgstr ""
+msgstr "doctest扩展使用以下配置值："
 
 #: ../../sphinx/doc/ext/doctest.rst:209
 msgid "By default, these options are enabled:"
-msgstr ""
+msgstr "默认情况下，这些选项处于启用状态："
 
 #: ../../sphinx/doc/ext/doctest.rst:211
 msgid ""
 "``ELLIPSIS``, allowing you to put ellipses in the expected output that match"
 " anything in the actual output;"
-msgstr ""
+msgstr "``ELLIPSIS``，允许您将省略号放在与实际输出中的任何内容匹配的预期输出中；"
 
 #: ../../sphinx/doc/ext/doctest.rst:213
 msgid ""
 "``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon"
 " and any module information in the exception name to be ignored;"
-msgstr ""
+msgstr "``IGNORE_EXCEPTION_DETAIL``，导致忽略最左边冒号后面的所有内容以及异常名称中的任何模块信息；"
 
 #: ../../sphinx/doc/ext/doctest.rst:215
 msgid ""
 "``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is "
 "given -- the default behavior of accepting this substitution is a relic of "
 "pre-Python 2.2 times."
-msgstr ""
+msgstr "``不要接受“1”的“TRUE”，拒绝在给定“1”的输出中的“TRUE”――接受此替换的默认行为是Python之前的2.2倍的产物。"
 
 #: ../../sphinx/doc/ext/doctest.rst:223
 msgid ""
 "A list of directories that will be added to :data:`sys.path` when the "
 "doctest builder is used.  (Make sure it contains absolute paths.)"
-msgstr ""
+msgstr "将添加到的目录列表：data:`搜索路径`当使用doctest构建器时。（确保它包含绝对路径。）"
 
 #: ../../sphinx/doc/ext/doctest.rst:228
 msgid ""
@@ -286,26 +292,27 @@ msgid ""
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. import modules you will always need in your doctests."
 msgstr ""
+"对于每个被测试的*文件和每个组，它被当作放在“testsetup”指令中的Python代码。您可以使用它来导入您的doctest中始终需要的模块。"
 
 #: ../../sphinx/doc/ext/doctest.rst:236
 msgid ""
 "Python code that is treated like it were put in a ``testcleanup`` directive "
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. remove any temporary files that the tests leave behind."
-msgstr ""
+msgstr "对于每个测试的*文件和每个组，Python代码被视为放在“testcleanup”指令中。你可以用它来删除测试留下的任何临时文件。"
 
 #: ../../sphinx/doc/ext/doctest.rst:244
 msgid ""
 "If this is a nonempty string (the default is ``'default'``), standard reST "
 "doctest blocks will be tested too.  They will be assigned to the group name "
 "given."
-msgstr ""
+msgstr "如果这是一个非空字符串（默认值为“default”`），那么也将测试标准reST doctest块。它们将被分配到给定的组名。"
 
 #: ../../sphinx/doc/ext/doctest.rst:248
 msgid ""
 "reST doctest blocks are simply doctests put into a paragraph of their own, "
 "like so::"
-msgstr ""
+msgstr "其余的doctest块只是将doctest放入自己的一个段落中，如下所示："
 
 #: ../../sphinx/doc/ext/doctest.rst:258
 msgid ""
@@ -313,19 +320,20 @@ msgid ""
 "recognizes them from the leading ``>>>``.  Also, no additional indentation "
 "is used, though it doesn't hurt.)"
 msgstr ""
+"（请注意，没有特殊的“`:：`”用于引入doctest块；docutils从前导的“>>>”中识别它们。此外，不会使用额外的缩进，尽管不会造成伤害。）"
 
 #: ../../sphinx/doc/ext/doctest.rst:262
 msgid ""
 "If this value is left at its default value, the above snippet is interpreted"
 " by the doctest builder exactly like the following::"
-msgstr ""
+msgstr "如果将此值保留为默认值，则doctest构建器将对上面的代码段进行如下解释："
 
 #: ../../sphinx/doc/ext/doctest.rst:274
 msgid ""
 "This feature makes it easy for you to test doctests in docstrings included "
 "with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a"
 " special directive."
-msgstr ""
+msgstr "此功能使您可以轻松地测试：mod:`~sphinx.ext.autodoc`没有用特殊指令标记的扩展。"
 
 #: ../../sphinx/doc/ext/doctest.rst:278
 msgid ""
@@ -335,3 +343,5 @@ msgid ""
 ":rst:dir:`doctest` blocks, though you may set :confval:`trim_doctest_flags` "
 "to achieve that in all code blocks with Python console content."
 msgstr ""
+"请注意，在reST "
+"doctest块中不能有空行。它们将被解释为一个街区结束，另一个街区开始。此外，删除```和``doctest:``选项仅适用于：rst:方向：`doctest`块，但是您可以设置：confval:`trim_doctest_flags`来在所有具有Python控制台内容的代码块中实现这一点。"

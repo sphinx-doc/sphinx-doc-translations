@@ -23,13 +23,13 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:2
 msgid ":mod:`sphinx.ext.intersphinx` -- Link to other projects' documentation"
-msgstr ""
+msgstr "：模式：`sphinx.ext.intersphinx`--链接到其他文档"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:11
 msgid ""
 "This extension can generate automatic links to the documentation of objects "
 "in other projects."
-msgstr ""
+msgstr "此插件可以自动生成指向其他项目中对象文档的链接。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:14
 msgid ""
@@ -40,6 +40,7 @@ msgid ""
 "documentation for the ZipFile class, without you having to specify where it "
 "is located exactly."
 msgstr ""
+"用法很简单：每当Sphinx遇到当前文档集中没有匹配目标的交叉引用时，它会在confval:`intersphinx_mapping`中配置的文档集中查找目标。类似“py:class:`zipfile.zipfile文件```然后可以链接到ZipFile类的Python文档，而不必指定它的确切位置。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:21
 msgid ""
@@ -48,17 +49,19 @@ msgid ""
 "``:ref:`comparison manual <python:comparisons>``` will then link to the "
 "label \"comparisons\" in the doc set \"python\", if it exists."
 msgstr ""
+"当使用“new”格式（见下文）时，您甚至可以通过适当地给链接目标加前缀来强制查找外部集合。一个像' ':ref: ' comparison manual"
+" ' ' '这样的链接会链接到文档集“python”中的“compare”标签，如果它存在的话。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:26
 msgid "Behind the scenes, this works as follows:"
-msgstr ""
+msgstr "在幕后，它的工作原理如下："
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:28
 msgid ""
 "Each Sphinx HTML build creates a file named :file:`objects.inv` that "
 "contains a mapping from object names to URIs relative to the HTML set's "
 "root."
-msgstr ""
+msgstr "每个Sphinx HTML构建都会创建一个名为：file:`objects.inv`包含从对象名到相对于HTML集根的uri的映射。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:31
 msgid ""
@@ -67,6 +70,7 @@ msgid ""
 "mapping will then be used to resolve otherwise missing references to objects"
 " into links to the other documentation."
 msgstr ""
+"使用Intersphinx扩展名的项目可以在：confval:`Intersphinx_mapping`配置值中指定此类映射文件的位置。然后，该映射将用于将其他缺少的对象引用解析为指向其他文档的链接。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:36
 msgid ""
@@ -75,6 +79,7 @@ msgid ""
 "also be specified individually, e.g. if the docs should be buildable without"
 " Internet access."
 msgstr ""
+"默认情况下，假定映射文件与其余文档位于同一位置；但是，也可以单独指定映射文件的位置，例如，如果文档应该可以在不访问Internet的情况下生成。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:43
 msgid "Configuration"
@@ -91,28 +96,28 @@ msgstr ""
 msgid ""
 "This config value contains the locations and names of other projects that "
 "should be linked to in this documentation."
-msgstr ""
+msgstr "此配置值包含应在此文档中链接到的其他项目的位置和名称。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:54
 msgid ""
 "Relative local paths for target locations are taken as relative to the base "
 "of the built documentation, while relative local paths for inventory "
 "locations are taken as relative to the source directory."
-msgstr ""
+msgstr "目标位置的相对本地路径被视为相对于构建文档的基础，而库存位置的相对本地路径被视为相对于源目录。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:58
 msgid ""
 "When fetching remote inventory files, proxy settings will be read from the "
 "``$HTTP_PROXY`` environment variable."
-msgstr ""
+msgstr "获取远程清单文件时，将从`$HTTP_proxy``环境变量中读取代理设置。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:61
 msgid "**Old format for this config value**"
-msgstr ""
+msgstr "**Old format for this config value**"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:63
 msgid "This is the format used before Sphinx 1.0.  It is still recognized."
-msgstr ""
+msgstr "这是Sphinx1.0之前使用的格式。它仍然被认可。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:65
 msgid ""
@@ -122,10 +127,12 @@ msgid ""
 "can be ``None`` (at the same location as the base URI) or another local or "
 "HTTP URI."
 msgstr ""
+"将URI映射到“None”或URI的字典。键是外部Sphinx文档集的基本URI，可以是本地路径或httpuri。这些值指示可以在何处找到清单文件：它们可以是“None”（与基URI位于同一位置）或另一个本地或HTTP"
+" URI。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:71
 msgid "**New format for this config value**"
-msgstr ""
+msgstr "**New format for this config value**"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:75
 msgid ""
@@ -135,6 +142,8 @@ msgid ""
 "inventory file can be found: it can be ``None`` (at the same location as the"
 " base URI) or another local or HTTP URI."
 msgstr ""
+"将唯一标识符映射到元组“`（target，inventory）`”的字典。每个“target”都是外部Sphinx文档集的基URI，可以是本地路径或httpuri。“inventory”指示可以在何处找到清单文件：它可以是“None”（与基URI位于同一位置）或另一个本地或HTTP"
+" URI。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:81
 msgid ""
@@ -143,16 +152,18 @@ msgid ""
 "``:ref:`comparison manual <python:comparisons>``` will link to the label "
 "\"comparisons\" in the doc set \"python\", if it exists."
 msgstr ""
+"唯一标识符可用于给交叉引用目标加前缀，以便明确目标属于哪个interspinx集。类似“`:ref:`comparison manual "
+"1``的链接将链接到文档集“python”中的标签“compariations”（如果存在的话）。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:86
 msgid "**Example**"
-msgstr ""
+msgstr "**举例**"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:88
 msgid ""
 "To add links to modules and objects in the Python standard library "
 "documentation, use::"
-msgstr ""
+msgstr "要在Python标准库文档中添加指向模块和对象的链接，请使用："
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:93
 msgid ""
@@ -161,12 +172,13 @@ msgid ""
 "downloaded inventory is cached in the Sphinx environment, so it must be re-"
 "downloaded whenever you do a full rebuild."
 msgstr ""
+"这将下载相应的：文件：`对象.inv`从Internet上创建文件并生成指向给定URI下的页面的链接。下载的资源清册缓存在Sphinx环境中，因此在进行完全重建时必须重新下载。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:98
 msgid ""
 "A second example, showing the meaning of a non-``None`` value of the second "
 "tuple item::"
-msgstr ""
+msgstr "第二个示例显示了第二个元组项的非“None”值的含义："
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:104
 msgid ""
@@ -175,10 +187,13 @@ msgid ""
 "``https://docs.python.org/3``.  It is up to you to update the inventory file"
 " as new objects are added to the Python documentation."
 msgstr ""
+"这将从以下位置读取清单：file:`python-"
+"inv.txt`在源目录中，但仍生成指向下页的链接``https://docs.python.org/3``. "
+"当新对象添加到Python文档中时，由您来更新库存文件。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:109
 msgid "**Multiple target for the inventory**"
-msgstr ""
+msgstr "**库存的多个目标**"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:113
 msgid ""
@@ -188,30 +203,32 @@ msgid ""
 " first successful fetch. The primary use case for this to specify mirror "
 "sites for server downtime of the primary inventory::"
 msgstr ""
+"可以为每个库存指定替代文件。可以为第二个inventory "
+"tuple项提供一个元组，如下例所示。这将读取遍历（第二个）元组项的库存，直到第一次成功获取。用于指定主资源清册服务器停机时间的镜像站点的主要使用情形："
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:125
 msgid ""
 "The maximum number of days to cache remote inventories.  The default is "
 "``5``, meaning five days.  Set this to a negative value to cache inventories"
 " for unlimited time."
-msgstr ""
+msgstr "缓存远程资源清册的最大天数。默认值为“5”，表示五天。将此值设置为负值可无限时间缓存库存。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:131
 msgid ""
 "The number of seconds for timeout.  The default is ``None``, meaning do not "
 "timeout."
-msgstr ""
+msgstr "超时的秒数。默认值为“None”，表示不超时。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:136
 msgid ""
 "timeout is not a time limit on the entire response download; rather, an "
 "exception is raised if the server has not issued a response for timeout "
 "seconds."
-msgstr ""
+msgstr "超时不是对整个响应下载的时间限制；相反，如果服务器在超时秒数内未发出响应，则会引发异常。"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:142
 msgid "Showing all links of an Intersphinx mapping file"
-msgstr ""
+msgstr "显示内部sphinx映射文件的所有链接"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:144
 msgid ""
@@ -221,6 +238,8 @@ msgid ""
 "documentation project. The following example prints the Intersphinx mapping "
 "of the Python 3 documentation::"
 msgstr ""
+"要显示内部sphinx映射文件的所有内部sphinx链接及其目标，请运行“python”-msphinx.ext.interspinx url-or-"
+"path”。这在搜索文档项目中中断i内部sphinx链接的根本原因时非常有用。下面的示例打印python3文档的内部sphinx映射："
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:153
 msgid "Using Intersphinx with inventory file under Basic Authorization"

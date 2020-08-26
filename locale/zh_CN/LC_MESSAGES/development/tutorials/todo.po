@@ -6,6 +6,7 @@
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2019
 # cdarlint <cdarling@126.com>, 2019
+# wendi cao <651645601@qq.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-14 22:29+0000\n"
 "PO-Revision-Date: 2018-12-23 17:28+0000\n"
-"Last-Translator: cdarlint <cdarling@126.com>, 2019\n"
+"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +51,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:20
 msgid "We want the extension to add the following to Sphinx:"
-msgstr ""
+msgstr "我们希望插件将以下内容添加到Sphinx中："
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:22
 msgid ""
@@ -67,25 +68,25 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:29
 msgid "For that, we will need to add the following elements to Sphinx:"
-msgstr ""
+msgstr "为此，我们需要在Sphinx中添加以下元素："
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:31
 msgid "New directives, called ``todo`` and ``todolist``."
-msgstr ""
+msgstr "新指令，称为“todo”和“todolist”。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:33
 msgid ""
 "New document tree nodes to represent these directives, conventionally also "
 "called ``todo`` and ``todolist``.  We wouldn't need new nodes if the new "
 "directives only produced some content representable by existing nodes."
-msgstr ""
+msgstr "表示这些指令的新文档树节点，通常也称为“todo”和“todolist”。如果新指令只产生一些可由现有节点表示的内容，我们就不需要新节点。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:37
 msgid ""
 "A new config value ``todo_include_todos`` (config value names should start "
 "with the extension name, in order to stay unique) that controls whether todo"
 " entries make it into the output."
-msgstr ""
+msgstr "一个新的配置值“todo”include_todos`（配置值名称应以扩展名开头，以保持唯一性），用于控制todo条目是否将其放入输出中。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:41
 msgid ""
@@ -158,6 +159,8 @@ msgid ""
 "inherits from ``Admonition`` because it should be handled like a note or "
 "warning, ``todolist`` is just a \"general\" node."
 msgstr ""
+"除了从mod:`docutils.nodes文件`. "
+"``todo``继承自``adminion``因为它应该像注释或警告那样处理，`todolist`只是一个“常规”节点。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:106
 msgid ""
@@ -166,6 +169,7 @@ msgid ""
 "<http://docutils.sourceforge.net/docs/ref/doctree.html>`__ and :ref:`Sphinx "
 "<nodes>`."
 msgstr ""
+"许多插件不必创建自己的节点类，并且可以很好地处理由`docutils提供的节点<http://docutils.sourceforge.net/docs/ref/doctree.html>`__和：ref:`Sphinx`"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:113
 msgid ""
@@ -252,11 +256,11 @@ msgstr ""
 msgid ""
 "In the last line, the nodes that should be put into the doctree are "
 "returned: the target node and the admonition node."
-msgstr ""
+msgstr "在最后一行中，将返回应该放入doctree中的节点：目标节点和警告节点。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:177
 msgid "The node structure that the directive returns looks like this::"
-msgstr ""
+msgstr "指令返回的节点结构如下所示："
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:194
 msgid "The event handlers"
@@ -286,6 +290,9 @@ msgid ""
 "one from the ``todo_all_todos`` list.  If there are todos left in the "
 "document, they will be added again during parsing."
 msgstr ""
+"由于我们将源文件中的信息存储在环境中，这是持久的，所以当源文件更改时，它可能会过期。因此，在读取每个源文件之前，环境中对它的记录都会被清除，并且：event:`env"
+" purge "
+"doc`事件为扩展提供了执行相同操作的机会。在这里，我们从“todo”列表中清除docname与给定todo匹配的todo。如果文档中还剩下todo，则在解析期间将再次添加它们。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:216
 msgid ""
@@ -340,6 +347,7 @@ msgid ""
 "the new *config value* ``todo_include_todos``, whose default value should be"
 " ``False`` (this also tells Sphinx that it is a boolean value)."
 msgstr ""
+"：方法：`~Sphinx.add_config_值`让Sphinx知道它应该识别新的*config值*``todo_include_todos```，它的默认值应该是`False`（这也告诉Sphinx它是一个布尔值）。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:269
 msgid ""
@@ -361,7 +369,7 @@ msgstr ""
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
-msgstr ""
+msgstr "：方法：`~Sphinx.add_指令`添加一个由名称和类给定的新*指令*。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:281
 msgid ""
@@ -369,6 +377,8 @@ msgid ""
 "name is given by the first argument.  The event handler function is called "
 "with several arguments which are documented with the event."
 msgstr ""
+"最后，：meth:`~Sphinx.connect`将*event "
+"handler*添加到由第一个参数指定名称的事件。调用事件处理程序函数时使用了多个随事件一起记录的参数。"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:285
 msgid "With this, our extension is complete."

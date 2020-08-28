@@ -57,12 +57,13 @@ msgid ""
 "well as tables of contents.  The ``toctree`` directive is the central "
 "element."
 msgstr ""
+"由于reST不具备将多个文档互连或将文档拆分为多个输出文件的功能，Sphinx使用一个自定义指令来添加构成文档的单个文件以及目录之间的关系。“toctree”指令是中心元素。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:34
 msgid ""
 "Simple \"inclusion\" of one file in another can be done with the "
 ":dudir:`include` directive."
-msgstr ""
+msgstr "可以使用：dudir:`include`指令简单地将一个文件“包含”到另一个文件中。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:39
 msgid ""
@@ -80,6 +81,7 @@ msgid ""
 "given to indicate the depth of the tree; by default, all levels are "
 "included. [#]_"
 msgstr ""
+"本指令在当前位置插入一个“目录树”，使用指令正文中给出的文件的单个目录（包括“子目录树”）。相对文档名（不是以斜杠开头）相对于指令所在的文档，绝对名称相对于源目录。可以提供一个数字的“maxdepth”选项来指示树的深度；默认情况下，包括所有级别。[#]_"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:51
 msgid ""
@@ -94,18 +96,18 @@ msgstr ""
 msgid ""
 "Consider this example (taken from the Python docs' library reference "
 "index)::"
-msgstr ""
+msgstr "考虑以下示例（取自Python文档的库引用索引）：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:68
 msgid "This accomplishes two things:"
-msgstr ""
+msgstr "这可以完成两件事："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:70
 msgid ""
 "Tables of contents from all those documents are inserted, with a maximum "
 "depth of two, that means one nested heading.  ``toctree`` directives in "
 "those documents are also taken into account."
-msgstr ""
+msgstr "将插入所有这些文档的目录，最大深度为2，即一个嵌套标题。``这些文档中的指令也被考虑在内。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:73
 msgid ""
@@ -114,10 +116,11 @@ msgid ""
 "library index.  From this information it generates \"next chapter\", "
 "\"previous chapter\" and \"parent chapter\" links."
 msgstr ""
+"Sphinx知道文档“intro”、“strings”等的相对顺序，并且知道它们是所显示文档的子级，即库索引。根据这些信息，它生成“下一章”、“上一章”和“父章”链接。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:78
 msgid "**Entries**"
-msgstr ""
+msgstr "**条目**"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:80
 msgid ""
@@ -127,46 +130,48 @@ msgid ""
 "hyperlinks (and Sphinx's :ref:`cross-referencing syntax <xref-syntax>`). "
 "This looks like::"
 msgstr ""
+"文档标题：rst:方向将自动从引用文档的标题中读取`toctree'。如果这不是您想要的，您可以使用与reST超链接类似的语法指定一个显式的标题和目标（以及Sphinx的：ref"
+":`cross-referencementsyntax 1`）。这看起来像："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:92
 msgid ""
 "The second line above will link to the ``strings`` document, but will use "
 "the title \"All about strings\" instead of the title of the ``strings`` "
 "document."
-msgstr ""
+msgstr "上面的第二行将链接到“strings”文档，但将使用标题“All about strings”而不是“strings”文档的标题。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:95
 msgid ""
 "You can also add external links, by giving an HTTP URL instead of a document"
 " name."
-msgstr ""
+msgstr "您还可以通过提供HTTP URL而不是文档名来添加外部链接。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:98
 msgid "**Section numbering**"
-msgstr ""
+msgstr "**章节编号**"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:100
 msgid ""
 "If you want to have section numbers even in HTML output, give the "
 "**toplevel** toctree a ``numbered`` option.  For example::"
-msgstr ""
+msgstr "如果您想在HTML输出中包含节号，请给**toplevel**目录树一个“numbered`”选项。例如：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:109
 msgid ""
 "Numbering then starts at the heading of ``foo``.  Sub-toctrees are "
 "automatically numbered (don't give the ``numbered`` flag to those)."
-msgstr ""
+msgstr "然后从“foo”的标题开始编号。子目录树是自动编号的（不要给那些子目录树加上“编号”标志）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:112
 msgid ""
 "Numbering up to a specific depth is also possible, by giving the depth as a "
 "numeric argument to ``numbered``."
-msgstr ""
+msgstr "通过将深度作为“numbered”的数字参数，也可以对特定深度进行编号。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:115
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:606
 msgid "**Additional options**"
-msgstr ""
+msgstr "**额外选项**"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:117
 msgid ""
@@ -179,7 +184,7 @@ msgstr ""
 msgid ""
 "If you want only the titles of documents in the tree to show up, not other "
 "headings of the same level, you can use the ``titlesonly`` option::"
-msgstr ""
+msgstr "如果只想显示树中文档的标题，而不显示同级别的其他标题，可以使用“titlesonly”选项："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:136
 msgid ""
@@ -187,31 +192,32 @@ msgid ""
 "option.  All entries are then matched against the list of available "
 "documents, and matches are inserted into the list alphabetically.  Example::"
 msgstr ""
+"您可以在toctree指令中使用“globbing”，方法是提供“glob”标志选项。然后将所有条目与可用文档列表进行匹配，并按字母顺序将匹配项插入到列表中。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:147
 msgid ""
 "This includes first all documents whose names start with ``intro``, then all"
 " documents in the ``recipe`` folder, then all remaining documents (except "
 "the one containing the directive, of course.) [#]_"
-msgstr ""
+msgstr "这首先包括名称以“intro”开头的所有文档，然后是“recipe”文件夹中的所有文档，然后是所有剩余的文档（当然，除了包含指令的文档）_"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:151
 msgid ""
 "The special entry name ``self`` stands for the document containing the "
 "toctree directive.  This is useful if you want to generate a \"sitemap\" "
 "from the toctree."
-msgstr ""
+msgstr "特殊条目名“self”表示包含toctree指令的文档。如果要从目录树生成“站点地图”，这很有用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:155
 msgid ""
 "You can use the ``reversed`` flag option to reverse the order of the entries"
 " in the list. This can be useful when using the ``glob`` flag option to "
 "reverse the ordering of the files.  Example::"
-msgstr ""
+msgstr "您可以使用“reversed”标志选项来反转列表中条目的顺序。当使用“glob”标志选项反转文件顺序时，这很有用。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:165
 msgid "You can also give a \"hidden\" option to the directive, like this::"
-msgstr ""
+msgstr "您还可以为该指令提供一个“隐藏”选项，如下所示："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:173
 msgid ""
@@ -220,17 +226,18 @@ msgid ""
 " if you intend to insert these links yourself, in a different style, or in "
 "the HTML sidebar."
 msgstr ""
+"这仍然会通知Sphinx文档层次结构，但不会在指令所在的位置向文档中插入链接——如果您打算自己以不同的样式或在HTML侧边栏中插入这些链接，这是有意义的。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:178
 msgid ""
 "In cases where you want to have only one top-level toctree and hide all "
 "other lower level toctrees you can add the \"includehidden\" option to the "
 "top-level toctree entry::"
-msgstr ""
+msgstr "如果您希望只有一个顶级目录树并隐藏所有其他较低级别目录树，则可以将“includehidden”选项添加到顶层目录树条目中："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:188
 msgid "All other toctree entries can then be eliminated by the \"hidden\" option."
-msgstr ""
+msgstr "所有其他的toctree条目可以通过“hidden”选项消除。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:190
 msgid ""
@@ -239,6 +246,8 @@ msgid ""
 " warning if it finds a file that is not included, because that means that "
 "this file will not be reachable through standard navigation."
 msgstr ""
+"最后，：term:`source "
+"directory`（或子目录）中的所有文档都必须出现在某个“toctree”指令中；如果Sphinx发现未包含的文件，则会发出警告，因为这意味着无法通过标准导航访问该文件。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:195
 msgid ""
@@ -247,6 +256,8 @@ msgid ""
 "<metadata>` to let a document be built, but notify Sphinx that it is not "
 "reachable via a toctree."
 msgstr ""
+"使用：confval:`exclude_patterns`显式地从生成中排除文档或目录。使用：ref:`the“orphan”metadata "
+"1`来构建文档，但通知Sphinx不能通过toctree访问它。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:200
 msgid ""
@@ -254,56 +265,57 @@ msgid ""
 "of the TOC tree hierarchy.  It can be used as the documentation's main page,"
 " or as a \"full table of contents\" if you don't give a ``maxdepth`` option."
 msgstr ""
+"“主控文档”（选择者：confval:`master_doc`）是目录树层次结构的“根”。如果你不能把它作为一个完整的页面，你就不能把它作为一个页面。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:204
 msgid "Added \"globbing\" option."
-msgstr ""
+msgstr "添加“globbing”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:207
 msgid ""
 "Added \"numbered\" and \"hidden\" options as well as external links and "
 "support for \"self\" references."
-msgstr ""
+msgstr "添加了“编号”和“隐藏”选项以及外部链接和对“自我”引用的支持。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:211
 msgid "Added \"titlesonly\" option."
-msgstr ""
+msgstr "添加“titlesonly”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:214
 msgid "Added numeric argument to \"numbered\"."
-msgstr ""
+msgstr "在“numbered”中添加了数字参数。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:217
 msgid "Added \"includehidden\" option."
-msgstr ""
+msgstr "增加了“includehidden”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:220
 msgid "Added \"caption\" and \"name\" option."
-msgstr ""
+msgstr "增加了“标题”和“名称”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:224
 msgid "Special names"
-msgstr ""
+msgstr "特殊的名称"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:226
 msgid ""
 "Sphinx reserves some document names for its own use; you should not try to "
 "create documents with these names -- it will cause problems."
-msgstr ""
+msgstr "Sphinx保留了一些文档名供自己使用；您不应该尝试用这些名称创建文档--这会导致问题。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:229
 msgid "The special document names (and pages generated for them) are:"
-msgstr ""
+msgstr "特殊文件名（以及为其生成的页面）为："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:231
 msgid "``genindex``, ``modindex``, ``search``"
-msgstr ""
+msgstr "``genindex``, ``modindex``, ``search``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:233
 msgid ""
 "These are used for the general index, the Python module index, and the "
 "search page, respectively."
-msgstr ""
+msgstr "它们分别用于通用索引、Python模块索引和搜索页面。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:236
 msgid ""
@@ -311,12 +323,13 @@ msgid ""
 "generating :ref:`object descriptions <basic-domain-markup>`, and from "
 ":rst:dir:`index` directives."
 msgstr ""
+"通用索引由来自模块的条目填充，所有索引生成：ref:`object descriptions 1`，以及来自：rst:方向：`index`指令。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:240
 msgid ""
 "The Python module index contains one entry per :rst:dir:`py:module` "
 "directive."
-msgstr ""
+msgstr "Python模块索引包含一个条目：rst:方向：`py:module`指令。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:243
 msgid ""
@@ -324,10 +337,11 @@ msgid ""
 "and JavaScript to full-text search the generated documents for search words;"
 " it should work on every major browser that supports modern JavaScript."
 msgstr ""
+"搜索页面包含一个表单，该表单使用生成的JSON搜索索引和JavaScript对生成的文档进行全文搜索，以查找搜索词；它应该适用于支持现代JavaScript的所有主要浏览器。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:247
 msgid "every name beginning with ``_``"
-msgstr ""
+msgstr "每个名字都以``_``开头"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:249
 msgid ""
@@ -340,23 +354,23 @@ msgstr ""
 msgid ""
 "Be careful with unusual characters in filenames.  Some formats may interpret"
 " these characters in unexpected ways:"
-msgstr ""
+msgstr "注意文件名中的不寻常字符。某些格式可能会以意想不到的方式解释这些字符："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:258
 msgid ""
 "Do not use the colon ``:`` for HTML based formats.  Links to other parts may"
 " not work."
-msgstr ""
+msgstr "对于基于HTML的格式，不要使用冒号“`：`”。链接到其他部分可能不起作用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:261
 msgid ""
 "Do not use the plus ``+`` for the ePub format.  Some resources may not be "
 "found."
-msgstr ""
+msgstr "不要在ePub格式中使用加号“+”。可能找不到某些资源。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:266
 msgid "Paragraph-level markup"
-msgstr ""
+msgstr "段落级标记"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:271
 msgid ""
@@ -370,7 +384,7 @@ msgid ""
 "be aware of when using whatever bit of API the note pertains to.  The "
 "content of the directive should be written in complete sentences and include"
 " all appropriate punctuation."
-msgstr ""
+msgstr "关于接口的一个特别重要的信息，用户在使用该注释所涉及的任何接口位时都应该知道。指令的内容应以完整的句子书写，并包括所有适当的标点符号。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:281
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:304
@@ -388,6 +402,7 @@ msgid ""
 " all appropriate punctuation. This differs from :rst:dir:`note` in that it "
 "is recommended over :rst:dir:`note` for information regarding security."
 msgstr ""
+"关于接口的重要信息，用户在使用与警告相关的任何接口位时都应该非常清楚。指令的内容应以完整的句子书写，并包括所有适当的标点符号。这不同于：rst:方向：`note`因为它的建议超过：rst:方向：`note`获取有关安全性的信息。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:297
 msgid ""
@@ -395,66 +410,66 @@ msgid ""
 "described feature to the library or C API. When this applies to an entire "
 "module, it should be placed at the top of the module section before any "
 "prose."
-msgstr ""
+msgstr "该指令记录了将所描述的特性添加到库或capi的项目的版本。当这适用于整个模块时，它应该放在模块部分的顶部，然后放在任何散文之前。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:301
 msgid ""
 "The first argument must be given and is the version in question; you can add"
 " a second argument consisting of a *brief* explanation of the change."
-msgstr ""
+msgstr "必须给出第一个参数，并且是有问题的版本；您可以添加第二个参数，其中包含对更改的*简要*解释。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:309
 msgid ""
 "Note that there must be no blank line between the directive head and the "
 "explanation; this is to make these blocks visually continuous in the markup."
-msgstr ""
+msgstr "注意，指令头和解释之间不能有空行；这是为了使这些块在标记中视觉上连续。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:314
 msgid ""
 "Similar to :rst:dir:`versionadded`, but describes when and what changed in "
 "the named feature in some way (new parameters, changed side effects, etc.)."
-msgstr ""
+msgstr "类似：rst:方向：`versionadded`，但描述了命名功能在某些方面发生了什么变化（新参数、更改的副作用等）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:319
 msgid ""
 "Similar to :rst:dir:`versionchanged`, but describes when the feature was "
 "deprecated.  An explanation can also be given, for example to inform the "
 "reader what should be used instead.  Example::"
-msgstr ""
+msgstr "类似：rst:方向：`versionchanged`，但描述该功能何时被弃用。也可以给出解释，例如告诉读者应该用什么代替。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:328
 msgid ""
 "Many sections include a list of references to module documentation or "
 "external documents.  These lists are created using the :rst:dir:`seealso` "
 "directive."
-msgstr ""
+msgstr "许多部分包括对模块文档或外部文档的引用列表。这些列表是使用以下方法创建的：rst:方向：`seealso`指令。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:332
 msgid ""
 "The :rst:dir:`seealso` directive is typically placed in a section just "
 "before any subsections.  For the HTML output, it is shown boxed off from the"
 " main flow of the text."
-msgstr ""
+msgstr "这个：rst:方向：`seealso`指令通常放在节中任何子节之前。对于HTML输出，它显示在文本的主流之外。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:336
 msgid ""
 "The content of the :rst:dir:`seealso` directive should be a reST definition "
 "list. Example::"
-msgstr ""
+msgstr "内容包括：rst:方向：`seealso`指令应为reST定义列表。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:347
 msgid "There's also a \"short form\" allowed that looks like this::"
-msgstr ""
+msgstr "还有一个“短格式”可以这样写："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:351
 msgid "The short form."
-msgstr ""
+msgstr "短格式。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:356
 msgid ""
 "This directive creates a paragraph heading that is not used to create a "
 "table of contents node."
-msgstr ""
+msgstr "此指令创建一个段落标题，不用于创建目录节点。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:361
 msgid ""
@@ -463,36 +478,37 @@ msgid ""
 " to only contain footnote definitions and therefore would create an empty "
 "heading."
 msgstr ""
+"如果评估准则的*标题*是“脚注”（或所选语言的等价物），则LaTeX编写器将忽略此评估准则，因为它假定仅包含脚注定义，因此会创建一个空标题。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:368
 msgid ""
 "This directive creates a centered boldfaced line of text.  Use it as "
 "follows::"
-msgstr ""
+msgstr "此指令创建一个中心黑体文本行。使用方法如下："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:373
 msgid ""
 "This presentation-only directive is a legacy from older versions.  Use a "
 ":rst:dir:`rst-class` directive instead and add an appropriate style."
-msgstr ""
+msgstr "此“仅演示文稿”指令是旧版本的遗留指令。使用：rst:方向改为：`rst class`指令，并添加适当的样式。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:379
 msgid ""
 "This directive must contain a bullet list.  It will transform it into a more"
 " compact list by either distributing more than one item horizontally, or "
 "reducing spacing between items, depending on the builder."
-msgstr ""
+msgstr "此指令必须包含项目符号列表。它将通过水平分布多个项目或减少项目之间的间距（取决于构建器）将其转换为一个更紧凑的列表。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:383
 msgid ""
 "For builders that support the horizontal distribution, there is a "
 "``columns`` option that specifies the number of columns; it defaults to 2.  "
 "Example::"
-msgstr ""
+msgstr "对于支持水平分布的构建器，有一个用于指定列数的“columns”选项；它默认为2。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:401
 msgid "Showing code examples"
-msgstr ""
+msgstr "显示代码示例"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:406
 msgid ""
@@ -527,7 +543,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:430
 msgid "``none`` (no highlighting)"
-msgstr ""
+msgstr "``无```（不突出显示）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:431
 msgid ""
@@ -540,7 +556,7 @@ msgstr ""
 msgid ""
 "``guess`` (let Pygments guess the lexer based on contents, only works with "
 "certain well-recognizable languages)"
-msgstr ""
+msgstr "``guess``（让Pygments根据内容猜测lexer，只适用于某些可识别的语言）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:436
 msgid "``python``"
@@ -548,11 +564,11 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:437
 msgid "``rest``"
-msgstr ""
+msgstr "``rest``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:438
 msgid "``c``"
-msgstr ""
+msgstr "``c``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:439
 msgid "... and any other `lexer alias that Pygments supports`__"
@@ -562,7 +578,7 @@ msgstr ""
 msgid ""
 "If highlighting with the selected language fails (i.e. Pygments emits an "
 "\"Error\" token), the block is not highlighted in any way."
-msgstr ""
+msgstr "如果使用所选语言高亮显示失败（即Pygments发出“错误”标记），则块不会以任何方式高亮显示。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:446
 msgid ""
@@ -630,7 +646,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:543
 msgid "LaTeX supports the ``emphasize-lines`` option."
-msgstr ""
+msgstr "LaTeX支持“强调线”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:556
 msgid "Set a caption to the code block."
@@ -660,7 +676,7 @@ msgid ""
 "The file name is usually relative to the current file's path.  However, if "
 "it is absolute (starting with ``/``), it is relative to the top source "
 "directory."
-msgstr ""
+msgstr "文件名通常相对于当前文件的路径。但是，如果它是绝对的（以`/``开头），则它是相对于顶级源目录的。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:608
 msgid ""
@@ -679,7 +695,7 @@ msgstr ""
 msgid ""
 "Tabs in the input are expanded if you give a ``tab-width`` option with the "
 "desired tab width."
-msgstr ""
+msgstr "如果给“tab width”选项指定所需的制表符宽度，则输入中的制表符将展开。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:626
 msgid ""
@@ -687,29 +703,30 @@ msgid ""
 "If the file has a different encoding, you can specify it with the "
 "``encoding`` option::"
 msgstr ""
+"假定Include文件编码在：confval:`source_encoding`。如果文件具有不同的编码，可以使用“encoding”选项指定："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:633
 msgid ""
 "The directive also supports including only parts of the file.  If it is a "
 "Python module, you can select a class, function or method to include using "
 "the ``pyobject`` option::"
-msgstr ""
+msgstr "该指令还支持仅包含文件的部分内容。如果是Python模块，可以使用“pyobject”选项选择要包含的类、函数或方法："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:640
 msgid ""
 "This would only include the code lines belonging to the ``start()`` method "
 "in the ``Timer`` class within the file."
-msgstr ""
+msgstr "这将只包括属于文件中“Timer”类中的“start（）`”方法的代码行。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:643
 msgid ""
 "Alternately, you can specify exactly which lines to include by giving a "
 "``lines`` option::"
-msgstr ""
+msgstr "或者，您可以通过提供“lines”选项来指定要包含的行："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:649
 msgid "This includes the lines 1, 3, 5 to 10 and lines 20 to the last line."
-msgstr ""
+msgstr "这包括第1、3、5到10行和最后一行的第20行。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:651
 msgid ""
@@ -750,7 +767,7 @@ msgid ""
 "When lines have been selected in any of the ways described above, the line "
 "numbers in ``emphasize-lines`` refer to those selected lines, counted "
 "consecutively starting at ``1``."
-msgstr ""
+msgstr "当以上述任何一种方式选择行时，“强调行”中的行号是指从“1”开始连续计数的选定行。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:701
 msgid ""
@@ -759,6 +776,8 @@ msgid ""
 "match`` option, which is however allowed only when the selection consists of"
 " contiguous lines."
 msgstr ""
+"指定要显示的文件的特定部分时，显示原始行号可能很有用。这可以使用“lineno "
+"match”选项来完成，但是只有当所选内容包含连续的行时，才允许使用该选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:706
 msgid ""
@@ -766,12 +785,13 @@ msgid ""
 "``prepend`` and ``append`` option, respectively.  This is useful e.g. for "
 "highlighting PHP code that doesn't include the ``<?php``/``?>`` markers."
 msgstr ""
+"您可以分别使用“prepend”和“append”选项在包含的代码前面加上和/或追加一行。这对于突出显示不包含“`<”的PHP代码非常有用？php``/``？>``标记。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:710
 msgid ""
 "If you want to show the diff of the code, you can specify the old file by "
 "giving a ``diff`` option::"
-msgstr ""
+msgstr "如果要显示代码的差异，可以通过提供“diff”选项指定旧文件："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:716
 msgid ""
@@ -811,7 +831,7 @@ msgstr ""
 msgid ""
 "With both ``start-after`` and ``lines`` in use, the first line as per "
 "``start-after`` is considered to be with line number ``1`` for ``lines``."
-msgstr ""
+msgstr "当“start after”和“lines”同时使用时，根据“start after”的第一行被认为是“lines”的行号“1”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:742
 msgid "Added the ``force`` option."
@@ -833,18 +853,18 @@ msgid ""
 "In contrast to regular definition lists, *multiple* terms per entry are "
 "allowed, and inline markup is allowed in terms.  You can link to all of the "
 "terms.  For example::"
-msgstr ""
+msgstr "与常规定义列表不同，每个条目允许*多个*术语，术语中允许使用内联标记。你可以链接到所有的术语。例如：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:778
 msgid ""
 "(When the glossary is sorted, the first term determines the sort order.)"
-msgstr ""
+msgstr "（词汇表排序时，第一个术语决定排序顺序。）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:780
 msgid ""
 "If you want to specify \"grouping key\" for general index entries, you can "
 "put a \"key\" as \"term : key\". For example::"
-msgstr ""
+msgstr "如果要为一般索引项指定“分组键”，可以将“key”作为“term:key”。例如：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:789
 msgid ""
@@ -853,6 +873,7 @@ msgid ""
 "characters in \"key\" is used instead of a first character; it is used for "
 "\"Combining Character Sequence\" and \"Surrogate Pairs\" grouping key."
 msgstr ""
+"注意，“key”用于按原样分组键。“key”没有被规范化；key“A”和“A”成为不同的组。使用“key”中的整个字符而不是第一个字符；它用于“组合字符序列”和“代理项对”分组键。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:794
 msgid ""
@@ -860,24 +881,26 @@ msgid ""
 " text only have \"term\" part. In this case, translated \"localized term\" "
 "will be categorized in \"key\" group."
 msgstr ""
+"在i18n的情况下，即使原始文本只有“term”部分，也可以指定“localized "
+"term:key”。在这种情况下，翻译后的“本地化术语”将归入“关键”组。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:798
 msgid ""
 "You can now give the glossary directive a ``:sorted:`` flag that will "
 "automatically sort the entries alphabetically."
-msgstr ""
+msgstr "现在可以给glossary指令一个“sorted:`”标志，它将自动按字母顺序对条目进行排序。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:802
 msgid "Now supports multiple terms and inline markup in terms."
-msgstr ""
+msgstr "现在支持多个术语和内联标记。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:805
 msgid "Index key for glossary term should be considered *experimental*."
-msgstr ""
+msgstr "术语表术语的索引键应该被认为是*实验性的*。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:810
 msgid "Meta-information markup"
-msgstr ""
+msgstr "元信息标记"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:814
 msgid ""
@@ -885,7 +908,7 @@ msgid ""
 "the author's name such that it can be used for presentation and email "
 "address.  The domain name portion of the address should be lower case. "
 "Example::"
-msgstr ""
+msgstr "标识当前节的作者。参数应包括作者的姓名，以便可以用于演示文稿和电子邮件地址。地址的域名部分应为小写。例子：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:821
 msgid ""
@@ -894,6 +917,8 @@ msgid ""
 ":confval:`show_authors` to ``True`` to make them produce a paragraph in the "
 "output."
 msgstr ""
+"默认情况下，此标记不会以任何方式反映在输出中（这有助于跟踪贡献），但您可以将配置值confval:`showüu "
+"authors`设置为`True``以使它们在输出中生成段落。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:829
 msgid ""
@@ -902,10 +927,12 @@ msgid ""
 "the author(s) of a piece of documentation.  It too only produces output if "
 "the :confval:`show_authors` configuration value is ``True``."
 msgstr ""
+"这个：rst:方向作者：`author`可以出现多个代码，就像代码的作者：rst:方向：`sectionauthor`指定文档的作者。它也只在：confval:`show\\'u"
+" authors'配置值为“True”时生成输出。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:836
 msgid "Index-generating markup"
-msgstr ""
+msgstr "索引生成标记"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:838
 msgid ""
@@ -919,13 +946,13 @@ msgid ""
 "However, there is also explicit markup available, to make the index more "
 "comprehensive and enable index entries in documents where information is not"
 " mainly contained in information units, such as the language reference."
-msgstr ""
+msgstr "但是，也可以使用显式标记，使索引更全面，并使索引条目能够在信息单元（如语言引用）中不主要包含在信息单元中的文档中。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:848
 msgid ""
 "This directive contains one or more index entries.  Each entry consists of a"
 " type and a value, separated by a colon."
-msgstr ""
+msgstr "此指令包含一个或多个索引项。每个条目由一个类型和一个值组成，用冒号分隔。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:851
 msgid "For example::"
@@ -936,43 +963,44 @@ msgid ""
 "This directive contains five entries, which will be converted to entries in "
 "the generated index which link to the exact location of the index statement "
 "(or, in case of offline media, the corresponding page number)."
-msgstr ""
+msgstr "此指令包含五个条目，这些条目将被转换为生成的索引中的条目，这些条目链接到索引语句的确切位置（或者，如果是脱机媒体，则是相应的页码）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:868
 msgid ""
 "Since index directives generate cross-reference targets at their location in"
 " the source, it makes sense to put them *before* the thing they refer to -- "
 "e.g. a heading, as in the example above."
-msgstr ""
+msgstr "由于索引指令在源代码中的位置生成交叉引用目标，所以将它们*放在它们引用的对象之前是有意义的，例如，标题，如上面的示例所示。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:872
 msgid "The possible entry types are:"
-msgstr ""
+msgstr "可能的条目类型有："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:876
 msgid "single"
-msgstr ""
+msgstr "单个的"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:875
 msgid ""
 "Creates a single index entry.  Can be made a subentry by separating the "
 "subentry text with a semicolon (this notation is also used below to describe"
 " what entries are created)."
-msgstr ""
+msgstr "创建单个索引项。可以通过用分号分隔子条目文本来创建子条目（此符号也用于描述创建的条目）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:879
 msgid "pair"
-msgstr ""
+msgstr "成对的"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:879
 msgid ""
 "``pair: loop; statement`` is a shortcut that creates two index entries, "
 "namely ``loop; statement`` and ``statement; loop``."
 msgstr ""
+"``pair:loop；statement``是创建两个索引项的快捷方式，即“loop；statement`”和“statement；loop`”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:883
 msgid "triple"
-msgstr ""
+msgstr "三倍的"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:882
 msgid ""
@@ -980,28 +1008,30 @@ msgid ""
 "index entries, which are ``module; search path``, ``search; path, module`` "
 "and ``path; module search``."
 msgstr ""
+"同样，“triple:module；search；path”是一个快捷方式，它创建三个索引项，分别是“module；search "
+"path`”、“search；path，module`”和“path；module search`”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:886
 msgid "see"
-msgstr ""
+msgstr "参阅"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:886
 msgid ""
 "``see: entry; other`` creates an index entry that refers from ``entry`` to "
 "``other``."
-msgstr ""
+msgstr "``请参见：entry；other``创建一个从`entry``到`other``的索引项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:888
 msgid "seealso"
-msgstr ""
+msgstr "另请参见"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:889
 msgid "Like ``see``, but inserts \"see also\" instead of \"see\"."
-msgstr ""
+msgstr "也可参见“插入”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:893
 msgid "module, keyword, operator, object, exception, statement, builtin"
-msgstr ""
+msgstr "模块，关键字，运算符，对象，异常，语句，内置"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:891
 msgid ""
@@ -1009,44 +1039,45 @@ msgid ""
 "creates the entries ``module; hashlib`` and ``hashlib; module``.  (These are"
 " Python-specific and therefore deprecated.)"
 msgstr ""
+"这些都创建了两个索引项。例如，“module:hashlib”创建条目“module；hashlib”和“hashlib；module”。（这些是Python特有的，因此不推荐使用）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:895
 msgid ""
 "You can mark up \"main\" index entries by prefixing them with an exclamation"
 " mark.  The references to \"main\" entries are emphasized in the generated "
 "index.  For example, if two pages contain ::"
-msgstr ""
+msgstr "您可以用感叹号作为前缀来标记“main”索引项。在生成的索引中强调了对“main”条目的引用。例如，如果两页包含："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:901
 msgid "and one page contains ::"
-msgstr ""
+msgstr "其中一页包含："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:905
 msgid ""
 "then the backlink to the latter page is emphasized among the three "
 "backlinks."
-msgstr ""
+msgstr "然后在三个反向链接中强调到后一页的反向链接。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:907
 msgid ""
 "For index directives containing only \"single\" entries, there is a "
 "shorthand notation::"
-msgstr ""
+msgstr "对于只包含“单个”项的索引指令，有一种简写的表示法："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:912
 msgid "This creates four index entries."
-msgstr ""
+msgstr "这将创建四个索引项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:914
 msgid "Added ``see`` and ``seealso`` types, as well as marking main entries."
-msgstr ""
+msgstr "添加了“see”和“seealso”类型，并标记了主条目。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:932
 msgid ""
 "While the :rst:dir:`index` directive is a block-level markup and links to "
 "the beginning of the next paragraph, there is also a corresponding role that"
 " sets the link target directly where it is used."
-msgstr ""
+msgstr "而：rst:方向：`index`指令是一个块级标记，链接到下一段的开头，还有一个相应的角色，它直接在使用它的位置设置链接目标。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:936
 msgid ""
@@ -1056,16 +1087,17 @@ msgid ""
 " case, the \"target\" part can be a full entry as described for the "
 "directive above.  For example::"
 msgstr ""
+"角色的内容可以是一个简单的短语，然后保存在文本中并用作索引项。它也可以是文本和索引项的组合，样式类似于显式的交叉引用目标。在这种情况下，“目标”部分可以是上述指令所述的完整条目。例如：："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:951
 msgid "Including content based on tags"
-msgstr ""
+msgstr "包括基于标签的内容"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:955
 msgid ""
 "Include the content of the directive only if the *expression* is true.  The "
 "expression should consist of tags, like this::"
-msgstr ""
+msgstr "仅当*表达式*为真时才包含指令的内容。表达式应该由标记组成，如下所示："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:960
 msgid ""
@@ -1074,6 +1106,8 @@ msgid ""
 "expressions, also using parentheses (like ``html and (latex or draft)``) are"
 " supported."
 msgstr ""
+"未定义的标记是错误的、已定义的标记（通过`-t``命令行选项或在：file:`配置文件`，请参见：ref:`here "
+"1`）为真。支持布尔表达式，也使用括号（如“html和（latex或draft）”）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:965
 msgid ""
@@ -1083,12 +1117,14 @@ msgid ""
 "and ``builder_``, e.g. the epub builder defines the tags  ``html``, "
 "``epub``, ``format_html`` and ``builder_epub``."
 msgstr ""
+"当前生成器的*format*和*name*（`html``、`latex``或``text```）始终设置为标记[#]\\。为了明确区分格式和名称，还添加了前缀“format”和“builder”，例如epub"
+" builder定义了标记“html”、“epub”、“format”和“builder”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:971
 msgid ""
 "These standard tags are set *after* the configuration file is read, so they "
 "are not available there."
-msgstr ""
+msgstr "这些标准标记是在读取配置文件之后设置的，因此它们在那里不可用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:974
 msgid ""
@@ -1103,50 +1139,50 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:983
 msgid "Added the name of the builder and the prefixes."
-msgstr ""
+msgstr "添加了生成器的名称和前缀。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:988
 msgid ""
 "This directive is designed to control only content of document.  It could "
 "not control sections, labels and so on."
-msgstr ""
+msgstr "本指令仅用于控制文件的内容。它不能控制分区、标签等。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:994
 msgid "Tables"
-msgstr ""
+msgstr "表格"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:996
 msgid "Use :ref:`reStructuredText tables <rst-tables>`, i.e. either"
-msgstr ""
+msgstr "使用：ref:`reStructuredText tables 1'"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:998
 msgid "grid table syntax (:duref:`ref <grid-tables>`),"
-msgstr ""
+msgstr "网格表语法（：duref:`ref 1`），"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:999
 msgid "simple table syntax (:duref:`ref <simple-tables>`),"
-msgstr ""
+msgstr "简单表语法（：duref:`ref 1'），"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1000
 msgid ":dudir:`csv-table` syntax,"
-msgstr ""
+msgstr "：dudir:`csv table`语法，"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1001
 msgid "or :dudir:`list-table` syntax."
-msgstr ""
+msgstr "or :dudir:`list-table`语法，"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1003
 msgid ""
 "The :dudir:`table` directive serves as optional wrapper of the *grid* and "
 "*simple* syntaxes."
-msgstr ""
+msgstr "dudir:`table`指令用作*grid*和*simple*语法的可选包装器。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1006
 msgid ""
 "They work fine in HTML output, however there are some gotchas when using "
 "tables in LaTeX: the column width is hard to determine correctly "
 "automatically.  For this reason, the following directive exists:"
-msgstr ""
+msgstr "它们在HTML输出中工作得很好，但是在LaTeX中使用表时存在一些问题：很难自动正确确定列宽。因此，存在以下指令："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1012
 msgid ""
@@ -1155,56 +1191,57 @@ msgid ""
 "package's environment (which Sphinx uses to translate tables).  It can have "
 "values like ::"
 msgstr ""
+"此指令为源文件中出现的下一个表提供“列规范”。spec是LaTeX“tablary”包环境的第二个参数（Sphinx使用它来转换表）。它可以具有以下值："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1019
 msgid ""
 "which means three left-adjusted, nonbreaking columns.  For columns with "
 "longer text that should automatically be broken, use either the standard "
 "``p{width}`` construct, or tabulary's automatic specifiers:"
-msgstr ""
+msgstr "也就是说有三个左调整的非中断列。对于文本较长且应自动断开的列，请使用标准的“p{width}`”构造或表格的自动说明符："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1024
 msgid "``L``"
-msgstr ""
+msgstr "``L``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1024
 msgid "flush left column with automatic width"
-msgstr ""
+msgstr "用自动宽度刷新左栏"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1026
 msgid "``R``"
-msgstr ""
+msgstr "``R``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1026
 msgid "flush right column with automatic width"
-msgstr ""
+msgstr "用自动宽度刷新右栏"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1028
 msgid "``C``"
-msgstr ""
+msgstr "``C``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1028
 msgid "centered column with automatic width"
-msgstr ""
+msgstr "带自动宽度的居中列"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1030
 msgid "``J``"
-msgstr ""
+msgstr "``J``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1030
 msgid "justified column with automatic width"
-msgstr ""
+msgstr "带自动宽度的对齐列"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1033
 msgid ""
 "The automatic widths of the ``LRCJ`` columns are attributed by ``tabulary`` "
 "in proportion to the observed shares in a first pass where the table cells "
 "are rendered at their natural \"horizontal\" widths."
-msgstr ""
+msgstr "“LRCJ”列的自动宽度由“tablary”根据在第一个过程中观察到的份额按比例分配，其中表单元格以其自然“水平”宽度呈现。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1037
 msgid "By default, Sphinx uses a table layout with ``J`` for every column."
-msgstr ""
+msgstr "默认情况下，Sphinx对每一列使用带有“J”的表布局。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1041
 msgid ""
@@ -1212,6 +1249,7 @@ msgid ""
 "handled, thanks to custom Sphinx LaTeX macros. This novel situation "
 "motivated the switch to ``J`` specifier and not ``L`` by default."
 msgstr ""
+"合并的单元格现在可能包含多个段落，并且由于自定义的Sphinx LaTeX宏，处理起来更好。这种新颖的情况促使切换到“J”说明符，而不是默认的“L”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1048
 msgid ""
@@ -1219,6 +1257,7 @@ msgid ""
 "To revert to previous default, insert ``\\newcolumntype{T}{L}`` in the LaTeX"
 " preamble (see :confval:`latex_elements`)."
 msgstr ""
+"Sphinx实际上使用了“T”说明符，它完成了“`\\newcolumntype{T}{J}`”。要恢复到以前的默认值，请在LaTeX前导码中插入“\\newcolumntype{T}{L}`”（请参见：confval:`LaTeX_elements`）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1052
 msgid ""
@@ -1227,6 +1266,7 @@ msgid ""
 "``\\tymin``. You may set it globally in the LaTeX preamble via "
 "``\\setlength{\\tymin}{40pt}`` for example."
 msgstr ""
+"表格的一个常见问题是内容很少的列被“压缩”。最小列宽是一个名为“\\tymin”的表格参数。例如，您可以通过`\\setlength{\\tymin}{40pt}`在LaTeX前导码中全局设置它。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1057
 msgid ""
@@ -1235,13 +1275,14 @@ msgid ""
 "but this makes the task of setting column widths more difficult if some "
 "merged cell intersects that column."
 msgstr ""
+"否则，请使用：rst:方向：`tablarColumns`指令，该列的显式“p{40pt}``”（例如）。也可以使用“l”说明符，但如果某个合并单元格与该列相交，则设置列宽的任务将更加困难。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1064
 msgid ""
 "Tables with more than 30 rows are rendered using ``longtable``, not "
 "``tabulary``, in order to allow pagebreaks. The ``L``, ``R``, ... specifiers"
 " do not work for these tables."
-msgstr ""
+msgstr "超过30行的表使用“longtable”而不是“tablary”来呈现，以便允许分页。“L”、“R”。。。说明符不适用于这些表。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1068
 msgid ""
@@ -1262,6 +1303,7 @@ msgid ""
 "columns, hence Sphinx generates such column specs for tables containing "
 "literal blocks."
 msgstr ""
+"文本块根本不与“tablary”一起使用，因此包含文本块的表总是用“tablar”设置的。用于文本块的逐字环境只在“p{width}`”（和“`\\X`”或“`\\Y`”）列中工作，因此Sphinx为包含文本块的表生成这样的列规范。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1082
 msgid ""
@@ -1271,6 +1313,7 @@ msgid ""
 ":rst:dir:`tabularcolumns` (it is not a problem if some LaTeX macro is also "
 "called ``\\X``.)"
 msgstr ""
+"从sphinx1.5开始，就使用了`\\X{a}{b}`说明符（说明符字母中*有一个反斜杠）。它类似于“p{width}`”，其宽度设置为当前行宽度的小数点“a/b”。您可以将其用于：rst:方向：`tablarColumns`（如果某些LaTeX宏也被称为“`\\X``”，这不是问题。）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1088
 msgid ""
@@ -1280,24 +1323,26 @@ msgid ""
 " occupy 80% of the line width, the first of its three columns having the "
 "same width as the sum  of the next two."
 msgstr ""
+"“b”不是*列的总数，也不是“`\\X`”说明符的分数之和等于1。例如，``` |\\X{2}{5}|\\X{1}{5}{124;\\ "
+"X{1}{5}}``是合法的，表将占据80%的行宽，其三列中的前一列的宽度与后两列的和相同。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1094
 msgid ""
 "This is used by the ``:widths:`` option of the :dudir:`table` directive."
-msgstr ""
+msgstr "这由：dudir:`table`指令的`:widths:``选项使用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1096
 msgid ""
 "Since Sphinx 1.6, there is also the ``\\Y{f}`` specifier which admits a "
 "decimal argument, such has ``\\Y{0.15}``: this would have the same effect as"
 " ``\\X{3}{20}``."
-msgstr ""
+msgstr "从sphinx1.6开始，还有一个允许十进制参数的`\\Y{f}`说明符，比如`\\Y{0.15}``：这与`\\X{3}{20}``具有相同的效果。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1102
 msgid ""
 "Merged cells from complex grid tables (either multi-row, multi-column, or "
 "both) now allow blockquotes, lists, literal blocks, ... as do regular cells."
-msgstr ""
+msgstr "来自复杂网格表（多行、多列或两者）的合并单元格现在允许使用块引号、列表、文本块。。。就像普通细胞一样。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1106
 msgid ""
@@ -1310,10 +1355,11 @@ msgid ""
 ":rst:dir:`tabularcolumns` conflicts with ``:widths:`` option of table "
 "directives.  If both are specified, ``:widths:`` option will be ignored."
 msgstr ""
+":rst:方向：`tablerColumns`与table指令的`:widths:``选项冲突。如果同时指定了这两个选项，`:widths:``选项将被忽略。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1116
 msgid "Math"
-msgstr ""
+msgstr "数学"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1118
 msgid ""
@@ -1398,7 +1444,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1187
 msgid "Grammar production displays"
-msgstr ""
+msgstr "语法生成显示"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1189
 msgid ""
@@ -1409,6 +1455,7 @@ msgid ""
 "rendered as hyperlinks to the definition of the symbol.  There is this "
 "directive:"
 msgstr ""
+"特殊标记可用于显示形式语法的结果。标记很简单，并不试图对BNF的所有方面（或任何派生形式）进行建模，但提供了足够的内容，允许上下文无关的语法以某种方式显示，从而使符号的使用呈现为符号定义的超链接。有这样的指令："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1197
 msgid ""
@@ -1418,6 +1465,7 @@ msgid ""
 "continuation line must begin with a colon placed at the same column as in "
 "the first line."
 msgstr ""
+"此指令用于封闭一组产品。每个产品在一行中给出，由一个名称组成，名称由冒号与以下定义分隔。如果定义跨越多行，则每个连续行必须以冒号开头，冒号放在第一行的同一列。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1203
 msgid ""
@@ -1430,7 +1478,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1208
 msgid ""
 "Blank lines are not allowed within ``productionlist`` directive arguments."
-msgstr ""
+msgstr "``productionlist``指令参数中不允许有空行。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1210
 msgid ""
@@ -1450,11 +1498,11 @@ msgstr ""
 msgid ""
 "Note that no further reST parsing is done in the production, so that you "
 "don't have to escape ``*`` or ``|`` characters."
-msgstr ""
+msgstr "请注意，在生产环境中不再执行reST解析，因此您不必转义`*``或` |``字符。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1225
 msgid "The following is an example taken from the Python Reference Manual::"
-msgstr ""
+msgstr "以下是摘自《Python参考手册》的示例："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1238
 msgid "Footnotes"
@@ -1464,7 +1512,7 @@ msgstr "脚注"
 msgid ""
 "The LaTeX writer only refers the ``maxdepth`` option of first toctree "
 "directive in the document."
-msgstr ""
+msgstr "LaTeX编写器只引用文档中第一个toctree指令的“maxdepth”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1242
 msgid ""
@@ -1473,22 +1521,23 @@ msgid ""
 "these all don't match slashes.  A double star ``**`` can be used to match "
 "any sequence of characters *including* slashes."
 msgstr ""
+"关于可用的globbing语法的一点说明：您可以使用标准的shell结构``*``，``？``、`[…]``和`[！。。。]``这些都不匹配斜杠。双星“**”可用于匹配任何字符序列*包括*斜杠。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1247
 msgid ""
 "There is a standard ``.. include`` directive, but it raises errors if the "
 "file is not found.  This one only emits a warning."
-msgstr ""
+msgstr "有一个标准`..include``指令，但如果找不到该文件，则会引发错误。这只会发出警告。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1250
 msgid ""
 "For most builders name and format are the same. At the moment only builders "
 "derived from the html builder distinguish between the builder format and the"
 " builder name."
-msgstr ""
+msgstr "对于大多数构建器，名称和格式都是相同的。目前，只有从html构建器派生的构建器才能区分构建器格式和构建器名称。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1254
 msgid ""
 "Note that the current builder tag is not available in ``conf.py``, it is "
 "only available after the builder is initialized."
-msgstr ""
+msgstr "请注意，当前的生成器标记在中不可用``conf.py``，它仅在初始化生成器后可用。"

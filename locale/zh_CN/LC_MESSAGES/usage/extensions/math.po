@@ -23,13 +23,13 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/math.rst:6
 msgid "Math support for HTML outputs in Sphinx"
-msgstr ""
+msgstr "Sphinx中HTML输出的数学支持"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:14
 msgid ""
 "Math support for non-HTML builders is integrated to sphinx-core. So mathbase"
 " extension is no longer needed."
-msgstr ""
+msgstr "对非HTML构建器的数学支持集成到sphinx核心中。所以不再需要mathbase扩展。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:17
 msgid ""
@@ -38,6 +38,8 @@ msgid ""
 " use the reStructuredText math :rst:dir:`directive <math>` and "
 ":rst:role:`role <math>`."
 msgstr ""
+"由于HTML在任何方面都不支持数学表示法，Sphinx为HTML文档提供了数学支持，并提供了几个扩展名。这些方法使用了RestructedText数学：rst:方向：`directive"
+" 1`和：rst:角色：`role 2`。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:22
 msgid ":mod:`sphinx.ext.imgmath` -- Render math as images"
@@ -48,13 +50,13 @@ msgid ""
 "This extension renders math via LaTeX and dvipng_ or dvisvgm_ into PNG or "
 "SVG images. This of course means that the computer where the docs are built "
 "must have both programs available."
-msgstr "这个扩展通过LaTeX和dvipng或dvisvgm将数学呈现为PNG或SVG图像。这当然意味着生成文档的计算机必须同时具有这两个程序。"
+msgstr "这个插件通过LaTeX和dvipng或dvisvgm将数学呈现为PNG或SVG图像。这当然意味着生成文档的计算机必须同时具有这两个程序。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:33
 msgid ""
 "There are various configuration values you can set to influence how the "
 "images are built:"
-msgstr ""
+msgstr "您可以设置各种配置值来影响图像的构建方式："
 
 #: ../../sphinx/doc/usage/extensions/math.rst:38
 msgid ""
@@ -63,6 +65,7 @@ msgid ""
 "on the TeX mathematical mark-up then (depending on the requested format) "
 "either `dvipng`_ or `dvisvgm`_."
 msgstr ""
+"输出图像格式。默认值为“png”。它应该是“png”或“svg”。首先对TeX数学标记执行“latex”，然后（取决于请求的格式）执行“dvipng”或“dvisvgm”来生成图像。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:45
 msgid ""
@@ -70,6 +73,7 @@ msgid ""
 "\"depth\" of the rendered math: an inline image should use this \"depth\" in"
 " a ``vertical-align`` style to get correctly aligned with surrounding text."
 msgstr ""
+"``dvipng``和``dvisvgm``都能够从LaTeX中收集渲染数学的“深度”：内联图像应该以“垂直对齐”样式使用此“深度”，以便与周围的文本正确对齐。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:49
 msgid ""
@@ -77,11 +81,13 @@ msgid ""
 "``preview-latex-style`` on Ubuntu xenial).  Therefore, the default for this "
 "option is ``False`` but it is strongly recommended to set it to ``True``."
 msgstr ""
+"此机制需要“LaTeX preview包”（在Ubuntu xenial上作为“preview LaTeX "
+"style”提供）。因此，此选项的默认值为“False”，但强烈建议将其设置为“True”。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:55
 msgid ""
 "This option can be used with the ``'svg'`` :confval:`imgmath_image_format`."
-msgstr ""
+msgstr "此选项可与“svg”一起使用：confval:`imgmath_image_format`。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:59
 msgid ""
@@ -125,6 +131,7 @@ msgid ""
 " (or a full path to it) as this Perl script reliably chooses dynamically how"
 " many latex runs are needed."
 msgstr ""
+"一些花哨的LaTeX标记（有一个例子是使用TikZ为等式添加各种装饰）需要多次运行LaTeX可执行文件。要处理此问题，请将此配置设置设置为“latexmk”（或指向它的完整路径），因为此Perl脚本可以可靠地动态选择所需的latex运行次数。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:93
 msgid ""
@@ -142,6 +149,8 @@ msgid ""
 "math fonts have rather thin glyphs which (in HTML output) often do not match"
 " well with the font for text."
 msgstr ""
+"附加的LaTeX代码放入用于翻译数学片段的LaTeX文件的序言中。默认情况下为空。例如，添加修改用于数学的字体的包，如sans-"
+"serif字体的“\\\\\\usepackage{newtxsf}”，或serif字体的“`\\\\usepackage{fouriernc}`”。实际上，默认的LaTeX数学字体具有相当薄的字形（在HTML输出中）通常与文本字体不匹配。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:108
 msgid ""
@@ -150,6 +159,7 @@ msgid ""
 "search path. This option is only used when ``imgmath_image_format`` is set "
 "to ``'png'``."
 msgstr ""
+"调用“dvipng”的命令名。默认值为“dvipng”；如果“dvipng”不在可执行搜索路径中，则可能需要将其设置为完整路径。此选项仅在“imgmath_image_format”设置为“png”时使用。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:115
 msgid ""
@@ -160,6 +170,7 @@ msgid ""
 "with a transparent background.  This option is used only when "
 "``imgmath_image_format`` is ``'png'``."
 msgstr ""
+"提供给dvipng的其他参数，如列表。默认值为“[”-gamma'、'1.5'、'-D'、'110'、'-bg'、'Transparent']``这会使图像比默认值更暗、更大（这在一定程度上补偿了默认LaTeX数学字体的粗细），并生成具有透明背景的png。此选项仅在“imgmath_image_format”为“png”时使用。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:124
 msgid ""
@@ -168,6 +179,7 @@ msgid ""
 "search path.  This option is only used when ``imgmath_image_format`` is "
 "``'svg'``."
 msgstr ""
+"调用“dvisvgm”的命令名。默认值为“dvisvgm”；如果“dvisvgm”不在可执行搜索路径中，则可能需要将其设置为完整路径。此选项仅在“imgmath_image_format”为“svg”时使用。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:131
 msgid ""
@@ -176,6 +188,8 @@ msgid ""
 "elements (cf the `dvisvgm FAQ`_). This option is used only when "
 "``imgmath_image_format`` is ``'svg'``."
 msgstr ""
+"以列表形式提供给dvisvgm的其他参数。默认值为“[”--无字体']`”，这意味着“dvisvgm”将把glyph呈现为路径元素（参见“dvisvgm"
+" FAQ`”）。此选项仅在“imgmath_image_format”为“svg”时使用。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:138
 msgid ":mod:`sphinx.ext.mathjax` -- Render math via JavaScript"
@@ -188,6 +202,8 @@ msgid ""
 "``https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-"
 "MML_HTMLorMML`` or update your configuration options for version 3."
 msgstr ""
+"版本4.0将MathJax的版本更改为版本3。您可能需要重写“mathjax_path”以``https://cdn.jsdeliver.net/npm/mathjax@2/mathjax.js?config"
+"=TeX-AMS-MML\\u HTMLorMML``或更新版本3的配置选项。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:151
 msgid ""
@@ -201,13 +217,13 @@ msgstr ""
 msgid ""
 "Because MathJax (and the necessary fonts) is very large, it is not included "
 "in Sphinx but is set to automatically include it from a third-party site."
-msgstr ""
+msgstr "因为MathJax（以及必要的字体）非常大，所以Sphinx中没有包含它，而是设置为从第三方站点自动包含它。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:160
 msgid ""
 "You should use the math :rst:dir:`directive <math>` and :rst:role:`role "
 "<math>`, not the native MathJax ``$$``, ``\\(``, etc."
-msgstr ""
+msgstr "你应该使用数学：rst:方向：`directive 1`和：rst:角色`（`$jax`，not``jax`，not``本机`。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:166
 msgid ""
@@ -223,6 +239,7 @@ msgid ""
 "including resources from a third-party site, you have to download it and set"
 " this value to a different path."
 msgstr ""
+"默认值是从“jsdeliver”内容传递网络加载JS文件的“https://”URL。有关详细信息，请参阅“MathJax入门页”。如果您希望MathJax可以脱机使用，或者不包含来自第三方站点的资源，则必须下载它并将该值设置为其他路径。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:179
 #: ../../sphinx/doc/usage/extensions/math.rst:235
@@ -260,7 +277,7 @@ msgid ""
 "The inline configuration options for mathjax.  The value is used as a "
 "parameter of ``MathJax.Hub.Config()``.  For more information, please read "
 "`Using in-line configuration options`_."
-msgstr ""
+msgstr "mathjax的内联配置选项。该值用作的参数``MathJax.Hub.Config()``. 有关详细信息，请阅读“使用联机配置选项”。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:208
 msgid "For example::"
@@ -268,7 +285,7 @@ msgstr "例如："
 
 #: ../../sphinx/doc/usage/extensions/math.rst:215
 msgid "The default is empty (not configured)."
-msgstr ""
+msgstr "默认值为空（未配置）。"
 
 #: ../../sphinx/doc/usage/extensions/math.rst:222
 msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"

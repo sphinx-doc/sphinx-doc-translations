@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Melia Lee <lixiuyu97@163.com>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-14 22:29+0000\n"
 "PO-Revision-Date: 2018-11-20 17:15+0000\n"
+"Last-Translator: Melia Lee <lixiuyu97@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +23,11 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:4
 msgid "Web Support Quick Start"
-msgstr ""
+msgstr "Web支持快速入门"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:7
 msgid "Building Documentation Data"
-msgstr ""
+msgstr "生成文档数据"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:9
 msgid ""
@@ -34,6 +38,8 @@ msgid ""
 "create an instance of the :class:`~.WebSupport` class and call its "
 ":meth:`~.WebSupport.build` method::"
 msgstr ""
+"要在应用程序中使用Web支持包，您需要生成它使用的数据。此数据包括表示文档、搜索索引和节点数据的pickle文件，这些文件用于跟踪文档中注释和其他内容的位置。您需要创建一个"
+" :class:`~.WebSupport` 类的实例并调用它的:meth:`~.WebSupport.build` 方法::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:23
 msgid ""
@@ -44,6 +50,8 @@ msgid ""
 "other directory will be called \"static\" and contains static files that "
 "should be served from \"/static\"."
 msgstr ""
+"这将从“srcdir”读取reStructuredText源，并将必要的数据放在“builddir”中。“builddir”将包含两个子目录：一个名为 "
+"“data”，其中包含显示文档，搜索文档，并向文档添加注释所需的所有数据。另一个目录称为“静态”，并包含应该从 “/static” 提供的静态文件。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:31
 msgid ""
@@ -51,16 +59,18 @@ msgid ""
 "can do so by providing the *staticdir* keyword argument when creating the "
 ":class:`~.WebSupport` object."
 msgstr ""
+"如果您希望从 “/static” 以外的路径提供静态文件，可以在创建:class:`~.WebSupport` 对象时提供*staticdir* "
+"关键字参数。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:37
 msgid "Integrating Sphinx Documents Into Your Webapp"
-msgstr ""
+msgstr "将Sphinx文档集成到您的Webapp中"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:39
 msgid ""
 "Now that the data is built, it's time to do something useful with it.  Start"
 " off by creating a :class:`~.WebSupport` object for your application::"
-msgstr ""
+msgstr "现在数据已经生成完毕，是时候做一些有用的事了。首先为您的应用程序创建一个:class:`~.WebSupport` 对象："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:47
 msgid ""
@@ -68,34 +78,35 @@ msgid ""
 "working with.  You can then call its :meth:`~.WebSupport.get_document` "
 "method to access individual documents::"
 msgstr ""
+"对于您将要使用的每组文档，您只需要其中一个。然后，您可以调用它的:meth:`~.WebSupport.get_document` 方法来访问单个文档："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:53
 msgid "This will return a dictionary containing the following items:"
-msgstr ""
+msgstr "这将返回包含以下项目的字典："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:55
 msgid "**body**: The main body of the document as HTML"
-msgstr ""
+msgstr "**body**：文档的主体为HTML"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:56
 msgid "**sidebar**: The sidebar of the document as HTML"
-msgstr ""
+msgstr "**sidebar**： 文档的侧边栏为HTML"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:57
 msgid "**relbar**: A div containing links to related documents"
-msgstr ""
+msgstr "**relbar**：包含相关文档链接的div"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:58
 msgid "**title**: The title of the document"
-msgstr ""
+msgstr "**title**：文件的标题"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:59
 msgid "**css**: Links to CSS files used by Sphinx"
-msgstr ""
+msgstr "**css**： 链接到Sphinx使用的CSS文件"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:60
 msgid "**script**: JavaScript containing comment options"
-msgstr ""
+msgstr "**script**：包含注释选项的JavaScript"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:62
 msgid ""
@@ -103,10 +114,12 @@ msgid ""
 " to integrate with your existing templating system.  An example using "
 "`Jinja2 <http://jinja.pocoo.org/>`_ is:"
 msgstr ""
+"然后可以将此dict用作模板的上下文。目标是轻松与您现有的模板系统集成。一个使用`Jinja2 "
+"<http://jinja.pocoo.org/>`的例子："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:99
 msgid "Authentication"
-msgstr ""
+msgstr "认证"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:101
 msgid ""
@@ -118,19 +131,22 @@ msgid ""
 "comments and votes.  The only caveat is that if you allow users to change "
 "their username you must update the websupport package's data::"
 msgstr ""
+"要使用某些功能（如投票），必须可以对用户进行身份验证。身份验证的详细信息留给您的应用程序处理。一旦用户通过身份验证，您就可以使用  *用户名*和 "
+"*管理员*关键字参数，将用户的详细信息传递给特定 :class:`~.WebSupport`方法。 "
+"Web支持包将存储带有注释和投票的用户名。唯一需要注意的是，如果您允许用户更改其用户名，则必须更新websupport包的数据："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:111
 msgid ""
 "*username* should be a unique string which identifies a user, and "
 "*moderator* should be a boolean representing whether the user has moderation"
 " privileges. The default value for *moderator* is ``False``."
-msgstr ""
+msgstr "*用户名*应该是标识用户的唯一字符串，而*审核人*应该是布尔值，表示用户是否具有审核权限。*审核人*的默认值为“False”。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:115
 msgid ""
 "An example `Flask <http://flask.pocoo.org/>`_ function that checks whether a"
 " user is logged in and then retrieves a document is::"
-msgstr ""
+msgstr "例如 `Flask <http://flask.pocoo.org/>`_ 函数检查用户是否登录，检索文档是： "
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:130
 msgid ""
@@ -141,6 +157,9 @@ msgid ""
 "support package will then add this data to the ``COMMENT_OPTIONS`` that are "
 "used in the template."
 msgstr ""
+"首先要注意的是 "
+"*文件名*只是请求路径。这样可以从单个视图轻松访问正确的文档。如果用户已通过身份验证，则用户名和审核状态将与文件名一起传递到:meth:`~.WebSupport.get_document`。然后，Web支持包将此数据添加到模板中使用的"
+" “COMMENT_OPTIONS”。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:138
 msgid ""
@@ -149,10 +168,12 @@ msgid ""
 "with that directory, and give the `docroot` keyword argument when creating "
 "the web support object::"
 msgstr ""
+"这仅适用于从文档根目录提供文档的情况。如果它是从另一个目录提供的，则需要在url路由前加上该目录，并在创建Web支持对象时给出 `docroot` "
+"关键字参数::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:149
 msgid "Performing Searches"
-msgstr ""
+msgstr "执行搜索"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:151
 msgid ""
@@ -163,6 +184,9 @@ msgid ""
 "method to retrieve search results. In `Flask <http://flask.pocoo.org/>`_ "
 "that would be like this::"
 msgstr ""
+"要使用Sphinx侧边栏内置的搜索表单，请创建一个函数来处理相对于文档根目录的URL'搜索'请求，用户的搜索查询将在GET参数中，键为 q。然后使用 "
+":meth:`~sphinxcontrib.websupport.WebSupport.get_search_results`方法检索搜索结果。在`Flask"
+" <http://flask.pocoo.org/>`_中就像这样："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:164
 msgid ""
@@ -171,10 +195,12 @@ msgid ""
 ":meth:`~.WebSupport.get_search_results` returns a context dict in the same "
 "format that :meth:`~.WebSupport.get_document` does."
 msgstr ""
+"请注意，我们使用相同的模板来渲染搜索结果，就像我们渲染文档一样。那是因为 :meth:`~.WebSupport.get_search_results`"
+" 返回一个上下文字典，其格式与:meth:`~.WebSupport.get_document` 相同。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:171
 msgid "Comments & Proposals"
-msgstr ""
+msgstr "注释和建议"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:173
 msgid ""
@@ -183,6 +209,8 @@ msgid ""
 "is used to add a new comment, and will call the web support method "
 ":meth:`~.WebSupport.add_comment`::"
 msgstr ""
+"现在已经完成了，此时该定义处理来自脚本的AJAX调用的函数。您将需要三个函数。第一个函数用于添加新注释，并将调用Web支持方法  "
+":meth:`~.WebSupport.add_comment`::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:190
 msgid ""
@@ -193,16 +221,19 @@ msgid ""
 "comments for a specific node, and is aptly named "
 ":meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 msgstr ""
+"您会注意到“parent_id ”和 “node_id "
+"”都随请求一起发送。如果注释直接附加到节点，则“parent_id”将为空。如果注释是另一个注释的子项，那么“node_id "
+"”将为空。然后，下一个函数处理特定节点的注释检索，并且恰当地命名为:meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:205
 msgid ""
 "The final function that is needed will call "
 ":meth:`~.WebSupport.process_vote`, and will handle user votes on comments::"
-msgstr ""
+msgstr "需要的最后一个函数将调用:meth:`~.WebSupport.process_vote`，并将处理用户对注释的投票："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:221
 msgid "Comment Moderation"
-msgstr ""
+msgstr "注释审核"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:223
 msgid ""
@@ -210,17 +241,19 @@ msgid ""
 "automatically displayed.  If you wish to have some form of moderation, you "
 "can pass the ``displayed`` keyword argument::"
 msgstr ""
+"默认情况下，将自动显示通过:meth:`~.WebSupport.add_comment` 添加的所有注释。如果你想要某种形式的审核，你可以传递 "
+"“显示”关键字参数："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:232
 msgid ""
 "You can then create a new view to handle the moderation of comments.  It "
 "will be called when a moderator decides a comment should be accepted and "
 "displayed::"
-msgstr ""
+msgstr "然后，您可以创建一个新视图来处理注释的审核。当审核人决定接受并显示评论时，将调用它："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:243
 msgid "Rejecting comments happens via comment deletion."
-msgstr ""
+msgstr "通过删除注释来拒绝注释。"
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:245
 msgid ""
@@ -228,9 +261,11 @@ msgid ""
 " is added but not displayed, you can pass callable to the "
 ":class:`~.WebSupport` class when instantiating your support object::"
 msgstr ""
+"要在添加新注释但未显示时执行自定义操作（例如通过电子邮件发送至审核人），可以在实例化支持对象时将callable传递给:class:`~.WebSupport`"
+" 类："
 
 #: ../../sphinx/doc/usage/advanced/websupport/quickstart.rst:254
 msgid ""
 "The moderation callback must take one argument, which will be the same "
 "comment dict that is returned by :meth:`add_comment`."
-msgstr ""
+msgstr "审核回调必须采用一个参数，该参数将是由:meth:`add_comment`返回的相同注释dict。"

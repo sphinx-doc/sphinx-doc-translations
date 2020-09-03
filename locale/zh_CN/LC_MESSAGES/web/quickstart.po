@@ -50,6 +50,8 @@ msgid ""
 "other directory will be called \"static\" and contains static files that "
 "should be served from \"/static\"."
 msgstr ""
+"这将从“srcdir”读取reStructuredText源，并将必要的数据放在“builddir”中。“builddir”将包含两个子目录：一个名为 "
+"“data”，其中包含显示文档，搜索文档，并向文档添加注释所需的所有数据。另一个目录称为“静态”，并包含应该从 “/static” 提供的静态文件。"
 
 #: ../../sphinx/doc/web/quickstart.rst:31
 msgid ""
@@ -104,14 +106,16 @@ msgstr "**css**： 链接到Sphinx使用的CSS文件"
 
 #: ../../sphinx/doc/web/quickstart.rst:60
 msgid "**script**: JavaScript containing comment options"
-msgstr "**script**：包含评论选项的JavaScript"
+msgstr "**script**：包含注释选项的JavaScript"
 
 #: ../../sphinx/doc/web/quickstart.rst:62
 msgid ""
 "This dict can then be used as context for templates.  The goal is to be easy"
 " to integrate with your existing templating system.  An example using "
 "`Jinja2 <http://jinja.pocoo.org/>`_ is:"
-msgstr "然后可以将此dict用作模板的上下文。目标是轻松与您现有的模板系统集成。一个使用 Jinja2 的例子："
+msgstr ""
+"然后可以将此dict用作模板的上下文。目标是轻松与您现有的模板系统集成。一个使用 `Jinja2 "
+"<http://jinja.pocoo.org/>`_的例子："
 
 #: ../../sphinx/doc/web/quickstart.rst:99
 msgid "Authentication"
@@ -128,7 +132,7 @@ msgid ""
 "their username you must update the websupport package's data::"
 msgstr ""
 "要使用某些功能（如投票），必须可以对用户进行身份验证。身份验证的详细信息留给您的应用程序处理。一旦用户通过身份验证，您就可以使用  *用户名*和 "
-"*管理员*关键字参数，将用户的详细信息传递给特定 :class:`~.WebSupport`方法。 "
+"*审核人*关键字参数，将用户的详细信息传递给特定 :class:`~.WebSupport`方法。 "
 "Web支持包将存储带有注释和投票的用户名。唯一需要注意的是，如果您允许用户更改其用户名，则必须更新websupport包的数据："
 
 #: ../../sphinx/doc/web/quickstart.rst:111
@@ -136,7 +140,7 @@ msgid ""
 "*username* should be a unique string which identifies a user, and "
 "*moderator* should be a boolean representing whether the user has moderation"
 " privileges. The default value for *moderator* is ``False``."
-msgstr "*用户名*应该是标识用户的唯一字符串，而*管理员*应该是布尔值，表示用户是否具有管理权限。*管理员*的默认值为“False”。"
+msgstr "*用户名*应该是标识用户的唯一字符串，而*审核人*应该是布尔值，表示用户是否具有审核权限。*审核人*的默认值为“False”。"
 
 #: ../../sphinx/doc/web/quickstart.rst:115
 msgid ""
@@ -154,7 +158,7 @@ msgid ""
 "used in the template."
 msgstr ""
 "首先要注意的是 "
-"*文件名*只是请求路径。这样可以从单个视图轻松访问正确的文档。如果用户已通过身份验证，则用户名和管理状态将与文件名一起传递到:meth:`~.WebSupport.get_document`。然后，Web支持包将此数据添加到模板中使用的"
+"*文件名*只是请求路径。这样可以从单个视图轻松访问正确的文档。如果用户已通过身份验证，则用户名和审核状态将与文件名一起传递到:meth:`~.WebSupport.get_document`。然后，Web支持包将此数据添加到模板中使用的"
 " “COMMENT_OPTIONS”。"
 
 #: ../../sphinx/doc/web/quickstart.rst:138
@@ -180,6 +184,10 @@ msgid ""
 "method to retrieve search results. In `Flask <http://flask.pocoo.org/>`_ "
 "that would be like this::"
 msgstr ""
+"要使用Sphinx侧边栏内置的搜索表单，请创建一个函数来处理相对于文档根目录的url '搜索'请求，用户的搜索查询将在GET参数中，键为`q`。然后使用"
+" "
+":meth:`~sphinxcontrib.websupport.WebSupport.get_search_results`方法检索搜索结果。在`Flask"
+" <http://flask.pocoo.org/>`_中就像这样："
 
 #: ../../sphinx/doc/web/quickstart.rst:163
 msgid ""
@@ -214,12 +222,13 @@ msgid ""
 "specific node, and is aptly named "
 ":meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 msgstr ""
+"您会注意到`parent_id`和`node_id`都随请求一起发送。如果注释直接附加到节点，则`parent_id`将为空。如果注释是另一个注释的子项，那么`node_id`将为空。然后，下一个函数处理特定节点的注释检索，并且恰当地命名为:meth:`~sphinxcontrib.websupport.WebSupport.get_data`::"
 
 #: ../../sphinx/doc/web/quickstart.rst:204
 msgid ""
 "The final function that is needed will call "
 ":meth:`~.WebSupport.process_vote`, and will handle user votes on comments::"
-msgstr "需要的最后一个函数将调用:meth:`~.WebSupport.process_vote`，并将处理用户对注释的投票："
+msgstr "需要的最后一个函数将调用:meth:`~.WebSupport.process_vote`，并将处理用户对注释的投票::"
 
 #: ../../sphinx/doc/web/quickstart.rst:220
 msgid "Comment Moderation"
@@ -231,13 +240,15 @@ msgid ""
 "automatically displayed.  If you wish to have some form of moderation, you "
 "can pass the `displayed` keyword argument::"
 msgstr ""
+"默认情况下，将自动显示通过:meth:`~.WebSupport.add_comment` "
+"添加的所有注释。如果你想要某种形式的审核，你可以传递`显示`关键字参数::"
 
 #: ../../sphinx/doc/web/quickstart.rst:231
 msgid ""
 "You can then create a new view to handle the moderation of comments.  It "
 "will be called when a moderator decides a comment should be accepted and "
 "displayed::"
-msgstr "然后，您可以创建一个新视图来处理注释的审核。当审核人决定接受并显示评论时，将调用它："
+msgstr "然后，您可以创建一个新视图来处理注释的审核。当审核人决定接受并显示注释时，将调用它::"
 
 #: ../../sphinx/doc/web/quickstart.rst:242
 msgid "Rejecting comments happens via comment deletion."

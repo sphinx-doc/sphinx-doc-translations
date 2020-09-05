@@ -34,6 +34,8 @@ msgid ""
 "Sphinx provides many more and uses directives as one of the primary "
 "extension mechanisms."
 msgstr ""
+":ref: `如前所述 <rst-"
+"directives>`，指令是显式标记的通用块。Docutils提供了许多指令，而Sphinx提供了更多的指令，并将指令用作主要扩展机制之一。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:12
 msgid "See :doc:`/usage/restructuredtext/domains` for roles added by domains."
@@ -43,11 +45,11 @@ msgstr "有关域添加的角色，请参见 :doc:`/usage/restructuredtext/domai
 msgid ""
 "Refer to the :ref:`reStructuredText Primer <rst-directives>` for an overview"
 " of the directives provided by Docutils."
-msgstr ""
+msgstr "参考:ref: `reStructuredText 初级入门 <rst-directives>`获取Docutils提供的指令的概述。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:23
 msgid "Table of contents"
-msgstr ""
+msgstr "目录"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:27
 msgid ""
@@ -69,7 +71,7 @@ msgstr "可以使用：dudir:`include`指令简单地将一个文件“包含”
 msgid ""
 "To create table of contents for current document (.rst file), use the "
 "standard reST :dudir:`contents directive <table-of-contents>`."
-msgstr ""
+msgstr "为当前文档创建目录(.rst文件)，使用标准reST :dudir:`内容指令 <table-of-contents>`。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:44
 msgid ""
@@ -91,6 +93,7 @@ msgid ""
 "LaTeX, man page, etc.) replace it with the content of the documents on the "
 "TOC tree."
 msgstr ""
+"“TOC树”的表示在每种输出格式中都有变化。输出多个文件(例如HTML)的构建器将其视为超链接的集合。另一方面，输出单个文件(例如LaTeX、手册页等)的构建器将其替换为TOC树上文档的内容。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:57
 msgid ""
@@ -179,6 +182,7 @@ msgid ""
 "use the ``name`` option to provide an implicit target name that can be "
 "referenced by using :rst:role:`ref`::"
 msgstr ""
+"您可以使用“`caption``选项来提供目录树标题，也可以使用``name``选项提供可以通过以下方式引用的隐式目标名称：rst:角色：`ref`："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:127
 msgid ""
@@ -348,7 +352,7 @@ msgid ""
 "Though few such names are currently used by Sphinx, you should not create "
 "documents or document-containing directories with such names.  (Using ``_`` "
 "as a prefix for a custom template directory is fine.)"
-msgstr ""
+msgstr "尽管Sphinx目前使用的此类名称很少，但您不应创建包含此类名称目录的文档或文档。（使用“_”作为自定义模板目录的前缀是可以的。）"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:255
 msgid ""
@@ -376,7 +380,7 @@ msgstr "段落级标记"
 msgid ""
 "These directives create short paragraphs and can be used inside information "
 "units as well as normal text."
-msgstr ""
+msgstr "这些指令创建简短的段落，可以在信息单元内部使用，也可以在普通文本中使用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:276
 msgid ""
@@ -527,6 +531,11 @@ msgid ""
 "Finally, the :rst:dir:`literalinclude` directive is useful for including "
 "entire code files in your documentation."
 msgstr ""
+"在Sphinx中有多种方法显示语法突出显示的文字代码块：使用 :ref:`reST doctest blocks <rst-doctest-"
+"blocks>`；使用 :ref:`reST literal blocks <rst-literal-blocks>`，可选与 "
+":rst:dir:`高亮` 指令组合;使用 :rst:dir:`代码-块` 指令;使用:rst:dir:`literalinclude` "
+"指令。Doctest块只能用于显示交互式Python会话，而其余三个可用于其他语言。在这三种方法中，当整个文档(或至少是文档的大部分)使用具有相同语法且应以相同方式样式的代码块时，文字块非常有用。另一方面，当您希望对每个块的样式进行更精细的控制，或者当您有一个包含使用多种语法的代码块的文档时，:rst:dir:`代码-块`"
+" 指令更有意义。最后:rst:dir:`literalinclude` 指令对于在文档中包含整个代码文件很有用。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:421
 msgid ""
@@ -540,6 +549,10 @@ msgid ""
 ":confval:`highlight_language` config value. The following values are "
 "supported:"
 msgstr ""
+"在所有情况下，语法突出显示都是由`Pygments "
+"<http://pygments.org>`_提供的。当使用文字块时，这是使用源文件中的任何:rst:dir:`高亮` "
+"指令配置的。当遇到“高亮”指令时，它一直使用到遇到下一个“高亮”指令。如果文件中没有“高亮”指令，则使用全局高亮语言。这个默认值是“python”，但是可以使用:confval:`高亮_语言`"
+" 配置值进行配置。支持下列值："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:430
 msgid "``none`` (no highlighting)"
@@ -551,6 +564,7 @@ msgid ""
 "warning highlighting fails; the default when :confval:`highlight_language` "
 "isn't set)"
 msgstr ""
+"“默认”（类似于“python3”，但有一个回退到“none”，没有警告高亮显示失败；当:confval:`高亮_语言` 未设置时的默认值)"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:434
 msgid ""
@@ -560,7 +574,7 @@ msgstr "``guess``（让Pygments根据内容猜测lexer，只适用于某些可�
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:436
 msgid "``python``"
-msgstr ""
+msgstr "``python``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:437
 msgid "``rest``"
@@ -572,7 +586,7 @@ msgstr "``c``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:439
 msgid "... and any other `lexer alias that Pygments supports`__"
-msgstr ""
+msgstr "... 以及其他Pygments支持的lexer别名`_"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:441
 msgid ""
@@ -585,14 +599,14 @@ msgid ""
 "The list of lexer aliases supported is tied to the Pygment version. If you "
 "want to ensure consistent highlighting, you should fix your version of "
 "Pygments."
-msgstr ""
+msgstr "支持的lexer别名列表被绑定到加长版本。如果您想确保一致的高亮显示，您应该修正您的Pygments版本。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:458
 msgid ""
 "This language is used until the next ``highlight`` directive is encountered."
 " As discussed previously, *language* can be any lexer alias supported by "
 "Pygments."
-msgstr ""
+msgstr "在遇到下一个“高亮”指令之前，将使用此语言。如前所述，*语言*可以是Pygments支持的任何lexer别名。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:463
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:504
@@ -602,7 +616,7 @@ msgstr "选项"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:467
 msgid "Enable to generate line numbers for code blocks."
-msgstr ""
+msgstr "允许为代码块生成行号。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:469
 msgid ""
@@ -610,12 +624,12 @@ msgid ""
 "threshold given, the directive will produce line numbers only for the code "
 "blocks longer than N lines.  If not given, line numbers will be produced for"
 " all of code blocks."
-msgstr ""
+msgstr "此选项接受一个可选数字作为阈值参数。如果给定任何阈值，指令将只为超过N行的代码块生成行号。如果没有给出，将为所有代码块生成行号。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:482
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:589
 msgid "If given, minor errors on highlighting are ignored."
-msgstr ""
+msgstr "如果给出，高亮显示的小错误将被忽略。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:494
 msgid ""
@@ -625,24 +639,26 @@ msgid ""
 ":rst:dir:`highlight` directive will be used.  If not set, "
 ":confval:`highlight_language` will be used."
 msgstr ""
+"指令的别名:rst:dir:`源编码` "
+"也可以。这个指令接受一个语言名称作为参数。它可以是Pygments支持的任何lexer别名。如果它没有给出，设置:rst:dir:`高亮`指令将被使用。如果没有设置，将使用:confval:`高亮_语言`。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:500
 msgid "The ``language`` argument becomes optional."
-msgstr ""
+msgstr "“语言”参数变成可选的。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:508
 msgid "Enable to generate line numbers for the code block::"
-msgstr ""
+msgstr "允许为代码块生成行号::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:518
 msgid ""
 "Set the first line number of the code block.  If present, ``linenos`` option"
 " is also automatically activated::"
-msgstr ""
+msgstr "设置代码块的第一行号。如果存在，“linenos”选项也会自动激活::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:531
 msgid "Emphasize particular lines of the code block::"
-msgstr ""
+msgstr "强调代码块的特定行::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:543
 msgid "LaTeX supports the ``emphasize-lines`` option."
@@ -650,18 +666,18 @@ msgstr "LaTeX支持“强调线”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:556
 msgid "Set a caption to the code block."
-msgstr ""
+msgstr "为代码块设置标题。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:563
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:922
 msgid ""
 "Define implicit target name that can be referenced by using :rst:role:`ref`."
 "  For example::"
-msgstr ""
+msgstr "定义可以通过使用:rst:role:`ref`引用的隐式目标名称。例如::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:577
 msgid "Strip indentation characters from the code block. For example::"
-msgstr ""
+msgstr "从代码块中去除缩进字符。例如::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:595
 msgid ""
@@ -670,6 +686,8 @@ msgid ""
 "using the ``literalinclude`` directive. [#]_ For example, to include the "
 "Python source file :file:`example.py`, use::"
 msgstr ""
+"通过将示例文本存储在只包含纯文本的外部文件中，可以包括更长的逐字文本显示。可以使用“literalnclude”指令包含该文件。 [#] "
+"_例如，要包含Python源文件：file：`example.py`，用途："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:602
 msgid ""
@@ -690,6 +708,9 @@ msgid ""
 " this can be provided with no argument to use the filename as the caption. "
 "Example with options::"
 msgstr ""
+"比如:rst:dir:`code-block`，指令支持“linenos”标签选项打开行号,这个“lineno-start”选项选择第一行号，这个"
+"“emphasize-"
+"lines”选择强调特定的行，“名”选项提供一个隐式的目标名称，“取消缩进”选项条缩进字符代码块，以及一个“语言”选项来选择一个语言不同于当前文件的标准语言。此外，支持“caption”选项；但是，可以在不带参数的情况下提供文件名作为标题。选项示例::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:623
 msgid ""
@@ -738,6 +759,10 @@ msgid ""
 "string are included. The ``start-at`` and ``end-at`` options behave in a "
 "similar way, but the lines containing the matched string are included."
 msgstr ""
+"另一种控制包含文件哪个部分的方法是使用“start after”和“end before”选项（或仅使用其中一个）。如果将“start "
+"after”作为字符串选项提供，则只包括包含该字符串的第一行之后的行。如果将“end "
+"before”作为字符串选项给定，则只包括包含该字符串的第一行之前的行。“start-at”和“end-"
+"at”选项的行为方式类似，但是包含了包含匹配字符串的行。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:659
 msgid ""
@@ -747,6 +772,9 @@ msgid ""
 "``/``end-at`` filter lines after the line that contains option string "
 "(``end-at`` will keep the line and ``end-before`` skip the first line)."
 msgstr ""
+"“start-after”/ “start-at ”和“end-before”/“end-at”可以有相同的字符串。“start-after” / "
+"“start-at”过滤包含选项字符串的行之前的行(“start-at”将保持该行)。然后“end-before”/“end-"
+"at”过滤包含选项字符串的行之后的行(“end-at”将保留该行，“end-before”'跳过第一行)。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:667
 msgid ""
@@ -754,6 +782,8 @@ msgid ""
 "following, you can use ``:start-at: [second-section]`` and ``:end-before: "
 "[third-section]``:"
 msgstr ""
+"如果你想像下面这样只选择ini文件的“ [second section]”，你可以使用“:start at: [second section]”和"
+"“:end-before: [third section]”："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:685
 msgid ""
@@ -761,6 +791,8 @@ msgid ""
 "[initialized]`` and ``:end-before: [initialized]`` options keep lines "
 "between comments:"
 msgstr ""
+"这些选项的有用情况是处理标记注释。“:start after: [initialized]”和“:end-before: "
+"[initialized]”选项保持注释之间的行："
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:697
 msgid ""
@@ -797,35 +829,35 @@ msgstr "如果要显示代码的差异，可以通过提供“diff”选项指�
 msgid ""
 "This shows the diff between ``example.py`` and ``example.py.orig`` with "
 "unified diff format."
-msgstr ""
+msgstr "这显示了统一的diff格式的“example.py”与“example.py.orig”之间的差异。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:719
 msgid "A ``force`` option can ignore minor errors on highlighting."
-msgstr ""
+msgstr "“force”选项可以忽略高亮显示的小错误。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:721
 msgid "Added the ``encoding`` option."
-msgstr ""
+msgstr "添加了“编码”选项"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:724
 msgid ""
 "Added the ``pyobject``, ``lines``, ``start-after`` and ``end-before`` "
 "options, as well as support for absolute filenames."
-msgstr ""
+msgstr "添加“pyobject”、“lines”、“start after”和“end before”选项以及对绝对文件名的支持。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:728
 msgid "Added the ``prepend``, ``append``, and ``tab-width`` options."
-msgstr ""
+msgstr "添加“prepend”和“append”选项以及“tab width”。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:731
 msgid ""
 "Added the ``diff``, ``lineno-match``, ``caption``, ``name``, and ``dedent`` "
 "options."
-msgstr ""
+msgstr "添加了“diff”，“ lineno-match”，“标题”，“名称”，和“取消缩进”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:735
 msgid "Added the ``start-at``, and ``end-at`` options."
-msgstr ""
+msgstr "添加“start-at”和“end-at”选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:738
 msgid ""
@@ -835,7 +867,7 @@ msgstr "当“start after”和“lines”同时使用时，根据“start after
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:742
 msgid "Added the ``force`` option."
-msgstr ""
+msgstr "添加了“force”选项"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:748
 msgid "Glossary"
@@ -846,7 +878,7 @@ msgid ""
 "This directive must contain a reST definition-list-like markup with terms "
 "and definitions.  The definitions will then be referenceable with the "
 ":rst:role:`term` role.  Example::"
-msgstr ""
+msgstr "此指令必须包含reST定义列表，如带有术语和定义的标记。电缆定义如下：rst:角色：`term`角色。例子::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:768
 msgid ""
@@ -940,6 +972,7 @@ msgid ""
 "(like functions, classes or attributes) like discussed in "
 ":doc:`/usage/restructuredtext/domains`."
 msgstr ""
+"Sphinx自动从:doc:`/usage/restructuredtext/domains`中讨论的所有对象描述(如函数、类或属性)中创建索引项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:842
 msgid ""
@@ -1136,6 +1169,8 @@ msgid ""
 "uppercase and lowercase letters ``A`` through ``Z``, the underscore ``_`` "
 "and, except for the first character, the digits ``0`` through ``9``."
 msgstr ""
+"所有标记都必须遵循“Identifiers and "
+"keywords”中规定的标准Python标识符语法<https://docs.python.org/3/reference/lexical_analysis.html\\identifiers>`_文件。也就是说，标记表达式只能由符合Python变量语法的标记组成。在ASCII中，它由大小写字母“A”到“Z”、下划线“uu”和数字“0”到“9”组成，第一个字符除外。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:983
 msgid "Added the name of the builder and the prefixes."
@@ -1294,6 +1329,7 @@ msgid ""
 "use the ``p{width}`` construct (or Sphinx's ``\\X`` and ``\\Y`` specifiers "
 "described below) for the columns containing these elements."
 msgstr ""
+"包含类似列表元素（如对象描述、块引号或任何类型的列表）的表不能用“tablary”开箱即用。因此，如果不给出“tablarcolumns”指令，它们将使用标准的LaTeX“tabular”环境（或“longtable”环境）进行设置。如果这样做，表将使用“tablary”进行设置，但对于包含这些元素的列，必须使用“p{width}”构造（或下面介绍的Sphinx的`\\X``和`\\Y``说明符）。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1076
 msgid ""
@@ -1348,7 +1384,7 @@ msgstr "来自复杂网格表（多行、多列或两者）的合并单元格现
 msgid ""
 "Sphinx's merged cells interact well with ``p{width}``, ``\\X{a}{b}``, "
 "``\\Y{f}`` and tabulary's columns."
-msgstr ""
+msgstr "Sphinx合并后的单元格与“p{width}``、`\\X{a}{b}``、`Y{f}`和tablary的列交互良好。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1111
 msgid ""
@@ -1426,21 +1462,21 @@ msgstr "还有一个选项“nowrap”，可以防止在数学环境中包装给
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1179
 msgid ":ref:`math-support`"
-msgstr ""
+msgstr ":ref:`math-support`"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1179
 msgid "Rendering options for math with HTML builders."
-msgstr ""
+msgstr "用HTML生成器呈现数学选项。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1182
 msgid ":confval:`latex_engine`"
-msgstr ""
+msgstr ":confval:`latex_engine`"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1182
 msgid ""
 "Explains how to configure LaTeX builder to support Unicode literals in math "
 "mark-up."
-msgstr ""
+msgstr "说明如何配置LaTeX builder以在数学标记中支持Unicode文本。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1187
 msgid "Grammar production displays"
@@ -1474,6 +1510,7 @@ msgid ""
 "grammars.  Multiple production lists with the same *productionGroup* thus "
 "define rules in the same scope."
 msgstr ""
+":rst:dir:`productionlist`的*productionGroup*参数用于区分属于不同语法的不同的生产列表集。具有相同*productionGroup*的多个生产列表在相同范围内定义规则。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1208
 msgid ""
@@ -1493,6 +1530,10 @@ msgid ""
 "\"``myTitle <myGroup:sum>``\"), or the target can be prefixed with a tilde "
 "(e.g., \"``~myGroup:sum``\")."
 msgstr ""
+"该定义可以包含标记为解释文本的标记名称(例如。\"``sum ::= `integer` \"+\" "
+"`integer```\")——这会生成对这些记号的结果的交叉引用。在产品列表之外，您可以使用:rst:role: "
+"`token`引用令牌产品。但是，如果你给了一个*productionGroup*参数，你必须在交叉引用的标记名前面加上组名和冒号，例如，\"``myGroup:sum``\"而不是\"``sum``\"。如果链接的标题中不显示该组，则可以给出明确的标题(例如\"``"
+" myTitle <myGroup:sum>``\")。"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1222
 msgid ""

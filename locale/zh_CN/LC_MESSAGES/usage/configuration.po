@@ -2859,12 +2859,14 @@ msgid ""
 "files. It must be a list of tuples ``(startdocname, targetname, title, "
 "author, theme, toctree_only)``, where the items are:"
 msgstr ""
+"此值确定如何将文档树分组为LaTeX源文件。它必须是元组列表“(startdocname, targetname, title, author, "
+"theme, toctree_only)”, 其中的项目是:"
 
 #: ../../sphinx/doc/usage/configuration.rst:1952
 #: ../../sphinx/doc/usage/configuration.rst:2222
 #: ../../sphinx/doc/usage/configuration.rst:2269
 msgid "*startdocname*"
-msgstr ""
+msgstr "*startdocname*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1949
 msgid ""
@@ -2873,20 +2875,23 @@ msgid ""
 "will be included in the LaTeX file.  (If you want to use the default master "
 "document for your LaTeX build, provide your :confval:`master_doc` here.)"
 msgstr ""
+"指定LaTeX文件主文档的:term:`document "
+"name`的字符串。TOC树中*startdoc*文档引用的所有文档都将包含在LaTeX文件中。(如果您想为您的LaTeX构建使用默认的主文档，请在这里提供"
+" :confval:`master_doc`)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1955
 #: ../../sphinx/doc/usage/configuration.rst:2272
 msgid "*targetname*"
-msgstr ""
+msgstr "*targetname*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1955
 msgid "File name of the LaTeX file in the output directory."
-msgstr ""
+msgstr "输出目录中LaTeX文件的文件名。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1961
 #: ../../sphinx/doc/usage/configuration.rst:2277
 msgid "*title*"
-msgstr ""
+msgstr "*title*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1958
 msgid ""
@@ -2895,11 +2900,13 @@ msgid ""
 "backslash or ampersand must be represented by the proper LaTeX commands if "
 "they are to be inserted literally."
 msgstr ""
+"LaTeX文档标题。可以为空以使用*startdoc*文档的标题。这是作为LaTeX标记插入的, 因此如果要按字面插入, "
+"必须使用正确的LaTeX命令来表示反斜杠或符号等特殊字符。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1966
 #: ../../sphinx/doc/usage/configuration.rst:2281
 msgid "*author*"
-msgstr ""
+msgstr "*author*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1964
 msgid ""
@@ -2907,19 +2914,21 @@ msgid ""
 "applies.  Use ``\\\\and`` to separate multiple authors, as in: ``'John "
 "\\\\and Sarah'`` (backslashes must be Python-escaped to reach LaTeX)."
 msgstr ""
+"LaTeX文档的作者。相同的LaTeX标记警告 标题 适用。使用“\\\\\\\\and”来分隔多个作者, 例如：“'John \\\\\\\\and "
+"Sarah”(反斜杠必须由Python转义才能到达LaTeX)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1969
 msgid "*theme*"
-msgstr ""
+msgstr "*theme*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1969
 msgid "LaTeX theme.  See :confval:`latex_theme`."
-msgstr ""
+msgstr "LaTeX主题。参见:confval:`latex_theme`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1975
 #: ../../sphinx/doc/usage/configuration.rst:2297
 msgid "*toctree_only*"
-msgstr ""
+msgstr "*toctree_only*"
 
 #: ../../sphinx/doc/usage/configuration.rst:1972
 msgid ""
@@ -2928,6 +2937,8 @@ msgid ""
 "trees.  With this option, you can put extra stuff in the master document "
 "that shows up in the HTML, but not the LaTeX output."
 msgstr ""
+"必须是 True 或 False 。如果为true, 则 startdoc 文档本身不包含在输出中, 只包含通过TOC树引用的文档。使用此选项, "
+"您可以在主文档中添加额外的内容, 这些内容显示在HTML中, 而不是LaTeX输出中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1977
 msgid ""
@@ -3039,12 +3050,17 @@ msgid ""
 " with UTF-8 characters will get ordered correctly for the "
 ":confval:`language`."
 msgstr ""
+"如果“True”，从Sphinx创建的LaTeX文件构建的PDF将使用 :program:`xindy` (doc__) 而不是 "
+":program:`makeindex` 来准备通用术语的索引(使用 :rst:dir:`index` )。这意味着:confval:`language"
+"`中的UTF-8字符将被正确排序。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2067
 msgid ""
 "This option is ignored if :confval:`latex_engine` is ``'platex'`` (Japanese "
 "documents; :program:`mendex` replaces :program:`makeindex` then)."
 msgstr ""
+"如果:confval:`latex_engine` 是“'platex'”(日语文档；:program:`mendex` 替换 "
+":program:`makeindex`则)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2071
 msgid ""
@@ -3053,6 +3069,9 @@ msgid ""
 " creates ``.ind`` files containing invalid bytes for UTF-8 encoding. With "
 "``'lualatex'`` this then breaks the PDF build."
 msgstr ""
+"默认是“True”“'xelatex'”或“'lualatex'” "
+":program:`makeindex`，如果任何索引术语以非ascii字符开始，创建“.ind”。在UTF-"
+"8编码中包含无效字节的文件。“'lualatex'”这样就破坏了PDF的构建。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2077
 msgid ""
@@ -3060,6 +3079,7 @@ msgid ""
 "non-English documents as soon as some indexed terms use non-ascii characters"
 " from the language script."
 msgstr ""
+"对于“'pdflatex'”，默认为“False”，但是对于非英语文档，只要一些索引术语使用语言脚本中的非ascii字符，建议使用“True”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2081
 msgid ""
@@ -3068,12 +3088,14 @@ msgid ""
 "``'pdflatex'`` or Unicode engines, Cyrillic documents handle correctly the "
 "indexing of Latin names, even with diacritics."
 msgstr ""
+"Sphinx在:program:`xindy` "
+"基本发行版中增加了对使用带有西里尔字母脚本的“'pdflatex'”引擎的专门支持。无论使用“'pdflatex'”还是Unicode引擎，西里尔字母文档都能正确地处理拉丁名称的索引，甚至使用变音符号。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2092
 msgid ""
 "Its :ref:`documentation <latex_elements_confval>` has moved to "
 ":doc:`/latex`."
-msgstr ""
+msgstr "其:ref:`documentation <latex_elements_confval>` 已移至:doc:`/latex`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2096
 msgid ""
@@ -3112,32 +3134,32 @@ msgstr "您必须确保您自己的文件名不会与那些自动复制的文件
 msgid ""
 "This overrides the files which is provided from Sphinx such as "
 "``sphinx.sty``."
-msgstr ""
+msgstr "这将覆盖Sphinx提供的文件，比如“Sphinx .sty”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2126
 msgid ""
 "The \"theme\" that the LaTeX output should use.  It is a collection of "
 "settings for LaTeX output (ex. document class, top level sectioning unit and"
 " so on)."
-msgstr ""
+msgstr "LaTeX输出应该使用的“主题”。它是LaTeX输出的设置集合(例如，文档类、最高切片单元等等)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2129
 msgid "As a built-in LaTeX themes, ``manual`` and ``howto`` are bundled."
-msgstr ""
+msgstr "作为一个内置 LaTeX主题，“手册”和“如何”是捆绑在一起的。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2133
 msgid "``manual``"
-msgstr ""
+msgstr "``manual``"
 
 #: ../../sphinx/doc/usage/configuration.rst:2132
 msgid ""
 "A LaTeX theme for writing a manual.  It imports the ``report`` document "
 "class (Japanese documents use ``jsbook``)."
-msgstr ""
+msgstr "用于编写手册的LaTeX主题。它导入“报告”文档类(日本文档使用“jsbook”)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2138
 msgid "``howto``"
-msgstr ""
+msgstr "``howto``"
 
 #: ../../sphinx/doc/usage/configuration.rst:2136
 msgid ""
@@ -3145,22 +3167,24 @@ msgid ""
 "class (Japanese documents use ``jreport`` rather).  "
 ":confval:`latex_appendices` is available only for this theme."
 msgstr ""
+"用于写文章的LaTeX主题。它导入“文章”文档类(日本文档使用“jreport”')。:confval:`latex_appendices` "
+"仅用于此主题。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2140
 msgid "It defaults to ``'manual'``."
-msgstr ""
+msgstr "默认是“'manual'”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2146
 msgid ""
 "A dictionary of options that influence the look and feel of the selected "
 "theme."
-msgstr ""
+msgstr "影响所选主题外观的选项字典。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2153
 msgid ""
 "A list of paths that contain custom LaTeX themes as subdirectories.  "
 "Relative paths are taken as relative to the configuration directory."
-msgstr ""
+msgstr "包含自定义主题的路径列表，可以是子目录。相对路径被视为相对于配置目录。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2162
 msgid "Options for text output"
@@ -3239,47 +3263,49 @@ msgid ""
 "will be included in the manual file.  (If you want to use the default master"
 " document for your manual pages build, use your :confval:`master_doc` here.)"
 msgstr ""
+"指定手册页主文档的:term:`文件名`的字符串。TOC树中*startdoc*文档引用的所有文档都将包含在手动文件中。(如果想使用默认的主文档构建手册页面，请在这里使用"
+" :confval:`master_doc` )。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2227
 msgid "*name*"
-msgstr ""
+msgstr "*name*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2225
 msgid ""
 "Name of the manual page.  This should be a short string without spaces or "
 "special characters.  It is used to determine the file name as well as the "
 "name of the manual page (in the NAME section)."
-msgstr ""
+msgstr "手册页的名称。这应该是一个没有空格或特殊字符的短字符串。它用于确定文件名以及手册页的名称(在NAME部分中)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2230
 #: ../../sphinx/doc/usage/configuration.rst:2287
 msgid "*description*"
-msgstr ""
+msgstr "*description*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2230
 msgid "Description of the manual page.  This is used in the NAME section."
-msgstr ""
+msgstr "手册页的说明。这在NAME部分中使用。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2235
 msgid "*authors*"
-msgstr ""
+msgstr "*authors*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2233
 msgid ""
 "A list of strings with authors, or a single string.  Can be an empty string "
 "or list if you do not want to automatically generate an AUTHORS section in "
 "the manual page."
-msgstr ""
+msgstr "包含作者或单个字符串的字符串列表。如果您不想在手册页中自动生成AUTHORS部分，则可以是空字符串或列表。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2239
 msgid "*section*"
-msgstr ""
+msgstr "*section*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2238
 msgid ""
 "The manual page section.  Used for the output file name as well as in the "
 "manual page header."
-msgstr ""
+msgstr "手册页部分。用于输出文件名以及手册页头。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2245
 msgid "If true, add URL addresses after links.  Default is ``False``."
@@ -3311,10 +3337,13 @@ msgid ""
 "default master document for your Texinfo build, provide your "
 ":confval:`master_doc` here.)"
 msgstr ""
+"指定Texinfo文件主文档的:term:`document "
+"name`的字符串。TOC树中*startdoc*文档引用的所有文档都将包含在Texinfo文件中。(如果您想为您的Texinfo生成使用默认的主文档，请在这里提供"
+" :confval:`master_doc`)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2272
 msgid "File name (no extension) of the Texinfo file in the output directory."
-msgstr ""
+msgstr "输出目录中Texinfo文件的文件名（无扩展名）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2275
 msgid ""
@@ -3322,34 +3351,35 @@ msgid ""
 "document.  Inserted as Texinfo markup, so special characters like ``@`` and "
 "``{}`` will need to be escaped to be inserted literally."
 msgstr ""
+"Texinfo文档标题。可以为空以使用*startdoc*文档的标题。作为Texinfo标记插入, 所以需要转义像“@” 和 “{}”这样的特殊字符。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2280
 msgid ""
 "Author for the Texinfo document.  Inserted as Texinfo markup.  Use ``@*`` to"
 " separate multiple authors, as in: ``'John@*Sarah'``."
-msgstr ""
+msgstr "Texinfo文档的作者。插入为Texinfo标记。使用“@*”来分隔多个作者, 如：“'John@*Sarah'”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2284
 msgid "*dir_entry*"
-msgstr ""
+msgstr "*dir_entry*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2284
 msgid "The name that will appear in the top-level ``DIR`` menu file."
-msgstr ""
+msgstr "将出现在顶级“DIR”菜单文件中的名称。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2287
 msgid "Descriptive text to appear in the top-level ``DIR`` menu file."
-msgstr ""
+msgstr "描述性文本出现在顶级“DIR”菜单文件中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2291
 msgid "*category*"
-msgstr ""
+msgstr "*category*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2290
 msgid ""
 "Specifies the section which this entry will appear in the top-level ``DIR`` "
 "menu file."
-msgstr ""
+msgstr "指定此条目将出现在顶级“DIR”菜单文件中的部分。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2294
 msgid ""
@@ -3358,6 +3388,8 @@ msgid ""
 "trees.  With this option, you can put extra stuff in the master document "
 "that shows up in the HTML, but not the Texinfo output."
 msgstr ""
+"必须是 True 或 False 。如果为true, 则 startdoc 文档本身不包含在输出中, 只包含通过TOC树引用的文档。使用此选项, "
+"您可以在主文档中添加额外的内容, 这些内容显示在HTML中, 而不是Texinfo输出中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2320
 msgid "Control how to display URL addresses."
@@ -3474,7 +3506,7 @@ msgstr "一个正则表达式列表, 它匹配在执行“linkcheck” 生成时
 
 #: ../../sphinx/doc/usage/configuration.rst:2417
 msgid "A dictionary that maps baseurls to HTTP request headers."
-msgstr ""
+msgstr "将baseurls映射到HTTP请求标题的字典。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2419
 msgid ""
@@ -3482,10 +3514,12 @@ msgid ""
 "specify headers for other hosts, ``\"*\"`` can be used.  It matches all "
 "hosts only when the URL does not match other settings."
 msgstr ""
+"关键字是一个URL基字符串，如“\"https://sphinx-"
+"doc.org/\"。要指定其他主机的头，可以使用”\"*\"。它只在URL与其他设置不匹配时匹配所有主机。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2423
 msgid "The value is a dictionary that maps header name to its value."
-msgstr ""
+msgstr "该值是一个将标题名称映射到其值的字典。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2425
 msgid "Example:"
@@ -3523,6 +3557,7 @@ msgid ""
 " a website's JavaScript adds to control dynamic pages or when triggering an "
 "internal REST request. Default is ``[\"^!\"]``."
 msgstr ""
+"在检查链接中锚的有效性时，Sphinx应该跳过与锚匹配的正则表达式列表。这允许跳过网站JavaScript为控制动态页面或触发内部REST请求而添加的锚。默认是“[\"^!\"]”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2479
 msgid ""
@@ -3531,33 +3566,35 @@ msgid ""
 " have anchors), use :confval:`linkcheck_ignore` instead, for example as "
 "follows::"
 msgstr ""
+"如果你想忽略一个特定页面的锚点或匹配特定模式的页面的锚点(但仍然检查没有锚点的相同页面)，使用:confval:`linkcheck_ignore` "
+"代替，例如::"
 
 #: ../../sphinx/doc/usage/configuration.rst:2492
 msgid "Pass authentication information when doing a ``linkcheck`` build."
-msgstr ""
+msgstr "在进行``linkcheck`` 构建时提供身份验证信息。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2494
 msgid "A list of ``(regex_pattern, auth_info)`` tuples where the items are:"
-msgstr ""
+msgstr "一个“(regex_pattern, auth_info) ”元组的列表，其中的项是："
 
 #: ../../sphinx/doc/usage/configuration.rst:2496
 msgid "*regex_pattern*"
-msgstr ""
+msgstr "*regex_pattern*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2497
 msgid "A regular expression that matches a URI."
-msgstr ""
+msgstr "匹配URI的正则表达式。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2503
 msgid "*auth_info*"
-msgstr ""
+msgstr "*auth_info*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2499
 msgid ""
 "Authentication information to use for that URI. The value can be anything "
 "that is understood by the ``requests`` library (see `requests Authentication"
 " <requests-auth>`_ for details)."
-msgstr ""
+msgstr "用于该URI的身份验证信息。该值可以是“请求”库所理解的任何值(参见 `请求身份验证 <requests-auth>`_了解详细信息)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2505
 msgid ""
@@ -3565,6 +3602,7 @@ msgid ""
 " can find in the :confval:`linkcheck_auth` list, so values earlier in the "
 "list have higher priority."
 msgstr ""
+"“linkcheck”生成器将使用在:confval:`linkcheck_auth`'列表中找到的第一个匹配的“auth_info”值，因此列表中较早的值具有更高的优先级。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2520
 msgid "Options for the XML builder"
@@ -3589,7 +3627,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:2540
 msgid "Options for the C domain"
-msgstr ""
+msgstr "C域选项"
 
 #: ../../sphinx/doc/usage/configuration.rst:2544
 #: ../../sphinx/doc/usage/configuration.rst:2592
@@ -3608,23 +3646,26 @@ msgid ""
 " balanced braces (``()``, ``[]``, and ``{}``).  This can for example be used"
 " when attributes have been ``#define`` d for portability."
 msgstr ""
+"解析器另外应该接受的字符串列表, 作为具有一个参数的属性。也就是说, 如果“my_align_as”在列表中, "
+"则“my_align_as(X)”被解析为所有字符串 X 的属性, 它们具有平衡括号(“()” , “[]”和 “{}” )。例如, 当属性为 "
+"“#define”以便于移植时, 可以使用它。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2562
 msgid ""
 "A boolean (default ``False``) controlling whether to parse and try to "
 "convert pre-v3 style type directives and type roles."
-msgstr ""
+msgstr "一个布尔值(默认为“False”)，控制是否解析和转换v3之前的样式类型指令和类型角色。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2566
 #: ../../sphinx/doc/usage/configuration.rst:2575
 msgid "Use the directives and roles added in v3."
-msgstr ""
+msgstr "使用v3中添加的指令和角色。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2571
 msgid ""
 "A boolean (default ``True``) controlling whether to warn when a pre-v3 style"
 " type directive/role is parsed and converted."
-msgstr ""
+msgstr "一个布尔值(默认为“True”)，用于控制在解析和转换v3之前的样式类型指令/角色时是否发出警告。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2581
 msgid "Options for the C++ domain"
@@ -3634,7 +3675,7 @@ msgstr "C++ 域选项"
 msgid ""
 "A list of prefixes that will be ignored when sorting C++ objects in the "
 "global index.  For example ``['awesome_lib::']``."
-msgstr ""
+msgstr "在全局索引中排序 C++ 对象时，将忽略的前缀列表。例如“['awesome_lib::']”。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2610
 msgid "Example of configuration file"

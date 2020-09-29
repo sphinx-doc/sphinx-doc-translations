@@ -7,6 +7,7 @@
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2018
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-27 22:51+0000\n"
 "PO-Revision-Date: 2018-03-02 07:06+0000\n"
-"Last-Translator: Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2020\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,6 +37,13 @@ msgid ""
 ":doc:`/usage/markdown` documents, Sphinx can generate a series of HTML "
 "files, a PDF file (via LaTeX), man pages and much more."
 msgstr ""
+"Sphinx é um *gerador de documentação* ou uma ferramenta que traduz um "
+"conjunto de arquivos fonte de texto simples em vários formatos de saída, "
+"produzindo automaticamente referências cruzadas, índices, etc. Ou seja, se "
+"você tiver um diretório contendo um monte de "
+":doc:`/usage/reestruturedtext/index` ou :doc:`/usage/markdown`, o Sphinx "
+"pode gerar uma série de arquivos HTML, um arquivo PDF (via LaTeX), páginas "
+"de manual e muito mais."
 
 #: ../../sphinx/doc/usage/quickstart.rst:12
 msgid ""
@@ -46,6 +54,12 @@ msgid ""
 " along with it's :doc:`significant extensibility capabilities "
 "</development/index>`."
 msgstr ""
+"O Sphinx se concentra na documentação, em particular na documentação "
+"manuscrita; no entanto, o Sphinx também pode ser usado para gerar blogs, "
+"páginas iniciais e até livros. Muito do poder do Sphinx vem da riqueza de "
+"seu formato de marcação de texto simples padrão, :doc:`reStructuredText "
+"</usage/restructuredtext/index>`, junto com seus :doc:`recursos de "
+"extensibilidade significativos </development/index>`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:18
 msgid ""
@@ -55,12 +69,20 @@ msgid ""
 " default markup format used by Sphinx, :doc:`reStucturedText "
 "</usage/restructuredtext/index>`."
 msgstr ""
+"O objetivo deste documento é dar a você uma ideia rápida do que é o Sphinx e"
+" como você pode usá-lo. Quando terminar aqui, você pode verificar o "
+":doc:`guia de instalação </usage/installation>` seguido pela introdução do "
+"formato de marcação padrão usado pelo Sphinx, :doc:`reStucturedText "
+"</usage/restructuredtext/index>`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:24
 msgid ""
 "For a great \"introduction\" to writing docs in general -- the whys and "
 "hows, see also `Write the docs`__, written by Eric Holscher."
 msgstr ""
+"Para obter uma excelente \"introdução\" à escrita de documentos em geral -- "
+"os porquês e comos, consulte também `Write the docs`__, escrito por Eric "
+"Holscher."
 
 #: ../../sphinx/doc/usage/quickstart.rst:31
 msgid "Setting up the documentation sources"
@@ -74,6 +96,11 @@ msgid ""
 "aspects of how Sphinx reads your sources and builds your documentation.  "
 "[#]_"
 msgstr ""
+"O diretório raiz de uma coleção Sphinx de fontes de documentos de texto "
+"simples é chamado de :term:`diretório fonte`. Este diretório também contém o"
+" arquivo de configuração :file:`conf.py` do Sphinx, onde você pode "
+"configurar todos os aspectos de como o Sphinx lê suas fontes e constrói sua "
+"documentação. [#]_"
 
 #: ../../sphinx/doc/usage/quickstart.rst:38
 msgid ""
@@ -101,6 +128,13 @@ msgid ""
 "reStructuredText, a way to connect multiple files to a single hierarchy of "
 "documents."
 msgstr ""
+"Vamos assumir que foi executado :program:`sphinx-quickstart`. Isso criou um "
+"diretório fonte com :file:`conf.py` e um documento mestre :file:`index.rst`."
+" A função principal do :term:`documento mestre` é servir de página de boas-"
+"vindas, bem como conter a documentação raiz da estrutura \"sumário\" ou "
+"(*toctree*). Isso é um dos princípios que Sphinx usa para adicionar "
+"reStructuredText para conectar múltiplos arquivos em uma hierarquia simples "
+"de documentos."
 
 #: ../../sphinx/doc/usage/quickstart.rstNone
 msgid "reStructuredText directives"
@@ -181,7 +215,7 @@ msgstr "|more| Ler mais sobre :ref:`diretiva toctree <toctree-directive>`."
 #: ../../sphinx/doc/usage/quickstart.rst:347
 #: ../../sphinx/doc/usage/quickstart.rst:347
 msgid "more info"
-msgstr ""
+msgstr "mais informações"
 
 #: ../../sphinx/doc/usage/quickstart.rst:100
 msgid ""
@@ -221,6 +255,9 @@ msgid ""
 "For an example, if you are viewing the HTML version, you can look at the "
 "source for this document -- use the \"Show Source\" link in the sidebar."
 msgstr ""
+"Por exemplo, se você estiver visualizando a versão HTML, poderá olhar o "
+"código-fonte deste documento -- use o link \"Exibir Fonte\" na barra "
+"lateral."
 
 #: ../../sphinx/doc/usage/quickstart.rst:119
 #: ../../sphinx/doc/usage/quickstart.rst:161
@@ -464,6 +501,9 @@ msgid ""
 "and so on.  The file is saved in UTF-8 by default, as indicated by the "
 "encoding declaration in the first line."
 msgstr ""
+"Lembre-se de que o arquivo usa a sintaxe do Python para strings, números, "
+"listas e assim por diante. O arquivo é salvo em UTF-8 por padrão, conforme "
+"indicado pela declaração de codificação na primeira linha."
 
 #: ../../sphinx/doc/usage/quickstart.rst:248
 msgid ""
@@ -501,6 +541,9 @@ msgid ""
 "putting the string ``'sphinx.ext.autodoc'`` into the list assigned to the "
 ":confval:`extensions` config value::"
 msgstr ""
+"Para usar o *autodoc*, você precisa ativá-lo em :file:`conf.py` colocando a "
+"string ``'sphinx.ext.autodoc'`` na lista atribuída ao valor da configuração "
+":confval:`extensions`::"
 
 #: ../../sphinx/doc/usage/quickstart.rst:268
 msgid ""
@@ -508,6 +551,9 @@ msgid ""
 "to document the function ``io.open()``, reading its signature and docstring "
 "from the source file, you'd write this::"
 msgstr ""
+"Então, você tem algumas diretivas adicionais à sua disposição. Por exemplo, "
+"para documentar a função ``io.open()``, lendo sua assinatura e docstring do "
+"arquivo fonte, você escreveria isto::"
 
 #: ../../sphinx/doc/usage/quickstart.rst:274
 msgid ""

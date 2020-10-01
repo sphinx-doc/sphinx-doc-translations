@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Georg Brandl <g.brandl@gmx.net>, 2019
-# SeryiMysh <vital@dorokhin.kz>, 2019
+# SeryiMysh <vital@dorokhin.kz>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-27 22:51+0000\n"
 "PO-Revision-Date: 2018-12-23 17:28+0000\n"
-"Last-Translator: SeryiMysh <vital@dorokhin.kz>, 2019\n"
+"Last-Translator: SeryiMysh <vital@dorokhin.kz>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/sphinx-doc/teams/15434/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +23,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:2
 msgid "Developing a \"Hello world\" extension"
-msgstr ""
+msgstr "Разработка расширения \"Hello world\""
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:4
 msgid ""
@@ -32,32 +31,42 @@ msgid ""
 " a new directive. This directive will output a paragraph containing \"hello "
 "world\"."
 msgstr ""
+"Тема данного руководства - создание простого расширения, которое добавляет "
+"новую директиву. Данная директива будет выводить параграф, содержащий "
+"\"hello world\"."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:7
 msgid ""
 "Only basic information is provided in this tutorial. For more information, "
 "refer to the :doc:`other tutorials <index>` that go into more details."
 msgstr ""
+"В этом руководстве предоставлена только базовая информация. Для более "
+"подробной информации обращайтесь к разделу :doc:`прочие руководства "
+"<index>`."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:12
 msgid ""
 "For this extension, you will need some basic understanding of docutils_ and "
 "Python."
 msgstr ""
+"Для данного расширения, необходимы базовые понятия в docutils_ и Python."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:17
 msgid "Overview"
-msgstr "Обзор"
+msgstr "Введение"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:19
 msgid "We want the extension to add the following to Sphinx:"
 msgstr ""
+"Мы хотим чтобы наше расширения добавляло следующий функционал к Sphinx:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:21
 msgid ""
 "A ``helloworld`` directive, that will simply output the text \"hello "
 "world\"."
 msgstr ""
+"Директиву ``helloworld``, которая просто будет выводить текст \"hello "
+"world\"."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:25
 msgid "Prerequisites"
@@ -69,6 +78,10 @@ msgid ""
 " it as part of an existing project. This means you will need to use an "
 "existing project or create a new one using :program:`sphinx-quickstart`."
 msgstr ""
+"Мы не будем распространять наш плагин через `PyPI`_, а вместо этого просто "
+"включим его как часть существующего проекта. Это означает, что нужно будет "
+"использовать существующий проект или создать новый с помощью :program"
+":`sphinx-quickstart`."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:31
 msgid ""
@@ -76,24 +89,29 @@ msgid ""
 "(:file:`build`) folders. Your extension file could be in any folder of your "
 "project. In our case, let's do the following:"
 msgstr ""
+"Предполагается что вы будете использовать отдельные директории source "
+"(:file:`source`) и build (:file:`build`). Файл расширения может "
+"располагаться в любой директории вашего проекта. в данном случае сделайте "
+"следующее:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:35
 msgid "Create an :file:`_ext` folder in :file:`source`"
-msgstr ""
+msgstr "Создайте директорию :file:`_ext` в директории :file:`source`"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:36
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called "
 ":file:`helloworld.py`"
 msgstr ""
+"Создайте новый файл Python :file:`helloworld.py` в директории :file:`_ext` "
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:39
 msgid "Here is an example of the folder structure you might obtain:"
-msgstr ""
+msgstr "Приведём пример как должна выглядеть структура ваших директорий:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:55
 msgid "Writing the extension"
-msgstr ""
+msgstr "Пишем расширение"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:57
 msgid "Open :file:`helloworld.py` and paste the following code in it:"

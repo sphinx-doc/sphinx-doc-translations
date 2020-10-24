@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
-# Naofumi SAKAGUCHI <nskgch@gmail.com>, 2019
 # Tetsuo Koyama <tkoyama010@gmail.com>, 2020
+# Naofumi SAKAGUCHI <nskgch@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/e4e5ee333\n"
+"Project-Id-Version: Sphinx 4.0.0+/f1af7dc84\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-05 22:53+0000\n"
+"POT-Creation-Date: 2020-10-24 23:03+0000\n"
 "PO-Revision-Date: 2018-02-12 13:46+0000\n"
-"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
+"Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -259,6 +259,8 @@ msgid ""
 "Sphinx builds upon docutils to allow construction of cross-referenced and "
 "indexed bodies of documentation."
 msgstr ""
+"tl;dr: *docutils* はreStructuredText を多様なフォーマットに変換します。Sphinx は docutils "
+"上で動作し、相互参照やインデックス化された文書の本体を構築します。"
 
 #: ../../sphinx/doc/faq.rst:158
 msgid ""
@@ -273,6 +275,14 @@ msgid ""
 "the other hand, it provides writers for many different formats including "
 "HTML, LaTeX, man pages, Open Document Format and XML."
 msgstr ""
+"`docutils`__ はプレーンテキスト文書をより複雑な他のフォーマットへ変換する文書処理システムです。`docutils "
+"documentation`__ で触れたように、 docutilsでは *readers* をドキュメントの解読に用い、 *parsers* "
+"をプレーンテキストを様々な種類の *nodes* から構成された内部木表現へパースする際に用います。そして *writers* "
+"を用いてこの木を様々なドキュメントフォーマットに出力します。 docutils は1つのプレーンテキストフォーマット、すなわち "
+"`reStructuredText`__ パーサーのみを提供します。しかしながら、Sphinx's :doc:`Markdown parser 1` "
+"などで 他の*out-of-tree* "
+"パーサーが実装されていて、これが様々なフォーマットに対するwriterを提供しています。対応するフォーマットとしてはHTML、LaTeX、 man "
+"pages、Open Document Format 、そしてXMLがあります。"
 
 #: ../../sphinx/doc/faq.rst:169
 msgid ""
@@ -283,6 +293,9 @@ msgid ""
 "referencing, indexing of documents, or the construction of a document "
 "hierarchy (typically manifesting in a table of contents)."
 msgstr ""
+"docutils は各種の `front-end tools`__ を通してその機能を発揮します。例えば、 "
+"``rst2html``、``rst2odt`` そして ``rst2xml``などです. ただし、これらすべてのツールや  docutils "
+"自体が文書を個々に扱うことは動かしがたい点といえます。相互参照や文書のインデックス化、あるいは文書の階層化（典型的な例で言えば、目次）がサポートされていません。"
 
 #: ../../sphinx/doc/faq.rst:176
 msgid ""
@@ -292,6 +305,9 @@ msgid ""
 "many features that would simply not be possible with docutils, such as those"
 " outlined above."
 msgstr ""
+"Sphinx はdocutils 上で動作し、 docutilsのreaderとパーサーを利用しながらもSphinx独自の "
+":doc:`/usage/builders/index` を提供します。その結果として、Sphinxは docutils の "
+"*writers*のいくつかをラップしています。このことにより、上で述べたようなdocutilsでは全くできなかったことが、Sphinxでは可能になっています。"
 
 #: ../../sphinx/doc/faq.rst:191
 msgid "Epub info"

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/5ba344d61\n"
+"Project-Id-Version: Sphinx 4.0.0+/d9280e253\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 23:49+0000\n"
+"POT-Creation-Date: 2020-12-13 23:32+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Language-Team: Korean (https://www.transifex.com/sphinx-doc/teams/15434/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -128,11 +128,12 @@ msgid ""
 "A dictionary mapping unique identifiers to a tuple ``(target, inventory)``. "
 "Each ``target`` is the base URI of a foreign Sphinx documentation set and "
 "can be a local path or an HTTP URI.  The ``inventory`` indicates where the "
-"inventory file can be found: it can be ``None`` (at the same location as the"
-" base URI) or another local or HTTP URI."
+"inventory file can be found: it can be ``None`` (an :file:`objects.inv` file"
+" at the same location as the base URI) or another local file path or a full "
+"HTTP URI to an inventory file."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:81
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:82
 msgid ""
 "The unique identifier can be used to prefix cross-reference targets, so that"
 " it is clear which intersphinx set the target belongs to.  A link like "
@@ -140,17 +141,17 @@ msgid ""
 "\"comparisons\" in the doc set \"python\", if it exists."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:86
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:87
 msgid "**Example**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:88
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:89
 msgid ""
 "To add links to modules and objects in the Python standard library "
 "documentation, use::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:93
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:94
 msgid ""
 "This will download the corresponding :file:`objects.inv` file from the "
 "Internet and generate links to the pages under the given URI.  The "
@@ -158,13 +159,13 @@ msgid ""
 "downloaded whenever you do a full rebuild."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:98
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:99
 msgid ""
 "A second example, showing the meaning of a non-``None`` value of the second "
 "tuple item::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:104
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:105
 msgid ""
 "This will read the inventory from :file:`python-inv.txt` in the source "
 "directory, but still generate links to the pages under "
@@ -172,11 +173,11 @@ msgid ""
 " as new objects are added to the Python documentation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:109
-msgid "**Multiple target for the inventory**"
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:110
+msgid "**Multiple targets for the inventory**"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:113
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:114
 msgid ""
 "Alternative files can be specified for each inventory. One can give a tuple "
 "for the second inventory tuple item as shown in the following example. This "
@@ -185,31 +186,38 @@ msgid ""
 "sites for server downtime of the primary inventory::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:125
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:124
+msgid ""
+"For a set of books edited and tested locally and then published together, it"
+" could be helpful to try a local inventory file first, to check references "
+"before publication::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:136
 msgid ""
 "The maximum number of days to cache remote inventories.  The default is "
 "``5``, meaning five days.  Set this to a negative value to cache inventories"
 " for unlimited time."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:131
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:142
 msgid ""
 "The number of seconds for timeout.  The default is ``None``, meaning do not "
 "timeout."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:136
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:147
 msgid ""
 "timeout is not a time limit on the entire response download; rather, an "
 "exception is raised if the server has not issued a response for timeout "
 "seconds."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:142
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:153
 msgid "Showing all links of an Intersphinx mapping file"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:144
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:155
 msgid ""
 "To show all Intersphinx links and their targets of an Intersphinx mapping "
 "file, run ``python -msphinx.ext.intersphinx url-or-path``.  This is helpful "
@@ -218,15 +226,15 @@ msgid ""
 "of the Python 3 documentation::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:153
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:164
 msgid "Using Intersphinx with inventory file under Basic Authorization"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:155
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:166
 msgid "Intersphinx supports Basic Authorization like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:160
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:171
 msgid ""
 "The user and password will be stripped from the URL when generating the "
 "links."

@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/5ba344d61\n"
+"Project-Id-Version: Sphinx 4.0.0+/d9280e253\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 23:49+0000\n"
+"POT-Creation-Date: 2020-12-13 23:32+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: Melia Lee <lixiuyu97@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -3625,18 +3625,38 @@ msgstr ""
 "“linkcheck”生成器将使用在:confval:`linkcheck_auth`'列表中找到的第一个匹配的“auth_info”值，因此列表中较早的值具有更高的优先级。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2537
+msgid ""
+"The ``linkcheck`` builder may issue a large number of requests to the same "
+"site over a short period of time. This setting controls the builder behavior"
+" when servers indicate that requests are rate-limited."
+msgstr ""
+
+#: ../../sphinx/doc/usage/configuration.rst:2541
+msgid ""
+"If a server indicates when to retry (using the `Retry-After`_ header), "
+"``linkcheck`` always follows the server indication."
+msgstr ""
+
+#: ../../sphinx/doc/usage/configuration.rst:2544
+msgid ""
+"Otherwise, ``linkcheck`` waits for a minute before to retry and keeps "
+"doubling the wait time between attempts until it succeeds or exceeds the "
+"``linkcheck_rate_limit_timeout``. By default, the timeout is 5 minutes."
+msgstr ""
+
+#: ../../sphinx/doc/usage/configuration.rst:2554
 msgid "Options for the XML builder"
 msgstr "XML生成器的选项"
 
-#: ../../sphinx/doc/usage/configuration.rst:2541
+#: ../../sphinx/doc/usage/configuration.rst:2558
 msgid "If true, pretty-print the XML.  Default is ``True``."
 msgstr "如果为true, 则打印XML。默认为“True”。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2547
+#: ../../sphinx/doc/usage/configuration.rst:2564
 msgid "Footnotes"
 msgstr "脚注"
 
-#: ../../sphinx/doc/usage/configuration.rst:2548
+#: ../../sphinx/doc/usage/configuration.rst:2565
 msgid ""
 "A note on available globbing syntax: you can use the standard shell "
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
@@ -3645,20 +3665,20 @@ msgid ""
 msgstr ""
 "关于可用的globbing语法的一点说明：您可以使用标准的shell结构``*``，``？``、`[…]``和`[！。。。]``这些都不匹配斜杠。双星“**”可用于匹配任何字符序列*包括*斜杠。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2557
+#: ../../sphinx/doc/usage/configuration.rst:2574
 msgid "Options for the C domain"
 msgstr "C域选项"
 
-#: ../../sphinx/doc/usage/configuration.rst:2561
-#: ../../sphinx/doc/usage/configuration.rst:2609
+#: ../../sphinx/doc/usage/configuration.rst:2578
+#: ../../sphinx/doc/usage/configuration.rst:2626
 msgid ""
 "A list of strings that the parser additionally should accept as attributes. "
 "This can for example be used when attributes have been ``#define`` d for "
 "portability."
 msgstr "解析器另外应该接受的字符串列表作为属性。例如, 当属性为“#define”以便于移植时，可以使用它。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2569
-#: ../../sphinx/doc/usage/configuration.rst:2617
+#: ../../sphinx/doc/usage/configuration.rst:2586
+#: ../../sphinx/doc/usage/configuration.rst:2634
 msgid ""
 "A list of strings that the parser additionally should accept as attributes "
 "with one argument.  That is, if ``my_align_as`` is in the list, then "
@@ -3670,33 +3690,33 @@ msgstr ""
 "则“my_align_as(X)”被解析为所有字符串 X 的属性, 它们具有平衡括号(“()” , “[]”和 “{}” )。例如, 当属性为 "
 "“#define”以便于移植时, 可以使用它。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2579
+#: ../../sphinx/doc/usage/configuration.rst:2596
 msgid ""
 "A boolean (default ``False``) controlling whether to parse and try to "
 "convert pre-v3 style type directives and type roles."
 msgstr "一个布尔值(默认为“False”)，控制是否解析和转换v3之前的样式类型指令和类型角色。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2583
-#: ../../sphinx/doc/usage/configuration.rst:2592
+#: ../../sphinx/doc/usage/configuration.rst:2600
+#: ../../sphinx/doc/usage/configuration.rst:2609
 msgid "Use the directives and roles added in v3."
 msgstr "使用v3中添加的指令和角色。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2588
+#: ../../sphinx/doc/usage/configuration.rst:2605
 msgid ""
 "A boolean (default ``True``) controlling whether to warn when a pre-v3 style"
 " type directive/role is parsed and converted."
 msgstr "一个布尔值(默认为“True”)，用于控制在解析和转换v3之前的样式类型指令/角色时是否发出警告。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2598
+#: ../../sphinx/doc/usage/configuration.rst:2615
 msgid "Options for the C++ domain"
 msgstr "C++ 域选项"
 
-#: ../../sphinx/doc/usage/configuration.rst:2602
+#: ../../sphinx/doc/usage/configuration.rst:2619
 msgid ""
 "A list of prefixes that will be ignored when sorting C++ objects in the "
 "global index.  For example ``['awesome_lib::']``."
 msgstr "在全局索引中排序 C++ 对象时，将忽略的前缀列表。例如“['awesome_lib::']”。"
 
-#: ../../sphinx/doc/usage/configuration.rst:2627
+#: ../../sphinx/doc/usage/configuration.rst:2644
 msgid "Example of configuration file"
 msgstr "配置文件示例"

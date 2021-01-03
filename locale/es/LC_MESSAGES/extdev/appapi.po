@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/4b452338f\n"
+"Project-Id-Version: Sphinx 4.0.0+/a9c7dd703\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-01 23:42+0000\n"
+"POT-Creation-Date: 2021-01-02 23:43+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
@@ -617,11 +617,19 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:10
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:24
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:24
 msgid "Priority"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:11
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:25
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:25
 msgid "Main purpose in Sphinx"
 msgstr ""
 
@@ -721,10 +729,11 @@ msgstr ""
 #: sphinx.application.Sphinx.add_js_file:3
 msgid ""
 "Add *filename* to the list of JavaScript files that the default HTML "
-"template will include.  The filename must be relative to the HTML static "
-"path , or a full URI with scheme.  If the keyword argument ``body`` is "
-"given, its value will be added between the ``<script>`` tags. Extra keyword "
-"arguments are included as attributes of the ``<script>`` tag."
+"template will include in order of *priority* (ascending).  The filename must"
+" be relative to the HTML static path , or a full URI with scheme. If the "
+"keyword argument ``body`` is given, its value will be added between the "
+"``<script>`` tags. Extra keyword arguments are included as attributes of the"
+" ``<script>`` tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -735,10 +744,58 @@ msgid "Example::"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:23
+#: sphinx.application.Sphinx.add_js_file:21
+msgid "priority range for JavaScript files"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:26
+msgid "200"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:27
+msgid "default priority for built-in JavaScript files"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:28
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:26
+msgid "500"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:29
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:27
+msgid "default priority for extensions"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:30
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:28
+msgid "800"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:31
+msgid "default priority for :confval:`html_js_files`"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:35
 msgid ""
 "Renamed from ``app.add_javascript()``. And it allows keyword arguments as "
 "attributes of script tag."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:39
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:44
+msgid "Take priority argument."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -750,13 +807,23 @@ msgstr ""
 #: sphinx.application.Sphinx.add_css_file:3
 msgid ""
 "Add *filename* to the list of CSS files that the default HTML template will "
-"include.  The filename must be relative to the HTML static path, or a full "
-"URI with scheme.  The keyword arguments are also accepted for attributes of "
-"``<link>`` tag."
+"include in order of *priority* (ascending).  The filename must be relative "
+"to the HTML static path, or a full URI with scheme.  The eyword arguments "
+"are also accepted for attributes of ``<link>`` tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:23
+#: sphinx.application.Sphinx.add_css_file:21
+msgid "priority range for CSS files"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:29
+msgid "default priority for :confval:`html_css_files`"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:33
 msgid ""
 "Optional ``alternate`` and/or ``title`` attributes can be supplied with the "
 "*alternate* (of boolean type) and *title* (a string) arguments. The default "
@@ -765,7 +832,7 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:30
+#: sphinx.application.Sphinx.add_css_file:40
 msgid ""
 "Renamed from ``app.add_stylesheet()``. And it allows keyword arguments as "
 "attributes of link tag."

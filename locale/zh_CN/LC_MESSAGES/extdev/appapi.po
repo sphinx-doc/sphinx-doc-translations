@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/5ba5602d7\n"
+"Project-Id-Version: Sphinx 4.0.0+/5460ea103\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-06 00:27+0000\n"
+"POT-Creation-Date: 2021-01-08 00:02+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -639,18 +639,18 @@ msgstr "Sphinx变换的优先级范围类别"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:10
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:24
+#: sphinx.application.Sphinx.add_js_file:26
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:24
+#: sphinx.application.Sphinx.add_css_file:26
 msgid "Priority"
 msgstr "优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:11
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:25
+#: sphinx.application.Sphinx.add_js_file:27
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:25
+#: sphinx.application.Sphinx.add_css_file:27
 msgid "Main purpose in Sphinx"
 msgstr "sphinx的主要目标"
 
@@ -753,73 +753,81 @@ msgid ""
 "Add *filename* to the list of JavaScript files that the default HTML "
 "template will include in order of *priority* (ascending).  The filename must"
 " be relative to the HTML static path , or a full URI with scheme. If the "
-"keyword argument ``body`` is given, its value will be added between the "
-"``<script>`` tags. Extra keyword arguments are included as attributes of the"
-" ``<script>`` tag."
+"priority of JavaScript file is the same as others, the JavaScript files will"
+" be included in order of the registration.  If the keyword argument ``body``"
+" is given, its value will be added between the ``<script>`` tags. Extra "
+"keyword arguments are included as attributes of the ``<script>`` tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:10
+#: sphinx.application.Sphinx.add_js_file:12
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:8
+#: sphinx.application.Sphinx.add_css_file:10
 msgid "Example::"
 msgstr "例如："
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:21
+#: sphinx.application.Sphinx.add_js_file:23
 msgid "priority range for JavaScript files"
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:26
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:26
-msgid "200"
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:27
-msgid "default priority for built-in JavaScript files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:28
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:28
-msgid "500"
+msgid "200"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:29
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:29
-msgid "default priority for extensions"
+msgid "default priority for built-in JavaScript files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:30
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:30
-msgid "800"
+msgid "500"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:31
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:31
+msgid "default priority for extensions"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:32
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:32
+msgid "800"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:33
 msgid "default priority for :confval:`html_js_files`"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:35
 msgid ""
+"A JavaScript file can be added to the specific HTML page when on extension "
+"calls this method on :event:`html-page-context` event."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:40
+msgid ""
 "Renamed from ``app.add_javascript()``. And it allows keyword arguments as "
 "attributes of script tag."
 msgstr "重命名自``app.add_javascript应用程序()``. 它允许关键字参数作为脚本标记的属性。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:39
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:46
-msgid "Take priority argument."
+#: sphinx.application.Sphinx.add_js_file:44
+msgid ""
+"Take priority argument.  Allow to add a JavaScript file to the specific "
+"page."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -832,27 +840,36 @@ msgstr "注册要包含在HTML输出中的样式表。"
 msgid ""
 "Add *filename* to the list of CSS files that the default HTML template will "
 "include in order of *priority* (ascending).  The filename must be relative "
-"to the HTML static path, or a full URI with scheme.  The eyword arguments "
-"are also accepted for attributes of ``<link>`` tag."
+"to the HTML static path, or a full URI with scheme.  If the priority of CSS "
+"file is the same as others, the CSS files will be included in order of the "
+"registration.  The keyword arguments are also accepted for attributes of "
+"``<link>`` tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:21
+#: sphinx.application.Sphinx.add_css_file:23
 msgid "priority range for CSS files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:27
+#: sphinx.application.Sphinx.add_css_file:29
 msgid "default priority for built-in CSS files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:31
+#: sphinx.application.Sphinx.add_css_file:33
 msgid "default priority for :confval:`html_css_files`"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:35
+msgid ""
+"A CSS file can be added to the specific HTML page when on extension calls "
+"this method on :event:`html-page-context` event."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:40
 msgid ""
 "Optional ``alternate`` and/or ``title`` attributes can be supplied with the "
 "*alternate* (of boolean type) and *title* (a string) arguments. The default "
@@ -863,11 +880,16 @@ msgstr ""
 "title和*alternate*=``False``。有关详细信息，请参阅文档<https://mdn.io/Web/CSS/Alternative_样式表>`__."
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:42
+#: sphinx.application.Sphinx.add_css_file:47
 msgid ""
 "Renamed from ``app.add_stylesheet()``. And it allows keyword arguments as "
 "attributes of link tag."
 msgstr "重命名自``app.add_样式表()``. 它允许关键字参数作为链接标记的属性。"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:51
+msgid "Take priority argument.  Allow to add a CSS file to the specific page."
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_latex_package:1
@@ -1386,11 +1408,17 @@ msgid ""
 "``'page.html'`` as the HTML template for this page."
 msgstr "您可以从处理程序返回一个字符串，然后它将替换“`”页面.html“`”作为此页的HTML模板。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:381
+#: ../../sphinx/doc/extdev/appapi.rst:379
+msgid ""
+"You can install JS/CSS files for the specific page via "
+":meth:`Sphinx.add_js_file` and :meth:`Sphinx.add_css_file` since v3.5.0."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/appapi.rst:384
 msgid "The return value can now specify a template name."
 msgstr "返回值现在可以指定模板名称。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:386
+#: ../../sphinx/doc/extdev/appapi.rst:389
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -1401,11 +1429,11 @@ msgid ""
 msgstr ""
 "生成完成后，在Sphinx退出之前发出，通常用于清理。即使生成过程引发异常（以*exception*参数指定），也会发出此事件。事件处理程序运行后，将在应用程序中重新初始化异常。如果生成过程没有引发异常，*exception*将为“None”。这允许根据异常状态自定义清理操作。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:397
+#: ../../sphinx/doc/extdev/appapi.rst:400
 msgid "Checking the Sphinx version"
 msgstr "检查Sphinx版本"
 
-#: ../../sphinx/doc/extdev/appapi.rst:401
+#: ../../sphinx/doc/extdev/appapi.rst:404
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr "使用此选项可使您的插件适应Sphinx中的接口更改。"
 
@@ -1426,7 +1454,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr "在版本1.2之前，请检查字符串“sphinx.\\uuuversion”。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:407
+#: ../../sphinx/doc/extdev/appapi.rst:410
 msgid "The Config object"
 msgstr "配置对象"
 
@@ -1449,7 +1477,7 @@ msgid ""
 msgstr ""
 "它通过：py:attr:`sphinx.application.Application.config`and:py:attr:`sphinx.environment.Environment.config`属性。例如，要获取值：confval:`language`，请使用``app.config.language应用程序配置语言``或者``环境配置语言``."
 
-#: ../../sphinx/doc/extdev/appapi.rst:417
+#: ../../sphinx/doc/extdev/appapi.rst:420
 msgid "The template bridge"
 msgstr "模板桥"
 
@@ -1501,7 +1529,7 @@ msgid ""
 "specified context (a Python dictionary)."
 msgstr "由生成器调用以呈现给定为字符串的模板，并具有指定的上下文（Python字典）。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:428
+#: ../../sphinx/doc/extdev/appapi.rst:431
 msgid "Exceptions"
 msgstr "例外"
 

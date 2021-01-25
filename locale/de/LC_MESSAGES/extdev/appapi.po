@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Georg Brandl <g.brandl@gmx.net>, 2018
+# Georg Brandl <g.brandl@gmx.net>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/37fc43a4d\n"
+"Project-Id-Version: Sphinx 4.0.0+/0ad32905b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-23 23:11+0000\n"
+"POT-Creation-Date: 2021-01-25 00:12+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
-"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2018\n"
+"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2021\n"
 "Language-Team: German (https://www.transifex.com/sphinx-doc/teams/15434/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,9 +71,35 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.require_sphinx:3
 msgid ""
-"Compare *version* (which must be a ``major.minor`` version string, e.g. "
-"``'1.1'``) with the version of the running Sphinx, and abort the build when "
-"it is too old."
+"Compare *version* with the version of the running Sphinx, and abort the "
+"build when it is too old."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.require_sphinx:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.connect:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.disconnect:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_builder:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.set_translator:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit_firstresult:0
+#: ../../sphinx/doc/extdev/appapi.rst:0
+msgid "Parameters"
+msgstr "Parameter"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.require_sphinx:6
+msgid "The required version in the form of ``major.minor``."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -90,16 +116,29 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.connect:6
-msgid ""
-"Registered callbacks will be invoked on event in the order of *priority* and"
-" registration.  The priority is ascending order."
+msgid "The name of target event"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.connect:9
+#: sphinx.application.Sphinx.connect:7
+msgid "Callback function for the event"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.connect:8
 msgid ""
-"The method returns a \"listener ID\" that can be used as an argument to "
-":meth:`disconnect`."
+"The priority of the callback.  The callbacks will be invoked in the order of"
+" *priority* in asending."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.connect:0
+msgid "Returns"
+msgstr "Rückgabe"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.connect:10
+msgid "A listener ID.  It can be used for :meth:`disconnect`."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -113,28 +152,31 @@ msgid "Unregister callback by *listener_id*."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.disconnect:3
+msgid "A listener_id that :meth:`connect` returns"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_builder:1
 msgid "Register a new builder."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_builder:3
-msgid ""
-"*builder* must be a class that inherits from "
-":class:`~sphinx.builders.Builder`."
+msgid "A builder class"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_builder:5
+#: sphinx.application.Sphinx.add_builder:4
 msgid ""
-"If *override* is True, the given *builder* is forcedly installed even if a "
-"builder having the same name is already installed."
+"If true, install the builder forcedly even if another builder is already "
+"installed as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_builder:8
+#: sphinx.application.Sphinx.add_builder:7
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.set_translator:11
+#: sphinx.application.Sphinx.set_translator:13
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:38
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -196,12 +238,20 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_config_value:15
 msgid ""
+"The *types* value takes a list of types that describes the type of "
+"configuration value.  For example, ``[str]`` is used to describe a "
+"configuration that takes string value."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:19
+msgid ""
 "Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) "
 "to a string.  However, booleans are still accepted and converted internally."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:20
+#: sphinx.application.Sphinx.add_config_value:24
 msgid ""
 "If the *default* value is a callable, it will be called with the config "
 "object as its argument in order to get the default value. This can be used "
@@ -233,9 +283,19 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.set_translator:7
+msgid "The name of builder for the translator"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.set_translator:8
+msgid "A translator class"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.set_translator:9
 msgid ""
-"If *override* is True, the given *translator_class* is forcedly installed "
-"even if a translator for *name* is already installed."
+"If true, install the translator forcedly even if another translator is "
+"already installed as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -328,11 +388,19 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:3
+msgid "The name of directive"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive:4
+msgid "A directive class"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive:5
 msgid ""
-"*name* must be the prospective directive name.  *cls* is a directive class "
-"which inherits ``docutils.parsers.rst.Directive``.  For more details, see "
-"`the Docutils docs <http://docutils.sourceforge.net/docs/howto/rst-"
-"directives.html>`_ ."
+"If true, install the directive forcedly even if another directive is already"
+" installed as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -345,8 +413,8 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:31
 msgid ""
-"If *override* is True, the given *cls* is forcedly installed even if a "
-"directive named as *name* is already installed."
+"For more details, see `the Docutils docs "
+"<http://docutils.sourceforge.net/docs/howto/rst-directives.html>`__ ."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -366,20 +434,26 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:3
+msgid "The name of role"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role:4
+msgid "A role function"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role:5
 msgid ""
-"*name* must be the role name that occurs in the source, *role* the role "
-"function. Refer to the `Docutils documentation "
-"<http://docutils.sourceforge.net/docs/howto/rst-roles.html>`_ for more "
-"information."
+"If true, install the role forcedly even if another role is already installed"
+" as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:8
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_role_to_domain:6
 msgid ""
-"If *override* is True, the given *role* is forcedly installed even if a role"
-" named as *name* is already installed."
+"For more details about role functions, see `the Docutils docs "
+"<http://docutils.sourceforge.net/docs/howto/rst-roles.html>`__ ."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -448,6 +522,13 @@ msgstr ""
 #: sphinx.application.Sphinx.add_role_to_domain:3
 msgid ""
 "Like :meth:`add_role`, but the role is added to the domain named *domain*."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:6
+msgid ""
+"If *override* is True, the given *role* is forcedly installed even if a role"
+" named as *name* is already installed."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -1085,9 +1166,30 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit:6
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit_firstresult:5
+msgid "The name of event that will be emitted"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit:7
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit_firstresult:6
+msgid "The arguments for the event"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit:8
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.emit_firstresult:8
+#: sphinx.application.Sphinx.emit_firstresult:7
+msgid "The list of exceptions that are allowed in the callbacks"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit:12
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.emit_firstresult:12
 msgid "Added *allowed_exceptions* to specify path-through exceptions"
 msgstr ""
 
@@ -1236,10 +1338,6 @@ msgid ""
 " in trying and suppress a warning about this cross-reference being "
 "unresolved."
 msgstr ""
-
-#: ../../sphinx/doc/extdev/appapi.rst:0
-msgid "Parameters"
-msgstr "Parameter"
 
 #: ../../sphinx/doc/extdev/appapi.rst:286
 msgid "The build environment (``app.builder.env``)."

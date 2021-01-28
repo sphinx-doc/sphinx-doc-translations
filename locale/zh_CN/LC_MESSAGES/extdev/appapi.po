@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/2ee033838\n"
+"Project-Id-Version: Sphinx 4.0.0+/401124ccf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-26 01:34+0000\n"
+"POT-Creation-Date: 2021-01-28 02:29+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -86,11 +86,35 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_builder:0
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_event:0
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.set_translator:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_node:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_enumerable_node:0
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:0
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_domain:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive_to_domain:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_index_to_domain:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_transform:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_post_transform:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_message_catalog:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.is_parallel_allowed:0
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit:0
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -186,13 +210,13 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_generic_role:10
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_domain:10
+#: sphinx.application.Sphinx.add_domain:8
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_directive_to_domain:10
+#: sphinx.application.Sphinx.add_directive_to_domain:13
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_role_to_domain:10
+#: sphinx.application.Sphinx.add_role_to_domain:13
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_index_to_domain:10
+#: sphinx.application.Sphinx.add_index_to_domain:11
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_object_type:57
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -213,53 +237,77 @@ msgstr "注册配置值。"
 #: sphinx.application.Sphinx.add_config_value:3
 msgid ""
 "This is necessary for Sphinx to recognize new values and set default values "
-"accordingly.  The *name* should be prefixed with the extension name, to "
-"avoid clashes.  The *default* value can be any Python object. The string "
-"value *rebuild* must be one of those values:"
+"accordingly."
 msgstr ""
-"这对于Sphinx识别新值并相应地设置默认值是必需的。*名称*应以扩展名作为前缀，以避免冲突。*default*值可以是任何Python对象。字符串值*rebuild*必须是以下值之一："
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:8
+#: sphinx.application.Sphinx.add_config_value:7
+msgid ""
+"The name of configuration value.  It is recommended to be prefixed with the "
+"extension name (ex. ``html_logo``, ``epub_title``)"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:9
+msgid "The default value of the configuration."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:10
+msgid ""
+"The condition of rebuild.  It must be one of those values:  * ``'env'`` if a"
+" change in the setting only takes effect when a   document is parsed -- this"
+" means that the whole environment must be   rebuilt. * ``'html'`` if a "
+"change in the setting needs a full rebuild of HTML   documents. * ``''`` if "
+"a change in the setting will not need any special rebuild."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:10
+msgid "The condition of rebuild.  It must be one of those values:"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:12
 msgid ""
 "``'env'`` if a change in the setting only takes effect when a document is "
 "parsed -- this means that the whole environment must be rebuilt."
 msgstr "``“env”`如果设置中的更改仅在文档被解析时生效—这意味着必须重新构建整个环境。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:11
+#: sphinx.application.Sphinx.add_config_value:15
 msgid ""
 "``'html'`` if a change in the setting needs a full rebuild of HTML "
 "documents."
 msgstr "``“html”``如果更改设置需要完全重新生成html文档。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:13
+#: sphinx.application.Sphinx.add_config_value:17
 msgid "``''`` if a change in the setting will not need any special rebuild."
 msgstr "``''``如果设置中的更改不需要任何特殊的重建。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:15
+#: sphinx.application.Sphinx.add_config_value:18
 msgid ""
-"The *types* value takes a list of types that describes the type of "
-"configuration value.  For example, ``[str]`` is used to describe a "
-"configuration that takes string value."
+"The type of configuration value.  A list of types can be specified.  For "
+"example, ``[str]`` is used to describe a configuration that takes string "
+"value."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:19
-msgid ""
-"Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) "
-"to a string.  However, booleans are still accepted and converted internally."
-msgstr "将*rebuild*从一个简单的布尔值（相当于'''''或''env'``'）更改为字符串。但是，布尔值仍然被接受并在内部转换。"
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_config_value:24
+#: sphinx.application.Sphinx.add_config_value:22
 msgid ""
 "If the *default* value is a callable, it will be called with the config "
 "object as its argument in order to get the default value. This can be used "
 "to implement config values whose default depends on other values."
 msgstr "如果*default*值是可调用的，则将使用config对象作为其参数来调用它，以获取默认值。这可以用来实现默认值依赖于其他值的配置值。"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_config_value:28
+msgid ""
+"Changed *rebuild* from a simple boolean (equivalent to ``''`` or ``'env'``) "
+"to a string.  However, booleans are still accepted and converted internally."
+msgstr "将*rebuild*从一个简单的布尔值（相当于'''''或''env'``'）更改为字符串。但是，布尔值仍然被接受并在内部转换。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_event:1
@@ -270,6 +318,11 @@ msgstr "注册一个名为*name*的事件。"
 #: sphinx.application.Sphinx.add_event:3
 msgid "This is needed to be able to emit it."
 msgstr "这是需要有能力发射它。"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_event:5
+msgid "The name of the event"
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.set_translator:1
@@ -316,6 +369,27 @@ msgstr "这对于Docutils内部构件是必需的。将来还可以使用它来�
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_node:6
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_enumerable_node:6
+msgid "A node class"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_node:7
+msgid "Visitor functions for each builder (see below)"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_node:8
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_enumerable_node:19
+msgid ""
+"If true, install the node forcedly even if another node is already installed"
+" as the same name"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_node:11
 msgid ""
 "Node visitor functions for the Sphinx HTML, LaTeX, text and manpage writers "
 "can be given as keyword arguments: the keyword should be one or more of "
@@ -329,23 +403,14 @@ msgstr ""
 " 例子："
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_node:24
+#: sphinx.application.Sphinx.add_node:29
 msgid ""
 "Obviously, translators for which you don't specify visitor methods will "
 "choke on the node when encountered in a document to translate."
 msgstr "显然，当在要翻译的文档中遇到未指定访问者方法的转换器时，会在节点上卡住。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_node:27
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_enumerable_node:22
-msgid ""
-"If *override* is True, the given *node* is forcedly installed even if a node"
-" having the same name is already installed."
-msgstr ""
-
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_node:30
+#: sphinx.application.Sphinx.add_node:32
 msgid "Added the support for keyword arguments giving visit functions."
 msgstr "增加了对提供访问函数的关键字参数的支持。"
 
@@ -362,35 +427,28 @@ msgid ""
 msgstr "Sphinx会自动为节点编号。然后用户可以使用：rst:角色：`numref`。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_enumerable_node:6
+#: sphinx.application.Sphinx.add_enumerable_node:7
 msgid ""
-"*figtype* is a type of enumerable nodes.  Each figtypes have individual "
-"numbering sequences.  As a system figtypes, ``figure``, ``table`` and "
-"``code-block`` are defined.  It is able to add custom nodes to these default"
-" figtypes.  It is also able to define new custom figtype if new figtype is "
-"given."
+"The type of enumerable nodes.  Each figtypes have individual numbering "
+"sequences.  As a system figtypes, ``figure``, ``table`` and ``code-block`` "
+"are defined.  It is able to add custom nodes to these default figtypes.  It "
+"is also able to define new custom figtype if new figtype is given."
 msgstr ""
-"*figtype*是可枚举节点的一种类型。每五种类型都有各自的编号顺序。作为一个系统数字类型，定义了“fig”、“table”和“code "
-"block”。它可以向这些默认的figtype添加自定义节点。如果给定了新的figtype，它还可以定义新的figtype。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_enumerable_node:12
 msgid ""
-"*title_getter* is a getter function to obtain the title of node.  It takes "
-"an instance of the enumerable node, and it must return its title as string."
-"  The title is used to the default title of references for :rst:role:`ref`."
-"  By default, Sphinx searches ``docutils.nodes.caption`` or "
-"``docutils.nodes.title`` from the node as a title."
+"A getter function to obtain the title of node.  It takes an instance of the "
+"enumerable node, and it must return its title as string.  The title is used "
+"to the default title of references for :rst:role:`ref`.  By default, Sphinx "
+"searches ``docutils.nodes.caption`` or ``docutils.nodes.title`` from the "
+"node as a title."
 msgstr ""
-"*title "
-"getter*是一个获取节点标题的getter函数。它接受可枚举节点的实例，并且必须以字符串形式返回其标题。标题用于引用的默认标题：rst:角色：`ref`。默认情况下，sphinx搜索``docutils.nodes.caption``或者``docutils.nodes.title``从节点作为标题。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_enumerable_node:19
-msgid ""
-"Other keyword arguments are used for node visitor functions. See the "
-":meth:`.Sphinx.add_node` for details."
-msgstr "其他关键字参数用于节点访问者函数。参见：meth:`。Sphinx.add_节点`了解详情。"
+#: sphinx.application.Sphinx.add_enumerable_node:18
+msgid "Visitor functions for each builder (same as :meth:`add_node`)"
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:1
@@ -404,11 +462,15 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:4
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive_to_domain:8
 msgid "A directive class"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:5
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive_to_domain:9
 msgid ""
 "If true, install the directive forcedly even if another directive is already"
 " installed as the same name"
@@ -450,11 +512,15 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:4
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:8
 msgid "A role function"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:5
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:9
 msgid ""
 "If true, install the role forcedly even if another role is already installed"
 " as the same name"
@@ -493,17 +559,14 @@ msgstr "注册域。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_domain:3
-msgid ""
-"Make the given *domain* (which must be a class; more precisely, a subclass "
-"of :class:`~sphinx.domains.Domain`) known to Sphinx."
+msgid "A domain class"
 msgstr ""
-"生成给定的*domain*（它必须是一个类；更准确地说，是：class:`~sphinx.Domain.Domain`)让sphinx知道。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_domain:6
+#: sphinx.application.Sphinx.add_domain:4
 msgid ""
-"If *override* is True, the given *domain* is forcedly installed even if a "
-"domain having the same name is already installed."
+"If true, install the domain forcedly even if another domain is already "
+"installed as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -520,9 +583,16 @@ msgstr "例如：meth:`add\\u directive`，但该指令被添加到名为*domain
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:6
-msgid ""
-"If *override* is True, the given *directive* is forcedly installed even if a"
-" directive named as *name* is already installed."
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:6
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_index_to_domain:5
+msgid "The name of target domain"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_directive_to_domain:7
+msgid "A name of directive"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -537,10 +607,8 @@ msgid ""
 msgstr "Like:meth:`add\\u role`，但是角色被添加到名为*domain*的域中。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_role_to_domain:6
-msgid ""
-"If *override* is True, the given *role* is forcedly installed even if a role"
-" named as *name* is already installed."
+#: sphinx.application.Sphinx.add_role_to_domain:7
+msgid "A name of role"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -550,17 +618,19 @@ msgstr "注册域的自定义索引。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:3
-msgid ""
-"Add a custom *index* class to the domain named *domain*.  *index* must be a "
-"subclass of :class:`~sphinx.domains.Index`."
+msgid "Add a custom *index* class to the domain named *domain*."
 msgstr ""
-"向名为*domain*的域添加一个自定义*index*类。*index*必须是：class:`~sphinx.domains.Index`."
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:6
+msgid "A index class"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_index_to_domain:7
 msgid ""
-"If *override* is True, the given *index* is forcedly installed even if an "
-"index having the same name is already installed."
+"If true, install the index forcedly even if another index is already "
+"installed as the same name"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -709,11 +779,18 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:7
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_post_transform:7
+msgid "A transform class"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_transform:9
 msgid "priority range categories for Sphinx transforms"
 msgstr "Sphinx变换的优先级范围类别"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:10
+#: sphinx.application.Sphinx.add_transform:12
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:26
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -722,7 +799,7 @@ msgid "Priority"
 msgstr "优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:11
+#: sphinx.application.Sphinx.add_transform:13
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:27
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -731,77 +808,77 @@ msgid "Main purpose in Sphinx"
 msgstr "sphinx的主要目标"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:12
+#: sphinx.application.Sphinx.add_transform:14
 msgid "0-99"
 msgstr "0-99"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:13
+#: sphinx.application.Sphinx.add_transform:15
 msgid "Fix invalid nodes by docutils. Translate a doctree."
 msgstr "用docutils修复无效节点。翻译博士论文。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:14
+#: sphinx.application.Sphinx.add_transform:16
 msgid "100-299"
 msgstr "100-299"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:15
+#: sphinx.application.Sphinx.add_transform:17
 msgid "Preparation"
 msgstr "准备"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:16
+#: sphinx.application.Sphinx.add_transform:18
 msgid "300-399"
 msgstr "300-399"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:17
+#: sphinx.application.Sphinx.add_transform:19
 msgid "early"
 msgstr "早期的"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:18
+#: sphinx.application.Sphinx.add_transform:20
 msgid "400-699"
 msgstr "400-699"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:19
+#: sphinx.application.Sphinx.add_transform:21
 msgid "main"
 msgstr "主要的"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:20
+#: sphinx.application.Sphinx.add_transform:22
 msgid "700-799"
 msgstr "700-799"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:21
+#: sphinx.application.Sphinx.add_transform:23
 msgid "Post processing. Deadline to modify text and referencing."
 msgstr "后置处理。修改文本和引用的截止日期。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:22
+#: sphinx.application.Sphinx.add_transform:24
 msgid "800-899"
 msgstr "800-899"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:23
+#: sphinx.application.Sphinx.add_transform:25
 msgid "Collect referencing and referenced nodes. Domain processing."
 msgstr "收集引用和引用节点。域处理。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:24
+#: sphinx.application.Sphinx.add_transform:26
 msgid "900-999"
 msgstr "900-999"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:25
+#: sphinx.application.Sphinx.add_transform:27
 msgid "Finalize and clean up."
 msgstr "完成并清理。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_transform:27
+#: sphinx.application.Sphinx.add_transform:29
 msgid "refs: `Transform Priority Range Categories`__"
 msgstr "refs: `Transform Priority Range Categories`__"
 
@@ -1152,13 +1229,18 @@ msgstr "注册邮件目录。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_message_catalog:3
-msgid ""
-"The *catalog* is a name of catalog, and *locale_dir* is a base path of "
-"message catalog.  For more details, see "
-":func:`sphinx.locale.get_translation()`."
+msgid "A name of catalog"
 msgstr ""
-"*catalog*是catalog的名称，*locale\\u "
-"dir*是消息目录的基本路径。有关详细信息，请参见：func:`sphinx.locale.get_翻译()`."
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_message_catalog:4
+msgid "The base path of message catalog"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_message_catalog:6
+msgid "For more details, see :func:`sphinx.locale.get_translation()`."
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.is_parallel_allowed:1
@@ -1167,8 +1249,8 @@ msgstr "检查是否允许并行处理。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.is_parallel_allowed:3
-msgid "``typ`` is a type of processing; ``'read'`` or ``'write'``."
-msgstr "``typ``是一种处理类型；``读'`或``写'``。"
+msgid "A type of processing; ``'read'`` or ``'write'``."
+msgstr ""
 
 #: ../../sphinx/doc/extdev/appapi.rst:100
 msgid ""

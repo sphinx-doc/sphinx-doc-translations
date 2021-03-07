@@ -5,18 +5,18 @@
 # 
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2018
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2019
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
+# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/6886de29f\n"
+"Project-Id-Version: Sphinx 4.0.0+/0c76c1abc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 00:13+0000\n"
+"POT-Creation-Date: 2021-03-07 00:14+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
-"Last-Translator: Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019\n"
+"Last-Translator: Takayuki Shimizukawa <shimizukawa@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,31 +154,36 @@ msgstr ""
 "Portanto, você também pode misturar documentação de membros automático e não"
 " automático, como::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:92
-msgid "**Options and advanced usage**"
-msgstr "**Opções e uso avançado**"
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:93
+msgid "Options"
+msgstr "Opções"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:94
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:97
 msgid ""
-"If you want to automatically document members, there's a ``members`` "
-"option::"
+"If set, autodoc will generate document for the members of the target module,"
+" class or exception."
 msgstr ""
-"Se você quiser documentar membros automaticamente, existe uma opção "
-"``members``::"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:100
+msgid "For example::"
+msgstr "Por exemplo::"
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:105
 msgid "will document all module members (recursively), and ::"
 msgstr "documentará todos os membros do módulo (recursivamente) e::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:105
-msgid ""
-"will document all non-private member functions and properties (that is, "
-"those whose name doesn't start with ``_``)."
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:110
+msgid "will document all class member methods and properties."
 msgstr ""
-"documentará todas as funções e propriedades de membros não privados (ou "
-"seja, aqueles cujo nome não inicia com ``_``)."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:108
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:112
+msgid ""
+"By default, autodoc will not generate document for the members that are "
+"private, not having docstrings, inherited from super class, or special "
+"members."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:116
 msgid ""
 "For modules, ``__all__`` will be respected when looking for members unless "
 "you give the ``ignore-module-all`` flag option.  Without ``ignore-module-"
@@ -188,7 +193,7 @@ msgstr ""
 "que você forneça a opção de sinalizador ``ignore-module-all``. Sem ``ignore-"
 "module-all``, a ordem dos membros também será a ordem em ``__all__``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:113
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:121
 msgid ""
 "You can also give an explicit list of members; only these will then be "
 "documented::"
@@ -196,7 +201,44 @@ msgstr ""
 "Você também pode fornecer uma lista explícita de membros; somente estes "
 "serão então documentados::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:119
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:130
+msgid ""
+"If set, autodoc will also generate document for the members not having "
+"docstrings::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:140
+msgid ""
+"If set, autodoc will also generate document for the private members (that "
+"is, those named like ``_private`` or ``__private``)::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:147
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:168
+msgid ""
+"It can also take an explicit list of member names to be documented as "
+"arguments::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:155
+msgid "The option can now take arguments."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:161
+msgid ""
+"If set, autodoc will also generate document for the special members (that "
+"is, those named like ``__special__``)::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:177
+msgid "The option can now take arguments"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:180
+msgid "**Options and advanced usage**"
+msgstr "**Opções e uso avançado**"
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:182
 msgid ""
 "If you want to make the ``members`` option (or other options described "
 "below) the default, see :confval:`autodoc_default_options`."
@@ -204,7 +246,7 @@ msgstr ""
 "Se você deseja tornar a opção ``members`` (ou outras opções descritas "
 "abaixo) como padrão, consulte :confval:`autodoc_default_options`."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:124
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:187
 msgid ""
 "You can use a negated form, :samp:`'no-{flag}'`, as an option of autodoc "
 "directive, to disable it temporarily.  For example::"
@@ -212,88 +254,44 @@ msgstr ""
 "Você pode usar um formato negado, :samp:`'no-{flag}'`, como uma opção da "
 "diretiva ``autodoc``, para desativá-lo temporariamente. Por exemplo::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:132
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:195
 msgid ""
 "You can use autodoc directive options to temporarily override or extend "
 "default options which takes list as an input. For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:139
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:202
 msgid "The default options can be overridden or extended temporarily."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:142
-msgid ""
-"Members without docstrings will be left out, unless you give the ``undoc-"
-"members`` flag option::"
-msgstr ""
-"Membros sem ``docstrings`` serão deixados de fora, a menos que você utilize "
-"a flag opcional ``undoc-members``::"
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:149
-msgid ""
-"\"Private\" members (that is, those named like ``_private`` or "
-"``__private``) will be included if the ``private-members`` flag option is "
-"given::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:156
-msgid ""
-"It can also take an explicit list of member names to be documented as "
-"arguments::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:164
-msgid "The option can now take arguments."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:167
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:205
 msgid ""
 "autodoc considers a member private if its docstring contains ``:meta "
 "private:`` in its :ref:`info-field-lists`. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:181
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:219
 msgid ""
 "autodoc considers a member public if its docstring contains ``:meta "
 "public:`` in its :ref:`info-field-lists`, even if it starts with an "
 "underscore. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:196
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:234
 msgid ""
 "autodoc considers a variable member does not have any default value if its "
 "docstring contains ``:meta hide-value:`` in its :ref:`info-field-lists`. "
 "Example:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:206
-msgid ""
-"Python \"special\" members (that is, those named like ``__special__``) will "
-"be included if the ``special-members`` flag option is given::"
-msgstr ""
-"Membros *especiais* do Python (isto é, aqueles com o nome ``__special__``) "
-"serão incluídos se a flag opcional ``special-members`` for fornecida::"
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:214
-msgid "would document both \"private\" and \"special\" members of the class."
-msgstr "documentaria os membros *privados* e *especiais* da classe."
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:218
-msgid ""
-"The option can now take arguments, i.e. the special members to document."
-msgstr ""
-"A opção agora pode receber argumentos, ou seja, os membros especiais para "
-"documentar."
-
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:221
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:244
 msgid ""
 "For classes and exceptions, members inherited from base classes will be left"
 " out when documenting all members, unless you give the ``inherited-members``"
 " option, in addition to ``members``::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:229
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:252
 msgid ""
 "This can be combined with ``undoc-members`` to document *all* available "
 "members of the class or module."
@@ -301,21 +299,21 @@ msgstr ""
 "Isso pode ser combinado com ``undoc-members`` para documentar *todos* os "
 "membros disponíveis da classe ou módulo."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:232
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:255
 msgid ""
 "It can take an ancestor class not to document inherited members from it. By "
 "default, members of ``object`` class are not documented.  To show them all, "
 "give ``None`` to the option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:236
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:259
 msgid ""
 "For example; If your class ``Foo`` is derived from ``list`` class and you "
 "don't want to document ``list.__len__()``, you should specify a option "
 "``:inherited-members: list`` to avoid special members of list class."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:241
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:264
 msgid ""
 "Another example; If your class Foo has ``__str__`` special method and "
 "autodoc directive has both ``inherited-members`` and ``special-members``, "
@@ -323,7 +321,7 @@ msgid ""
 " are not implemented in your class ``Foo``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:246
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:269
 msgid ""
 "Note: this will lead to markup errors if the inherited members come from a "
 "module whose docstrings are not reST formatted."
@@ -331,11 +329,11 @@ msgstr ""
 "Nota: isso levará a erros de marcação se os membros herdados vierem de um "
 "módulo cujas ``docstrings`` não são formatadas em *reST*."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:253
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:276
 msgid "It takes an ancestor class name as an argument."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:255
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:278
 msgid ""
 "It's possible to override the signature for explicitly documented callable "
 "objects (functions, methods, classes) with the regular syntax that will "
@@ -345,13 +343,13 @@ msgstr ""
 "explicitamente (funções, métodos, classes) explicitamente com a sintaxe "
 "regular que irá sobrepor a assinatura obtida da introspecção::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:263
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:286
 msgid ""
 "This is useful if the signature from the method is hidden by a decorator."
 msgstr ""
 "Isso é útil se a assinatura do método estiver oculta por um decorador."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:267
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:290
 msgid ""
 "The :rst:dir:`automodule`, :rst:dir:`autoclass` and :rst:dir:`autoexception`"
 " directives also support a flag option called ``show-inheritance``.  When "
@@ -365,7 +363,7 @@ msgstr ""
 "logo abaixo da assinatura da classe (quando usada com :rst:dir:`automodule`,"
 " ela será inserida para cada classe documentada no módulo)."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:275
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:298
 msgid ""
 "All autodoc directives support the ``noindex`` flag option that has the same"
 " effect as for standard :rst:dir:`py:function` etc. directives: no index "
@@ -377,7 +375,7 @@ msgstr ""
 "entrada de índice é gerada para o objeto documentado (e todos os membros "
 "autodocumentados)."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:282
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:305
 msgid ""
 ":rst:dir:`automodule` also recognizes the ``synopsis``, ``platform`` and "
 "``deprecated`` options that the standard :rst:dir:`py:module` directive "
@@ -386,7 +384,7 @@ msgstr ""
 ":rst:dir:`automodule` também reconhece as opções ``synopsis``, ``platform`` "
 "e ``deprecated`` que a diretiva padrão :rst:dir:`py:module` suporta."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:288
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:311
 msgid ""
 ":rst:dir:`automodule` and :rst:dir:`autoclass` also has an ``member-order`` "
 "option that can be used to override the global value of "
@@ -396,7 +394,7 @@ msgstr ""
 "order`` que pode ser usada para substituir o valor global de "
 ":confval:`autodoc_member_order` para uma diretiva."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:294
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:317
 msgid ""
 "The directives supporting member documentation also have a ``exclude-"
 "members`` option that can be used to exclude single member names from "
@@ -406,7 +404,7 @@ msgstr ""
 "``exclude-members`` que pode ser usada para excluir nomes de membros únicos "
 "da documentação, se todos os membros tiverem que ser documentados."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:300
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:323
 msgid ""
 "In an :rst:dir:`automodule` directive with the ``members`` option set, only "
 "module members whose ``__module__`` attribute is equal to the module name as"
@@ -426,7 +424,7 @@ msgstr ""
 "serão documentados, porque a documentação de atributos é descoberta ao "
 "analisar o arquivo de origem do módulo atual."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:311
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:334
 msgid ""
 "Add a list of modules in the :confval:`autodoc_mock_imports` to prevent "
 "import errors to halt the building process when some external dependencies "
@@ -437,14 +435,14 @@ msgstr ""
 "algumas dependências externas não puderem ser importadas no momento da "
 "criação."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:317
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:340
 msgid ""
 "As a hint to autodoc extension, you can put a ``::`` separator in between "
 "module name and object name to let autodoc know the correct module name if "
 "it is ambiguous. ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:330
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:353
 msgid ""
 "These work exactly like :rst:dir:`autoclass` etc., but do not offer the "
 "options used for automatic member documentation."
@@ -452,7 +450,7 @@ msgstr ""
 "Estes funcionam exatamente como :rst:dir:`autoclass` etc., mas não oferecem "
 "as opções usadas para documentação automática de membros."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:333
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:356
 msgid ""
 ":rst:dir:`autodata` and :rst:dir:`autoattribute` support the ``annotation`` "
 "option.  The option controls how the value of variable is shown.  If "
@@ -460,31 +458,31 @@ msgid ""
 "and its value is not shown::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:341
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:364
 msgid ""
 "If the option specified with arguments, it is printed after the name as a "
 "value of the variable::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:347
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:370
 msgid ""
 "By default, without ``annotation`` option, Sphinx tries to obtain the value "
 "of the variable and print it after the name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:350
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:373
 msgid ""
 "The ``no-value`` option can be used instead of a blank ``annotation`` to "
 "show the type hint but not the value::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:356
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:379
 msgid ""
 "If both the ``annotation`` and ``no-value`` options are used, ``no-value`` "
 "has no effect."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:359
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:382
 msgid ""
 "For module data members and class attributes, documentation can either be "
 "put into a comment with special formatting (using a ``#:`` to start the "
@@ -500,7 +498,7 @@ msgstr ""
 "própria definição, ou imediatamente após a atribuição *on the same line*. A "
 "última forma é restrita a apenas uma linha."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:366
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:389
 msgid ""
 "This means that in the following class definition, all attributes can be "
 "autodocumented::"
@@ -508,20 +506,20 @@ msgstr ""
 "Isso significa que, na definição de classe a seguir, todos os atributos "
 "podem ser ``autodocumented``::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:388
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:411
 msgid ""
 ":rst:dir:`autodata` and :rst:dir:`autoattribute` can now extract docstrings."
 msgstr ""
 ":rst:dir:`autodata` e :rst:dir:`autoattribute` agora podem extrair "
 "``docstrings``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:391
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:414
 msgid "Comment docs are now allowed on the same line after an assignment."
 msgstr ""
 "Os documentos de comentários agora são permitidos na mesma linha após uma "
 "atribuição."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:393
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:416
 msgid ""
 ":rst:dir:`autodata` and :rst:dir:`autoattribute` have an ``annotation`` "
 "option."
@@ -529,17 +527,17 @@ msgstr ""
 ":rst:dir:`autodata` e :rst:dir:`autoattribute` possuem uma opção "
 "``annotation``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:396
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:419
 msgid ":rst:dir:`autodecorator` added."
 msgstr ":rst:dir:`autodecorator` adicionado."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:398
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:421
 msgid ""
 ":rst:dir:`autodata` and :rst:dir:`autoattribute` now have a ``no-value`` "
 "option."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:404
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:427
 msgid ""
 "If you document decorated functions or methods, keep in mind that autodoc "
 "retrieves its docstrings by importing the module and inspecting the "
@@ -553,15 +551,15 @@ msgstr ""
 "decorador substituir a função decorada por outra, deverá copiar o "
 "``__doc__`` original para a nova função."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:412
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:435
 msgid "Configuration"
 msgstr "Configuração"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:414
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:437
 msgid "There are also config values that you can set:"
 msgstr "Existem também valores de configuração que você pode definir:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:418
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:441
 msgid ""
 "This value selects what content will be inserted into the main body of an "
 ":rst:dir:`autoclass` directive.  The possible values are:"
@@ -569,11 +567,11 @@ msgstr ""
 "Este valor seleciona qual conteúdo será inserido no corpo principal de uma "
 "diretiva :rst:dir:`autoclass`. Os valores possíveis são:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:423
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:446
 msgid "``\"class\"``"
 msgstr "``\"class\"``"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:422
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:445
 msgid ""
 "Only the class' docstring is inserted.  This is the default.  You can still "
 "document ``__init__`` as a separate method using :rst:dir:`automethod` or "
@@ -583,26 +581,26 @@ msgstr ""
 "pode documentar ``__init__`` como um método separado usando "
 ":rst:dir:`automethod` ou a opção ``members`` para :rst:dir:`autoclass`."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:426
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:449
 msgid "``\"both\"``"
 msgstr "``\"both\"``"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:426
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:449
 msgid ""
 "Both the class' and the ``__init__`` method's docstring are concatenated and"
 " inserted."
 msgstr ""
 "A ``docstring`` do método ``a`` e ``__init__`` são concatenadas e inseridas."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:429
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:452
 msgid "``\"init\"``"
 msgstr "``\"init\"``"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:429
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:452
 msgid "Only the ``__init__`` method's docstring is inserted."
 msgstr "Somente a ``docstring`` do método ``__init__`` é inserida."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:433
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:456
 msgid ""
 "If the class has no ``__init__`` method or if the ``__init__`` method's "
 "docstring is empty, but the class has a ``__new__`` method's docstring, it "
@@ -612,7 +610,7 @@ msgstr ""
 "``__init__`` estiver vazia, mas a classe tem a ``docstring`` do método "
 "``__new__``, ela é usada no lugar."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:441
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:464
 msgid ""
 "This value selects if automatically documented members are sorted "
 "alphabetical (value ``'alphabetical'``), by member type (value "
@@ -624,7 +622,7 @@ msgstr ""
 "membro (valor ``'groupwise'``) ou por ordem de origem (valor "
 "``'bysource'``). O padrão é alfabético."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:446
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:469
 msgid ""
 "Note that for source order, the module must be a Python module with the "
 "source code available."
@@ -632,11 +630,11 @@ msgstr ""
 "Observe que, para a ordem de origem, o módulo deve ser um módulo Python com "
 "o código-fonte disponível."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:450
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:473
 msgid "Support for ``'bysource'``."
 msgstr "Suporte para ``'bysource'``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:455
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:478
 msgid ""
 "This value is a list of autodoc directive flags that should be automatically"
 " applied to all autodoc directives.  The supported flags are ``'members'``, "
@@ -650,11 +648,11 @@ msgstr ""
 "``'special-members'``, ``'inherited-members'``, ``'show-inheritance'``, "
 "``'ignore-module-all'`` e ``'exclude-members'``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:465
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:488
 msgid "Integrated into :confval:`autodoc_default_options`."
 msgstr "Integrado em :confval:`autodoc_default_options`."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:469
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:492
 msgid ""
 "The default options for autodoc directives.  They are applied to all autodoc"
 " directives automatically.  It must be a dictionary which maps option names "
@@ -664,7 +662,7 @@ msgstr ""
 "diretivas ``autodoc`` automaticamente. Deve ser um dicionário que mapeie os "
 "nomes das opções para os valores. Por exemplo::"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:481
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:504
 msgid ""
 "Setting ``None`` or ``True`` to the value is equivalent to giving only the "
 "option name to the directives."
@@ -672,7 +670,7 @@ msgstr ""
 "Definir ``None`` ou ``True`` como o valor é equivalente a fornecer apenas o "
 "nome da opção às diretivas."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:484
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:507
 msgid ""
 "The supported options are ``'members'``, ``'member-order'``, ``'undoc-"
 "members'``, ``'private-members'``, ``'special-members'``, ``'inherited-"
@@ -684,15 +682,15 @@ msgstr ""
 "members'``, ``'show-inheritance'``, ``'ignore-module-all'``, ``'imported-"
 "members'`` e ``'exclude-members'``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:491
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:514
 msgid "Accepts ``True`` as a value."
 msgstr "Aceita ``True`` como um valor."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:494
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:517
 msgid "Added ``'imported-members'``."
 msgstr "Adicionado ``'imported-members'``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:499
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:522
 msgid ""
 "Functions imported from C modules cannot be introspected, and therefore the "
 "signature for such functions cannot be automatically determined.  However, "
@@ -704,7 +702,7 @@ msgstr ""
 "automaticamente. No entanto, é uma convenção freqüentemente usada para "
 "colocar a assinatura na primeira linha da ``docstring`` da função."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:504
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:527
 msgid ""
 "If this boolean value is set to ``True`` (which is the default), autodoc "
 "will look at the first line of the docstring for functions and methods, and "
@@ -716,18 +714,18 @@ msgstr ""
 "métodos, e se parecer com uma assinatura, use a linha como assinatura e "
 "remova-a da ``docstring`` conteúdo."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:509
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:532
 msgid ""
 "If the signature line ends with backslash, autodoc considers the function "
 "has multiple signatures and look at the next line of the docstring.  It is "
 "useful for overloaded function."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:516
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:539
 msgid "Support overloaded signatures"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:520
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:543
 msgid ""
 "This value contains a list of modules to be mocked up. This is useful when "
 "some external dependencies are not met at build time and break the building "
@@ -739,11 +737,11 @@ msgstr ""
 " e interrompem o processo de construção. Você só pode especificar o pacote "
 "raiz das próprias dependências e omitir os submódulos:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:529
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:552
 msgid "Will mock all imports under the ``django`` package."
 msgstr "Irá \"mockar\" todas as importações sob o pacote ``django``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:533
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:556
 msgid ""
 "This config value only requires to declare the top-level modules that should"
 " be mocked."
@@ -751,59 +749,71 @@ msgstr ""
 "Esse valor de configuração requer apenas para declarar os módulos de nível "
 "superior que devem ser ridicularizados."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:539
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:562
 msgid ""
 "This value controls how to represents typehints.  The setting takes the "
 "following values:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:542
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:565
 msgid "``'signature'`` -- Show typehints as its signature (default)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:543
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:566
 msgid "``'description'`` -- Show typehints as content of function or method"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:544
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:567
 msgid "``'none'`` -- Do not show typehints"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:549
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:572
 msgid "New option ``'description'`` is added."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:553
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:576
 msgid ""
 "A dictionary for users defined `type aliases`__ that maps a type name to the"
 " full-qualified object name.  It is used to keep type aliases not evaluated "
 "in the document.  Defaults to empty (``{}``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:557
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:580
 msgid ""
 "The type aliases are only available if your program enables `Postponed "
 "Evaluation of Annotations (PEP 563)`__ feature via ``from __future__ import "
 "annotations``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:561
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:584
 msgid "For example, there is code using a type alias::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:570
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:593
 msgid ""
 "If ``autodoc_type_aliases`` is not set, autodoc will generate internal mark-"
 "up from this code as following::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:577
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:600
 msgid ""
 "If you set ``autodoc_type_aliases`` as ``{'AliasType': "
 "'your.module.AliasType'}``, it generates the following document internally::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:591
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:614
+msgid ""
+"If True, the default argument values of functions will be not evaluated on "
+"generating document.  It preserves them as is in the source code."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:619
+msgid ""
+"Added as an experimental feature.  This will be integrated into autodoc core"
+" in the future."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:624
 msgid ""
 "This value controls the behavior of :option:`sphinx-build -W` during "
 "importing modules. If ``False`` is given, autodoc forcedly suppresses the "
@@ -813,17 +823,17 @@ msgstr ""
 "importação de módulos. Se ``False`` for fornecido, *autodoc* forçadamente "
 "suprime o erro se o módulo importado emitir avisos. Por padrão, ``True``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:598
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:631
 msgid ""
 "This value controls the docstrings inheritance. If set to True the docstring"
 " for classes or methods, if not explicitly set, is inherited from parents."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:602
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:635
 msgid "The default is ``True``."
 msgstr "O padrão é ``True``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:609
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:642
 msgid ""
 ":mod:`autodoc` supports to suppress warning messages via "
 ":confval:`suppress_warnings`.  It allows following warnings types in "
@@ -833,23 +843,23 @@ msgstr ""
 ":confval:`suppress_warnings`. Ele permite seguir os seguintes tipos de "
 "avisos:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:613
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:646
 msgid "autodoc"
 msgstr "autodoc"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:614
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:647
 msgid "autodoc.import_object"
 msgstr "autodoc.import_object"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:618
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:651
 msgid "Docstring preprocessing"
 msgstr "Pré-processamento de ``doctring``"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:620
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:653
 msgid "autodoc provides the following additional events:"
 msgstr "``autodoc`` fornece os seguintes eventos adicionais:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:626
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:659
 msgid ""
 "Emitted when autodoc has read and processed a docstring.  *lines* is a list "
 "of strings -- the lines of the processed docstring -- that the event handler"
@@ -867,16 +877,16 @@ msgstr ""
 msgid "Parameters"
 msgstr "Parâmetros"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:630
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:649
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:661
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:703
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:663
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:682
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:694
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:736
 msgid "the Sphinx application object"
 msgstr "o objeto do aplicativo Sphinx"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:631
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:662
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:704
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:664
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:695
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:737
 msgid ""
 "the type of the object which the docstring belongs to (one of "
 "``\"module\"``, ``\"class\"``, ``\"exception\"``, ``\"function\"``, "
@@ -886,22 +896,22 @@ msgstr ""
 "``\"class\"``, ``\"exception\"``, ``\"function\"``, ``\"method\"``, "
 "``\"attribute\"``)"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:634
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:665
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:707
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:667
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:698
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:740
 msgid "the fully qualified name of the object"
 msgstr "o nome completo do objeto"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:635
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:650
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:666
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:708
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:668
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:683
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:699
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:741
 msgid "the object itself"
 msgstr "o objeto em si"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:636
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:667
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:711
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:669
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:700
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:744
 msgid ""
 "the options given to the directive: an object with attributes "
 "``inherited_members``, ``undoc_members``, ``show_inheritance`` and "
@@ -913,21 +923,21 @@ msgstr ""
 " que são verdadeiros se a opção de bandeira com o mesmo nome foi dada à "
 "diretiva auto"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:640
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:673
 msgid "the lines of the docstring, see above"
 msgstr "as linhas da ``docstring``, veja acima"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:646
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:679
 msgid ""
 "Emitted before autodoc formats a signature for an object. The event handler "
 "can modify an object to change its signature."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:651
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:684
 msgid "a boolean indicates an object is bound method or not"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:657
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:690
 msgid ""
 "Emitted when autodoc has formatted a signature for an object. The event "
 "handler can return a new tuple ``(signature, return_annotation)`` to change "
@@ -937,7 +947,7 @@ msgstr ""
 "manipulador de eventos pode retornar uma nova tupla ``(signature, "
 "return_annotation)`` para alterar o que o Sphinx coloca na saída."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:671
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:704
 msgid ""
 "function signature, as a string of the form ``\"(parameter_1, "
 "parameter_2)\"``, or ``None`` if introspection didn't succeed and signature "
@@ -947,7 +957,7 @@ msgstr ""
 "parameter_2)\"`` ou ``None`` se a introspecção não tiver sido bem-sucedida e"
 " a assinatura não tiver sido especificada na diretiva."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:674
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:707
 msgid ""
 "function return annotation as a string of the form ``\" -> annotation\"``, "
 "or ``None`` if there is no return annotation"
@@ -955,7 +965,7 @@ msgstr ""
 "função *return annotation* como uma string no formato ``\"-> annotation\"``,"
 " ou ``None`` se não houver anotação de retorno"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:677
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:710
 msgid ""
 "The :mod:`sphinx.ext.autodoc` module provides factory functions for commonly"
 " needed docstring processing in event :event:`autodoc-process-docstring`:"
@@ -1009,11 +1019,11 @@ msgstr ""
 "Se *what* for uma seqüência de strings, somente as ``docstrings`` de um tipo"
 " em *what* serão processadas."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:685
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:718
 msgid "Skipping members"
 msgstr "Ignorando membros"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:687
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:720
 msgid ""
 "autodoc allows the user to define a custom method for determining whether a "
 "member should be included in the documentation by using the following event:"
@@ -1022,7 +1032,7 @@ msgstr ""
 "determinar se um membro deve ser incluído na documentação usando o seguinte "
 "evento:"
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:694
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:727
 msgid ""
 "Emitted when autodoc has to decide whether a member should be included in "
 "the documentation.  The member is excluded if a handler returns ``True``.  "
@@ -1032,7 +1042,7 @@ msgstr ""
 "na documentação. O membro é excluído se um manipulador retornar ``True``. "
 "Está incluído se o manipulador retornar ``False``."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:698
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:731
 msgid ""
 "If more than one enabled extension handles the ``autodoc-skip-member`` "
 "event, autodoc will use the first non-``None`` value returned by a handler. "
@@ -1044,7 +1054,7 @@ msgstr ""
 "manipulador. Os manipuladores devem retornar ``None`` para retornar ao "
 "comportamento de salto do ``autodoc`` e de outras extensões ativadas."
 
-#: ../../sphinx/doc/usage/extensions/autodoc.rst:709
+#: ../../sphinx/doc/usage/extensions/autodoc.rst:742
 msgid ""
 "a boolean indicating if autodoc will skip this member if the user handler "
 "does not override the decision"

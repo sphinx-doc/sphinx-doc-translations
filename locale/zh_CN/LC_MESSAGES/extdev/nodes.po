@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 4.0.0+/6886de29f\n"
+"Project-Id-Version: Sphinx 4.0.0+/0c76c1abc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 00:13+0000\n"
+"POT-Creation-Date: 2021-03-07 00:14+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -183,6 +183,51 @@ msgid ""
 msgstr "在中写入输出之前，将解析这些节点BuildEnvironment.resolve_引用."
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
+#: sphinx.addnodes.pending_xref_condition:1
+msgid ""
+"Node for cross-references that are used to choose appropriate content of the"
+" reference by conditions on the resolving phase."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of
+#: sphinx.addnodes.pending_xref_condition:4
+msgid ""
+"When the :py:class:`pending_xref` node contains one or more "
+"**pending_xref_condition** nodes, the cross-reference resolver should choose"
+" the content of the reference using defined conditions in ``condition`` "
+"attribute of each pending_xref_condition nodes::"
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of
+#: sphinx.addnodes.pending_xref_condition:17
+msgid ""
+"After the processing of cross-reference resolver, one of the content node "
+"under pending_xref_condition node is chosen by its condition and to be "
+"removed all of pending_xref_condition nodes::"
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of
+#: sphinx.addnodes.pending_xref_condition:31
+msgid ""
+"This node is only allowed to be placed under pending_xref node. It is not "
+"allows to place it under other nodes.  In addition, pending_xref node must "
+"contain only pending_xref_condition nodes if it contains one or more "
+"pending_xref_condition nodes."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of
+#: sphinx.addnodes.pending_xref_condition:36
+msgid ""
+"The pending_xref_condition node should have **condition** attribute. Domains"
+" can be store their individual conditions into the attribute to filter "
+"contents on resolving phase.  As a reserved condition name, "
+"``condition=\"*\"`` is used for the fallback of resolution failure. "
+"Additionally, as a recommended condition name, ``condition=\"resolved\"`` is"
+" used for the representation of resolstion success in the intersphinx "
+"module."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of
 #: sphinx.addnodes.literal_emphasis:1
 msgid ""
 "Node that behaves like `emphasis`, but further text processors are not "
@@ -194,7 +239,7 @@ msgstr "行为类似“emphasis”，但不应用其他文本处理器的节点�
 msgid "Node for download references, similar to pending_xref."
 msgstr "节点，用于下载引用，类似于挂起的外部参照。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:44
+#: ../../sphinx/doc/extdev/nodes.rst:45
 msgid "Special nodes"
 msgstr "特殊节点"
 
@@ -214,7 +259,7 @@ msgid ""
 "subsequent code blocks."
 msgstr "插入以设置后续代码块的突出显示语言和行号选项。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:50
+#: ../../sphinx/doc/extdev/nodes.rst:51
 msgid "You should not need to generate the nodes below in extensions."
 msgstr "您不需要在扩展中生成以下节点。"
 

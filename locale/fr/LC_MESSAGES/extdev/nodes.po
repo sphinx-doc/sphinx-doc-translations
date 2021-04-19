@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/ec79abf6b\n"
+"Project-Id-Version: Sphinx 5.0.0+/d751f3b21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 00:31+0000\n"
+"POT-Creation-Date: 2021-04-19 00:34+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Language-Team: French (https://www.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -25,48 +25,127 @@ msgstr ""
 msgid "Nodes for domain-specific object descriptions"
 msgstr ""
 
+#: ../../sphinx/doc/extdev/nodes.rst:12
+msgid "Top-level nodes"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:14
+msgid "These nodes form the top-most levels of object descriptions."
+msgstr ""
+
 #: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc:1
-msgid "Node for object descriptions."
+msgid "Node for a list of object signatures and a common description of them."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc:3
 msgid ""
-"This node is similar to a \"definition list\" with one definition.  It "
-"contains one or more ``desc_signature`` and a ``desc_content``."
+"Contains one or more :py:class:`desc_signature` nodes and then a single "
+":py:class:`desc_content` node."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc:6
+msgid "This node always has two classes:"
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc:8
+msgid "The name of the domain it belongs to, e.g., ``py`` or ``cpp``."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc:9
+msgid "The name of the object type in the domain, e.g., ``function``."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
 #: sphinx.addnodes.desc_signature:1
-msgid "Node for object signatures."
+msgid "Node for a single object signature."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
 #: sphinx.addnodes.desc_signature:3
-msgid "The \"term\" part of the custom Sphinx definition list."
+msgid ""
+"As default the signature is a single-line signature. Set ``is_multiline = "
+"True`` to describe a multi-line signature. In that case all child nodes must"
+" be :py:class:`desc_signature_line` nodes."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
-#: sphinx.addnodes.desc_signature:5
+#: sphinx.addnodes.desc_signature:7
 msgid ""
-"As default the signature is a single line signature, but set ``is_multiline "
-"= True`` to describe a multi-line signature. In that case all child nodes "
-"must be ``desc_signature_line`` nodes."
+"This node always has the classes ``sig``, ``sig-object``, and the domain it "
+"belongs to."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
 #: sphinx.addnodes.desc_signature_line:1
-msgid "Node for a line in a multi-line object signatures."
+msgid "Node for a line in a multi-line object signature."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
 #: sphinx.addnodes.desc_signature_line:3
 msgid ""
-"It should only be used in a ``desc_signature`` with ``is_multiline`` set. "
-"Set ``add_permalink = True`` for the line that should get the permalink."
+"It should only be used as a child of a :py:class:`desc_signature` with "
+"``is_multiline`` set to ``True``. Set ``add_permalink = True`` for the line "
+"that should get the permalink."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_content:1
+msgid "Node for object description content."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_content:3
+msgid "Must be the last child node in a :py:class:`desc` node."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_inline:1
+msgid "Node for a signature fragment in inline text."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_inline:3
+msgid "This is for example used for roles like :rst:role:`cpp:expr`."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_inline:5
+msgid ""
+"This node always has the classes ``sig``, ``sig-inline``, and the name of "
+"the domain it belongs to."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:23
+msgid "Nodes for high-level structure in signatures"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:25
+msgid ""
+"These nodes occur in in non-multiline :py:class:`desc_signature` nodes and "
+"in :py:class:`desc_signature_line` nodes."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_name:1
+msgid "Node for the main object name."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_name:3
+msgid ""
+"For example, in the declaration of a Python class ``MyModule.MyClass``, the "
+"main name is ``MyClass``."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_name:6
+msgid "This node always has the class ``sig-name``."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_addname:1
-msgid "Node for additional name parts (module name, class name)."
+msgid "Node for additional name parts for an object."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_addname:3
+msgid ""
+"For example, in the declaration of a Python class ``MyModule.MyClass``, the "
+"additional name part is ``MyModule.``."
+msgstr ""
+
+#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_addname:6
+msgid "This node always has the class ``sig-prename``."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_type:1
@@ -75,10 +154,6 @@ msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_returns:1
 msgid "Node for a \"returns\" annotation (a la -> in Python)."
-msgstr ""
-
-#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_name:1
-msgid "Node for the main object name."
 msgstr ""
 
 #: ../../sphinx/sphinx/addnodes.pydocstring of
@@ -100,15 +175,7 @@ msgstr ""
 msgid "Node for signature annotations (not Python 3-style annotations)."
 msgstr ""
 
-#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_content:1
-msgid "Node for object description content."
-msgstr ""
-
-#: ../../sphinx/sphinx/addnodes.pydocstring of sphinx.addnodes.desc_content:3
-msgid "This is the \"definition\" part of the custom Sphinx definition list."
-msgstr ""
-
-#: ../../sphinx/doc/extdev/nodes.rst:25
+#: ../../sphinx/doc/extdev/nodes.rst:39
 msgid "New admonition-like constructs"
 msgstr ""
 
@@ -128,7 +195,7 @@ msgstr ""
 msgid "Custom \"see also\" admonition."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/nodes.rst:31
+#: ../../sphinx/doc/extdev/nodes.rst:45
 msgid "Other paragraph-level nodes"
 msgstr ""
 
@@ -137,7 +204,7 @@ msgstr ""
 msgid "Node for a compact paragraph (which never makes a <p> node)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/nodes.rst:36
+#: ../../sphinx/doc/extdev/nodes.rst:50
 msgid "New inline nodes"
 msgstr ""
 
@@ -232,7 +299,7 @@ msgstr ""
 msgid "Node for download references, similar to pending_xref."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/nodes.rst:45
+#: ../../sphinx/doc/extdev/nodes.rst:59
 msgid "Special nodes"
 msgstr ""
 
@@ -252,7 +319,7 @@ msgid ""
 "subsequent code blocks."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/nodes.rst:51
+#: ../../sphinx/doc/extdev/nodes.rst:65
 msgid "You should not need to generate the nodes below in extensions."
 msgstr ""
 

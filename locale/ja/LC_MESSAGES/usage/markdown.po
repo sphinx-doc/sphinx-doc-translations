@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/ec79abf6b\n"
+"Project-Id-Version: Sphinx 5.0.0+/d751f3b21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-12 00:31+0000\n"
+"POT-Creation-Date: 2021-04-19 00:34+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -30,14 +30,10 @@ msgstr "Markdown"
 msgid ""
 "`Markdown`__ is a lightweight markup language with a simplistic plain text "
 "formatting syntax.  It exists in many syntactically different *flavors*.  To"
-" support Markdown-based documentation, Sphinx can use `recommonmark`__. "
-"recommonmark is a Docutils bridge to `CommonMark-py`__, a Python package for"
-" parsing the `CommonMark`__ Markdown flavor."
+" support Markdown-based documentation, Sphinx can use `MyST-Parser`__. MyST-"
+"Parser is a Docutils bridge to `markdown-it-py`__, a Python package for "
+"parsing the `CommonMark`__ Markdown flavor."
 msgstr ""
-"`Markdown`__ は、単純なプレーンテキストフォーマット構文を持つ軽量のマークアップ言語です。それは多くの構文的に異なる *フレーバー* "
-"が存在します。Markdownベースのドキュメントをサポートするために、Sphinxは `recommonmark`__ を使用することができます。 "
-"recommonmark は `CommonMark`__ Markdown フレーバーを解析するためのPythonパッケージである "
-"`CommonMark-py`__ へのDocutilsブリッジです。"
 
 #: ../../sphinx/doc/usage/markdown.rst:21
 msgid "Configuration"
@@ -49,30 +45,20 @@ msgid ""
 msgstr "SphinxプロジェクトをMarkdownサポート用に設定するには、次の手順に従います。"
 
 #: ../../sphinx/doc/usage/markdown.rst:25
-msgid "Install the Markdown parser *recommonmark*::"
-msgstr "Markdownパーサー *recommonmark* をインストールします::"
-
-#: ../../sphinx/doc/usage/markdown.rst:31
-msgid ""
-"The configuration as explained here requires recommonmark version 0.5.0 or "
-"later."
-msgstr "ここで説明する設定には、recommonmarkバージョン 0.5.0 以降が必要です。"
-
-#: ../../sphinx/doc/usage/markdown.rst:34
-msgid ""
-"Add *recommonmark* to the :confval:`list of configured extensions "
-"<extensions>`::"
-msgstr "*recommonmark* を :confval:`設定された拡張子<extensions>のリスト` に追加します::"
-
-#: ../../sphinx/doc/usage/markdown.rst:39
-msgid ""
-"Version 1.8 deprecates and version 3.0 removes the ``source_parsers`` "
-"configuration variable that was used by older *recommonmark* versions."
+msgid "Install the Markdown parser *MyST-Parser*::"
 msgstr ""
-"バージョン1.8は非推奨で、バージョン3.0は古い *recommonmark* バージョンで使用されていた ``source_parsers`` "
-"設定変数を削除しています。"
 
-#: ../../sphinx/doc/usage/markdown.rst:43
+#: ../../sphinx/doc/usage/markdown.rst:29
+msgid ""
+"Add *myst_parser* to the :confval:`list of configured extensions "
+"<extensions>`::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/markdown.rst:35
+msgid "MyST-Parser requires Sphinx 2.1 or newer."
+msgstr ""
+
+#: ../../sphinx/doc/usage/markdown.rst:37
 msgid ""
 "If you want to use Markdown files with extensions other than ``.md``, adjust"
 " the :confval:`source_suffix` variable.  The following example configures "
@@ -83,11 +69,9 @@ msgstr ""
 "変数を調整してください。次の例では、Sphinxが拡張子 ``.md`` と ``.txt`` "
 "を持つすべてのファイルをMarkdownとして解析するように設定しています::"
 
-#: ../../sphinx/doc/usage/markdown.rst:54
+#: ../../sphinx/doc/usage/markdown.rst:48
 msgid ""
-"You can further configure *recommonmark* to allow custom syntax that "
-"standard *CommonMark* doesn't support.  Read more in the `recommonmark "
+"You can further configure *MyST-Parser* to allow custom syntax that standard"
+" *CommonMark* doesn't support.  Read more in the `MyST-Parser "
 "documentation`__."
 msgstr ""
-"さらに、標準の *CommonMark* がサポートしていないカスタム構文を使用できるように *recommonmark* を構成できます。詳しくは "
-"`recommonmark documentation`__ をご覧ください。"

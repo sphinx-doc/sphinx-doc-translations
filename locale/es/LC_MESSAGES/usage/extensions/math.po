@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/d9c4bc5b8\n"
+"Project-Id-Version: Sphinx 5.0.0+/f5e7b9b81\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-20 00:36+0000\n"
+"POT-Creation-Date: 2021-04-26 00:39+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
 "MIME-Version: 1.0\n"
@@ -181,35 +181,36 @@ msgid ""
 "Version 4.0 changes the version of MathJax used to version 3. You may need "
 "to override ``mathjax_path`` to "
 "``https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-"
-"MML_HTMLorMML`` or update your configuration options for version 3."
+"MML_HTMLorMML`` or update your configuration options for version 3 (see "
+":confval:`mathjax3_config`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:151
+#: ../../sphinx/doc/usage/extensions/math.rst:152
 msgid ""
 "This extension puts math as-is into the HTML files.  The JavaScript package "
 "MathJax_ is then loaded and transforms the LaTeX markup to readable math "
 "live in the browser."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:155
+#: ../../sphinx/doc/usage/extensions/math.rst:156
 msgid ""
 "Because MathJax (and the necessary fonts) is very large, it is not included "
 "in Sphinx but is set to automatically include it from a third-party site."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:160
+#: ../../sphinx/doc/usage/extensions/math.rst:161
 msgid ""
 "You should use the math :rst:dir:`directive <math>` and :rst:role:`role "
 "<math>`, not the native MathJax ``$$``, ``\\(``, etc."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:166
+#: ../../sphinx/doc/usage/extensions/math.rst:167
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load MathJax."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:169
+#: ../../sphinx/doc/usage/extensions/math.rst:170
 msgid ""
 "The default is the ``https://`` URL that loads the JS files from the "
 "`jsdelivr`__ Content Delivery Network. See the `MathJax Getting Started "
@@ -218,14 +219,14 @@ msgid ""
 " this value to a different path."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:179
-#: ../../sphinx/doc/usage/extensions/math.rst:235
+#: ../../sphinx/doc/usage/extensions/math.rst:180
+#: ../../sphinx/doc/usage/extensions/math.rst:270
 msgid ""
 "The path can be absolute or relative; if it is relative, it is relative to "
 "the ``_static`` directory of the built docs."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:182
+#: ../../sphinx/doc/usage/extensions/math.rst:183
 msgid ""
 "For example, if you put MathJax into the static path of the Sphinx docs, "
 "this value would be ``MathJax/MathJax.js``.  If you host more than one "
@@ -233,52 +234,82 @@ msgid ""
 "in a shared location."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:187
+#: ../../sphinx/doc/usage/extensions/math.rst:188
 msgid "You can also give a full ``https://`` URL different from the CDN URL."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:191
+#: ../../sphinx/doc/usage/extensions/math.rst:192
 msgid ""
 "The options to script tag for mathjax.  For example, you can set integrity "
 "option with following setting::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:198
+#: ../../sphinx/doc/usage/extensions/math.rst:199
 msgid "The default is empty (``{}``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:204
+#: ../../sphinx/doc/usage/extensions/math.rst:205
 msgid ""
-"The inline configuration options for mathjax.  The value is used as a "
-"parameter of ``MathJax.Hub.Config()``.  For more information, please read "
-"`Using in-line configuration options`_."
+"The configuration options for MathJax v3 (which is used by default). The "
+"given dictionary is assigned to the JavaScript variable ``window.MathJax``. "
+"For more information, please read `Configuring MathJax`__."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:208
-msgid "For example::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/math.rst:215
+#: ../../sphinx/doc/usage/extensions/math.rst:212
+#: ../../sphinx/doc/usage/extensions/math.rst:233
 msgid "The default is empty (not configured)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:222
+#: ../../sphinx/doc/usage/extensions/math.rst:218
+msgid ""
+"The configuration options for MathJax v2 (which can be loaded via "
+":confval:`mathjax_path`). The value is used as a parameter of "
+"``MathJax.Hub.Config()``. For more information, please read `Using in-line "
+"configuration options`__."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:226
+msgid "For example::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:237
+msgid ""
+":confval:`mathjax_config` has been renamed to :confval:`mathjax2_config`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:241
+msgid "Former name of :confval:`mathjax2_config`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:243
+msgid ""
+"For help converting your old MathJax configuration to to the new "
+":confval:`mathjax3_config`, see `Converting Your v2 Configuration to v3`__."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:253
+msgid ""
+"This has been renamed to :confval:`mathjax2_config`. "
+":confval:`mathjax_config` is still supported for backwards compatibility."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/math.rst:257
 msgid ":mod:`sphinx.ext.jsmath` -- Render math via JavaScript"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:227
+#: ../../sphinx/doc/usage/extensions/math.rst:262
 msgid ""
 "This extension works just as the MathJax extension does, but uses the older "
 "package jsMath_.  It provides this config value:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:232
+#: ../../sphinx/doc/usage/extensions/math.rst:267
 msgid ""
 "The path to the JavaScript file to include in the HTML files in order to "
 "load JSMath.  There is no default."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/math.rst:238
+#: ../../sphinx/doc/usage/extensions/math.rst:273
 msgid ""
 "For example, if you put JSMath into the static path of the Sphinx docs, this"
 " value would be ``jsMath/easy/load.js``.  If you host more than one Sphinx "

@@ -5,9 +5,10 @@
 # 
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2018
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-30 15:26+0000\n"
 "PO-Revision-Date: 2018-02-12 13:46+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -372,6 +373,10 @@ msgid ""
 "that should be available in every file (another being "
 ":confval:`rst_epilog`).  An example::"
 msgstr ""
+"Uma string de reStructuredText que será incluída no início de cada arquivo "
+"fonte que é lido. Este é um local possível para adicionar substituições que "
+"devem estar disponíveis em todos os arquivos (outro sendo "
+":confval:`rst_epilog`). Um exemplo::"
 
 #: ../../sphinx/doc/config.rst:225
 msgid ""
@@ -382,6 +387,13 @@ msgid ""
 "name explicitly prepended when named (e.g., when the default domain is C, "
 "Python functions will be named \"Python function\", not just \"function\")."
 msgstr ""
+"O nome do :doc:`domínio </usage/restructuredtext/domains>` padrão. Também "
+"pode ser ``None`` para desabilitar um domínio padrão. O padrão é ``'py'``. "
+"Esses objetos em outros domínios (se o nome do domínio é fornecido "
+"explicitamente ou selecionado por uma diretiva :rst:dir:`default-domain`) "
+"terão o nome do domínio explicitamente prefixado quando nomeado (por "
+"exemplo, quando o domínio padrão é C, funções Python serão nomeadas \"função"
+" Python\", não apenas \"função\")."
 
 #: ../../sphinx/doc/config.rst:238
 msgid ""
@@ -555,11 +567,11 @@ msgstr ""
 
 #: ../../sphinx/doc/config.rst:321
 msgid ""
-"This requires that the extension specifies its version to Sphinx (see :ref"
-":`dev-extensions` for how to do that)."
+"This requires that the extension specifies its version to Sphinx (see "
+":ref:`dev-extensions` for how to do that)."
 msgstr ""
-"Isso requer extensões que especificam sua versão para o Sphinx (ver :ref"
-":`dev-extensions` para como usar isso)."
+"Isso requer extensões que especificam sua versão para o Sphinx (ver "
+":ref:`dev-extensions` para como usar isso)."
 
 #: ../../sphinx/doc/config.rst:328
 msgid ""
@@ -743,6 +755,12 @@ msgid ""
 "uote characters ``\"``, ``'``, em- and en-**D**\\ ashes ``---``, ``--``, and"
 " **e**\\ llipses ``...``."
 msgstr ""
+"Esta string, para uso com Docutils ``0.14`` ou posterior, personaliza a "
+"transformação Smart Quotes (aspas inteligentes). Veja o arquivo "
+":file:`smartquotes.py` no `repositório Docutils <Docutils repository>`__ "
+"para detalhes. O padrão ``'qDe'`` educa os caracteres normais de aspas "
+"(**q**\\uote) ``\"``, ``'``, travessão e meia-risca (em- e en-**D**\\ashes) "
+"``---``, ``--``, e reticências (**e**\\llipses) ``...``."
 
 #: ../../sphinx/doc/config.rst:442
 msgid "This is a ``dict`` whose default is::"
@@ -754,6 +772,10 @@ msgid ""
 " setting and deactivate the Smart Quotes transform. Accepted keys are as "
 "above ``'builders'`` or ``'languages'``. The values are lists."
 msgstr ""
+"Cada entrada fornece uma condição suficiente para ignorar a configuração "
+":confval:`smartquotes` e desativar a transformação Smart Quotes. As chaves "
+"aceitas são como acima ``'builders'`` ou ``'languages'``. Os valores são "
+"listas."
 
 #: ../../sphinx/doc/config.rst:451
 msgid ""
@@ -868,8 +890,8 @@ msgstr ""
 #: ../../sphinx/doc/config.rst:522
 msgid ""
 "The default language to highlight source code in.  The default is "
-"``'python3'``.  The value should be a valid Pygments lexer name, see :ref"
-":`code-examples` for more details."
+"``'python3'``.  The value should be a valid Pygments lexer name, see "
+":ref:`code-examples` for more details."
 msgstr ""
 "O idioma padrão para enfatizar código fonte. O padrão é ``'python3'``. O "
 "valor deve ser um nome válido, do léxico Pygments, ver :ref:`code-examples` "
@@ -1516,6 +1538,11 @@ msgid ""
 "URI with scheme like ``http://example.org/style.css``.  The *attributes* is "
 "used for attributes of ``<link>`` tag.  It defaults to an empty list."
 msgstr ""
+"Uma lista de arquivos CSS. A entrada deve ser uma string *filename* ou uma "
+"tupla contendo a string *filename* e o dicionário de atributos *atributes*. "
+"O *filename* deve ser relativo ao :confval:`html_static_path`, ou um URI "
+"completo com esquema como ``http://example.org/style.css``. Os *attributes* "
+"são usados para atributos da tag ``<link>``. O padrão é uma lista vazia."
 
 #: ../../sphinx/doc/config.rst:863 ../../sphinx/doc/config.rst:985
 #: ../../sphinx/doc/config.rst:1008
@@ -1542,12 +1569,17 @@ msgid ""
 "  If you'd like to copy them intentionally, please add them each filepath to"
 " this setting::"
 msgstr ""
+"Por razões de segurança, dotfiles em ``html_static_path`` não serão "
+"copiados. Se desejar copiá-los intencionalmente, adicione-os a cada caminho "
+"de arquivo a esta configuração::"
 
 #: ../../sphinx/doc/config.rst:888
 msgid ""
 "Another way to do that, you can also use :confval:`html_extra_path`.  It "
 "allows to copy dotfiles under the directories."
 msgstr ""
+"Outra forma de fazer isso, você também pode usar :confval:`html_extra_path`."
+" Permite copiar dotfiles nos diretórios."
 
 #: ../../sphinx/doc/config.rst:892
 msgid ""
@@ -1674,6 +1706,10 @@ msgid ""
 "default: ``['localtoc.html', 'relations.html', 'sourcelink.html', "
 "'searchbox.html']``."
 msgstr ""
+"As barras laterais padrão (para documentos que não correspondem a nenhum "
+"padrão) são definidas pelo próprio tema. Os temas usam embutidos esses "
+"modelos por padrão: ``['localtoc.html', 'relations.html', 'sourcelink.html',"
+" 'searchbox.html']``."
 
 #: ../../sphinx/doc/config.rst:966
 msgid ""
@@ -1831,6 +1867,9 @@ msgid ""
 "Suffix to be appended to source links (see :confval:`html_show_sourcelink`),"
 " unless they have this suffix already.  Default is ``'.txt'``."
 msgstr ""
+"Sufixo a ser anexado aos links de origem (veja "
+":confval:`html_show_sourcelink`), a menos que eles já tenham este sufixo. O "
+"padrão é ``'.txt'``."
 
 #: ../../sphinx/doc/config.rst:1069
 msgid ""
@@ -1899,6 +1938,10 @@ msgid ""
 "element for any of its items. This is standard docutils behavior. Default: "
 "``True``."
 msgstr ""
+"Se verdadeiro, uma lista com todos os itens que consistem em um único "
+"parágrafo e/ou uma sublista com todos os itens etc... (definição recursiva) "
+"não usará o elemento ``<p>`` para nenhum de seus itens. Este é o "
+"comportamento padrão dos docutils. Predefinição: ``True``."
 
 #: ../../sphinx/doc/config.rst:1124
 msgid ""
@@ -1955,11 +1998,11 @@ msgstr ""
 
 #: ../../sphinx/doc/config.rst:1162
 msgid "`PorterStemmer <https://pypi.org/project/PorterStemmer/>`_ (``en``)"
-msgstr ""
+msgstr "`PorterStemmer <https://pypi.org/project/PorterStemmer/>`_ (``en``)"
 
 #: ../../sphinx/doc/config.rst:1163
 msgid "`PyStemmer <https://pypi.org/project/PyStemmer/>`_ (all languages)"
-msgstr ""
+msgstr "`PyStemmer <https://pypi.org/project/PyStemmer/>`_ (todos os idiomas)"
 
 #: ../../sphinx/doc/config.rst:1165
 msgid "With support for ``en`` and ``ja``."
@@ -2034,6 +2077,8 @@ msgid ""
 "Janome binding. To use this splitter, `Janome "
 "<https://pypi.org/project/Janome/>`_ is required."
 msgstr ""
+"Associações para Janome. Para usar este divisor, `Janome "
+"<https://pypi.org/project/Janome/>`_ é exigido."
 
 #: ../../sphinx/doc/config.rst:1197
 msgid ""
@@ -2041,6 +2086,9 @@ msgid ""
 "compatibility, ``'mecab'``, ``'janome'`` and ``'default'`` are also "
 "acceptable."
 msgstr ""
+"``'mecab'``, ``'janome'`` e ``'default'`` foram descontinuados. Para manter "
+"a compatibilidade, ``'mecab'``, ``'janome'`` e ``'default'`` também são "
+"aceitos."
 
 #: ../../sphinx/doc/config.rst:1203
 msgid "Other option values depend on splitter value which you choose."
@@ -2558,6 +2606,9 @@ msgid ""
 "You may use any sensible string, e.g. the project homepage.  The defaults to"
 " the :confval:`author` option."
 msgstr ""
+"O editor do documento. Isso é colocado nos metadados Dublin Core. Você pode "
+"usar qualquer corda sensível, por exemplo, a página inicial do projeto. O "
+"padrão é a opção :confval:`author`."
 
 #: ../../sphinx/doc/config.rst:1509
 msgid ""
@@ -2592,14 +2643,14 @@ msgstr ""
 #: ../../sphinx/doc/config.rst:1528
 msgid ""
 "A unique identifier for the document.  This is put in the Dublin Core "
-"metadata.  You may use a `XML's Name format <https://www.w3.org/TR/REC-xml"
-"/#NT-NameStartChar>`_ string. You can't use hyphen, period, numbers as a "
+"metadata.  You may use a `XML's Name format <https://www.w3.org/TR/REC-"
+"xml/#NT-NameStartChar>`_ string. You can't use hyphen, period, numbers as a "
 "first character. The default value is ``'unknown'``."
 msgstr ""
 "Identificador único para o documento.  Isso é colocado no metadado Dublin "
-"Core.  Pode ser usado um termo `XML's Name format <https://www.w3.org/TR"
-"/REC-xml/#NT-NameStartChar>`_ . Não pode ser usado hífen, ponto ou número "
-"como primeiro caracter. O padrão é ``'unknown'``."
+"Core.  Pode ser usado um termo `XML's Name format "
+"<https://www.w3.org/TR/REC-xml/#NT-NameStartChar>`_ . Não pode ser usado "
+"hífen, ponto ou número como primeiro caracter. O padrão é ``'unknown'``."
 
 #: ../../sphinx/doc/config.rst:1536
 msgid ""
@@ -2624,6 +2675,9 @@ msgid ""
 "containing the *filename* string and the *attributes* dictionary.  For more "
 "information, see :confval:`html_css_files`."
 msgstr ""
+"Uma lista de arquivos CSS. A entrada deve ser uma string *filename* ou uma "
+"tupla contendo a string *filename* e o dicionário de *attributes*. Para mais"
+" informações, veja :confval:`html_css_files`."
 
 #: ../../sphinx/doc/config.rst:1560
 msgid ""
@@ -2902,6 +2956,17 @@ msgid ""
 " OpenType font if Unicode coverage proves insufficient (or use directly "
 "``\\setmainfont`` et. al. as in :ref:`this example <latex-basic>`.)"
 msgstr ""
+"Se o seu projeto usa esses caracteres Unicode extras, alternar o mecanismo "
+"para XeLaTeX ou LuaLaTeX geralmente fornece uma solução rápida. Eles "
+"funcionam apenas com fontes codificadas em UTF-8 e podem (de fato, deveriam)"
+" usar fontes OpenType, tanto do sistema quanto da árvore de instalação do "
+"TeX. Lançamentos recentes do LaTeX usarão esses mecanismos como padrão para "
+"a fonte Latin Modern OpenType, que tem uma boa cobertura de scripts latinos "
+"e cirílicos (é fornecida pela instalação padrão do LaTeX), e o Sphinx não "
+"modifica esse padrão. Consulte a documentação do pacote LaTeX "
+"``polyglossia`` para ver como instruir o LaTeX a usar alguma outra fonte "
+"OpenType se a cobertura Unicode for insuficiente (ou usar diretamente "
+"``\\setmainfont`` et. al. Como :ref:`neste exemplo<latex-basic>`.)"
 
 #: ../../sphinx/doc/config.rst:1724
 msgid ""
@@ -2948,6 +3013,10 @@ msgid ""
 "``'John \\\\and Sarah'`` (backslashes must be Python-escaped to reach "
 "LaTeX)."
 msgstr ""
+"*author*: Autor do documento LaTeX. Aplica-se a mesma advertência de "
+"marcação LaTeX que para *title*. Use ``\\\\and`` para separar múltiplos "
+"autores, como em: ``'John \\\\and Sarah'`` (as barras invertidas devem ter "
+"escape do Python para chegar ao LaTeX)."
 
 #: ../../sphinx/doc/config.rst:1740
 msgid ""
@@ -2958,6 +3027,13 @@ msgid ""
 " classes can be given. Independently of the document class, the \"sphinx\" "
 "package is always loaded in order to define Sphinx's custom LaTeX commands."
 msgstr ""
+"*documentclass*: Normalmente, um de ``'manual'`` ou ``'howto'`` (fornecido "
+"pela Sphinx e baseado em ``'report'``, resp. ``'article'``; documentos "
+"japoneses usam ``'jsbook'``, resp. ``'jreport'``.) Documentos \"howto\" (não"
+" japoneses) não terão apêndices. Além disso, eles têm uma página de título "
+"mais simples. Outras classes de documentos podem ser fornecidas. "
+"Independentemente da classe do documento, o pacote \"sphinx\" é sempre "
+"carregado para definir os comandos LaTeX personalizados do Sphinx."
 
 #: ../../sphinx/doc/config.rst:1748
 msgid ""
@@ -3003,6 +3079,10 @@ msgid ""
 "topmost sectioning unit is switched by documentclass: ``section`` is used if"
 " documentclass will be ``howto``, otherwise ``chapter`` will be used."
 msgstr ""
+"Este valor determina a unidade de corte superior. Deve ser escolhido entre "
+"``'part'``, ``'chapter'`` ou ``'section'``. O padrão é ``None``; a unidade "
+"de seção mais alta é trocada por documentclass: ``section`` é usado se "
+"documentclass for ``howto``, caso contrário, ``chapter`` será usado."
 
 #: ../../sphinx/doc/config.rst:1775
 msgid ""
@@ -3010,6 +3090,10 @@ msgid ""
 " units one level deep gets off-sync with HTML numbering, because LaTeX "
 "numbers continuously ``\\chapter`` (or ``\\section`` for ``howto``.)"
 msgstr ""
+"Observe que se o LaTeX usa o comando ``\\part``, então a numeração das "
+"unidades de seção em um nível de profundidade fica fora de sincronia com a "
+"numeração HTML, porque os números LaTeX continuamente ``\\chapter`` (ou "
+"``\\section`` para ``howto``.)"
 
 #: ../../sphinx/doc/config.rst:1783 ../../sphinx/doc/config.rst:2229
 msgid "A list of document names to append as an appendix to all manuals."
@@ -3065,6 +3149,11 @@ msgid ""
 ":rst:dir:`tabularcolumns` directive was used to inject LaTeX mark-up of the "
 "type ``>{..}``, ``<{..}``, ``@{..}`` as column specification."
 msgstr ""
+"O padrão é ``False``: significa que as próprias macros do Sphinx são usadas "
+"para células mescladas de tabelas de grade. Eles permitem conteúdos gerais "
+"(blocos literais, listas, blocos de citação, ...) mas podem ter problemas se"
+" a diretiva :rst:dir:`tabularcolumns` foi usada para injetar marcação LaTeX "
+"do tipo ``>{..}``, ``<{..}``, ``@{..}`` como especificação de coluna."
 
 #: ../../sphinx/doc/config.rst:1826
 msgid ""
@@ -3073,6 +3162,10 @@ msgid ""
 "with multiple paragraphs in such cell if the table is rendered using "
 "``tabulary``."
 msgstr ""
+"Definir como ``True`` significa usar o padrão do LaTeX ``\\multicolumn``; "
+"isso é incompatível com blocos literais na célula mesclada horizontalmente e"
+" também com vários parágrafos em tal célula se a tabela for renderizada "
+"usando ``tabulary``."
 
 #: ../../sphinx/doc/config.rst:1837
 msgid ""
@@ -3233,7 +3326,7 @@ msgstr "Padrão para  ``''`` também com  ``'lualatex'``."
 
 #: ../../sphinx/doc/config.rst:1901
 msgid "``'xelatex'`` and ``'lualatex'`` do ``\\fvset{fontsize=auto}``."
-msgstr ""
+msgstr "``'xelatex'`` e ``'lualatex'`` fazem ``\\fvset{fontsize=auto}``."
 
 #: ../../sphinx/doc/config.rst:1909
 msgid "``'fncychap'``"
@@ -3561,6 +3654,9 @@ msgid ""
 "``'\\n\\n\\\\bigskip\\\\hrule\\\\bigskip\\n\\n'``.  Override if you want to "
 "display transitions differently."
 msgstr ""
+"Comandos usados para exibir transições, tendo como padrão "
+"``'\\n\\n\\\\bigskip\\\\hrule\\\\bigskip\\n\\n'``.  Substitua isso se você "
+"quiser exibir transições de forma diferente."
 
 #: ../../sphinx/doc/config.rst:2046
 msgid "Remove unneeded ``{}`` after ``\\\\hrule``."
@@ -3578,6 +3674,11 @@ msgid ""
 "``'\\\\footnotesize\\\\raggedright\\\\printindex'`` is advisable when the "
 "index is full of long entries."
 msgstr ""
+"Chamada de \"printindex\", a última coisa no arquivo, tendo como padrão "
+"``'\\\\printindex'``. Substitua isso se você quiser gerar o índice de forma "
+"diferente ou acrescentar algum conteúdo após o índice. Por exemplo, "
+"``'\\\\footnotesize\\\\raggedright\\\\printindex'`` é aconselhável quando o "
+"índice está cheio de entradas longas."
 
 #: ../../sphinx/doc/config.rst:2062
 msgid "``'fvset'``"
@@ -3589,6 +3690,10 @@ msgid ""
 "``'\\\\fvset{fontsize=\\\\small}'``, because default font (Courier) used in "
 "code-blocks is wider and taller than default text font (Times)."
 msgstr ""
+"Personalização do pacote LaTeX ``fancyvrb``. O padrão é `` "
+"'\\\\fvset{fontsize=\\\\small}' `` porque a fonte padrão (Courier) usada em "
+"blocos de código é mais larga e mais alta do que a fonte de texto padrão "
+"(Times)."
 
 #: ../../sphinx/doc/config.rst:2059
 msgid ""
@@ -3596,6 +3701,9 @@ msgid ""
 "``'\\\\fvset{fontsize=auto}'``, because the default fonts are part of one "
 "unified typeface family (Latin Modern OpenType)."
 msgstr ""
+"Para ``'xelatex'`` e ``'lualatex'``, o padrão é "
+"``'\\\\fvset{fontsize=auto}'`` porque as fontes padrão são parte de uma "
+"família de fontes unificada (Latin Modern OpenType) ."
 
 #: ../../sphinx/doc/config.rst:2064 ../../sphinx/doc/config.rst:2284
 msgid ""
@@ -3626,6 +3734,8 @@ msgid ""
 "In Japanese docs (:confval:`language` is ``'ja'``), by default ``'jreport'``"
 " is used for ``'howto'`` and ``'jsbook'`` for ``'manual'``."
 msgstr ""
+"Em documentos japoneses (:confval:`language` é ``'ja'``), por padrão "
+"``'jreport'`` é usado para ``'howto'`` e ``'jsbook'`` para ``'manual'``."
 
 #: ../../sphinx/doc/config.rst:2092
 msgid ""
@@ -3715,6 +3825,8 @@ msgid ""
 "Suffix for section numbers in text output.  Default: ``\". \"``. Set to ``\""
 " \"`` to suppress the final dot on section numbers."
 msgstr ""
+"Sufixo para números de seção na saída de texto. Padrão: ``\".\"``. Defina "
+"como ``\"\"`` para suprimir o ponto final nos números de seção."
 
 #: ../../sphinx/doc/config.rst:2155
 msgid "Options for manual page output"
@@ -3950,18 +4062,22 @@ msgid ""
 "These options influence qthelp output.  As this builder derives from the "
 "HTML builder, the HTML options also apply where appropriate."
 msgstr ""
+"Essas opções influenciam a saída do qthelp. Como esse construtor deriva do "
+"construtor HTML, as opções HTML também se aplicam quando apropriado."
 
 #: ../../sphinx/doc/config.rst:2309
 msgid ""
 "The basename for the qthelp file.  It defaults to the :confval:`project` "
 "name."
-msgstr ""
+msgstr "O nome base do arquivo qthelp. O padrão é o nome :confval:`project`."
 
 #: ../../sphinx/doc/config.rst:2313
 msgid ""
 "The namespace for the qthelp file.  It defaults to "
 "``org.sphinx.<project_name>.<project_version>``."
 msgstr ""
+"O namespace para o arquivo qthelp. O padrão é "
+"``org.sphinx.<project_name>.<project_version>``."
 
 #: ../../sphinx/doc/config.rst:2318
 msgid "The HTML theme for the qthelp output. This defaults to ``'nonav'``."

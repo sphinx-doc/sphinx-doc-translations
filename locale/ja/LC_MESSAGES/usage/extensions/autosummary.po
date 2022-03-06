@@ -1,19 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2021, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2022, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # Tetsuo Koyama <tkoyama010@gmail.com>, 2020
 # Naofumi SAKAGUCHI <nskgch@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/60203e34a\n"
+"Project-Id-Version: Sphinx 5.0.0+/db885ef7f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 01:04+0000\n"
+"POT-Creation-Date: 2022-03-06 07:58+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -87,19 +87,17 @@ msgstr "これは以下のようなテーブルを作成します:"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:57:<autosummary>:1
 msgid ""
-":obj:`environment.BuildEnvironment <sphinx.environment.BuildEnvironment>`\\ "
-"\\(app\\)"
+":py:obj:`environment.BuildEnvironment "
+"<sphinx.environment.BuildEnvironment>`\\ \\(\\[app\\]\\)"
 msgstr ""
-":obj:`environment.BuildEnvironment <sphinx.environment.BuildEnvironment>`\\ "
-"\\(app\\)"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:57:<autosummary>:1
 msgid "The environment in which the ReST files are translated."
 msgstr "ReSTファイルが翻訳される環境。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:57:<autosummary>:1
-msgid ":obj:`util.relative_uri <sphinx.util.relative_uri>`\\ \\(base\\, to\\)"
-msgstr ":obj:`util.relative_uri <sphinx.util.relative_uri>`\\ \\(base\\, to\\)"
+msgid ":py:obj:`util.relative_uri <sphinx.util.relative_uri>`\\ \\(base\\, to\\)"
+msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:57:<autosummary>:1
 msgid "Return a relative URL from ``base`` to ``to``."
@@ -107,9 +105,9 @@ msgstr "``base`` から ``to`` に対する相対URL。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:60
 msgid ""
-"Autosummary preprocesses the docstrings and signatures with the same :event"
-":`autodoc-process-docstring` and :event:`autodoc-process-signature` hooks as"
-" :mod:`~sphinx.ext.autodoc`."
+"Autosummary preprocesses the docstrings and signatures with the same "
+":event:`autodoc-process-docstring` and :event:`autodoc-process-signature` "
+"hooks as :mod:`~sphinx.ext.autodoc`."
 msgstr ""
 "autosummaryは、 :mod:`~sphinx.ext.autodoc` が行っているのと同様に、 :event:`autodoc-"
 "process-docstring` イベントと、 :event:`autodoc-process-signature` イベントをフックすることで、 "
@@ -131,14 +129,14 @@ msgstr ""
 msgid ""
 "The ``toctree`` option also signals to the :program:`sphinx-autogen` script "
 "that stub pages should be generated for the entries listed in this "
-"directive.  The option accepts a directory name as an argument; :program"
-":`sphinx-autogen` will by default place its output in this directory. If no "
-"argument is given, output is placed in the same directory as the file that "
-"contains the directive."
+"directive.  The option accepts a directory name as an argument; "
+":program:`sphinx-autogen` will by default place its output in this "
+"directory. If no argument is given, output is placed in the same directory "
+"as the file that contains the directive."
 msgstr ""
-"``toctree`` オプションは、このディレクティブに含まれるエントリーのリストに対するスタブのページを作成する、 :program"
-":`sphinx-autogen` スクリプトにも伝えられます。このオプションは、ディレクトリ名を引数として受け取ります。デフォルトでは "
-":program:`sphinx-autogen` "
+"``toctree`` オプションは、このディレクティブに含まれるエントリーのリストに対するスタブのページを作成する、 "
+":program:`sphinx-autogen` スクリプトにも伝えられます。このオプションは、ディレクトリ名を引数として受け取ります。デフォルトでは"
+" :program:`sphinx-autogen` "
 "はこのディレクトリに出力します。もしも引数が与えられなかった場合には、そのディレクティブが含まれているファイルがある、同じディレクトリに出力します。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:82
@@ -217,8 +215,8 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:146
 msgid ""
-"For more information, refer to the :doc:`sphinx-autogen documentation </man"
-"/sphinx-autogen>`"
+"For more information, refer to the :doc:`sphinx-autogen documentation "
+"</man/sphinx-autogen>`"
 msgstr ""
 "詳しくは、次を参照してください :doc:`sphinx-autogen documentation </man/sphinx-autogen>`"
 
@@ -285,17 +283,39 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:206
 msgid ""
+"If ``autosummary_ignore_module_all`` is ``False``, this configuration value "
+"is ignored for members listed in ``__all__``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:211
+msgid ""
+"If ``False`` and a module has the ``__all__`` attribute set, autosummary "
+"documents every member listed in ``__all__`` and no others. Default is "
+"``True``"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:215
+msgid ""
+"Note that if an imported member is listed in ``__all__``, it will be "
+"documented regardless of the value of ``autosummary_imported_members``. To "
+"match the behaviour of ``from module import *``, set "
+"``autosummary_ignore_module_all`` to False and "
+"``autosummary_imported_members`` to True."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:225
+msgid ""
 "A dict mapping object names to filenames. This is necessary to avoid "
 "filename conflicts where multiple objects have names that are "
 "indistinguishable when case is ignored, on file systems where filenames are "
 "case-insensitive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:215
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:235
 msgid "Customizing templates"
 msgstr "テンプレートのカスタマイズ"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:219
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:239
 msgid ""
 "You can customize the stub page templates, in a similar way as the HTML "
 "Jinja templates, see :ref:`templating`. "
@@ -305,7 +325,7 @@ msgstr ""
 "のセクションで説明しているのと同じ、Sphinxの標準的なHTMLのJinjaテンプレートを使って、スタブページのテンプレートをカスタマイズできます。ただし、"
 " :class:`~sphinx.application.TemplateBridge` はサポートしていません。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:225
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:245
 msgid ""
 "If you find yourself spending much time tailoring the stub templates, this "
 "may indicate that it's a better idea to write custom narrative documentation"
@@ -313,125 +333,124 @@ msgid ""
 msgstr ""
 "もしも、スタブのテンプレートをカスタマイズするのに長い時間をかけているということが分かった場合には、autosummaryによる自動生成をやめて、自分でスタブを書いていく方がいいかもしれません。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:229
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:249
 msgid "Autosummary uses the following Jinja template files:"
 msgstr "autosummaryは以下に示すJinjaのテンプレートファイルを使用します:"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:231
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:251
 msgid ":file:`autosummary/base.rst` -- fallback template"
 msgstr ":file:`autosummary/base.rst` -- 代替のテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:232
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:252
 msgid ":file:`autosummary/module.rst` -- template for modules"
 msgstr ":file:`autosummary/module.rst` -- モジュールのためのテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:233
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:253
 msgid ":file:`autosummary/class.rst` -- template for classes"
 msgstr ":file:`autosummary/class.rst` -- クラスのためのテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:234
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:254
 msgid ":file:`autosummary/function.rst` -- template for functions"
 msgstr ":file:`autosummary/function.rst` -- 関数のためのテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:235
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:255
 msgid ":file:`autosummary/attribute.rst` -- template for class attributes"
 msgstr ":file:`autosummary/attribute.rst` -- クラス属性のためのテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:236
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:256
 msgid ":file:`autosummary/method.rst` -- template for class methods"
 msgstr ":file:`autosummary/method.rst` -- クラスメソッドのためのテンプレート"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:238
-msgid "The following variables available in the templates:"
-msgstr "テンプレートの中では以下の変数名が利用可能です:"
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:258
+msgid "The following variables are available in the templates:"
+msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:244
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:264
 msgid "Name of the documented object, excluding the module and class parts."
 msgstr "ドキュメントの対象となっているオブジェクトの名前です。モジュールなやクラス名の部分は含まれません。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:248
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:268
 msgid "Name of the documented object, excluding the module parts."
 msgstr "ドキュメント対象となっているオブジェクトの名前です。モジュール名の部分は含まれません。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:252
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:272
 msgid "Full name of the documented object, including module and class parts."
 msgstr "ドキュメント対象となっているオブジェクトの名前です。モジュール名、クラス名も含みます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:256
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:276
 msgid "Name of the module the documented object belongs to."
 msgstr "ドキュメント対象のオブジェクトが属しているモジュールの名前です。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:260
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:280
 msgid ""
 "Name of the class the documented object belongs to.  Only available for "
 "methods and attributes."
 msgstr "ドキュメント対象のオブジェクトが属すクラスの名前です。メソッドと属性が対象の場合だけ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:265
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:285
 msgid ""
 "A string containing ``len(full_name) * '='``. Use the ``underline`` filter "
 "instead."
 msgstr "``len(full_name) * '='`` の実行結果です。代わりに ``underline`` フィルターを使用してください。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:270
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:290
 msgid ""
 "List containing names of all members of the module or class.  Only available"
 " for modules and classes."
 msgstr "モジュールやクラスに属す、すべてのメンバーの名前のリストです。モジュールとクラスが対象の場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:275
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:295
 msgid ""
 "List containing names of all inherited members of class.  Only available for"
 " classes."
 msgstr "クラスから継承されたメンバーすべての名前のリストです。クラスが対象の場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:282
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:302
 msgid ""
 "List containing names of \"public\" functions in the module.  Here, "
-"\"public\" here means that the name does not start with an underscore. Only "
+"\"public\" means that the name does not start with an underscore. Only "
 "available for modules."
 msgstr ""
-"モジュールの\"公開\"関数の名前を含むリストです。ここでの\"公開\"は、名前の最初の文字がアンダースコア以外のものを意味しています。対象がモジュールの場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:288
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:308
 msgid ""
 "List containing names of \"public\" classes in the module.  Only available "
 "for modules."
 msgstr "モジュールの\"公開\"クラスの名前を含むリストです。対象がモジュールの場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:293
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:313
 msgid ""
 "List containing names of \"public\" exceptions in the module.  Only "
 "available for modules."
 msgstr "モジュールの\"公開\"例外クラスの名前を含むリストです。対象がモジュールの場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:298
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:318
 msgid ""
 "List containing names of \"public\" methods in the class.  Only available "
 "for classes."
 msgstr "クラスの\"公開\"メソッドの名前を含むリストです。対象がクラスの場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:303
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:323
 msgid ""
 "List containing names of \"public\" attributes in the class/module.  Only "
 "available for classes and modules."
 msgstr "クラス/モジュールの\"公開\"属性の名前を含むリストです。対象がクラスとモジュールの場合のみ利用できます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:308
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:328
 msgid "Attributes of modules are supported."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:312
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:332
 msgid ""
 "List containing names of \"public\" modules in the package.  Only available "
 "for modules that are packages and the ``recursive`` option is on."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:317
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:337
 msgid "Additionally, the following filters are available"
 msgstr "さらに、次のフィルータらが利用可能です: "
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:321
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:341
 msgid ""
 "Escape any special characters in the text to be used in formatting RST "
 "contexts. For instance, this prevents asterisks making things bold. This "
@@ -441,17 +460,17 @@ msgstr ""
 "コンテキストをフォーマットする際に、テキスト内の任意の特殊文字をエスケープするために使用します。例えば、アスタリスクがボールドにすることを防げます。この機能はHTMLエスケープを行うビルトインのJinja"
 " `escape filter`_ を置き換えます。"
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:328
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:348
 msgid "Add a title underline to a piece of text."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:330
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:350
 msgid ""
 "For instance, ``{{ fullname | escape | underline }}`` should be used to "
 "produce the title of a page."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/autosummary.rst:335
+#: ../../sphinx/doc/usage/extensions/autosummary.rst:355
 msgid ""
 "You can use the :rst:dir:`autosummary` directive in the stub pages. Stub "
 "pages are generated also based on these directives."

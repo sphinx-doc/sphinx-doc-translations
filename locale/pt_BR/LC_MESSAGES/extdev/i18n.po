@@ -1,19 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2021, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2022, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/60203e34a\n"
+"Project-Id-Version: Sphinx 5.0.0+/db885ef7f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 01:04+0000\n"
+"POT-Creation-Date: 2022-03-06 07:58+0000\n"
 "PO-Revision-Date: 2018-03-01 15:07+0000\n"
-"Last-Translator: Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,11 +33,15 @@ msgid ""
 "times or if several ``.mo`` files are found, their contents are merged "
 "together (thus making ``init`` reentrant)."
 msgstr ""
+"Procure catálogos de mensagens em `locale_dirs` e *certifique-se* de que "
+"haja pelo menos um catálogo NullTranslations definido em `translators`. Se "
+"chamado várias vezes ou se vários arquivos ``.mo`` forem encontrados, seus "
+"conteúdos são mesclados (tornando o ``init`` reentrante)."
 
 #: ../../sphinx/sphinx/locale/__init__.pydocstring of
 #: sphinx.locale.init_console:1
 msgid "Initialize locale for console."
-msgstr "Inicialize o código do idioma para o console."
+msgstr "Inicialize o código do localidade para o console."
 
 #: ../../sphinx/sphinx/locale/__init__.pydocstring of
 #: sphinx.locale.get_translation:1
@@ -58,6 +63,9 @@ msgid ""
 "``${package_dir}/locales/${language}/LC_MESSAGES/myextension.mo``. The "
 ":confval:`language` is used for the searching."
 msgstr ""
+"Com este código, o sphinx pesquisa um catálogo de mensagens em "
+"``${package_dir}/locales/${language}/LC_MESSAGES/myextension.mo``. O "
+":confval:`language` é usado para a pesquisa."
 
 #: ../../sphinx/sphinx/locale/__init__.pydocstring of
 #: sphinx.locale.get_translation.<locals>.gettext:1
@@ -82,22 +90,29 @@ msgid ""
 "Extension internationalization (`i18n`) and localization (`l10n`) using i18n"
 " API"
 msgstr ""
+"Internacionalização de extensão (`i18n`) e localização (`l10n`) usando API "
+"i18n"
 
 #: ../../sphinx/doc/extdev/i18n.rst:26
 msgid ""
 "An extension may naturally come with message translations.  This is briefly "
 "summarized in :func:`sphinx.locale.get_translation` help."
 msgstr ""
+"Uma extensão pode vir naturalmente com traduções de mensagens. Isso é "
+"resumido brevemente na ajuda :func:`sphinx.locale.get_translation`."
 
 #: ../../sphinx/doc/extdev/i18n.rst:29
 msgid "In practice, you have to:"
-msgstr ""
+msgstr "Na prática, você tem que:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:31
 msgid ""
 "Choose a name for your message catalog, which must be unique.  Usually the "
 "name of your extension is used for the name of message catalog."
 msgstr ""
+"Escolha um nome para o seu catálogo de mensagens, que deve ser exclusivo. "
+"Normalmente, o nome do seu ramal é usado para o nome do catálogo de "
+"mensagens."
 
 #: ../../sphinx/doc/extdev/i18n.rst:34
 msgid ""
@@ -105,45 +120,57 @@ msgid ""
 ":func:`sphinx.locale.get_translation` function, usually renamed ``_()``, "
 "e.g.:"
 msgstr ""
+"Marque em suas fontes de extensão todas as mensagens como traduzíveis, "
+"através da função :func:`sphinx.locale.get_translation`, geralmente "
+"renomeada para ``_()``, por exemplo:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:38 ../../sphinx/doc/extdev/i18n.rst:50
 msgid "src/__init__.py"
-msgstr ""
+msgstr "src/__init__.py"
 
 #: ../../sphinx/doc/extdev/i18n.rst:48
 msgid "Set up your extension to be aware of its dedicated translations:"
-msgstr ""
+msgstr "Configure sua extensão para estar ciente de suas traduções dedicadas:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:58
 msgid ""
 "Generate message catalog template ``*.pot`` file, usually in ``locale/`` "
 "source directory, for example via `Babel`_:"
 msgstr ""
+"Gere o arquivo modelo de catálogo de mensagens ``*.pot``, geralmente no "
+"diretório fonte ``locale/``, por exemplo via `Babel`_:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:65
 msgid ""
 "Create message catalogs (``*.po``) for each language which your extension "
 "will provide localization, for example via `Babel`_:"
 msgstr ""
+"Crie catálogos de mensagens (``*.po``) para cada idioma para o qual sua "
+"extensão fornecerá localização, por exemplo via `Babel`_:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:72
 msgid "Translate message catalogs for each language manually"
-msgstr ""
+msgstr "Traduzir catálogos de mensagens para cada idioma manualmente"
 
 #: ../../sphinx/doc/extdev/i18n.rst:74
 msgid ""
 "Compile message catalogs into ``*.mo`` files, for example via `Babel`_:"
 msgstr ""
+"Compile catálogos de mensagens em arquivos ``*.mo``, por exemplo via "
+"`Babel`_:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:80
 msgid ""
 "Ensure that message catalog files are distributed when your package will be "
 "installed, by adding equivalent line in your extension ``MANIFEST.in``:"
 msgstr ""
+"Certifique-se de que os arquivos do catálogo de mensagens sejam distribuídos"
+" quando seu pacote for instalado, adicionando uma linha equivalente em sua "
+"extensão ``MANIFEST.in``:"
 
 #: ../../sphinx/doc/extdev/i18n.rst:83
 msgid "MANIFEST.in"
-msgstr ""
+msgstr "MANIFEST.in"
 
 #: ../../sphinx/doc/extdev/i18n.rst:89
 msgid ""
@@ -151,3 +178,6 @@ msgid ""
 "update message catalog template and message catalogs, for example via "
 "`Babel`_:"
 msgstr ""
+"Quando as mensagens em sua extensão foram alteradas, você também precisa "
+"atualizar o modelo de catálogo de mensagens e os catálogos de mensagens, por"
+" exemplo, via `Babel`_:"

@@ -4,8 +4,9 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-28 15:07+0000\n"
 "PO-Revision-Date: 2018-02-12 13:49+0000\n"
-"Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,6 +59,13 @@ msgid ""
 "given to indicate the depth of the tree; by default, all levels are "
 "included. [#]_"
 msgstr ""
+"Esta diretiva insere uma \"árvore TOC\" na localização atual, usando os TOCs"
+" individuais (incluindo \"árvores subTOC\") dos documentos fornecidos no "
+"corpo da diretiva. Os nomes de documentos relativos (não começando com uma "
+"barra) são relativos ao documento em que a diretiva ocorre, os nomes "
+"absolutos são relativos ao diretório fonte. Uma opção numérica ``maxdepth`` "
+"pode ser fornecida para indicar a profundidade da árvore; por padrão, todos "
+"os níveis são incluídos. [#]_"
 
 #: ../../sphinx/doc/markup/toctree.rst:28
 msgid ""
@@ -88,6 +96,10 @@ msgid ""
 "library index.  From this information it generates \"next chapter\", "
 "\"previous chapter\" and \"parent chapter\" links."
 msgstr ""
+"O Sphinx conhece a ordem relativa dos documentos ``intro``, ``strings`` e "
+"assim por diante, e sabe que eles são filhos do documento mostrado, o índice"
+" da biblioteca. A partir dessas informações, ele gera os links \"próximo "
+"capítulo\", \"capítulo anterior\" e \"capítulo pai\"."
 
 #: ../../sphinx/doc/markup/toctree.rst:49
 msgid "**Entries**"
@@ -101,6 +113,11 @@ msgid ""
 "hyperlinks (and Sphinx's :ref:`cross-referencing syntax <xref-syntax>`). "
 "This looks like::"
 msgstr ""
+"Os títulos dos documentos em :rst:dir:`toctree` serão lidos automaticamente "
+"a partir do título do documento referenciado. Se isso não for o que você "
+"deseja, você pode especificar um título e destino explícitos usando uma "
+"sintaxe semelhante para hiperlinks de reST (e :ref:`sintaxe de referência "
+"cruzada <xref-syntax>` do Sphinx). Isso se parece com::"
 
 #: ../../sphinx/doc/markup/toctree.rst:63
 msgid ""
@@ -108,6 +125,8 @@ msgid ""
 "the title \"All about strings\" instead of the title of the ``strings`` "
 "document."
 msgstr ""
+"A segunda linha acima terá um link para o documento ``strings``, mas usará o"
+" título \"All about strings\" ao invés do título do documento ``strings``."
 
 #: ../../sphinx/doc/markup/toctree.rst:66
 msgid ""
@@ -134,12 +153,16 @@ msgid ""
 "Numbering then starts at the heading of ``foo``.  Sub-toctrees are "
 "automatically numbered (don't give the ``numbered`` flag to those)."
 msgstr ""
+"A numeração então começa no cabeçalho de ``foo``. Sub-toctrees são numeradas"
+" automaticamente (não dê o sinalizador ``numbered`` para elas)."
 
 #: ../../sphinx/doc/markup/toctree.rst:83
 msgid ""
 "Numbering up to a specific depth is also possible, by giving the depth as a "
 "numeric argument to ``numbered``."
 msgstr ""
+"Numerar até uma profundidade específica também é possível, dando a "
+"profundidade como um argumento numérico para ``numbered``."
 
 #: ../../sphinx/doc/markup/toctree.rst:86
 msgid "**Additional options**"
@@ -151,12 +174,17 @@ msgid ""
 "``name`` option to provide implicit target name that can be referenced by "
 "using :rst:role:`ref`::"
 msgstr ""
+"Você pode usar a opção ``caption`` para fornecer uma legenda à toctree e "
+"você pode usar a opção ``name`` para fornecer um nome de destino implícito "
+"que pode ser referenciado usando :rst:role:`ref`::"
 
 #: ../../sphinx/doc/markup/toctree.rst:98
 msgid ""
 "If you want only the titles of documents in the tree to show up, not other "
 "headings of the same level, you can use the ``titlesonly`` option::"
 msgstr ""
+"Se você quiser que apareçam apenas os títulos dos documentos na árvore, e "
+"não outros títulos do mesmo nível, você pode usar a opção ``títulosonly``::"
 
 #: ../../sphinx/doc/markup/toctree.rst:107
 msgid ""
@@ -164,6 +192,10 @@ msgid ""
 "option.  All entries are then matched against the list of available "
 "documents, and matches are inserted into the list alphabetically.  Example::"
 msgstr ""
+"Você pode usar \"globbing\" nas diretivas toctree, dando a opção de "
+"sinalização ``glob``. Todas as entradas são então comparadas com a lista de "
+"documentos disponíveis e as correspondências são inseridas na lista em ordem"
+" alfabética. Exemplo::"
 
 #: ../../sphinx/doc/markup/toctree.rst:118
 msgid ""
@@ -171,6 +203,9 @@ msgid ""
 " documents in the ``recipe`` folder, then all remaining documents (except "
 "the one containing the directive, of course.) [#]_"
 msgstr ""
+"Isso inclui primeiro todos os documentos cujos nomes começam com ``intro``, "
+"depois todos os documentos na pasta ``recipe`` e, em seguida, todos os "
+"documentos restantes (exceto aquele que contém a diretiva, é claro). [#]_"
 
 #: ../../sphinx/doc/markup/toctree.rst:122
 msgid ""
@@ -178,6 +213,9 @@ msgid ""
 "toctree directive.  This is useful if you want to generate a \"sitemap\" "
 "from the toctree."
 msgstr ""
+"O nome de entrada especial ``self`` representa o documento que contém a "
+"diretiva toctree. Isso é útil se você deseja gerar um \"sitemap\" a partir "
+"da toctree."
 
 #: ../../sphinx/doc/markup/toctree.rst:126
 msgid ""
@@ -185,10 +223,14 @@ msgid ""
 " in the list. This can be useful when using the ``glob`` flag option to "
 "reverse the ordering of the files.  Example::"
 msgstr ""
+"Você pode usar a opção de sinalizador ``reversed`` para inverter a ordem das"
+" entradas na lista. Isso pode ser útil ao usar a opção de sinalizador "
+"``glob`` para inverter a ordem dos arquivos. Exemplo::"
 
 #: ../../sphinx/doc/markup/toctree.rst:136
 msgid "You can also give a \"hidden\" option to the directive, like this::"
 msgstr ""
+"Você também pode fornecer uma opção \"oculta\" para a diretiva, como esta::"
 
 #: ../../sphinx/doc/markup/toctree.rst:144
 msgid ""
@@ -197,6 +239,10 @@ msgid ""
 " if you intend to insert these links yourself, in a different style, or in "
 "the HTML sidebar."
 msgstr ""
+"Isso ainda notificará o Sphinx sobre a hierarquia do documento, mas não "
+"inserirá links no documento no local da diretiva -- isso faz sentido se você"
+" pretende inserir esses links por conta própria, em um estilo diferente ou "
+"na barra lateral HTML."
 
 #: ../../sphinx/doc/markup/toctree.rst:149
 msgid ""
@@ -204,6 +250,9 @@ msgid ""
 "other lower level toctrees you can add the \"includehidden\" option to the "
 "top-level toctree entry::"
 msgstr ""
+"Nos casos em que você deseja ter apenas uma árvore toctree de nível superior"
+" e ocultar todas as outras toctree de nível inferior, você pode adicionar a "
+"opção \"includehidden\" à entrada toctree de nível superior::"
 
 #: ../../sphinx/doc/markup/toctree.rst:159
 msgid "All other toctree entries can then be eliminated by the \"hidden\" option."
@@ -217,6 +266,10 @@ msgid ""
 " warning if it finds a file that is not included, because that means that "
 "this file will not be reachable through standard navigation."
 msgstr ""
+"No final, todos os documentos no :term:`diretório fonte` (ou subdiretórios) "
+"devem ocorrer em alguma diretiva ``toctree``; O Sphinx emitirá um aviso se "
+"encontrar um arquivo que não está incluído, porque isso significa que esse "
+"arquivo não será acessível através da navegação padrão."
 
 #: ../../sphinx/doc/markup/toctree.rst:166
 msgid ""
@@ -225,6 +278,10 @@ msgid ""
 "<metadata>` to let a document be built, but notify Sphinx that it is not "
 "reachable via a toctree."
 msgstr ""
+"Usa :confval:`exclude_patterns` para excluir explicitamente documentos ou "
+"diretórios da construção completamente. Usa :ref:`os metadados \"órfãos\" "
+"<metadata>` para permitir que um documento seja construído, mas notifica o "
+"Sphinx de que não está acessível através de uma toctree."
 
 #: ../../sphinx/doc/markup/toctree.rst:171
 msgid ""
@@ -232,6 +289,10 @@ msgid ""
 "of the TOC tree hierarchy.  It can be used as the documentation's main page,"
 " or as a \"full table of contents\" if you don't give a ``maxdepth`` option."
 msgstr ""
+"O \"documento mestre\" (selecionado por :confval:`master_doc`) é a \"raiz\" "
+"da hierarquia da árvore TOC. Ele pode ser usado como a página principal da "
+"documentação ou como um \"índice completo\" se você não fornecer a opção "
+"``maxdepth``."
 
 #: ../../sphinx/doc/markup/toctree.rst:175
 msgid "Added \"globbing\" option."
@@ -327,12 +388,18 @@ msgid ""
 "create documents or document-containing directories with such names.  (Using"
 " ``_`` as a prefix for a custom template directory is fine.)"
 msgstr ""
+"Embora apenas poucos desses nomes sejam usados atualmente pelo Sphinx, você "
+"não deve criar documentos ou diretórios que contenham documentos com esses "
+"nomes. (Usar ``_`` como um prefixo para um diretório de modelo personalizado"
+" é adequado.)"
 
 #: ../../sphinx/doc/markup/toctree.rst:225
 msgid ""
 "Be careful with unusual characters in filenames.  Some formats may interpret"
 " these characters in unexpected ways:"
 msgstr ""
+"Tenha cuidado com caracteres incomuns em nomes de arquivos. Alguns formatos "
+"podem interpretar esses caracteres de maneiras inesperadas:"
 
 #: ../../sphinx/doc/markup/toctree.rst:228
 msgid ""

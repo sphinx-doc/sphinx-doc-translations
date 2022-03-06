@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2021, Georg Brandl and the Sphinx team
+# Copyright (C) 2007-2022, Georg Brandl and the Sphinx team
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,7 +7,7 @@
 # Yusuke Iwaki <yusuke.iwaki@crowdworks.co.jp>, 2018
 # shirou - しろう <shirou.faw@gmail.com>, 2018
 # tomo, 2018
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # Komiya Takeshi <i.tkomiya@gmail.com>, 2019
 # Tetsuo Koyama <tkoyama010@gmail.com>, 2020
 # Georg Brandl <g.brandl@gmx.net>, 2021
@@ -15,9 +15,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/60203e34a\n"
+"Project-Id-Version: Sphinx 5.0.0+/db885ef7f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 01:04+0000\n"
+"POT-Creation-Date: 2022-03-06 07:58+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -118,6 +118,10 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_post_transform:0
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:0
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:0
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_message_catalog:0
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.is_parallel_allowed:0
@@ -159,8 +163,8 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.connect:8
 msgid ""
-"The priority of the callback.  The callbacks will be invoked in the order of"
-" *priority* in asending."
+"The priority of the callback.  The callbacks will be invoked in order of "
+"*priority* (ascending)."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -249,8 +253,8 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_config_value:7
 msgid ""
-"The name of configuration value.  It is recommended to be prefixed with the "
-"extension name (ex. ``html_logo``, ``epub_title``)"
+"The name of the configuration value.  It is recommended to be prefixed with "
+"the extension name (ex. ``html_logo``, ``epub_title``)"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -341,13 +345,13 @@ msgstr ""
 #: sphinx.application.Sphinx.set_translator:3
 msgid ""
 "This is used to register a custom output translator or to replace a builtin "
-"translator.  This allows extensions to use custom translator and define "
+"translator.  This allows extensions to use a custom translator and define "
 "custom nodes for the translator (see :meth:`add_node`)."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.set_translator:7
-msgid "The name of builder for the translator"
+msgid "The name of the builder for the translator"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -434,10 +438,10 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_enumerable_node:7
 msgid ""
-"The type of enumerable nodes.  Each figtypes have individual numbering "
-"sequences.  As a system figtypes, ``figure``, ``table`` and ``code-block`` "
-"are defined.  It is able to add custom nodes to these default figtypes.  It "
-"is also able to define new custom figtype if new figtype is given."
+"The type of enumerable nodes.  Each figtype has individual numbering "
+"sequences.  As system figtypes, ``figure``, ``table`` and ``code-block`` are"
+" defined.  It is possible to add custom nodes to these default figtypes.  It"
+" is also possible to define new custom figtype if a new figtype is given."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -462,7 +466,7 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:3
-msgid "The name of directive"
+msgid "The name of the directive"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -517,8 +521,6 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:4
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_role_to_domain:8
 msgid "A role function"
 msgstr ""
 
@@ -589,10 +591,6 @@ msgstr ":meth:`add_directive` と似ていますが、ディレクティブを�
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:6
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_role_to_domain:6
-#: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_index_to_domain:5
 msgid "The name of target domain"
 msgstr ""
 
@@ -613,8 +611,20 @@ msgid ""
 msgstr ":meth:`add_role` に似ていますが、 *domain* で指定されたドメインに、新しいロールを追加します。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:6
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_index_to_domain:5
+msgid "The name of the target domain"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role_to_domain:7
-msgid "A name of role"
+msgid "The name of the role"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_role_to_domain:8
+msgid "The role function"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -629,7 +639,7 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:6
-msgid "A index class"
+msgid "The index class"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -814,18 +824,18 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:12
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:26
+#: sphinx.application.Sphinx.add_js_file:32
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:26
+#: sphinx.application.Sphinx.add_css_file:28
 msgid "Priority"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:13
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:27
+#: sphinx.application.Sphinx.add_js_file:33
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:27
+#: sphinx.application.Sphinx.add_css_file:29
 msgid "Main purpose in Sphinx"
 msgstr ""
 
@@ -926,84 +936,112 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:3
 msgid ""
-"Add *filename* to the list of JavaScript files that the default HTML "
-"template will include in order of *priority* (ascending).  The filename must"
-" be relative to the HTML static path , or a full URI with scheme. If the "
-"priority of JavaScript file is the same as others, the JavaScript files will"
-" be included in order of the registration.  If the keyword argument ``body``"
-" is given, its value will be added between the ``<script>`` tags. Extra "
-"keyword arguments are included as attributes of the ``<script>`` tag."
+"The filename of the JavaScript file.  It must be relative to the HTML static"
+" path, a full URI with scheme, or ``None`` value.  The ``None`` value is "
+"used to create inline ``<script>`` tag.  See the description of *kwargs* "
+"below."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:7
+msgid ""
+"The priority to determine the order of ``<script>`` tag for JavaScript "
+"files.  See list of \"prority range for JavaScript files\" below.  If the "
+"priority of the JavaScript files it the same as others, the JavaScript files"
+" will be loaded in order of registration."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:12
+msgid ""
+"The loading method of the JavaScript file.  ``'async'`` or ``'defer'`` is "
+"allowed."
+msgstr ""
+
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:10
+#: sphinx.application.Sphinx.add_js_file:14
+msgid ""
+"Extra keyword arguments are included as attributes of the ``<script>`` tag."
+"  A special keyword argument ``body`` is given, its value will be added "
+"between the ``<script>`` tag."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:18
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:12
 msgid "Example::"
 msgstr "サンプル::"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:23
+#: sphinx.application.Sphinx.add_js_file:29
 msgid "priority range for JavaScript files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:28
+#: sphinx.application.Sphinx.add_js_file:34
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:28
+#: sphinx.application.Sphinx.add_css_file:30
 msgid "200"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:29
+#: sphinx.application.Sphinx.add_js_file:35
 msgid "default priority for built-in JavaScript files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:30
+#: sphinx.application.Sphinx.add_js_file:36
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:30
+#: sphinx.application.Sphinx.add_css_file:32
 msgid "500"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:31
+#: sphinx.application.Sphinx.add_js_file:37
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:31
+#: sphinx.application.Sphinx.add_css_file:33
 msgid "default priority for extensions"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:32
+#: sphinx.application.Sphinx.add_js_file:38
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:32
+#: sphinx.application.Sphinx.add_css_file:34
 msgid "800"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:33
+#: sphinx.application.Sphinx.add_js_file:39
 msgid "default priority for :confval:`html_js_files`"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:35
+#: sphinx.application.Sphinx.add_js_file:41
 msgid ""
-"A JavaScript file can be added to the specific HTML page when on extension "
+"A JavaScript file can be added to the specific HTML page when an extension "
 "calls this method on :event:`html-page-context` event."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:40
+#: sphinx.application.Sphinx.add_js_file:46
 msgid ""
 "Renamed from ``app.add_javascript()``. And it allows keyword arguments as "
 "attributes of script tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:44
+#: sphinx.application.Sphinx.add_js_file:50
 msgid ""
 "Take priority argument.  Allow to add a JavaScript file to the specific "
 "page."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:52
+msgid ""
+"Take loading_method argument.  Allow to change the loading method of the "
+"JavaScript file."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -1014,54 +1052,65 @@ msgstr ""
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:3
 msgid ""
-"Add *filename* to the list of CSS files that the default HTML template will "
-"include in order of *priority* (ascending).  The filename must be relative "
-"to the HTML static path, or a full URI with scheme.  If the priority of CSS "
-"file is the same as others, the CSS files will be included in order of the "
-"registration.  The keyword arguments are also accepted for attributes of "
-"``<link>`` tag."
+"The filename of the CSS file.  It must be relative to the HTML static path, "
+"or a full URI with scheme."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:23
+#: sphinx.application.Sphinx.add_css_file:5
+msgid ""
+"The priority to determine the order of ``<link>`` tag for the CSS files.  "
+"See list of \"prority range for CSS files\" below. If the priority of the "
+"CSS files it the same as others, the CSS files will be loaded in order of "
+"registration."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:9
+msgid ""
+"Extra keyword arguments are included as attributes of the ``<link>`` tag."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:25
 msgid "priority range for CSS files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:29
+#: sphinx.application.Sphinx.add_css_file:31
 msgid "default priority for built-in CSS files"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:33
+#: sphinx.application.Sphinx.add_css_file:35
 msgid "default priority for :confval:`html_css_files`"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:35
+#: sphinx.application.Sphinx.add_css_file:37
 msgid ""
-"A CSS file can be added to the specific HTML page when on extension calls "
+"A CSS file can be added to the specific HTML page when an extension calls "
 "this method on :event:`html-page-context` event."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:40
+#: sphinx.application.Sphinx.add_css_file:42
 msgid ""
 "Optional ``alternate`` and/or ``title`` attributes can be supplied with the "
-"*alternate* (of boolean type) and *title* (a string) arguments. The default "
-"is no title and *alternate* = ``False``. For more information, refer to the "
+"arguments *alternate* (a Boolean) and *title* (a string). The default is no "
+"title and *alternate* = ``False``. For more information, refer to the "
 "`documentation <https://mdn.io/Web/CSS/Alternative_style_sheets>`__."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:47
+#: sphinx.application.Sphinx.add_css_file:49
 msgid ""
 "Renamed from ``app.add_stylesheet()``. And it allows keyword arguments as "
 "attributes of link tag."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:51
+#: sphinx.application.Sphinx.add_css_file:53
 msgid "Take priority argument.  Allow to add a CSS file to the specific page."
 msgstr ""
 
@@ -1074,7 +1123,7 @@ msgstr ""
 #: sphinx.application.Sphinx.add_latex_package:3
 msgid ""
 "Add *packagename* to the list of packages that LaTeX source code will "
-"include.  If you provide *options*, it will be taken to `\\usepackage` "
+"include.  If you provide *options*, it will be taken to the `\\usepackage` "
 "declaration.  If you set *after_hyperref* truthy, the package will be loaded"
 " after ``hyperref`` package."
 msgstr ""
@@ -1111,7 +1160,7 @@ msgstr ""
 msgid ""
 "Add *cls* as a new documenter class for the :mod:`sphinx.ext.autodoc` "
 "extension.  It must be a subclass of :class:`sphinx.ext.autodoc.Documenter`."
-"  This allows to auto-document new types of objects.  See the source of the "
+"  This allows auto-documenting new types of objects.  See the source of the "
 "autodoc module for examples on how to subclass :class:`Documenter`."
 msgstr ""
 
@@ -1168,13 +1217,13 @@ msgstr ""
 #: sphinx.application.Sphinx.add_source_suffix:3
 msgid ""
 "Same as :confval:`source_suffix`.  The users can override this using the "
-"setting."
+"config setting."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_source_suffix:6
 msgid ""
-"If *override* is True, the given *suffix* is forcedly installed even if a "
+"If *override* is True, the given *suffix* is forcedly installed even if the "
 "same suffix is already installed."
 msgstr ""
 
@@ -1241,12 +1290,12 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_message_catalog:3
-msgid "A name of catalog"
+msgid "The name of the catalog"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_message_catalog:4
-msgid "The base path of message catalog"
+msgid "The base path of the message catalog"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -1256,7 +1305,7 @@ msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.is_parallel_allowed:1
-msgid "Check parallel processing is allowed or not."
+msgid "Check whether parallel processing is allowed or not."
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
@@ -1497,10 +1546,12 @@ msgstr "このノードは、将来の参照が持つ、テキストとフォー
 msgid ""
 "Emitted when a cross-reference to an object cannot be resolved even after "
 ":event:`missing-reference`.  If the event handler can emit warnings for the "
-"missing reference, it should return ``True``."
+"missing reference, it should return ``True``. The configuration variables "
+":confval:`nitpick_ignore` and :confval:`nitpick_ignore_regex` prevent the "
+"event from being emitted for the corresponding nodes."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:307
+#: ../../sphinx/doc/extdev/appapi.rst:309
 msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
@@ -1509,7 +1560,7 @@ msgstr ""
 "環境がdoctreeに関して\"resolved(解決)\"と判断したときに発行されます。これは、すべての参照が解決され、目次が挿入された時、ということになります。"
 " *doctree* はこのイベントハンドラ内で操作できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:311
+#: ../../sphinx/doc/extdev/appapi.rst:313
 msgid ""
 "Here is the place to replace custom nodes that don't have visitor methods in"
 " the writers, so that they don't cause errors when the writers encounter "
@@ -1517,14 +1568,14 @@ msgid ""
 msgstr ""
 "このイベントは、ライタークラスにビジターメソッドが存在しない、カスタムのノードを置換して処理するのに使用できます。もしもここで設定しない場合、未知のノードを見つけると、ライターはエラーを出しますが、設定することでエラーが出なくなります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:316
+#: ../../sphinx/doc/extdev/appapi.rst:318
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr ""
 "このイベントはドキュメントの並列読み込みが有効の場合にのみ発行されます。それぞれのサブプロセスがドキュメントを読み込んだ場合に一度だけ発行されます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:319
+#: ../../sphinx/doc/extdev/appapi.rst:321
 msgid ""
 "You must handle this event in an extension that stores data in the "
 "environment in a custom location.  Otherwise the environment in the main "
@@ -1532,7 +1583,7 @@ msgid ""
 msgstr ""
 "このイベントは拡張機能が特定の場所の環境中にデータを保存する場合に使用される必要があります。使用しないと、サブプロセス中で保存された情報をメインプロセスの環境内で利用できなくなります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:323
+#: ../../sphinx/doc/extdev/appapi.rst:325
 msgid ""
 "*other* is the environment object from the subprocess, *env* is the "
 "environment from the main process.  *docnames* is a set of document names "
@@ -1541,13 +1592,13 @@ msgstr ""
 "*other* はサブプロセス中での環境、*env* はメインプロセスでの環境です。*docnames* "
 "はこのサブプロセスにおいて読み込まれたドキュメント名のセットです。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:331
+#: ../../sphinx/doc/extdev/appapi.rst:333
 msgid ""
 "Emitted when the :meth:`update` method of the build environment has "
 "completed, that is, the environment and all doctrees are now up-to-date."
 msgstr "ビルダーの :meth:`update` メソッドの実行が完了し、環境とすべてのdoctreeが最新になった時に発行されます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:334
+#: ../../sphinx/doc/extdev/appapi.rst:336
 msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
@@ -1555,21 +1606,21 @@ msgid ""
 msgstr ""
 "イベントハンドラより、ドキュメント名のイテレータを返すことができます。これらのドキュメントはアップデートされたとみなされ、書き込みフェイズにて新規書き込み(または書き換え)が行われます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:340
+#: ../../sphinx/doc/extdev/appapi.rst:342
 msgid "The handlers' return value is now used."
 msgstr "イベントハンドラからの戻り値が利用されるようになりました。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:345
+#: ../../sphinx/doc/extdev/appapi.rst:347
 msgid ""
 "Emitted when Consistency checks phase.  You can check consistency of "
 "metadata for whole of documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:350
+#: ../../sphinx/doc/extdev/appapi.rst:352
 msgid "As a **experimental** event"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:354
+#: ../../sphinx/doc/extdev/appapi.rst:356
 msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
@@ -1578,14 +1629,14 @@ msgstr ""
 "HTMLビルダーが、ドキュメント以外のページの書き込みを開始するときに発行されます。 ``(pagename, context, "
 "templatename)`` という構成の要素を含むシーケンスを返すと、ページを追加できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:362
+#: ../../sphinx/doc/extdev/appapi.rst:364
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr ""
 "HTMLビルダーがコンテキストの辞書を作り、テンプレートを使用してレンダリングを行う時に発行されます。このイベントは、追加のカスタムの要素をコンテキストに追加する場合に使用できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:365
+#: ../../sphinx/doc/extdev/appapi.rst:367
 msgid ""
 "The *pagename* argument is the canonical name of the page being rendered, "
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
@@ -1596,7 +1647,7 @@ msgstr ""
 "が付かず、パス区切りとしてスラッシュ(/)が使われている状態です。 *templatename* はレンダリングに使用するテンプレートの名前です。 "
 "reSTドキュメントのページのレンダリング時には、必ず ``'page.html'`` となります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:370
+#: ../../sphinx/doc/extdev/appapi.rst:372
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
@@ -1605,7 +1656,7 @@ msgstr ""
 "*context* "
 "引数はテンプレートエンジンがページをレンダリングする際に与えられる値の辞書になります。カスタムの値を持つように、変更することが可能です。キーは必ず文字列です。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:374
+#: ../../sphinx/doc/extdev/appapi.rst:376
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
@@ -1615,7 +1666,7 @@ msgstr ""
 "引数はreSTドキュメントから作成する場合にはdoctreeとなります。もしもHTMLテンプレートからのみ作成されるページの場合には、 ``None``"
 " となります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:378
+#: ../../sphinx/doc/extdev/appapi.rst:380
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
@@ -1623,24 +1674,24 @@ msgstr ""
 "イベントハンドラは文字列を返すことができます、この文字列は ``'page.html'`` "
 "に代わりHTMLテンプレートとして、このページのレンダリングに利用されるテンプレート名になります。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:381
+#: ../../sphinx/doc/extdev/appapi.rst:383
 msgid ""
 "You can install JS/CSS files for the specific page via "
 ":meth:`Sphinx.add_js_file` and :meth:`Sphinx.add_css_file` since v3.5.0."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:387
+#: ../../sphinx/doc/extdev/appapi.rst:389
 msgid "The return value can now specify a template name."
 msgstr "戻り値により使用するテンプレート名を指定できるようになりました。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:392
+#: ../../sphinx/doc/extdev/appapi.rst:394
 msgid ""
 "Emitted when the linkcheck builder collects hyperlinks from document.  *uri*"
 " is a collected URI.  The event handlers can modify the URI by returning a "
 "string."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:400
+#: ../../sphinx/doc/extdev/appapi.rst:402
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -1654,11 +1705,11 @@ msgstr ""
 "引数が渡されます。アプリケーションの中で発生した例外は、このイベントハンドラが終了した段階で、再度投げられます。もしもビルドプロセスが例外を発生しなかった場合には、"
 " *exception* は ``None`` になります。これによって、例外の種類ごとの、クリーンアップの処理をカスタム化できます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:411
+#: ../../sphinx/doc/extdev/appapi.rst:413
 msgid "Checking the Sphinx version"
 msgstr "Sphinx のバージョン確認"
 
-#: ../../sphinx/doc/extdev/appapi.rst:415
+#: ../../sphinx/doc/extdev/appapi.rst:417
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr "作製した拡張をSphinxのAPI変更に追従させる為、この仕組みを使用してください。"
 
@@ -1680,7 +1731,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr "バージョン1.2より前では ``sphinx.__version__`` (文字列) を参照してください。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:421
+#: ../../sphinx/doc/extdev/appapi.rst:423
 msgid "The Config object"
 msgstr "Config オブジェクト"
 
@@ -1702,7 +1753,7 @@ msgid ""
 " ``env.config.language``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:431
+#: ../../sphinx/doc/extdev/appapi.rst:433
 msgid "The template bridge"
 msgstr "テンプレートブリッジ"
 
@@ -1764,7 +1815,7 @@ msgstr ""
 "指定された **context** (Python辞書)を使用して、 **template** "
 "で指定された文字列形式のテンプレートのレンダリングを行います。ビルダーから呼ばれます。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:442
+#: ../../sphinx/doc/extdev/appapi.rst:444
 msgid "Exceptions"
 msgstr "例外"
 

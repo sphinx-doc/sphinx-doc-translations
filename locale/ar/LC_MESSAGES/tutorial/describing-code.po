@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2022, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 5.0.0+/db885ef7f\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-06 07:58+0000\n"
+"PO-Revision-Date: 2022-03-06 06:35+0000\n"
+"Language-Team: Arabic (https://www.transifex.com/sphinx-doc/teams/15434/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:2
+msgid "Describing code in Sphinx"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:4
+msgid ""
+"In the :doc:`previous sections of the tutorial </tutorial/index>` you can "
+"read how to write narrative or prose documentation in Sphinx. In this "
+"section you will describe code objects instead."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:8
+msgid ""
+"Sphinx supports documenting code objects in several languages, namely "
+"Python, C, C++, JavaScript, and reStructuredText. Each of them can be "
+"documented using a series of directives and roles grouped by :doc:`domain "
+"</usage/restructuredtext/domains>`. For the remainder of the tutorial you "
+"will use the Python domain, but all the concepts seen in this section apply "
+"for the other domains as well."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:18
+msgid "Python"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:21
+msgid "Documenting Python objects"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:23
+msgid ""
+"Sphinx offers several roles and directives to document Python objects, all "
+"grouped together in :ref:`the Python domain <python-domain>`. For example, "
+"you can use the :rst:dir:`py:function` directive to document a Python "
+"function, as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:28
+#: ../../sphinx/doc/tutorial/describing-code.rst:81
+#: ../../sphinx/doc/tutorial/describing-code.rst:93
+#: ../../sphinx/doc/tutorial/describing-code.rst:102
+#: ../../sphinx/doc/tutorial/describing-code.rst:172
+msgid "docs/source/usage.rst"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:46
+msgid "Which will render like this:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:53
+msgid "HTML result of documenting a Python function in Sphinx"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:53
+msgid "The rendered result of documenting a Python function in Sphinx"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:55
+msgid "Notice several things:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:57
+msgid ""
+"Sphinx parsed the argument of the ``.. py:function`` directive and "
+"highlighted the module, the function name, and the parameters appropriately."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:59
+msgid ""
+"The directive content includes a one-line description of the function, as "
+"well as an :ref:`info field list <info-field-lists>` containing the function"
+" parameter, its expected type, the return value, and the return type."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:65
+msgid ""
+"The ``py:`` prefix specifies the :term:`domain`. You may configure the "
+"default domain so you can omit the prefix, either globally using the "
+":confval:`primary_domain` configuration, or use the :rst:dir:`default-"
+"domain` directive to change it from the point it is called until the end of "
+"the file. For example, if you set it to ``py`` (the default), you can write "
+"``.. function::`` directly."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:74
+msgid "Cross-referencing Python objects"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:76
+msgid ""
+"By default, most of these directives generate entities that can be cross-"
+"referenced from any part of the documentation by using :ref:`a corresponding"
+" role <python-roles>`. For the case of functions, you can use "
+":rst:role:`py:func` for that, as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:88
+msgid ""
+"When generating code documentation, Sphinx will generate a cross-reference "
+"automatically just by using the name of the object, without you having to "
+"explicitly use a role for that. For example, you can describe the custom "
+"exception raised by the function using the :rst:dir:`py:exception` "
+"directive:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:100
+msgid "Then, add this exception to the original description of the function:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:116
+msgid "And finally, this is how the result would look:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:124
+msgid ""
+"HTML result of documenting a Python function in Sphinx\n"
+"with cross-references"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:124
+msgid ""
+"HTML result of documenting a Python function in Sphinx with cross-references"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:126
+msgid "Beautiful, isn't it?"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:129
+msgid "Including doctests in your documentation"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:131
+msgid ""
+"Since you are now describing code from a Python library, it will become "
+"useful to keep both the documentation and the code as synchronized as "
+"possible. One of the ways to do that in Sphinx is to include code snippets "
+"in the documentation, called *doctests*, that are executed when the "
+"documentation is built."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:137
+msgid ""
+"To demonstrate doctests and other Sphinx features covered in this tutorial, "
+"Sphinx will need to be able to import the code. To achieve that, write this "
+"at the beginning of ``conf.py``:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:141
+#: ../../sphinx/doc/tutorial/describing-code.rst:161
+msgid "docs/source/conf.py"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:153
+msgid ""
+"An alternative to changing the :py:data:`sys.path` variable is to create a "
+"``pyproject.toml`` file and make the code installable, so it behaves like "
+"any other Python library. However, the ``sys.path`` approach is simpler."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:158
+msgid ""
+"Then, before adding doctests to your documentation, enable the :doc:`doctest"
+" </usage/extensions/doctest>` extension in ``conf.py``:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:170
+msgid "Next, write a doctest block as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:179
+msgid ""
+"Doctests include the Python instructions to be run preceded by ``>>>``, the "
+"standard Python interpreter prompt, as well as the expected output of each "
+"instruction. This way, Sphinx can check whether the actual output matches "
+"the expected one."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:184
+msgid ""
+"To observe how a doctest failure looks like (rather than a code error as "
+"above), let's write the return value incorrectly first. Therefore, add a "
+"function ``get_random_ingredients`` like this:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:188
+#: ../../sphinx/doc/tutorial/describing-code.rst:223
+msgid "lumache.py"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:194
+msgid ""
+"You can now run ``make doctest`` to execute the doctests of your "
+"documentation. Initially this will display an error, since the actual code "
+"does not behave as specified:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:220
+msgid ""
+"As you can see, doctest reports the expected and the actual results, for "
+"easy examination. It is now time to fix the function:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:230
+msgid "And finally, ``make test`` reports success!"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:232
+msgid ""
+"For big projects though, this manual approach can become a bit tedious. In "
+"the next section, you will see :doc:`how to automate the process "
+"</tutorial/automatic-doc-generation>`."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:237
+msgid "Other languages (C, C++, others)"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:240
+msgid "Documenting and cross-referencing objects"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:242
+msgid ""
+"Sphinx also supports documenting and cross-referencing objects written in "
+"other programming languages. There are four additional built-in domains: C, "
+"C++, JavaScript, and reStructuredText. Third-party extensions may define "
+"domains for more languages, such as"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:247
+msgid "`Fortran <https://sphinx-fortran.readthedocs.io>`_,"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:248
+msgid "`Julia <http://bastikr.github.io/sphinx-julia>`_, or"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:249
+msgid "`PHP <https://github.com/markstory/sphinxcontrib-phpdomain>`_."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:251
+msgid ""
+"For example, to document a C++ type definition, you would use the built-in "
+":rst:dir:`cpp:type` directive, as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:260
+msgid "Which would give the following result:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:264
+msgid "A typedef-like declaration of a type."
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:266
+msgid ""
+"All such directives then generate references that can be cross-referenced by"
+" using the corresponding role. For example, to reference the previous type "
+"definition, you can use the :rst:role:`cpp:type` role as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/tutorial/describing-code.rst:275
+msgid ""
+"Which would produce a hyperlink to the previous definition: "
+":cpp:type:`CustomList`."
+msgstr ""

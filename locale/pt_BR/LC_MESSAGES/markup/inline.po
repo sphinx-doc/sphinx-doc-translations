@@ -5,7 +5,8 @@
 # 
 # Translators:
 # gilberto dos santos alves <gsavix@gmail.com>, 2018
-# Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-28 15:07+0000\n"
 "PO-Revision-Date: 2018-02-12 13:49+0000\n"
-"Last-Translator: Takayuki Shimizukawa <shimizukawa@gmail.com>, 2018\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,6 +32,8 @@ msgid ""
 "Sphinx uses interpreted text roles to insert semantic markup into documents."
 " They are written as ``:rolename:`content```."
 msgstr ""
+"O Sphinx usa funções de texto interpretado para inserir marcação semântica "
+"em documentos. Elas são escritos como ``:nome_da_role:`conteúdo```."
 
 #: ../../sphinx/doc/markup/inline.rst:13
 msgid ""
@@ -40,6 +43,12 @@ msgid ""
 ":rst:role:`any` role to find anything or the :rst:role:`py:obj` role to find"
 " Python objects are very useful for this."
 msgstr ""
+"O role padrão (```conteúdo```) não tem nenhum significado especial por "
+"padrão. Você é livre para usá-lo para o que quiser, por exemplo, nomes de "
+"variáveis; use o valor de configuração :confval:`default_role` para defini-"
+"lo para um role conhecido -- o papel :rst:role:`any` para encontrar qualquer"
+" coisa ou o role :rst:role:`py:obj` para encontrar objetos Python são muito "
+"útil para isso."
 
 #: ../../sphinx/doc/markup/inline.rst:19
 msgid "See :ref:`domains` for roles added by domains."
@@ -56,12 +65,18 @@ msgid ""
 "created to the item named *target* of the type indicated by *role*.  The "
 "link's text will be the same as *target*."
 msgstr ""
+"As referências cruzadas são geradas por muitas roles de texto interpretado "
+"semântico. Basicamente, você só precisa escrever ``:role:`alvo```, e um link"
+" será criado para o item chamado *alvo* do tipo indicado por *role*. O texto"
+" do link será o mesmo que *alvo*."
 
 #: ../../sphinx/doc/markup/inline.rst:32
 msgid ""
 "There are some additional facilities, however, that make cross-referencing "
 "roles more versatile:"
 msgstr ""
+"Existem alguns recursos adicionais, no entanto, que tornam as roles de "
+"referência cruzada mais versáteis:"
 
 #: ../../sphinx/doc/markup/inline.rst:35
 msgid ""
@@ -69,12 +84,17 @@ msgid ""
 "hyperlinks: ``:role:`title <target>``` will refer to *target*, but the link "
 "text will be *title*."
 msgstr ""
+"Você pode fornecer um título explícito e destino de referência, como nos "
+"hiperlinks reST diretos: ``:role:`título <alvo>``` vai fazer referência a "
+"*alvo*, mas o texto do link será *título*."
 
 #: ../../sphinx/doc/markup/inline.rst:39
 msgid ""
 "If you prefix the content with ``!``, no reference/hyperlink will be "
 "created."
 msgstr ""
+"Se você prefixar o conteúdo com ``!``, Nenhuma referência/hiperlink será "
+"criada."
 
 #: ../../sphinx/doc/markup/inline.rst:41
 msgid ""
@@ -83,28 +103,40 @@ msgid ""
 "refer to ``Queue.Queue.get`` but only display ``get`` as the link text.  "
 "This does not work with all cross-reference roles, but is domain specific."
 msgstr ""
+"Se você prefixar o conteúdo com ``~``, o texto do link será apenas o último "
+"componente do destino. Por exemplo, ``:py:meth:`~Queue.Queue.get``` vai "
+"fazer referência a ``Queue.Queue.get``, mas somente exibirá ``get`` como o "
+"texto do link. Isso não funciona com todas as funções de referência cruzada,"
+" mas é específico do domínio."
 
 #: ../../sphinx/doc/markup/inline.rst:46
 msgid ""
 "In HTML output, the link's ``title`` attribute (that is e.g. shown as a "
 "tool-tip on mouse-hover) will always be the full target name."
 msgstr ""
+"Na saída HTML, o atributo ``title`` do link (por exemplo, mostrado como uma "
+"dica de ferramenta ao passar o mouse) sempre será o nome completo do "
+"destino."
 
 #: ../../sphinx/doc/markup/inline.rst:53
 msgid "Cross-referencing anything"
-msgstr ""
+msgstr "Fazendo referência cruzada de qualquer coisa"
 
 #: ../../sphinx/doc/markup/inline.rst:59
 msgid ""
 "This convenience role tries to do its best to find a valid target for its "
 "reference text."
 msgstr ""
+"Essa role de conveniência tenta fazer o melhor para localizar um destino "
+"válido para seu texto de referência."
 
 #: ../../sphinx/doc/markup/inline.rst:62
 msgid ""
 "First, it tries standard cross-reference targets that would be referenced by"
 " :rst:role:`doc`, :rst:role:`ref` or :rst:role:`option`."
 msgstr ""
+"Primeiro, ele tenta destinos de referência cruzada padrão que seriam "
+"referenciados por :rst:role:`doc`, :rst:role:`ref` ou :rst:role:`option`."
 
 #: ../../sphinx/doc/markup/inline.rst:65
 msgid ""
@@ -119,12 +151,18 @@ msgid ""
 "reference of ``:any:`Builder``` would match the ``sphinx.builders.Builder`` "
 "class."
 msgstr ""
+"Em seguida, ele procura por objetos (destinos) em todos os domínios "
+"carregados. Depende dos domínios quão específica deve ser uma "
+"correspondência. Por exemplo, no domínio Python uma referência de "
+"``:any:`Builder``` corresponderia à classe ``sphinx.builders.Builder``."
 
 #: ../../sphinx/doc/markup/inline.rst:73
 msgid ""
 "If none or multiple targets are found, a warning will be emitted.  In the "
 "case of multiple targets, you can change \"any\" to a specific role."
 msgstr ""
+"Se nenhum ou vários destinos forem encontrados, um aviso será emitido. No "
+"caso de vários destinos, você pode alterar \"any\" para uma role específica."
 
 #: ../../sphinx/doc/markup/inline.rst:76
 msgid ""
@@ -132,6 +170,9 @@ msgid ""
 "do, you can write cross-references without a lot of markup overhead.  For "
 "example, in this Python function documentation ::"
 msgstr ""
+"Esta role é uma boa candidata para configurar :confval:`default_role`. Se "
+"você fizer isso, poderá escrever referências cruzadas sem muita sobrecarga "
+"de marcação. Por exemplo, nesta documentação de função Python::"
 
 #: ../../sphinx/doc/markup/inline.rst:85
 msgid ""
@@ -139,6 +180,9 @@ msgid ""
 "a Python module (usually ``:py:mod:`signal``` or ``:mod:`signal```) and a "
 "section (usually ``:ref:`about-signals```)."
 msgstr ""
+"pode haver referências a um termo do glossário (normalmente "
+"``:term:`texto```), um módulo Python (normalmente ``:py:mod:`signal``` ou "
+"``:mod:`signal``` ) e uma seção (normalmente ``:ref:`about-signs```)."
 
 #: ../../sphinx/doc/markup/inline.rst:89
 msgid ""
@@ -146,38 +190,42 @@ msgid ""
 ":mod:`~sphinx.ext.intersphinx` extension: when no local cross-reference is "
 "found, all object types of intersphinx inventories are also searched."
 msgstr ""
+"A role :rst:role:`any` também funciona junto com a extensão "
+":mod:`~sphinx.ext.intersphinx`: quando nenhuma referência cruzada local é "
+"encontrada, todos os tipos de objetos de inventários intersphinx também são "
+"pesquisados."
 
 #: ../../sphinx/doc/markup/inline.rst:95
 msgid "Cross-referencing objects"
-msgstr ""
+msgstr "Objetos de referência cruzada"
 
 #: ../../sphinx/doc/markup/inline.rst:97
 msgid "These roles are described with their respective domains:"
-msgstr ""
+msgstr "Essas roles são descritas com seus respectivos domínios:"
 
 #: ../../sphinx/doc/markup/inline.rst:99
 msgid ":ref:`Python <python-roles>`"
-msgstr ""
+msgstr ":ref:`Python <python-roles>`"
 
 #: ../../sphinx/doc/markup/inline.rst:100
 msgid ":ref:`C <c-roles>`"
-msgstr ""
+msgstr ":ref:`C <c-roles>`"
 
 #: ../../sphinx/doc/markup/inline.rst:101
 msgid ":ref:`C++ <cpp-roles>`"
-msgstr ""
+msgstr ":ref:`C++ <cpp-roles>`"
 
 #: ../../sphinx/doc/markup/inline.rst:102
 msgid ":ref:`JavaScript <js-roles>`"
-msgstr ""
+msgstr ":ref:`JavaScript <js-roles>`"
 
 #: ../../sphinx/doc/markup/inline.rst:103
 msgid ":ref:`ReST <rst-roles>`"
-msgstr ""
+msgstr ":ref:`ReST <rst-roles>`"
 
 #: ../../sphinx/doc/markup/inline.rst:109
 msgid "Cross-referencing arbitrary locations"
-msgstr ""
+msgstr "Referência cruzada de locais arbitrários"
 
 #: ../../sphinx/doc/markup/inline.rst:113
 msgid ""
@@ -186,6 +234,10 @@ msgid ""
 "throughout the entire documentation.  There are two ways in which you can "
 "refer to labels:"
 msgstr ""
+"Para oferecer suporte a referência cruzada para locais arbitrários em "
+"qualquer documento, os rótulos reST padrão são usados. Para que isso "
+"funcione, os nomes dos rótulos devem ser exclusivos em toda a documentação. "
+"Existem duas maneiras de se referir aos rótulos:"
 
 #: ../../sphinx/doc/markup/inline.rst:118
 msgid ""
@@ -199,6 +251,9 @@ msgid ""
 "title being \"Section to cross-reference\".  This works just as well when "
 "section and reference are in different source files."
 msgstr ""
+"A role ``:ref: `` geraria então um link para a seção, com o título do link "
+"sendo \"Seção para referência cruzada\". Isso funciona tão bem quando a "
+"seção e a referência estão em arquivos fontes diferentes."
 
 #: ../../sphinx/doc/markup/inline.rst:134
 msgid "Automatic labels also work with figures: given ::"
@@ -215,6 +270,8 @@ msgid ""
 "The same works for tables that are given an explicit caption using the "
 ":dudir:`table` directive."
 msgstr ""
+"O mesmo funciona para tabelas que recebem uma legenda explícita usando a "
+"diretiva :dudir:`table`."
 
 #: ../../sphinx/doc/markup/inline.rst:148
 msgid ""
@@ -222,6 +279,9 @@ msgid ""
 "but you must give the link an explicit title, using this syntax: "
 "``:ref:`Link title <label-name>```."
 msgstr ""
+"Rótulos que não são colocados antes de um título de seção ainda podem ser "
+"referenciados, mas você deve dar ao link um título explícito, usando esta "
+"sintaxe: ``:ref:`Título do link <nome-rótulo>```."
 
 #: ../../sphinx/doc/markup/inline.rst:154
 msgid ""

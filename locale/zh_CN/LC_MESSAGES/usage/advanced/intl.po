@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 5.0.0+/a45781997\n"
+"Project-Id-Version: Sphinx 5.0.0+/223b1a94f\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 01:41+0000\n"
+"POT-Creation-Date: 2022-03-28 01:49+0000\n"
 "PO-Revision-Date: 2018-11-20 17:14+0000\n"
 "Last-Translator: Lu <lu2github@gmail.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -133,29 +133,49 @@ msgstr ""
 msgid "Run your desired build."
 msgstr "运行所需的构建。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:72
+#: ../../sphinx/doc/usage/advanced/intl.rst:71
+msgid ""
+"In order to protect against mistakes, a warning is emitted if cross-"
+"references in the translated paragraph do not match those from the original."
+"  This can be turned off globally using the :confval:`suppress_warnings` "
+"configuration variable.  Alternatively, to turn it off for one message only,"
+" end the message with ``#noqa`` like this::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:81
+msgid ""
+"(Write ``\\#noqa`` in case you want to have \"#noqa\" literally in the text."
+"  This does not apply to code blocks, where ``#noqa`` is ignored because "
+"code blocks do not contain references anyway.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:85
+msgid "The ``#noqa`` mechanism."
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:90
 msgid "Translating with sphinx-intl"
 msgstr "用sphinx国际翻译"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:75
+#: ../../sphinx/doc/usage/advanced/intl.rst:93
 msgid "Quick guide"
 msgstr "快速指南"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:77
+#: ../../sphinx/doc/usage/advanced/intl.rst:95
 msgid ""
 "`sphinx-intl`_ is a useful tool to work with Sphinx translation flow.  This "
 "section describe an easy way to translate with *sphinx-intl*."
 msgstr "`sphinx intl`是一个使用sphinx转换流的有用工具。本节介绍一种使用*sphinx intl*进行翻译的简单方法。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:80
+#: ../../sphinx/doc/usage/advanced/intl.rst:98
 msgid "Install `sphinx-intl`_."
 msgstr "安装`sphinx-intl`_."
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:86
+#: ../../sphinx/doc/usage/advanced/intl.rst:104
 msgid "Add configurations to ``conf.py``."
 msgstr "将配置添加到``conf.py``."
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:93
+#: ../../sphinx/doc/usage/advanced/intl.rst:111
 msgid ""
 "This case-study assumes that BUILDDIR is set to ``_build``, "
 ":confval:`locale_dirs` is set to ``locale/`` and :confval:`gettext_compact` "
@@ -164,42 +184,42 @@ msgstr ""
 "这个案例研究假设BUILDDIR被设置为'`u "
 "build```，：confval:`locale_dirs`被设置为``locale/``并且：confval:`gettext_compact`被设置为`False``（Sphinx文档已经这样配置）。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:97
+#: ../../sphinx/doc/usage/advanced/intl.rst:115
 msgid "Extract translatable messages into pot files."
 msgstr "将可翻译的消息提取到pot文件中。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:103
+#: ../../sphinx/doc/usage/advanced/intl.rst:121
 msgid ""
 "The generated pot files will be placed in the ``_build/gettext`` directory."
 msgstr "生成的pot文件将被放在``u build/gettext``目录中。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:105
+#: ../../sphinx/doc/usage/advanced/intl.rst:123
 msgid "Generate po files."
 msgstr "生成采购订单文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:107
+#: ../../sphinx/doc/usage/advanced/intl.rst:125
 msgid "We'll use the pot files generated in the above step."
 msgstr "我们将使用上述步骤中生成的pot文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:113
+#: ../../sphinx/doc/usage/advanced/intl.rst:131
 msgid ""
 "Once completed, the generated po files will be placed in the below "
 "directories:"
 msgstr "完成后，生成的采购订单文件将放在以下目录中："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:116
+#: ../../sphinx/doc/usage/advanced/intl.rst:134
 msgid "``./locale/de/LC_MESSAGES/``"
 msgstr "``./locale/de/LC_MESSAGES/``"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:117
+#: ../../sphinx/doc/usage/advanced/intl.rst:135
 msgid "``./locale/ja/LC_MESSAGES/``"
 msgstr "``./locale/ja/LC_MESSAGES/``"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:119
+#: ../../sphinx/doc/usage/advanced/intl.rst:137
 msgid "Translate po files."
 msgstr "翻译采购订单文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:121
+#: ../../sphinx/doc/usage/advanced/intl.rst:139
 msgid ""
 "As noted above, these are located in the ``./locale/<lang>/LC_MESSAGES`` "
 "directory.  An example of one such file, from Sphinx, ``builders.po``, is "
@@ -208,52 +228,52 @@ msgstr ""
 "如上所述，它们位于 ``./locale/<lang>/LC_MESSAGES`` "
 "目录中。一个这样的文件的例子，来自sphinx，``builders.po``，如下所示。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:132
+#: ../../sphinx/doc/usage/advanced/intl.rst:150
 msgid ""
 "Another case, msgid is multi-line text and contains reStructuredText syntax:"
 msgstr "另一种情况是，msgid是多行文本，并包含restructedText语法："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:145
+#: ../../sphinx/doc/usage/advanced/intl.rst:163
 msgid ""
 "Please be careful not to break reST notation.  Most po-editors will help you"
 " with that."
 msgstr "请注意不要破坏reST符号。大多数po编辑都会帮你。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:148
+#: ../../sphinx/doc/usage/advanced/intl.rst:166
 msgid "Build translated document."
 msgstr "生成翻译文档。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:150
+#: ../../sphinx/doc/usage/advanced/intl.rst:168
 msgid ""
 "You need a :confval:`language` parameter in ``conf.py`` or you may also "
 "specify the parameter on the command line."
 msgstr "您需要一个：confval:`language`参数``conf.py``也可以在命令行中指定参数。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:153
+#: ../../sphinx/doc/usage/advanced/intl.rst:171
 msgid "For for BSD/GNU make, run:"
 msgstr "对于For BSD/GNU make，运行："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:159
+#: ../../sphinx/doc/usage/advanced/intl.rst:177
 msgid "For Windows :command:`cmd.exe`, run:"
 msgstr "对于Windows:命令：`命令提示符`，运行："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:166
+#: ../../sphinx/doc/usage/advanced/intl.rst:184
 msgid "For PowerShell, run:"
 msgstr "为PowerShell运行："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:173
+#: ../../sphinx/doc/usage/advanced/intl.rst:191
 msgid ""
 "Congratulations! You got the translated documentation in the ``_build/html``"
 " directory."
 msgstr "祝贺你！翻译后的文档在``u build/html``目录下。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:178
+#: ../../sphinx/doc/usage/advanced/intl.rst:196
 msgid ""
 ":program:`sphinx-build` that is invoked by make command will build po files "
 "into mo files."
 msgstr "：程序：make命令调用的“sphinx build”将把po文件生成mo文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:181
+#: ../../sphinx/doc/usage/advanced/intl.rst:199
 msgid ""
 "If you are using 1.2.x or earlier, please invoke :command:`sphinx-intl "
 "build` command before :command:`make` command."
@@ -261,15 +281,15 @@ msgstr ""
 "如果您使用的是1.2.x或更早版本，请在命令之前调用：command:`sphinx intl "
 "build`命令：command:`make`command。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:185
+#: ../../sphinx/doc/usage/advanced/intl.rst:203
 msgid "Translating"
 msgstr "翻译"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:188
+#: ../../sphinx/doc/usage/advanced/intl.rst:206
 msgid "Update your po files by new pot files"
 msgstr "用新的pot文件更新你的po文件"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:190
+#: ../../sphinx/doc/usage/advanced/intl.rst:208
 msgid ""
 "If a document is updated, it is necessary to generate updated pot files and "
 "to apply differences to translated po files.  In order to apply the updates "
@@ -279,11 +299,11 @@ msgstr ""
 "如果更新了文档，则需要生成更新的pot文件，并将差异应用于已翻译的po文件。要将pot文件中的更新应用于po文件，请使用：命令：`sphinx intl"
 " update`命令。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:200
+#: ../../sphinx/doc/usage/advanced/intl.rst:218
 msgid "Using Transifex service for team translation"
 msgstr "使用Transifex服务进行团队翻译"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:202
+#: ../../sphinx/doc/usage/advanced/intl.rst:220
 msgid ""
 "Transifex_ is one of several services that allow collaborative translation "
 "via a web interface.  It has a nifty Python-based command line client that "
@@ -291,31 +311,31 @@ msgid ""
 msgstr ""
 "Transifex_x是允许通过web界面进行协作翻译的几种服务之一。它有一个漂亮的基于Python的命令行客户机，使得获取和推送翻译变得很容易。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:209
+#: ../../sphinx/doc/usage/advanced/intl.rst:227
 msgid "Install `transifex-client`_."
 msgstr "安装 `transifex-client`_."
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:211
+#: ../../sphinx/doc/usage/advanced/intl.rst:229
 msgid "You need :command:`tx` command to upload resources (pot files)."
 msgstr "您需要：command:`tx`命令来上载资源（pot文件）。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:217
+#: ../../sphinx/doc/usage/advanced/intl.rst:235
 msgid "`Transifex Client documentation`_"
 msgstr "`Transifex Client documentation`_"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:219
+#: ../../sphinx/doc/usage/advanced/intl.rst:237
 msgid ""
 "Create your transifex_ account and create new project for your document."
 msgstr "创建transifex账户并为文档创建新项目。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:221
+#: ../../sphinx/doc/usage/advanced/intl.rst:239
 msgid ""
 "Currently, transifex does not allow for a translation project to have more "
 "than one version of the document, so you'd better include a version number "
 "in your project name."
 msgstr "目前，transifex不允许翻译项目拥有多个版本的文档，因此最好在项目名称中包含一个版本号。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:225
+#: ../../sphinx/doc/usage/advanced/intl.rst:243
 msgid "For example:"
 msgstr "例如："
 
@@ -323,7 +343,7 @@ msgstr "例如："
 msgid "Project ID"
 msgstr "项目ID"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:227
+#: ../../sphinx/doc/usage/advanced/intl.rst:245
 msgid "``sphinx-document-test_1_0``"
 msgstr "``sphinx-document-test_1_0``"
 
@@ -331,59 +351,59 @@ msgstr "``sphinx-document-test_1_0``"
 msgid "Project URL"
 msgstr "项目URL"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:228
+#: ../../sphinx/doc/usage/advanced/intl.rst:246
 msgid "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 msgstr "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:230
+#: ../../sphinx/doc/usage/advanced/intl.rst:248
 msgid "Create config files for :command:`tx` command."
 msgstr "为：command:`tx`command创建配置文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:232
+#: ../../sphinx/doc/usage/advanced/intl.rst:250
 msgid ""
 "This process will create ``.tx/config`` in the current directory, as well as"
 " a ``~/.transifexrc`` file that includes auth information."
 msgstr "此进程将在当前目录中创建“.tx/config”，以及包含身份验证信息的“~/.transifexrc”文件。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:246
+#: ../../sphinx/doc/usage/advanced/intl.rst:264
 msgid "Upload pot files to transifex service."
 msgstr "将pot文件上载到transifex服务。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:248
+#: ../../sphinx/doc/usage/advanced/intl.rst:266
 msgid "Register pot files to ``.tx/config`` file:"
 msgstr "将pot文件注册到“.tx/config”文件："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:256
+#: ../../sphinx/doc/usage/advanced/intl.rst:274
 msgid "and upload pot files:"
 msgstr "以及上传pot文件"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:267
+#: ../../sphinx/doc/usage/advanced/intl.rst:285
 msgid "Forward the translation on transifex."
 msgstr "在transifex上转发翻译。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:271
+#: ../../sphinx/doc/usage/advanced/intl.rst:289
 msgid "Pull translated po files and make translated HTML."
 msgstr "拉翻译后的采购订单文件，并制作翻译的HTML。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:273
+#: ../../sphinx/doc/usage/advanced/intl.rst:291
 msgid ""
 "Get translated catalogs and build mo files. For example, to build mo files "
 "for German (de):"
 msgstr "获取翻译的目录并生成mo文件。例如，要为德语（de）生成mo文件："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:285
+#: ../../sphinx/doc/usage/advanced/intl.rst:303
 msgid "Invoke :command:`make html` (for BSD/GNU make):"
 msgstr "Invoke:命令：`make html`（对于BSD/GNU make）："
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:291
+#: ../../sphinx/doc/usage/advanced/intl.rst:309
 msgid "That's all!"
 msgstr "到此为止"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:293
+#: ../../sphinx/doc/usage/advanced/intl.rst:311
 msgid "Translating locally and on Transifex"
 msgstr "本地和Transifex上的翻译"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:295
+#: ../../sphinx/doc/usage/advanced/intl.rst:313
 msgid ""
 "If you want to push all language's po files, you can be done by using "
 ":command:`tx push -t` command.  Watch out! This operation overwrites "
@@ -391,57 +411,57 @@ msgid ""
 msgstr ""
 "如果要推送所有语言的po文件，可以使用：command:`tx push-t` command完成。小心！此操作覆盖transifex中的翻译。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:299
+#: ../../sphinx/doc/usage/advanced/intl.rst:317
 msgid ""
 "In other words, if you have updated each in the service and local po files, "
 "it would take much time and effort to integrate them."
 msgstr "换句话说，如果您已经更新了服务和本地po文件中的每一个文件，那么集成它们将花费大量的时间和精力。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:304
+#: ../../sphinx/doc/usage/advanced/intl.rst:322
 msgid "Contributing to Sphinx reference translation"
 msgstr "有助于sphinx参考翻译"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:306
+#: ../../sphinx/doc/usage/advanced/intl.rst:324
 msgid ""
 "The recommended way for new contributors to translate Sphinx reference is to"
 " join the translation team on Transifex."
 msgstr "新贡献者翻译sphinx参考文献的推荐方式是加入Transifex上的翻译团队。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:309
+#: ../../sphinx/doc/usage/advanced/intl.rst:327
 msgid ""
 "There is a `sphinx translation page`_ for Sphinx (master) documentation."
 msgstr "Sphinx (master) 文档有  `sphinx translation page`_。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:311
+#: ../../sphinx/doc/usage/advanced/intl.rst:329
 msgid "Login to transifex_ service."
 msgstr "登录transifex服务。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:312
+#: ../../sphinx/doc/usage/advanced/intl.rst:330
 msgid "Go to `sphinx translation page`_."
 msgstr "去sphinx翻译页面"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:313
+#: ../../sphinx/doc/usage/advanced/intl.rst:331
 msgid "Click ``Request language`` and fill form."
 msgstr "单击“请求语言”并填写表单。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:314
+#: ../../sphinx/doc/usage/advanced/intl.rst:332
 msgid "Wait acceptance by transifex sphinx translation maintainers."
 msgstr "等待sphinx翻译公司验收。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:315
+#: ../../sphinx/doc/usage/advanced/intl.rst:333
 msgid "(After acceptance) Translate on transifex."
 msgstr "（验收后）在transifex上翻译。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:317
+#: ../../sphinx/doc/usage/advanced/intl.rst:335
 msgid ""
 "Detail is here: https://docs.transifex.com/getting-started-1/translators"
 msgstr "细节位于： https://docs.transifex.com/getting-started-1/translators"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:320
+#: ../../sphinx/doc/usage/advanced/intl.rst:338
 msgid "Footnotes"
 msgstr "脚注"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:321
+#: ../../sphinx/doc/usage/advanced/intl.rst:339
 msgid ""
 "See the `GNU gettext utilities "
 "<https://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ "
@@ -450,6 +470,6 @@ msgstr ""
 "请参见`GNU "
 "gettext实用程序<https://www.gnu.org/software/gettext/manual/gettext.html简介>`_有关该软件套件的详细信息。"
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:324
+#: ../../sphinx/doc/usage/advanced/intl.rst:342
 msgid "Because nobody expects the Spanish Inquisition!"
 msgstr "因为没人期待西班牙宗教裁判所！"

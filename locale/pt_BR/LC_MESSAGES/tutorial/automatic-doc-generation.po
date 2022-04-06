@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2022
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-03 01:48+0000\n"
 "PO-Revision-Date: 2022-03-06 06:35+0000\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2022\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:2
 msgid "Automatic documentation generation from code"
-msgstr ""
+msgstr "Geração automática de documentação a partir do código"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:4
 msgid ""
@@ -30,47 +34,60 @@ msgid ""
 "docstrings <257#what-is-a-docstring>` in the documentation, rather than "
 "having to write the information in two places."
 msgstr ""
+"Na :ref:`seção anterior <tutorial-describing-objects>` do tutorial você "
+"documentou manualmente uma função Python no Sphinx. No entanto, a descrição "
+"estava fora de sincronia com o próprio código, pois a assinatura da função "
+"não era a mesma. Além disso, seria bom reutilizar :pep:`Python docstrings "
+"<257#what-is-a-docstring>` na documentação, ao invés de ter que escrever as "
+"informações em dois lugares."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:11
 msgid ""
 "Fortunately, :doc:`the autodoc extension </usage/extensions/autodoc>` "
 "provides this functionality."
 msgstr ""
+"Felizmente, :doc:`a extensão autodoc </usage/extensions/autodoc>` fornece "
+"essa funcionalidade."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:15
 msgid "Reusing signatures and docstrings with autodoc"
-msgstr ""
+msgstr "Reutilizando assinaturas e docstrings com autodoc"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:17
 msgid "To use autodoc, first add it to the list of enabled extensions:"
 msgstr ""
+"Para usar o autodoc, primeiro adicione-o à lista de extensões habilitadas:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:19
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:101
 msgid "docs/source/conf.py"
-msgstr ""
+msgstr "docs/source/conf.py"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:29
 msgid ""
 "Next, move the content of the ``.. py:function`` directive to the function "
 "docstring in the original Python file, as follows:"
 msgstr ""
+"Em seguida, mova o conteúdo da diretiva ``.. py:function`` para a função "
+"docstring no arquivo Python original, como segue:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:32
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:68
 msgid "lumache.py"
-msgstr ""
+msgstr "lumache.py"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:49
 msgid ""
 "Finally, replace the ``.. py:function`` directive from the Sphinx "
 "documentation with :rst:dir:`autofunction`:"
 msgstr ""
+"Finalmente, substitua a diretiva ``.. py:function`` da documentação do "
+"Sphinx por :rst:dir:`autofunction`:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:52
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:78
 msgid "docs/source/usage.rst"
-msgstr ""
+msgstr "docs/source/usage.rst"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:60
 msgid ""
@@ -79,28 +96,38 @@ msgid ""
 "reStructuredText from the docstring and included it, also generating proper "
 "cross-references."
 msgstr ""
+"Se você agora construir a documentação HTML, a saída será a mesma! Com a "
+"vantagem de ser gerado a partir do próprio código. Sphinx pegou o "
+"reStructuredText da docstring e o incluiu, também gerando referências "
+"cruzadas apropriadas."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:65
 msgid ""
 "You can also autogenerate documentation from other objects. For example, add"
 " the code for the ``InvalidKindError`` exception:"
 msgstr ""
+"Você também pode gerar automaticamente a documentação de outros objetos. Por"
+" exemplo, adicione o código para a exceção ``Invalid KindError``:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:75
 msgid ""
 "And replace the ``.. py:exception`` directive with :rst:dir:`autoexception` "
 "as follows:"
 msgstr ""
+"E substitua a diretiva ``.. py:exception`` por :rst:dir:`autoexception` da "
+"seguinte forma:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:87
 msgid ""
 "And again, after running ``make html``, the output will be the same as "
 "before."
 msgstr ""
+"E novamente, depois de executar ``make html``, a saída será a mesma de "
+"antes."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:90
 msgid "Generating comprehensive API references"
-msgstr ""
+msgstr "Gerando referências de API abrangentes"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:92
 msgid ""
@@ -110,6 +137,11 @@ msgid ""
 "yet another level of automation: the :doc:`autosummary "
 "</usage/extensions/autosummary>` extension."
 msgstr ""
+"Enquanto usar ``sphinx.ext.autodoc`` torna muito mais fácil manter o código "
+"e a documentação em sincronia, ainda requer que você escreva uma diretiva "
+"``auto*`` para cada objeto que você deseja documentar. Sphinx fornece ainda "
+"outro nível de automação: a extensão :doc:`autosummary "
+"</usage/extensions/autosummary>`."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:97
 msgid ""
@@ -117,28 +149,33 @@ msgid ""
 "the necessary ``autodoc`` directives. To use it, first enable the "
 "autosummary extension:"
 msgstr ""
+"A diretiva :rst:dir:`autosummary` gera documentos que contêm todas as "
+"diretivas ``autodoc`` necessárias. Para usá-la, primeiro habilite a extensão"
+" autosummary:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:112
 msgid "Next, create a new ``api.rst`` file with these contents:"
-msgstr ""
+msgstr "Em seguida, crie um novo arquivo ``api.rst`` com este conteúdo:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:114
 msgid "docs/source/api.rst"
-msgstr ""
+msgstr "docs/source/api.rst"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:125
 msgid "Remember to include the new document in the root toctree:"
-msgstr ""
+msgstr "Lembre-se de incluir o novo documento na toctree raiz:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:127
 msgid "docs/source/index.rst"
-msgstr ""
+msgstr "docs/source/index.rst"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:139
 msgid ""
 "Finally, after you build the HTML documentation running ``make html``, it "
 "will contain two new pages:"
 msgstr ""
+"Finalmente, depois de construir a documentação HTML executando ``make "
+"html``, ela conterá duas novas páginas:"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:142
 msgid ""
@@ -146,6 +183,9 @@ msgid ""
 "table with the objects you included in the ``autosummary`` directive (in "
 "this case, only one)."
 msgstr ""
+"``api.html``, correspondente a ``docs/source/api.rst`` e contendo uma tabela"
+" com os objetos que você incluiu na diretiva ``autosummary`` (neste caso, "
+"apenas um)."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:145
 msgid ""
@@ -153,11 +193,14 @@ msgid ""
 "``generated/lumache.rst`` and containing a summary of members of the module,"
 " in this case one function and one exception."
 msgstr ""
+"``generated/lumache.html``, correspondendo a um arquivo reST recém-criado "
+"``generated/lumache.rst`` e contendo um resumo dos membros do módulo, neste "
+"caso uma função e uma exceção."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:154
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:154
 msgid "Summary page created by autosummary"
-msgstr ""
+msgstr "Página de resumo criada por autosummary"
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:156
 msgid ""
@@ -165,6 +208,9 @@ msgid ""
 "originally used the corresponding ``autodoc`` directive, in this case in the"
 " ``usage.rst`` document."
 msgstr ""
+"Cada um dos links na página de resumo irá levá-lo aos lugares onde você "
+"originalmente usou a diretiva ``autodoc`` correspondente, neste caso no "
+"documento ``usage.rst``."
 
 #: ../../sphinx/doc/tutorial/automatic-doc-generation.rst:162
 msgid ""
@@ -173,3 +219,7 @@ msgid ""
 "<autosummary-customizing-templates>`, but that is out of scope for this "
 "tutorial."
 msgstr ""
+"Os arquivos gerados são baseados em `templates Jinja2 "
+"<https://jinja2docs.readthedocs.io/>`_ que :ref:`podem ser personalizados "
+"<autosummary-customizing-templates>`, mas isso está fora do escopo deste "
+"tutorial."

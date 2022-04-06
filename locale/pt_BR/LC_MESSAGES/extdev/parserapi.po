@@ -6,6 +6,7 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # Georg Brandl <g.brandl@gmx.net>, 2022
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-03 01:48+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
-"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2022\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2022\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,12 +30,15 @@ msgstr "Parser API"
 #: ../../sphinx/doc/extdev/parserapi.rst:6
 msgid "`The docutils documentation describes`__ parsers as follows:"
 msgstr ""
+"`A documentação do docutils descreve`__ analisadores da seguinte forma:"
 
 #: ../../sphinx/doc/extdev/parserapi.rst:8
 msgid ""
 "The Parser analyzes the input document and creates a node tree "
 "representation."
 msgstr ""
+"O Analisador analisa o documento de entrada e cria uma representação de "
+"árvore de nós."
 
 #: ../../sphinx/doc/extdev/parserapi.rst:13
 msgid ""
@@ -42,6 +46,10 @@ msgid ""
 "registered to Sphinx by extensions using Application APIs; "
 ":meth:`.Sphinx.add_source_suffix()` and :meth:`.Sphinx.add_source_parser()`."
 msgstr ""
+"No Sphinx, os módulos do analisador funcionam da mesma forma que os "
+"docutils. Os analisadores são registrados no Sphinx por extensões usando "
+"APIs de aplicativos; :meth:`.Sphinx.add_source_suffix()` e "
+":meth:`.Sphinx.add_source_parser()`."
 
 #: ../../sphinx/doc/extdev/parserapi.rst:17
 msgid ""
@@ -51,18 +59,28 @@ msgid ""
 "searching, Sphinx refers to the ``Parser.supported`` attribute and picks up "
 "a parser which contains the file type in the attribute."
 msgstr ""
+"O *source suffix* é um mapeamento do sufixo do arquivo para o tipo de "
+"arquivo. Por exemplo, o arquivo ``.rst`` é mapeado para o tipo "
+"``'restructuredtext'``. Sphinx usa o tipo de arquivo para procurar "
+"analisadores da lista registrada. Na busca, o Sphinx se refere ao atributo "
+"``Parser.supported`` e pega um analisador que contém o tipo de arquivo no "
+"atributo."
 
 #: ../../sphinx/doc/extdev/parserapi.rst:23
 msgid ""
 "The users can override the source suffix mappings using "
 ":confval:`source_suffix` like following::"
 msgstr ""
+"Os usuários podem substituir os mapeamentos de sufixo de origem usando "
+":confval:`source_suffix` como a seguir::"
 
 #: ../../sphinx/doc/extdev/parserapi.rst:32
 msgid ""
 "You should indicate file types your parser supports. This will allow users "
 "to configure their settings appropriately."
 msgstr ""
+"Você deve indicar os tipos de arquivo que seu analisador suporta. Isso "
+"permitirá que os usuários definam suas configurações adequadamente."
 
 #: ../../sphinx/sphinx/parsers.pydocstring of sphinx.parsers.Parser:1
 msgid ""
@@ -71,11 +89,17 @@ msgid ""
 "``docutils.parsers.Parser``, this class improves accessibility to Sphinx "
 "APIs."
 msgstr ""
+"Uma classe base de analisadores de origem. Os analisadores adicionais devem "
+"herdar esta classe ao invés de ``docutils.parsers.Parser``. Comparada com "
+"``docutils.parsers.Parser``, esta classe melhora a acessibilidade às APIs "
+"Sphinx."
 
 #: ../../sphinx/sphinx/parsers.pydocstring of sphinx.parsers.Parser:5
 msgid ""
 "The subclasses can access sphinx core runtime objects (app, config and env)."
 msgstr ""
+"As subclasses podem acessar objetos de runtime do núcleo sphinx (app, config"
+" e env)."
 
 #: ../../sphinx/sphinx/parsers.pydocstring of
 #: sphinx.parsers.Parser.set_application:1
@@ -83,6 +107,8 @@ msgid ""
 "set_application will be called from Sphinx to set app and other instance "
 "variables"
 msgstr ""
+"set_application será chamado do Sphinx para definir a aplicação e outras "
+"variáveis de instância"
 
 #: ../../sphinx/sphinx/parsers.pydocstring of
 #: sphinx.parsers.Parser.set_application:0
@@ -92,16 +118,16 @@ msgstr "Parâmetros"
 #: ../../sphinx/sphinx/parsers.pydocstring of
 #: sphinx.parsers.Parser.set_application:3
 msgid "Sphinx application object"
-msgstr ""
+msgstr "Objeto de aplicação Sphinx"
 
 #: ../../sphinx/sphinx/parsers.pydocstring of sphinx.parsers.Parser.app:1
 msgid "The application object"
-msgstr ""
+msgstr "O objeto aplicação"
 
 #: ../docstring of sphinx.parsers.Parser.config:1
 msgid "The config object"
-msgstr ""
+msgstr "O objeto configuração"
 
 #: ../docstring of sphinx.parsers.Parser.env:1
 msgid "The environment object"
-msgstr ""
+msgstr "O objeto ambiente"

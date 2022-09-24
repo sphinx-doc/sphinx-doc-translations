@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 6.0.0\n"
+"Project-Id-Version: Sphinx 6.0.0+/7ad0fcf22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-11 02:12+0000\n"
+"POT-Creation-Date: 2022-09-24 02:44+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Language-Team: Polish (Poland) (https://www.transifex.com/sphinx-doc/teams/15434/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -533,6 +533,57 @@ msgid ""
 msgstr ""
 
 #: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._object_hierarchy_parts:1
+msgid ""
+"Returns a tuple of strings, one entry for each part of the object's "
+"hierarchy (e.g. ``('module', 'submodule', 'Class', 'method')``). The "
+"returned tuple is used to properly nest children within parents in the table"
+" of contents, and can also be used within the :py:meth:`_toc_entry_name` "
+"method."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._object_hierarchy_parts:7
+msgid "This method must not be used outwith table of contents generation."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._toc_entry_name:1
+msgid "Returns the text of the table of contents entry for the object."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._toc_entry_name:3
+msgid ""
+"This function is called once, in :py:meth:`run`, to set the name for the "
+"table of contents entry (a special attribute ``_toc_name`` is set on the "
+"object node, later used in "
+"``environment.collectors.toctree.TocTreeCollector.process_doc().build_toc()``"
+" when the table of contents entries are collected)."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._toc_entry_name:9
+msgid ""
+"To support table of contents entries for their objects, domains must "
+"override this method, also respecting the configuration setting "
+"``toc_object_entries_show_parents``. Domains must also override "
+":py:meth:`_object_hierarchy_parts`, with one (string) entry for each part of"
+" the object's hierarchy. The result of this method is set on the signature "
+"node, and can be accessed as ``sig_node['_toc_parts']`` for use within this "
+"method. The resulting tuple is also used to properly nest children within "
+"parents in the table of contents."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
+#: sphinx.directives.ObjectDescription._toc_entry_name:18
+msgid ""
+"An example implementations of this method is within the python domain "
+"(:meth:`PyObject._toc_entry_name`). The python domain sets the "
+"``_toc_parts`` attribute within the :py:meth:`handle_signature()` method."
+msgstr ""
+
+#: ../../sphinx/sphinx/directives/__init__.pydocstring of
 #: sphinx.directives.ObjectDescription.add_target_and_index:1
 msgid "Add cross-reference IDs and entries to self.indexnode, if applicable."
 msgstr ""
@@ -660,7 +711,7 @@ msgstr ""
 msgid "Number of required directive arguments."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/domainapi.rst:22
+#: ../../sphinx/doc/extdev/domainapi.rst:23
 msgid "Python Domain"
 msgstr ""
 

@@ -5,7 +5,7 @@
 # 
 # Translators:
 # LAURENT Raphaël <laurent@ined.fr>, 2019
-# cyrille gachot <cyrille.gachot@smile.fr>, 2019
+# Jérémie Tarot, 2022
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-07 02:04+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
-"Last-Translator: cyrille gachot <cyrille.gachot@smile.fr>, 2019\n"
+"Last-Translator: Jérémie Tarot, 2022\n"
 "Language-Team: French (https://www.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,16 +27,16 @@ msgid ""
 ":mod:`sphinx.ext.autosectionlabel` -- Allow reference sections using its "
 "title"
 msgstr ""
-":mod:`sphinx.ext.autosectionlabel` -- Autoriser les sections de référence en"
-" utilisant son titre"
+":mod:`sphinx.ext.autosectionlabel` -- Autoriser les références automatiques "
+"aux sections par leurs titres"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:11
 msgid ""
 "This extension allows you to refer sections its title.  This affects to the "
 "reference role (:rst:role:`ref`)."
 msgstr ""
-"Cette extension vous permet de référencer des sections à son titre. Ceci "
-"affecte le rôle de référence (:first:role:role:`ref`)."
+"Cette extension vous permet de référencer les sections par leurs titres. "
+"Ceci affecte le rôle de référencement (:rst:role:`ref`)."
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:14
 msgid "For example::"
@@ -52,10 +52,9 @@ msgid ""
 msgstr ""
 "En interne, cette extension génère les étiquettes pour chaque section. Si "
 "les mêmes noms de section sont utilisés dans l'ensemble du document, l'un "
-"d'entre eux est utilisé par défaut pour une cible. La variable de "
-"configuration ``autosectionlabel_prefix_document_document`` peut être "
-"utilisée pour rendre uniques les titres qui apparaissent plusieurs fois mais"
-" dans différents documents."
+"d'entre eux est utilisé comme cible par défaut. La variable de configuration"
+" ``autosectionlabel_prefix_document`` peut être utilisée pour rendre uniques"
+" les titres apparaissant plusieurs fois mais dans différents documents."
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:32
 msgid "Configuration"
@@ -70,7 +69,7 @@ msgid ""
 "documents."
 msgstr ""
 "Vrai pour préfixer chaque étiquette de section avec le nom du document qui "
-"la contient., suivi de \"deux points\". Par exemple, ``index:Introduction`` "
+"la contient, suivi de \"deux points\". Par exemple, ``index:Introduction`` "
 "pour une section appelée ``Introduction`` qui apparaît dans un document "
 "``index.rst``. Utile pour éviter une ambiguïté quand le même titre de "
 "section apparaît dans différents documents."
@@ -84,13 +83,13 @@ msgid ""
 msgstr ""
 "Si défini, autosectionlabel choisit les sections à étiqueter par leur "
 "profondeur. Par exemple, avec la valeur 1 pour "
-"``autosectionlabel_maxdepth``, les étiquettes ne sont générées que les "
+"``autosectionlabel_maxdepth``, les étiquettes ne sont générées que pour les "
 "sections de premier niveau, et les sections de niveaux inférieurs ne sont "
 "pas étiquetés. La valeur par défaut est ``None`` (désactivé)."
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:51
 msgid "Debugging"
-msgstr ""
+msgstr "Débogage"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:53
 msgid ""
@@ -100,3 +99,8 @@ msgid ""
 "have been generated for them. This output can help finding the right "
 "reference label."
 msgstr ""
+"Le message ``WARNING: undefined label`` indique que la référence dans  "
+":rst:role:`ref` est mal orthographiée. Invoquer :program:`sphinx-build` avec"
+" ``-vv`` (voir :option:`-v`) affichera tous les noms de sections ainsi que "
+"les étiquettes générées pour celles-ci. Cette sortie peut aider à trouver la"
+" bonne étiquette à référencer."

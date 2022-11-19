@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Sphinx est un *générateur de documentation* entendu comme un outil "
 "transformant un ensemble de fichiers texte source en différents formats de "
-"sortie , en produisant automatiquement les références croisées, idex, etc. "
+"sortie , en produisant automatiquement les références croisées, index, etc. "
 "Ainsi, si vous disposez d'un répertoire contenant un groupe de documents "
 ":doc:`/usage/restructuredtext/index` ou :doc:`/usage/markdown`, Sphinx peut "
 "générer une série de fichiers HTML, un fichier PDF (via LaTeX), des pages de"
@@ -59,8 +59,8 @@ msgstr ""
 "blogs, des sites Internet et même des livres. Une grande partie de la "
 "puissance de Sphinx lui vient de la richesse de son format de balisage en "
 "texte brut par défaut :doc:`reStructuredText "
-"</usage/restructuredtext/index>`, accompagné de ses `capacités d'extension "
-"significatives </development/index>`."
+"</usage/restructuredtext/index>`, accompagné de ses :doc:`capacités "
+"d'extension significatives </development/index>`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:18
 msgid ""
@@ -70,16 +70,24 @@ msgid ""
 " default markup format used by Sphinx, :doc:`reStucturedText "
 "</usage/restructuredtext/index>`."
 msgstr ""
+"Le but de ce document est de vous donner un bref aperçu de ce qu'est Sphinx "
+"et de la façon dont vous pourriez l'utiliser. Ceci fait, vous pouvez "
+"consulter le :doc:`guide d'installation </usage/installation` suivit par "
+"l'introduction au langage de balisage par défaut utilisé par Sphinx, "
+":doc:`reStucturedText </usage/restructuredtext/index>`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:24
 msgid ""
 "For a great \"introduction\" to writing docs in general -- the whys and "
 "hows, see also `Write the docs`__, written by Eric Holscher."
 msgstr ""
+"Pour une excellente \"introduction\" à l'écriture de documentation en "
+"général -- les pourquoi et comment, voir également `Write the docs`__, écrit"
+" par Eric Holscher."
 
 #: ../../sphinx/doc/usage/quickstart.rst:31
 msgid "Setting up the documentation sources"
-msgstr ""
+msgstr "Configuration des sources de la documentation"
 
 #: ../../sphinx/doc/usage/quickstart.rst:33
 msgid ""
@@ -89,6 +97,11 @@ msgid ""
 "aspects of how Sphinx reads your sources and builds your documentation.  "
 "[#]_"
 msgstr ""
+"Le répertoire racine d’une collection Sphinx de sources de documents en "
+"texte brut est appelé :term:`répertoire source`. Ce répertoire contient "
+"également le fichier de configuration :file:`conf.py` de Sphinx, dans lequel"
+" vous pouvez paramétrer tous les aspects de la façon dont Sphinx lit vos "
+"sources et construit votre documentation. [#]_"
 
 #: ../../sphinx/doc/usage/quickstart.rst:38
 msgid ""
@@ -97,10 +110,14 @@ msgid ""
 "useful configuration values from a few questions it asks you. To use this, "
 "run:"
 msgstr ""
+"Sphinx fournit un script appelé :program:`sphinx-quickstart` créant un "
+"répertoire source et un fichier :file:`conf.py` par défaut avec les "
+"paramètres essentiels configurés à partir de quelques questions qu'il vous "
+"pose. Pour l'utiliser, exécutez :"
 
 #: ../../sphinx/doc/usage/quickstart.rst:48
 msgid "Defining document structure"
-msgstr ""
+msgstr "Définition de la structure de document"
 
 #: ../../sphinx/doc/usage/quickstart.rst:50
 msgid ""
@@ -111,16 +128,26 @@ msgid ""
 "This is one of the main things that Sphinx adds to reStructuredText, a way "
 "to connect multiple files to a single hierarchy of documents."
 msgstr ""
+"Présumons que vous avez exécuté :program:`sphinx-quickstart`. Celui-ci a "
+"créé un répertoire source contenant le fichier :file:`conf.py` et un "
+"document racine :file:`index.rst`.  La fonction principale du :term:`root "
+"document` est de servir de page de bienvenue, et de contenir la racine de "
+"\"l'arbre de la table des matières\" (ou *toctree*). C'est l'une des "
+"principales fonctions que Sphinx ajoute à reStructuredText, une manière de "
+"relier plusieurs fichiers dans une hiérarchie unique de documents."
 
 #: ../../sphinx/doc/usage/quickstart.rst-1
 msgid "reStructuredText directives"
-msgstr ""
+msgstr "Directives reStructuredText"
 
 #: ../../sphinx/doc/usage/quickstart.rst:59
 msgid ""
 "``toctree`` is a reStructuredText :dfn:`directive`, a very versatile piece "
 "of markup.  Directives can have arguments, options and content."
 msgstr ""
+"``toctree`` est une :dfn:`directive` reStructuredText, une balise très "
+"polyvalente. Les directives peuvent recevoir des arguments, avoir des "
+"options et un contenu."
 
 #: ../../sphinx/doc/usage/quickstart.rst:62
 msgid ""
@@ -128,32 +155,45 @@ msgid ""
 "directive's name.  Each directive decides whether it can have arguments, and"
 " how many."
 msgstr ""
+"Les *arguments* sont passés directement après les doubles deux points "
+"suivant le nom de la directive. Chaque directive définit si elle peut "
+"recevoir des arguments, et combien."
 
 #: ../../sphinx/doc/usage/quickstart.rst:66
 msgid ""
 "*Options* are given after the arguments, in form of a \"field list\".  The "
 "``maxdepth`` is such an option for the ``toctree`` directive."
 msgstr ""
+"Les *options* sont définies après les arguments, sous la forme d'une \"liste"
+" de champs\". ``maxdepth`` est un exemple d'une telle option pour la "
+"directive ``toctree``."
 
 #: ../../sphinx/doc/usage/quickstart.rst:69
 msgid ""
 "*Content* follows the options or arguments after a blank line.  Each "
 "directive decides whether to allow content, and what to do with it."
 msgstr ""
+"Le *contenu* suit les options ou les arguments, séparé d'une ligne blanche. "
+"Chaque directive définit si elle accepte du contenu, et qu'en faire."
 
 #: ../../sphinx/doc/usage/quickstart.rst:72
 msgid ""
 "A common gotcha with directives is that **the first line of the content must"
 " be indented to the same level as the options are**."
 msgstr ""
+"Un piège courant avec les directives est que **la première ligne du contenu "
+"doit être indentée au même niveau que le sont les options**."
 
 #: ../../sphinx/doc/usage/quickstart.rst:75
 msgid "The ``toctree`` directive initially is empty, and looks like so:"
 msgstr ""
+"La directive ``toctree`` est initialement vide et se présente comme ceci :"
 
 #: ../../sphinx/doc/usage/quickstart.rst:82
 msgid "You add documents listing them in the *content* of the directive:"
 msgstr ""
+"Les documents y sont ajoutés en les listant dans le *contenu* de la "
+"directive :"
 
 #: ../../sphinx/doc/usage/quickstart.rst:93
 msgid ""
@@ -162,15 +202,21 @@ msgid ""
 "means that you leave off the file name extension and use forward slashes "
 "(``/``) as directory separators."
 msgstr ""
+"Voici exactement comment se présente la ``toctree`` de la présente "
+"documentation. Les documents à inclure sont listés par leurs :term:`nom de "
+"document`, c'est à dire sans l'extension du nom de fichier et en utilisant "
+"des slash (\"/\") comme séparateurs de répertoires."
 
 #: ../../sphinx/doc/usage/quickstart.rst:98
 msgid ""
 "|more| Read more about :ref:`the toctree directive <toctree-directive>`."
 msgstr ""
+"|more| En savoir plus à propos de la :ref:`directive toctree <toctree-"
+"directive>`"
 
 #: ../../sphinx/doc/usage/quickstart.rst:347
 msgid "more info"
-msgstr ""
+msgstr "Plus d'informations"
 
 #: ../../sphinx/doc/usage/quickstart.rst:100
 msgid ""
@@ -181,10 +227,17 @@ msgid ""
 "``toctree`` directives themselves, which means you can create deeply nested "
 "hierarchies if necessary.)"
 msgstr ""
+"Vous pouvez maintenant créer les fichiers listés dans la ``toctree`` et y "
+"ajouter du contenu, les titres de leurs sections seront insérés (jusqu'au "
+"niveau ``maxdepth``) à l'endroit où la directive ``toctree`` est placée. En "
+"outre, Sphinx connait dès lors l'ordre et la hiérarchie de vos documents. "
+"(Ceux-ci peuvent eux-mêmes contenir des directives ``toctree``, ce qui "
+"signifie que vous pouvez si nécessaire créer des hiérarchies profondément "
+"imbriquées.)"
 
 #: ../../sphinx/doc/usage/quickstart.rst:109
 msgid "Adding content"
-msgstr ""
+msgstr "Ajouter du contenu"
 
 #: ../../sphinx/doc/usage/quickstart.rst:111
 msgid ""
@@ -193,12 +246,20 @@ msgid ""
 "For example, you can add cross-file references in a portable way (which "
 "works for all output types) using the :rst:role:`ref` role."
 msgstr ""
+"La plupart des fonctionnalités standard de :term:`reStructuredText` peuvent "
+"être utilisées dans les fichiers source Sphinx. D'autres sont également "
+"ajoutées par Sphinx. Par exemple, des références croisées peuvent être "
+"créées de façon portable (fonctionnant quelque soit le type de sortie) en "
+"utilisant le rôle :rst:role:`ref`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:116
 msgid ""
 "For an example, if you are viewing the HTML version, you can look at the "
 "source for this document -- use the \"Show Source\" link in the sidebar."
 msgstr ""
+"Pour un exemple, si vous lisez la version HTML de ce document, vous pouvez "
+"regarder la source de celui-ci -- utilisez le lien \"Affichez la source\" "
+"dans la barre latérale."
 
 #: ../../sphinx/doc/usage/quickstart.rst:119
 #: ../../sphinx/doc/usage/quickstart.rst:161
@@ -210,22 +271,29 @@ msgstr "À faire"
 #: ../../sphinx/doc/usage/quickstart.rst:119
 msgid "Update the below link when we add new guides on these."
 msgstr ""
+"Mettre à jour le lien ci-dessous lorsque de nouveaux guides seront ajoutés "
+"sur ceux-ci."
 
 #: ../../sphinx/doc/usage/quickstart.rst:121
 msgid ""
 "|more| See :doc:`/usage/restructuredtext/index` for a more in-depth "
 "introduction to reStructuredText, including markup added by Sphinx."
 msgstr ""
+"|more| Voir :doc:`/usage/restructuredtext/index` pour une introduction "
+"approfondie à reStructuredText, incluant les balises ajoutées par Sphinx."
 
 #: ../../sphinx/doc/usage/quickstart.rst:126
 msgid "Running the build"
-msgstr ""
+msgstr "Exécuter la génération"
 
 #: ../../sphinx/doc/usage/quickstart.rst:128
 msgid ""
 "Now that you have added some files and content, let's make a first build of "
 "the docs.  A build is started with the :program:`sphinx-build` program:"
 msgstr ""
+"Maintenant que vous avez ajouté des fichiers et du contenu, générons une "
+"première version de la documentation. La génération est lancée en utilisant "
+"le programme :program:`sphinx-build` :"
 
 #: ../../sphinx/doc/usage/quickstart.rst:135
 msgid ""
@@ -234,12 +302,18 @@ msgid ""
 ":option:`-b <sphinx-build -b>` option selects a builder; in this example "
 "Sphinx will build HTML files."
 msgstr ""
+"Où *sourcedir* est le :term:`répertoire source`, et *builddir* est le "
+"répertoire dans lequel vous souhaitez placer votre documentation. L'option "
+":option:`-b <sphinx-build -b>` sélectionne un générateur. Dans cet exemple, "
+"Sphinx générera des fichiers HTML."
 
 #: ../../sphinx/doc/usage/quickstart.rst:140
 msgid ""
 "|more| Refer to the :doc:`sphinx-build man page </man/sphinx-build>` for all"
 " options that :program:`sphinx-build` supports."
 msgstr ""
+"|more| Référez-vous à la :doc:`page de manuel de sphinx-build </man/sphinx-"
+"build>` pour toutes les options supportées par le :program:`sphinx-build`."
 
 #: ../../sphinx/doc/usage/quickstart.rst:143
 msgid ""
@@ -248,16 +322,23 @@ msgid ""
 "executed by running :command:`make` with the name of the builder. For "
 "example."
 msgstr ""
+"Toutefois, le script :program:`sphinx-quickstart` crée des fichiers "
+":file:`Makefile` et :file:`make.bat` vous rendant la vie encore plus facile."
+" Ceux-ci peuvent être lancés en exécutant la commande :command:`make` avec "
+"le nom du générateur. Par example :"
 
 #: ../../sphinx/doc/usage/quickstart.rst:151
 msgid ""
 "This will build HTML docs in the build directory you chose. Execute "
 ":command:`make` without an argument to see which targets are available."
 msgstr ""
+"Ceci générera la documentation HTML dans le répertoire de destination "
+"choisi. Exécutez la commande :command:`make` sans argument pour obtenir la "
+"liste des cibles disponibles."
 
 #: ../../sphinx/doc/usage/quickstart.rst:154
 msgid "How do I generate PDF documents?"
-msgstr ""
+msgstr "Comment générer des documents PDF ?"
 
 #: ../../sphinx/doc/usage/quickstart.rst:156
 msgid ""

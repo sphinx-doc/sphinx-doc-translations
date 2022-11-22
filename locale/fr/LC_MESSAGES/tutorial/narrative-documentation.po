@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Jérémie Tarot <silopolis@gmail.com>, 2022
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-14 02:01+0000\n"
 "PO-Revision-Date: 2022-03-06 06:36+0000\n"
+"Last-Translator: Jérémie Tarot <silopolis@gmail.com>, 2022\n"
 "Language-Team: French (https://www.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +23,11 @@ msgstr ""
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:2
 msgid "Narrative documentation in Sphinx"
-msgstr ""
+msgstr "Documentation narrative dans Sphinx"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:5
 msgid "Structuring your documentation across multiple pages"
-msgstr ""
+msgstr "Structurer votre documentation sur plusieurs pages"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:7
 msgid ""
@@ -33,17 +37,25 @@ msgid ""
 "you to assemble a project from different files, which is helpful when the "
 "project grows."
 msgstr ""
+"Le fichier ``index.rst`` créé par ``sphinx-quickstart`` est le "
+":term:`document racine`, dont la fonction essentielle est de servir de page "
+"d'accueil et decontenir la racine de \"l'arborescence de la table des "
+"matières\" (ou *toctree*). Sphinx vous permet d'assembler votre projet à "
+"partir de différents fichiers, ce qui s'avère utile lorsque le projet "
+"grandit."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:13
 msgid ""
 "As an example, create a new file ``docs/source/usage.rst`` (next to "
 "``index.rst``) with these contents:"
 msgstr ""
+"À titre d'exemple, créez un fichier ``docs/source/usage.rst`` (à côté de "
+"``index.rst``) avec le contenu suivant :"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:16
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:99
 msgid "docs/source/usage.rst"
-msgstr ""
+msgstr "docs/source/usage.rst"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:31
 msgid ""
@@ -52,6 +64,10 @@ msgid ""
 "of content as source code, with appropriate syntax highlighting (in this "
 "case, generic ``console`` text)."
 msgstr ""
+"Ce fichier contient deux titres de :ref:`section <rst-sections>`, un "
+"paragraphe de texte normal, et une directive :rst:dir:`code-block` qui "
+"restitue un bloc de contenu sous la forme de code source, avec la coloration"
+" syntaxique appropriée (dans ce cas, texte de ``console`` générique)."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:36
 msgid ""
@@ -60,6 +76,10 @@ msgid ""
 "after ``===`` for the \"Usage\" section, you have declared \"Installation\" "
 "to be a *subsection* of \"Usage\"."
 msgstr ""
+"La structure du document est déterminée par la succession de styles de "
+"titres, ce qui signifie que, en utilisant ``---``` pour la section "
+"\"Installation\" après ``===`` pour la section \"Usage\", vous avez déclaré "
+"que \"Installation\" était une sous-section de \"Usage\"."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:41
 msgid ""
@@ -67,18 +87,24 @@ msgid ""
 " at the end of ``index.rst`` including the document you just created, as "
 "follows:"
 msgstr ""
+"Pour compléter la procédure, ajoutez une :ref:`directive <rst-directives>` "
+"``toctree`` à la fin du fichier ``index.rst`` en y incluant le document "
+"juste créé, comme suit :"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:44
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:83
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:115
 msgid "docs/source/index.rst"
-msgstr ""
+msgstr "docs/source/index.rst"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:54
 msgid ""
 "This step inserts that document in the root of the *toctree*, so now it "
 "belongs to the structure of your project, which so far looks like this:"
 msgstr ""
+"Cette étape insère le document à la racine de la *toctree*, qui fait "
+"désormais parti de la structure de votre projet, qui à ce stade se présente "
+"comme ceci :"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:62
 msgid ""
@@ -86,6 +112,9 @@ msgid ""
 " the ``toctree`` gets rendered as a list of hyperlinks, and this allows you "
 "to navigate to the new page you just created.  Neat!"
 msgstr ""
+"Si vous générez la documentation HTML en exécutant ``make html``, vous "
+"verrez que ``toctree`` est rendu comme une liste d'hyperliens, ce qui vous "
+"permet de naviguer vers la page nouvellement créée. Propre !"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:68
 msgid ""
@@ -93,10 +122,13 @@ msgid ""
 "included in any toctree`` messages during the build process, and will be "
 "unreachable for users."
 msgstr ""
+"Les documents en dehors de la *toctree* provoquerons un message ``WARNING: "
+"Le document n'est inclus dans aucune toctree.`` pendant le processus de "
+"génération, et sera inaccessibles pour le lecteur."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:73
 msgid "Adding cross-references"
-msgstr ""
+msgstr "Ajouter des références croisées"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:75
 msgid ""
@@ -105,12 +137,18 @@ msgid ""
 "document, a section, a figure, a code object, etc.  This tutorial is full of"
 " them!"
 msgstr ""
+"Une des puissantes fonctionnalités de Sphinx est la possibilité d'ajouter "
+"facilement des :ref:`références croisées <xref-syntax>` vers des éléments "
+"spécifiques de la documentation : un document, une section, une "
+"illustration, un objet code, etc. Le tutoriel en est plein !"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:80
 msgid ""
 "To add a cross-reference, write this sentence right after the introduction "
 "paragraph in ``index.rst``:"
 msgstr ""
+"Pour ajouter une référence croisée, ajoutez cette phrase juste après le "
+"paragraphe d'introduction dans ``index.rst`` :"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:88
 msgid ""

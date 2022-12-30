@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 6.0.0b3\n"
+"Project-Id-Version: Sphinx 6.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-14 02:01+0000\n"
+"POT-Creation-Date: 2022-12-30 01:38+0000\n"
 "PO-Revision-Date: 2019-02-26 17:58+0000\n"
 "Last-Translator: gilberto dos santos alves <gsavix@gmail.com>, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -133,8 +133,8 @@ msgid ""
 "describing things like classes, functions, or, in our case, recipes. More "
 "specifically, ``handle_signature`` implements parsing the signature of the "
 "directive and passes on the object's name and type to its superclass, while "
-"``add_taget_and_index`` adds a target (to link to) and an entry to the index"
-" for this node."
+"``add_target_and_index`` adds a target (to link to) and an entry to the "
+"index for this node."
 msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/recipe.rst:91
@@ -179,23 +179,24 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/recipe.rst:125
 msgid ""
-"These index pages can be referred by combination of domain name and its "
-"``name`` using :rst:role:`ref` role.  For example, ``RecipeIndex`` can be "
-"referred by ``:ref:`recipe-recipe```."
-msgstr ""
-
-#: ../../sphinx/doc/development/tutorials/recipe.rst:130
-msgid "The domain"
+"These index pages can be referenced with the :rst:role:`ref` role by "
+"combining the domain name and the index ``name`` value. For example, "
+"``RecipeIndex`` can be referenced with ``:ref:`recipe-recipe``` and "
+"``IngredientIndex`` can be referenced with ``:ref:`recipe-ingredient```."
 msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/recipe.rst:131
+msgid "The domain"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/recipe.rst:132
 msgid ""
 "A Sphinx domain is a specialized container that ties together roles, "
 "directives, and indices, among other things. Let's look at the domain we're "
 "creating here."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:140
+#: ../../sphinx/doc/development/tutorials/recipe.rst:141
 msgid ""
 "There are some interesting things to note about this ``recipe`` domain and "
 "domains in general. Firstly, we actually register our directives, roles and "
@@ -209,16 +210,16 @@ msgid ""
 "our domain's ``recipes`` because we currently have only one type of node."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:151
+#: ../../sphinx/doc/development/tutorials/recipe.rst:152
 msgid ""
 "Moving on, we can see that we've defined ``initial_data``. The values "
 "defined in ``initial_data`` will be copied to "
 "``env.domaindata[domain_name]`` as the initial data of the domain, and "
 "domain instances can access it via ``self.data``. We see that we have "
 "defined two items in ``initial_data``: ``recipes`` and "
-"``recipe2ingredient``. These contain a list of all objects defined (i.e. all"
-" recipes) and a hash that maps a canonical ingredient name to the list of "
-"objects. The way we name objects is common across our extension and is "
+"``recipe_ingredients``. Each contains a list of all objects defined (i.e. "
+"all recipes) and a hash that maps a canonical ingredient name to the list of"
+" objects. The way we name objects is common across our extension and is "
 "defined in the ``get_full_qualified_name`` method. For each object created, "
 "the canonical name is ``recipe.<recipename>``, where ``<recipename>`` is the"
 " name the documentation writer gives the object (a recipe). This enables the"
@@ -227,18 +228,18 @@ msgid ""
 "our indices and our cross-referencing code use this feature."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:166
+#: ../../sphinx/doc/development/tutorials/recipe.rst:167
 msgid "The ``setup`` function"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:169
+#: ../../sphinx/doc/development/tutorials/recipe.rst:170
 msgid ""
 ":doc:`As always <todo>`, the ``setup`` function is a requirement and is used"
 " to hook the various parts of our extension into Sphinx. Let's look at the "
 "``setup`` function for this extension."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:178
+#: ../../sphinx/doc/development/tutorials/recipe.rst:179
 msgid ""
 "This looks a little different to what we're used to seeing. There are no "
 "calls to :meth:`~Sphinx.add_directive` or even :meth:`~Sphinx.add_role`. "
@@ -248,34 +249,34 @@ msgid ""
 "of the directive itself."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:187
+#: ../../sphinx/doc/development/tutorials/recipe.rst:188
 msgid "Using the extension"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:189
+#: ../../sphinx/doc/development/tutorials/recipe.rst:190
 msgid "You can now use the extension throughout your project. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:191
+#: ../../sphinx/doc/development/tutorials/recipe.rst:192
 msgid "index.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:204
+#: ../../sphinx/doc/development/tutorials/recipe.rst:205
 msgid "tomato-soup.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:215
+#: ../../sphinx/doc/development/tutorials/recipe.rst:216
 msgid ""
 "The important things to note are the use of the ``:recipe:ref:`` role to "
 "cross-reference the recipe actually defined elsewhere (using the "
-"``:recipe:recipe:`` directive."
+"``:recipe:recipe:`` directive)."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:221
+#: ../../sphinx/doc/development/tutorials/recipe.rst:222
 msgid "Further reading"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:223
+#: ../../sphinx/doc/development/tutorials/recipe.rst:224
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."

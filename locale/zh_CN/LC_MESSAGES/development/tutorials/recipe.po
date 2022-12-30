@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 6.0.0b3\n"
+"Project-Id-Version: Sphinx 6.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-14 02:01+0000\n"
+"POT-Creation-Date: 2022-12-30 01:38+0000\n"
 "PO-Revision-Date: 2019-02-26 17:58+0000\n"
 "Last-Translator: Izabel Wang <izabelwang@pku.edu.cn>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -136,15 +136,9 @@ msgid ""
 "describing things like classes, functions, or, in our case, recipes. More "
 "specifically, ``handle_signature`` implements parsing the signature of the "
 "directive and passes on the object's name and type to its superclass, while "
-"``add_taget_and_index`` adds a target (to link to) and an entry to the index"
-" for this node."
+"``add_target_and_index`` adds a target (to link to) and an entry to the "
+"index for this node."
 msgstr ""
-"与：helloworld`和：dodo有所不同，此伪指令不是从docutils.parsers.rst.Directive派生的，也没有定义run方法。"
-" "
-"相反，它是从sphinx.directives.ObjectDescription派生的，并定义了handle_signature和add_target_and_index方法。"
-" 这是因为“ ObjectDescription”是一种专用指令，旨在描述类，函数或我们的配方等内容。 更具体地说，“ "
-"handle_signature”实现解析指令的签名，并将对象的名称和类型传递给其超类，而“ "
-"add_taget_and_index”为该节点添加目标（链接）和索引条目 。"
 
 #: ../../sphinx/doc/development/tutorials/recipe.rst:91
 msgid ""
@@ -197,25 +191,24 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/recipe.rst:125
 msgid ""
-"These index pages can be referred by combination of domain name and its "
-"``name`` using :rst:role:`ref` role.  For example, ``RecipeIndex`` can be "
-"referred by ``:ref:`recipe-recipe```."
+"These index pages can be referenced with the :rst:role:`ref` role by "
+"combining the domain name and the index ``name`` value. For example, "
+"``RecipeIndex`` can be referenced with ``:ref:`recipe-recipe``` and "
+"``IngredientIndex`` can be referenced with ``:ref:`recipe-ingredient```."
 msgstr ""
-"可以使用：rst：role：`ref角色通过域名及其名称的组合来引用这些索引页面。 "
-"例如，``RecipeIndex``可以通过``：ref：`recipe-recipe```来引用。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:130
+#: ../../sphinx/doc/development/tutorials/recipe.rst:131
 msgid "The domain"
 msgstr "域"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:131
+#: ../../sphinx/doc/development/tutorials/recipe.rst:132
 msgid ""
 "A Sphinx domain is a specialized container that ties together roles, "
 "directives, and indices, among other things. Let's look at the domain we're "
 "creating here."
 msgstr "Sphinx 域是一个专门的容器，将角色，指令和索引等联系在一起。现在， 让我们一起看看我们在这里创建的域。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:140
+#: ../../sphinx/doc/development/tutorials/recipe.rst:141
 msgid ""
 "There are some interesting things to note about this ``recipe`` domain and "
 "domains in general. Firstly, we actually register our directives, roles and "
@@ -234,16 +227,16 @@ msgstr ""
 " 此方法采用两个参数typ和target，它们引用交叉引用类型及其目标名称。 因为我们目前只有一种类型的节点，所以我们将使用“ target”来从域的“"
 " recipes”中解析出目的地。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:151
+#: ../../sphinx/doc/development/tutorials/recipe.rst:152
 msgid ""
 "Moving on, we can see that we've defined ``initial_data``. The values "
 "defined in ``initial_data`` will be copied to "
 "``env.domaindata[domain_name]`` as the initial data of the domain, and "
 "domain instances can access it via ``self.data``. We see that we have "
 "defined two items in ``initial_data``: ``recipes`` and "
-"``recipe2ingredient``. These contain a list of all objects defined (i.e. all"
-" recipes) and a hash that maps a canonical ingredient name to the list of "
-"objects. The way we name objects is common across our extension and is "
+"``recipe_ingredients``. Each contains a list of all objects defined (i.e. "
+"all recipes) and a hash that maps a canonical ingredient name to the list of"
+" objects. The way we name objects is common across our extension and is "
 "defined in the ``get_full_qualified_name`` method. For each object created, "
 "the canonical name is ``recipe.<recipename>``, where ``<recipename>`` is the"
 " name the documentation writer gives the object (a recipe). This enables the"
@@ -251,19 +244,12 @@ msgid ""
 "canonical name and central place for our objects is a huge advantage. Both "
 "our indices and our cross-referencing code use this feature."
 msgstr ""
-"继续，我们可以看到已经定义了“ initial_data”。 “ initial_data”中定义的值将作为域的初始数据复制到“ "
-"env.domaindata [domain_name]”中，并且域实例可以通过“ self.data”来访问它。 我们看到，我们在“ "
-"initial_data”中定义了两个项目：“ recipes”和“ recipe2ingredient”。 "
-"这些包含所有已定义对象的列表（即所有配方）和将规范成分名称映射到对象列表的哈希值。 我们为对象命名的方式在我们的扩展程序中很常见，并且在“ "
-"get_full_qualified_name”方法中定义。 对于创建的每个对象，规范名称为“ recipe.<recipename>”，其中“ "
-"<recipename>”是文档编写者给出的对象名称（配方）。 这使扩展能够使用共享相同名称的不同对象类型。 "
-"为我们的对象指定规范的名称和中心位置是一个巨大的优势。 我们的索引和我们的交叉引用代码都使用此功能。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:166
+#: ../../sphinx/doc/development/tutorials/recipe.rst:167
 msgid "The ``setup`` function"
 msgstr "setup 功能"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:169
+#: ../../sphinx/doc/development/tutorials/recipe.rst:170
 msgid ""
 ":doc:`As always <todo>`, the ``setup`` function is a requirement and is used"
 " to hook the various parts of our extension into Sphinx. Let's look at the "
@@ -272,7 +258,7 @@ msgstr ""
 "：doc：`一如往常<todo>`，``setup''功能是必需的，用于将我们扩展的各个部分挂接到Sphinx中。 "
 "让我们看一下这个扩展的``setup''功能。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:178
+#: ../../sphinx/doc/development/tutorials/recipe.rst:179
 msgid ""
 "This looks a little different to what we're used to seeing. There are no "
 "calls to :meth:`~Sphinx.add_directive` or even :meth:`~Sphinx.add_role`. "
@@ -286,35 +272,34 @@ msgstr ""
 "取而代之的是，我们只调用一次：Sphinx.add_domain<domains-std>，然后对标准域1进行了一些初始化。 "
 "这是因为我们已经将指令，角色和索引注册为指令本身的一部分。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:187
+#: ../../sphinx/doc/development/tutorials/recipe.rst:188
 msgid "Using the extension"
 msgstr "使用扩展"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:189
+#: ../../sphinx/doc/development/tutorials/recipe.rst:190
 msgid "You can now use the extension throughout your project. For example:"
 msgstr "现在，您可以在整个项目中使用扩展名。 例如："
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:191
+#: ../../sphinx/doc/development/tutorials/recipe.rst:192
 msgid "index.rst"
 msgstr "index.rst"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:204
+#: ../../sphinx/doc/development/tutorials/recipe.rst:205
 msgid "tomato-soup.rst"
 msgstr "tomato-soup.rst"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:215
+#: ../../sphinx/doc/development/tutorials/recipe.rst:216
 msgid ""
 "The important things to note are the use of the ``:recipe:ref:`` role to "
 "cross-reference the recipe actually defined elsewhere (using the "
-"``:recipe:recipe:`` directive."
+"``:recipe:recipe:`` directive)."
 msgstr ""
-"需要注意的重要事项是使用``：recipe：ref：``角色来交叉引用在其他地方实际定义的配方（使用``：recipe：recipe：``指令。"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:221
+#: ../../sphinx/doc/development/tutorials/recipe.rst:222
 msgid "Further reading"
 msgstr "延伸阅读"
 
-#: ../../sphinx/doc/development/tutorials/recipe.rst:223
+#: ../../sphinx/doc/development/tutorials/recipe.rst:224
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."

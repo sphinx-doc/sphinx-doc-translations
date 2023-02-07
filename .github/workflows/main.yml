@@ -45,6 +45,10 @@ jobs:
         (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
         pip install -U pip setuptools
         pip install -r ./requirements.txt
+    - name: Install Transifex CLI
+      run: |
+        curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+        mv tx /usr/local/bin/tx
     - name: Update translations
       run: sh ./locale/update.sh
     - name: After success

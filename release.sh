@@ -3,7 +3,9 @@
 set -ex
 
 # setup environment
+SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME=sphinx-doc
 SPHINXINTL_TRANSIFEX_USERNAME=sphinxjp
+SPHINXINTL_TRANSIFEX_TOKEN=token
 SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
 find sphinx -name "*.pyc" -exec rm {} \;
 git checkout master

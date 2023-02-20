@@ -2,7 +2,8 @@ name: update-translations
 
 on:
   schedule:
-    - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+    # - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+    - cron: "0 0 1 1 2099" #suspend until fix issue...
 
 jobs:
   ubuntu:
@@ -10,8 +11,7 @@ jobs:
     env:
       SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
       SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
-      SPHINXINTL_TRANSIFEX_USERNAME: sphinxjp
-      SPHINXINTL_TRANSIFEX_TOKEN: ${{ secrets.SPHINXINTL_TRANSIFEX_TOKEN }}
+      TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
     steps:
     - uses: actions/checkout@v2
@@ -50,6 +50,7 @@ jobs:
       run: |
         curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
         mv tx /usr/local/bin/tx
+        tx --version
     - name: Update translations
       run: sh ./locale/update.sh
     - name: After success

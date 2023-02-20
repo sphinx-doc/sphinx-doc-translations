@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Georg Brandl <g.brandl@gmx.net>, 2019
+# cdarlint <cdarling@126.com>, 2019
+# wendi cao <651645601@qq.com>, 2020
+# Izabel Wang <izabelwang@pku.edu.cn>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-12-23 17:28+0000\n"
+"Last-Translator: Izabel Wang <izabelwang@pku.edu.cn>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:2
+msgid "Developing a \"Hello world\" extension"
+msgstr "开发了一个 “Hello world” 扩展"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:4
+msgid ""
+"The objective of this tutorial is to create a very basic extension that adds"
+" a new directive. This directive will output a paragraph containing \"hello "
+"world\"."
+msgstr "本教程的目的是创建一个非常基本的扩展，添加一个新指令。 该指令将输出包含“ hello world”的段落。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:7
+msgid ""
+"Only basic information is provided in this tutorial. For more information, "
+"refer to the :doc:`other tutorials <index>` that go into more details."
+msgstr "本教程仅提供基本信息。 有关更多信息，请参阅其他教程<index>。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:12
+msgid ""
+"For this extension, you will need some basic understanding of docutils_ and "
+"Python."
+msgstr "对于此扩展，您将需要对 docutils_ 和 Python 有一些基本了解。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:17
+msgid "Overview"
+msgstr "概述"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:19
+msgid "We want the extension to add the following to Sphinx:"
+msgstr "我们希望插件将以下内容添加到Sphinx中："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:21
+msgid ""
+"A ``helloworld`` directive, that will simply output the text \"hello "
+"world\"."
+msgstr "一个“ helloworld”指令，将仅输出文本“ hello world”。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:25
+msgid "Prerequisites"
+msgstr "系统需求"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:27
+msgid ""
+"We will not be distributing this plugin via `PyPI`_ and will instead include"
+" it as part of an existing project. This means you will need to use an "
+"existing project or create a new one using :program:`sphinx-quickstart`."
+msgstr ""
+"我们不会通过`PyPI`_分发此插件，而是将其包含在现有项目中。 这意味着您将需要使用现有项目或使用：program：`sphinx-"
+"quickstart` 创建一个新项目。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:31
+msgid ""
+"We assume you are using separate source (:file:`source`) and build "
+"(:file:`build`) folders. Your extension file could be in any folder of your "
+"project. In our case, let's do the following:"
+msgstr ""
+"我们假设您使用的是单独的 source（：file：`source`）和build（：file：`build`）文件夹。 "
+"您的扩展文件可以在项目的任何文件夹中。 在我们的情况下，让我们执行以下操作："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:35
+msgid "Create an :file:`_ext` folder in :file:`source`"
+msgstr "创建了  :file:`_ext` folder in :file:`source`"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:36
+msgid ""
+"Create a new Python file in the :file:`_ext` folder called "
+":file:`helloworld.py`"
+msgstr "在 :file:`_ext` folder called :file:`helloworld.py` 创建了一个  Python 文件"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:39
+msgid "Here is an example of the folder structure you might obtain:"
+msgstr "这是您将获得的文件夹结构的示例："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:55
+msgid "Writing the extension"
+msgstr "编写扩展"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:57
+msgid "Open :file:`helloworld.py` and paste the following code in it:"
+msgstr "打开 :file:`helloworld.py` 并将下列代码粘进去："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:63
+msgid ""
+"Some essential things are happening in this example, and you will see them "
+"for all directives."
+msgstr "在此示例中，发生了一些重要的事情，您将在所有指令中看到它们。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:67
+msgid "The directive class"
+msgstr "指令类"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:68
+msgid "Our new directive is declared in the ``HelloWorld`` class."
+msgstr "我们的新指令将会在 ``HelloWorld`` 类中声明。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:75
+msgid ""
+"This class extends the docutils_' ``Directive`` class. All extensions that "
+"create directives should extend this class."
+msgstr "此类扩展了docutils_'``Directive``类。 所有创建指令的扩展都应扩展此类。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:80
+msgid ""
+"`The docutils documentation on creating directives <docutils directives_>`_"
+msgstr "`docutils 有关创建指令<docutils directives_>的文档_"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:82
+msgid ""
+"This class contains a ``run`` method.  This method is a requirement and it "
+"is part of every directive.  It contains the main logic of the directive and"
+" it returns a list of docutils nodes to be processed by Sphinx. These nodes "
+"are docutils' way of representing the content of a document. There are many "
+"types of nodes available: text, paragraph, reference, table, etc."
+msgstr ""
+"此类包含一个 run 方法。 此方法是必需的，并且是每个指令的一部分。 它包含指令的主要逻辑，并返回 Sphinx 要处理的 docutils "
+"节点列表。 这些节点是docutils 表示文档内容的方式。 有多种类型的节点可用：文本，段落，引用，表格等。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:90
+msgid "`The docutils documentation on nodes <docutils nodes_>`_"
+msgstr "`节点<docutils nodes_>上的docutils文档`_"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:92
+msgid ""
+"The ``nodes.paragraph`` class creates a new paragraph node. A paragraph node"
+" typically contains some text that we can set during instantiation using the"
+" ``text`` parameter."
+msgstr "nodes.paragraph 类创建一个新的段落节点。 段落节点通常包含一些我们可以在实例化期间使用 text 参数设置的文本。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:97
+msgid "The ``setup`` function"
+msgstr "setup 功能"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:100
+msgid ""
+"This function is a requirement. We use it to plug our new directive into "
+"Sphinx."
+msgstr "此功能是必需的。 我们使用它将我们的新指令插入 Sphinx。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:108
+msgid ""
+"The simplest thing you can do is to call the :meth:`~Sphinx.add_directive` "
+"method, which is what we've done here. For this particular call, the first "
+"argument is the name of the directive itself as used in a reST file. In this"
+" case, we would use ``helloworld``. For example:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:121
+msgid ""
+"We also return the :ref:`extension metadata <ext-metadata>` that indicates "
+"the version of our extension, along with the fact that it is safe to use the"
+" extension for both parallel reading and writing."
+msgstr "我们还返回了扩展元数据<ext-metadata>，它指示扩展的版本，以及可以安全地将扩展用于并行读取和写入的事实。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:127
+msgid "Using the extension"
+msgstr "使用扩展"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:129
+msgid ""
+"The extension has to be declared in your :file:`conf.py` file to make Sphinx"
+" aware of it. There are two steps necessary here:"
+msgstr "该扩展名必须在您的：file：`conf.py`文件中声明，以使 Sphinx 意识到这一点。 这里需要两个步骤："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:132
+msgid ""
+"Add the :file:`_ext` directory to the `Python path`_ using "
+"``sys.path.append``. This should be placed at the top of the file."
+msgstr "使用sys.path.append将`_ext`目录将新增到 Python 路径_中。 这应该放在文件的顶部。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:135
+msgid ""
+"Update or create the :confval:`extensions` list and add the extension file "
+"name to the list"
+msgstr "更新或创建扩展名列表，并将扩展名添加到列表中"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:138
+msgid "For example:"
+msgstr "例如："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:151
+msgid ""
+"We're not distributing this extension as a `Python package`_, we need to "
+"modify the `Python path`_ so Sphinx can find our extension. This is why we "
+"need the call to ``sys.path.append``."
+msgstr ""
+"我们不以 Python 包的形式分发此扩展，我们需要修改 Python 路径以便 Sphinx 可以找到我们的扩展。 这就是为什么我们需要调用 "
+"sys.path.append 的原因。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:155
+msgid "You can now use the extension in a file. For example:"
+msgstr "现在，您可以在文件中使用扩展名。 例如："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:165
+msgid "The sample above would generate:"
+msgstr "上面的示例将生成："
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:177
+msgid "Further reading"
+msgstr "延伸阅读"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:179
+msgid ""
+"This is the very basic principle of an extension that creates a new "
+"directive."
+msgstr "这是创建新指令的扩展的最基本原理。"
+
+#: ../../sphinx/doc/development/tutorials/helloworld.rst:181
+msgid "For a more advanced example, refer to :doc:`todo`."
+msgstr "想看更多有些样例，请参考 :doc:`todo`."

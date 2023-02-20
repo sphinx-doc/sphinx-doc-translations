@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# gilberto dos santos alves <gsavix@gmail.com>, 2020
+# Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2020
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2020-06-03 21:56+0000\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../sphinx/doc/internals/release-process.rst:3
+msgid "Sphinx's release process"
+msgstr "Processo de lançamento do Sphinx"
+
+#: ../../sphinx/doc/internals/release-process.rst:6
+msgid "Versioning"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:8
+msgid ""
+"Sphinx adheres to :pep:`440` versions, with a ``major.minor.micro`` scheme "
+"for the *release segment* (e.g. 1.2.3). The major, minor, and micro version "
+"parts should be altered as follows:"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:12
+msgid ""
+"The major version part should be incremented for incompatible behavior "
+"change and public API updates."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:15
+msgid ""
+"The minor version part should be incremented for most releases of Sphinx, "
+"where backwards-compatibility of API and features are preserves."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:18
+msgid ""
+"The micro version part should only be incremented for urgent bugfix-only "
+"releases."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:20
+msgid ""
+"When the major version part is incremented, the minor and micro version "
+"parts must be set to ``0``. When the minor version part is incremented, the "
+"micro version part must be set to ``0``."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:25
+msgid ""
+"New major versions should come with a beta-testing period before the final "
+"release."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:30
+msgid "Deprecating a feature"
+msgstr "Recurso em Desuso"
+
+#: ../../sphinx/doc/internals/release-process.rst:32
+msgid "There are a couple reasons that code in Sphinx might be deprecated:"
+msgstr ""
+"Existem alguns motivos pelos quais o código no ``Sphinx`` pode ser "
+"descontinuado:"
+
+#: ../../sphinx/doc/internals/release-process.rst:34
+msgid ""
+"If a feature has been improved or modified in a backwards-incompatible way, "
+"the old feature or behavior will be deprecated."
+msgstr ""
+"Se um recurso foi aprimorado ou modificado de maneira incompatível com "
+"versões anteriores, o recurso ou comportamento antigo será descontinuado."
+
+#: ../../sphinx/doc/internals/release-process.rst:37
+msgid ""
+"Sometimes Sphinx will include a backport of a Python library that's not "
+"included in a version of Python that Sphinx currently supports. When Sphinx "
+"no longer needs to support the older version of Python that doesn't include "
+"the library, the library will be deprecated in Sphinx."
+msgstr ""
+"Às vezes, o ``Sphinx`` incluirá um backport de uma biblioteca Python que não"
+" está incluída em uma versão do Python que o ``Sphinx`` atualmente suporta. "
+"Quando o ``Sphinx`` não precisa mais suportar a versão mais antiga do Python"
+" que não inclui a biblioteca, a biblioteca será descontinuada no ``Sphinx``."
+
+#: ../../sphinx/doc/internals/release-process.rst:42
+msgid ""
+"As the :ref:`deprecation-policy` describes, the first release of Sphinx that"
+" deprecates a feature (``A.B``) should raise a ``RemovedInSphinxXXWarning`` "
+"(where ``XX`` is the Sphinx version where the feature will be removed) when "
+"the deprecated feature is invoked. Assuming we have good test coverage, "
+"these warnings are converted to errors when running the test suite with "
+"warnings enabled::"
+msgstr ""
+"Como o :ref:`deprecation-policy` descreve, o primeiro release do ``Sphinx`` "
+"que marcou um recurso como estando em desuso (``A.B``) deve gerar um "
+"``RemovedInSphinxXXWarning`` (em que ``XX`` é a versão do ``Sphinx`` em que "
+"o recurso será removido) quando o recurso em desuso for chamado. Supondo que"
+" tenhamos uma boa cobertura de teste, esses avisos serão convertidos em "
+"erros ao executar o conjunto de testes com avisos ativados::"
+
+#: ../../sphinx/doc/internals/release-process.rst:51
+msgid ""
+"Thus, when adding a ``RemovedInSphinxXXWarning`` you need to eliminate or "
+"silence any warnings generated when running the tests."
+msgstr ""
+"Assim, ao adicionar um ``RemovedInSphinxXXWarning``, você precisa eliminar "
+"ou silenciar quaisquer avisos gerados ao executar os testes."
+
+#: ../../sphinx/doc/internals/release-process.rst:58
+msgid "Deprecation policy"
+msgstr "Política de Desuso"
+
+#: ../../sphinx/doc/internals/release-process.rst:60
+msgid ""
+"MAJOR and MINOR releases may deprecate certain features from previous "
+"releases. If a feature is deprecated in a release A.x, it will continue to "
+"work in all A.x.x versions (for all versions of x). It will continue to work"
+" in all B.x.x versions but raise deprecation warnings. Deprecated features "
+"will be removed at the C.0.0. It means the deprecated feature will work "
+"during 2 MAJOR releases at least."
+msgstr ""
+"As versões MAJOR e MINOR podem descartar certos recursos de versões "
+"anteriores. Se um recurso for marcado como em desuso em um release A.x, ele "
+"continuará a funcionar em todas as versões do A.x.x (para todas as versões "
+"do x). Ele continuará a funcionar em todas as versões B.x.x, mas levantará "
+"os avisos de descontinuação. Os recursos em desuso serão removidos na C.0.0."
+" Isso significa que o recurso em desuso funcionará durante pelo menos 2 "
+"lançamentos MAJOR."
+
+#: ../../sphinx/doc/internals/release-process.rst:67
+msgid ""
+"So, for example, if we decided to start the deprecation of a function in "
+"Sphinx 2.x:"
+msgstr ""
+"Então, por exemplo, se decidimos iniciar o desuso de uma função no Sphinx "
+"2.x:"
+
+#: ../../sphinx/doc/internals/release-process.rst:70
+msgid ""
+"Sphinx 2.x will contain a backwards-compatible replica of the function which"
+" will raise a ``RemovedInSphinx40Warning``. This is a subclass of "
+":exc:`python:PendingDeprecationWarning`, i.e. it will not get displayed by "
+"default."
+msgstr ""
+"O Sphinx 2.x conterá uma réplica compatível com versões anteriores da função"
+" que levantará uma exceção ``RemovedInSphinx40Warning``. Esta é uma "
+"subclasse de :exc:`python:PendingDeprecationWarning`, ou seja, não será "
+"exibida por padrão."
+
+#: ../../sphinx/doc/internals/release-process.rst:75
+msgid ""
+"Sphinx 3.x will still contain the backwards-compatible replica, but "
+"``RemovedInSphinx40Warning`` will be a subclass of "
+":exc:`python:DeprecationWarning` then, and gets displayed by default."
+msgstr ""
+"O Sphinx 3.x ainda conterá a réplica compatível com versões anteriores, mas "
+"``RemovedInSphinx40Warning`` será uma subclasse de :exc:`python: "
+"DeprecationWarning` e será exibida por padrão."
+
+#: ../../sphinx/doc/internals/release-process.rst:79
+msgid "Sphinx 4.0 will remove the feature outright."
+msgstr "O Sphinx 4.0 removerá o recurso imediatamente."
+
+#: ../../sphinx/doc/internals/release-process.rst:82
+msgid "Deprecation warnings"
+msgstr "Avisos de descontinuação"
+
+#: ../../sphinx/doc/internals/release-process.rst:84
+msgid ""
+"Sphinx will enable its ``RemovedInNextVersionWarning`` warnings by default, "
+"if :envvar:`python:PYTHONWARNINGS` is not set.  Therefore you can disable "
+"them using:"
+msgstr ""
+"O Sphinx habilitará seus avisos ``RemovedInNextVersionWarning`` por padrão, "
+"se :envvar:`python:PYTHONWARNINGS` não estiver definido. Portanto, você pode"
+" desativá-los usando:"
+
+#: ../../sphinx/doc/internals/release-process.rst:88
+msgid "``PYTHONWARNINGS= make html`` (Linux/Mac)"
+msgstr "``PYTHONWARNINGS= make html`` (Linux/Mac)"
+
+#: ../../sphinx/doc/internals/release-process.rst:89
+msgid "``export PYTHONWARNINGS=`` and do ``make html`` (Linux/Mac)"
+msgstr "``export PYTHONWARNINGS=`` e executar ``make html`` (Linux/Mac)"
+
+#: ../../sphinx/doc/internals/release-process.rst:90
+msgid "``set PYTHONWARNINGS=`` and do ``make html`` (Windows)"
+msgstr "``set PYTHONWARNINGS=`` e executar ``make html`` (Windows)"
+
+#: ../../sphinx/doc/internals/release-process.rst:92
+msgid ""
+"But you can also explicitly enable the pending ones using e.g. "
+"``PYTHONWARNINGS=default`` (see the :ref:`Python docs on configuring "
+"warnings <python:describing-warning-filters>`) for more details."
+msgstr ""
+"Mas você também pode ativar explicitamente os pendentes usando, por exemplo,"
+" ``PYTHONWARNINGS=default`` (veja a :ref:`documentação do Python sobre "
+"configuração de avisos <python:describing-warning-filters>`) para mais "
+"detalhes."
+
+#: ../../sphinx/doc/internals/release-process.rst:97
+msgid "Python version support policy"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:99
+msgid ""
+"Sphinx supports at all minor versions of Python released in the past 42 "
+"months from the anticipated release date with a minimum of 3 minor versions "
+"of Python. This policy is derived from `NEP 29`_, a scientific Python domain"
+" standard."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:105
+msgid ""
+"For example, a version of Sphinx released in May 2024 would support Python "
+"3.10, 3.11, and 3.12."
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:108
+msgid "This is a summary table with the current policy:"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:111
+msgid "Date"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:111
+msgid "Python"
+msgstr "Python"
+
+#: ../../sphinx/doc/internals/release-process.rst:113
+msgid "26 Dec 2021"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:113
+msgid "3.8+"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:115
+msgid "14 Apr 2023"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:115
+msgid "3.9+"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:117
+msgid "05 Apr 2024"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:117
+msgid "3.10+"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:119
+msgid "04 Apr 2025"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:119
+msgid "3.11+"
+msgstr ""
+
+#: ../../sphinx/doc/internals/release-process.rst:123
+msgid "Release procedures"
+msgstr "Procedimentos de lançamento"
+
+#: ../../sphinx/doc/internals/release-process.rst:125
+msgid "The release procedures are listed in ``utils/release-checklist``."
+msgstr ""
+"Os procedimentos de lançamento estão listados em ``utils/release-"
+"checklist``."

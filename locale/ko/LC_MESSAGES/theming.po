@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2020, Georg Brandl and the Sphinx team
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 4.0.0+/9a2f2e15a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-29 22:20+0000\n"
+"PO-Revision-Date: 2018-02-12 13:47+0000\n"
+"Language-Team: Korean (https://www.transifex.com/sphinx-doc/teams/15434/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/theming.rst:4
+msgid "HTML theming support"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:10
+msgid ""
+"This document provides information about creating your own theme. If you "
+"simply wish to use a pre-existing HTML themes, refer to "
+":doc:`/usage/theming`."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:14
+msgid ""
+"Sphinx supports changing the appearance of its HTML output via *themes*.  A "
+"theme is a collection of HTML templates, stylesheet(s) and other static "
+"files. Additionally, it has a configuration file which specifies from which "
+"theme to inherit, which highlighting style to use, and what options exist "
+"for customizing the theme's look and feel."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:20
+msgid ""
+"Themes are meant to be project-unaware, so they can be used for different "
+"projects without change."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:25
+msgid "Creating themes"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:27
+msgid ""
+"Themes take the form of either a directory or a zipfile (whose name is the "
+"theme name), containing the following:"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:30
+msgid "A :file:`theme.conf` file."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:31
+msgid "HTML templates, if needed."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:32
+msgid ""
+"A ``static/`` directory containing any static files that will be copied to "
+"the output static directory on build.  These can be images, styles, script "
+"files."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:35
+msgid ""
+"The :file:`theme.conf` file is in INI format [1]_ (readable by the standard "
+"Python :mod:`ConfigParser` module) and has the following structure:"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:49
+msgid ""
+"The **inherit** setting gives the name of a \"base theme\", or ``none``.  "
+"The base theme will be used to locate missing templates (most themes will "
+"not have to supply most templates if they use ``basic`` as the base theme), "
+"its options will be inherited, and all of its static files will be used as "
+"well. If you want to also inherit the stylesheet, include it via CSS' "
+"``@import`` in your own."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:56
+msgid ""
+"The **stylesheet** setting gives the name of a CSS file which will be "
+"referenced in the HTML header.  If you need more than one CSS file, either "
+"include one from the other via CSS' ``@import``, or use a custom HTML "
+"template that adds ``<link rel=\"stylesheet\">`` tags as necessary.  Setting"
+" the :confval:`html_style` config value will override this setting."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:62
+msgid ""
+"The **pygments_style** setting gives the name of a Pygments style to use for"
+" highlighting.  This can be overridden by the user in the "
+":confval:`pygments_style` config value."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:66
+msgid ""
+"The **pygments_dark_style** setting gives the name of a Pygments style to "
+"use for highlighting when the CSS media query ``(prefers-color-scheme: "
+"dark)`` evaluates to true. It is injected into the page using "
+":meth:`~Sphinx.add_css_file()`."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:71
+msgid ""
+"The **sidebars** setting gives the comma separated list of sidebar templates"
+" for constructing sidebars.  This can be overridden by the user in the "
+":confval:`html_sidebars` config value."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:75
+msgid ""
+"The **options** section contains pairs of variable names and default values."
+" These options can be overridden by the user in "
+":confval:`html_theme_options` and are accessible from all templates as "
+"``theme_<name>``."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:79
+msgid "sidebar settings"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:86
+msgid "Distribute your theme as a Python package"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:88
+msgid ""
+"As a way to distribute your theme, you can use Python package.  Python "
+"package brings to users easy setting up ways."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:91
+msgid ""
+"To distribute your theme as a Python package, please define an entry point "
+"called ``sphinx.html_themes`` in your ``setup.py`` file, and write a "
+"``setup()`` function to register your themes using ``add_html_theme()`` API "
+"in it::"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:112
+msgid ""
+"If your theme package contains two or more themes, please call "
+"``add_html_theme()`` twice or more."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:115
+msgid "'sphinx_themes' entry_points feature."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:118
+msgid "``sphinx_themes`` entry_points has been deprecated."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:121
+msgid "``sphinx.html_themes`` entry_points feature."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:126
+msgid "Templating"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:128
+msgid ""
+"The :doc:`guide to templating <templating>` is helpful if you want to write "
+"your own templates.  What is important to keep in mind is the order in which"
+" Sphinx searches for templates:"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:132
+msgid "First, in the user's ``templates_path`` directories."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:133
+msgid "Then, in the selected theme."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:134
+msgid "Then, in its base theme, its base's base theme, etc."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:136
+msgid ""
+"When extending a template in the base theme with the same name, use the "
+"theme name as an explicit directory: ``{% extends \"basic/layout.html\" "
+"%}``.  From a user ``templates_path`` template, you can still use the "
+"\"exclamation mark\" syntax as described in the templating document."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:142
+msgid "Static templates"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:144
+msgid ""
+"Since theme options are meant for the user to configure a theme more easily,"
+" without having to write a custom stylesheet, it is necessary to be able to "
+"template static files as well as HTML files.  Therefore, Sphinx supports so-"
+"called \"static templates\", like this:"
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:149
+msgid ""
+"If the name of a file in the ``static/`` directory of a theme (or in the "
+"user's static path, for that matter) ends with ``_t``, it will be processed "
+"by the template engine.  The ``_t`` will be left from the final file name.  "
+"For example, the *classic* theme has a file ``static/classic.css_t`` which "
+"uses templating to put the color options into the stylesheet.  When a "
+"documentation is built with the classic theme, the output directory will "
+"contain a ``_static/classic.css`` file where all template tags have been "
+"processed."
+msgstr ""
+
+#: ../../sphinx/doc/theming.rst:157
+msgid ""
+"It is not an executable Python file, as opposed to :file:`conf.py`, because "
+"that would pose an unnecessary security risk if themes are shared."
+msgstr ""

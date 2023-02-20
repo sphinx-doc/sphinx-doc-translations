@@ -1,0 +1,384 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# wendi cao <651645601@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-09 01:38+0000\n"
+"PO-Revision-Date: 2018-02-12 13:48+0000\n"
+"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/extdev/index.rst:4
+msgid "Sphinx Extensions API"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:6
+msgid ""
+"Since many projects will need special features in their documentation, "
+"Sphinx is designed to be extensible on several levels."
+msgstr "由于许多项目在其文档中需要特殊的特性，Sphinx被设计成可以在多个级别上进行扩展。"
+
+#: ../../sphinx/doc/extdev/index.rst:9
+msgid "Here are a few things you can do in an extension:"
+msgstr "您可以在插件中执行以下操作："
+
+#: ../../sphinx/doc/extdev/index.rst:11
+msgid ""
+"Add new :term:`builder`\\s to support new output formats or actions on the "
+"parsed documents."
+msgstr "添加新内容:术语:`builder`\\s以支持对已解析文档执行新的输出格式或操作。"
+
+#: ../../sphinx/doc/extdev/index.rst:13
+msgid ""
+"Register custom reStructuredText roles and directives, extending the markup "
+"using the :doc:`markupapi`."
+msgstr "注册自定义RestructedText角色和指令，并使用：doc:`markupapi`扩展标记。"
+
+#: ../../sphinx/doc/extdev/index.rst:15
+msgid ""
+"Add custom code to so-called \"hook points\" at strategic places throughout "
+"the build process, allowing you to register a hook and run specialized code."
+" For example, see the :ref:`events`."
+msgstr "在整个构建过程中，将自定义代码添加到所谓的“钩子点”中，允许您注册钩子并运行专用代码。例如，请参阅：ref:`events`。"
+
+#: ../../sphinx/doc/extdev/index.rst:19
+msgid ""
+"An extension is simply a Python module with a ``setup()`` function. A user "
+"activates the extension by placing the extension's module name (or a sub-"
+"module) in their :confval:`extensions` configuration value."
+msgstr ""
+"插件只是一个带有“setup（）`”函数的Python模块。用户通过在其：confval:`extensions`配置值中放置插件的模块名（或子模块）来激活扩展。"
+
+#: ../../sphinx/doc/extdev/index.rst:23
+msgid ""
+"When :program:`sphinx-build` is executed, Sphinx will attempt to import each"
+" module that is listed, and execute ``yourmodule.setup(app)``. This function"
+" is used to prepare the extension (e.g., by executing Python code), linking "
+"resources that Sphinx uses in the build process (like CSS or HTML files), "
+"and notifying Sphinx of everything the extension offers (such as directive "
+"or role definitions). The ``app`` argument is an instance of "
+":class:`.Sphinx` and gives you control over most aspects of the Sphinx "
+"build."
+msgstr ""
+"当执行：program:`sphinxbuild`时，sphinx将尝试导入列出的每个模块，然后执行``你的模块设置（应用程序）``。此函数用于准备扩展（例如，通过执行Python代码），链接Sphinx在构建过程中使用的资源（如CSS或HTML文件），并将扩展提供的所有内容通知Sphinx（例如指令或角色定义）。“app”参数是：class:`.Sphinx`的一个实例，它使您可以控制Sphinx构建的大多数方面。"
+
+#: ../../sphinx/doc/extdev/index.rst:33
+msgid ""
+"The configuration file itself can be treated as an extension if it contains "
+"a ``setup()`` function.  All other extensions to load must be listed in the "
+":confval:`extensions` configuration value."
+msgstr ""
+"如果配置文件包含“setup（）”函数，则可以将其视为扩展名。要加载的所有其他扩展必须列在：confval:`extensions`配置值中。"
+
+#: ../../sphinx/doc/extdev/index.rst:37
+msgid ""
+"The rest of this page describes some high-level aspects of developing "
+"extensions and various parts of Sphinx's behavior that you can control. For "
+"some examples of how extensions can be built and used to control different "
+"parts of Sphinx, see the :ref:`extension-tutorials-index`."
+msgstr ""
+"本页的其余部分描述了开发扩展的一些高级方面，以及您可以控制的Sphinx行为的各个部分。有关如何构建和使用扩展来控制Sphinx的不同部分的一些示例，请参阅：ref:`extension"
+" tutorials index`。"
+
+#: ../../sphinx/doc/extdev/index.rst:45
+msgid "Important objects"
+msgstr "重要对象"
+
+#: ../../sphinx/doc/extdev/index.rst:47
+msgid ""
+"There are several key objects whose API you will use while writing an "
+"extension. These are:"
+msgstr "有几个关键对象的借口将在编写插件时使用。这些是："
+
+#: ../../sphinx/doc/extdev/index.rst:56
+msgid "**Application**"
+msgstr "**应用*"
+
+#: ../../sphinx/doc/extdev/index.rst:51
+msgid ""
+"The application object (usually called ``app``) is an instance of "
+":class:`.Sphinx`.  It controls most high-level functionality, such as the "
+"setup of extensions, event dispatching and producing output (logging)."
+msgstr "应用程序对象（通常称为“app”）是类：`.Sphinx`的实例。它控制大多数高级功能，如插件的设置、事件调度和生成输出（日志记录）。"
+
+#: ../../sphinx/doc/extdev/index.rst:55
+msgid ""
+"If you have the environment object, the application is available as "
+"``env.app``."
+msgstr "如果有环境对象，则应用程序可用作``环境应用程序``."
+
+#: ../../sphinx/doc/extdev/index.rst:69
+msgid "**Environment**"
+msgstr "**环境**"
+
+#: ../../sphinx/doc/extdev/index.rst:59
+msgid ""
+"The build environment object (usually called ``env``) is an instance of "
+":class:`.BuildEnvironment`.  It is responsible for parsing the source "
+"documents, stores all metadata about the document collection and is "
+"serialized to disk after each build."
+msgstr ""
+"生成环境对象（通常称为“env”）是类：`.BuildEnvironment`的实例。它负责解析源文档，存储文档集合的所有元数据，并在每次构建后序列化到磁盘。"
+
+#: ../../sphinx/doc/extdev/index.rst:64
+msgid ""
+"Its API provides methods to do with access to metadata, resolving "
+"references, etc.  It can also be used by extensions to cache information "
+"that should persist for incremental rebuilds."
+msgstr "它的接口提供了访问元数据、解析引用等的方法。插件也可以使用它来缓存应该为增量重建保留的信息。"
+
+#: ../../sphinx/doc/extdev/index.rst:68
+msgid ""
+"If you have the application or builder object, the environment is available "
+"as ``app.env`` or ``builder.env``."
+msgstr "如果有application或builder对象，则环境可用作``应用程序环境``或者``builder..env``."
+
+#: ../../sphinx/doc/extdev/index.rst:78
+msgid "**Builder**"
+msgstr "**生成器**"
+
+#: ../../sphinx/doc/extdev/index.rst:72
+msgid ""
+"The builder object (usually called ``builder``) is an instance of a specific"
+" subclass of :class:`.Builder`.  Each builder class knows how to convert the"
+" parsed documents into an output format, or otherwise process them (e.g. "
+"check external links)."
+msgstr ""
+"builder对象（通常称为“builder”）是一个特定子类的实例：class:`.builder`。每个builder类都知道如何将已解析的文档转换为输出格式，或者以其他方式处理它们（例如，检查外部链接）。"
+
+#: ../../sphinx/doc/extdev/index.rst:77
+msgid ""
+"If you have the application object, the builder is available as "
+"``app.builder``."
+msgstr "开发者如果您有应用程序对象，则构建器可用作``app.builder`."
+
+#: ../../sphinx/doc/extdev/index.rst:85
+msgid "**Config**"
+msgstr "**配置**"
+
+#: ../../sphinx/doc/extdev/index.rst:81
+msgid ""
+"The config object (usually called ``config``) provides the values of "
+"configuration values set in :file:`conf.py` as attributes.  It is an "
+"instance of :class:`.Config`."
+msgstr ""
+"config对象（通常称为“config”）提供在以下文件中设置的配置值的值：`配置文件`作为属性。它是一个实例：class:`.Config`。"
+
+#: ../../sphinx/doc/extdev/index.rst:85
+msgid "The config is available as ``app.config`` or ``env.config``."
+msgstr "配置可用作``应用程序配置``或者``环境配置``."
+
+#: ../../sphinx/doc/extdev/index.rst:87
+msgid ""
+"To see an example of use of these objects, refer to "
+":doc:`../development/tutorials/index`."
+msgstr "要查看这些对象的使用示例，请参阅：doc:`../development/tutorials/index`。"
+
+#: ../../sphinx/doc/extdev/index.rst:93
+msgid "Build Phases"
+msgstr "构建阶段"
+
+#: ../../sphinx/doc/extdev/index.rst:95
+msgid ""
+"One thing that is vital in order to understand extension mechanisms is the "
+"way in which a Sphinx project is built: this works in several phases."
+msgstr "为了理解插件机制，一件至关重要的事情是Sphinx项目的构建方式：它分几个阶段工作。"
+
+#: ../../sphinx/doc/extdev/index.rst:98
+msgid "**Phase 0: Initialization**"
+msgstr "**阶段0：初始化**"
+
+#: ../../sphinx/doc/extdev/index.rst:100
+msgid ""
+"In this phase, almost nothing of interest to us happens.  The source "
+"directory is searched for source files, and extensions are initialized. "
+"Should a stored build environment exist, it is loaded, otherwise a new one "
+"is created."
+msgstr "在这个阶段，几乎没有感兴趣的事情发生。在源目录中搜索源文件，并初始化插件名。如果存在存储的生成环境，则加载该环境，否则将创建一个新环境。"
+
+#: ../../sphinx/doc/extdev/index.rst:105
+msgid "**Phase 1: Reading**"
+msgstr "**阶段1：阅读**"
+
+#: ../../sphinx/doc/extdev/index.rst:107
+msgid ""
+"In Phase 1, all source files (and on subsequent builds, those that are new "
+"or changed) are read and parsed.  This is the phase where directives and "
+"roles are encountered by docutils, and the corresponding code is executed.  "
+"The output of this phase is a *doctree* for each source file; that is a tree"
+" of docutils nodes.  For document elements that aren't fully known until all"
+" existing files are read, temporary nodes are created."
+msgstr ""
+"在阶段1中，所有源文件（以及后续构建中的新的或更改的）都将被读取和解析。这是docutils遇到指令和角色并执行相应代码的阶段。这个阶段的输出是每个源文件的*doctree*；这是docutils节点的树。对于在读取所有现有文件之前不完全知道的文档元素，将创建临时节点。"
+
+#: ../../sphinx/doc/extdev/index.rst:114
+msgid ""
+"There are nodes provided by docutils, which are documented `in the docutils "
+"documentation <https://docutils.sourceforge.io/docs/ref/doctree.html>`__. "
+"Additional nodes are provided by Sphinx and :ref:`documented here <nodes>`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:118
+msgid ""
+"During reading, the build environment is updated with all meta- and cross "
+"reference data of the read documents, such as labels, the names of headings,"
+" described Python objects and index entries.  This will later be used to "
+"replace the temporary nodes."
+msgstr ""
+"在读取过程中，构建环境将使用读取文档的所有元数据和交叉引用数据进行更新，例如标签、标题名称、所描述的Python对象和索引项。这将稍后用于替换临时节点。"
+
+#: ../../sphinx/doc/extdev/index.rst:123
+msgid ""
+"The parsed doctrees are stored on the disk, because it is not possible to "
+"hold all of them in memory."
+msgstr "解析后的doctree存储在磁盘上，因为不可能将它们全部保存在内存中。"
+
+#: ../../sphinx/doc/extdev/index.rst:126
+msgid "**Phase 2: Consistency checks**"
+msgstr "**阶段2: 连贯性检查**"
+
+#: ../../sphinx/doc/extdev/index.rst:128
+msgid "Some checking is done to ensure no surprises in the built documents."
+msgstr "进行一些检查以确保生成的文档中没有意外情况。"
+
+#: ../../sphinx/doc/extdev/index.rst:130
+msgid "**Phase 3: Resolving**"
+msgstr "**阶段3：解析**"
+
+#: ../../sphinx/doc/extdev/index.rst:132
+msgid ""
+"Now that the metadata and cross-reference data of all existing documents is "
+"known, all temporary nodes are replaced by nodes that can be converted into "
+"output using components called transforms.  For example, links are created "
+"for object references that exist, and simple literal nodes are created for "
+"those that don't."
+msgstr ""
+"现在，所有现有文档的元数据和交叉引用数据都是已知的，所有临时节点都将被节点替换，这些节点可以使用称为transforms的组件转换为输出。例如，为存在的对象引用创建链接，为不存在的对象引用创建简单文本节点。"
+
+#: ../../sphinx/doc/extdev/index.rst:138
+msgid "**Phase 4: Writing**"
+msgstr "**阶段4：写作**"
+
+#: ../../sphinx/doc/extdev/index.rst:140
+msgid ""
+"This phase converts the resolved doctrees to the desired output format, such"
+" as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
+" the individual nodes of each doctree and produces some output in the "
+"process."
+msgstr ""
+"此阶段将解析的doctree转换为所需的输出格式，例如HTML或LaTeX。这是通过一个所谓的docutils编写器来实现的，它访问每个doctree的各个节点，并在这个过程中生成一些输出。"
+
+#: ../../sphinx/doc/extdev/index.rst:146
+msgid ""
+"Some builders deviate from this general build plan, for example, the builder"
+" that checks external links does not need anything more than the parsed "
+"doctrees and therefore does not have phases 2--4."
+msgstr "一些构建器偏离了这个一般的构建计划，例如，检查外部链接的构建器只需要解析的doctree，因此不需要第2-4阶段。"
+
+#: ../../sphinx/doc/extdev/index.rst:150
+msgid ""
+"To see an example of application, refer to "
+":doc:`../development/tutorials/todo`."
+msgstr "要查看应用程序的示例，请参阅：doc:`../development/tutorials/todo`。"
+
+#: ../../sphinx/doc/extdev/index.rst:155
+msgid "Extension metadata"
+msgstr "扩展元数据"
+
+#: ../../sphinx/doc/extdev/index.rst:159
+msgid ""
+"The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
+" as metadata of the extension.  Metadata keys currently recognized are:"
+msgstr "“`setup（）`”函数可以返回字典。Sphinx将其视为扩展的元数据。当前识别的元数据键包括："
+
+#: ../../sphinx/doc/extdev/index.rst:162
+msgid ""
+"``'version'``: a string that identifies the extension version.  It is used "
+"for extension version requirement checking (see :confval:`needs_extensions`)"
+" and informational purposes.  If not given, ``\"unknown version\"`` is "
+"substituted."
+msgstr ""
+"``“version”`：标识扩展版本的字符串。它用于扩展版本需求检查（请参阅：confval:`needs_extensions`）和信息目的。如果未给出，则替换为“未知版本”。"
+
+#: ../../sphinx/doc/extdev/index.rst:165
+msgid ""
+"``'env_version'``: an integer that identifies the version of env data "
+"structure if the extension stores any data to environment.  It is used to "
+"detect the data structure has been changed from last build.  The extensions "
+"have to increment the version when data structure has changed.  If not "
+"given, Sphinx considers the extension does not stores any data to "
+"environment."
+msgstr ""
+"``“env_version”``：如果扩展将任何数据存储到环境中，则标识env数据结构的版本的整数。它用于检测数据结构是否已从上次生成更改。当数据结构发生变化时，扩展必须增加版本。如果没有给出，Sphinx认为扩展不向环境存储任何数据。"
+
+#: ../../sphinx/doc/extdev/index.rst:170
+msgid ""
+"``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
+"source files can be used when the extension is loaded.  It defaults to "
+"``False``, i.e. you have to explicitly specify your extension to be "
+"parallel-read-safe after checking that it is."
+msgstr ""
+"``“parallel_read_safe”`：一个布尔值，指定加载扩展时是否可以使用并行读取源文件。它默认为“False”，也就是说，在检查扩展是否是并行读安全的之后，必须显式地将扩展指定为安全的。"
+
+#: ../../sphinx/doc/extdev/index.rst:175
+msgid ""
+"The *parallel-read-safe* extension must satisfy the following conditions:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:178
+msgid ""
+"The core logic of the extension is parallelly executable during the reading "
+"phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:180
+msgid ""
+"It has event handlers for :event:`env-merge-info` and :event:`env-purge-doc`"
+" events if it stores data to the build environment object (env) during the "
+"reading phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:184
+msgid ""
+"``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
+"output files can be used when the extension is loaded.  Since extensions "
+"usually don't negatively influence the process, this defaults to ``True``."
+msgstr ""
+"``“parallel_write_safe”`：一个布尔值，指定加载扩展时是否可以使用输出文件的并行写入。由于扩展通常不会对过程产生负面影响，因此默认为“True”。"
+
+#: ../../sphinx/doc/extdev/index.rst:188
+msgid ""
+"The *parallel-write-safe* extension must satisfy the following conditions:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:191
+msgid ""
+"The core logic of the extension is parallelly executable during the writing "
+"phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:196
+msgid "APIs used for writing extensions"
+msgstr "用于编写插件的接口"
+
+#: ../../sphinx/doc/extdev/index.rst:198
+msgid ""
+"These sections provide a more complete description of the tools at your "
+"disposal when developing Sphinx extensions. Some are core to Sphinx (such as"
+" the :doc:`appapi`) while others trigger specific behavior (such as the "
+":doc:`i18n`)"
+msgstr ""
+"这些部分提供了在开发Sphinx扩展时可以使用的工具的更完整的描述。一些是Sphinx的核心（例如：doc:`appapi`），而其他一些则触发特定的行为（例如：doc:`i18n`）"

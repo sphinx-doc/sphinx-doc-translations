@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-09 01:38+0000\n"
+"PO-Revision-Date: 2020-08-01 22:23+0000\n"
+"Language-Team: Serbian (Serbia) (https://www.transifex.com/sphinx-doc/teams/15434/sr_RS/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr_RS\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../../sphinx/doc/development/theming.rst:2
+msgid "HTML theme development"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:8
+msgid ""
+"This document provides information about creating your own theme. If you "
+"simply wish to use a pre-existing HTML themes, refer to "
+":doc:`/usage/theming`."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:12
+msgid ""
+"Sphinx supports changing the appearance of its HTML output via *themes*.  A "
+"theme is a collection of HTML templates, stylesheet(s) and other static "
+"files. Additionally, it has a configuration file which specifies from which "
+"theme to inherit, which highlighting style to use, and what options exist "
+"for customizing the theme's look and feel."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:18
+msgid ""
+"Themes are meant to be project-unaware, so they can be used for different "
+"projects without change."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:23
+msgid ""
+"See :ref:`dev-extensions` for more information that may be helpful in "
+"developing themes."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:28
+msgid "Creating themes"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:30
+msgid ""
+"Themes take the form of either a directory or a zipfile (whose name is the "
+"theme name), containing the following:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:33
+msgid "A :file:`theme.conf` file."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:34
+msgid "HTML templates, if needed."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:35
+msgid ""
+"A ``static/`` directory containing any static files that will be copied to "
+"the output static directory on build.  These can be images, styles, script "
+"files."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:38
+msgid ""
+"The :file:`theme.conf` file is in INI format [1]_ (readable by the standard "
+"Python :mod:`ConfigParser` module) and has the following structure:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:52
+msgid ""
+"The **inherit** setting gives the name of a \"base theme\", or ``none``.  "
+"The base theme will be used to locate missing templates (most themes will "
+"not have to supply most templates if they use ``basic`` as the base theme), "
+"its options will be inherited, and all of its static files will be used as "
+"well. If you want to also inherit the stylesheet, include it via CSS' "
+"``@import`` in your own."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:59
+msgid ""
+"The **stylesheet** setting gives a list of CSS filenames separated commas "
+"which will be referenced in the HTML header.  You can also use CSS' "
+"``@import`` technique to include one from the other, or use a custom HTML "
+"template that adds ``<link rel=\"stylesheet\">`` tags as necessary.  Setting"
+" the :confval:`html_style` config value will override this setting."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:65
+msgid ""
+"The **pygments_style** setting gives the name of a Pygments style to use for"
+" highlighting.  This can be overridden by the user in the "
+":confval:`pygments_style` config value."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:69
+msgid ""
+"The **pygments_dark_style** setting gives the name of a Pygments style to "
+"use for highlighting when the CSS media query ``(prefers-color-scheme: "
+"dark)`` evaluates to true. It is injected into the page using "
+":meth:`~Sphinx.add_css_file()`."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:74
+msgid ""
+"The **sidebars** setting gives the comma separated list of sidebar templates"
+" for constructing sidebars.  This can be overridden by the user in the "
+":confval:`html_sidebars` config value."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:78
+msgid ""
+"The **options** section contains pairs of variable names and default values."
+" These options can be overridden by the user in "
+":confval:`html_theme_options` and are accessible from all templates as "
+"``theme_<name>``."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:82
+msgid "sidebar settings"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:87
+msgid "The stylesheet setting accepts multiple CSS filenames"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:92
+msgid "Distribute your theme as a Python package"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:94
+msgid ""
+"As a way to distribute your theme, you can use a Python package.  This makes"
+" it easier for users to set up your theme."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:97
+msgid ""
+"To distribute your theme as a Python package, please define an entry point "
+"called ``sphinx.html_themes`` in your ``setup.py`` file, and write a "
+"``setup()`` function to register your themes using ``add_html_theme()`` API "
+"in it::"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:118
+msgid ""
+"If your theme package contains two or more themes, please call "
+"``add_html_theme()`` twice or more."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:121
+msgid "'sphinx_themes' entry_points feature."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:124
+msgid "``sphinx_themes`` entry_points has been deprecated."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:127
+msgid "``sphinx.html_themes`` entry_points feature."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:132
+msgid "Templating"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:134
+msgid ""
+"The :doc:`guide to templating <templating>` is helpful if you want to write "
+"your own templates.  What is important to keep in mind is the order in which"
+" Sphinx searches for templates:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:138
+msgid "First, in the user's ``templates_path`` directories."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:139
+msgid "Then, in the selected theme."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:140
+msgid "Then, in its base theme, its base's base theme, etc."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:142
+msgid ""
+"When extending a template in the base theme with the same name, use the "
+"theme name as an explicit directory: ``{% extends \"basic/layout.html\" "
+"%}``.  From a user ``templates_path`` template, you can still use the "
+"\"exclamation mark\" syntax as described in the templating document."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:151
+msgid "Static templates"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:153
+msgid ""
+"Since theme options are meant for the user to configure a theme more easily,"
+" without having to write a custom stylesheet, it is necessary to be able to "
+"template static files as well as HTML files.  Therefore, Sphinx supports so-"
+"called \"static templates\", like this:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:158
+msgid ""
+"If the name of a file in the ``static/`` directory of a theme (or in the "
+"user's static path, for that matter) ends with ``_t``, it will be processed "
+"by the template engine.  The ``_t`` will be left from the final file name.  "
+"For example, the *classic* theme has a file ``static/classic.css_t`` which "
+"uses templating to put the color options into the stylesheet.  When a "
+"documentation is built with the classic theme, the output directory will "
+"contain a ``_static/classic.css`` file where all template tags have been "
+"processed."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:168
+msgid "Use custom page metadata in HTML templates"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:170
+msgid ""
+"Any key / value pairs in :doc:`field lists </usage/restructuredtext/field-"
+"lists>` that are placed *before* the page's title will be available to the "
+"Jinja template when building the page within the :data:`meta` attribute. For"
+" example, if a page had the following text before its first title:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:182
+msgid "Then it could be accessed within a Jinja template like so:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:190
+msgid ""
+"Note the check that ``meta`` is a dictionary (\"mapping\" in Jinja "
+"terminology) to ensure that using it in this way is valid."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:195
+msgid "Defining custom template functions"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:197
+msgid ""
+"Sometimes it is useful to define your own function in Python that you wish "
+"to then use in a template. For example, if you'd like to insert a template "
+"value with logic that depends on the user's configuration in the project, or"
+" if you'd like to include non-trivial checks and provide friendly error "
+"messages for incorrect configuration in the template."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:203
+msgid ""
+"To define your own template function, you'll need to define two functions "
+"inside your module:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:206
+msgid ""
+"A **page context event handler** (or **registration**) function. This is "
+"connected to the :class:`.Sphinx` application via an event callback."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:208
+msgid "A **template function** that you will use in your Jinja template."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:210
+msgid ""
+"First, define the registration function, which accepts the arguments for "
+":event:`html-page-context`."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:213
+msgid ""
+"Within the registration function, define the template function that you'd "
+"like to use within Jinja. The template function should return a string or "
+"Python objects (lists, dictionaries) with strings inside that Jinja uses in "
+"the templating process"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:219
+msgid ""
+"The template function will have access to all of the variables that are "
+"passed to the registration function."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:222
+msgid ""
+"At the end of the registration function, add the template function to the "
+"Sphinx application's context with ``context['template_func'] = "
+"template_func``."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:225
+msgid ""
+"Finally, in your extension's ``setup()`` function, add your registration "
+"function as a callback for :event:`html-page-context`."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:242
+msgid "Now, you will have access to this function in jinja like so:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:252
+msgid "Add your own static files to the build assets"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:254
+msgid ""
+"By default, Sphinx copies static files on the ``static/`` directory of the "
+"template directory.  However, if your package needs to place static files "
+"outside of the ``static/`` directory for some reasons, you need to copy them"
+" to the ``_static/`` directory of HTML outputs manually at the build via an "
+"event hook.  Here is an example of code to accomplish this:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:275
+msgid "Inject JavaScript based on user configuration"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:277
+msgid ""
+"If your extension makes use of JavaScript, it can be useful to allow users "
+"to control its behavior using their Sphinx configuration. However, this can "
+"be difficult to do if your JavaScript comes in the form of a static library "
+"(which will not be built with Jinja)."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:282
+msgid ""
+"There are two ways to inject variables into the JavaScript space based on "
+"user configuration."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:285
+msgid ""
+"First, you may append ``_t`` to the end of any static files included with "
+"your extension. This will cause Sphinx to process these files with the "
+"templating engine, allowing you to embed variables and control behavior."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:289
+msgid "For example, the following JavaScript structure:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:298
+msgid ""
+"Will result in the following static file placed in your HTML's build output:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:307
+msgid "See :ref:`theming-static-templates` for more information."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:309
+msgid ""
+"Second, you may use the :meth:`Sphinx.add_js_file` method without pointing "
+"it to a file. Normally, this method is used to insert a new JavaScript file "
+"into your site. However, if you do *not* pass a file path, but instead pass "
+"a string to the \"body\" argument, then this text will be inserted as "
+"JavaScript into your site's head. This allows you to insert variables into "
+"your project's JavaScript from Python."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:316
+msgid ""
+"For example, the following code will read in a user-configured value and "
+"then insert this value as a JavaScript variable, which your extension's "
+"JavaScript code may use:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:335
+msgid ""
+"As a result, in your theme you can use code that depends on the presence of "
+"this variable. Users can control the variable's value by defining it in "
+"their :file:`conf.py` file."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:340
+msgid ""
+"It is not an executable Python file, as opposed to :file:`conf.py`, because "
+"that would pose an unnecessary security risk if themes are shared."
+msgstr ""

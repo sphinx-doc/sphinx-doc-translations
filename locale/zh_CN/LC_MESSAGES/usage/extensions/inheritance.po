@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# cdarlint <cdarling@126.com>, 2019
+# wendi cao <651645601@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-06-26 15:59+0000\n"
+"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:4
+msgid ":mod:`sphinx.ext.inheritance_diagram` -- Include inheritance diagrams"
+msgstr "：模式：`sphinx.ext.继承图`--包括继承关系图"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:11
+msgid ""
+"This extension allows you to include inheritance diagrams, rendered via the "
+":mod:`Graphviz extension <sphinx.ext.graphviz>`."
+msgstr "此插件允许包含通过：mod:`Graphviz插件呈现的继承关系图<sphinx.ext.graphviz>`."
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:14
+msgid "It adds this directive:"
+msgstr "它添加了以下指令："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:18
+msgid ""
+"This directive has one or more arguments, each giving a module or class "
+"name.  Class names can be unqualified; in that case they are taken to exist "
+"in the currently described module (see :rst:dir:`py:module`)."
+msgstr ""
+"这个指令有一个或多个参数，每个参数都给出一个模块或类名。类名可以是非限定的；在这种情况下，它们被认为存在于当前描述的模块中（参见：rst:方向：`py:module`）。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:22
+msgid ""
+"For each given class, and each class in each given module, the base classes "
+"are determined.  Then, from all classes and their base classes, a graph is "
+"generated which is then rendered via the graphviz extension to a directed "
+"graph."
+msgstr "对于每个给定的类，以及每个给定模块中的每个类，确定基类。然后，从所有类及其基类生成一个图，然后通过graphviz扩展将其呈现为有向图。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:27
+msgid ""
+"This directive supports an option called ``parts`` that, if given, must be "
+"an integer, advising the directive to keep that many dot-separated parts in "
+"the displayed names (from right to left). For example, ``parts=1`` will only"
+" display class names, without the names of the modules that contain them."
+msgstr ""
+"此指令支持一个名为“parts”的选项，如果给定该选项，该选项必须是一个整数，建议该指令在显示的名称中保留这些以点分隔的部分（从右到左）。例如，``parts=1``将只显示类名，而不显示包含类名的模块的名称。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:33
+msgid ""
+"The value of for ``parts`` can also be negative, indicating how many parts "
+"to drop from the left.  For example, if all your class names start with "
+"``lib.``, you can give ``:parts: -1`` to remove that prefix from the "
+"displayed node names."
+msgstr ""
+"for“parts”的值也可以是负数，表示从左边删除多少个部分。例如，如果所有类名都以“lib.”开头，则可以给“`:parts:-1”从显示的节点名中删除该前缀。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:39
+msgid ""
+"The directive also supports a ``private-bases`` flag option; if given, "
+"private base classes (those whose name starts with ``_``) will be included."
+msgstr "该指令还支持一个“private bases”标志选项；如果给定了该选项，则将包括私有基类（名称以“`”开头的基类）。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:42
+msgid "You can use ``caption`` option to give a caption to the diagram."
+msgstr "您可以使用“caption”选项为图表提供标题。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:44
+msgid ""
+"Added ``private-bases`` option; previously, all bases were always included."
+msgstr "添加了“private bases”选项；以前，总是包含所有的基。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:48
+msgid "Added ``caption`` option"
+msgstr "添加了“caption”选项"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:51
+msgid ""
+"It also supports a ``top-classes`` option which requires one or more class "
+"names separated by comma. If specified inheritance traversal will stop at "
+"the specified class names. Given the following Python module::"
+msgstr "它还支持“顶级类”选项，该选项需要一个或多个用逗号分隔的类名。如果指定继承，则遍历将在指定的类名处停止。给定以下Python模块："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:81
+msgid "If you have specified a module in the inheritance diagram like this::"
+msgstr "如果您在继承关系图中指定了如下模块："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:86
+msgid ""
+"any base classes which are ancestors to ``top-classes`` and are also defined"
+" in the same module will be rendered as stand alone nodes. In this example "
+"class A will be rendered as stand alone node in the graph. This is a known "
+"issue due to how this extension works internally."
+msgstr ""
+"作为“顶级类”的祖先并在同一模块中定义的任何基类都将呈现为独立节点。在本例中，类A将在图中呈现为独立节点。这是一个已知的问题，因为这个扩展是如何在内部工作的。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:91
+msgid ""
+"If you don't want class A (or any other ancestors) to be visible then "
+"specify only the classes you would like to generate the diagram for like "
+"this::"
+msgstr "如果不希望类A（或任何其他祖先）可见，则只指定要为其生成关系图的类，如下所示："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:97
+msgid "Added ``top-classes`` option to limit the scope of inheritance graphs."
+msgstr "添加了“顶级类”选项以限制继承图的范围。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:102
+msgid "Examples"
+msgstr "实际案例"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:104
+msgid ""
+"The following are different inheritance diagrams for the internal "
+"``InheritanceDiagram`` class that implements the directive."
+msgstr "以下是实现指令的内部“InheritanceDiagram”类的不同继承关系图。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:107
+msgid "With full names::"
+msgstr "全名："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:114
+msgid "Showing class names only::"
+msgstr "仅显示类名："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:122
+msgid ""
+"Stopping the diagram at :class:`sphinx.util.docutils.SphinxDirective` (the "
+"highest superclass still part of Sphinx), and dropping the common left-most "
+"part (``sphinx``) from all names::"
+msgstr ""
+"在以下位置停止关系图：类：`sphinx.util.docutils.SphinxDirective`（最高的超类仍然是Sphinx的一部分），并从所有名称中删除最左边的公共部分（`Sphinx``）："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:137
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:141
+msgid "A dictionary of graphviz graph attributes for inheritance diagrams."
+msgstr "继承图的graphviz图属性字典。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:143
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:152
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:167
+msgid "For example::"
+msgstr "例如："
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:150
+msgid "A dictionary of graphviz node attributes for inheritance diagrams."
+msgstr "继承图的graphviz节点属性字典。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:159
+msgid "A dictionary of graphviz edge attributes for inheritance diagrams."
+msgstr "graphviz节点的字典的属性是继承关系图。"
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:163
+msgid ""
+"Allows mapping the full qualified name of the class to custom values (useful"
+" when exposing the underlying path of a class is not desirable, e.g. it's a "
+"private class and should not be instantiated by the user)."
+msgstr "允许将类的完整限定名映射到自定义值（当不需要公开类的基础路径时，非常有用，例如，它是一个私有类，不应由用户实例化）。"

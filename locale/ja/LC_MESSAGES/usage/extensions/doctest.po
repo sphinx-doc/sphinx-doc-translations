@@ -1,0 +1,483 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Arihiro TAKASE, 2018
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# Naofumi SAKAGUCHI <nskgch@gmail.com>, 2018
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-06-26 15:58+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
+"Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:4
+msgid ":mod:`sphinx.ext.doctest` -- Test snippets in the documentation"
+msgstr ":mod:`sphinx.ext.doctest` -- ドキュメント内の簡易テスト"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:14
+msgid ""
+"It is often helpful to include snippets of code in your documentation and "
+"demonstrate the results of executing them. But it is important to ensure "
+"that the documentation stays up-to-date with the code."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:18
+msgid ""
+"This extension allows you to test such code snippets in the documentation in"
+" a natural way.  If you mark the code blocks as shown here, the ``doctest`` "
+"builder will collect them and run them as doctest tests."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:22
+msgid ""
+"Within each document, you can assign each snippet to a *group*. Each group "
+"consists of:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:25
+msgid "zero or more *setup code* blocks (e.g. importing the module to test)"
+msgstr "ゼロ個以上の\\ **セットアップコード**\\ ブロック。テストに必要なモジュールをimportします。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:26
+msgid "one or more *test* blocks"
+msgstr "ひとつ以上の\\ **テスト**\\ ブロック。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:28
+msgid ""
+"When building the docs with the ``doctest`` builder, groups are collected "
+"for each document and run one after the other, first executing setup code "
+"blocks, then the test blocks in the order they appear in the file."
+msgstr ""
+"``doctest``\\ "
+"ビルダーを使用してドキュメントをビルドすると、それぞれのドキュメントごとに同一グループの要素が集められて次々に実行されます。最初はセットアップコードブロックが実行され、その後はファイルの中で登場する順番にテストブロックが実行されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:32
+msgid "There are two kinds of test blocks:"
+msgstr "テストブロックには以下の２種類あります:"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:34
+msgid ""
+"*doctest-style* blocks mimic interactive sessions by interleaving Python "
+"code (including the interpreter prompt) and output."
+msgstr "Pythonコード(含プロンプト)と出力が交互に書かれている、インタラクティブモードに似た\\ **doctestスタイル**\\ のブロック"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:37
+msgid ""
+"*code-output-style* blocks consist of an ordinary piece of Python code, and "
+"optionally, a piece of output for that code."
+msgstr "通常のPythonコードと、出力を1つから構成される、\\ **コード-出力スタイル**\\ のブロック"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:42
+msgid "Directives"
+msgstr "ディレクティブ"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:44
+msgid ""
+"The *group* argument below is interpreted as follows: if it is empty, the "
+"block is assigned to the group named ``default``.  If it is ``*``, the block"
+" is assigned to all groups (including the ``default`` group).  Otherwise, it"
+" must be a comma-separated list of group names."
+msgstr ""
+"**グループ**\\ 引数は以下のように解釈されます: もしも何も指定されなかった場合には、\\ ``default``\\ "
+"というグループ名が指定されたとみなします。もしも\\ ``*``\\ が指定されると、そのブロックは\\ ``default``\\ "
+"を含む、すべてのグループに対して割り当てられたものとみなします。そうでなければ、これ以外の場合はグループ名は、カンマ区切りのリストでなければなりません。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:51
+msgid ""
+"A setup code block.  This code is not shown in the output for other "
+"builders, but executed before the doctests of the group(s) it belongs to."
+msgstr ""
+"セットアップのためのコードブロックです。このコードは他のビルダーを使用したときには出力されませんが、それが所属するグループのdoctestが実行される前に実行されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:57
+msgid ""
+"A cleanup code block.  This code is not shown in the output for other "
+"builders, but executed after the doctests of the group(s) it belongs to."
+msgstr ""
+"片付けをするためのコードブロックです。このコードは他のビルダーを使用したときには出力されませんが、それが所属するグループのdoctestが実行された後に実行されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:65
+msgid ""
+"A doctest-style code block.  You can use standard :mod:`doctest` flags for "
+"controlling how actual output is compared with what you give as output.  The"
+" default set of flags is specified by the :confval:`doctest_default_flags` "
+"configuration variable."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:70
+msgid "This directive supports five options:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:72
+msgid ""
+"``hide``, a flag option, hides the doctest block in other builders.  By "
+"default it is shown as a highlighted doctest block."
+msgstr ""
+"``hide``\\ "
+"はフラグオプションです。他のビルダーの使用時に、doctestブロックを隠します。デフォルトでは、ハイライトされたdoctestブロックとして表示されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:75
+msgid ""
+"``options``, a string option, can be used to give a comma-separated list of "
+"doctest flags that apply to each example in the tests.  (You still can give "
+"explicit flags per example, with doctest comments, but they will show up in "
+"other builders too.)"
+msgstr ""
+"``options``\\ "
+"は文字列オプションです。それぞれのテストのサンプルに対して、カンマ区切りのdoctestフラグのリストを設定するのに使用します。doctestコメントの中でサンプルごとにフラグを明示することもできますが、他のビルダーをしようすると、そのフラグまでレンダリングされてしまいます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:80
+msgid ""
+"``pyversion``, a string option, can be used to specify the required Python "
+"version for the example to be tested. For instance, in the following case "
+"the example will be tested only for Python versions greater than 3.3::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:87
+msgid "The following operands are supported:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:89
+msgid "``~=``: Compatible release clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:90
+msgid "``==``: Version matching clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:91
+msgid "``!=``: Version exclusion clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:92
+msgid "``<=``, ``>=``: Inclusive ordered comparison clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:93
+msgid "``<``, ``>``: Exclusive ordered comparison clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:94
+msgid "``===``: Arbitrary equality clause."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:96
+msgid ""
+"``pyversion`` option is followed :pep:`PEP-440: Version Specifiers "
+"<440#version-specifiers>`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:103
+msgid "Supported PEP-440 operands and notations"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:105
+#: ../../sphinx/doc/usage/extensions/doctest.rst:132
+#: ../../sphinx/doc/usage/extensions/doctest.rst:170
+msgid ""
+"``trim-doctest-flags`` and ``no-trim-doctest-flags``, a flag option, doctest"
+" flags (comments looking like ``# doctest: FLAG, ...``) at the ends of lines"
+" and ``<BLANKLINE>`` markers are removed (or not removed) individually.  "
+"Default is ``trim-doctest-flags``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:110
+msgid ""
+"Note that like with standard doctests, you have to use ``<BLANKLINE>`` to "
+"signal a blank line in the expected output.  The ``<BLANKLINE>`` is removed "
+"when building presentation output (HTML, LaTeX etc.)."
+msgstr ""
+"標準ライブラリのdoctestでは、予想出力の中に空行を入れたい場合には\\ ``<BLANKLINE>``\\ "
+"というキーワードを指定しなければなりませんでした。\\ ``<BLANKLINE>``\\ "
+"はHTMLやLaTeXなど、人が読める出力を行うビルドの際には削除されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:114
+msgid "Also, you can give inline doctest options, like in doctest::"
+msgstr "doctestの中で書くのと同様に、インラインでdoctestのオプションを指定することもできます::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:119
+msgid ""
+"They will be respected when the test is run, but stripped from presentation "
+"output."
+msgstr "これらのオプションは、テストの実行時には識別されますが、HTMLなどの出力の際には削除されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:125
+msgid "A code block for a code-output-style test."
+msgstr "コード-出力タイプのテストのコードブロックです。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:127
+msgid "This directive supports three options:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:129
+msgid ""
+"``hide``, a flag option, hides the code block in other builders.  By default"
+" it is shown as a highlighted code block."
+msgstr ""
+"``hide``\\ "
+"はフラグオプションです。他のビルダーの使用時に、codeブロックを隠します。デフォルトでは、ハイライトされたcodeブロックとして表示されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:139
+msgid ""
+"Code in a ``testcode`` block is always executed all at once, no matter how "
+"many statements it contains.  Therefore, output will *not* be generated for "
+"bare expressions -- use ``print``.  Example::"
+msgstr ""
+"``testcode`` ブロックの中のコードは、含まれている文の量に関わらず、すべて、一度だけ実行されます。そのため、単なる式の場合には、出力は "
+"**行われません** 。 ``print`` を使用してください。サンプル::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:152
+msgid ""
+"Also, please be aware that since the doctest module does not support mixing "
+"regular output and an exception message in the same snippet, this applies to"
+" testcode/testoutput as well."
+msgstr ""
+"doctestモジュールも、通常の出力と、例外メッセージを同じコードスニペット内で混ぜた書き方をサポートしていないように、testcode/testoutputにも同様の制限がある点に注意してください。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:159
+msgid ""
+"The corresponding output, or the exception message, for the last "
+":rst:dir:`testcode` block."
+msgstr "最後に定義された :rst:dir:`testcode` ブロックに対応する出力, もしくは例外メッセージを定義します。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:162
+msgid "This directive supports four options:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:164
+msgid ""
+"``hide``, a flag option, hides the output block in other builders.  By "
+"default it is shown as a literal block without highlighting."
+msgstr ""
+"``hide``\\ "
+"はフラグオプションです。他のビルダーの使用時に、ブロックを隠します。デフォルトでは、ハイライトせずにリテラルブロックとして表示されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:167
+msgid ""
+"``options``, a string option, can be used to give doctest flags (comma-"
+"separated) just like in normal doctest blocks."
+msgstr ""
+"``options``\\ "
+"は文字列オプションで、通常のdoctestブロックと同じように、カンマ区切りのdoctestのフラグを設定するのに使用されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:175
+msgid "Example::"
+msgstr "サンプル::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:187
+msgid ""
+"The following is an example for the usage of the directives.  The test via "
+":rst:dir:`doctest` and the test via :rst:dir:`testcode` and "
+":rst:dir:`testoutput` are equivalent. ::"
+msgstr ""
+"以下のコードはこれらのディレクティブの使用方法のサンプルです。 :rst:dir:`doctest` を使用したテストと、 "
+":rst:dir:`testcode` および :rst:dir:`testoutput` の二つで構成されたテストは等価です. ::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:221
+msgid "Skipping tests conditionally"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:223
+msgid ""
+"``skipif``, a string option, can be used to skip directives conditionally. "
+"This may be useful e.g. when a different set of tests should be run "
+"depending on the environment (hardware, network/VPN, optional dependencies "
+"or different versions of dependencies). The ``skipif`` option is supported "
+"by all of the doctest directives. Below are typical use cases for ``skipif``"
+" when used for different directives:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:230
+msgid ":rst:dir:`testsetup` and :rst:dir:`testcleanup`"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:232
+msgid "conditionally skip test setup and/or cleanup"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:233
+msgid "customize setup/cleanup code per environment"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:235
+msgid ":rst:dir:`doctest`"
+msgstr ":rst:dir:`doctest`"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:237
+msgid "conditionally skip both a test and its output verification"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:239
+msgid ":rst:dir:`testcode`"
+msgstr ":rst:dir:`testcode`"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:241
+msgid "conditionally skip a test"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:242
+msgid "customize test code per environment"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:244
+msgid ":rst:dir:`testoutput`"
+msgstr ":rst:dir:`testoutput`"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:246
+msgid "conditionally skip output assertion for a skipped test"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:247
+msgid "expect different output depending on the environment"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:249
+msgid ""
+"The value of the ``skipif`` option is evaluated as a Python expression. If "
+"the result is a true value, the directive is omitted from the test run just "
+"as if it wasn't present in the file at all."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:253
+msgid ""
+"Instead of repeating an expression, the :confval:`doctest_global_setup` "
+"configuration option can be used to assign it to a variable which can then "
+"be used instead."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:257
+msgid "Here's an example which skips some tests if Pandas is not installed:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:259
+msgid "conf.py"
+msgstr "conf.py"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:270
+msgid "contents.rst"
+msgstr "contents.rst"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:296
+msgid "Configuration"
+msgstr "設定"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:298
+msgid "The doctest extension uses the following configuration values:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:302
+msgid "By default, these options are enabled:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:304
+msgid ""
+"``ELLIPSIS``, allowing you to put ellipses in the expected output that match"
+" anything in the actual output;"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:306
+msgid ""
+"``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon"
+" and any module information in the exception name to be ignored;"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:308
+msgid ""
+"``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is "
+"given -- the default behavior of accepting this substitution is a relic of "
+"pre-Python 2.2 times."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:316
+msgid ""
+"A list of directories that will be added to :data:`sys.path` when the "
+"doctest builder is used.  (Make sure it contains absolute paths.)"
+msgstr ""
+"doctestビルダーが使用されるときに、 :data:`sys.path` "
+"に対して追加されるディレクトリのリストです。必ず絶対パスで記述してください。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:321
+msgid ""
+"Python code that is treated like it were put in a ``testsetup`` directive "
+"for *every* file that is tested, and for every group.  You can use this to "
+"e.g. import modules you will always need in your doctests."
+msgstr ""
+"Pythonコードを記述します。このコードはテストされる\\ *すべての*\\ ファイルの\\ ``testsetup``\\ "
+"ディレクティブに書き込んだのと同じように扱われます。例えば、doctest時にいつでも必要となるモジュールをimportするといった用途に使用できます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:329
+msgid ""
+"Python code that is treated like it were put in a ``testcleanup`` directive "
+"for *every* file that is tested, and for every group.  You can use this to "
+"e.g. remove any temporary files that the tests leave behind."
+msgstr ""
+"すべてのテストグループがテストを終了したあとに呼ばれる、 ``testcleanup`` ディレクティブを、*すべての*\\ "
+"ファイルに作ります。この設定にはPythonのコードを書きます。すべてのテンポラリファイルを削除などの使い方ができます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:337
+msgid ""
+"If this is a nonempty string (the default is ``'default'``), standard reST "
+"doctest blocks will be tested too.  They will be assigned to the group name "
+"given."
+msgstr ""
+"この値に空でない文字列(デフォルトは\\ "
+"``'default'``)が設定されると、標準のreSTのdoctestブロックもテストされるようになります。それらのテストには、ここで与えられたグループ名が設定されます。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:341
+msgid ""
+"reST doctest blocks are simply doctests put into a paragraph of their own, "
+"like so::"
+msgstr "reSTのdoctestブロックは、reSTの中のパラグラフとして単純にdoctestが置かれます::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:351
+msgid ""
+"(Note that no special ``::`` is used to introduce a doctest block; docutils "
+"recognizes them from the leading ``>>>``.  Also, no additional indentation "
+"is used, though it doesn't hurt.)"
+msgstr ""
+"reSTの場合は、doctestブロックを表現するのに特別な\\ ``::``\\ は使用されません。docutilsは\\ ``>>>``\\ "
+"から始まる行を識別します。そのため、doctestのために追加でインデントを設定する必要はありません。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:355
+msgid ""
+"If this value is left at its default value, the above snippet is interpreted"
+" by the doctest builder exactly like the following::"
+msgstr ""
+"この設定値がデフォルトのままであったとすると、上記のコード片は、下記のように書いた場合と同じようにdoctestビルダーから解釈されます::"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:367
+msgid ""
+"This feature makes it easy for you to test doctests in docstrings included "
+"with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a"
+" special directive."
+msgstr ""
+"この機能があるおかげで :mod:`~sphinx.ext.autodoc` "
+"拡張を使用して取り込んだdocstring中のdoctestを簡単に実行できます。特別なディレクティブでマークアップする必要はありません。"
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:371
+msgid ""
+"Note though that you can't have blank lines in reST doctest blocks.  They "
+"will be interpreted as one block ending and another one starting.  Also, "
+"removal of ``<BLANKLINE>`` and ``# doctest:`` options only works in "
+":rst:dir:`doctest` blocks, though you may set :confval:`trim_doctest_flags` "
+"to achieve that in all code blocks with Python console content."
+msgstr ""
+"しかし、 reST doctest "
+"ブロックには空行を含めることができないということに注意してください。それらは一つのブロックの終わりと別のブロックの開始として解釈されるでしょう。また "
+"``<BLANKLINE>`` と ``# doctest:`` オプションの除去は :rst:dir:`doctest` "
+"ブロックの中でのみ機能します。ただし、 :confval:`trim_doctest_flags` を設定して、 Python "
+"コンソールの内容を含むすべてのコードブロックでもそれを実現できます。"

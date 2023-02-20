@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Georg Brandl <g.brandl@gmx.net>, 2018
+# cdarlint <cdarling@126.com>, 2018
+# Melia Lee <lixiuyu97@163.com>, 2020
+# wendi cao <651645601@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-06-26 15:59+0000\n"
+"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:2
+msgid ":mod:`sphinx.ext.viewcode` -- Add links to highlighted source code"
+msgstr "：模式：`sphinx.ext.viewcode`--添加指向突出显示的源代码的链接"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:10
+msgid ""
+"This extension looks at your Python object descriptions (``.. class::``, "
+"``.. function::`` etc.) and tries to find the source files where the objects"
+" are contained.  When found, a separate HTML page will be output for each "
+"module with a highlighted version of the source code, and a link will be "
+"added to all object descriptions that leads to the source code of the "
+"described object.  A link back from the source to the description will also "
+"be inserted."
+msgstr ""
+"这个扩展查看您的Python对象描述（``。。类：```，``。。函数：``etc.）并尝试查找包含对象的源文件。找到后，将为每个模块输出一个单独的HTML页面，其中突出显示源代码版本，并将向所有对象描述添加一个链接，该链接指向所描述对象的源代码。还将插入从源到描述的链接。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:19
+msgid ""
+"Basically, ``viewcode`` extension will import the modules being linked to. "
+"If any modules have side effects on import, these will be executed when "
+"``sphinx-build`` is run."
+msgstr "基本上，`viewcode`扩展将导入链接到的模块。如果任何模块对导入有副作用，则在运行“sphinx build”时将执行这些副作用。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:23
+msgid ""
+"If you document scripts (as opposed to library modules), make sure their "
+"main routine is protected by a ``if __name__ == '__main__'`` condition."
+msgstr "如果你要引入脚本（而不是库模块），确保主程序 main 有这个条件保护着：``if __name__ == '__main__'``。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:26
+msgid ""
+"In addition, if you don't want to import the modules by ``viewcode``, you "
+"can tell the location of the location of source code to ``viewcode`` using "
+"the :event:`viewcode-find-source` event."
+msgstr ""
+"另外，如果不想通过“viewcode”导入模块，可以使用：event:`viewcode find "
+"source`事件将源代码的位置告知“viewcode”。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:30
+msgid ""
+"If :confval:`viewcode_follow_imported_members` is enabled, you will also "
+"need to resolve imported attributes using the :event:`viewcode-follow-"
+"imported` event."
+msgstr ""
+"如果启用：confval:`viewcode_follow_imported_members'，则还需要使用：event:`viewcode "
+"follow imported`事件解析导入的属性。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:34
+msgid ""
+"This extension works only on HTML related builders like ``html``, "
+"``applehelp``, ``devhelp``, ``htmlhelp``, ``qthelp`` and so on except "
+"``singlehtml``. By default ``epub`` builder doesn't support this extension "
+"(see :confval:`viewcode_enable_epub`)."
+msgstr ""
+"此插件仅适用于与HTML相关的生成器，如“HTML”、“applehelp”、“devhelp”、“htmlhelp”、“qthelp”等等，但“singlehtml”除外。默认情况下，请参阅`epub`不支持`epu``扩展名。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:40
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:44
+msgid ""
+"If this is ``True``, viewcode extension will emit :event:`viewcode-follow-"
+"imported` event to resolve the name of the module by other extensions.  The "
+"default is ``True``."
+msgstr ""
+"如果为“True”，则viewcode插件将发出：event:`viewcode follow "
+"imported`事件，通过其他插件解析模块的名称。默认值为“True”。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:50
+msgid ""
+"Renamed from ``viewcode_import`` to ``viewcode_follow_imported_members``."
+msgstr "已从“viewcode_import”重命名为“viewcode”follow“imported”members`。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:55
+msgid ""
+"If this is ``True``, viewcode extension is also enabled even if you use epub"
+" builders. This extension generates pages outside toctree, but this is not "
+"preferred as epub format."
+msgstr ""
+"如果为“True”，则即使使用epub生成器，也会启用viewcode扩展。此扩展在toctree之外生成页面，但这不是epub格式的首选。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:59
+msgid ""
+"Until 1.4.x, this extension is always enabled. If you want to generate epub "
+"as same as 1.4.x, you should set ``True``, but epub format checker's score "
+"becomes worse."
+msgstr "在1.4.x之前，此插件始终处于启用状态。如果你想生成和1.4.x一样的epub，你应该设置True，但是epub格式检查器的分数会变差。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:63
+msgid "The default is ``False``."
+msgstr "默认为“False”。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:69
+msgid ""
+"Not all epub readers support pages generated by viewcode extension. These "
+"readers ignore links to pages are not under toctree."
+msgstr "并非所有epub阅读器都支持viewcode插件生成的页面。这些读者会忽略指向不在目录树下的页面的链接。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:72
+msgid ""
+"Some reader's rendering result are corrupted and `epubcheck "
+"<https://github.com/IDPF/epubcheck>`_'s score becomes worse even if the "
+"reader supports."
+msgstr ""
+"某些读取器的呈现结果已损坏，并且“epubcheck”<https://github.com/IDPF/epubcheck>`_即使读者支持，他的分数也会变得更糟。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:80
+msgid ""
+"Find the source code for a module. An event handler for this event should "
+"return a tuple of the source code itself and a dictionary of tags. The "
+"dictionary maps the name of a class, function, attribute, etc to a tuple of "
+"its type, the start line number, and the end line number. The type should be"
+" one of \"class\", \"def\", or \"other\"."
+msgstr ""
+"查找模块的源代码。此事件的事件处理程序应返回源代码本身的元组和标记字典。字典将类、函数、属性等的名称映射到其类型、起始行号和结束行号的元组。类型应为“class”、“def”或“other”之一。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:0
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:87
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:96
+msgid "The Sphinx application object."
+msgstr "Sphinx应用程序对象。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:88
+msgid "The name of the module to find source code for."
+msgstr "要查找其源代码的模块的名称。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:94
+msgid "Find the name of the original module for an attribute."
+msgstr "查找属性的原始模块的名称。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:97
+msgid "The name of the module that the attribute belongs to."
+msgstr "属性所属模块的名称。"
+
+#: ../../sphinx/doc/usage/extensions/viewcode.rst:98
+msgid "The name of the member to follow."
+msgstr "要跟随的成员的名称。"

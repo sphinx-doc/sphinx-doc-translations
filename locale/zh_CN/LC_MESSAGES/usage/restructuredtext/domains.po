@@ -1,0 +1,1990 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# cdarlint <cdarling@126.com>, 2018
+# Georg Brandl <g.brandl@gmx.net>, 2019
+# wendi cao <651645601@qq.com>, 2020
+# Melia Lee <lixiuyu97@163.com>, 2020
+# Lu <lu2github@gmail.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-03-29 15:10+0000\n"
+"Last-Translator: Lu <lu2github@gmail.com>, 2022\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:5
+msgid "Domains"
+msgstr "域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:9
+msgid ""
+"Originally, Sphinx was conceived for a single project, the documentation of "
+"the Python language.  Shortly afterwards, it was made available for everyone"
+" as a documentation tool, but the documentation of Python modules remained "
+"deeply built in -- the most fundamental directives, like ``function``, were "
+"designed for Python objects.  Since Sphinx has become somewhat popular, "
+"interest developed in using it for many different purposes: C/C++ projects, "
+"JavaScript, or even reStructuredText markup (like in this documentation)."
+msgstr ""
+"最初，Sphinx是为单个项目构思的，即Python语言的文档。不久之后，它作为一个文档工具开放给每个人，但Python模块的文档仍然内置 —— "
+"最基本的指令，如“function”，是为Python对象设计的。由于Sphinx在某种程度上变得流行起来，人们对将它用于许多不同目的产生了兴趣：C/ "
+"c++项目、JavaScript，甚至是重构文本标记（如本文档中所示）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:17
+msgid ""
+"While this was always possible, it is now much easier to easily support "
+"documentation of projects using different programming languages or even ones"
+" not supported by the main Sphinx distribution, by providing a **domain** "
+"for every such purpose."
+msgstr ""
+"虽然这一直都是可能的，但是现在，通过为每种目的提供一个**域**，可以更容易地支持使用不同编程语言（甚至是主Sphinx发行版不支持的语言）的项目文档。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:22
+msgid ""
+"A domain is a collection of markup (reStructuredText :term:`directive`\\ s "
+"and :term:`role`\\ s) to describe and link to :term:`object`\\ s belonging "
+"together, e.g. elements of a programming language.  Directive and role names"
+" in a domain have names like ``domain:name``, e.g. ``py:function``.  Domains"
+" can also provide custom indices (like the Python Module Index)."
+msgstr ""
+"域是一组标签（reStructuredText :term:`directive`\\ s and :term:`role`\\ s），用于描述和链接"
+"  :term:`object`\\ s ，属于一起，例如编程语言的元素。域中的指令和角色名称具有诸如 domain:name 之类的名称，例如 "
+"py:function 。域还可以提供自定义索引(例如Python模块索引)。一个域是一个标记的集合（reStructuredText "
+":term:`指令` and :term:`角色`），用来描述和链接属于一起的 :term:`对象` "
+"，例如编程语言的元素。域中的指令名和角色名有如下名称“domain:name”，例如“py:function”。域还可以提供自定义索引（如Python "
+"模块索引）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:28
+msgid ""
+"Having domains means that there are no naming problems when one set of "
+"documentation wants to refer to e.g. C++ and Python classes.  It also means "
+"that extensions that support the documentation of whole new languages are "
+"much easier to write."
+msgstr "拥有域意味着当一组文档引用（例如c++和Python类）时不会出现命名问题。这还意味着支持全新语言文档的扩展更容易编写。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:33
+msgid ""
+"This section describes what the domains that are included with Sphinx "
+"provide. The domain API is documented as well, in the section :ref:`domain-"
+"api`."
+msgstr "本节描述Sphinx包含的域提供了什么。域API也被记录在 :ref:`domain-api`一节中。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:40
+msgid "Basic Markup"
+msgstr "基本标记"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:42
+msgid ""
+"Most domains provide a number of :dfn:`object description directives`, used "
+"to describe specific objects provided by modules.  Each directive requires "
+"one or more signatures to provide basic information about what is being "
+"described, and the content should be the description."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:47
+msgid ""
+"A domain will typically keep an internal index of all entities to aid cross-"
+"referencing. Typically it will also add entries in the shown general index. "
+"If you want to suppress the addition of an entry in the shown index, you can"
+" give the directive option flag ``:noindexentry:``. If you want to exclude "
+"the object description from the table of contents, you can give the "
+"directive option flag ``:nocontentsentry:``. If you want to typeset an "
+"object description, without even making it available for cross-referencing, "
+"you can give the directive option flag ``:noindex:`` (which implies "
+"``:noindexentry:``). Though, note that not every directive in every domain "
+"may support these options."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:60
+msgid ""
+"The directive option ``noindexentry`` in the Python, C, C++, and Javascript "
+"domains."
+msgstr "指令选项“`noindexentry”在Python、C、C++和Javascript域。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:64
+msgid ""
+"The directive option ``:nocontentsentry:`` in the Python, C, C++, "
+"Javascript, and reStructuredText domains."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:68
+msgid "An example using a Python domain directive::"
+msgstr "使用Python域指令的一个例子::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:75
+msgid ""
+"This describes the two Python functions ``spam`` and ``ham``.  (Note that "
+"when signatures become too long, you can break them if you add a backslash "
+"to lines that are continued in the next line.  Example::"
+msgstr "这描述了两个Python函数‘spam’和‘ham’。(请注意，当签名太长时，如果在下一行继续的行中添加一个反斜杠，可以将其断开。例如::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:83
+msgid "(This example also shows how to use the ``:noindex:`` flag.)"
+msgstr "（这个例子还展示了如何使用“ :noindex: ”标志。）"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:85
+msgid ""
+"The domains also provide roles that link back to these object descriptions. "
+"For example, to link to one of the functions described in the example above,"
+" you could say ::"
+msgstr "域还提供链接回这些对象描述的角色。例如，要链接到上面示例中描述的其中一个函数，您可以说："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:91
+msgid ""
+"As you can see, both directive and role names contain the domain name and "
+"the directive name."
+msgstr "如您所见，指令和角色名称都包含域名和指令名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:95
+msgid "Default Domain"
+msgstr "默认域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:96
+msgid ""
+"For documentation describing objects from solely one domain, authors will "
+"not have to state again its name at each directive, role, etc... after "
+"having specified a default. This can be done either via the config value "
+":confval:`primary_domain` or via this directive:"
+msgstr ""
+"对于仅从一个域描述对象的文档，作者在指定默认值后，不必再在每个指令，角色等处再次声明其名称。这可以通过配置值:confval:`primary_domain`或通过此指令来完成："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:103
+msgid ""
+"Select a new default domain.  While the :confval:`primary_domain` selects a "
+"global default, this only has an effect within the same file."
+msgstr "选择一个新的默认域。虽然:confval:`primary_domain`选择全局默认值，但这只在同一个文件中有效。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:106
+msgid ""
+"If no other default is selected, the Python domain (named ``py``) is the "
+"default one, mostly for compatibility with documentation written for older "
+"versions of Sphinx."
+msgstr "如果没有选择其他默认值，则Python域(名为“py”)是默认值，主要是为了与为旧版Sphinx编写的文档兼容。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:110
+msgid ""
+"Directives and roles that belong to the default domain can be mentioned "
+"without giving the domain name, i.e. ::"
+msgstr "属于默认域的指令和角色可以在不给出域名的情况下被提及，即::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:120
+msgid "Cross-referencing syntax"
+msgstr "交叉引用语法"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:122
+msgid ""
+"For cross-reference roles provided by domains, the same facilities exist as "
+"for general cross-references.  See :ref:`xref-syntax`."
+msgstr "对于域提供的交叉引用角色，存在与一般交叉引用相同的工具。请参阅 :ref:`交叉引用语法` 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:125
+msgid "In short:"
+msgstr "简而言之:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:127
+msgid ""
+"You may supply an explicit title and reference target: ``:role:`title "
+"<target>``` will refer to *target*, but the link text will be *title*."
+msgstr ""
+"您可以提供一个明确的标题和引用目标：“`:role:`title <target>`”将指向*target*，但是链接文本将是*title*。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:130
+msgid ""
+"If you prefix the content with ``!``, no reference/hyperlink will be "
+"created."
+msgstr "如果在内容前加上“！” ，则不会创建引用或超链接。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:132
+msgid ""
+"If you prefix the content with ``~``, the link text will only be the last "
+"component of the target.  For example, ``:py:meth:`~Queue.Queue.get``` will "
+"refer to ``Queue.Queue.get`` but only display ``get`` as the link text."
+msgstr ""
+"如果在内容前面添加“~”，则链接文本将只是目标的最后一个组件。例如， :py:meth:`~Queue.Queue.get` 将引用 "
+"“Queue.Queue.get ”但仅显示“ get ”作为链接文本。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:139
+msgid "The Python Domain"
+msgstr "Python域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:141
+msgid ""
+"The Python domain (name **py**) provides the following directives for module"
+" declarations:"
+msgstr "Python域(name **py**)为模块声明提供了以下指令:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:146
+msgid ""
+"This directive marks the beginning of the description of a module (or "
+"package submodule, in which case the name should be fully qualified, "
+"including the package name).  A description of the module such as the "
+"docstring can be placed in the body of the directive."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:151
+msgid "This directive will also cause an entry in the global module index."
+msgstr "该指令还将导致全局模块索引中的条目。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:155
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1876
+msgid "Module directives support body content."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:158
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:212
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:241
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:272
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:310
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:339
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:371
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:401
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2011
+msgid "options"
+msgstr "选项"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:162
+msgid ""
+"Indicate platforms which the module is available (if it is available on all "
+"platforms, the option should be omitted).  The keys are short identifiers; "
+"examples that are in use include \"IRIX\", \"Mac\", \"Windows\" and "
+"\"Unix\".  It is important to use a key which has already been used when "
+"applicable."
+msgstr ""
+"指出模块可用的平台（如果它在所有平台上都可用，该选项应被省略）。键是短的标识符;使用中的例子包括“IRIX”、“Mac”、“Windows”和“Unix”。在适当的时候使用已经使用过的密钥是重要的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:171
+msgid ""
+"Consist of one sentence describing the module's purpose -- it is currently "
+"only used in the Global Module Index."
+msgstr "由描述模块用途的一句话组成——它目前只在全局模块索引中使用。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:177
+msgid ""
+"Mark a module as deprecated; it will be designated as such in various "
+"locations then."
+msgstr "将模块标记为已弃用；届时，它将在不同的地点被指定为这样的场所。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:184
+msgid ""
+"This directive tells Sphinx that the classes, functions etc. documented from"
+" here are in the given module (like :rst:dir:`py:module`), but it will not "
+"create index entries, an entry in the Global Module Index, or a link target "
+"for :rst:role:`py:mod`.  This is helpful in situations where documentation "
+"for things in a module is spread over multiple files or sections -- one "
+"location has the :rst:dir:`py:module` directive, the others only "
+":rst:dir:`py:currentmodule`."
+msgstr ""
+"该指令告诉Sphinx，这里记录的类，函数等都在给定的模块中(如 "
+":rst:dir:`py:module`)，但它不会创建索引条目，全局模块索引中的条目，或者一个链接目标  :rst:role:`py:mod` "
+"。这在模块中的事物文档分布在多个文件或部分的情况下很有用 - 一个位置具有 :rst:dir:`py:module`  "
+"指令，其他只有:rst:dir:`py:currentmodule` 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:192
+msgid "The following directives are provided for module and class contents:"
+msgstr "为模块和类内容提供以下指令："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:196
+msgid ""
+"Describes a module-level function.  The signature should include the "
+"parameters as given in the Python function definition, see "
+":ref:`signatures`. For example::"
+msgstr "描述模块级功能。签名应该包含Python函数定义中给出的参数，请参阅 :ref:`签名`。例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:202
+msgid "For methods you should use :rst:dir:`py:method`."
+msgstr "您应该使用的方法 :rst:dir:`py:method` 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:204
+msgid ""
+"The description normally includes information about the parameters required "
+"and how they are used (especially whether mutable objects passed as "
+"parameters are modified), side effects, and possible exceptions."
+msgstr "描述通常包括有关所需参数及其使用方式的信息（特别是是否修改了作为参数传递的可变对象，副作用和可能的异常。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:208
+msgid ""
+"This information can (in any ``py`` directive) optionally be given in a "
+"structured form, see :ref:`info-field-lists`."
+msgstr "这个信息可以(在任何 “py” 指令中)可选地以结构化形式给出，参见:ref:`信息字段列表 `。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:216
+msgid "Indicate the function is an async function."
+msgstr "指出该函数是一个异步函数。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:223
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:255
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:314
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:353
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:419
+msgid ""
+"Describe the location where the object is defined if the object is imported "
+"from other modules"
+msgstr "如果对象是从其他模块导入的，请描述定义对象的位置。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:236
+msgid ""
+"Describes global data in a module, including both variables and values used "
+"as \"defined constants.\"  Class and object attributes are not documented "
+"using this environment."
+msgstr "描述模块中的全局数据，包括用作“定义的常量”的变量和值。使用此环境不记录类和对象属性。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:268
+msgid ""
+"Describes an exception class.  The signature can, but need not include "
+"parentheses with constructor arguments."
+msgstr "描述异常类。签名可以，但不必包括带有构造函数参数的括号。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:276
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:322
+msgid "Indicate the class is a final class."
+msgstr "指明这个类是最后一个类。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:289
+msgid ""
+"Describes a class.  The signature can optionally include parentheses with "
+"parameters which will be shown as the constructor arguments.  See also "
+":ref:`signatures`."
+msgstr "描述一个类。签名可以选择包括带有参数的括号，这些参数将显示为构造函数参数。另见 :ref:`签名` 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:293
+msgid ""
+"Methods and attributes belonging to the class should be placed in this "
+"directive's body.  If they are placed outside, the supplied name should "
+"contain the class name so that cross-references still work.  Example::"
+msgstr "属于该类的方法和属性应放在此指令的主体中。如果将它们放在外面，则提供的名称应包含类名，以便交叉引用仍然有效。例："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:307
+msgid "The first way is the preferred one."
+msgstr "第一种方式是首选方式。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:334
+msgid ""
+"Describes an object data attribute.  The description should include "
+"information about the type of the data to be expected and whether it may be "
+"changed directly."
+msgstr "描述对象数据属性。描述应包括有关预期数据类型的信息以及是否可以直接更改。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:366
+msgid "Describes an object property."
+msgstr "描述一个对象的属性。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:375
+msgid "Indicate the property is abstract."
+msgstr "表明该属性是抽象的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:380
+msgid "Indicate the property is a classmethod."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:395
+msgid ""
+"Describes an object method.  The parameters should not include the ``self`` "
+"parameter.  The description should include similar information to that "
+"described for ``function``.  See also :ref:`signatures` and :ref:`info-"
+"field-lists`."
+msgstr ""
+"描述对象方法。参数不应包含 self 参数。描述应该包括与“function”描述的类似的信息。另见 :ref:`签名` 和:ref:`信息字段列表` "
+"。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:405
+msgid "Indicate the method is an abstract method."
+msgstr "指明该方法是抽象方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:412
+msgid "Indicate the method is an async method."
+msgstr "指明该方法是一个异步方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:427
+msgid "Indicate the method is a class method."
+msgstr "指明该方法是一个类方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:434
+msgid "Indicate the class is a final method."
+msgstr "指明这个类是最后一个方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:447
+msgid "Indicate the method is a static method."
+msgstr "指明该方法是抽象方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:454
+msgid ""
+"Like :rst:dir:`py:method`, but indicates that the method is a static method."
+msgstr "像 :rst:dir:`py:method`，但表示该方法是静态方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:460
+msgid ""
+"Like :rst:dir:`py:method`, but indicates that the method is a class method."
+msgstr "像 :rst:dir:`py:method`，但表示该方法是一个类方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:467
+msgid ""
+"Describes a decorator function.  The signature should represent the usage as"
+" a decorator.  For example, given the functions"
+msgstr "描述装饰器函数。签名应该表示作为装饰器的用法。例如，给定函数"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:482
+msgid "the descriptions should look like this::"
+msgstr "描述应如下所示::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:492
+msgid "(as opposed to ``.. py:decorator:: removename(func)``.)"
+msgstr "（而不是“.. py:装饰器:: removename(func)”。）"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:494
+msgid ""
+"There is no ``py:deco`` role to link to a decorator that is marked up with "
+"this directive; rather, use the :rst:role:`py:func` role."
+msgstr "没有“py:deco”角色链接到用这个指令标记的装饰器；相反，使用:rst:role:`py:func` 角色。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:500
+msgid "Same as :rst:dir:`py:decorator`, but for decorators that are methods."
+msgstr "与 :rst:dir:`py:装饰器`相同，但对于作为方法的装饰器。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:502
+msgid "Refer to a decorator method using the :rst:role:`py:meth` role."
+msgstr "使用 :rst:role:`py:meth` 角色引用装饰器方法。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:507
+msgid "Python Signatures"
+msgstr "Python签名"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:509
+msgid ""
+"Signatures of functions, methods and class constructors can be given like "
+"they would be written in Python."
+msgstr "函数，方法和类构造函数的签名可以像在Python中编写一样给出。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:512
+msgid ""
+"Default values for optional arguments can be given (but if they contain "
+"commas, they will confuse the signature parser).  Python 3-style argument "
+"annotations can also be given as well as return type annotations::"
+msgstr "可以给出可选参数的默认值(但如果它们包含逗号，则会混淆签名解析器)。还可以给出Python 3样式的参数注释以及返回类型注释："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:518
+msgid ""
+"For functions with optional parameters that don't have default values "
+"(typically functions implemented in C extension modules without keyword "
+"argument support), you can use brackets to specify the optional parts:"
+msgstr "对于具有可选参数但没有默认值的函数(通常在没有关键字参数支持的C扩展模块中实现的函数)，可以使用括号指定可选部分："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:525
+msgid "It is customary to put the opening bracket before the comma."
+msgstr "习惯上将开口括号放在逗号之前。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:530
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1580
+msgid "Info field lists"
+msgstr "信息字段列表"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:535
+msgid "meta fields are added."
+msgstr "元字段被添加。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:537
+msgid ""
+"Inside Python object description directives, reST field lists with these "
+"fields are recognized and formatted nicely:"
+msgstr "在Python对象描述指令中，具有这些字段的reST字段列表可以很好地识别和格式化："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:540
+msgid ""
+"``param``, ``parameter``, ``arg``, ``argument``, ``key``, ``keyword``: "
+"Description of a parameter."
+msgstr "描述一个参数：“`param”，“parameter”，“arg”, “argument”，“key”，“keyword”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:542
+msgid "``type``: Type of a parameter.  Creates a link if possible."
+msgstr "“type”：参数的类型。如果可能，创建一个链接。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:543
+msgid ""
+"``raises``, ``raise``, ``except``, ``exception``: That (and when) a specific"
+" exception is raised."
+msgstr "“raises”，“raise”，“except”，“exception”：指（当）引一个特定的异常抛出。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:545
+msgid "``var``, ``ivar``, ``cvar``: Description of a variable."
+msgstr "\"var，“ivar”，“cvar”：变量的描述。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:546
+msgid "``vartype``: Type of a variable.  Creates a link if possible."
+msgstr "“vartype”：变量类型。 如果可能，创建一个链接。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:547
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:734
+msgid "``returns``, ``return``: Description of the return value."
+msgstr "“returns”，“return”： 返回值的描述。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:548
+msgid "``rtype``: Return type.  Creates a link if possible."
+msgstr "“rtype”：返回类型。 如果可能，创建一个链接。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:549
+msgid ""
+"``meta``: Add metadata to description of the python object.  The metadata "
+"will not be shown on output document.  For example, ``:meta private:`` "
+"indicates the python object is private member.  It is used in "
+":py:mod:`sphinx.ext.autodoc` for filtering members."
+msgstr ""
+"\"meta”：python对象的描述中添加元数据。元数据不会显示在输出文档中。例如，“:meta private: "
+"”表示python对象是私有成员。它被用于:py:mod:sphinx.ext.autodoc`，筛选成员。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:556
+msgid ""
+"In current release, all ``var``, ``ivar`` and ``cvar`` are represented as "
+"\"Variable\".  There is no difference at all."
+msgstr "在当前版本中，所有\"var，“ivar”，“cvar”都表示为 “Variable（变量）” 。完全没有区别。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:559
+msgid ""
+"The field names must consist of one of these keywords and an argument "
+"(except for ``returns`` and ``rtype``, which do not need an argument).  This"
+" is best explained by an example::"
+msgstr "字段名称必须包含这些关键字之一和参数（除了“returns”和“rtype”，它们不需要参数）。这可以用一个例子来解释："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:577
+msgid "This will render like this:"
+msgstr "这将呈现如下："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:582
+msgid "Send a message to a recipient"
+msgstr "向收件人发送邮件"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:584
+msgid "The person sending the message"
+msgstr "发送消息的人"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:585
+msgid "The recipient of the message"
+msgstr "邮件的收件人"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:586
+msgid "The body of the message"
+msgstr "消息的正文"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:587
+msgid "The priority of the message, can be a number 1-5"
+msgstr "消息的优先级可以是1-5"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Returns"
+msgstr "返回"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:589
+msgid "the message id"
+msgstr "消息ID"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Raises"
+msgstr "引发"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:591
+msgid "if the message_body exceeds 160 characters"
+msgstr "如果信息主体超过160个字符"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:592
+msgid "if the message_body is not a basestring"
+msgstr "如果信息主体不是基本字符串"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:594
+msgid ""
+"It is also possible to combine parameter type and description, if the type "
+"is a single word, like this::"
+msgstr "如果类型是单个单词，也可以组合参数类型和描述，如下："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:601
+msgid ""
+"Container types such as lists and dictionaries can be linked automatically "
+"using the following syntax::"
+msgstr "可以使用以下语法自动链接容器类型，如列表和词典::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:611
+msgid ""
+"Multiple types in a type field will be linked automatically if separated by "
+"the word \"or\"::"
+msgstr "如果用单词“或”分隔，则类型字段中的多个类型将自动链接::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:621
+msgid "Cross-referencing Python objects"
+msgstr "交叉引用Python对象"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:623
+msgid ""
+"The following roles refer to objects in modules and are possibly hyperlinked"
+" if a matching identifier is found:"
+msgstr "以下角色引用模块中的对象，如果找到匹配的标识符，则可能是超链接："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:628
+msgid ""
+"Reference a module; a dotted name may be used.  This should also be used for"
+" package names."
+msgstr "参考模块；可以使用虚线名称，这也应该用于包名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:633
+msgid ""
+"Reference a Python function; dotted names may be used.  The role text needs "
+"not include trailing parentheses to enhance readability; they will be added "
+"automatically by Sphinx if the :confval:`add_function_parentheses` config "
+"value is ``True`` (the default)."
+msgstr ""
+"引用Python函数；可以使用带虚线的名称。角色文本不需要包括尾随括号以增强可读性；如果:confval:`add_function_parentheses`"
+" 配置值为“ True” (默认值)，它们将由Sphinx自动添加。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:640
+msgid "Reference a module-level variable."
+msgstr "引用模块级变量。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:644
+msgid ""
+"Reference a \"defined\" constant.  This may be a Python variable that is not"
+" intended to be changed."
+msgstr "引用一个“定义的”常量。这可能是一个不打算更改的Python变量。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:649
+msgid "Reference a class; a dotted name may be used."
+msgstr "引用一个类;可以使用虚线名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:653
+msgid ""
+"Reference a method of an object.  The role text can include the type name "
+"and the method name; if it occurs within the description of a type, the type"
+" name can be omitted.  A dotted name may be used."
+msgstr "引用对象的方法。角色文本可以包括类型名称和方法名称；如果它出现在类型的描述中，则可以省略类型名称。可以使用点状名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:659
+msgid "Reference a data attribute of an object."
+msgstr "引用对象的数据属性。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:661
+msgid "The role is also able to refer to property."
+msgstr "也可以指向属性。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:665
+msgid "Reference an exception.  A dotted name may be used."
+msgstr "引用一个例外。可以使用带虚线的名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:669
+msgid ""
+"Reference an object of unspecified type.  Useful e.g. as the "
+":confval:`default_role`."
+msgstr "引用未指定类型的对象。例如有用 :confval:`default_role`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:674
+msgid ""
+"The name enclosed in this markup can include a module name and/or a class "
+"name. For example, ``:py:func:`filter``` could refer to a function named "
+"``filter`` in the current module, or the built-in function of that name.  In"
+" contrast, ``:py:func:`foo.filter``` clearly refers to the ``filter`` "
+"function in the ``foo`` module."
+msgstr ""
+"此标记中包含的名称可以包括模块名称和/或类名称。例如，“`:py:func:`filter”可以引用当前模块中名为“filter”的函数，或者该名称的内置函数。相比之下，“:py:func:`foo.filter`”清楚地引用了“foo”模块中的“filter”函数。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:680
+msgid ""
+"Normally, names in these roles are searched first without any further "
+"qualification, then with the current module name prepended, then with the "
+"current module and class name (if any) prepended.  If you prefix the name "
+"with a dot, this order is reversed.  For example, in the documentation of "
+"Python's :mod:`codecs` module, ``:py:func:`open``` always refers to the "
+"built-in function, while ``:py:func:`.open``` refers to :func:`codecs.open`."
+msgstr ""
+"通常，首先搜索这些角色中的名称而不进一步限定，然后将当前模块名称添加到前面，然后使用当前模块和类名（如果有）作为前缀。如果您在名称前加一个点，则此顺序相反。例如，在Python的文档“"
+" :mod:`codecs` "
+"”模块中，“:py:func:`open`”总是引用内置函数，而“:py:func:`.open`”指“:func:`codecs.open`”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:687
+msgid ""
+"A similar heuristic is used to determine whether the name is an attribute of"
+" the currently documented class."
+msgstr "类似的启发式方法用于确定名称是否是当前记录的类的属性。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:690
+msgid ""
+"Also, if the name is prefixed with a dot, and no exact match is found, the "
+"target is taken as a suffix and all object names with that suffix are "
+"searched. For example, ``:py:meth:`.TarFile.close``` references the "
+"``tarfile.TarFile.close()`` function, even if the current module is not "
+"``tarfile``.  Since this can get ambiguous, if there is more than one "
+"possible match, you will get a warning from Sphinx."
+msgstr ""
+"此外，如果名称以点为前缀，并且未找到完全匹配，则将目标作为后缀，并搜索具有该后缀的所有对象名称。例如，“:py:meth:`.TarFile.close`”引用“tarfile.TarFile.close()”函数，即使当前模块不是“tarfile”。由于这可能会变得模棱两可，如果有多个可能匹配，您将收到Sphinx的警告。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:697
+msgid ""
+"Note that you can combine the ``~`` and ``.`` prefixes: "
+"``:py:meth:`~.TarFile.close``` will reference the "
+"``tarfile.TarFile.close()`` method, but the visible link caption will only "
+"be ``close()``."
+msgstr ""
+"请注意，您可以组合使用“~”和“.”前缀：“:py:meth:`”~.TarFile.close`”将引用“tarfile.TarFile.close()”方法，但可见的链接标题只是“close()”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:705
+msgid "The C Domain"
+msgstr "C域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:707
+msgid "The C domain (name **c**) is suited for documentation of C API."
+msgstr "C域(名称 **c**)适用于C API的文档。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:712
+msgid "Describes a C struct member or variable. Example signature::"
+msgstr "描述C结构成员或变量。签名示例："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:716
+msgid "The difference between the two directives is only cosmetic."
+msgstr "这两个指令之间的区别只是表面上的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:720
+msgid "Describes a C function. The signature should be given as in C, e.g.::"
+msgstr "描述C函数。签名应如C所示，例如::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:724
+msgid ""
+"Note that you don't have to backslash-escape asterisks in the signature, as "
+"it is not parsed by the reST inliner."
+msgstr "请注意，签名中不必使用反斜杠转义星号，因为reST内联器不会对其进行解析。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:727
+msgid ""
+"In the description of a function you can use the following info fields (see "
+"also :ref:`info-field-lists`)."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:730
+msgid ""
+"``param``, ``parameter``, ``arg``, ``argument``, Description of a parameter."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:732
+msgid ""
+"``type``: Type of a parameter, written as if passed to the "
+":rst:role:`c:expr` role."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:735
+msgid ""
+"``rtype``: Return type, written as if passed to the :rst:role:`c:expr` role."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:737
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1592
+msgid ""
+"``retval``, ``retvals``: An alternative to ``returns`` for describing the "
+"result of the function."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:740
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1596
+msgid "The ``retval`` field type."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:743
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:896
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1353
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2017
+msgid "For example::"
+msgstr "例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:753
+msgid "which renders as"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:760
+msgid "description of the first parameter."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:761
+msgid "description of the second parameter."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:762
+msgid "a result."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Return values"
+msgstr "返回值"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:763
+msgid "under some conditions."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:764
+msgid "under some other conditions as well."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:770
+msgid ""
+"Describes a C macro, i.e., a C-language ``#define``, without the replacement"
+" text."
+msgstr "描述一个C宏，即，C语言的“#define”，不包含替换文本。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:773
+msgid ""
+"In the description of a macro you can use the same info fields as for the "
+":rst:dir:`c:function` directive."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:776
+msgid "The function style variant."
+msgstr "函数样式的变体。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:781
+msgid "Describes a C struct."
+msgstr "描述一个C结构。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:787
+msgid "Describes a C union."
+msgstr "描述C联。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:793
+msgid "Describes a C enum."
+msgstr "描述一个C枚举。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:799
+msgid "Describes a C enumerator."
+msgstr "描述C枚举数。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:806
+msgid ""
+"Describes a C type, either as a typedef, or the alias for an unspecified "
+"type."
+msgstr "将C类型描述为类型定义或未指定类型的别名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:812
+msgid "Cross-referencing C constructs"
+msgstr "交叉引用C构造"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:814
+msgid ""
+"The following roles create cross-references to C-language constructs if they"
+" are defined in the documentation:"
+msgstr "如果在文档中定义了以下角色，则会创建对C语言构造的交叉引用::c:func:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:828
+msgid ""
+"Reference a C declaration, as defined above. Note that :rst:role:`c:member`,"
+" :rst:role:`c:data`, and :rst:role:`c:var` are equivalent."
+msgstr ""
+"引用C声明，如上所述。注意 :rst:role:`c:member`、 "
+":rst:role:`c:data`和:rst:role:`c:var`是等价的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:832
+msgid "The var, struct, union, enum, and enumerator roles."
+msgstr "var、struct、union、枚举和枚举器角色。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:837
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1294
+msgid "Anonymous Entities"
+msgstr "匿名的实体"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:839
+msgid ""
+"C supports anonymous structs, enums, and unions. For the sake of "
+"documentation they must be given some name that starts with ``@``, e.g., "
+"``@42`` or ``@data``. These names can also be used in cross-references, "
+"though nested symbols will be found even when omitted. The ``@...`` name "
+"will always be rendered as **[anonymous]** (possibly as a link)."
+msgstr ""
+"C++ 支持匿名命名空间、类、枚举和联合。为了文档起见，必须给它们一些以 “@ ”开头的名字，例如，“@42”或 "
+"“@data”。这些名称也可以在交叉引用中使用，尽管嵌套符号即使在省略时也会被找到。 “@...”名称将始终显示为**[匿名]**（可能作为链接）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:847
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1304
+msgid "Example::"
+msgstr "例如::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:859
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1316
+msgid "This will be rendered as:"
+msgstr "这将呈现为："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:877
+msgid "Explicit ref: :c:var:`Data.@data.a`. Short-hand ref: :c:var:`Data.a`."
+msgstr "显式 ref: :c:var:`Data.@data.a` 。简写 ref: :c:var:`Data.a`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:883
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1340
+msgid "Aliasing Declarations"
+msgstr "别名声明"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:887
+msgid ""
+"Sometimes it may be helpful list declarations elsewhere than their main "
+"documentation, e.g., when creating a synopsis of an interface. The following"
+" directive can be used for this purpose."
+msgstr "有时，除了主要文档之外，它可能是有用的列表声明，例如，在创建类接口的概要时。以下指令可用于此目的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:893
+msgid ""
+"Insert one or more alias declarations. Each entity can be specified as they "
+"can in the :rst:role:`c:any` role."
+msgstr "插入一个或多个别名声明。可以在 :rst:role:`c:any`角色中指定每个实体。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:904
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1358
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1368
+msgid "becomes"
+msgstr "变成"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:916
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1283
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1377
+msgid "Options"
+msgstr "选项"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:919
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1380
+msgid ""
+"Insert nested declarations as well, up to the total depth given. Use 0 for "
+"infinite depth and 1 for just the mentioned declaration. Defaults to 1."
+msgstr "也可以插入嵌套的声明，最多可以达到给定的总深度。使用0表示无限的深度，使用1表示 mentioned declaration 。默认为1。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:927
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1388
+msgid ""
+"Skip the mentioned declarations and only render nested declarations. "
+"Requires ``maxdepth`` either 0 or at least 2."
+msgstr "跳过 mentioned declarations ，只渲染嵌套的声明。要求 ``maxdepth`` 为0或至少为2。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:937
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1455
+msgid "Inline Expressions and Types"
+msgstr "内联表达式和类型"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:942
+msgid ""
+"Insert a C expression or type either as inline code (``cpp:expr``) or inline"
+" text (``cpp:texpr``). For example::"
+msgstr "插入C++ 表达式或键入内联代码（“`cpp:expr”）或内联文本 （“cpp:texpr”）。例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:954
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1472
+msgid "will be rendered as follows:"
+msgstr "将呈现如下："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:964
+msgid "An expression: :c:expr:`a * f(a)` (or as text: :c:texpr:`a * f(a)`)."
+msgstr "表达式:  :c:expr:`a * f(a)`（或文本:  :c:texpr:`a * f(a)`）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:966
+msgid "A type: :c:expr:`const Data*` (or as text :c:texpr:`const Data*`)."
+msgstr "类型: :c:expr:`const Data*`（或作为文本 :c:texpr:`const Data*`）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:973
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1494
+msgid "Namespacing"
+msgstr "命名空间"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:977
+msgid ""
+"The C language it self does not support namespacing, but it can sometimes be"
+" useful to emulate it in documentation, e.g., to show alternate "
+"declarations. The feature may also be used to document members of "
+"structs/unions/enums separate from their parent declaration."
+msgstr ""
+"C语言本身不支持命名空间，但有时在文档中模拟它会很有用，例如，显示替代声明。该特性还可以用于将结构体/联合/枚举的成员从其父声明中分离出来。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:982
+msgid ""
+"The current scope can be changed using three namespace directives.  They "
+"manage a stack declarations where ``c:namespace`` resets the stack and "
+"changes a given scope."
+msgstr "可以使用三个名称空间指令更改当前范围。它们管理一个堆栈声明，其中“c:namespace”重置堆栈并更改给定的范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:986
+msgid ""
+"The ``c:namespace-push`` directive changes the scope to a given inner scope "
+"of the current one."
+msgstr "“cpp:namespace-push” 指令将范围更改为当前范围的给定内部范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:989
+msgid ""
+"The ``c:namespace-pop`` directive undoes the most recent ``c:namespace-"
+"push`` directive."
+msgstr "“cpp:namespace-pop” 指令撤消了最新的 “cpp:namespace-push” 指令。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:994
+msgid ""
+"Changes the current scope for the subsequent objects to the given scope, and"
+" resets the namespace directive stack. Note that nested scopes can be "
+"specified by separating with a dot, e.g.::"
+msgstr "将后续对象的当前范围更改为给定范围，并重置命名空间指令堆栈。请注意，命名空间不需要与C++ 命名空间相对应，但可以以类的名称结尾，例如::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1000
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1515
+msgid ""
+"All subsequent objects will be defined as if their name were declared with "
+"the scope prepended. The subsequent cross-references will be searched for "
+"starting in the current scope."
+msgstr "将定义所有后续对象，就好像它们的名称是在前置范围的情况下声明的一样。将在当前范围中搜索后续交叉引用。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1004
+msgid "Using ``NULL`` or ``0`` as the scope will change to global scope."
+msgstr "使用“NULL”，“0”或“nullptr”作为范围将变为全局范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1008
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1546
+msgid "Change the scope relatively to the current scope. For example, after::"
+msgstr "相对于当前范围更改范围。例如，之后："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1014
+msgid "the current scope will be ``A.B.C.D``."
+msgstr "当前范围将是“A.B.C.D”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1018
+msgid ""
+"Undo the previous ``c:namespace-push`` directive (*not* just pop a scope). "
+"For example, after::"
+msgstr "撤消之前的“c:namespace-push”指令（*不* 只是弹出作用域）。例如，之后："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1027
+msgid "the current scope will be ``A.B`` (*not* ``A.B.C``)."
+msgstr "当前范围将是“A.”（*不是*“A.B.C”）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1029
+msgid ""
+"If no previous ``c:namespace-push`` directive has been used, but only a "
+"``c:namespace`` directive, then the current scope will be reset to global "
+"scope.  That is, ``.. c:namespace:: A.B`` is equivalent to::"
+msgstr ""
+"如果没有使用先前的“c:namespace-push”指令，但只使用“c:namespace”指令，则当前作用域将重置为全局作用域。也就是说，“.. "
+"c:namespace:: A.B”相当于::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1038
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1758
+msgid "Configuration Variables"
+msgstr "配置变量"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1040
+msgid "See :ref:`c-config`."
+msgstr "请参阅 :ref:`c-config`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1046
+msgid "The C++ Domain"
+msgstr "C++ 域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1048
+msgid "The C++ domain (name **cpp**) supports documenting C++ projects."
+msgstr "C++ 域（名称 **cpp**）支持记录C++ 项目。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1051
+msgid "Directives for Declaring Entities"
+msgstr "用于声明实体的指令"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1053
+msgid ""
+"The following directives are available. All declarations can start with a "
+"visibility statement (``public``, ``private`` or ``protected``)."
+msgstr "以下指令可用。所有声明都可以从可见性声明开始（“公共”，“四人”或“受保护的”）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1059
+msgid ""
+"Describe a class/struct, possibly with specification of inheritance, e.g.,::"
+msgstr "描述一个类或结构，可能带有继承规范，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1063
+msgid ""
+"The difference between :rst:dir:`cpp:class` and :rst:dir:`cpp:struct` is "
+"only cosmetic: the prefix rendered in the output, and the specifier shown in"
+" the index."
+msgstr ""
+" :rst:dir:`cpp:class` 和:rst:dir:`cpp:struct` "
+"之间的区别只是修饰性的:输出中呈现的前缀，以及索引中显示的说明符。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1067
+msgid "The class can be directly declared inside a nested scope, e.g.,::"
+msgstr "该类可以直接在嵌套范围内声明，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1071
+msgid "A class template can be declared::"
+msgstr "可以声明一个类模板::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1075
+msgid "or with a line break::"
+msgstr "或者换行::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1080
+msgid "Full and partial template specialisations can be declared::"
+msgstr "可以声明完整和部分模板特化："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1088
+msgid "The :rst:dir:`cpp:struct` directive."
+msgstr ":rst:dir:`cpp:struct` 指令。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1093
+msgid "Describe a function or member function, e.g.,::"
+msgstr "描述一个函数或成员函数，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1119
+msgid "Function templates can also be described::"
+msgstr "函数模板也可以描述："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1124
+msgid "and function template specialisations::"
+msgstr "和函数模板专业化："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1132
+msgid "Describe a variable or member variable, e.g.,::"
+msgstr "描述变量或成员变量，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1140
+msgid "Variable templates can also be described::"
+msgstr "变量模板也可以描述："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1149
+msgid ""
+"Describe a type as in a typedef declaration, a type alias declaration, or "
+"simply the name of a type with unspecified type, e.g.,::"
+msgstr "描述typedef声明中的类型，类型别名声明，或者只是具有未指定类型的类型的名称，例如:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1164
+msgid "A type alias can also be templated::"
+msgstr "类型别名也可以模板化："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1169
+msgid "The example are rendered as follows."
+msgstr "该示例呈现如下。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1175
+msgid "A typedef-like declaration of a type."
+msgstr "类型的typedef式声明。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1181
+msgid "Declaration of a type alias with unspecified type."
+msgstr "声明具有未指定类型的类型别名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1187
+msgid "Declaration of a type alias."
+msgstr "声明类型别名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1198
+msgid ""
+"Describe a (scoped) enum, possibly with the underlying type specified.  Any "
+"enumerators declared inside an unscoped enum will be declared both in the "
+"enum scope and in the parent scope.  Examples::"
+msgstr "描述（范围）枚举，可能具有指定的基础类型。在unscoped枚举中声明的任何枚举器都将在枚举范围和父范围内声明。例子："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1222
+msgid "Describe an enumerator, optionally with its value defined, e.g.,::"
+msgstr "描述一个枚举器，可选择定义其值，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1230
+msgid "Describe a union."
+msgstr "描述联。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1236
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1397
+msgid ""
+"The support for concepts is experimental. It is based on the current draft "
+"standard and the Concepts Technical Specification. The features may change "
+"as they evolve."
+msgstr "对概念的支持是实验性的。它基于当前的标准草案和概念技术规范。这些功能可能随着它们的发展而变化。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1240
+msgid ""
+"Describe a concept. It must have exactly 1 template parameter list. The name"
+" may be a nested name. Example::"
+msgstr "描述一个概念。它必须有1个模板参数列表。名称可以是嵌套名称。例："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1260
+msgid "This will render as follows:"
+msgstr "这将呈现如下："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1264
+msgid ""
+"Proxy to an element of a notional sequence that can be compared, indirected,"
+" or incremented."
+msgstr "可比较、间接或递增的概念性序列的一个元素的代理。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1267
+msgid "**Notation**"
+msgstr "**符号**"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1271
+msgid "An lvalue."
+msgstr "一个左值。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1273
+msgid "**Valid Expressions**"
+msgstr "**有效表达**"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1275
+msgid ":cpp:expr:`*r`, when :cpp:expr:`r` is dereferenceable."
+msgstr ":cpp:expr:`*r`，当 :cpp:expr:`r` 是可解除引用的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1276
+msgid ""
+":cpp:expr:`++r`, with return type :cpp:expr:`It&`, when :cpp:expr:`r` is "
+"incrementable."
+msgstr ":cpp:expr:`++r`，返回类型 :cpp:expr:`It&`， 当 :cpp:expr:`r` 是可递增的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1285
+msgid "Some directives support options:"
+msgstr "一些指令支持选项:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1287
+msgid ""
+"``:noindexentry:`` and ``:nocontentsentry:``, see :ref:`basic-domain-"
+"markup`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1288
+msgid ""
+"``:tparam-line-spec:``, for templated declarations. If specified, each "
+"template parameter will be rendered on a separate line."
+msgstr "“:tparam-line-spec:”，用于模板化声明。如果指定，则每个模板参数将在单独的行上呈现。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1296
+msgid ""
+"C++ supports anonymous namespaces, classes, enums, and unions. For the sake "
+"of documentation they must be given some name that starts with ``@``, e.g., "
+"``@42`` or ``@data``. These names can also be used in cross-references and "
+"(type) expressions, though nested symbols will be found even when omitted. "
+"The ``@...`` name will always be rendered as **[anonymous]** (possibly as a "
+"link)."
+msgstr ""
+"C++ 支持匿名命名空间、类、枚举和联合。为了文档起见，必须给它们一些以 “@ ”开头的名字，例如，“@42”或 "
+"“@data”。这些名称也可以在交叉引用和（类型）表达中使用，尽管嵌套符号即使在省略时也会被找到。 "
+"“@...”名称将始终显示为**[匿名]**（可能作为链接）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1334
+msgid ""
+"Explicit ref: :cpp:var:`Data::@data::a`. Short-hand ref: :cpp:var:`Data::a`."
+msgstr "显式ref: :cpp:var:`Data::@data::a` 。简写ref: :cpp:var:`Data::a`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1342
+msgid ""
+"Sometimes it may be helpful list declarations elsewhere than their main "
+"documentation, e.g., when creating a synopsis of a class interface. The "
+"following directive can be used for this purpose."
+msgstr "有时，除了主要文档之外，它可能是有用的列表声明，例如，在创建类接口的概要时。以下指令可用于此目的。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1348
+msgid ""
+"Insert one or more alias declarations. Each entity can be specified as they "
+"can in the :rst:role:`cpp:any` role. If the name of a function is given (as "
+"opposed to the complete signature), then all overloads of the function will "
+"be listed."
+msgstr ""
+"插入一个或多个别名声明。可以在  :rst:role:`cpp:any` "
+"角色中指定每个实体。如果给出了函数的名称（而不是完整的签名），那么将列出函数的所有重载。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1363
+msgid "whereas::"
+msgstr "whereas::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1395
+msgid "Constrained Templates"
+msgstr "约束模板"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1401
+msgid "Sphinx does not currently support ``requires`` clauses."
+msgstr "Sphinx目前不支持“requires”条款。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1404
+msgid "Placeholders"
+msgstr "占位符"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1406
+msgid ""
+"Declarations may use the name of a concept to introduce constrained template"
+" parameters, or the keyword ``auto`` to introduce unconstrained template "
+"parameters::"
+msgstr "声明可以使用概念的名称来引入受约束的模板参数，或者使用关键字“auto”来引入无约束的模板参数："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1420
+msgid "Template Introductions"
+msgstr "模板介绍"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1422
+msgid ""
+"Simple constrained function or class templates can be declared with a "
+"`template introduction` instead of a template parameter list::"
+msgstr "可以使用`template introduction`而不是模板参数列表声明简单约束函数或类模板："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1435
+msgid "They are rendered as follows."
+msgstr "它们呈现如下。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1441
+msgid ""
+"A function template with a template parameter constrained to be an Iterator."
+msgstr "具有模板参数的函数模板被约束为迭代器。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1447
+msgid ""
+"A class template with a template parameter constrained to be "
+"LessThanComparable."
+msgstr "具有模板参数的类模板约束为 LessThanComparable。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1450
+msgid ""
+"Note however that no checking is performed with respect to parameter "
+"compatibility. E.g., ``Iterator{A, B, C}`` will be accepted as an "
+"introduction even though it would not be valid C++."
+msgstr "但请注意，不会对参数兼容性进行检查。例如，“`template introduction`”将被接受作为介绍，即使它不是有效的 C++。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1460
+msgid ""
+"Insert a C++ expression or type either as inline code (``cpp:expr``) or "
+"inline text (``cpp:texpr``). For example::"
+msgstr "插入C++ 表达式或键入内联代码（“`cpp:expr”）或内联文本 （“cpp:texpr”）。例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1482
+msgid ""
+"An expression: :cpp:expr:`a * f(a)` (or as text: :cpp:texpr:`a * f(a)`)."
+msgstr "表达式: :cpp:expr:`a * f(a)`（或文本:  :cpp:texpr:`a * f(a)`）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1484
+msgid ""
+"A type: :cpp:expr:`const MySortedContainer<int>&` (or as text "
+":cpp:texpr:`const MySortedContainer<int>&`)."
+msgstr ""
+"类型:  :cpp:expr:`const MySortedContainer<int>&` （或作为文本:cpp:texpr:`const "
+"MySortedContainer<int>&`）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1487
+msgid "The :rst:role:`cpp:expr` role."
+msgstr " :rst:role:`cpp:expr`角色。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1490
+msgid "The :rst:role:`cpp:texpr` role."
+msgstr " :rst:role:`cpp:texpr` 角色。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1496
+msgid ""
+"Declarations in the C++ domain are as default placed in global scope.  The "
+"current scope can be changed using three namespace directives.  They manage "
+"a stack declarations where ``cpp:namespace`` resets the stack and changes a "
+"given scope."
+msgstr ""
+"c++域中的声明默认放在全局作用域中。可以使用三个名称空间指令更改当前范围。它们管理一个堆栈声明，其中“cpp:namespace”重置堆栈并更改给定的范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1501
+msgid ""
+"The ``cpp:namespace-push`` directive changes the scope to a given inner "
+"scope of the current one."
+msgstr "“cpp:namespace-push” 指令将范围更改为当前范围的给定内部范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1504
+msgid ""
+"The ``cpp:namespace-pop`` directive undoes the most recent ``cpp:namespace-"
+"push`` directive."
+msgstr "“cpp:namespace-pop” 指令撤消了最新的 “cpp:namespace-push” 指令。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1509
+msgid ""
+"Changes the current scope for the subsequent objects to the given scope, and"
+" resets the namespace directive stack.  Note that the namespace does not "
+"need to correspond to C++ namespaces, but can end in names of classes, "
+"e.g.,::"
+msgstr "将后续对象的当前范围更改为给定范围，并重置命名空间指令堆栈。请注意，命名空间不需要与C++ 命名空间相对应，但可以以类的名称结尾，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1519
+msgid ""
+"Using ``NULL``, ``0``, or ``nullptr`` as the scope will change to global "
+"scope."
+msgstr "使用“NULL”，“0”或“nullptr”作为范围将变为全局范围。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1522
+msgid "A namespace declaration can also be templated, e.g.,::"
+msgstr "命名空间声明也可以模板化，例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1531
+msgid ""
+"declares ``size`` as a member function of the class template "
+"``std::vector``.  Equivalently this could have been declared using::"
+msgstr "将“size”声明为类模板“std::vector”的成员函数。等价地，这可以使用::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1539
+msgid "or::"
+msgstr "或者:::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1552
+msgid "the current scope will be ``A::B::C::D``."
+msgstr "当前范围将是“A::B::C::D”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1558
+msgid ""
+"Undo the previous ``cpp:namespace-push`` directive (*not* just pop a scope)."
+" For example, after::"
+msgstr "撤消之前的“cpp:namespace-push”指令（*不* 只是弹出作用域）。例如，之后："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1567
+msgid "the current scope will be ``A::B`` (*not* ``A::B::C``)."
+msgstr "当前范围将是“A::B”（*不是*“A::B::C”）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1569
+msgid ""
+"If no previous ``cpp:namespace-push`` directive has been used, but only a "
+"``cpp:namespace`` directive, then the current scope will be reset to global "
+"scope.  That is, ``.. cpp:namespace:: A::B`` is equivalent to::"
+msgstr ""
+"如果没有使用先前的“cpp:namespace-"
+"push”指令，但只使用“cpp:namespace”指令，则当前作用域将重置为全局作用域。也就是说，“.. cpp:namespace:: "
+"A::B”相当于："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1582
+msgid ""
+"All the C++ directives for declaring entities support the following info "
+"fields (see also :ref:`info-field-lists`):"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1585
+msgid "``tparam``: Description of a template parameter."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1587
+msgid ""
+"The :rst:dir:`cpp:function` directive additionally supports the following "
+"fields:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1590
+msgid ""
+"``param``, ``parameter``, ``arg``, ``argument``: Description of a parameter."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1591
+msgid "``returns``, ``return``: Description of a return value."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1594
+msgid ""
+"`throws`, `throw`, `exception`: Description of a possibly thrown exception."
+msgstr "`throws`, `throw`, `exception`:  可能抛出的异常的描述。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1602
+msgid "Cross-referencing"
+msgstr "交叉引用"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1604
+msgid "These roles link to the given declaration types:"
+msgstr "这些角色链接到给定的声明类型："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1617
+msgid ""
+"Reference a C++ declaration by name (see below for details).  The name must "
+"be properly qualified relative to the position of the link."
+msgstr "按名称引用C++ 声明（有关详细信息，请参见下文）。名称必须相对于链接的位置适当限定。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1620
+msgid ""
+"The :rst:role:`cpp:struct` role as alias for the :rst:role:`cpp:class` role."
+msgstr "将:rst:role:`cpp:struct` 角色作为:rst:role:`cpp:class`角色的别名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1624
+msgid "Note on References with Templates Parameters/Arguments"
+msgstr "有关模板参数/参数的引用的注释"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1626
+msgid ""
+"These roles follow the Sphinx :ref:`xref-syntax` rules. This means care must"
+" be taken when referencing a (partial) template specialization, e.g. if the "
+"link looks like this: ``:cpp:class:`MyClass<int>```. This is interpreted as "
+"a link to ``int`` with a title of ``MyClass``. In this case, escape the "
+"opening angle bracket with a backslash, like this: "
+"``:cpp:class:`MyClass\\<int>```."
+msgstr ""
+"这些角色遵循Sphinx :ref:`xref-"
+"syntax`规则。这意味着在引用（部分）模板专门化时必须小心，例如：如果链接看起来像这样:“:cpp:class:`MyClass<int>`”。这被解释为“int”的链接，标题为“MyClass”。在这种情况下，用反斜杠转义开口尖括号，如下所示:“:cpp:class:`MyClass\\<int>`”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1633
+msgid ""
+"When a custom title is not needed it may be useful to use the roles for "
+"inline expressions, :rst:role:`cpp:expr` and :rst:role:`cpp:texpr`, where "
+"angle brackets do not need escaping."
+msgstr ""
+"当不需要自定义标题时，使用内联表达式的角色可能会很有用，如 "
+":rst:role:`cpp:expr`和:rst:role:`cpp:texpr`，其中尖括号不需要转义。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1638
+msgid "Declarations without template parameters and template arguments"
+msgstr "没有模板参数和模板参数的声明"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1640
+msgid ""
+"For linking to non-templated declarations the name must be a nested name, "
+"e.g., ``f`` or ``MyClass::f``."
+msgstr "对于链接到非模板化声明，名称必须是嵌套名称，例如“f”或“MyClass::f”。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1645
+msgid "Overloaded (member) functions"
+msgstr "重载（成员）函数"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1647
+msgid ""
+"When a (member) function is referenced using just its name, the reference "
+"will point to an arbitrary matching overload. The :rst:role:`cpp:any` and "
+":rst:role:`cpp:func` roles use an alternative format, which simply is a "
+"complete function declaration. This will resolve to the exact matching "
+"overload. As example, consider the following class declaration:"
+msgstr ""
+"当仅使用其名称引用（成员）函数时，引用将指向任意匹配的重载。 :rst:role:`cpp:any` 和  :rst:role:`cpp:func` "
+"使用另一种格式，它只是一个完整的函数声明。这将解决完全匹配的重载。例如，请考虑以下类声明："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1662
+msgid "References using the :rst:role:`cpp:func` role:"
+msgstr "引用使用:rst:role:`cpp:func` 角色："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1664
+msgid "Arbitrary overload: ``C::f``, :cpp:func:`C::f`"
+msgstr "任意的过载：“C::f”， :cpp:func:`C::f`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1665
+msgid "Also arbitrary overload: ``C::f()``, :cpp:func:`C::f()`"
+msgstr "还是任意的重载：“C::f()`”，:cpp:func:`C::f()`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1666
+msgid "Specific overload: ``void C::f()``, :cpp:func:`void C::f()`"
+msgstr "特定的重载：“`void C::f()”， :cpp:func:`void C::f()`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1667
+msgid "Specific overload: ``void C::f(int)``, :cpp:func:`void C::f(int)`"
+msgstr "具体超负荷：“void C::f(int)”，:cpp:func:`void C::f(int)`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1668
+msgid ""
+"Specific overload: ``void C::f(double)``, :cpp:func:`void C::f(double)`"
+msgstr "具体超负荷：“void C::f(double)”，:cpp:func:`void C::f(double)`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1669
+msgid ""
+"Specific overload: ``void C::f(double) const``, :cpp:func:`void C::f(double)"
+" const`"
+msgstr "具体超负荷：“void C::f(double) const”， :cpp:func:`void C::f(double) const`"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1672
+msgid ""
+"Note that the :confval:`add_function_parentheses` configuration variable "
+"does not influence specific overload references."
+msgstr "请注意 :confval:`add_function_parentheses`  配置变量不会影响特定的重载引用。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1679
+msgid "Templated declarations"
+msgstr "模板声明"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1681
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1718
+msgid "Assume the following declarations."
+msgstr "假设以下声明。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1691
+msgid ""
+"In general the reference must include the template parameter declarations, "
+"and template arguments for the prefix of qualified names. For example:"
+msgstr "通常，引用必须包含模板参数声明和限定名称前缀的模板参数。例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1694
+msgid ""
+"``template\\<typename TOuter> Wrapper::Outer`` "
+"(:cpp:class:`template\\<typename TOuter> Wrapper::Outer`)"
+msgstr ""
+"``template\\<typename TOuter> Wrapper::Outer`` "
+"(:cpp:class:`template\\<typename TOuter> Wrapper::Outer`)"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1696
+msgid ""
+"``template\\<typename TOuter> template\\<typename TInner> "
+"Wrapper::Outer<TOuter>::Inner`` (:cpp:class:`template\\<typename TOuter> "
+"template\\<typename TInner> Wrapper::Outer<TOuter>::Inner`)"
+msgstr ""
+"``template\\<typename TOuter> template\\<typename TInner> "
+"Wrapper::Outer<TOuter>::Inner`` (:cpp:class:`template\\<typename TOuter> "
+"template\\<typename TInner> Wrapper::Outer<TOuter>::Inner`)"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1699
+msgid ""
+"Currently the lookup only succeed if the template parameter identifiers are "
+"equal strings.  That is, ``template\\<typename UOuter> Wrapper::Outer`` will"
+" not work."
+msgstr ""
+"目前，如果模板参数标识符是相等的字符串，则查找仅成功。也就是说，“template\\<typename UOuter> "
+"Wrapper::Outer”将不起作用。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1703
+msgid ""
+"As a shorthand notation, if a template parameter list is omitted, then the "
+"lookup will assume either a primary template or a non-template, but not a "
+"partial template specialisation. This means the following references work as"
+" well:"
+msgstr "作为简写表示法，如果省略模板参数列表，则查找将采用主模板或非模板，而不是部分模板特化。这意味着以下参考资料也有效："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1708
+msgid "``Wrapper::Outer`` (:cpp:class:`Wrapper::Outer`)"
+msgstr "``Wrapper::Outer`` (:cpp:class:`Wrapper::Outer`)"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1710
+msgid "``Wrapper::Outer::Inner`` (:cpp:class:`Wrapper::Outer::Inner`)"
+msgstr "``Wrapper::Outer::Inner`` (:cpp:class:`Wrapper::Outer::Inner`)"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1712
+msgid ""
+"``template\\<typename TInner> Wrapper::Outer::Inner`` "
+"(:cpp:class:`template\\<typename TInner> Wrapper::Outer::Inner`)"
+msgstr ""
+"``template\\<typename TInner> Wrapper::Outer::Inner`` "
+"(:cpp:class:`template\\<typename TInner> Wrapper::Outer::Inner`)"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1716
+msgid "(Full) Template Specialisations"
+msgstr "（完整）模板专业化"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1735
+msgid ""
+"In general the reference must include a template parameter list for each "
+"template argument list.  The full specialisation above can therefore be "
+"referenced with ``template\\<> Outer\\<int>`` (:cpp:class:`template\\<> "
+"Outer\\<int>`) and ``template\\<> template\\<> Outer\\<int>::Inner\\<bool>``"
+" (:cpp:class:`template\\<> template\\<> Outer\\<int>::Inner\\<bool>`).  As a"
+" shorthand the empty template parameter list can be omitted, e.g., "
+"``Outer\\<int>`` (:cpp:class:`Outer\\<int>`) and "
+"``Outer\\<int>::Inner\\<bool>`` (:cpp:class:`Outer\\<int>::Inner\\<bool>`)."
+msgstr ""
+"通常，引用必须包含每个模板参数列表的模板参数列表。 因此可以参考上面的完整专业化“template\\<> Outer\\1`” "
+"(:cpp:class:`template\\<> Outer\\2`) "
+"和“template\\<>template\\<>Outer\\<int>::Inner\\<bool>”(template<>template<>Outer<int>::Inner<bool>).。作为简写，可以省略空模板参数列表，例如，“Outer\\<int>“”(Outer<int>)"
+" 和“Outer\\<int>::Inner\\<bool>”(Outer<int>::Inner<bool>)。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1745
+msgid "Partial Template Specialisations"
+msgstr "部分模板专业化"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1747
+msgid "Assume the following declaration."
+msgstr "假设以下声明。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1752
+msgid ""
+"References to partial specialisations must always include the template "
+"parameter lists, e.g., ``template\\<typename T> Outer\\<T*>`` "
+"(:cpp:class:`template\\<typename T> Outer\\<T*>`).  Currently the lookup "
+"only succeed if the template parameter identifiers are equal strings."
+msgstr ""
+"对部分特化的引用必须始终包含模板参数列表，例如，“template\\<typename T>Outer\\<T*>`` "
+"(:cpp:class:`template\\<typename T> "
+"Outer\\<T*>`)。目前，只有当模板参数标识符是相等的字符串时，查找才会成功。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1760
+msgid "See :ref:`cpp-config`."
+msgstr "请参阅:ref:`cpp-config`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1765
+msgid "The Standard Domain"
+msgstr "标准域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1767
+msgid ""
+"The so-called \"standard\" domain collects all markup that doesn't warrant a"
+" domain of its own.  Its directives and roles are not prefixed with a domain"
+" name."
+msgstr "所谓的“标准”域收集所有不保证自己域名的标记。其指令和角色不以域名为前缀。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1771
+msgid ""
+"The standard domain is also where custom object descriptions, added using "
+"the :func:`~sphinx.application.Sphinx.add_object_type` API, are placed."
+msgstr ""
+"标准域也是使用:func:`~sphinx.application.Sphinx.add_object_type` API添加的自定义对象描述的位置。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1774
+msgid ""
+"There is a set of directives allowing documenting command-line programs:"
+msgstr "有一组指令允许记录命令行程序："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1778
+msgid ""
+"Describes a command line argument or switch.  Option argument names should "
+"be enclosed in angle brackets.  Examples::"
+msgstr "描述命令行参数或开关。选项参数名称应括在尖括号中。例子："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1789
+msgid ""
+"The directive will create cross-reference targets for the given options, "
+"referenceable by :rst:role:`option` (in the example case, you'd use "
+"something like ``:option:`dest_dir```, ``:option:`-m```, or "
+"``:option:`--module```)."
+msgstr ""
+"该指令将为给定的选项创建交叉引用目标，可通过以下方式引用:rst:role:`option` "
+"（在示例中，您将使用类似“:option:`dest_dir`”，“`:option:`-m`”， 或者“:option:`--module`”)。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1795
+msgid ""
+"One can cross-reference including an option value: "
+"``:option:`--module=foobar```, ,``:option:`--module[=foobar]``` or "
+"``:option:`--module foobar```."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1798
+msgid ""
+"Use :confval:`option_emphasise_placeholders` for parsing of \"variable "
+"part\" of a literal text (similarly to the :rst:role:`samp` role)."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1801
+msgid ""
+"``cmdoption`` directive is a deprecated alias for the ``option`` directive."
+msgstr "“cmdoption”指令是“option”指令的弃用别名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1805
+msgid ""
+"Describes an environment variable that the documented code or program uses "
+"or defines.  Referenceable by :rst:role:`envvar`."
+msgstr "描述文档化代码或程序使用或定义的环境变量。可引用者:rst:role:`envvar`。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1810
+msgid ""
+"Like :rst:dir:`py:currentmodule`, this directive produces no output. "
+"Instead, it serves to notify Sphinx that all following :rst:dir:`option` "
+"directives document options for the program called *name*."
+msgstr ""
+"像 :rst:dir:`py:currentmodule`，这个指令不产生输出。相反，它用于通知Sphinx所有以下内容 "
+":rst:dir:`option` 指令文件选项称为*name*。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1814
+msgid ""
+"If you use :rst:dir:`program`, you have to qualify the references in your "
+":rst:role:`option` roles by the program name, so if you have the following "
+"situation ::"
+msgstr ""
+"如果你使用 :rst:dir:`program`，你必须通过程序名来限定你的 :rst:role:`option` 角色中的引用，所以如果你有以下情况："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1830
+msgid ""
+"then ``:option:`rm -r``` would refer to the first option, while "
+"``:option:`svn -r``` would refer to the second one."
+msgstr "然后“:option:`rm -r`”将引用第一个选项，而“:option:`svn -r`”将引用第二个选项。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1833
+msgid ""
+"If ``None`` is passed to the argument, the directive will reset the current "
+"program name."
+msgstr "如果 ``None`` 被传递给参数，该指令将重置当前的程序名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1836
+msgid ""
+"The program name may contain spaces (in case you want to document "
+"subcommands like ``svn add`` and ``svn commit`` separately)."
+msgstr "程序名称可能包含空格（如果你想分别记录“svn add”和“svn commit”这样的子命令）。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1841
+msgid ""
+"There is also a very generic object description directive, which is not tied"
+" to any domain:"
+msgstr "还有一个非常通用的对象描述指令，它不依赖于任何域："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1847
+msgid ""
+"This directive produces the same formatting as the specific ones provided by"
+" domains, but does not create index entries or cross-referencing targets. "
+"Example::"
+msgstr "此伪指令生成与域提供的特定格式相同的格式，但不创建索引条目或交叉引用目标。例："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1857
+msgid "The JavaScript Domain"
+msgstr "JavaScript域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1859
+msgid "The JavaScript domain (name **js**) provides the following directives:"
+msgstr "JavaScript域（名称**js**）提供以下指令："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1863
+msgid ""
+"This directive sets the module name for object declarations that follow "
+"after. The module name is used in the global module index and in cross "
+"references. This directive does not create an object heading like "
+":rst:dir:`py:class` would, for example."
+msgstr ""
+"该指令设置后面的对象声明的模块名称。 模块名称用于全局模块索引和交叉引用中。 该指令不会创建如下的对象标题 :rst:dir:`py:class` 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1868
+msgid ""
+"By default, this directive will create a linkable entity and will cause an "
+"entry in the global module index, unless the ``noindex`` option is "
+"specified.  If this option is specified, the directive will only update the "
+"current module name."
+msgstr ""
+"默认情况下，此指令将创建一个可链接的实体，并将在全局模块索引中生成一个条目，除非指定了“noindex”选项。如果指定了此选项，则该指令将仅更新当前模块名称。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1880
+msgid ""
+"Describes a JavaScript function or method.  If you want to describe "
+"arguments as optional use square brackets as :ref:`documented <signatures>` "
+"for Python signatures."
+msgstr ""
+"描述JavaScript函数或方法。如果要将参数描述为可选，请使用方括号 :ref:`documented <signatures>` "
+"用于Python签名。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1884
+msgid ""
+"You can use fields to give more details about arguments and their expected "
+"types, errors which may be thrown by the function, and the value being "
+"returned::"
+msgstr "您可以使用字段来提供有关参数及其预期类型的​​更多详细信息，函数可能抛出的错误以及返回的值："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1898
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1928
+msgid "This is rendered as:"
+msgstr "这表现为："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Arguments"
+msgstr "参数"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1903
+msgid "An URI to the location of the resource."
+msgstr "资源位置的URI。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1904
+msgid "Gets called with the object."
+msgstr "使用对象调用。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1905
+msgid ""
+"Gets called in case the request fails. And a lot of other text so we need "
+"multiple lines."
+msgstr "在请求失败的情况下调用。还有很多其他文字，所以我们需要多行。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:0
+msgid "Throws"
+msgstr "抛出"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1908
+msgid "For whatever reason in that case."
+msgstr "无论出于何种原因。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1909
+msgid "Something."
+msgstr "某物。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1913
+msgid ""
+"This directive is an alias for :rst:dir:`js:function`, however it describes "
+"a function that is implemented as a method on a class object."
+msgstr "该指令是以下的别名 :rst:dir:`js:function`，但是它描述了一个作为类对象上的方法实现的函数。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1920
+msgid ""
+"Describes a constructor that creates an object.  This is basically like a "
+"function but will show up with a `class` prefix::"
+msgstr "描述创建对象的构造函数。这基本上就像一个函数，但会出现一个 `class`前缀:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1933
+msgid "The name of the animal"
+msgstr "这表现为:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1934
+msgid "an optional age for the animal"
+msgstr "动物的名字"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1938
+msgid "Describes a global variable or constant."
+msgstr "描述全局变量或常量。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1942
+msgid "Describes the attribute *name* of *object*."
+msgstr "描述 *物体*的属性*名称* 。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1946
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2043
+msgid "These roles are provided to refer to the described objects:"
+msgstr "提供这些角色是为了引用所描述的对象："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1957
+msgid "The reStructuredText domain"
+msgstr "reStructuredText域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1959
+msgid ""
+"The reStructuredText domain (name **rst**) provides the following "
+"directives:"
+msgstr "reStructuredText域(名称 **rst**)提供以下指令："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1963
+msgid ""
+"Describes a reST directive.  The *name* can be a single directive name or "
+"actual directive syntax (`..` prefix and `::` suffix) with arguments that "
+"will be rendered differently.  For example::"
+msgstr "描述reST指令。 *名称* 可以是单个指令名称或实际指令语法（`..`前缀和`::` 后缀），其参数将以不同方式呈现。例如："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1975
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1999
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2034
+msgid "will be rendered as:"
+msgstr "将呈现为："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1980
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2039
+msgid "Foo description."
+msgstr "Foo描述。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1985
+msgid "Bar description."
+msgstr "Bar 描述。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:1989
+msgid ""
+"Describes an option for reST directive.  The *name* can be a single option "
+"name or option name with arguments which separated with colon (``:``). For "
+"example::"
+msgstr "描述用于reST指令的选项。 *名称* 可以是单个单个选项名，也可以是带有冒号(“:”)分隔的参数的选项名。例如::"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2015
+msgid "Describe the type of option value."
+msgstr "描述选项价值的类型。"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2028
+msgid "Describes a reST role.  For example::"
+msgstr "描述reST角色。例如:"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2051
+msgid "The Math Domain"
+msgstr "数学域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2053
+msgid "The math domain (name **math**) provides the following roles:"
+msgstr "数学域(名称 **数学**)提供以下角色："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2057
+msgid ""
+"Role for cross-referencing equations defined by :rst:dir:`math` directive "
+"via their label.  Example::"
+msgstr "交叉引用方程的作用由以下定义:rst:dir:`math` 指令通过其标签定义。例："
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2069
+msgid "More domains"
+msgstr "更多域"
+
+#: ../../sphinx/doc/usage/restructuredtext/domains.rst:2071
+msgid ""
+"The sphinx-contrib_ repository contains more domains available as "
+"extensions; currently Ada_, CoffeeScript_, Erlang_, HTTP_, Lasso_, MATLAB_, "
+"PHP_, and Ruby_ domains. Also available are domains for `Chapel`_, `Common "
+"Lisp`_, dqn_, Go_, Jinja_, Operation_, and Scala_."
+msgstr ""
+"sphinx-"
+"contrib_存储库包含更多可用作扩展的域;目前有Ada_，CoffeeScript_，Erlang_，HTTP_，Lasso_，MATLAB_，PHP_，和"
+" Ruby_ 域。另外还有`Chapel`_，`Common Lisp`_，dqn_，Go_，Jinja_，Operation_，和Scala_的域。"

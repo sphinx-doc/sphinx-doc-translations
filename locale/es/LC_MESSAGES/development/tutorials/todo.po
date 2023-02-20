@@ -1,0 +1,441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2019
+# Georg Brandl <g.brandl@gmx.net>, 2019
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-06 01:42+0000\n"
+"PO-Revision-Date: 2018-12-23 17:28+0000\n"
+"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2019\n"
+"Language-Team: Spanish (https://www.transifex.com/sphinx-doc/teams/15434/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:2
+msgid "Developing a \"TODO\" extension"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:4
+msgid ""
+"The objective of this tutorial is to create a more comprehensive extension "
+"than that created in :doc:`helloworld`. Whereas that guide just covered "
+"writing a custom :term:`directive`, this guide adds multiple directives, "
+"along with custom nodes, additional config values and custom event handlers."
+" To this end, we will cover a ``todo`` extension that adds capabilities to "
+"include todo entries in the documentation, and to collect these in a central"
+" place. This is similar the ``sphinxext.todo`` extension distributed with "
+"Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:14
+msgid "Overview"
+msgstr "Resumen"
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:17
+msgid ""
+"To understand the design of this extension, refer to :ref:`important-"
+"objects` and :ref:`build-phases`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:20
+msgid "We want the extension to add the following to Sphinx:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:22
+msgid ""
+"A ``todo`` directive, containing some content that is marked with \"TODO\" "
+"and only shown in the output if a new config value is set. Todo entries "
+"should not be in the output by default."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:26
+msgid ""
+"A ``todolist`` directive that creates a list of all todo entries throughout "
+"the documentation."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:29
+msgid "For that, we will need to add the following elements to Sphinx:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:31
+msgid "New directives, called ``todo`` and ``todolist``."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:33
+msgid ""
+"New document tree nodes to represent these directives, conventionally also "
+"called ``todo`` and ``todolist``.  We wouldn't need new nodes if the new "
+"directives only produced some content representable by existing nodes."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:37
+msgid ""
+"A new config value ``todo_include_todos`` (config value names should start "
+"with the extension name, in order to stay unique) that controls whether todo"
+" entries make it into the output."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:41
+msgid ""
+"New event handlers: one for the :event:`doctree-resolved` event, to replace "
+"the todo and todolist nodes, one for :event:`env-merge-info` to merge "
+"intermediate results from parallel builds, and one for :event:`env-purge-"
+"doc` (the reason for that will be covered later)."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:48
+msgid "Prerequisites"
+msgstr "Requisitos previos"
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:50
+msgid ""
+"As with :doc:`helloworld`, we will not be distributing this plugin via PyPI "
+"so once again we need a Sphinx project to call this from. You can use an "
+"existing project or create a new one using :program:`sphinx-quickstart`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:54
+msgid ""
+"We assume you are using separate source (:file:`source`) and build "
+"(:file:`build`) folders. Your extension file could be in any folder of your "
+"project. In our case, let's do the following:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:58
+msgid "Create an :file:`_ext` folder in :file:`source`"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:59
+msgid ""
+"Create a new Python file in the :file:`_ext` folder called :file:`todo.py`"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:61
+msgid "Here is an example of the folder structure you might obtain:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:77
+msgid "Writing the extension"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:79
+msgid ""
+"Open :file:`todo.py` and paste the following code in it, all of which we "
+"will explain in detail shortly:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:86
+msgid ""
+"This is far more extensive extension than the one detailed in "
+":doc:`helloworld`, however, we will will look at each piece step-by-step to "
+"explain what's happening."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:91
+msgid "The node classes"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:92
+msgid "Let's start with the node classes:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:99
+msgid ""
+"Node classes usually don't have to do anything except inherit from the "
+"standard docutils classes defined in :mod:`docutils.nodes`.  ``todo`` "
+"inherits from ``Admonition`` because it should be handled like a note or "
+"warning, ``todolist`` is just a \"general\" node."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:106
+msgid ""
+"Many extensions will not have to create their own node classes and work fine"
+" with the nodes already provided by `docutils "
+"<https://docutils.sourceforge.io/docs/ref/doctree.html>`__ and :ref:`Sphinx "
+"<nodes>`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:113
+msgid ""
+"It is important to know that while you can extend Sphinx without leaving "
+"your ``conf.py``, if you declare an inherited node right there, you'll hit "
+"an unobvious :py:class:`PickleError`. So if something goes wrong, please "
+"make sure that you put inherited nodes into a separate Python module."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:119
+msgid "For more details, see:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:121
+msgid "https://github.com/sphinx-doc/sphinx/issues/6751"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:122
+msgid "https://github.com/sphinx-doc/sphinx/issues/1493"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:123
+msgid "https://github.com/sphinx-doc/sphinx/issues/1424"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:126
+msgid "The directive classes"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:127
+msgid ""
+"A directive class is a class deriving usually from "
+":class:`docutils.parsers.rst.Directive`. The directive interface is also "
+"covered in detail in the `docutils documentation`_; the important thing is "
+"that the class should have attributes that configure the allowed markup, and"
+" a ``run`` method that returns a list of nodes."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:133
+msgid "Looking first at the ``TodolistDirective`` directive:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:140
+msgid ""
+"It's very simple, creating and returning an instance of our ``todolist`` "
+"node class.  The ``TodolistDirective`` directive itself has neither content "
+"nor arguments that need to be handled. That brings us to the "
+"``TodoDirective`` directive:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:150
+msgid ""
+"Several important things are covered here. First, as you can see, we're now "
+"subclassing the :class:`~sphinx.util.docutils.SphinxDirective` helper class "
+"instead of the usual :class:`~docutils.parsers.rst.Directive` class. This "
+"gives us access to the :ref:`build environment instance <important-objects>`"
+" using the ``self.env`` property. Without this, we'd have to use the rather "
+"convoluted ``self.state.document.settings.env``. Then, to act as a link "
+"target (from ``TodolistDirective``), the ``TodoDirective`` directive needs "
+"to return a target node in addition to the ``todo`` node.  The target ID (in"
+" HTML, this will be the anchor name) is generated by using "
+"``env.new_serialno`` which returns a new unique integer on each call and "
+"therefore leads to unique target names. The target node is instantiated "
+"without any text (the first two arguments)."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:162
+msgid ""
+"On creating admonition node, the content body of the directive are parsed "
+"using ``self.state.nested_parse``.  The first argument gives the content "
+"body, and the second one gives content offset.  The third argument gives the"
+" parent node of parsed result, in our case the ``todo`` node. Following "
+"this, the ``todo`` node is added to the environment.  This is needed to be "
+"able to create a list of all todo entries throughout the documentation, in "
+"the place where the author puts a ``todolist`` directive.  For this case, "
+"the environment attribute ``todo_all_todos`` is used (again, the name should"
+" be unique, so it is prefixed by the extension name).  It does not exist "
+"when a new environment is created, so the directive must check and create it"
+" if necessary.  Various information about the todo entry's location are "
+"stored along with a copy of the node."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:174
+msgid ""
+"In the last line, the nodes that should be put into the doctree are "
+"returned: the target node and the admonition node."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:177
+msgid "The node structure that the directive returns looks like this::"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:194
+msgid "The event handlers"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:195
+msgid ""
+"Event handlers are one of Sphinx's most powerful features, providing a way "
+"to do hook into any part of the documentation process. There are many events"
+" provided by Sphinx itself, as detailed in :ref:`the API guide <events>`, "
+"and we're going to use a subset of them here."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:200
+msgid ""
+"Let's look at the event handlers used in the above example.  First, the one "
+"for the :event:`env-purge-doc` event:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:208
+msgid ""
+"Since we store information from source files in the environment, which is "
+"persistent, it may become out of date when the source file changes.  "
+"Therefore, before each source file is read, the environment's records of it "
+"are cleared, and the :event:`env-purge-doc` event gives extensions a chance "
+"to do the same. Here we clear out all todos whose docname matches the given "
+"one from the ``todo_all_todos`` list.  If there are todos left in the "
+"document, they will be added again during parsing."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:216
+msgid ""
+"The next handler, for the :event:`env-merge-info` event, is used during "
+"parallel builds. As during parallel builds all threads have their own "
+"``env``, there's multiple ``todo_all_todos`` lists that need to be merged:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:227
+msgid "The other handler belongs to the :event:`doctree-resolved` event:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:234
+msgid ""
+"The :event:`doctree-resolved` event is emitted at the end of :ref:`phase 3 "
+"(resolving) <build-phases>` and allows custom resolving to be done. The "
+"handler we have written for this event is a bit more involved. If the "
+"``todo_include_todos`` config value (which we'll describe shortly) is false,"
+" all ``todo`` and ``todolist`` nodes are removed from the documents. If not,"
+" ``todo`` nodes just stay where and how they are.  ``todolist`` nodes are "
+"replaced by a list of todo entries, complete with backlinks to the location "
+"where they come from.  The list items are composed of the nodes from the "
+"``todo`` entry and docutils nodes created on the fly: a paragraph for each "
+"entry, containing text that gives the location, and a link (reference node "
+"containing an italic node) with the backreference. The reference URI is "
+"built by :meth:`sphinx.builders.Builder.get_relative_uri` which creates a "
+"suitable URI depending on the used builder, and appending the todo node's "
+"(the target's) ID as the anchor name."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:250
+msgid "The ``setup`` function"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:253
+msgid ""
+"As noted :doc:`previously <helloworld>`, the ``setup`` function is a "
+"requirement and is used to plug directives into Sphinx. However, we also use"
+" it to hook up the other parts of our extension. Let's look at our ``setup``"
+" function:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:262
+msgid ""
+"The calls in this function refer to the classes and functions we added "
+"earlier. What the individual calls do is the following:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:265
+msgid ""
+":meth:`~Sphinx.add_config_value` lets Sphinx know that it should recognize "
+"the new *config value* ``todo_include_todos``, whose default value should be"
+" ``False`` (this also tells Sphinx that it is a boolean value)."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:269
+msgid ""
+"If the third argument was ``'html'``, HTML documents would be full rebuild "
+"if the config value changed its value.  This is needed for config values "
+"that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:273
+msgid ""
+":meth:`~Sphinx.add_node` adds a new *node class* to the build system.  It "
+"also can specify visitor functions for each supported output format.  These "
+"visitor functions are needed when the new nodes stay until :ref:`phase 4 "
+"(writing) <build-phases>`. Since the ``todolist`` node is always replaced in"
+" :ref:`phase 3 (resolving) <build-phases>`, it doesn't need any."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:279
+msgid ""
+":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
+"class."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:281
+msgid ""
+"Finally, :meth:`~Sphinx.connect` adds an *event handler* to the event whose "
+"name is given by the first argument.  The event handler function is called "
+"with several arguments which are documented with the event."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:285
+msgid "With this, our extension is complete."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:289
+msgid "Using the extension"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:291
+msgid ""
+"As before, we need to enable the extension by declaring it in our "
+":file:`conf.py` file. There are two steps necessary here:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:294
+msgid ""
+"Add the :file:`_ext` directory to the `Python path`_ using "
+"``sys.path.append``. This should be placed at the top of the file."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:297
+msgid ""
+"Update or create the :confval:`extensions` list and add the extension file "
+"name to the list"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:300
+msgid ""
+"In addition, we may wish to set the ``todo_include_todos`` config value. As "
+"noted above, this defaults to ``False`` but we can set it explicitly."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:303
+msgid "For example:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:316
+msgid "You can now use the extension throughout your project. For example:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:318
+msgid "index.rst"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:332
+msgid "somefile.rst"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:342
+msgid "someotherfile.rst"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:352
+msgid ""
+"Because we have configured ``todo_include_todos`` to ``False``, we won't "
+"actually see anything rendered for the ``todo`` and ``todolist`` directives."
+" However, if we toggle this to true, we will see the output described "
+"previously."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:359
+msgid "Further reading"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/todo.rst:361
+msgid ""
+"For more information, refer to the `docutils`_ documentation and "
+":doc:`/extdev/index`."
+msgstr ""

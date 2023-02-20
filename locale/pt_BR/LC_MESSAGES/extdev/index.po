@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
+# gilberto dos santos alves <gsavix@gmail.com>, 2019
+# Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 6.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-09 01:38+0000\n"
+"PO-Revision-Date: 2018-02-12 13:48+0000\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2021\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../sphinx/doc/extdev/index.rst:4
+msgid "Sphinx Extensions API"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:6
+msgid ""
+"Since many projects will need special features in their documentation, "
+"Sphinx is designed to be extensible on several levels."
+msgstr ""
+"Como muitos projetos necessitam de funcionalidades especiais em sua "
+"documentação, Sphix foi desenhado para ser extensível em diversos níveis."
+
+#: ../../sphinx/doc/extdev/index.rst:9
+msgid "Here are a few things you can do in an extension:"
+msgstr "Aqui estão algumas coisas que você pode fazer em uma extensão:"
+
+#: ../../sphinx/doc/extdev/index.rst:11
+msgid ""
+"Add new :term:`builder`\\s to support new output formats or actions on the "
+"parsed documents."
+msgstr ""
+"Adiciona um novo :term:`construtor <builder>` para ter suporte aos novos "
+"formatos de saída ou ações nos documentos analisados."
+
+#: ../../sphinx/doc/extdev/index.rst:13
+msgid ""
+"Register custom reStructuredText roles and directives, extending the markup "
+"using the :doc:`markupapi`."
+msgstr ""
+"Registra papéis e diretivas reStructuredText personalizadas, estendendo a "
+"marcação usando a :doc:`markupapi`."
+
+#: ../../sphinx/doc/extdev/index.rst:15
+msgid ""
+"Add custom code to so-called \"hook points\" at strategic places throughout "
+"the build process, allowing you to register a hook and run specialized code."
+" For example, see the :ref:`events`."
+msgstr ""
+"Adiciona código personalizado aos chamados \"pontos de gancho\" em locais "
+"estratégicos ao longo do processo de construção, permitindo que você "
+"registre um gancho e execute código especializado. Por exemplo, veja "
+":ref:`events`."
+
+#: ../../sphinx/doc/extdev/index.rst:19
+msgid ""
+"An extension is simply a Python module with a ``setup()`` function. A user "
+"activates the extension by placing the extension's module name (or a sub-"
+"module) in their :confval:`extensions` configuration value."
+msgstr ""
+"Uma extensão é simplesmente um módulo Python com uma função ``setup()``. Um "
+"usuário ativa a extensão colocando o nome do módulo da extensão (ou um "
+"submódulo) em seu valor de configuração :confval:`extensions`."
+
+#: ../../sphinx/doc/extdev/index.rst:23
+msgid ""
+"When :program:`sphinx-build` is executed, Sphinx will attempt to import each"
+" module that is listed, and execute ``yourmodule.setup(app)``. This function"
+" is used to prepare the extension (e.g., by executing Python code), linking "
+"resources that Sphinx uses in the build process (like CSS or HTML files), "
+"and notifying Sphinx of everything the extension offers (such as directive "
+"or role definitions). The ``app`` argument is an instance of "
+":class:`.Sphinx` and gives you control over most aspects of the Sphinx "
+"build."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:33
+msgid ""
+"The configuration file itself can be treated as an extension if it contains "
+"a ``setup()`` function.  All other extensions to load must be listed in the "
+":confval:`extensions` configuration value."
+msgstr ""
+"A configuração do próprio arquivo pode ser tratada como uma extensão se ela "
+"contiver uma função  ``setup()``. Todas as outras extensões para serem "
+"carregadas devem estar listadas em :confval:`extensions` "
+
+#: ../../sphinx/doc/extdev/index.rst:37
+msgid ""
+"The rest of this page describes some high-level aspects of developing "
+"extensions and various parts of Sphinx's behavior that you can control. For "
+"some examples of how extensions can be built and used to control different "
+"parts of Sphinx, see the :ref:`extension-tutorials-index`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:45
+msgid "Important objects"
+msgstr "Objetos importantes"
+
+#: ../../sphinx/doc/extdev/index.rst:47
+msgid ""
+"There are several key objects whose API you will use while writing an "
+"extension. These are:"
+msgstr ""
+"Existem vários objetos-chave cuja API você usará ao escrever uma extensão. "
+"São eles:"
+
+#: ../../sphinx/doc/extdev/index.rst:56
+msgid "**Application**"
+msgstr "**Applicação**"
+
+#: ../../sphinx/doc/extdev/index.rst:51
+msgid ""
+"The application object (usually called ``app``) is an instance of "
+":class:`.Sphinx`.  It controls most high-level functionality, such as the "
+"setup of extensions, event dispatching and producing output (logging)."
+msgstr ""
+"O objeto de aplicação (geralmente chamado ``app``) é uma instância de "
+":class:`.Sphinx`. Ele controla a maioria das funcionalidades de alto nível, "
+"como a configuração de extensões, o despacho de eventos e a produção de "
+"saída (logging)."
+
+#: ../../sphinx/doc/extdev/index.rst:55
+msgid ""
+"If you have the environment object, the application is available as "
+"``env.app``."
+msgstr ""
+"Se você tiver o objeto de ambiente, o aplicativo estará disponível como "
+"``env.app``."
+
+#: ../../sphinx/doc/extdev/index.rst:69
+msgid "**Environment**"
+msgstr "**Ambiente**"
+
+#: ../../sphinx/doc/extdev/index.rst:59
+msgid ""
+"The build environment object (usually called ``env``) is an instance of "
+":class:`.BuildEnvironment`.  It is responsible for parsing the source "
+"documents, stores all metadata about the document collection and is "
+"serialized to disk after each build."
+msgstr ""
+"O objeto do ambiente de construção (geralmente chamado ``env``) é uma "
+"instância de :class:`.BuildEnvironment`. Ele é responsável por analisar os "
+"documentos de origem, armazena todos os metadados sobre a coleção de "
+"documentos e é serializado em disco após cada compilação."
+
+#: ../../sphinx/doc/extdev/index.rst:64
+msgid ""
+"Its API provides methods to do with access to metadata, resolving "
+"references, etc.  It can also be used by extensions to cache information "
+"that should persist for incremental rebuilds."
+msgstr ""
+"Sua API fornece métodos para acessar metadados, resolver referências, etc. "
+"Também pode ser usada por extensões para armazenar em cache informações que "
+"devem persistir para recriações incrementais."
+
+#: ../../sphinx/doc/extdev/index.rst:68
+msgid ""
+"If you have the application or builder object, the environment is available "
+"as ``app.env`` or ``builder.env``."
+msgstr ""
+"Se você tiver o objeto do aplicativo ou construtor, o ambiente estará "
+"disponível como ``app.env`` ou ``builder.env``."
+
+#: ../../sphinx/doc/extdev/index.rst:78
+msgid "**Builder**"
+msgstr "**Construtor**"
+
+#: ../../sphinx/doc/extdev/index.rst:72
+msgid ""
+"The builder object (usually called ``builder``) is an instance of a specific"
+" subclass of :class:`.Builder`.  Each builder class knows how to convert the"
+" parsed documents into an output format, or otherwise process them (e.g. "
+"check external links)."
+msgstr ""
+"O objeto construtor (geralmente chamado ``builder``) é uma instância de uma "
+"subclasse específica de :class:`.Builder`. Cada classe de construtor sabe "
+"como converter os documentos analisados em um formato de saída ou processá-"
+"los (por exemplo, verificar links externos)."
+
+#: ../../sphinx/doc/extdev/index.rst:77
+msgid ""
+"If you have the application object, the builder is available as "
+"``app.builder``."
+msgstr ""
+"Se você tiver o objeto do aplicativo, o construtor estará disponível como "
+"``app.builder``."
+
+#: ../../sphinx/doc/extdev/index.rst:85
+msgid "**Config**"
+msgstr "**Config**"
+
+#: ../../sphinx/doc/extdev/index.rst:81
+msgid ""
+"The config object (usually called ``config``) provides the values of "
+"configuration values set in :file:`conf.py` as attributes.  It is an "
+"instance of :class:`.Config`."
+msgstr ""
+"O objeto de configuração (geralmente chamado ``config``) fornece os valores "
+"dos valores de configuração definidos em :file:`conf.py` como atributos. É "
+"uma instância de :class:`.Config`."
+
+#: ../../sphinx/doc/extdev/index.rst:85
+msgid "The config is available as ``app.config`` or ``env.config``."
+msgstr "A configuração está disponível como ``app.config`` ou ``env.config``."
+
+#: ../../sphinx/doc/extdev/index.rst:87
+msgid ""
+"To see an example of use of these objects, refer to "
+":doc:`../development/tutorials/index`."
+msgstr ""
+"Para ver um exemplo de uso desses objetos, consulte "
+":doc:`../development/tutorials/index`."
+
+#: ../../sphinx/doc/extdev/index.rst:93
+msgid "Build Phases"
+msgstr "Fases Construção"
+
+#: ../../sphinx/doc/extdev/index.rst:95
+msgid ""
+"One thing that is vital in order to understand extension mechanisms is the "
+"way in which a Sphinx project is built: this works in several phases."
+msgstr ""
+"Uma coisa que é vital para entender os mecanismos de extensão é a maneira "
+"como um projeto ``Sphinx`` é construído: isso funciona em várias fases."
+
+#: ../../sphinx/doc/extdev/index.rst:98
+msgid "**Phase 0: Initialization**"
+msgstr "**Phase 0: Inicialização**"
+
+#: ../../sphinx/doc/extdev/index.rst:100
+msgid ""
+"In this phase, almost nothing of interest to us happens.  The source "
+"directory is searched for source files, and extensions are initialized. "
+"Should a stored build environment exist, it is loaded, otherwise a new one "
+"is created."
+msgstr ""
+"Nesta fase, quase nada de interessante para nós acontece. O diretório de "
+"origem é pesquisado por arquivos de origem e as extensões são inicializadas."
+" Se existir um ambiente de compilação armazenado, ele será carregado, caso "
+"contrário, um novo será criado."
+
+#: ../../sphinx/doc/extdev/index.rst:105
+msgid "**Phase 1: Reading**"
+msgstr "**Phase 1: Leitura**"
+
+#: ../../sphinx/doc/extdev/index.rst:107
+msgid ""
+"In Phase 1, all source files (and on subsequent builds, those that are new "
+"or changed) are read and parsed.  This is the phase where directives and "
+"roles are encountered by docutils, and the corresponding code is executed.  "
+"The output of this phase is a *doctree* for each source file; that is a tree"
+" of docutils nodes.  For document elements that aren't fully known until all"
+" existing files are read, temporary nodes are created."
+msgstr ""
+"Na Fase 1, todos os arquivos de origem (e em compilações subsequentes, "
+"aqueles que são novos ou alterados) são lidos e analisados. Esta é a fase em"
+" que diretivas e funções são encontradas pelos ``docutils`` e o código "
+"correspondente é executado. A saída desta fase é um *doctree* para cada "
+"arquivo de origem; isso é uma árvore de nós ``docutils``. Para elementos de "
+"documento que não são totalmente conhecidos até que todos os arquivos "
+"existentes sejam lidos, nós temporários são criados."
+
+#: ../../sphinx/doc/extdev/index.rst:114
+msgid ""
+"There are nodes provided by docutils, which are documented `in the docutils "
+"documentation <https://docutils.sourceforge.io/docs/ref/doctree.html>`__. "
+"Additional nodes are provided by Sphinx and :ref:`documented here <nodes>`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:118
+msgid ""
+"During reading, the build environment is updated with all meta- and cross "
+"reference data of the read documents, such as labels, the names of headings,"
+" described Python objects and index entries.  This will later be used to "
+"replace the temporary nodes."
+msgstr ""
+"Durante a leitura, o ambiente de compilação é atualizado com todos os dados "
+"de meta e referência cruzada dos documentos lidos, como labels, os nomes dos"
+" títulos, objetos descritos do Python e entradas de índice. Isso será usado "
+"posteriormente para substituir os nós temporários."
+
+#: ../../sphinx/doc/extdev/index.rst:123
+msgid ""
+"The parsed doctrees are stored on the disk, because it is not possible to "
+"hold all of them in memory."
+msgstr ""
+"Os ``doctrees`` analisados são armazenados no disco, porque não é possível "
+"manter todos eles na memória."
+
+#: ../../sphinx/doc/extdev/index.rst:126
+msgid "**Phase 2: Consistency checks**"
+msgstr "**Phase 2: Verificações e consistências**"
+
+#: ../../sphinx/doc/extdev/index.rst:128
+msgid "Some checking is done to ensure no surprises in the built documents."
+msgstr ""
+"Alguma verificação é feita para garantir que não haja surpresas nos "
+"documentos construídos."
+
+#: ../../sphinx/doc/extdev/index.rst:130
+msgid "**Phase 3: Resolving**"
+msgstr "**Fase 3: Resolução**"
+
+#: ../../sphinx/doc/extdev/index.rst:132
+msgid ""
+"Now that the metadata and cross-reference data of all existing documents is "
+"known, all temporary nodes are replaced by nodes that can be converted into "
+"output using components called transforms.  For example, links are created "
+"for object references that exist, and simple literal nodes are created for "
+"those that don't."
+msgstr ""
+"Agora que os metadados e os dados de referência cruzada de todos os "
+"documentos existentes são conhecidos, todos os nós temporários são "
+"substituídos por nós que podem ser convertidos em saída usando componentes "
+"chamados de transformações. Por exemplo, links são criados para referências "
+"de objetos existentes e nós literais simples são criados para aqueles que "
+"não existem."
+
+#: ../../sphinx/doc/extdev/index.rst:138
+msgid "**Phase 4: Writing**"
+msgstr "**Fase 4: Gravação**"
+
+#: ../../sphinx/doc/extdev/index.rst:140
+msgid ""
+"This phase converts the resolved doctrees to the desired output format, such"
+" as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
+" the individual nodes of each doctree and produces some output in the "
+"process."
+msgstr ""
+"Esta fase converte os ``doctrees`` resolvidos no formato de saída desejado, "
+"como HTML ou LaTeX. Isso acontece por meio de um escritor chamado "
+"``docutils``, que visita os nós individuais de cada ``doctree`` e produz "
+"alguma saída no processo."
+
+#: ../../sphinx/doc/extdev/index.rst:146
+msgid ""
+"Some builders deviate from this general build plan, for example, the builder"
+" that checks external links does not need anything more than the parsed "
+"doctrees and therefore does not have phases 2--4."
+msgstr ""
+"Alguns construtores se desviam desse plano de construção geral, por exemplo,"
+" o construtor que verifica links externos não precisa de nada além dos "
+"``doctrees`` analisados e, portanto, não possui as fases 2-4."
+
+#: ../../sphinx/doc/extdev/index.rst:150
+msgid ""
+"To see an example of application, refer to "
+":doc:`../development/tutorials/todo`."
+msgstr ""
+"Para ver um exemplo de aplicação, consulte "
+":doc:`../development/tutorials/todo`."
+
+#: ../../sphinx/doc/extdev/index.rst:155
+msgid "Extension metadata"
+msgstr "Extensões Metadados"
+
+#: ../../sphinx/doc/extdev/index.rst:159
+msgid ""
+"The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
+" as metadata of the extension.  Metadata keys currently recognized are:"
+msgstr ""
+"A função ``setup()`` pode retornar um dicionário. Isso é tratado pelo Sphinx"
+" como extensão de metadados. Chaves dos Metadados normalmente reconhecidas "
+"são: "
+
+#: ../../sphinx/doc/extdev/index.rst:162
+msgid ""
+"``'version'``: a string that identifies the extension version.  It is used "
+"for extension version requirement checking (see :confval:`needs_extensions`)"
+" and informational purposes.  If not given, ``\"unknown version\"`` is "
+"substituted."
+msgstr ""
+"``'version'``: uma palavra que identifica a versão da extensão. É utilizada "
+"para a verificação da versão mínima requerida (ver "
+":confval:`needs_extensions`) e finalidades de informação. Se não informado "
+"será apresentado  ``\"versão desconhecida\"``"
+
+#: ../../sphinx/doc/extdev/index.rst:165
+msgid ""
+"``'env_version'``: an integer that identifies the version of env data "
+"structure if the extension stores any data to environment.  It is used to "
+"detect the data structure has been changed from last build.  The extensions "
+"have to increment the version when data structure has changed.  If not "
+"given, Sphinx considers the extension does not stores any data to "
+"environment."
+msgstr ""
+"``'env_version'``: um inteiro que identifica a versão da estrutura de dados "
+"``env`` se a extensão armazena dados no ambiente. Ele é usado para detectar "
+"que a estrutura de dados foi alterada da última construção. As extensões "
+"precisam incrementar a versão quando a estrutura de dados for alterada. Se "
+"não for fornecido, o ``Sphinx`` considera que a extensão não armazena dados "
+"no ambiente."
+
+#: ../../sphinx/doc/extdev/index.rst:170
+msgid ""
+"``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
+"source files can be used when the extension is loaded.  It defaults to "
+"``False``, i.e. you have to explicitly specify your extension to be "
+"parallel-read-safe after checking that it is."
+msgstr ""
+"``'parallel_read_safe'``: valor booleano que especifica se leitura paralela "
+"dos arquivos fontes pode ser usada, quando a extensão for carregada.  O "
+"valor padrão é ``False``, ex. deve ser explicitado que sua função pode usar "
+"processamento paralelo, após a devida comprovação através dos testes."
+
+#: ../../sphinx/doc/extdev/index.rst:175
+msgid ""
+"The *parallel-read-safe* extension must satisfy the following conditions:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:178
+msgid ""
+"The core logic of the extension is parallelly executable during the reading "
+"phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:180
+msgid ""
+"It has event handlers for :event:`env-merge-info` and :event:`env-purge-doc`"
+" events if it stores data to the build environment object (env) during the "
+"reading phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:184
+msgid ""
+"``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
+"output files can be used when the extension is loaded.  Since extensions "
+"usually don't negatively influence the process, this defaults to ``True``."
+msgstr ""
+"``'parallel_write_safe'``: valor booleano que especifica que a gravação dos "
+"arquivos de saída pode ser usada quando sua extensão for carregada. "
+"Normalmente extensões não influenciam negativamente o processo, o valor "
+"padrão é ``True``."
+
+#: ../../sphinx/doc/extdev/index.rst:188
+msgid ""
+"The *parallel-write-safe* extension must satisfy the following conditions:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:191
+msgid ""
+"The core logic of the extension is parallelly executable during the writing "
+"phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:196
+msgid "APIs used for writing extensions"
+msgstr "APIs usadas para gravar extensões"
+
+#: ../../sphinx/doc/extdev/index.rst:198
+msgid ""
+"These sections provide a more complete description of the tools at your "
+"disposal when developing Sphinx extensions. Some are core to Sphinx (such as"
+" the :doc:`appapi`) while others trigger specific behavior (such as the "
+":doc:`i18n`)"
+msgstr ""

@@ -16,6 +16,6 @@ sphinx-intl update-txconfig-resources -p pot -d .
 cat .tx/config
 tx push -s --skip
 rm -R -f ar ca_ES zh_CN fr de it_IT ja ko pl_PL pt_BR ru sr sr_RS es
-tx pull -l ar,ca_ES,zh_CN,fr,de,it_IT,ja,ko,pl_PL,pt_BR,ru,sr,sr_RS,es
+tx pull --silent -f -l ar,ca_ES,zh_CN,fr,de,it_IT,ja,ko,pl_PL,pt_BR,ru,sr,sr_RS,es
 git checkout .tx/config
 

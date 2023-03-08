@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 6.2.0+/6c017950b9\n"
+"Project-Id-Version: Sphinx 6.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 19:58+0000\n"
+"POT-Creation-Date: 2023-03-08 00:46+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -2268,64 +2268,151 @@ msgid ""
 "``\\sphinxcite``: A wrapper of standard ``\\cite`` for citation references."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1450
+#: ../../sphinx/doc/latex.rst:1453
+msgid "The ``\\sphinxbox`` command"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1457
+msgid ""
+"The ``\\sphinxbox[key=value,...]{inline text}`` command can be used to "
+"\"box\" inline text elements with all the customizability which has been "
+"described in :ref:`additionalcss`.  It is a LaTeX command with one optional "
+"argument, which is a comma-separated list of key=value pairs, as for "
+":ref:`latexsphinxsetup`. Here is the complete list of keys:"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1463
+msgid "``border-width``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1464
+msgid ""
+"``border-top-width``, ``border-right-width``, ``border-bottom-width``, "
+"``border-left-width``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1466
+msgid "``padding``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1467
+msgid ""
+"``padding-top``, ``padding-right``, ``padding-bottom``, ``padding-left``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1468
+msgid "``border-radius``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1469
+msgid ""
+"``border-top-left-radius``, ``border-top-right-radius``, ``border-bottom-"
+"right-radius``, ``border-bottom-left-radius``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1471
+msgid "``box-shadow``,"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1472
+msgid "``border-TeXcolor``, ``background-TeXcolor``, ``box-shadow-TeXcolor``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1474
+msgid ""
+"Refer to :ref:`additionalcss` for important syntax information.  The default"
+" configuration uses no shadow, a border-width of ``\\fboxrule``, a padding "
+"of ``\\fboxsep``, rounded corners (with radius ``\\fboxsep``) and background"
+" and border colors as for the default rendering of code-blocks.  One can "
+"modify these defaults via using ``\\sphinxboxsetup{key=value,...}`` or also "
+"via ``\\sphinxsetup`` but all key names must then be prefixed with ``box_``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1483
+msgid ""
+"The comma separated key-value list is to be used within curly braces with "
+"``\\sphinxsetup`` (keys must then be prefixed with ``box_``) or "
+"``\\sphinxboxsetup``.  In contrast key-value options given to "
+"``\\sphinxbox`` must be within square brackets, are they are... options.  "
+"See examples below."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1489
+msgid ""
+"A utility ``\\newsphinxbox`` is provided to create a new boxing macro, say "
+"``\\foo`` which will act exactly like ``\\sphinxbox`` but with a possibly "
+"different set of initial default option values.  Here is some example:"
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1513
+msgid ""
+"In the above example, you can probably use ``\\renewcommand`` syntax if you "
+"prefer (with ``[1]`` in place of ``#1`` then).  There is also "
+"``\\renewsphinxbox`` which one can imagine inserting in the midst of a "
+"document via the :dudir:`raw` directive, so that from that point on, all the"
+" custom text elements using ``\\foo`` will start using re-defined box "
+"parameters, without having to redefine for example ``\\sphinxguilabel`` as "
+"it already uses ``\\foo``."
+msgstr ""
+
+#: ../../sphinx/doc/latex.rst:1523
 msgid "Environments"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1452
+#: ../../sphinx/doc/latex.rst:1525
 msgid ""
 "A :dudir:`figure` may have an optional legend with arbitrary body elements: "
 "they are rendered in a ``sphinxlegend`` environment. The default definition "
 "issues ``\\small``, and ends with ``\\par``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1456
+#: ../../sphinx/doc/latex.rst:1529
 msgid ""
 "Formerly, the ``\\small`` was hardcoded in LaTeX writer and the ending "
 "``\\par`` was lacking."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1460
+#: ../../sphinx/doc/latex.rst:1533
 msgid "Environments associated with admonitions:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1462
+#: ../../sphinx/doc/latex.rst:1535
 msgid "``sphinxnote``,"
 msgstr "``sphinxnote``,"
 
-#: ../../sphinx/doc/latex.rst:1463
+#: ../../sphinx/doc/latex.rst:1536
 msgid "``sphinxhint``,"
 msgstr "``sphinxhint``,"
 
-#: ../../sphinx/doc/latex.rst:1464
+#: ../../sphinx/doc/latex.rst:1537
 msgid "``sphinximportant``,"
 msgstr "``sphinximportant``,"
 
-#: ../../sphinx/doc/latex.rst:1465
+#: ../../sphinx/doc/latex.rst:1538
 msgid "``sphinxtip``,"
 msgstr "``sphinxtip``,"
 
-#: ../../sphinx/doc/latex.rst:1466
+#: ../../sphinx/doc/latex.rst:1539
 msgid "``sphinxwarning``,"
 msgstr "``sphinxwarning``,"
 
-#: ../../sphinx/doc/latex.rst:1467
+#: ../../sphinx/doc/latex.rst:1540
 msgid "``sphinxcaution``,"
 msgstr "``sphinxcaution``,"
 
-#: ../../sphinx/doc/latex.rst:1468
+#: ../../sphinx/doc/latex.rst:1541
 msgid "``sphinxattention``,"
 msgstr "``sphinxattention``,"
 
-#: ../../sphinx/doc/latex.rst:1469
+#: ../../sphinx/doc/latex.rst:1542
 msgid "``sphinxdanger``,"
 msgstr "``sphinxdanger``,"
 
-#: ../../sphinx/doc/latex.rst:1470
+#: ../../sphinx/doc/latex.rst:1543
 msgid "``sphinxerror``."
 msgstr "``sphinxerror``."
 
-#: ../../sphinx/doc/latex.rst:1472
+#: ../../sphinx/doc/latex.rst:1545
 msgid ""
 "They may be ``\\renewenvironment`` 'd individually, and must then be defined"
 " with one argument (it is the heading of the notice, for example "
@@ -2336,14 +2423,14 @@ msgid ""
 "set via ``'sphinxsetup'`` string."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1480
+#: ../../sphinx/doc/latex.rst:1553
 msgid ""
 "Use of public environment names, separate customizability of the parameters,"
 " such as ``noteBorderColor``, ``noteborder``, ``warningBgColor``, "
 "``warningBorderColor``, ``warningborder``, ..."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1485
+#: ../../sphinx/doc/latex.rst:1558
 msgid ""
 "Environment for the :rst:dir:`seealso` directive: ``sphinxseealso``. It "
 "takes one argument which will be the localized string ``See also``.  Its "
@@ -2352,21 +2439,21 @@ msgid ""
 "Nothing particular is done for the contents."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1493
+#: ../../sphinx/doc/latex.rst:1566
 msgid ""
 "The contents_ directive (with ``:local:`` option) and the :dudir:`topic` "
 "directive are implemented by environment ``sphinxShadowBox``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1496
+#: ../../sphinx/doc/latex.rst:1569
 msgid "Former code refactored into an environment allowing page breaks."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1499
+#: ../../sphinx/doc/latex.rst:1572
 msgid "Options ``shadowsep``, ``shadowsize``,  ``shadowrule``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1502
+#: ../../sphinx/doc/latex.rst:1575
 msgid ""
 "The literal blocks (via ``::`` or :rst:dir:`code-block`), are implemented "
 "using ``sphinxVerbatim`` environment which is a wrapper of ``Verbatim`` "
@@ -2376,30 +2463,30 @@ msgid ""
 "not draw a frame, but allows a caption)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1510
+#: ../../sphinx/doc/latex.rst:1583
 msgid ""
 "``Verbatim`` keeps exact same meaning as in ``fancyvrb.sty`` (also under the"
 " name ``OriginalVerbatim``); ``sphinxVerbatimintable`` is used inside "
 "tables."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1515
+#: ../../sphinx/doc/latex.rst:1588
 msgid ""
 "Options ``verbatimwithframe``, ``verbatimwrapslines``, ``verbatimsep``, "
 "``verbatimborder``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1519
+#: ../../sphinx/doc/latex.rst:1592
 msgid "Support for ``:emphasize-lines:`` option"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1522
+#: ../../sphinx/doc/latex.rst:1595
 msgid ""
 "Easier customizability of the formatting via exposed to user LaTeX macros "
 "such as ``\\sphinxVerbatimHighlightLine``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1526
+#: ../../sphinx/doc/latex.rst:1599
 msgid ""
 "The bibliography uses ``sphinxthebibliography`` and the Python Module index "
 "as well as the general index both use ``sphinxtheindex``; these environments"
@@ -2407,15 +2494,15 @@ msgid ""
 "environments as provided by the document class (or packages)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1531
+#: ../../sphinx/doc/latex.rst:1604
 msgid "Formerly, the original environments were modified by Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1535
+#: ../../sphinx/doc/latex.rst:1608
 msgid "Miscellany"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1537
+#: ../../sphinx/doc/latex.rst:1610
 msgid ""
 "Every text paragraph in document body starts with ``\\sphinxAtStartPar``. "
 "Currently, this is used to insert a zero width horizontal skip which is a "
@@ -2424,13 +2511,13 @@ msgid ""
 "trick, the ``\\sphinxAtStartPar`` does nothing."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1545
+#: ../../sphinx/doc/latex.rst:1618
 msgid ""
 "The section, subsection, ... headings are set using  *titlesec*'s "
 "``\\titleformat`` command."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1548
+#: ../../sphinx/doc/latex.rst:1621
 msgid ""
 "For the ``'manual'`` docclass, the chapter headings can be customized using "
 "*fncychap*'s commands ``\\ChNameVar``, ``\\ChNumVar``, ``\\ChTitleVar``. "
@@ -2438,13 +2525,13 @@ msgid ""
 "option ``Bjarne``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1553
+#: ../../sphinx/doc/latex.rst:1626
 msgid ""
 "Formerly, use of *fncychap* with other styles than ``Bjarne`` was "
 "dysfunctional."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1559
+#: ../../sphinx/doc/latex.rst:1632
 msgid ""
 "Docutils :dudir:`container` directives are supported in LaTeX output: to let"
 " a container class with name ``foo`` influence the final PDF via LaTeX, it "
@@ -2452,26 +2539,26 @@ msgid ""
 "  A simple example would be:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1568
+#: ../../sphinx/doc/latex.rst:1641
 msgid ""
 "Currently the class names must contain only ascii characters and avoid "
 "characters special to LaTeX such as ``\\``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1575
+#: ../../sphinx/doc/latex.rst:1648
 msgid ""
 "As an experimental feature, Sphinx can use user-defined template file for "
 "LaTeX source if you have a file named ``_templates/latex.tex_t`` in your "
 "project."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1579
+#: ../../sphinx/doc/latex.rst:1652
 msgid ""
 "Additional files ``longtable.tex_t``, ``tabulary.tex_t`` and "
 "``tabular.tex_t`` can be added to ``_templates/`` to configure some aspects "
 "of table rendering (such as the caption position)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1583
+#: ../../sphinx/doc/latex.rst:1656
 msgid "currently all template variables are unstable and undocumented."
 msgstr ""

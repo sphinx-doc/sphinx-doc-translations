@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 6.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 00:36+0000\n"
+"POT-Creation-Date: 2023-04-08 00:37+0000\n"
 "PO-Revision-Date: 2020-08-01 22:23+0000\n"
 "Language-Team: Serbian (https://app.transifex.com/sphinx-doc/teams/15434/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -219,20 +219,50 @@ msgstr ""
 #: ../../sphinx/doc/development/theming.rst:158
 msgid ""
 "If the name of a file in the ``static/`` directory of a theme (or in the "
-"user's static path, for that matter) ends with ``_t``, it will be processed "
-"by the template engine.  The ``_t`` will be left from the final file name.  "
-"For example, the *classic* theme has a file ``static/classic.css_t`` which "
-"uses templating to put the color options into the stylesheet.  When a "
-"documentation is built with the classic theme, the output directory will "
-"contain a ``_static/classic.css`` file where all template tags have been "
-"processed."
+"user's static path, for that matter) ends with ``.jinja``, it will be "
+"processed by the template engine.  The ``.jinja`` will be removed from the "
+"final file name.  For example, the *classic* theme has a file "
+"``static/classic.css.jinja`` which uses templating to put the colour options"
+" into the stylesheet.  When a documentation project is built with the "
+"classic theme, the output directory will contain a ``_static/classic.css`` "
+"file where all template tags have been processed."
 msgstr ""
 
 #: ../../sphinx/doc/development/theming.rst:168
+msgid ""
+"The preferred suffix for static templates is now ``.jinja``, in line with "
+"the Jinja project's `recommended file extension`_."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:171
+msgid ""
+"The ``_t`` file suffix for static templates is now considered 'legacy', and "
+"support will eventually be removed. The standard deprecation process will "
+"begin no earlier than 31 December 2024, at which point using ``_t`` suffixes"
+" will emit ``RemovedInSphinx__Warning`` warnings."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:176
+msgid ""
+"If a static template with a ``_t`` suffix is detected, it will be processed "
+"by the template engine, with the ``_t`` suffix removed from the final file "
+"name."
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:180
+msgid ""
+"To silence the warning for ``_t`` suffixes, the new "
+"``sphinx.deprecation.OldJinjaSuffixWarning`` class has been added for use "
+"with Python's standard `warning control`_ mechanisms. This class will be "
+"removed no earlier than 31 December 2024, so guard any imports with a "
+"try/except block. For example, in a ``setup()`` function:"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:206
 msgid "Use custom page metadata in HTML templates"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:170
+#: ../../sphinx/doc/development/theming.rst:208
 msgid ""
 "Any key / value pairs in :doc:`field lists </usage/restructuredtext/field-"
 "lists>` that are placed *before* the page's title will be available to the "
@@ -240,21 +270,21 @@ msgid ""
 " example, if a page had the following text before its first title:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:182
+#: ../../sphinx/doc/development/theming.rst:220
 msgid "Then it could be accessed within a Jinja template like so:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:190
+#: ../../sphinx/doc/development/theming.rst:228
 msgid ""
 "Note the check that ``meta`` is a dictionary (\"mapping\" in Jinja "
 "terminology) to ensure that using it in this way is valid."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:195
+#: ../../sphinx/doc/development/theming.rst:233
 msgid "Defining custom template functions"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:197
+#: ../../sphinx/doc/development/theming.rst:235
 msgid ""
 "Sometimes it is useful to define your own function in Python that you wish "
 "to then use in a template. For example, if you'd like to insert a template "
@@ -263,29 +293,29 @@ msgid ""
 "messages for incorrect configuration in the template."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:203
+#: ../../sphinx/doc/development/theming.rst:241
 msgid ""
 "To define your own template function, you'll need to define two functions "
 "inside your module:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:206
+#: ../../sphinx/doc/development/theming.rst:244
 msgid ""
 "A **page context event handler** (or **registration**) function. This is "
 "connected to the :class:`.Sphinx` application via an event callback."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:208
+#: ../../sphinx/doc/development/theming.rst:246
 msgid "A **template function** that you will use in your Jinja template."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:210
+#: ../../sphinx/doc/development/theming.rst:248
 msgid ""
 "First, define the registration function, which accepts the arguments for "
 ":event:`html-page-context`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:213
+#: ../../sphinx/doc/development/theming.rst:251
 msgid ""
 "Within the registration function, define the template function that you'd "
 "like to use within Jinja. The template function should return a string or "
@@ -293,34 +323,34 @@ msgid ""
 "the templating process"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:219
+#: ../../sphinx/doc/development/theming.rst:257
 msgid ""
 "The template function will have access to all of the variables that are "
 "passed to the registration function."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:222
+#: ../../sphinx/doc/development/theming.rst:260
 msgid ""
 "At the end of the registration function, add the template function to the "
 "Sphinx application's context with ``context['template_func'] = "
 "template_func``."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:225
+#: ../../sphinx/doc/development/theming.rst:263
 msgid ""
 "Finally, in your extension's ``setup()`` function, add your registration "
 "function as a callback for :event:`html-page-context`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:242
+#: ../../sphinx/doc/development/theming.rst:280
 msgid "Now, you will have access to this function in jinja like so:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:252
+#: ../../sphinx/doc/development/theming.rst:290
 msgid "Add your own static files to the build assets"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:254
+#: ../../sphinx/doc/development/theming.rst:292
 msgid ""
 "By default, Sphinx copies static files on the ``static/`` directory of the "
 "template directory.  However, if your package needs to place static files "
@@ -329,11 +359,11 @@ msgid ""
 "event hook.  Here is an example of code to accomplish this:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:275
+#: ../../sphinx/doc/development/theming.rst:313
 msgid "Inject JavaScript based on user configuration"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:277
+#: ../../sphinx/doc/development/theming.rst:315
 msgid ""
 "If your extension makes use of JavaScript, it can be useful to allow users "
 "to control its behavior using their Sphinx configuration. However, this can "
@@ -341,33 +371,33 @@ msgid ""
 "(which will not be built with Jinja)."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:282
+#: ../../sphinx/doc/development/theming.rst:320
 msgid ""
 "There are two ways to inject variables into the JavaScript space based on "
 "user configuration."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:285
+#: ../../sphinx/doc/development/theming.rst:323
 msgid ""
 "First, you may append ``_t`` to the end of any static files included with "
 "your extension. This will cause Sphinx to process these files with the "
 "templating engine, allowing you to embed variables and control behavior."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:289
+#: ../../sphinx/doc/development/theming.rst:327
 msgid "For example, the following JavaScript structure:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:298
+#: ../../sphinx/doc/development/theming.rst:336
 msgid ""
 "Will result in the following static file placed in your HTML's build output:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:307
+#: ../../sphinx/doc/development/theming.rst:345
 msgid "See :ref:`theming-static-templates` for more information."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:309
+#: ../../sphinx/doc/development/theming.rst:347
 msgid ""
 "Second, you may use the :meth:`.Sphinx.add_js_file` method without pointing "
 "it to a file. Normally, this method is used to insert a new JavaScript file "
@@ -377,21 +407,21 @@ msgid ""
 "your project's JavaScript from Python."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:316
+#: ../../sphinx/doc/development/theming.rst:354
 msgid ""
 "For example, the following code will read in a user-configured value and "
 "then insert this value as a JavaScript variable, which your extension's "
 "JavaScript code may use:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:335
+#: ../../sphinx/doc/development/theming.rst:373
 msgid ""
 "As a result, in your theme you can use code that depends on the presence of "
 "this variable. Users can control the variable's value by defining it in "
 "their :file:`conf.py` file."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:340
+#: ../../sphinx/doc/development/theming.rst:378
 msgid ""
 "It is not an executable Python file, as opposed to :file:`conf.py`, because "
 "that would pose an unnecessary security risk if themes are shared."

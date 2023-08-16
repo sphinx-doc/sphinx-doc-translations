@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 00:47+0000\n"
+"POT-Creation-Date: 2023-08-16 00:34+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Henry Zeng <zengdeveloper@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -210,6 +210,95 @@ msgid "Node for signature annotations (not Python 3-style annotations)."
 msgstr "用于签名批注（而不是Python 3样式批注）的节点。"
 
 #: ../../sphinx/doc/extdev/nodes.rst:39
+msgid "Nodes for signature text elements"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:41
+msgid ""
+"These nodes inherit :py:class:`desc_sig_element` and are generally "
+"translated to ``docutils.nodes.inline`` by "
+":py:class:`!SigElementFallbackTransform`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:44
+msgid ""
+"Extensions may create additional ``desc_sig_*``-like nodes but in order for "
+":py:class:`!SigElementFallbackTransform` to translate them to inline nodes "
+"automatically, they must be added to :py:data:`SIG_ELEMENTS` via the class "
+"keyword argument `_sig_element=True` of :py:class:`desc_sig_element`, e.g.:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:53
+msgid ""
+"For backwards compatibility, it is still possible to add the nodes directly "
+"using ``SIG_ELEMENTS.add(desc_custom_sig_node)``."
+msgstr ""
+
+#: ../docstring of sphinx.addnodes.SIG_ELEMENTS:1
+msgid ""
+"A set of classes inheriting :class:`desc_sig_element`. Each node class is "
+"expected to be handled by the builder's translator class if the latter does "
+"not inherit from SphinxTranslator."
+msgstr ""
+
+#: ../docstring of sphinx.addnodes.SIG_ELEMENTS:5
+msgid ""
+"This set can be extended manually by third-party extensions or by "
+"subclassing :class:`desc_sig_element` and using the class keyword argument "
+"`_sig_element=True`."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_element:1
+msgid "Common parent class of nodes for inline text of a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_space:1
+msgid "Node for a space in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_name:1
+msgid "Node for an identifier in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_operator:1
+msgid "Node for an operator in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_punctuation:1
+msgid "Node for punctuation in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_keyword:1
+msgid "Node for a general keyword in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_keyword_type:1
+msgid "Node for a keyword which is a built-in type in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_literal_number:1
+msgid "Node for a numeric literal in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_literal_string:1
+msgid "Node for a string literal in a signature."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/sphinx/addnodes.pydocstring
+#: of sphinx.addnodes.desc_sig_literal_char:1
+msgid "Node for a character literal in a signature."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/nodes.rst:72
 msgid "New admonition-like constructs"
 msgstr "新的指令"
 
@@ -230,7 +319,7 @@ msgstr "当前用于“versionadded”、“versionchanged”和“deprecated”
 msgid "Custom \"see also\" admonition."
 msgstr "对应的“请参阅”警告。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:45
+#: ../../sphinx/doc/extdev/nodes.rst:78
 msgid "Other paragraph-level nodes"
 msgstr "其他段落级节点"
 
@@ -239,7 +328,7 @@ msgstr "其他段落级节点"
 msgid "Node for a compact paragraph (which never makes a <p> node)."
 msgstr "紧凑段落的节点（从不生成节点）。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:50
+#: ../../sphinx/doc/extdev/nodes.rst:83
 msgid "New inline nodes"
 msgstr "新建内联节点"
 
@@ -347,7 +436,7 @@ msgstr "行为类似“emphasis”，但不应用其他文本处理器的节点�
 msgid "Node for download references, similar to pending_xref."
 msgstr "节点，用于下载引用，类似于挂起的外部参照。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:59
+#: ../../sphinx/doc/extdev/nodes.rst:92
 msgid "Special nodes"
 msgstr "特殊节点"
 
@@ -363,7 +452,7 @@ msgid ""
 "subsequent code blocks."
 msgstr "插入以设置后续代码块的突出显示语言和行号选项。"
 
-#: ../../sphinx/doc/extdev/nodes.rst:64
+#: ../../sphinx/doc/extdev/nodes.rst:97
 msgid "You should not need to generate the nodes below in extensions."
 msgstr "您不需要在扩展中生成以下节点。"
 

@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 7.2.3\n"
+"Project-Id-Version: Sphinx 7.2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 00:34+0000\n"
+"POT-Creation-Date: 2023-08-31 00:35+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Lu <lu2github@gmail.com>, 2022\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -1481,6 +1481,22 @@ msgstr "例如，如果要使用“$`”符号来分隔内联数学，就像在L
 
 #: ../../sphinx/doc/extdev/appapi.rst:265
 msgid ""
+"Emitted when a file has been read with the :dudir:`include` directive. The "
+"*relative_path* argument is a :py:class:`~pathlib.Path` object representing "
+"the relative path of the included file from the :term:`source directory`. "
+"The *parent_docname* argument is the name of the document that contains the "
+":dudir:`include` directive. The *source* argument is a list whose single "
+"element is the contents of the included file. You can process the contents "
+"and replace this item to transform the included content, as with the "
+":event:`source-read` event."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/appapi.rst:278
+msgid "The :dudir:`include` directive and the :event:`source-read` event."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/appapi.rst:282
+msgid ""
 "Emitted when an object description directive has run.  The *domain* and "
 "*objtype* arguments are strings indicating object description of the object."
 " And *contentnode* is a content for the object.  It can be modified in-"
@@ -1488,13 +1504,13 @@ msgid ""
 msgstr ""
 "在运行对象描述指令时发出。*domain*和*objtype*参数是表示对象的对象描述的字符串。而*contentnode*是对象的内容。可以就地修改。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:273
+#: ../../sphinx/doc/extdev/appapi.rst:290
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled.  The *doctree* can be modified in-place."
 msgstr "当环境解析和读取文档树并将要进行处理时发出。*doctree*可以就地修改。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:278
+#: ../../sphinx/doc/extdev/appapi.rst:295
 msgid ""
 "Emitted when a cross-reference to an object cannot be resolved. If the event"
 " handler can resolve the reference, it should return a new docutils node to "
@@ -1506,24 +1522,24 @@ msgid ""
 "reference being unresolved."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:288
+#: ../../sphinx/doc/extdev/appapi.rst:305
 msgid "The build environment (``app.builder.env``)."
 msgstr "构建环境(``app.builder.env``)."
 
-#: ../../sphinx/doc/extdev/appapi.rst:289
+#: ../../sphinx/doc/extdev/appapi.rst:306
 msgid ""
 "The :class:`~sphinx.addnodes.pending_xref` node to be resolved. Its "
 "``reftype``, ``reftarget``, ``modname`` and ``classname`` attributes "
 "determine the type and target of the reference."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:292
+#: ../../sphinx/doc/extdev/appapi.rst:309
 msgid ""
 "The node that carries the text and formatting inside the future reference "
 "and should be a child of the returned reference node."
 msgstr "在将来引用中承载文本和格式的节点，它应该是返回的引用节点的子节点。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:299
+#: ../../sphinx/doc/extdev/appapi.rst:316
 msgid ""
 "Emitted when a cross-reference to an object cannot be resolved even after "
 ":event:`missing-reference`.  If the event handler can emit warnings for the "
@@ -1532,81 +1548,81 @@ msgid ""
 "event from being emitted for the corresponding nodes."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:309
+#: ../../sphinx/doc/extdev/appapi.rst:326
 msgid ""
 "Emitted when a doctree has been \"resolved\" by the environment, that is, "
 "all references have been resolved and TOCs have been inserted.  The "
 "*doctree* can be modified in place."
 msgstr "当环境已“解析”文档树时发出，也就是说，已解析所有引用并插入toc。*doctree*可以就地修改。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:313
+#: ../../sphinx/doc/extdev/appapi.rst:330
 msgid ""
 "Here is the place to replace custom nodes that don't have visitor methods in"
 " the writers, so that they don't cause errors when the writers encounter "
 "them."
 msgstr "这里是替换编写器中没有用户方法的自定义节点的地方，这样当编写器遇到它们时，它们不会导致错误。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:318
+#: ../../sphinx/doc/extdev/appapi.rst:335
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr "此事件仅在启用文档并行读取时发出。对于读取了一些文档的每个子进程，它都会发出一次。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:321
+#: ../../sphinx/doc/extdev/appapi.rst:338
 msgid ""
 "You must handle this event in an extension that stores data in the "
 "environment in a custom location.  Otherwise the environment in the main "
 "process will not be aware of the information stored in the subprocess."
 msgstr "必须在将数据存储在环境中的自定义位置的扩展中处理此事件。否则，主进程中的环境将不知道子进程中存储的信息。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:325
+#: ../../sphinx/doc/extdev/appapi.rst:342
 msgid ""
 "*other* is the environment object from the subprocess, *env* is the "
 "environment from the main process.  *docnames* is a set of document names "
 "that have been read in the subprocess."
 msgstr "*other*是子进程中的环境对象，*env*是主进程中的环境。*docnames*是在子流程中读取的一组文档名称。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:333
+#: ../../sphinx/doc/extdev/appapi.rst:350
 msgid ""
 "Emitted after reading all documents, when the environment and all doctrees "
 "are now up-to-date."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:336
+#: ../../sphinx/doc/extdev/appapi.rst:353
 msgid ""
 "You can return an iterable of docnames from the handler.  These documents "
 "will then be considered updated, and will be (re-)written during the writing"
 " phase."
 msgstr "您可以从处理程序返回可迭代的文档名。这些文件将被视为更新，并将在编写阶段（重新）编写。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:342
+#: ../../sphinx/doc/extdev/appapi.rst:359
 msgid "The handlers' return value is now used."
 msgstr "现在使用处理程序的返回值。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:347
+#: ../../sphinx/doc/extdev/appapi.rst:364
 msgid ""
 "Emitted when Consistency checks phase.  You can check consistency of "
 "metadata for whole of documents."
 msgstr "在一致性检查阶段发出。您可以检查整个文档的元数据的一致性。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:352
+#: ../../sphinx/doc/extdev/appapi.rst:369
 msgid "As a **experimental** event"
 msgstr "作为一个**实验性**事件"
 
-#: ../../sphinx/doc/extdev/appapi.rst:356
+#: ../../sphinx/doc/extdev/appapi.rst:373
 msgid ""
 "Emitted when the HTML builder is starting to write non-document pages.  You "
 "can add pages to write by returning an iterable from this event consisting "
 "of ``(pagename, context, templatename)``."
 msgstr "当HTML生成器开始编写非文档页面时发出。您可以通过从这个事件返回一个包含“`（页名，环境，模板名）`”的迭代器来添加要写入的页。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:364
+#: ../../sphinx/doc/extdev/appapi.rst:381
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr "当HTML生成器创建了用于呈现模板的上下文字典时发出——这可用于向上下文添加自定义元素。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:367
+#: ../../sphinx/doc/extdev/appapi.rst:384
 msgid ""
 "The *pagename* argument is the canonical name of the page being rendered, "
 "that is, without ``.html`` suffix and using slashes as path separators.  The"
@@ -1615,44 +1631,44 @@ msgid ""
 msgstr ""
 "*pagename*参数是所呈现页面的规范名称，即不带“.html”后缀并使用斜杠作为路径分隔符。*templatename*是要呈现的模板的名称，它将是“`”页面.html'``表示reST文档中的所有页面。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:372
+#: ../../sphinx/doc/extdev/appapi.rst:389
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
 "values.  Keys must be strings."
 msgstr "*context*参数是提供给模板引擎以呈现页面的值的字典，可以对其进行修改以包含自定义值。键必须是字符串。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:376
+#: ../../sphinx/doc/extdev/appapi.rst:393
 msgid ""
 "The *doctree* argument will be a doctree when the page is created from a "
 "reST documents; it will be ``None`` when the page is created from an HTML "
 "template alone."
 msgstr "从reST文档创建页面时，*doctree*参数将是文档树；仅从HTML模板创建页面时，*doctree*参数将为“None”。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:380
+#: ../../sphinx/doc/extdev/appapi.rst:397
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
 msgstr "您可以从处理程序返回一个字符串，然后它将替换“`”页面.html“`”作为此页的HTML模板。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:383
+#: ../../sphinx/doc/extdev/appapi.rst:400
 msgid ""
 "You can install JS/CSS files for the specific page via "
 ":meth:`Sphinx.add_js_file` and :meth:`Sphinx.add_css_file` since v3.5.0."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:389
+#: ../../sphinx/doc/extdev/appapi.rst:406
 msgid "The return value can now specify a template name."
 msgstr "返回值现在可以指定模板名称。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:394
+#: ../../sphinx/doc/extdev/appapi.rst:411
 msgid ""
 "Emitted when the linkcheck builder collects hyperlinks from document.  *uri*"
 " is a collected URI.  The event handlers can modify the URI by returning a "
 "string."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:402
+#: ../../sphinx/doc/extdev/appapi.rst:419
 msgid ""
 "Emitted when a build has finished, before Sphinx exits, usually used for "
 "cleanup.  This event is emitted even when the build process raised an "
@@ -1663,11 +1679,11 @@ msgid ""
 msgstr ""
 "生成完成后，在Sphinx退出之前发出，通常用于清理。即使生成过程引发异常（以*exception*参数指定），也会发出此事件。事件处理程序运行后，将在应用程序中重新初始化异常。如果生成过程没有引发异常，*exception*将为“None”。这允许根据异常状态自定义清理操作。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:413
+#: ../../sphinx/doc/extdev/appapi.rst:430
 msgid "Checking the Sphinx version"
 msgstr "检查Sphinx版本"
 
-#: ../../sphinx/doc/extdev/appapi.rst:417
+#: ../../sphinx/doc/extdev/appapi.rst:434
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr "使用此选项可使您的插件适应Sphinx中的接口更改。"
 
@@ -1688,7 +1704,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr "在版本1.2之前，请检查字符串“sphinx.\\uuuversion”。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:423
+#: ../../sphinx/doc/extdev/appapi.rst:440
 msgid "The Config object"
 msgstr "配置对象"
 
@@ -1713,7 +1729,7 @@ msgid ""
 " ``app.config.language`` or ``env.config.language``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/appapi.rst:433
+#: ../../sphinx/doc/extdev/appapi.rst:450
 msgid "The template bridge"
 msgstr "模板桥"
 
@@ -1765,7 +1781,7 @@ msgid ""
 "specified context (a Python dictionary)."
 msgstr "由生成器调用以呈现给定为字符串的模板，并具有指定的上下文（Python字典）。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:444
+#: ../../sphinx/doc/extdev/appapi.rst:461
 msgid "Exceptions"
 msgstr "例外"
 

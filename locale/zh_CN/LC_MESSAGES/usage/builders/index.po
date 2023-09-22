@@ -6,18 +6,19 @@
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2018
 # Izabel Wang <izabelwang@pku.edu.cn>, 2020
-# Melia Lee <lixiuyu97@163.com>, 2020
 # wendi cao <651645601@qq.com>, 2020
 # Lu <lu2github@gmail.com>, 2022
+# Melia Lee <lixiuyu97@163.com>, 2023
+# cdarlint <cdarling@126.com>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 7.2.5\n"
+"Project-Id-Version: Sphinx 7.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 00:35+0000\n"
+"POT-Creation-Date: 2023-09-22 00:35+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
-"Last-Translator: Lu <lu2github@gmail.com>, 2022\n"
+"Last-Translator: cdarlint <cdarling@126.com>, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,11 +38,144 @@ msgstr "这些是内置的Sphinx生成器。可以通过 :doc:`扩展 </usage/ex
 
 #: ../../sphinx/doc/usage/builders/index.rst:13
 msgid ""
-"The builder's \"name\" must be given to the **-b** command-line option of "
-":program:`sphinx-build` to select a builder."
-msgstr "生成器 \"name\" 必须通过 **-b** 命令行赋值：program:`sphinx-build` 来选择创建器。"
+"The builder's \"name\" must be given to the **-M** or **-b** command-line "
+"options of :program:`sphinx-build` to select a builder."
+msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:20
+#: ../../sphinx/doc/usage/builders/index.rst:16
+msgid "The most common builders are:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/builders/index.rst:19
+msgid "**html**"
+msgstr "**html**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:19
+msgid "Build HTML pages.  This is the default builder."
+msgstr "生成 HTML 页面。这是默认的生成器。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:23
+msgid "**dirhtml**"
+msgstr "**dirhtml**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:22
+msgid ""
+"Build HTML pages, but with a single directory per document.  Makes for "
+"prettier URLs (no ``.html``) if served from a webserver."
+msgstr "构建 HTML 页面，每个文档生成一个单独的文件夹。通过网页服务器可以显示出更好看的 URL（可以不显示.html）。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:26
+msgid "**singlehtml**"
+msgstr "**singlehtml**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:26
+msgid "Build a single HTML with the whole content."
+msgstr "使用整个内容生成单个 HTML 。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:30
+msgid "**htmlhelp**, **qthelp**, **devhelp**, **epub**"
+msgstr "**htmlhelp**, **qthelp**, **devhelp**, **epub**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:29
+msgid ""
+"Build HTML files with additional information for building a documentation "
+"collection in one of these formats."
+msgstr "生成 HTML文件，其中包含以这些格式之一构建文档集合的附加信息。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:35
+msgid "**applehelp**"
+msgstr "**applehelp**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:33
+msgid ""
+"Build an Apple Help Book.  Requires :program:`hiutil` and "
+":program:`codesign`, which are not Open Source and presently only available "
+"on Mac OS X 10.6 and higher."
+msgstr ""
+"生成一本苹果帮助手册。需要 :program:`hiutil`'和 :program:`codesign`，它们不是开源的，目前仅适用于Mac OS X"
+" 10.6及更高版本。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:39
+msgid "**latex**"
+msgstr "**latex**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:38
+msgid ""
+"Build LaTeX sources that can be compiled to a PDF document using "
+":program:`pdflatex`."
+msgstr "使用 :program:`pdflatex`生成可以编译为PDF文档的LaTeX源。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:42
+msgid "**man**"
+msgstr "**man**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:42
+msgid "Build manual pages in groff format for UNIX systems."
+msgstr "为 UNIX 系统生成 groff 格式的手册（man pages）。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:46
+msgid "**texinfo**"
+msgstr "**texinfo**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:45
+msgid ""
+"Build Texinfo files that can be processed into Info files using "
+":program:`makeinfo`."
+msgstr "使用 :program:`makeinfo`生成可以被处理为 Info 文件的 Texinfo 文件。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:49
+msgid "**text**"
+msgstr "**text**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:49
+msgid "Build plain text files."
+msgstr "生成纯文本文件。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:52
+msgid "**gettext**"
+msgstr "**gettext**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:52
+msgid "Build gettext-style message catalogs (``.pot`` files)."
+msgstr "生成 gettext 样式的文本集（“.pot”格式）。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:56
+msgid "**doctest**"
+msgstr "**doctest**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:55
+msgid ""
+"Run all doctests in the documentation, if the :mod:`~sphinx.ext.doctest` "
+"extension is enabled."
+msgstr "如果启动了 :mod:`~sphinx.ext.doctest` 扩展程序，可运行文档中的所有文档测试。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:59
+msgid "**linkcheck**"
+msgstr "**linkcheck**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:59
+msgid "Check the integrity of all external links."
+msgstr "检查所有外部链接的完整性。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:62
+msgid "**xml**"
+msgstr "**xml**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:62
+msgid "Build Docutils-native XML files."
+msgstr "生成 Docutils 原生 XML 文件。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:66
+msgid "**pseudoxml**"
+msgstr "**pseudoxml**"
+
+#: ../../sphinx/doc/usage/builders/index.rst:65
+msgid ""
+"Build compact pretty-printed \"pseudo-XML\" files displaying the internal "
+"structure of the intermediate document trees."
+msgstr "生成简洁美观的“pseudo-XML”格式文件，显示中间文档树的内部结构。"
+
+#: ../../sphinx/doc/usage/builders/index.rst:73
 msgid ""
 "This is the standard HTML builder.  Its output is a directory with HTML "
 "files, complete with style sheets and optionally the reST sources.  There "
@@ -131,7 +265,7 @@ msgid ""
 "files are searched in the order in which they appear here."
 msgstr "生成器支持的图像格式的MIME类型列表。图像文件按它们在此处出现的顺序进行搜索。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:34
+#: ../../sphinx/doc/usage/builders/index.rst:87
 msgid ""
 "This is a subclass of the standard HTML builder.  Its output is a directory "
 "with HTML files, where each file is called ``index.html`` and placed in a "
@@ -143,14 +277,14 @@ msgstr ""
 "这是标准HTML生成器的一个子类。它的输出是一个包含HTML文件的目录，其中每个文件都被调用``索引.html``并放在一个名为其页面名的子目录中。例如，文档标记/休息.rst``不会产生输出文件``标记/休息.html``，但``标记/休息/索引.html``."
 " 在页面之间生成链接时``索引.html``省略，因此URL看起来像“`markup/rest/`”。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:52
+#: ../../sphinx/doc/usage/builders/index.rst:105
 msgid ""
 "This is an HTML builder that combines the whole project in one output file. "
 "(Obviously this only works with smaller projects.)  The file is named like "
 "the root document.  No indices will be generated."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:67
+#: ../../sphinx/doc/usage/builders/index.rst:120
 msgid ""
 "This builder produces the same output as the standalone HTML builder, but "
 "also generates HTML Help support files that allow the Microsoft HTML Help "
@@ -158,24 +292,24 @@ msgid ""
 msgstr ""
 "此生成器生成与独立的HTML生成器相同的输出，但也生成HTML帮助支持文件，这些文件允许Microsoft HTML帮助研讨会将其编译为CHM文件。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:80
+#: ../../sphinx/doc/usage/builders/index.rst:133
 msgid ""
 "This builder produces the same output as the standalone HTML builder, but "
 "also generates `Qt help`_ collection support files that allow the Qt "
 "collection generator to compile them."
 msgstr "此生成器生成与独立 HTML 生成器相同的输出，但也会生成 “Qt help” 集合支持文件，这些文件允许 Qt 集合生成器编译它们。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:86
+#: ../../sphinx/doc/usage/builders/index.rst:139
 msgid "Moved to sphinxcontrib.qthelp from sphinx.builders package."
 msgstr "从sphinx.生成器包移到sphinxcontrib.qthelp。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:99
+#: ../../sphinx/doc/usage/builders/index.rst:152
 msgid ""
 "This builder produces an Apple Help Book based on the same output as the "
 "standalone HTML builder."
 msgstr "此生成器基于与独立HTML生成器相同的输出生成Apple帮助手册。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:102
+#: ../../sphinx/doc/usage/builders/index.rst:155
 msgid ""
 "If the source directory contains any ``.lproj`` folders, the one "
 "corresponding to the selected language will have its contents merged with "
@@ -183,7 +317,7 @@ msgid ""
 "documentation types."
 msgstr "如果源目录包含任何 `.lproj`` 文件夹，则与所选语言对应的文件夹的内容将与生成的输出合并。这些文件夹将被所有其他文档类型忽略。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:107
+#: ../../sphinx/doc/usage/builders/index.rst:160
 msgid ""
 "In order to generate a valid help book, this builder requires the command "
 "line tool :program:`hiutil`, which is only available on Mac OS X 10.6 and "
@@ -196,11 +330,11 @@ msgstr ""
 "confval:`applehelp_disable_external_tools` 设置为 “True” "
 "来禁用索引步骤，在这种情况下，输出将无效，直到：program:`hiutil` 已在捆绑包中的所有 `.lproj`` 文件夹上运行。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:124
+#: ../../sphinx/doc/usage/builders/index.rst:177
 msgid "Moved to sphinxcontrib.applehelp from sphinx.builders package."
 msgstr "从sphinx.生成器包移到sphinxcontrib.applehelp。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:129
+#: ../../sphinx/doc/usage/builders/index.rst:182
 msgid ""
 "This builder produces the same output as the standalone HTML builder, but "
 "also generates `GNOME Devhelp <https://wiki.gnome.org/Apps/Devhelp>`__ "
@@ -210,11 +344,11 @@ msgstr ""
 "Devhelp”<https://wiki.gnome.org/Apps/Devhelp>`__允许 GNOME Devhelp "
 "阅读器查看它们的支持文件"
 
-#: ../../sphinx/doc/usage/builders/index.rst:141
+#: ../../sphinx/doc/usage/builders/index.rst:194
 msgid "Moved to sphinxcontrib.devhelp from sphinx.builders package."
 msgstr "从sphinx.生成器包移到sphinxcontrib.devhelp。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:146
+#: ../../sphinx/doc/usage/builders/index.rst:199
 msgid ""
 "This builder produces the same output as the standalone HTML builder, but "
 "also generates an *epub* file for ebook readers.  See :ref:`epub-faq` for "
@@ -226,12 +360,12 @@ msgstr ""
 "epub 格式的定义，请看`<http://idpf.org/epub>`_或者 "
 "`<https://en.wikipedia.org/wiki/EPUB>`_.  生成器创建 *EPUB 3* 文件。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:162
+#: ../../sphinx/doc/usage/builders/index.rst:215
 msgid ""
 "Since Sphinx 1.5, the epub3 builder is used as the default epub builder."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:167
+#: ../../sphinx/doc/usage/builders/index.rst:220
 msgid ""
 "This builder produces LaTeX source files in the output directory.  The "
 "actual PDF builds happen inside this output directory and need to be "
@@ -241,13 +375,13 @@ msgid ""
 "the project root."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:175
+#: ../../sphinx/doc/usage/builders/index.rst:228
 msgid ""
 "See :confval:`latex_documents` and the chapter :ref:`latex-options` for "
 "available options."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:178
+#: ../../sphinx/doc/usage/builders/index.rst:231
 msgid ""
 "PDF builds need a sufficiently complete LaTeX installation. The testing is "
 "currently (since 5.3.0) done on Ubuntu 22.04LTS, whose LaTeX distribution "
@@ -255,66 +389,66 @@ msgid ""
 "successfully done on much older LaTeX installations."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:183
+#: ../../sphinx/doc/usage/builders/index.rst:236
 msgid ""
 "At any rate, on Ubuntu for example, following packages must all be present:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:185
+#: ../../sphinx/doc/usage/builders/index.rst:238
 msgid "``texlive-latex-recommended``"
 msgstr "``texlive-latex-recommended``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:186
+#: ../../sphinx/doc/usage/builders/index.rst:239
 msgid "``texlive-fonts-recommended``"
 msgstr "``texlive-fonts-recommended``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:187
+#: ../../sphinx/doc/usage/builders/index.rst:240
 msgid "``tex-gyre`` (if :confval:`latex_engine` left to default)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:188
+#: ../../sphinx/doc/usage/builders/index.rst:241
 msgid "``texlive-latex-extra``"
 msgstr "``texlive-latex-extra``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:189
+#: ../../sphinx/doc/usage/builders/index.rst:242
 msgid "``latexmk``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:191
+#: ../../sphinx/doc/usage/builders/index.rst:244
 msgid "TeX Gyre fonts now required for ``'pdflatex'`` engine (default)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:194
+#: ../../sphinx/doc/usage/builders/index.rst:247
 msgid "Additional packages are needed in some circumstances:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:196
+#: ../../sphinx/doc/usage/builders/index.rst:249
 msgid ""
 "``texlive-lang-cyrillic`` for Cyrillic (and also then ``cm-super`` if using "
 "the default fonts),"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:198
+#: ../../sphinx/doc/usage/builders/index.rst:251
 msgid ""
 "``texlive-lang-greek`` for Greek (and also then ``cm-super`` if using the "
 "default fonts),"
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:200
+#: ../../sphinx/doc/usage/builders/index.rst:253
 msgid "``texlive-xetex`` if :confval:`latex_engine` is ``'xelatex'``,"
 msgstr "``texlive-xetex`` 如果 :confval:`latex_engine` 是 ``'xelatex'``，"
 
-#: ../../sphinx/doc/usage/builders/index.rst:201
+#: ../../sphinx/doc/usage/builders/index.rst:254
 msgid "``texlive-luatex`` if :confval:`latex_engine` is ``'lualatex'``,"
 msgstr "``texlive-luatex`` 如果 :confval:`latex_engine` 是 ``'lualatex'``，"
 
-#: ../../sphinx/doc/usage/builders/index.rst:202
+#: ../../sphinx/doc/usage/builders/index.rst:255
 msgid ""
 "``fonts-freefont-otf`` if :confval:`latex_engine` is either ``'xelatex'`` or"
 " ``'lualatex'``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:207
+#: ../../sphinx/doc/usage/builders/index.rst:260
 msgid ""
 "Since 1.6, ``make latexpdf`` uses on GNU/Linux and macOS :program:`latexmk`,"
 " as it makes sure the needed number of runs is automatically executed. On "
@@ -322,17 +456,17 @@ msgid ""
 "``makeindex``, then two more)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:213
+#: ../../sphinx/doc/usage/builders/index.rst:266
 msgid ""
 "One can pass to ``latexmk`` options via the ``LATEXMKOPTS`` Makefile "
 "variable. For example:"
 msgstr "可以通过 “LATEXMKOPTS”Makefile 变量传递给 “latexmk” 选项。例如："
 
-#: ../../sphinx/doc/usage/builders/index.rst:220
+#: ../../sphinx/doc/usage/builders/index.rst:273
 msgid "reduces console output to a minimum."
 msgstr "将控制台输出降至最低。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:222
+#: ../../sphinx/doc/usage/builders/index.rst:275
 msgid ""
 "Also, if ``latexmk`` is at version 4.52b or higher (January 2017) "
 "``LATEXMKOPTS=\"-xelatex\"`` speeds up PDF builds via XeLateX in case of "
@@ -341,34 +475,34 @@ msgstr ""
 "另外，如果 “latexmk” 版本是4.52b或更高（1月17日），`LATEXMKOPTS=“-xelatex”` 将通过 xelatex 加速 "
 "PDF 构建，以防出现大量图形包含。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:226
+#: ../../sphinx/doc/usage/builders/index.rst:279
 msgid ""
 "To pass options directly to the ``(pdf|xe|lua)latex`` binary, use variable "
 "``LATEXOPTS``, for example:"
 msgstr "要将选项直接传递到 “`（pdf | xe|lua）latex`` 二进制文件，请使用变量 `LATEXOPTS``”。例如："
 
-#: ../../sphinx/doc/usage/builders/index.rst:239
+#: ../../sphinx/doc/usage/builders/index.rst:292
 msgid ""
 "Note that a direct PDF builder is being provided by `rinohtype`_. The "
 "builder's name is ``rinoh``. Refer to the `rinohtype manual`_ for details."
 msgstr ""
 "请注意，“rinohtype” 正在提供一个直接的PDF构建器。建筑商的名字叫“里诺”。有关详细信息，请参阅 “rinohtype 手册”。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:248
+#: ../../sphinx/doc/usage/builders/index.rst:301
 msgid ""
 "This builder produces a text file for each reST file -- this is almost the "
 "same as the reST source, but with much of the markup stripped for better "
 "readability."
 msgstr "这个构建器为每个 reST 文件生成一个文本文件——这与 reST 源文件几乎相同，但是为了更好的可读性，去掉了许多标记。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:263
+#: ../../sphinx/doc/usage/builders/index.rst:316
 msgid ""
 "This builder produces manual pages in the groff format.  You have to specify"
 " which documents are to be included in which manual pages via the "
 ":confval:`man_pages` configuration value."
 msgstr "此生成器以 groff 格式生成手册页。您必须通过：confval:`man_pages` 配置值指定哪些文档要包含在哪些手册页中。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:279
+#: ../../sphinx/doc/usage/builders/index.rst:332
 msgid ""
 "This builder produces Texinfo files that can be processed into Info files by"
 " the :program:`makeinfo` program.  You have to specify which documents are "
@@ -378,7 +512,7 @@ msgstr ""
 "此生成器生成 Texinfo 文件，这些文件可以由：program:`makeinfo` 程序处理为 Info "
 "文件。您必须通过：confval:`Texinfo_documents` 配置值指定哪些Texinfo文件要包含在哪些文档。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:284
+#: ../../sphinx/doc/usage/builders/index.rst:337
 msgid ""
 "The Info format is the basis of the on-line help system used by GNU Emacs "
 "and the terminal-based program :program:`info`.  See :ref:`texinfo-faq` for "
@@ -391,7 +525,7 @@ msgstr ""
 " GNU 项目使用的官方文档系统。有关 Texinfo "
 "的更多信息，请访问`<https://www.gnu.org/software/texinfo/>`_."
 
-#: ../../sphinx/doc/usage/builders/index.rst:302
+#: ../../sphinx/doc/usage/builders/index.rst:355
 msgid ""
 "This builder uses a module that implements the Python serialization API "
 "(`pickle`, `simplejson`, `phpserialize`, and others) to dump the generated "
@@ -400,13 +534,13 @@ msgstr ""
 "这个生成器使用一个实现 Python 序列化 API（`pickle`、`simplejson`、`phpserialize`等）的模块来转储生成的 "
 "HTML 文档，pickle 生成器是该生成器的一个子类。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:306
+#: ../../sphinx/doc/usage/builders/index.rst:359
 msgid ""
 "A concrete subclass of this builder serializing to the `PHP serialization`_ "
 "format could look like this::"
 msgstr "序列化为 “PHP serialization” 格式的此生成器的具体子类可能如下所示："
 
-#: ../../sphinx/doc/usage/builders/index.rst:322
+#: ../../sphinx/doc/usage/builders/index.rst:375
 msgid ""
 "A module that implements `dump()`, `load()`, `dumps()` and `loads()` "
 "functions that conform to the functions with the same names from the pickle "
@@ -416,27 +550,27 @@ msgstr ""
 "实现与 pickle 模块中具有相同名称的函数一致的 “dump（）”、`load（）`、`dumps（）`和 "
 "`loads（）`函数的模块。实现此接口的已知模块有 “simplejson”、“phpserialize”、“plistlib” 等。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:329
+#: ../../sphinx/doc/usage/builders/index.rst:382
 msgid "The suffix for all regular files."
 msgstr "所有常规文件的后缀。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:333
+#: ../../sphinx/doc/usage/builders/index.rst:386
 msgid ""
 "The filename for the file that contains the \"global context\".  This is a "
 "dict with some general configuration values such as the name of the project."
 msgstr "包含“全局上下文”的文件的文件名。这是一个包含一些常规配置值的 dict，例如项目的名称。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:339
+#: ../../sphinx/doc/usage/builders/index.rst:392
 msgid "The filename for the search index Sphinx generates."
 msgstr "Sphinx 生成的搜索索引的文件名。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:341
-#: ../../sphinx/doc/usage/builders/index.rst:351
-#: ../../sphinx/doc/usage/builders/index.rst:370
+#: ../../sphinx/doc/usage/builders/index.rst:394
+#: ../../sphinx/doc/usage/builders/index.rst:404
+#: ../../sphinx/doc/usage/builders/index.rst:423
 msgid "See :ref:`serialization-details` for details about the output format."
 msgstr "有关输出格式的详细信息，请参见：ref:`serialization details'。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:347
+#: ../../sphinx/doc/usage/builders/index.rst:400
 msgid ""
 "This builder produces a directory with pickle files containing mostly HTML "
 "fragments and TOC information, for use of a web application (or custom "
@@ -445,17 +579,17 @@ msgstr ""
 "这个构建器生成一个目录，其中包含 pickle 文件，主要包含 HTML 片段和 TOC 信息，以供不使用标准 HTML 模板的 web "
 "应用程序（或自定义后处理工具）使用。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:355
+#: ../../sphinx/doc/usage/builders/index.rst:408
 msgid "The old name ``web`` still works as well."
 msgstr "旧名 “web” 仍然有效。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:361
+#: ../../sphinx/doc/usage/builders/index.rst:414
 msgid ""
 "The file suffix is ``.fpickle``.  The global context is called "
 "``globalcontext.pickle``, the search index ``searchindex.pickle``."
 msgstr "文件后缀为 “.fpickle”。全局上下文为“globalcontext.pickle”，搜索索引是“.searchpickle”."
 
-#: ../../sphinx/doc/usage/builders/index.rst:366
+#: ../../sphinx/doc/usage/builders/index.rst:419
 msgid ""
 "This builder produces a directory with JSON files containing mostly HTML "
 "fragments and TOC information, for use of a web application (or custom "
@@ -464,23 +598,23 @@ msgstr ""
 "这个生成器生成一个包含 JSON 文件的目录，其中大部分包含 HTML 片段和 TOC 信息，以供不使用标准 HTML 模板的 web "
 "应用程序（或自定义后处理工具）使用。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:378
+#: ../../sphinx/doc/usage/builders/index.rst:431
 msgid ""
 "The file suffix is ``.fjson``.  The global context is called "
 "``globalcontext.json``, the search index ``searchindex.json``."
 msgstr "文件后缀为 “.fpickle”。全局上下文为“globalcontext.pickle”，搜索索引是“.searchpickle”."
 
-#: ../../sphinx/doc/usage/builders/index.rst:386
+#: ../../sphinx/doc/usage/builders/index.rst:439
 msgid ""
 "This builder produces gettext-style message catalogs.  Each top-level file "
 "or subdirectory grows a single ``.pot`` catalog template."
 msgstr "此生成器生成 gettext 样式的消息目录。每个顶级文件或子目录都会增长一个单独的“.pot” 目录模板。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:389
+#: ../../sphinx/doc/usage/builders/index.rst:442
 msgid "See the documentation on :ref:`intl` for further reference."
 msgstr "有关进一步参考，请参阅以下文档：ref:`intl'。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:402
+#: ../../sphinx/doc/usage/builders/index.rst:455
 msgid ""
 "This builder produces an HTML overview of all :rst:dir:`versionadded`, "
 ":rst:dir:`versionchanged` and :rst:dir:`deprecated` directives for the "
@@ -490,13 +624,13 @@ msgstr ""
 "此生成器生成以下所有内容的 HTML 概述：rst: 方向：`versionadded`，：rst: 方向：`versionchanged` "
 "和：rst: 方向：当前：confval:`version` 的 “deprecated” 指令。例如，这对于生成变更日志文件非常有用。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:416
+#: ../../sphinx/doc/usage/builders/index.rst:469
 msgid ""
 "This builder produces no output.  The input is only parsed and checked for "
 "consistency.  This is useful for linting purposes."
 msgstr "此生成器不生成输出。只分析和检查输入的一致性。这对于进行重要意图非常有用。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:428
+#: ../../sphinx/doc/usage/builders/index.rst:481
 msgid ""
 "This builder scans all documents for external links, tries to open them with"
 " ``requests``, and writes an overview which ones are broken and redirected "
@@ -505,22 +639,22 @@ msgstr ""
 "此生成器扫描所有文档以查找外部链接，尝试使用“请求”打开它们，并编写一个概述，其中哪些链接已断开并重定向到标准输出和：file:`输出 .txt` "
 "在输出目录中。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:440
+#: ../../sphinx/doc/usage/builders/index.rst:493
 msgid "Since Sphinx 1.5, the linkcheck builder uses the requests module."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:444
+#: ../../sphinx/doc/usage/builders/index.rst:497
 msgid "The linkcheck builder retries links when servers apply rate limits."
 msgstr ""
 
-#: ../../sphinx/doc/usage/builders/index.rst:449
+#: ../../sphinx/doc/usage/builders/index.rst:502
 msgid ""
 "This builder produces Docutils-native XML files.  The output can be "
 "transformed with standard XML tools such as XSLT processors into arbitrary "
 "final forms."
 msgstr "此生成器生成 Docutils 本机 XML 文件。输出可以用标准的 XML 工具（如 XSLT 处理器）转换成任意的最终形式。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:463
+#: ../../sphinx/doc/usage/builders/index.rst:516
 msgid ""
 "This builder is used for debugging the Sphinx/Docutils \"Reader to Transform"
 " to Writer\" pipeline. It produces compact pretty-printed \"pseudo-XML\", "
@@ -531,36 +665,36 @@ msgstr ""
 "此生成器用于调试 Sphinx/Docutils“Reader to Transform to Writer” 管道。它生成紧凑的漂亮打印的“伪 "
 "XML”文件，其中嵌套由缩进表示（没有结束标记）。输出所有元素的外部属性，并给出任何剩余的“挂起”元素的内部属性。 "
 
-#: ../../sphinx/doc/usage/builders/index.rst:478
+#: ../../sphinx/doc/usage/builders/index.rst:531
 msgid "Built-in Sphinx extensions that offer more builders are:"
 msgstr "提供更多构建器的内置 Sphinx 扩展包括："
 
-#: ../../sphinx/doc/usage/builders/index.rst:480
+#: ../../sphinx/doc/usage/builders/index.rst:533
 msgid ":mod:`~sphinx.ext.doctest`"
 msgstr ":mod:`~sphinx.ext.doctest`"
 
-#: ../../sphinx/doc/usage/builders/index.rst:481
+#: ../../sphinx/doc/usage/builders/index.rst:534
 msgid ":mod:`~sphinx.ext.coverage`"
 msgstr ":mod:`~sphinx.ext.coverage`"
 
-#: ../../sphinx/doc/usage/builders/index.rst:487
+#: ../../sphinx/doc/usage/builders/index.rst:540
 msgid "Serialization builder details"
 msgstr "序列化生成器详细信息"
 
-#: ../../sphinx/doc/usage/builders/index.rst:489
+#: ../../sphinx/doc/usage/builders/index.rst:542
 msgid ""
 "All serialization builders outputs one file per source file and a few "
 "special files.  They also copy the reST source files in the directory "
 "``_sources`` under the output directory."
 msgstr "所有序列化生成器为每个源文件输出一个文件和一些特殊文件。它们还将其余源文件复制到输出目录下的 “u sources” 目录中。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:493
+#: ../../sphinx/doc/usage/builders/index.rst:546
 msgid ""
 "The :class:`.PickleHTMLBuilder` is a builtin subclass that implements the "
 "pickle serialization interface."
 msgstr "class:`.PickleHTMLBuilder` 是一个实现 pickle 序列化接口的内置子类。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:496
+#: ../../sphinx/doc/usage/builders/index.rst:549
 msgid ""
 "The files per source file have the extensions of "
 ":attr:`~.SerializingHTMLBuilder.out_suffix`, and are arranged in directories"
@@ -570,54 +704,54 @@ msgstr ""
 "每个源文件的扩展名为：attr:` "
 "~.Serializingtmlbuilder.out_后缀`，和在目录中的排列方式与源文件相同。它们使用以下键将非序列化为字典（或类似字典的结构）："
 
-#: ../../sphinx/doc/usage/builders/index.rst:503
+#: ../../sphinx/doc/usage/builders/index.rst:556
 msgid "``body``"
 msgstr "``body``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:502
+#: ../../sphinx/doc/usage/builders/index.rst:555
 msgid ""
 "The HTML \"body\" (that is, the HTML rendering of the source file), as "
 "rendered by the HTML translator."
 msgstr "HTML“body”（即源文件的 HTML 呈现），由 HTML 转换器呈现。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:506
+#: ../../sphinx/doc/usage/builders/index.rst:559
 msgid "``title``"
 msgstr "``title``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:506
+#: ../../sphinx/doc/usage/builders/index.rst:559
 msgid "The title of the document, as HTML (may contain markup)."
 msgstr "文档的标题，如 HTML（可能包含标记）。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:509
+#: ../../sphinx/doc/usage/builders/index.rst:562
 msgid "``toc``"
 msgstr "``toc``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:509
+#: ../../sphinx/doc/usage/builders/index.rst:562
 msgid "The table of contents for the file, rendered as an HTML ``<ul>``."
 msgstr "文件的目录，呈现为 HTML <ul>。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:512
+#: ../../sphinx/doc/usage/builders/index.rst:565
 msgid "``display_toc``"
 msgstr "``display_toc``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:512
+#: ../../sphinx/doc/usage/builders/index.rst:565
 msgid ""
 "A boolean that is ``True`` if the ``toc`` contains more than one entry."
 msgstr "如果“toc”包含多个条目，则为“True”的布尔值。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:515
+#: ../../sphinx/doc/usage/builders/index.rst:568
 msgid "``current_page_name``"
 msgstr "``current_page_name``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:515
+#: ../../sphinx/doc/usage/builders/index.rst:568
 msgid "The document name of the current file."
 msgstr "当前文件的文档名。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:521
+#: ../../sphinx/doc/usage/builders/index.rst:574
 msgid "``parents``, ``prev`` and ``next``"
 msgstr "``parents``, ``prev`` and ``next``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:518
+#: ../../sphinx/doc/usage/builders/index.rst:571
 msgid ""
 "Information about related chapters in the TOC tree.  Each relation is a "
 "dictionary with the keys ``link`` (HREF for the relation) and ``title`` "
@@ -627,114 +761,114 @@ msgstr ""
 "有关目录树中相关章节的信息。每个关系都是一个字典，其键为“link”（表示关系的HREF）和“title”（相关文档的标题，以 HTML "
 "形式）。``parents 是一个关系列表，而prev 和 next 是一个关系。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:524
+#: ../../sphinx/doc/usage/builders/index.rst:577
 msgid "``sourcename``"
 msgstr "``sourcename``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:524
+#: ../../sphinx/doc/usage/builders/index.rst:577
 msgid "The name of the source file under ``_sources``."
 msgstr "“%u sources”下的源文件的名称。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:526
+#: ../../sphinx/doc/usage/builders/index.rst:579
 msgid "The special files are located in the root output directory.  They are:"
 msgstr "特殊文件位于根输出目录中。他们是："
 
-#: ../../sphinx/doc/usage/builders/index.rst:545
+#: ../../sphinx/doc/usage/builders/index.rst:598
 msgid ":attr:`.SerializingHTMLBuilder.globalcontext_filename`"
 msgstr "：属性：`.Serializingtmlbuilder.globalcontext_文件名`"
 
-#: ../../sphinx/doc/usage/builders/index.rst:529
+#: ../../sphinx/doc/usage/builders/index.rst:582
 msgid "A pickled dict with these keys:"
 msgstr "用这些键腌制的 dict："
 
-#: ../../sphinx/doc/usage/builders/index.rst:532
+#: ../../sphinx/doc/usage/builders/index.rst:585
 msgid "``project``, ``copyright``, ``release``, ``version``"
 msgstr "``project``, ``copyright``, ``release``, ``version``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:532
+#: ../../sphinx/doc/usage/builders/index.rst:585
 msgid "The same values as given in the configuration file."
 msgstr "与配置文件中给定的值相同。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:535
+#: ../../sphinx/doc/usage/builders/index.rst:588
 msgid "``style``"
 msgstr "``style``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:535
+#: ../../sphinx/doc/usage/builders/index.rst:588
 msgid ":confval:`html_style`."
 msgstr ":confval:`html_style`."
 
-#: ../../sphinx/doc/usage/builders/index.rst:538
+#: ../../sphinx/doc/usage/builders/index.rst:591
 msgid "``last_updated``"
 msgstr "``last_updated``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:538
+#: ../../sphinx/doc/usage/builders/index.rst:591
 msgid "Date of last build."
 msgstr "最近修订时间。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:542
+#: ../../sphinx/doc/usage/builders/index.rst:595
 msgid "``builder``"
 msgstr "``builder``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:541
+#: ../../sphinx/doc/usage/builders/index.rst:594
 msgid ""
 "Name of the used builder, in the case of pickles this is always "
 "``'pickle'``."
 msgstr "使用的生成器的名称，如果是 pickle，则始终为“pickle”。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:545
+#: ../../sphinx/doc/usage/builders/index.rst:598
 msgid "``titles``"
 msgstr "``titles``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:545
+#: ../../sphinx/doc/usage/builders/index.rst:598
 msgid "A dictionary of all documents' titles, as HTML strings."
 msgstr "所有文档标题的字典，如 HTML 字符串。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:555
+#: ../../sphinx/doc/usage/builders/index.rst:608
 msgid ":attr:`.SerializingHTMLBuilder.searchindex_filename`"
 msgstr ":attr:`.SerializingHTMLBuilder.searchindex_filename`"
 
-#: ../../sphinx/doc/usage/builders/index.rst:548
+#: ../../sphinx/doc/usage/builders/index.rst:601
 msgid ""
 "An index that can be used for searching the documentation.  It is a pickled "
 "list with these entries:"
 msgstr "可用于搜索文档的索引。它是一个包含以下条目的 pickle 列表："
 
-#: ../../sphinx/doc/usage/builders/index.rst:551
+#: ../../sphinx/doc/usage/builders/index.rst:604
 msgid "A list of indexed docnames."
 msgstr "索引文档名的列表。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:552
+#: ../../sphinx/doc/usage/builders/index.rst:605
 msgid ""
 "A list of document titles, as HTML strings, in the same order as the first "
 "list."
 msgstr "文档标题的列表，如 HTML 字符串，与第一个列表的顺序相同。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:554
+#: ../../sphinx/doc/usage/builders/index.rst:607
 msgid ""
 "A dict mapping word roots (processed by an English-language stemmer) to a "
 "list of integers, which are indices into the first list."
 msgstr "将词根（由英语词干分析器处理）映射到整数列表的 dict，整数是第一个列表的索引。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:564
+#: ../../sphinx/doc/usage/builders/index.rst:617
 msgid "``environment.pickle``"
 msgstr "``environment.pickle``"
 
-#: ../../sphinx/doc/usage/builders/index.rst:558
+#: ../../sphinx/doc/usage/builders/index.rst:611
 msgid ""
 "The build environment.  This is always a pickle file, independent of the "
 "builder and a copy of the environment that was used when the builder was "
 "started."
 msgstr "生成环境。这始终是一个 pickle 文件，独立于构建器，并且是启动构建器时使用的环境的副本。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:562
+#: ../../sphinx/doc/usage/builders/index.rst:615
 msgid "Todo"
 msgstr "待处理"
 
-#: ../../sphinx/doc/usage/builders/index.rst:562
+#: ../../sphinx/doc/usage/builders/index.rst:615
 msgid "Document common members."
 msgstr "记录普通成员。"
 
-#: ../../sphinx/doc/usage/builders/index.rst:564
+#: ../../sphinx/doc/usage/builders/index.rst:617
 msgid ""
 "Unlike the other pickle files this pickle file requires that the ``sphinx`` "
 "package is available on unpickling."

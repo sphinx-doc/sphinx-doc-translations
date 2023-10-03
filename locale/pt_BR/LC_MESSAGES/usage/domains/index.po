@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2023, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2023
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 7.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-03 00:36+0000\n"
+"PO-Revision-Date: 2023-10-03 00:37+0000\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../sphinx/doc/usage/domains/index.rst:5
+msgid "Domains"
+msgstr "Domínios"
+
+#: ../../sphinx/doc/usage/domains/index.rst:9
+msgid ""
+"Originally, Sphinx was conceived for a single project, the documentation of "
+"the Python language.  Shortly afterwards, it was made available for everyone"
+" as a documentation tool, but the documentation of Python modules remained "
+"deeply built in -- the most fundamental directives, like ``function``, were "
+"designed for Python objects.  Since Sphinx has become somewhat popular, "
+"interest developed in using it for many different purposes: C/C++ projects, "
+"JavaScript, or even reStructuredText markup (like in this documentation)."
+msgstr ""
+"Originalmente, o Sphinx foi concebido para um único projeto, a documentação "
+"da linguagem Python. Pouco depois, foi disponibilizado para todos como uma "
+"ferramenta de documentação, mas a documentação dos módulos Python permaneceu"
+" profundamente embutida -- as diretivas mais fundamentais, como "
+"``function``, foram projetadas para objetos Python. Como o Sphinx se tornou "
+"um tanto popular, surgiu o interesse em usá-lo para muitos propósitos "
+"diferentes: projetos C/C++, JavaScript ou mesmo marcação reStructuredText "
+"(como nesta documentação)."
+
+#: ../../sphinx/doc/usage/domains/index.rst:17
+msgid ""
+"While this was always possible, it is now much easier to easily support "
+"documentation of projects using different programming languages or even ones"
+" not supported by the main Sphinx distribution, by providing a **domain** "
+"for every such purpose."
+msgstr ""
+"Enquanto isso sempre foi possível, agora é muito mais fácil apoiar "
+"facilmente a documentação de projetos usando linguagens de programação "
+"diferentes ou mesmo aquelas não suportadas pela distribuição principal do "
+"Sphinx, fornecendo um **domínio** para cada uma dessas finalidades."
+
+#: ../../sphinx/doc/usage/domains/index.rst:22
+msgid ""
+"A domain is a collection of markup (reStructuredText :term:`directive`\\ s "
+"and :term:`role`\\ s) to describe and link to :term:`object`\\ s belonging "
+"together, e.g. elements of a programming language.  Directive and role names"
+" in a domain have names like ``domain:name``, e.g. ``py:function``.  Domains"
+" can also provide custom indices (like the Python Module Index)."
+msgstr ""
+"Um domínio é uma coleção de marcação (:term:`diretivas <directive>` e "
+":term:`papéis <role>` do reStructuredText) para descrever e vincular a "
+":term:`objetos <object>` pertencentes um ao outro, por exemplo, elementos de"
+" uma linguagem de programação. Nomes de diretivas e papeis em um domínio têm"
+" nomes como ``domain:name``, por exemplo ``py:function``. Os domínios também"
+" podem fornecer índices personalizados (como o índice do módulo Python)."
+
+#: ../../sphinx/doc/usage/domains/index.rst:28
+msgid ""
+"Having domains means that there are no naming problems when one set of "
+"documentation wants to refer to e.g. C++ and Python classes.  It also means "
+"that extensions that support the documentation of whole new languages are "
+"much easier to write."
+msgstr ""
+"Ter domínios significa que não há problemas de nomenclatura quando um "
+"conjunto de documentação deseja fazer referência a, por exemplo, classes C++"
+" e Python. Isso também significa que as extensões que têm suporte a "
+"documentação de novas linguagens são muito mais fáceis de serem escritas."
+
+#: ../../sphinx/doc/usage/domains/index.rst:33
+msgid ""
+"This section describes what the domains that are included with Sphinx "
+"provide. The domain API is documented as well, in the section :ref:`domain-"
+"api`."
+msgstr ""
+"Esta seção descreve o que os domínios incluídos no Sphinx fornecem. A API de"
+" domínio também está documentada na seção :ref:`domain-api`."
+
+#: ../../sphinx/doc/usage/domains/index.rst:40
+msgid "Basic Markup"
+msgstr "Marcação Básica"
+
+#: ../../sphinx/doc/usage/domains/index.rst:42
+msgid ""
+"Most domains provide a number of :dfn:`object description directives`, used "
+"to describe specific objects provided by modules.  Each directive requires "
+"one or more signatures to provide basic information about what is being "
+"described, and the content should be the description."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:47
+msgid ""
+"A domain will typically keep an internal index of all entities to aid cross-"
+"referencing. Typically it will also add entries in the shown general index. "
+"If you want to suppress the addition of an entry in the shown index, you can"
+" give the directive option flag ``:no-index-entry:``. If you want to exclude"
+" the object description from the table of contents, you can give the "
+"directive option flag ``:no-contents-entry:``. If you want to typeset an "
+"object description, without even making it available for cross-referencing, "
+"you can give the directive option flag ``:no-index:`` (which implies ``:no-"
+"index-entry:``). If you do not want to typeset anything, you can give the "
+"directive option flag ``:no-typesetting:``.  This can for example be used to"
+" create only a target and index entry for later reference. Though, note that"
+" not every directive in every domain may support these options."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:63
+msgid ""
+"The directive option ``noindexentry`` in the Python, C, C++, and Javascript "
+"domains."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:67
+msgid ""
+"The directive option ``:nocontentsentry:`` in the Python, C, C++, "
+"Javascript, and reStructuredText domains."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:71
+msgid ""
+"The directive option ``no-typesetting`` in the Python, C, C++, Javascript, "
+"and reStructuredText domains."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:77
+msgid "The directive option ``:noindex:`` was renamed to ``:no-index:``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:79
+msgid ""
+"The directive option ``:noindexentry:`` was renamed to ``:no-index-entry:``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:81
+msgid ""
+"The directive option ``:nocontentsentry:`` was renamed to ``:no-contents-"
+"entry:``."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:84
+msgid ""
+"The previous names are retained as aliases, but will be deprecated and "
+"removed in a future version of Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:88
+msgid "An example using a Python domain directive::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:95
+msgid ""
+"This describes the two Python functions ``spam`` and ``ham``.  (Note that "
+"when signatures become too long, you can break them if you add a backslash "
+"to lines that are continued in the next line.  Example::"
+msgstr ""
+"Isso descreve as duas funções Python ``spam`` e ``ham``. (Observe que quando"
+" as assinaturas ficam muito longas, você pode quebrá-las se adicionar uma "
+"barra invertida às linhas que continuam na próxima linha. Exemplo::"
+
+#: ../../sphinx/doc/usage/domains/index.rst:103
+msgid "(This example also shows how to use the ``:no-index:`` flag.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:105
+msgid ""
+"The domains also provide roles that link back to these object descriptions. "
+"For example, to link to one of the functions described in the example above,"
+" you could say ::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:111
+msgid ""
+"As you can see, both directive and role names contain the domain name and "
+"the directive name."
+msgstr ""
+"Como você pode ver, os nomes de diretiva e papel contêm o nome de domínio e "
+"o nome da diretiva."
+
+#: ../../sphinx/doc/usage/domains/index.rst:114
+msgid ""
+"The directive option ``:no-typesetting:`` can be used to create a target "
+"(and index entry) which can later be referenced by the roles provided by the"
+" domain. This is particularly useful for literate programming:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:132
+msgid "Default Domain"
+msgstr "Domínio Padrão"
+
+#: ../../sphinx/doc/usage/domains/index.rst:133
+msgid ""
+"For documentation describing objects from solely one domain, authors will "
+"not have to state again its name at each directive, role, etc... after "
+"having specified a default. This can be done either via the config value "
+":confval:`primary_domain` or via this directive:"
+msgstr ""
+"Para documentação que descreve objetos de apenas um domínio, os autores não "
+"terão que declarar novamente seu nome em cada diretiva, função, etc... "
+"depois de especificar um padrão. Isso pode ser feito por meio do valor de "
+"configuração :confval:`primary_domain` ou por meio desta diretiva:"
+
+#: ../../sphinx/doc/usage/domains/index.rst:140
+msgid ""
+"Select a new default domain.  While the :confval:`primary_domain` selects a "
+"global default, this only has an effect within the same file."
+msgstr ""
+"Selecione um novo domínio padrão. Enquanto :confval:`primary_domain` "
+"seleciona um padrão global, isso só tem efeito dentro do mesmo arquivo."
+
+#: ../../sphinx/doc/usage/domains/index.rst:143
+msgid ""
+"If no other default is selected, the Python domain (named ``py``) is the "
+"default one, mostly for compatibility with documentation written for older "
+"versions of Sphinx."
+msgstr ""
+"Se nenhum outro padrão for selecionado, o domínio Python (denominado ``py``)"
+" é o padrão, principalmente para compatibilidade com a documentação escrita "
+"para versões anteriores do Sphinx."
+
+#: ../../sphinx/doc/usage/domains/index.rst:147
+msgid ""
+"Directives and roles that belong to the default domain can be mentioned "
+"without giving the domain name, i.e. ::"
+msgstr ""
+"As diretivas e papéis que pertencem ao domínio padrão podem ser mencionadas "
+"sem fornecer o nome do domínio, ou seja: ::"
+
+#: ../../sphinx/doc/usage/domains/index.rst:157
+msgid "Cross-referencing syntax"
+msgstr "Sintaxe de referência cruzada"
+
+#: ../../sphinx/doc/usage/domains/index.rst:159
+msgid ""
+"For cross-reference roles provided by domains, the same facilities exist as "
+"for general cross-references.  See :ref:`xref-syntax`."
+msgstr ""
+"Para papéis de referência cruzada fornecidas por domínios, existem os mesmos"
+" recursos que existem para referências cruzadas gerais. Veja :ref:`xref-"
+"syntax`."
+
+#: ../../sphinx/doc/usage/domains/index.rst:162
+msgid "In short:"
+msgstr "Resumindo:"
+
+#: ../../sphinx/doc/usage/domains/index.rst:164
+msgid ""
+"You may supply an explicit title and reference target: ``:role:`title "
+"<target>``` will refer to *target*, but the link text will be *title*."
+msgstr ""
+"Você pode fornecer um título explícito e destino de referência: "
+"``:role:`title <target>``` irá se referir a *target*, mas o texto do link "
+"será *title*."
+
+#: ../../sphinx/doc/usage/domains/index.rst:167
+msgid ""
+"If you prefix the content with ``!``, no reference/hyperlink will be "
+"created."
+msgstr ""
+"Se você prefixar o conteúdo com ``!``, nenhuma referência/hiperlink será "
+"criada."
+
+#: ../../sphinx/doc/usage/domains/index.rst:169
+msgid ""
+"If you prefix the content with ``~``, the link text will only be the last "
+"component of the target.  For example, ``:py:meth:`~Queue.Queue.get``` will "
+"refer to ``Queue.Queue.get`` but only display ``get`` as the link text."
+msgstr ""
+"Se você prefixar o conteúdo com ``~``, o texto do link será apenas o último "
+"componente do destino. Por exemplo, ``:py:meth:`~Queue.Queue.get``` irá se "
+"referir a ``Queue.Queue.get``, mas somente exibirá ``get`` como o texto do "
+"link."
+
+#: ../../sphinx/doc/usage/domains/index.rst:174
+msgid "Built-in domains"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:176
+msgid "The following domains are included within Sphinx:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:190
+msgid "More domains"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:192
+msgid ""
+"There are several third-party domains available as extensions, including:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:194
+msgid "`Ada <https://pypi.org/project/sphinxcontrib-adadomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:195
+msgid "`Chapel <https://pypi.org/project/sphinxcontrib-chapeldomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:196
+msgid "`CoffeeScript <https://pypi.org/project/sphinxcontrib-coffee/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:197
+msgid "`Common Lisp <https://pypi.org/project/sphinxcontrib-cldomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:198
+msgid "`dqn <https://pypi.org/project/sphinxcontrib-dqndomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:199
+msgid "`Erlang <https://pypi.org/project/sphinxcontrib-erlangdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:200
+msgid "`Go <https://pypi.org/project/sphinxcontrib-golangdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:201
+msgid "`HTTP <https://pypi.org/project/sphinxcontrib-httpdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:202
+msgid "`Jinja <https://pypi.org/project/sphinxcontrib-jinjadomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:203
+msgid "`Lasso <https://pypi.org/project/sphinxcontrib-lassodomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:204
+msgid "`MATLAB <https://pypi.org/project/sphinxcontrib-matlabdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:205
+msgid ""
+"`Operation <https://pypi.org/project/sphinxcontrib-operationdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:206
+msgid "`PHP <https://pypi.org/project/sphinxcontrib-phpdomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:207
+msgid "`Ruby <https://pypi.org/project/sphinxcontrib-rubydomain/>`__"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/index.rst:208
+msgid "`Scala <https://pypi.org/project/sphinxcontrib-scaladomain/>`__"
+msgstr ""

@@ -5,7 +5,17 @@ This is a project to provide Sphinx official documentation, hosted on the Read T
 > **Note:** The current procedure is bit tricky because Read The Docs doesn't have a way to specify options for `sphinx-build` command.
 **conf.py** files for each languages have `language` and `locale_dirs` values without having full copy of **conf.py** of sphinx doc. If we want to specify **conf.py** file that is out of source directory, we will use `-c` option for the `sphinx-build` command. Unfortunately Read the Docs doesn't support that. If there is a better way, open an issue.
 
-## URLs
+## How the translated documentation projects are setup on RTD
+
+Instructions: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
+
+Key points:
+
+* There is a RTD project for each language.
+* Each project needs the correct **Language** setting on the **Settings** page.
+* The parent project needs connections created to each translated project on the **Translations Settings** page.
+
+### URLs
 
 * RTD project pages for Sphinx:
 
@@ -28,7 +38,7 @@ https://readthedocs.org/projects/sphinx-pl-pl/
   * [![Documentation Status](https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master)](https://www.sphinx-doc.org/pt_BR/master/?badge=master)
 https://readthedocs.org/projects/sphinx-pt-br/
   * [![Documentation Status](https://readthedocs.org/projects/sphinx-doc-ru/badge/?version=master)](https://www.sphinx-doc.org/ru/master/?badge=master)
-https://readthedocs.org/projects/sphinx-doc-ru/ (Other project "sphinx-ru" is already exist.)
+https://readthedocs.org/projects/sphinx-doc-ru/
   * [![Documentation Status](https://readthedocs.org/projects/sphinx-sr/badge/?version=master)](https://www.sphinx-doc.org/sr/master/?badge=master)
 https://readthedocs.org/projects/sphinx-sr/
   * [![Documentation Status](https://readthedocs.org/projects/sphinx-sr-rs/badge/?version=latest)](https://sphinx-sr-rs.readthedocs.io/sr/latest/?badge=latest)
@@ -49,22 +59,12 @@ https://readthedocs.org/projects/sphinx-es/
   * http://www.sphinx-doc.org/ko
   * http://www.sphinx-doc.org/pl_PL
   * http://www.sphinx-doc.org/pt_BR
-  * http://www.sphinx-doc.org/ru (Other project "sphinx-ru" is already exist.)
+  * http://www.sphinx-doc.org/ru
   * http://www.sphinx-doc.org/sr
   * http://www.sphinx-doc.org/sr_RS
   * http://www.sphinx-doc.org/es
 
-## How to setup a translated documentation project on RTD
-
-Instructions: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
-
-Key points:
-
-* There must be a RTD project for each language.
-* Each projects must have correct Language setting on "Settings" page.
-* Parent project must have connections to each translated project on the "Translations Settings" page.
-
-## How to add a new language
+## How to add a new language translation
 
 1. Add new language to `locale/update.sh`:
 
@@ -83,11 +83,13 @@ Key points:
 
 4. Commit them
 
-5. Add new project on Read The Docs:
+5. Add new project on Read The Docs. For example, for `pt_BR`:
 
    https://readthedocs.org/projects/sphinx-pt-br/
 
-6. Add new translation project to parent project:
+   > **Note:** If a RTD project name for a translation is already taken, create a unique project name instead. For example, when `sphinx-ru` was taken, `sphinx-doc-ru` was used instead.
+
+7. Add new translation project to parent project:
 
    https://readthedocs.org/dashboard/sphinx/translations/
 

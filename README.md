@@ -38,7 +38,7 @@ https://readthedocs.org/projects/sphinx-es/
 
 * Documentation pages for each languages:
 
-  * http://www.sphinx-doc.org/
+  * http://www.sphinx-doc.org/en
   * http://www.sphinx-doc.org/ar
   * http://www.sphinx-doc.org/ca_ES
   * http://www.sphinx-doc.org/zh_CN

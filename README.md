@@ -64,30 +64,30 @@ sh ./locale/update.sh
 After that, you should commit updated po files.
 
 
-## How to add a language
+## How to add a new language
 
-1. add language to locale/update.sh:
+1. Add new language to `locale/update.sh`:
 
-   ```
+   ```diff
    - rm -R es ja
    - tx pull -l es,ja
    + rm -R es ja pt_BR
    + tx pull -l es,ja,pt_BR
    ```
 
-2. update po files
+2. Update po files
 
-3. commit them
+3. Commit them
 
-4. add new project on Read The Docs like:
+4. Add new project on Read The Docs:
 
    https://readthedocs.org/projects/sphinx-pt-br/
 
-5. add translation project to parent project like:
+5. Add new translation project to parent project:
 
    https://readthedocs.org/dashboard/sphinx/translations/
 
-4. enable version 1.7 on RTD:
+4. Enable version 1.7 on RTD:
 
    https://readthedocs.org/projects/sphinx-ja/versions/
 

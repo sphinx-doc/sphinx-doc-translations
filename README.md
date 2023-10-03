@@ -15,54 +15,23 @@ Key points:
 * Each project needs the correct **Language** setting on the **Settings** page.
 * The parent project needs connections created to each translated project on the **Translations Settings** page.
 
-### URLs
-
-* RTD project pages for Sphinx:
-
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx/badge/?version=master)](https://www.sphinx-doc.org/en/master/?badge=master) https://readthedocs.org/projects/sphinx/  (Parent project)
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-ar/badge/?version=master)](https://www.sphinx-doc.org/ar/master/?badge=master) https://readthedocs.org/projects/sphinx-ar/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-ca-es/badge/?version=master)](https://www.sphinx-doc.org/ca/master/?badge=master) https://readthedocs.org/projects/sphinx-ca-es/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-zh-cn/badge/?version=master)](https://www.sphinx-doc.org/zh_CN/master/?badge=master) https://readthedocs.org/projects/sphinx-zh-cn/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-fr/badge/?version=master)](https://www.sphinx-doc.org/fr/master/?badge=master)
-https://readthedocs.org/projects/sphinx-fr/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-de/badge/?version=master)](https://www.sphinx-doc.org/de/master/?badge=master)
-https://readthedocs.org/projects/sphinx-de/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-it-it/badge/?version=master)](https://www.sphinx-doc.org/it/master/?badge=master)
-https://readthedocs.org/projects/sphinx-it-it/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-ja/badge/?version=master)](https://www.sphinx-doc.org/ja/master/?badge=master)
- https://readthedocs.org/projects/sphinx-ja/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-ko/badge/?version=master)](https://www.sphinx-doc.org/ko/master/?badge=master)
-https://readthedocs.org/projects/sphinx-ko/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-pl-pl/badge/?version=master)](https://www.sphinx-doc.org/pl/master/?badge=master)
-https://readthedocs.org/projects/sphinx-pl-pl/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master)](https://www.sphinx-doc.org/pt_BR/master/?badge=master)
-https://readthedocs.org/projects/sphinx-pt-br/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-doc-ru/badge/?version=master)](https://www.sphinx-doc.org/ru/master/?badge=master)
-https://readthedocs.org/projects/sphinx-doc-ru/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-sr/badge/?version=master)](https://www.sphinx-doc.org/sr/master/?badge=master)
-https://readthedocs.org/projects/sphinx-sr/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-sr-rs/badge/?version=latest)](https://sphinx-sr-rs.readthedocs.io/sr/latest/?badge=latest)
-https://readthedocs.org/projects/sphinx-sr-rs/
-  * [![Documentation Status](https://readthedocs.org/projects/sphinx-es/badge/?version=master)](https://www.sphinx-doc.org/es/master/?badge=master)
-https://readthedocs.org/projects/sphinx-es/
-
-* Documentation pages for each languages:
-
-  * http://www.sphinx-doc.org/en
-  * http://www.sphinx-doc.org/ar
-  * http://www.sphinx-doc.org/ca_ES
-  * http://www.sphinx-doc.org/zh_CN
-  * http://www.sphinx-doc.org/fr
-  * http://www.sphinx-doc.org/de
-  * http://www.sphinx-doc.org/it_IT
-  * http://www.sphinx-doc.org/ja
-  * http://www.sphinx-doc.org/ko
-  * http://www.sphinx-doc.org/pl_PL
-  * http://www.sphinx-doc.org/pt_BR
-  * http://www.sphinx-doc.org/ru
-  * http://www.sphinx-doc.org/sr
-  * http://www.sphinx-doc.org/sr_RS
-  * http://www.sphinx-doc.org/es
+| Build Status | sphinx-doc docs | RTD Project |
+|--------------|-----------------|-------------|
+| [![Documentation Status](https://readthedocs.org/projects/sphinx/badge/?version=master)](https://www.sphinx-doc.org/en/master/?badge=master) | http://www.sphinx-doc.org/en | https://readthedocs.org/projects/sphinx/  (Parent project) |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-ar/badge/?version=master)](https://www.sphinx-doc.org/ar/master/?badge=master) | http://www.sphinx-doc.org/ar | https://readthedocs.org/projects/sphinx-ar/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-ca-es/badge/?version=master)](https://www.sphinx-doc.org/ca/master/?badge=master) | http://www.sphinx-doc.org/ca_ES | https://readthedocs.org/projects/sphinx-ca-es/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-zh-cn/badge/?version=master)](https://www.sphinx-doc.org/zh_CN/master/?badge=master) | http://www.sphinx-doc.org/zh_CN | https://readthedocs.org/projects/sphinx-zh-cn/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-fr/badge/?version=master)](https://www.sphinx-doc.org/fr/master/?badge=master) | http://www.sphinx-doc.org/fr | https://readthedocs.org/projects/sphinx-fr/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-de/badge/?version=master)](https://www.sphinx-doc.org/de/master/?badge=master) | http://www.sphinx-doc.org/de | https://readthedocs.org/projects/sphinx-de/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-it-it/badge/?version=master)](https://www.sphinx-doc.org/it/master/?badge=master) | http://www.sphinx-doc.org/it_IT | https://readthedocs.org/projects/sphinx-it-it/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-ja/badge/?version=master)](https://www.sphinx-doc.org/ja/master/?badge=master) | http://www.sphinx-doc.org/ja | https://readthedocs.org/projects/sphinx-ja/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-ko/badge/?version=master)](https://www.sphinx-doc.org/ko/master/?badge=master) | http://www.sphinx-doc.org/ko | https://readthedocs.org/projects/sphinx-ko/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-pl-pl/badge/?version=master)](https://www.sphinx-doc.org/pl/master/?badge=master) | http://www.sphinx-doc.org/pl_PL | https://readthedocs.org/projects/sphinx-pl-pl/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master)](https://www.sphinx-doc.org/pt_BR/master/?badge=master) | http://www.sphinx-doc.org/pt_BR | https://readthedocs.org/projects/sphinx-pt-br/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-doc-ru/badge/?version=master)](https://www.sphinx-doc.org/ru/master/?badge=master) | http://www.sphinx-doc.org/ru | https://readthedocs.org/projects/sphinx-doc-ru/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-sr/badge/?version=master)](https://www.sphinx-doc.org/sr/master/?badge=master) | http://www.sphinx-doc.org/sr | https://readthedocs.org/projects/sphinx-sr/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-sr-rs/badge/?version=latest)](https://sphinx-sr-rs.readthedocs.io/sr/latest/?badge=latest) | http://www.sphinx-doc.org/sr_RS | https://readthedocs.org/projects/sphinx-sr-rs/ |
+| [![Documentation Status](https://readthedocs.org/projects/sphinx-es/badge/?version=master)](https://www.sphinx-doc.org/es/master/?badge=master) | http://www.sphinx-doc.org/es | https://readthedocs.org/projects/sphinx-es/ |
 
 ## How to add a new language translation
 

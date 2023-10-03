@@ -1,5 +1,4 @@
 # sphinx-doc.org on the Read The Docs.
-[![Build Status](https://travis-ci.org/sphinx-doc/sphinx-doc-translations.svg?branch=master)](https://travis-ci.org/sphinx-doc/sphinx-doc-translations)
 [![Documentation Status](https://readthedocs.org/projects/sphinx/badge/?version=master)](https://www.sphinx-doc.org/en/master/?badge=master)
 
 This is a project to provide Sphinx official documentation with multiple versions and multiple languages on Read The Docs site.

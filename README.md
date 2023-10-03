@@ -1,9 +1,9 @@
-# sphinx-doc.org on the Read The Docs.
+# Sphinx official documentation translations
 
-This is a project to provide Sphinx official documentation with multiple versions and multiple languages on Read The Docs site.
+This is a project to provide Sphinx official documentation, hosted on the Read The Docs platform, in multiple languages.
 
-Current procedure is bit tricky because Read The Docs doesn't have a way to specify options for sphinx-build command.
-conf.py files for each languages have 'language' and 'locale_dirs' values without having full copy of conf.py of sphinx doc. If we want to specify conf.py file that is out of source directory, we will use '-c' option for sphinx-build command. Unfortunately Read the Docs can't. If there are any better way, please let me know.
+> **Note:** The current procedure is bit tricky because Read The Docs doesn't have a way to specify options for `sphinx-build` command.
+**conf.py** files for each languages have `language` and `locale_dirs` values without having full copy of **conf.py** of sphinx doc. If we want to specify **conf.py** file that is out of source directory, we will use `-c` option for the `sphinx-build` command. Unfortunately Read the Docs doesn't support that. If there is a better way, open an issue.
 
 ## URLs
 
@@ -56,23 +56,13 @@ https://readthedocs.org/projects/sphinx-es/
 
 ## How to setup a translated documentation project on RTD
 
-Detail is here: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
+Instructions: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
 
-Points are:
+Key points:
 
-* We must have RTD projects for each languages.
+* There must be a RTD project for each language.
 * Each projects must have correct Language setting on "Settings" page.
-* Master project has connections to each translated projects on "translations settings" page.
-
-
-## How to update po files
-
-```
-sh ./locale/update.sh
-```
-
-After that, you should commit updated po files.
-
+* Parent project must have connections to each translated project on the "Translations Settings" page.
 
 ## How to add a new language
 
@@ -85,15 +75,19 @@ After that, you should commit updated po files.
    + tx pull -l es,ja,pt_BR
    ```
 
-2. Update po files
+2. Update po files:
 
-3. Commit them
+   ```
+   sh ./locale/update.sh
+   ```
 
-4. Add new project on Read The Docs:
+4. Commit them
+
+5. Add new project on Read The Docs:
 
    https://readthedocs.org/projects/sphinx-pt-br/
 
-5. Add new translation project to parent project:
+6. Add new translation project to parent project:
 
    https://readthedocs.org/dashboard/sphinx/translations/
 

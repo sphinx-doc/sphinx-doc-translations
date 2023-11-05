@@ -7,6 +7,7 @@
 # Georg Brandl <g.brandl@gmx.net>, 2018
 # LAURENT Raphaël <laurent@ined.fr>, 2019
 # niconil <laurent.combe@free.fr>, 2020
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-30 15:26+0000\n"
 "PO-Revision-Date: 2018-02-12 13:46+0000\n"
-"Last-Translator: niconil <laurent.combe@free.fr>, 2020\n"
+"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -360,6 +361,12 @@ msgid ""
 " of other builders (currently the changes builder).  (Note that the template"
 " bridge must be made theme-aware if HTML themes are to be used.)"
 msgstr ""
+"Une chaîne avec le nom complet d'un appelable (ou simplement d'une classe) "
+"qui renvoie une instance de :class:`~sphinx.application.TemplateBridge`. "
+"Cette instance est ensuite utilisée pour restituer les documents HTML, et "
+"éventuellement la sortie d'autres constructeurs (actuellement le "
+"constructeur de modifications). (Notez que le pont de modèles doit être "
+"rendu sensible au thème si des thèmes HTML doivent être utilisés.)"
 
 #: ../../sphinx/doc/config.rst:194
 msgid ""
@@ -642,6 +649,11 @@ msgid ""
 "should include the domain name if present.  Example entries would be "
 "``('py:func', 'int')`` or ``('envvar', 'LD_LIBRARY_PATH')``."
 msgstr ""
+"Une liste de tuples ``(type, target)`` (vides par défaut) qui doivent être "
+"ignorés lors de la génération d'avertissements en \"mode pinailleur\". Notez"
+" que ``type`` doit inclure le nom de domaine s'il est présent. Des exemples "
+"d'entrées seraient ``('py:func', 'int')`` ou ``('envvar', "
+"'LD_LIBRARY_PATH')``."
 
 #: ../../sphinx/doc/config.rst:363
 msgid ""
@@ -649,6 +661,10 @@ msgid ""
 "have a caption.  The :rst:role:`numref` role is enabled. Obeyed so far only "
 "by HTML and LaTeX builders. Default is ``False``."
 msgstr ""
+"Si vrai, les figures, tableaux et blocs de codes sont automatiquement "
+"numérotés s'ils ont une légende. Le rôle :rst:role:`numref` est activé. Obéi"
+" jusqu'à présent uniquement par les constructeurs HTML et LaTeX. La valeur "
+"par défaut est « Faux »."
 
 #: ../../sphinx/doc/config.rst:369
 msgid ""
@@ -664,6 +680,10 @@ msgid ""
 "``'section'`` to strings that are used for format of figure numbers. As a "
 "special character, `%s` will be replaced to figure number."
 msgstr ""
+"Un dictionnaire mappant ``'figure'``, ``'table'``, ``'code-block'`` et "
+"``'section'`` aux chaînes qui sont utilisées pour le format des nombres des "
+"figures. En tant que caractère spécial, `%s` sera remplacé par le numéro du "
+"chiffre."
 
 #: ../../sphinx/doc/config.rst:380
 msgid ""
@@ -699,6 +719,10 @@ msgid ""
 "sub-section (but still ``x.1``, ``x.2``, ... if located directly under a "
 "section and ``1``, ``2``, ... if not in any top level section.)"
 msgstr ""
+"``2`` signifie que les nombres seront ``x.y.1``, ``x.y.2``, ... s'ils sont "
+"situés dans une sous-section (mais toujours ``x.1``, ``x.2 ``, ... s'il est "
+"situé directement sous une section et `` 1``, `` 2``, ... s'il ne se trouve "
+"dans aucune section de niveau supérieur.)"
 
 #: ../../sphinx/doc/config.rst:397
 msgid "etc..."
@@ -719,6 +743,11 @@ msgid ""
 "languages, will be used to convert quotes and dashes to typographically "
 "correct entities.  Default: ``True``."
 msgstr ""
+"Si cela est vrai, la « transformation Docutils Smart Quotes »__, basée à "
+"l'origine sur « SmartyPants »__ (limitée à l'anglais) et s'appliquant "
+"actuellement à de nombreuses langues, sera utilisée pour convertir les "
+"guillemets et les tirets en entités typographiquement correctes. Par défaut "
+": « Vrai »."
 
 #: ../../sphinx/doc/config.rst:415
 msgid ""
@@ -726,6 +755,9 @@ msgid ""
 "default to all builders except ``man`` and ``text`` (see "
 ":confval:`smartquotes_excludes`.)"
 msgstr ""
+"Il remplace le :confval:`html_use_smartypants` obsolète. Il s'applique par "
+"défaut à tous les constructeurs sauf ``man`` et ``text`` (voir "
+":confval:`smartquotes_excludes`.)"
 
 #: ../../sphinx/doc/config.rst:420
 msgid ""
@@ -734,6 +766,10 @@ msgid ""
 "smart quotes via the corresponding `Docutils option`__.  But if it "
 "*activates* them, then :confval:`smartquotes` does prevail."
 msgstr ""
+"Un fichier `docutils.conf`__ situé dans le répertoire de configuration (ou "
+"un fichier global :file:`~/.docutils`) obéi sans condition s'il *désactive* "
+"les guillemets intelligents via l'`option Docutils`__ correspondante. Mais "
+"s'il les *actives*, alors :confval:`smartquotes` prévaut."
 
 #: ../../sphinx/doc/config.rst:430
 msgid ""
@@ -743,6 +779,12 @@ msgid ""
 "uote characters ``\"``, ``'``, em- and en-**D**\\ ashes ``---``, ``--``, and"
 " **e**\\ llipses ``...``."
 msgstr ""
+"Cette chaîne, à utiliser avec Docutils ``0.14`` ou version ultérieure, "
+"personnalise la transformation Smart Quotes. Voir le fichier "
+":file:`smartquotes.py` dans le `dépôt Docutils`__ pour plus de détails. La "
+"valeur par défaut ``'qDe'`` éduque les caractères **q**\\ uote normaux "
+"``\"``, ``'``, em- et en-**D**\\ tiret ``---`` , ``--`` et **e**\\ llipse "
+"``...``."
 
 #: ../../sphinx/doc/config.rst:442
 msgid "This is a ``dict`` whose default is::"
@@ -754,6 +796,10 @@ msgid ""
 " setting and deactivate the Smart Quotes transform. Accepted keys are as "
 "above ``'builders'`` or ``'languages'``. The values are lists."
 msgstr ""
+"Chaque entrée donne une condition suffisante pour ignorer le paramètre "
+":confval:`smartquotes` et désactiver la transformation Smart Quotes. Les "
+"clés acceptées sont comme ci-dessus ``'builders'`` ou ``'languages'``. Les "
+"valeurs sont des listes."
 
 #: ../../sphinx/doc/config.rst:451
 msgid ""
@@ -766,6 +812,15 @@ msgid ""
 " usage of :program:`sphinx-build` as it caches (in its default usage) the "
 "parsed source files in per builder locations."
 msgstr ""
+"Actuellement, en cas d'invocation de :program:`make` avec plusieurs cibles, "
+"le premier nom de cible est le seul qui est testé par rapport à l'entrée "
+"``'builders'`` et il décide pour tout. De plus, un ``make text`` suivant "
+"``make html`` doit être émis sous la forme ``make text O=\"-E\"`` pour "
+"forcer la nouvelle analyse des fichiers sources, car ceux en cache sont déjà"
+" transformé. D'un autre côté, le problème ne se pose pas avec l'utilisation "
+"directe de :program:`sphinx-build` car il met en cache (dans son utilisation"
+" par défaut) les fichiers sources analysés dans les emplacements de chaque "
+"constructeur."
 
 #: ../../sphinx/doc/config.rst:464
 msgid "If true, Sphinx verifies server certifications.  Default is ``True``."
@@ -780,6 +835,11 @@ msgid ""
 "path to certificate file. The certificates are used to verify server "
 "certifications."
 msgstr ""
+"Un chemin vers un fichier de certification de l'autorité de certification ou"
+" un chemin vers un répertoire contenant les certificats. Cela permet "
+"également à un dictionnaire de mapper le nom d'hôte sur le chemin d'accès au"
+" fichier de certificat. Les certificats sont utilisés pour vérifier les "
+"certifications du serveur."
 
 #: ../../sphinx/doc/config.rst:478
 msgid "Project information"
@@ -825,6 +885,8 @@ msgid ""
 "If you don't need the separation provided between :confval:`version` and "
 ":confval:`release`, just set them both to the same value."
 msgstr ""
+"Si vous n'avez pas besoin de la séparation fournie entre :confval:`version` "
+"et :confval:`release`, définissez-les simplement sur la même valeur."
 
 #: ../../sphinx/doc/config.rst:509
 msgid ""
@@ -845,6 +907,8 @@ msgid ""
 "Otherwise, the current time is formatted using :func:`time.strftime` and the"
 " format given in :confval:`today_fmt`."
 msgstr ""
+"Sinon, l'heure actuelle est formatée en utilisant :func:`time.strftime` et "
+"le format donné dans :confval:`today_fmt`."
 
 #: ../../sphinx/doc/config.rst:516
 msgid ""
@@ -1233,7 +1297,7 @@ msgstr "raw"
 
 #: ../../sphinx/doc/config.rst:737
 msgid "raw content"
-msgstr ""
+msgstr "contenu brut"
 
 #: ../../sphinx/doc/config.rst:0
 msgid "image"

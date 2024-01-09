@@ -39,6 +39,7 @@ jobs:
       run: sudo apt-get install graphviz
     - name: Install dependencies
       run: |
+        git fetch origin master --depth 1
         git branch -a
         git checkout master  # attach this repo
         git submodule init

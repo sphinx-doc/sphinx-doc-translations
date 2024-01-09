@@ -1,6 +1,7 @@
 name: update-translations
 
 on:
+  pull_request:
   schedule:
     - cron: "0 0 * * *" #runs at 00:00 UTC everyday
 
@@ -62,6 +63,7 @@ jobs:
         git add sphinx
         git commit -m "[skip ci] by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
     - name: GitHub Push
+      if: github.event_name != 'pull_request'
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

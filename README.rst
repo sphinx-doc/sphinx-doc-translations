@@ -90,11 +90,6 @@ Key points:
           :alt: Documentation Status
      - http://www.sphinx-doc.org/sr
      - https://readthedocs.org/projects/sphinx-sr/
-   * - .. image:: https://readthedocs.org/projects/sphinx-sr-rs/badge/?version=latest
-          :target: https://www.sphinx-doc.org/sr/master/?badge=latest
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/sr_RS
-     - https://readthedocs.org/projects/sphinx-sr-rs/
    * - .. image:: https://readthedocs.org/projects/sphinx-es/badge/?version=master
           :target: https://www.sphinx-doc.org/es/master/?badge=master
           :alt: Documentation Status

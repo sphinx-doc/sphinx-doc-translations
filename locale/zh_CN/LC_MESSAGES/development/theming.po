@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"POT-Creation-Date: 2024-04-10 00:37+0000\n"
 "PO-Revision-Date: 2020-08-01 22:23+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -79,13 +79,17 @@ msgid ""
 "files."
 msgstr "“static/`”目录，其中包含将在生成时复制到输出静态目录的任何静态文件。这些可以是图像、样式、脚本文件。"
 
-#: ../../sphinx/doc/development/theming.rst:38
+#: ../../sphinx/doc/development/theming.rst:39
+msgid "Theme configuration (``theme.conf``)"
+msgstr ""
+
+#: ../../sphinx/doc/development/theming.rst:41
 msgid ""
 "The :file:`theme.conf` file is in INI format [1]_ (readable by the standard "
 "Python :mod:`configparser` module) and has the following structure:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:52
+#: ../../sphinx/doc/development/theming.rst:55
 msgid ""
 "The **inherit** setting gives the name of a \"base theme\", or ``none``.  "
 "The base theme will be used to locate missing templates (most themes will "
@@ -96,7 +100,7 @@ msgid ""
 msgstr ""
 "**inherit**设置提供“基本主题”或“无”的名称。基本主题将用于查找缺少的模板（如果大多数主题使用“basic”作为基本主题，则大多数主题不必提供大多数模板），它的选项将被继承，并且它的所有静态文件也将被使用。如果您还想继承样式表，可以通过CSS'`@import``将其包含在自己的样式表中。"
 
-#: ../../sphinx/doc/development/theming.rst:59
+#: ../../sphinx/doc/development/theming.rst:62
 msgid ""
 "The **stylesheet** setting gives a list of CSS filenames separated commas "
 "which will be referenced in the HTML header.  You can also use CSS' "
@@ -105,7 +109,7 @@ msgid ""
 " the :confval:`html_style` config value will override this setting."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:65
+#: ../../sphinx/doc/development/theming.rst:68
 msgid ""
 "The **pygments_style** setting gives the name of a Pygments style to use for"
 " highlighting.  This can be overridden by the user in the "
@@ -113,7 +117,7 @@ msgid ""
 msgstr ""
 "**pygments\\ustyle**设置提供用于突出显示的pygments样式的名称。用户可以在：confval:`pygments\\ustyle`配置值中重写此设置。"
 
-#: ../../sphinx/doc/development/theming.rst:69
+#: ../../sphinx/doc/development/theming.rst:72
 msgid ""
 "The **pygments_dark_style** setting gives the name of a Pygments style to "
 "use for highlighting when the CSS media query ``(prefers-color-scheme: "
@@ -121,7 +125,7 @@ msgid ""
 ":meth:`~sphinx.application.Sphinx.add_css_file()`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:74
+#: ../../sphinx/doc/development/theming.rst:77
 msgid ""
 "The **sidebars** setting gives the comma separated list of sidebar templates"
 " for constructing sidebars.  This can be overridden by the user in the "
@@ -129,7 +133,7 @@ msgid ""
 msgstr ""
 "**sidebars**设置提供了用逗号分隔的侧边栏模板列表，用于构造提要栏。用户可以在：confval:`html_sidebars`配置值中覆盖此值。"
 
-#: ../../sphinx/doc/development/theming.rst:78
+#: ../../sphinx/doc/development/theming.rst:81
 msgid ""
 "The **options** section contains pairs of variable names and default values."
 " These options can be overridden by the user in "
@@ -138,25 +142,25 @@ msgid ""
 msgstr ""
 "**options**部分包含变量名和默认值对。用户可以在以下位置重写这些选项：confval:`html_theme_options`并且可以从所有模板中以“theme_1`”的形式访问这些选项。"
 
-#: ../../sphinx/doc/development/theming.rst:82
+#: ../../sphinx/doc/development/theming.rst:85
 msgid "sidebar settings"
 msgstr "边栏设置"
 
-#: ../../sphinx/doc/development/theming.rst:87
+#: ../../sphinx/doc/development/theming.rst:90
 msgid "The stylesheet setting accepts multiple CSS filenames"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:92
+#: ../../sphinx/doc/development/theming.rst:95
 msgid "Distribute your theme as a Python package"
 msgstr "将主题作为Python包分发"
 
-#: ../../sphinx/doc/development/theming.rst:94
+#: ../../sphinx/doc/development/theming.rst:97
 msgid ""
 "As a way to distribute your theme, you can use a Python package.  This makes"
 " it easier for users to set up your theme."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:97
+#: ../../sphinx/doc/development/theming.rst:100
 msgid ""
 "To distribute your theme as a Python package, please define an entry point "
 "called ``sphinx.html_themes`` in your ``pyproject.toml`` file, and write a "
@@ -164,48 +168,48 @@ msgid ""
 ":meth:`~sphinx.application.Sphinx.add_html_theme` API:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:117
+#: ../../sphinx/doc/development/theming.rst:120
 msgid ""
 "If your theme package contains two or more themes, please call "
 "``add_html_theme()`` twice or more."
 msgstr "如果您的主题包包含两个或多个主题，请调用“add_html_theme（）`”两次或更多。"
 
-#: ../../sphinx/doc/development/theming.rst:120
+#: ../../sphinx/doc/development/theming.rst:123
 msgid "'sphinx_themes' entry_points feature."
 msgstr "“sphinx_themes”入口点功能。"
 
-#: ../../sphinx/doc/development/theming.rst:123
+#: ../../sphinx/doc/development/theming.rst:126
 msgid "``sphinx_themes`` entry_points has been deprecated."
 msgstr "``sphinx_themes“入口点”已被弃用。"
 
-#: ../../sphinx/doc/development/theming.rst:126
+#: ../../sphinx/doc/development/theming.rst:129
 msgid "``sphinx.html_themes`` entry_points feature."
 msgstr "``sphinx.html_themes`` 进入点特征。"
 
-#: ../../sphinx/doc/development/theming.rst:131
+#: ../../sphinx/doc/development/theming.rst:134
 msgid "Templating"
 msgstr "模板"
 
-#: ../../sphinx/doc/development/theming.rst:133
+#: ../../sphinx/doc/development/theming.rst:136
 msgid ""
 "The :doc:`guide to templating <templating>` is helpful if you want to write "
 "your own templates.  What is important to keep in mind is the order in which"
 " Sphinx searches for templates:"
 msgstr "如果您想编写自己的模板，：doc:`guide to templating 1`很有帮助。重要的是要记住Sphinx搜索模板的顺序："
 
-#: ../../sphinx/doc/development/theming.rst:137
+#: ../../sphinx/doc/development/theming.rst:140
 msgid "First, in the user's ``templates_path`` directories."
 msgstr "首先，在用户的“templates_path”目录中。"
 
-#: ../../sphinx/doc/development/theming.rst:138
+#: ../../sphinx/doc/development/theming.rst:141
 msgid "Then, in the selected theme."
 msgstr "然后，在选定的主题中。"
 
-#: ../../sphinx/doc/development/theming.rst:139
+#: ../../sphinx/doc/development/theming.rst:142
 msgid "Then, in its base theme, its base's base theme, etc."
 msgstr "然后，在它的基主题中，它的基主题，等等。"
 
-#: ../../sphinx/doc/development/theming.rst:141
+#: ../../sphinx/doc/development/theming.rst:144
 msgid ""
 "When extending a template in the base theme with the same name, use the "
 "theme name as an explicit directory: ``{% extends \"basic/layout.html\" "
@@ -214,11 +218,11 @@ msgid ""
 "<templating-primer>`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:150
+#: ../../sphinx/doc/development/theming.rst:153
 msgid "Static templates"
 msgstr "静态模板"
 
-#: ../../sphinx/doc/development/theming.rst:152
+#: ../../sphinx/doc/development/theming.rst:155
 msgid ""
 "Since theme options are meant for the user to configure a theme more easily,"
 " without having to write a custom stylesheet, it is necessary to be able to "
@@ -227,7 +231,7 @@ msgid ""
 msgstr ""
 "因为主题选项是为了让用户更容易地配置一个主题，而不必编写自定义样式表，所以必须能够模板化静态文件和HTML文件。因此，Sphinx支持所谓的“静态模板”，如下所示："
 
-#: ../../sphinx/doc/development/theming.rst:157
+#: ../../sphinx/doc/development/theming.rst:160
 msgid ""
 "If the name of a file in the ``static/`` directory of a theme (or in the "
 "user's static path, for that matter) ends with ``_t``, it will be processed "
@@ -239,11 +243,11 @@ msgid ""
 "been processed."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:167
+#: ../../sphinx/doc/development/theming.rst:170
 msgid "Use custom page metadata in HTML templates"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:169
+#: ../../sphinx/doc/development/theming.rst:172
 msgid ""
 "Any key / value pairs in :doc:`field lists </usage/restructuredtext/field-"
 "lists>` that are placed *before* the page's title will be available to the "
@@ -251,21 +255,21 @@ msgid ""
 " example, if a page had the following text before its first title:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:181
+#: ../../sphinx/doc/development/theming.rst:184
 msgid "Then it could be accessed within a Jinja template like so:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:189
+#: ../../sphinx/doc/development/theming.rst:192
 msgid ""
 "Note the check that ``meta`` is a dictionary (\"mapping\" in Jinja "
 "terminology) to ensure that using it in this way is valid."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:194
+#: ../../sphinx/doc/development/theming.rst:197
 msgid "Defining custom template functions"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:196
+#: ../../sphinx/doc/development/theming.rst:199
 msgid ""
 "Sometimes it is useful to define your own function in Python that you wish "
 "to then use in a template. For example, if you'd like to insert a template "
@@ -274,29 +278,29 @@ msgid ""
 "messages for incorrect configuration in the template."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:202
+#: ../../sphinx/doc/development/theming.rst:205
 msgid ""
 "To define your own template function, you'll need to define two functions "
 "inside your module:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:205
+#: ../../sphinx/doc/development/theming.rst:208
 msgid ""
 "A **page context event handler** (or **registration**) function. This is "
 "connected to the :class:`.Sphinx` application via an event callback."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:207
+#: ../../sphinx/doc/development/theming.rst:210
 msgid "A **template function** that you will use in your Jinja template."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:209
+#: ../../sphinx/doc/development/theming.rst:212
 msgid ""
 "First, define the registration function, which accepts the arguments for "
 ":event:`html-page-context`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:212
+#: ../../sphinx/doc/development/theming.rst:215
 msgid ""
 "Within the registration function, define the template function that you'd "
 "like to use within Jinja. The template function should return a string or "
@@ -304,34 +308,34 @@ msgid ""
 "the templating process"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:218
+#: ../../sphinx/doc/development/theming.rst:221
 msgid ""
 "The template function will have access to all of the variables that are "
 "passed to the registration function."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:221
+#: ../../sphinx/doc/development/theming.rst:224
 msgid ""
 "At the end of the registration function, add the template function to the "
 "Sphinx application's context with ``context['template_func'] = "
 "template_func``."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:224
+#: ../../sphinx/doc/development/theming.rst:227
 msgid ""
 "Finally, in your extension's ``setup()`` function, add your registration "
 "function as a callback for :event:`html-page-context`."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:241
+#: ../../sphinx/doc/development/theming.rst:244
 msgid "Now, you will have access to this function in jinja like so:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:251
+#: ../../sphinx/doc/development/theming.rst:254
 msgid "Add your own static files to the build assets"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:253
+#: ../../sphinx/doc/development/theming.rst:256
 msgid ""
 "By default, Sphinx copies static files on the ``static/`` directory of the "
 "template directory.  However, if your package needs to place static files "
@@ -340,11 +344,11 @@ msgid ""
 "event hook.  Here is an example of code to accomplish this:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:274
+#: ../../sphinx/doc/development/theming.rst:277
 msgid "Inject JavaScript based on user configuration"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:276
+#: ../../sphinx/doc/development/theming.rst:279
 msgid ""
 "If your extension makes use of JavaScript, it can be useful to allow users "
 "to control its behavior using their Sphinx configuration. However, this can "
@@ -352,33 +356,33 @@ msgid ""
 "(which will not be built with Jinja)."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:281
+#: ../../sphinx/doc/development/theming.rst:284
 msgid ""
 "There are two ways to inject variables into the JavaScript space based on "
 "user configuration."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:284
+#: ../../sphinx/doc/development/theming.rst:287
 msgid ""
 "First, you may append ``_t`` to the end of any static files included with "
 "your extension. This will cause Sphinx to process these files with the "
 "templating engine, allowing you to embed variables and control behavior."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:288
+#: ../../sphinx/doc/development/theming.rst:291
 msgid "For example, the following JavaScript structure:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:297
+#: ../../sphinx/doc/development/theming.rst:300
 msgid ""
 "Will result in the following static file placed in your HTML's build output:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:306
+#: ../../sphinx/doc/development/theming.rst:309
 msgid "See :ref:`theming-static-templates` for more information."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:308
+#: ../../sphinx/doc/development/theming.rst:311
 msgid ""
 "Second, you may use the :meth:`.Sphinx.add_js_file` method without pointing "
 "it to a file. Normally, this method is used to insert a new JavaScript file "
@@ -388,21 +392,21 @@ msgid ""
 "your project's JavaScript from Python."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:315
+#: ../../sphinx/doc/development/theming.rst:318
 msgid ""
 "For example, the following code will read in a user-configured value and "
 "then insert this value as a JavaScript variable, which your extension's "
 "JavaScript code may use:"
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:334
+#: ../../sphinx/doc/development/theming.rst:337
 msgid ""
 "As a result, in your theme you can use code that depends on the presence of "
 "this variable. Users can control the variable's value by defining it in "
 "their :file:`conf.py` file."
 msgstr ""
 
-#: ../../sphinx/doc/development/theming.rst:339
+#: ../../sphinx/doc/development/theming.rst:342
 msgid ""
 "It is not an executable Python file, as opposed to :file:`conf.py`, because "
 "that would pose an unnecessary security risk if themes are shared."

@@ -38,7 +38,7 @@ Key points:
    * - .. image:: https://readthedocs.org/projects/sphinx-ca-es/badge/?version=master
           :target: https://www.sphinx-doc.org/ca/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/ca_ES
+     - http://www.sphinx-doc.org/ca
      - https://readthedocs.org/projects/sphinx-ca-es/
    * - .. image:: https://readthedocs.org/projects/sphinx-zh-cn/badge/?version=master
           :target: https://www.sphinx-doc.org/zh_CN/master/?badge=master
@@ -58,7 +58,7 @@ Key points:
    * - .. image:: https://readthedocs.org/projects/sphinx-it-it/badge/?version=master
           :target: https://www.sphinx-doc.org/it/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/it_IT
+     - http://www.sphinx-doc.org/it
      - https://readthedocs.org/projects/sphinx-it-it/
    * - .. image:: https://readthedocs.org/projects/sphinx-ja/badge/?version=master
           :target: https://www.sphinx-doc.org/ja/master/?badge=master
@@ -73,7 +73,7 @@ Key points:
    * - .. image:: https://readthedocs.org/projects/sphinx-pl-pl/badge/?version=master
           :target: https://www.sphinx-doc.org/pl/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/pl_PL
+     - http://www.sphinx-doc.org/pl
      - https://readthedocs.org/projects/sphinx-pl-pl/
    * - .. image:: https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master
           :target: https://www.sphinx-doc.org/pt_BR/master/?badge=master

@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Cédric C, 2024
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-06 01:42+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
+"Last-Translator: Cédric C, 2024\n"
 "Language-Team: French (https://app.transifex.com/sphinx-doc/teams/15434/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../sphinx/doc/templating.rst:7
 msgid "Templating"
-msgstr ""
+msgstr "Créer des modèles"
 
 #: ../../sphinx/doc/templating.rst:9
 msgid ""
@@ -29,14 +33,21 @@ msgid ""
 " it. It also has excellent documentation for those who need to make "
 "themselves familiar with it."
 msgstr ""
+"Sphinx utilise le créateur de modèles `Jinja "
+"<https://jinja.palletsprojects.com/>`_ pour ses modèles HTML. Jinja est un "
+"moteur basé sur un format texte, inspiré des modèles de Django, c'est "
+"pourquoi quiconque a déjà utilisé Django sera familier de Jinja. Il possède "
+"aussi une excellente documentation pour ceux qui ont besoin de se "
+"familiariser avec lui."
 
 #: ../../sphinx/doc/templating.rst:17
 msgid "Do I need to use Sphinx's templates to produce HTML?"
 msgstr ""
+"Est-ce que j'ai besoin d'utiliser des modèles Sphinx pour produire du HTML?"
 
 #: ../../sphinx/doc/templating.rst:19
 msgid "No.  You have several other options:"
-msgstr ""
+msgstr "Non. Vous avez plusieurs autres options."
 
 #: ../../sphinx/doc/templating.rst:21
 msgid ""
@@ -44,6 +55,10 @@ msgid ""
 "calls your template engine of choice, and set the :confval:`template_bridge`"
 " configuration value accordingly."
 msgstr ""
+"Vous pouvez écrire une sous-"
+"classe:class:`~sphinx.application.TemplateBridge` qui sollicite le moteur de"
+" modèle de votre choix, et fixe la valeur de configuration "
+":confval:`template_bridge`en conséquence."
 
 #: ../../sphinx/doc/templating.rst:25
 msgid ""
@@ -51,6 +66,9 @@ msgid ""
 ":class:`~sphinx.builders.html.StandaloneHTMLBuilder` and calls your template"
 " engine of choice."
 msgstr ""
+"Vous pouvez :ref: `écrire un compilateur personnalisé <writing-builders>`qui"
+" dérive de :class:`~sphinx.builders.html.StandaloneHTMLBuilder` et appelle "
+"le moteur de modèle de votre choix."
 
 #: ../../sphinx/doc/templating.rst:29
 msgid ""
@@ -71,6 +89,11 @@ msgid ""
 "specific blocks within a template, customizing it while also keeping the "
 "changes at a minimum."
 msgstr ""
+"Dans Sphinx, le langage par défaut de modèle est Jinja. Il s'inspire de "
+"Django / Smarty et est facile à comprendre. Le concept le plus important de "
+"Jinja est :dfn: `l'héritage du modèle`, ce qui signifie que vous pouvez "
+"écraser uniquement des blocs spécifiques à l'intérieur d'un modèle, en "
+"l'adaptant tout en réduisant les changements au minimum."
 
 #: ../../sphinx/doc/templating.rst:42
 msgid ""
@@ -79,6 +102,11 @@ msgid ""
 "files with the same name as the original filename into the template "
 "directory of the structure the Sphinx quickstart generated for you."
 msgstr ""
+"Pour adapter la production de votre documentation, vous pouvez ne pas tenir "
+"compte des thèmes (autant les thèmes de mise en page que les thèmes enfant) "
+"en ajoutant des fichiers avec le même nom que celui d'origine à l'intérieur "
+"du répertoire de thèmes de la structure, qui a été générée pour vous par le "
+"Sphinx quickstart."
 
 #: ../../sphinx/doc/templating.rst:47
 msgid ""
@@ -86,6 +114,8 @@ msgid ""
 "first, and if it can't find the template it's looking for there, it falls "
 "back to the selected theme's templates."
 msgstr ""
+"Sphinx cherchera les thèmes dans les dossier de :confval:`templates_path`en "
+"premier, et s'il ne trouve aucun thème, il revient au thème sélectionné."
 
 #: ../../sphinx/doc/templating.rst:51
 msgid ""
@@ -93,6 +123,9 @@ msgid ""
 "template is evaluated, **tags**, which control the logic of the template and"
 " **blocks** which are used for template inheritance."
 msgstr ""
+"Un thème contient des **variables**, qui sont remplacées avec des valeurs "
+"lorsque le thèmes est évalué, les **tags**, qui contrôlent la logique du "
+"thème et les **blocs** qui sont utilisés pour ..."
 
 #: ../../sphinx/doc/templating.rst:55
 msgid ""

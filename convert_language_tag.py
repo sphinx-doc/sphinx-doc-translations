@@ -26,8 +26,7 @@ def is_valid_language_tag(input_str: str, pattern: str) -> bool:
 def convert_to_iso639_gettext(input_str: str) -> str:
     """Convert a ll-cc to ll_CC language code."""
     first_part, _, last_part = input_str.partition("-")
-    last_part_upper = last_part.upper()
-    return f"{first_part}_{last_part_upper}"
+    return f"{first_part}_{last_part.upper()}"
 
 
 def main():

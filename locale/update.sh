@@ -16,6 +16,8 @@ sphinx-intl update-txconfig-resources -p pot -d .
 cat .tx/config
 
 # Skip Transifex commands when running pull requests event on GitHub Actions
+echo GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME
+exit 1
 if [[ "$GITHUB_EVENT_NAME" != 'pull_request' ]]; then
   tx push -s --skip
   rm -R -f ar ca_ES zh_CN fr de it_IT ja ko pl_PL pt_BR ru sr es

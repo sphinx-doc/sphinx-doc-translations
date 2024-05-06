@@ -48,9 +48,9 @@ jobs:
         pip install -U pip setuptools
         pip install -r ./requirements.txt
     - name: Install Transifex CLI
+      working-directory: /usr/local/bin
       run: |
         curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-        mv tx /usr/local/bin/tx
         tx --version
     - name: Update translations
       run: sh ./locale/update.sh

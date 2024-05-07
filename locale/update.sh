@@ -3,6 +3,10 @@
 
 set -ex
 
+LANGS='ar ca_ES de es fr it_IT ja ko pl_PL pt_BR ru sr zh_CN'
+
+LANGS_PULL=${LANGS// /,}
+
 # required environment variables
 # SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME=sphinx-doc
 # SPHINXINTL_TRANSIFEX_PROJECT_NAME=sphinx-doc
@@ -18,8 +22,8 @@ cat .tx/config
 # Skip Transifex commands when running pull requests event on GitHub Actions
 if [[ "$GITHUB_EVENT_NAME" != 'pull_request' ]]; then
   tx push -s --skip
-  rm -R -f ar ca_ES zh_CN fr de it_IT ja ko pl_PL pt_BR ru sr es
-  tx pull --silent -f -l ar,ca_ES,zh_CN,fr,de,it_IT,ja,ko,pl_PL,pt_BR,ru,sr,es
+  rm -R -f ${LANGS}
+  tx pull --silent -f -l ${LANGS_PULL}
 fi
 
 git checkout .tx/config

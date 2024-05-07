@@ -15,5 +15,5 @@ build:
       sphinx-build ./sphinx/doc/ ./_readthedocs/html 
       -b html  
       -D locale_dirs=$(realpath locale)
-      -D language=$READTHEDOCS_LANGUAGE
+      -D language=$(python convert_language_tag.py)
       -D gettext_compact=0

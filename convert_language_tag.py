@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-Convert a lowercased IETF language tag (ll-cc) to Gettext's ISO 639 (ll_CC),
+Convert a READTHEDOCS_LANGUAGE (ll-cc) to Sphinx-compatible format (ll_CC),
 and print the result.
 
-This script will return the same input value if the language tag doesn't have
-the country part (ll) or it is already a Gettext's ISO 639 (ll_CC).
+This script reads Read the Docs's READTHEDOCS_LANGUAGE environment variable,
+and convert ll-cc into ll_CC.
 
-Exit with error in case the input is not a valid language tag
-(i.e. not ll-cc or ll_CC)
+The output is the same as input if the input language has only language
+without country part ('ll') or is already Gettext's ISO 639 (ll_CC).
+
+Exit with error in case READTHEDOCS_LANGUAGE is not set or th input is not
+one of the valid language formats (ll, ll-cc or ll_CC)
 """
 
-import argparse
+import os
 import re
 import sys
 
@@ -18,34 +21,35 @@ IETF_LANG_TAG_PATTERN = r"^[a-z]{2}-[a-z]{2}$"
 A_LANG_TAG_PATTERN = r"^[a-z]{2}(-[a-z]{2}|_[A-Z]{2})?$"
 
 
-def is_valid_language_tag(input_str: str, pattern: str) -> bool:
-    """Check if the input string matches the language tag pattern."""
+def match_language_tag(input_str: str, pattern: str) -> bool:
+    """Match the *input_str* string with the language tag *pattern*."""
     return bool(re.match(pattern, input_str))
 
 
 def convert_to_iso639_gettext(input_str: str) -> str:
-    """Convert a ll-cc to ll_CC language code."""
+    """Convert *input_str* from ll-cc to ll_CC language format."""
     first_part, _, last_part = input_str.partition("-")
     return f"{first_part}_{last_part.upper()}"
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawTextHelpFormatter
-    )
-    parser.add_argument("language")
-    arg = parser.parse_args()
-
-    if not is_valid_language_tag(arg.language, A_LANG_TAG_PATTERN):
+    rtd_language = os.getenv("READTHEDOCS_LANGUAGE")
+    if not rtd_language:
         sys.exit(
-            f"Error: Expected a language code like pt_BR or pt-br. "
-            f"Invalid language code given: {arg.language}"
+            "Error: READTHEDOCS_LANGUAGE not set, "
+            + "is this being run in readthedocs build env?"
+        )
+
+    if not match_language_tag(rtd_language, A_LANG_TAG_PATTERN):
+        sys.exit(
+            "Error: Expected a language code like pt, pt_BR or pt-br. "
+            f"Invalid language code given: {rtd_language}"
         )
 
     output_language = (
-        convert_to_iso639_gettext(arg.language)
-        if is_valid_language_tag(arg.language, IETF_LANG_TAG_PATTERN)
-        else arg.language
+        convert_to_iso639_gettext(rtd_language)
+        if match_language_tag(rtd_language, IETF_LANG_TAG_PATTERN)
+        else rtd_language
     )
     print(output_language)
 

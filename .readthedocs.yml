@@ -5,7 +5,6 @@ build:
   tools:
     python: "3"
   commands:
-    - export LANGUAGE=$(python convert_language_tag.py $READTHEDOCS_LANGUAGE)
     # install requirements
     - pip install -r requirements.txt
     # initialise submodule (https://github.com/sphinx-doc/sphinx.git)
@@ -16,5 +15,5 @@ build:
       sphinx-build ./sphinx/doc/ ./_readthedocs/html 
       -b html  
       -D locale_dirs=$(realpath locale)
-      -D language=$LANGUAGE
+      -D language=$(python convert_language_tag.py)
       -D gettext_compact=0

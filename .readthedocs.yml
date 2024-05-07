@@ -10,8 +10,6 @@ build:
     # initialise submodule (https://github.com/sphinx-doc/sphinx.git)
     - git submodule init
     - git submodule update
-    # rename locale to meet $READTHEDOCS_LANGUAGE
-    - (cd locale; for dir in $(ls -d * | grep _[A-Z]); do renamed=$(echo $dir | tr '_' '-' | tr [:upper:] [:lower:]); mv $dir $renamed; done;)
     # run Sphinx
     - >
       sphinx-build ./sphinx/doc/ ./_readthedocs/html 

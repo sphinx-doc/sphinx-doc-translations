@@ -43,7 +43,7 @@ Key points:
    * - .. image:: https://readthedocs.org/projects/sphinx-zh-cn/badge/?version=master
           :target: https://www.sphinx-doc.org/zh_CN/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/zh_CN
+     - http://www.sphinx-doc.org/zh-cn
      - https://readthedocs.org/projects/sphinx-zh-cn/
    * - .. image:: https://readthedocs.org/projects/sphinx-fr/badge/?version=master
           :target: https://www.sphinx-doc.org/fr/master/?badge=master
@@ -78,7 +78,7 @@ Key points:
    * - .. image:: https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master
           :target: https://www.sphinx-doc.org/pt_BR/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/pt_BR
+     - http://www.sphinx-doc.org/pt-br
      - https://readthedocs.org/projects/sphinx-pt-br/
    * - .. image:: https://readthedocs.org/projects/sphinx-doc-ru/badge/?version=master
           :target: https://www.sphinx-doc.org/ru/master/?badge=master

@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:2
 msgid "Developing a \"Hello world\" extension"
-msgstr ""
+msgstr "Desenvolvendo uma extensão \"Hello world\""
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:4
 msgid ""
@@ -33,18 +33,26 @@ msgid ""
 " a new directive. This directive will output a paragraph containing \"hello "
 "world\"."
 msgstr ""
+"O objetivo deste tutorial é criar uma extensão muito básica que adicione uma"
+" nova diretiva. Esta diretiva produzirá um parágrafo contendo \"hello "
+"world\" (olá mundo)."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:7
 msgid ""
 "Only basic information is provided in this tutorial. For more information, "
 "refer to the :doc:`other tutorials <index>` that go into more details."
 msgstr ""
+"Apenas informações básicas são fornecidas neste tutorial. Para mais "
+"informações, consulte :doc:`outros tutoriais <index>` que entram em mais "
+"detalhes."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:12
 msgid ""
 "For this extension, you will need some basic understanding of docutils_ and "
 "Python."
 msgstr ""
+"Para esta extensão, você precisará de algum conhecimento básico de docutils_"
+" e Python."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:17
 msgid "Overview"
@@ -52,13 +60,15 @@ msgstr "Visão geral"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:19
 msgid "We want the extension to add the following to Sphinx:"
-msgstr ""
+msgstr "Queremos que a extensão adicione o seguinte ao Sphinx:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:21
 msgid ""
 "A ``helloworld`` directive, that will simply output the text \"hello "
 "world\"."
 msgstr ""
+"Uma diretiva ``helloworld``, que simplesmente produzirá o texto \"hello "
+"world\"."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:25
 msgid "Prerequisites"
@@ -70,6 +80,9 @@ msgid ""
 " it as part of an existing project. This means you will need to use an "
 "existing project or create a new one using :program:`sphinx-quickstart`."
 msgstr ""
+"Não distribuiremos este plugin via `PyPI`_ e, em vez disso, incluiremos ele "
+"como parte de um projeto existente. Isso significa que você precisará usar "
+"um projeto existente ou criar um novo usando :program:`sphinx-quickstart`."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:31
 msgid ""
@@ -77,53 +90,64 @@ msgid ""
 "(:file:`build`) folders. Your extension file could be in any folder of your "
 "project. In our case, let's do the following:"
 msgstr ""
+"Presumimos que você esteja usando pastas de fonte (:file:`source`) e de "
+"construção (:file:`build`) separadas. Seu arquivo de extensão pode estar em "
+"qualquer pasta do seu projeto. No nosso caso, vamos fazer o seguinte:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:35
 msgid "Create an :file:`_ext` folder in :file:`source`"
-msgstr ""
+msgstr "Crie uma pasta :file:`_ext` em :file:`source`"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:36
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called "
 ":file:`helloworld.py`"
 msgstr ""
+"Crie um novo arquivo Python na pasta :file:`_ext` chamado "
+":file:`helloworld.py`"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:39
 msgid "Here is an example of the folder structure you might obtain:"
-msgstr ""
+msgstr "Aqui está um exemplo da estrutura de pastas que você pode obter:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:55
 msgid "Writing the extension"
-msgstr ""
+msgstr "Escrevendo a extensão"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:57
 msgid "Open :file:`helloworld.py` and paste the following code in it:"
-msgstr ""
+msgstr "Abra :file:`helloworld.py` e cole o seguinte código nele:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:63
 msgid ""
 "Some essential things are happening in this example, and you will see them "
 "for all directives."
 msgstr ""
+"Algumas coisas essenciais estão acontecendo neste exemplo e você as verá em "
+"todas as diretivas."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:67
 msgid "The directive class"
-msgstr ""
+msgstr "A classe da diretiva"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:68
 msgid "Our new directive is declared in the ``HelloWorld`` class."
-msgstr ""
+msgstr "Nossa nova diretiva é declarada na classe ``HelloWorld``."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:75
 msgid ""
 "This class extends the docutils_' ``Directive`` class. All extensions that "
 "create directives should extend this class."
 msgstr ""
+"Esta classe estende a classe ``Directive`` do docutils_. Todas as extensões "
+"que criam diretivas devem estender esta classe."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:80
 msgid ""
 "`The docutils documentation on creating directives <docutils directives_>`_"
 msgstr ""
+"`A documentação do docutils sobre a criação de diretivas <docutils "
+"directives_>`_"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:82
 msgid ""
@@ -133,10 +157,15 @@ msgid ""
 "are docutils' way of representing the content of a document. There are many "
 "types of nodes available: text, paragraph, reference, table, etc."
 msgstr ""
+"Esta classe contém um método ``run``. Este método é um requisito e faz parte"
+" de todas as diretivas. Ele contém a lógica principal da diretiva e retorna "
+"uma lista de nós do docutils a serem processados pelo Sphinx. Esses nós são "
+"a forma dos docutils representarem o conteúdo de um documento. Existem "
+"muitos tipos de nós disponíveis: texto, parágrafo, referência, tabela, etc."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:90
 msgid "`The docutils documentation on nodes <docutils nodes_>`_"
-msgstr ""
+msgstr "`A documentação do docutils sobre nós <docutils nodes_>`_"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:92
 msgid ""
@@ -144,16 +173,21 @@ msgid ""
 " typically contains some text that we can set during instantiation using the"
 " ``text`` parameter."
 msgstr ""
+"A classe ``nodes.paragraph`` cria um novo nó de parágrafo. Um nó de "
+"parágrafo normalmente contém algum texto que podemos definir durante a "
+"instanciação usando o parâmetro ``text``."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:97
 msgid "The ``setup`` function"
-msgstr ""
+msgstr "A função ``setup``"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:100
 msgid ""
 "This function is a requirement. We use it to plug our new directive into "
 "Sphinx."
 msgstr ""
+"Esta função é um requisito. Nós o usamos para conectar nossa nova diretiva "
+"ao Sphinx."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:108
 msgid ""
@@ -162,6 +196,10 @@ msgid ""
 "argument is the name of the directive itself as used in a reST file. In this"
 " case, we would use ``helloworld``. For example:"
 msgstr ""
+"A coisa mais simples que você pode fazer é chamar o método "
+":meth:`~Sphinx.add_directive`, que é o que fizemos aqui. Para esta chamada "
+"específica, o primeiro argumento é o nome da própria diretiva usada em um "
+"arquivo reST. Neste caso, usaríamos ``helloworld``. Por exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:121
 msgid ""
@@ -169,28 +207,37 @@ msgid ""
 "the version of our extension, along with the fact that it is safe to use the"
 " extension for both parallel reading and writing."
 msgstr ""
+"Também retornamos os :ref:`metadados da extensão <ext-metadata>` que indicam"
+" a versão da nossa extensão, juntamente com o fato de que é seguro usar a "
+"extensão tanto para leitura quanto para escrita paralela."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:127
 msgid "Using the extension"
-msgstr ""
+msgstr "Usando a extensão"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:129
 msgid ""
 "The extension has to be declared in your :file:`conf.py` file to make Sphinx"
 " aware of it. There are two steps necessary here:"
 msgstr ""
+"A extensão deve ser declarada em seu arquivo :file:`conf.py` para que o "
+"Sphinx saiba disso. Existem duas etapas necessárias aqui:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:132
 msgid ""
 "Add the :file:`_ext` directory to the `Python path`_ using "
 "``sys.path.append``. This should be placed at the top of the file."
 msgstr ""
+"Adicione o diretório :file:`_ext` ao `caminho do Python`_ usando "
+"``sys.path.append``. Isso deve ser colocado no topo do arquivo."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:135
 msgid ""
 "Update or create the :confval:`extensions` list and add the extension file "
 "name to the list"
 msgstr ""
+"Atualize ou crie a lista :confval:`extensions` e adicione o nome do arquivo "
+"de extensão à lista"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:138
 msgid "For example:"
@@ -202,25 +249,28 @@ msgid ""
 "modify the `Python path`_ so Sphinx can find our extension. This is why we "
 "need the call to ``sys.path.append``."
 msgstr ""
+"Não estamos distribuindo esta extensão como um `pacote Python`_, precisamos "
+"modificar o `caminho Python`_ para que o Sphinx possa encontrar nossa "
+"extensão. É por isso que precisamos da chamada para ``sys.path.append``."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:155
 msgid "You can now use the extension in a file. For example:"
-msgstr ""
+msgstr "Agora você pode usar a extensão em um arquivo. Por exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:165
 msgid "The sample above would generate:"
-msgstr ""
+msgstr "A exemplo acima geraria:"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:177
 msgid "Further reading"
-msgstr ""
+msgstr "Leitura adicional"
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:179
 msgid ""
 "This is the very basic principle of an extension that creates a new "
 "directive."
-msgstr ""
+msgstr "Este é o princípio básico de uma extensão que cria uma nova diretiva."
 
 #: ../../sphinx/doc/development/tutorials/helloworld.rst:181
 msgid "For a more advanced example, refer to :doc:`todo`."
-msgstr ""
+msgstr "Para um exemplo mais avançado, consulte :doc:`todo`."

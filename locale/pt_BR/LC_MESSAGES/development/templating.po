@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2023
-# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2023
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:38+0000\n"
 "PO-Revision-Date: 2023-01-09 01:40+0000\n"
-"Last-Translator: Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2023\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/templating.rst:7
 msgid "Templating"
-msgstr "Criando Moldes"
+msgstr "Criando modelos"
 
 #: ../../sphinx/doc/development/templating.rst:9
 msgid ""
@@ -34,14 +34,19 @@ msgid ""
 " it. It also has excellent documentation for those who need to make "
 "themselves familiar with it."
 msgstr ""
+"Sphinx usa mecanismo de modelos do `Jinja "
+"<https://jinja.palletsprojects.com/>`_  para HTML. Jinja é mecanismo baseado"
+" em texto, e inspirado nos modelos do Django, de forma que quem já usou "
+"Django tem familiaridade com Jinja. Também possui boa documentação para "
+"aqueles que precisam familiarizar-se com ele."
 
 #: ../../sphinx/doc/development/templating.rst:17
 msgid "Do I need to use Sphinx's templates to produce HTML?"
-msgstr ""
+msgstr "Preciso usar os modelos do Sphinx para produzir HTML?"
 
 #: ../../sphinx/doc/development/templating.rst:19
 msgid "No.  You have several other options:"
-msgstr ""
+msgstr "Não. Você tem várias outras opções:"
 
 #: ../../sphinx/doc/development/templating.rst:21
 msgid ""
@@ -49,6 +54,9 @@ msgid ""
 "calls your template engine of choice, and set the :confval:`template_bridge`"
 " configuration value accordingly."
 msgstr ""
+"Você pode escrever uma subclasse :class:`~sphinx.application.TemplateBridge`"
+" que chama o mecanismo de modelo de sua escolha e definir o valor de "
+"configuração :confval:`template_bridge` adequado."
 
 #: ../../sphinx/doc/development/templating.rst:25
 msgid ""
@@ -56,6 +64,9 @@ msgid ""
 ":class:`~sphinx.builders.html.StandaloneHTMLBuilder` and calls your template"
 " engine of choice."
 msgstr ""
+"Você pode :ref:`escrever um construtor personalizado <writing-builders>` que"
+" deriva de :class:`~sphinx.builders.html.StandaloneHTMLBuilder` e chama o "
+"mecanismo de modelo de sua escolha."
 
 #: ../../sphinx/doc/development/templating.rst:29
 msgid ""
@@ -63,10 +74,13 @@ msgid ""
 "that produces pickle files with the page contents, and postprocess them "
 "using a custom tool, or use them in your Web application."
 msgstr ""
+"Você pode usar o :class:`~sphinxcontrib.serializinghtml.PickleHTMLBuilder` "
+"que produz arquivos pickle com o conteúdo da página e pós-processá-los "
+"usando uma ferramenta personalizada ou usá-los em sua aplicação web."
 
 #: ../../sphinx/doc/development/templating.rst:36
 msgid "Jinja/Sphinx Templating Primer"
-msgstr ""
+msgstr "Primer de criação de modelos em Jinja/Sphinx"
 
 #: ../../sphinx/doc/development/templating.rst:38
 msgid ""
@@ -76,6 +90,11 @@ msgid ""
 "specific blocks within a template, customizing it while also keeping the "
 "changes at a minimum."
 msgstr ""
+"A linguagem de modelagem padrão no Sphinx é Jinja. É inspirado no "
+"Django/Smarty e fácil de entender. O conceito mais importante no Jinja é "
+":dfn:`herança de modelo`, o que significa que você pode sobrescrever apenas "
+"blocos específicos dentro de um modelo, personalizando-o e ao mesmo tempo "
+"mantendo as alterações no mínimo."
 
 #: ../../sphinx/doc/development/templating.rst:43
 msgid ""
@@ -84,6 +103,10 @@ msgid ""
 "files with the same name as the original filename into the template "
 "directory of the structure the Sphinx quickstart generated for you."
 msgstr ""
+"Para personalizar a saída da sua documentação, você pode substituir todos os"
+" modelos (tanto os modelos de layout quanto os modelos filhos) adicionando "
+"arquivos com o mesmo nome do arquivo original no diretório de modelos da "
+"estrutura que a inicialização rápida (quickstart) do Sphinx gerou para você."
 
 #: ../../sphinx/doc/development/templating.rst:48
 msgid ""
@@ -91,6 +114,9 @@ msgid ""
 "first, and if it can't find the template it's looking for there, it falls "
 "back to the selected theme's templates."
 msgstr ""
+"O Sphinx irá procurar por modelos nas pastas de :confval:`templates_path` "
+"primeiro, e se não conseguir encontrar o modelo que está procurando lá, ele "
+"retornará aos modelos do tema selecionado."
 
 #: ../../sphinx/doc/development/templating.rst:52
 msgid ""
@@ -98,6 +124,9 @@ msgid ""
 "template is evaluated, **tags**, which control the logic of the template and"
 " **blocks** which are used for template inheritance."
 msgstr ""
+"Um modelo contém **variáveis**, que são substituídas por valores quando o "
+"modelo é avaliado, **tags**, que controlam a lógica do modelo e **blocos** "
+"que são usados para herança de modelo."
 
 #: ../../sphinx/doc/development/templating.rst:56
 msgid ""
@@ -107,6 +136,12 @@ msgid ""
 "Sphinx themes. Templates with the same name in the :confval:`templates_path`"
 " override templates supplied by the selected theme."
 msgstr ""
+"O tema *basic* do Sphinx fornece modelos básicos com alguns blocos que serão"
+" preenchidos com dados. Eles estão localizados no subdiretório "
+":file:`themes/basic` do diretório de instalação do Sphinx e são usados por "
+"todos os temas integrados do Sphinx. Modelos com o mesmo nome em "
+":confval:`templates_path` substituem os modelos fornecidos pelo tema "
+"selecionado."
 
 #: ../../sphinx/doc/development/templating.rst:62
 msgid ""
@@ -114,12 +149,17 @@ msgid ""
 " all you have to do is to add a new template called ``layout.html`` with the"
 " following contents::"
 msgstr ""
+"Por exemplo, para adicionar um novo link à área de modelos contendo links "
+"relacionados, tudo o que você precisa fazer é adicionar um novo modelo "
+"chamado ``layout.html`` com o seguinte conteúdo:"
 
 #: ../../sphinx/doc/development/templating.rst:72
 msgid ""
 "By prefixing the name of the overridden template with an exclamation mark, "
 "Sphinx will load the layout template from the underlying HTML theme."
 msgstr ""
+"Ao prefixar o nome do modelo substituído com um ponto de exclamação, o "
+"Sphinx carregará o modelo de layout do tema HTML subjacente."
 
 #: ../../sphinx/doc/development/templating.rst:76
 msgid ""
@@ -127,16 +167,22 @@ msgid ""
 "block's original content in the extended template -- unless you don't want "
 "that content to show up."
 msgstr ""
+"Se você substituir um bloco, chame ``{{ super() }}`` em algum lugar para "
+"renderizar o conteúdo original do bloco no modelo estendido -- a menos que "
+"você não queira que esse conteúdo apareça."
 
 #: ../../sphinx/doc/development/templating.rst:82
 msgid "Working with the builtin templates"
-msgstr ""
+msgstr "Trabalhando com os modelos embutidos"
 
 #: ../../sphinx/doc/development/templating.rst:84
 msgid ""
 "The builtin **basic** theme supplies the templates that all builtin Sphinx "
 "themes are based on.  It has the following elements you can override or use:"
 msgstr ""
+"O tema embutido **basic** fornece os modelos nos quais todos os temas "
+"embutidos do Sphinx são baseados. Possui os seguintes elementos que você "
+"pode substituir ou usar:"
 
 #: ../../sphinx/doc/development/templating.rst:88
 msgid "Blocks"
@@ -144,11 +190,11 @@ msgstr "Blocos"
 
 #: ../../sphinx/doc/development/templating.rst:90
 msgid "The following blocks exist in the ``layout.html`` template:"
-msgstr ""
+msgstr "Os seguintes blocos existem no modelo ``layout.html``:"
 
 #: ../../sphinx/doc/development/templating.rst:92
 msgid "``doctype``"
-msgstr ""
+msgstr "``doctype``"
 
 #: ../../sphinx/doc/development/templating.rst:93
 msgid ""
@@ -157,20 +203,24 @@ msgid ""
 " idea not to change it unless you want to switch to HTML 5 or a different "
 "but compatible XHTML doctype."
 msgstr ""
+"O doctype do formato de saída. Por padrão, este é o XHTML 1.0 Transitional, "
+"pois é o mais próximo do que o Sphinx e o Docutils geram e é uma boa ideia "
+"não alterá-lo, a menos que você queira mudar para HTML 5 ou um tipo de "
+"documento XHTML diferente, mas compatível."
 
 #: ../../sphinx/doc/development/templating.rst:98
 msgid "``linktags``"
-msgstr ""
+msgstr "``linktags``"
 
 #: ../../sphinx/doc/development/templating.rst:99
 msgid ""
 "This block adds a couple of ``<link>`` tags to the head section of the "
 "template."
-msgstr ""
+msgstr "Este bloco adiciona algumas tags ``<link>`` à seção head do modelo."
 
 #: ../../sphinx/doc/development/templating.rst:102
 msgid "``extrahead``"
-msgstr ""
+msgstr "``extrahead``"
 
 #: ../../sphinx/doc/development/templating.rst:103
 msgid ""
@@ -178,10 +228,13 @@ msgid ""
 "the ``<head>`` tag of the generated HTML file.  This is the right place to "
 "add references to JavaScript or extra CSS files."
 msgstr ""
+"Este bloco está vazio por padrão e pode ser usado para adicionar conteúdo "
+"extra na tag ``<head>`` do arquivo HTML gerado. Este é o lugar certo para "
+"adicionar referências a JavaScript ou arquivos CSS extras."
 
 #: ../../sphinx/doc/development/templating.rst:107
 msgid "``relbar1``, ``relbar2``"
-msgstr ""
+msgstr "``relbar1``, ``relbar2``"
 
 #: ../../sphinx/doc/development/templating.rst:108
 msgid ""
@@ -191,10 +244,15 @@ msgid ""
 "document.  By default, both blocks are filled; to show the relbar only "
 "before the document, you would override ``relbar2`` like this::"
 msgstr ""
+"Este bloco contém a *barra de relacionamento*, a lista de links relacionados"
+" (os documentos pais à esquerda e os links para índice, módulos etc. à "
+"direita). ``relbar1`` aparece antes do documento, ``relbar2`` depois do "
+"documento. Por padrão, ambos os blocos são preenchidos; para mostrar a "
+"relbar apenas antes do documento, você iria substituir ``relbar2`` assim::"
 
 #: ../../sphinx/doc/development/templating.rst:116
 msgid "``rootrellink``, ``relbaritems``"
-msgstr ""
+msgstr "``rootrellink``, ``relbaritems``"
 
 #: ../../sphinx/doc/development/templating.rst:117
 msgid ""
@@ -205,16 +263,24 @@ msgid ""
 " them to add extra links into the bar make sure that they are list items and"
 " end with the :data:`reldelim1`."
 msgstr ""
+"Dentro do relbar existem três seções: O ``rootrellink``, os links da "
+"documentação e os ``relbaritems`` personalizados. O ``rootrellink`` é um "
+"bloco que por padrão contém um item de lista apontando para o documento "
+"raiz. Por padrão, o ``relbaritems`` é um bloco vazio. Se você os substituir "
+"para adicionar links extras na barra, certifique-se de que sejam itens de "
+"lista e terminem com :data:`reldelim1`."
 
 #: ../../sphinx/doc/development/templating.rst:124
 msgid "``document``"
-msgstr ""
+msgstr "``document``"
 
 #: ../../sphinx/doc/development/templating.rst:125
 msgid ""
 "The contents of the document itself.  It contains the block \"body\" where "
 "the individual content is put by subtemplates like ``page.html``."
 msgstr ""
+"O conteúdo do próprio documento. Ele contém o bloco \"body\" onde o conteúdo"
+" individual é colocado por submodelos como ``page.html``."
 
 #: ../../sphinx/doc/development/templating.rst:129
 msgid ""
@@ -222,10 +288,14 @@ msgid ""
 "results page, the document or body content should be wrapped in an HTML "
 "element containing the ``role=\"main\"`` attribute. For example::"
 msgstr ""
+"Para que a pesquisa embutida em JavaScript mostre uma visualização da página"
+" na página de resultados, o documento ou conteúdo do corpo deve ser "
+"envolvido em um elemento HTML contendo o atributo ``role=\"main\"``. Por "
+"exemplo::"
 
 #: ../../sphinx/doc/development/templating.rst:137
 msgid "``sidebar1``, ``sidebar2``"
-msgstr ""
+msgstr "``sidebar1``, ``sidebar2``"
 
 #: ../../sphinx/doc/development/templating.rst:138
 msgid ""
@@ -234,16 +304,22 @@ msgid ""
 "default sidebar.  If you want to swap the sidebar location override this and"
 " call the ``sidebar`` helper::"
 msgstr ""
+"Um possível local para uma barra lateral. ``sidebar1`` aparece antes do "
+"documento e está vazio por padrão, ``sidebar2`` depois do documento e contém"
+" a barra lateral padrão. Se você quiser trocar o local da barra lateral, "
+"substitua isso e chame o helper ``sidebar``::"
 
 #: ../../sphinx/doc/development/templating.rst:146
 msgid ""
 "(The ``sidebar2`` location for the sidebar is needed by the "
 "``sphinxdoc.css`` stylesheet, for example.)"
 msgstr ""
+"(A localização ``sidebar2`` para a barra lateral é necessária para a folha "
+"de estilo ``sphinxdoc.css``, por exemplo.)"
 
 #: ../../sphinx/doc/development/templating.rst:149
 msgid "``sidebarlogo``"
-msgstr ""
+msgstr "``sidebarlogo``"
 
 #: ../../sphinx/doc/development/templating.rst:150
 msgid ""

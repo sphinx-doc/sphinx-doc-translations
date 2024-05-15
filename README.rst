@@ -1,8 +1,15 @@
 Sphinx official documentation translations
 ==========================================
 
-[![update-translations](https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml/badge.svg)](https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml) 
-[![Test translations](https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml/badge.svg)](https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml)
+|main| |test|
+
+.. |main| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml/badge.svg
+          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml
+          :alt: Update status badge
+
+.. |test| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml/badge.svg
+          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml
+          :alt: Test translations badge
 
 This is a project to provide Sphinx official documentation, hosted on the Read The Docs platform, in multiple languages.
 

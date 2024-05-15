@@ -26,5 +26,3 @@ if [[ "$GITHUB_EVENT_NAME" != 'pull_request' ]]; then
   tx pull --silent -f -l ${LANGS_PULL}
 fi
 
-git checkout .tx/config
-

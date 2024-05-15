@@ -1,6 +1,7 @@
 name: update-translations
 
 on:
+  workflow_dispatch:
   pull_request:
   schedule:
     - cron: "0 0 * * *" #runs at 00:00 UTC everyday
@@ -9,7 +10,7 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # required for pushing changes
+      contents: write   # for git push; turn all other permissions 'read'
     env:
       SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
       SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc

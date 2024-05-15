@@ -81,6 +81,11 @@ jobs:
       run: |
         pip install -U pip setuptools
         pip install -r ./requirements.txt transifex-python python-dateutil
+    - name: Install Transifex CLI
+      working-directory: /usr/local/bin
+      run: |
+        curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+        tx --version
     - name: Update templates
       run: |
         rm -rf ./locale/pot

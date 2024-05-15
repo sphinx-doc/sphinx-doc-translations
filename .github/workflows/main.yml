@@ -7,7 +7,7 @@ on:
     - cron: "0 0 * * *" #runs at 00:00 UTC everyday
 
 jobs:
-  ubuntu:
+  update:
     runs-on: ubuntu-latest
     permissions:
       contents: write   # for git push; turn all other permissions 'read'
@@ -39,7 +39,10 @@ jobs:
         curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
         tx --version
     - name: Update translations
-      run: sh ./locale/update.sh
+      run: |
+        sh ./locale/generate_templates.sh
+        cat .tx/config
+        sh ./locale/update.sh
     - name: After success
       run: |
         git config --global user.email "sphinx-auto-update"

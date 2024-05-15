@@ -53,3 +53,38 @@ jobs:
     - name: GitHub Push
       if: github.event_name != 'pull_request'
       run: git push
+
+  check-obsoletes:
+    runs-on: ubuntu-latest
+    needs: ['update']
+    permissions:
+      contents: read
+    env:
+      SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
+      SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
+      TX_TOKEN: ${{ secrets.TX_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Initialize and update submodule
+      run: |
+        git submodule init
+        git submodule update
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3
+        cache: 'pip'
+    - name: Install graphviz
+      run: sudo apt-get install graphviz
+    - name: Install dependencies
+      run: |
+        pip install -U pip setuptools
+        pip install -r ./requirements.txt transifex-python python-dateutil
+    - name: Update templates
+      run: |
+        rm -rf ./locale/pot
+        ./locale/generate_templates.sh
+    - name: Lock and delete obsolete resources in Transifex
+      if: github.event_name != 'pull_request'
+      run: locale/lock-translations.py

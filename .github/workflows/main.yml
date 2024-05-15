@@ -57,7 +57,7 @@ jobs:
     - name: Include obsolete POT for removal
       run: |
         obsolete_potfiles=$(git status -s | grep ^' D' | cut -d' ' -f3)
-        if [ -n "$obsolete_potfiles" ]; then rm $obsolete_potfiles; fi
+        if [ -n "$obsolete_potfiles" ]; then git rm $obsolete_potfiles; fi
         git checkout locale/
     # 3. Update translation files
     - name: Update translations

@@ -5,7 +5,7 @@ set -ex
 
 LANGS='ar ca_ES de es fr it_IT ja ko pl_PL pt_BR ru sr zh_CN'
 
-LANGS_PULL=${echo $LANGS | sed 's| |,|g'}
+LANGS_PULL=$(echo $LANGS | sed 's| |,|g')
 
 # required environment variables
 # SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME=sphinx-doc

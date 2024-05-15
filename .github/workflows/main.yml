@@ -15,36 +15,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Get date
-      id: get-date
-      run: |
-        echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
-        echo "yyyymm=$(/bin/date -u "+%Y%m")" >> $GITHUB_OUTPUT
-      shell: bash
-    - name: cache pip
-      id: cache-pip
-      uses: actions/cache@v4
       with:
-        path: |
-          ~/.cache/pip
-          ~/.local/
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}-${{ steps.get-date.outputs.yyyymm }}
+        fetch-depth: 2
+    - name: Initialize and update submodule
+      run: |
+        git submodule init
+        git submodule update
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: 3.9
-    - name: Check Python version
-      run: python --version
+        cache: 'pip'
     - name: Install graphviz
       run: sudo apt-get install graphviz
     - name: Install dependencies
       run: |
-        git fetch origin master --depth 1
-        git branch -a
-        git checkout master  # attach this repo
-        git submodule init
-        git submodule update
-        (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
         pip install -U pip setuptools
         pip install -r ./requirements.txt
     - name: Install Transifex CLI
@@ -56,8 +41,6 @@ jobs:
       run: sh ./locale/update.sh
     - name: After success
       run: |
-        git branch -a
-        git checkout master  # attach this repo
         git config --global user.email "sphinx-auto-update"
         git config --global user.name "sphinx-auto-update"
         git add locale

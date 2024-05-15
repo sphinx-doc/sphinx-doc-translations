@@ -90,6 +90,9 @@ jobs:
       run: |
         rm -rf ./locale/pot
         ./locale/generate_templates.sh
+    - name: Just print what would be locked and deleted of the resources in Transifex
+      if: github.event_name == 'pull_request'
+      run: locale/lock-translations.py locale/.tx/config -d
     - name: Lock and delete obsolete resources in Transifex
       if: github.event_name != 'pull_request'
-      run: locale/lock-translations.py
+      run: locale/lock-translations.py locale/.tx/config

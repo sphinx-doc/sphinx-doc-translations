@@ -32,16 +32,16 @@ def get_local_resources(tx_config):
     config = configparser.ConfigParser()
     config.read(tx_config)
 
-    if len(config.sections()) == 1:
+    if len(config.sections()) == 0:
         # incorrect file, empty list
         printmsg("error", f"'{tx_config}' is not a valid Transifex configuration file.")
         exit(1)
 
-    if len(config.sections()) == 2:
+    if len(config.sections()) <= 1:
         # correct file, zero resources
         printmsg("error", f"'{tx_config}' not initialized yet.")
         exit(1)
-        
+
     resources = []
     for section in config.sections():
         section = section.split(":r:", 1)
@@ -62,7 +62,7 @@ def get_remote_resources(project):
     return transifex_api.Resource.filter(project=project).all()
 
 
-def get_unused_resources(remote_resources, local_resources):
+def get_unused_resources(remote_resources, local_resources, dry_run):
     """Compare local an remote resources and returns a dict with the unused ones"""
     unused_resources = {}
     for resource in remote_resources:
@@ -71,12 +71,17 @@ def get_unused_resources(remote_resources, local_resources):
                 last_update = dateutil.parser.parse(resource.datetime_modified)
                 current_time = datetime.now().replace(tzinfo=dateutil.tz.UTC)
                 delete_status = (current_time - last_update).days >= 3
-                if delete_status:
+                if delete_status and not dry_run:
                     printmsg(
                         "warning",
-                        f"Deleting {resource.slug}, locked for 3 days or more.",
+                        f"Deleting '{resource.slug}', locked for 3 days or more.",
                     )
-                    #resource.delete()
+                    # resource.delete()
+                elif delete_status and dry_run:
+                    printmsg(
+                        "warning",
+                        f"'{resource.slug}' would be deleted now, but this is dry-run mode.",
+                    )
 
                 continue
 
@@ -85,12 +90,18 @@ def get_unused_resources(remote_resources, local_resources):
     return unused_resources
 
 
-def lock_resources(unused_resources):
+def lock_resources(unused_resources, dry_run):
     """Lock resources considered as unused, so they can be considered for deletion"""
     for resource in unused_resources.values():
-        printmsg("warning", f"Locking {resource.slug}... ")
-        #resource.attributes["accept_translations"] = False
-        #resource.save("accept_translations")
+        if not dry_run:
+            printmsg("warning", f"Locking '{resource.slug}' ... ")
+            # resource.attributes["accept_translations"] = False
+            # resource.save("accept_translations")
+        else:
+            printmsg(
+                "warning",
+                f"'{resource.slug}' would be locked now, but this is dry-run mode.",
+            )
 
 
 def main():
@@ -98,11 +109,18 @@ def main():
     arg_parser.add_argument(
         "tx_config_path",
         type=str,
-        help="path to Transifex config (default to 'locale/.tx/config')",
+        help="path to Transifex config file",
+    )
+    arg_parser.add_argument(
+        "--dry-run",
+        "-d",
+        action="store_true",
+        help="If set, print what would be done but no lock/delete is done",
     )
     args = vars(arg_parser.parse_args())
 
     tx_config_path = args["tx_config_path"]
+    dry_run = args["dry_run"]
     organization_slug = os.getenv("SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME")
     project_slug = os.getenv("SPHINXINTL_TRANSIFEX_PROJECT_NAME")
 
@@ -117,12 +135,12 @@ def main():
     PROJECT = ORGANIZATION.fetch("projects").get(slug=project_slug)
     remote_resources = get_remote_resources(PROJECT)
 
-    unused_resources = get_unused_resources(remote_resources, local_resources)
+    unused_resources = get_unused_resources(remote_resources, local_resources, dry_run)
 
     if len(unused_resources) == 0:
         print("All resources are locked or in use!")
     else:
-        lock_resources(unused_resources)
+        lock_resources(unused_resources, dry_run)
 
 
 if __name__ == "__main__":

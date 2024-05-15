@@ -8,6 +8,8 @@ on:
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # required for pushing changes
     env:
       SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
       SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
@@ -15,8 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 2
     - name: Initialize and update submodule
       run: |
         git submodule init
@@ -48,7 +48,4 @@ jobs:
         git diff-index --cached --quiet HEAD || git commit -m "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
     - name: GitHub Push
       if: github.event_name != 'pull_request'
-      uses: ad-m/github-push-action@v0.8.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+      run: git push

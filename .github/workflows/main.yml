@@ -45,7 +45,7 @@ jobs:
         git config --global user.name "sphinx-auto-update"
         git add locale
         git add sphinx
-        git commit -m "[skip ci] by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
+        git diff-index --cached --quiet HEAD || git commit -m "[skip ci] by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
     - name: GitHub Push
       if: github.event_name != 'pull_request'
       uses: ad-m/github-push-action@v0.8.0

@@ -54,10 +54,10 @@ jobs:
     - name: Lock and delete obsolete resources in Transifex
       if: github.event_name != 'pull_request'
       run: locale/lock-translations.py locale/.tx/config
-    - name: Include obsolete POT for removal
+    - name: Include obsolete catalog templates (pot files) for removal
       run: |
-        obsolete_potfiles=$(git status -s | grep ^' D' | cut -d' ' -f3)
-        if [ -n "$obsolete_potfiles" ]; then git rm $obsolete_potfiles; fi
+        deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
+        if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
         git checkout locale/
     # 3. Update translation files
     - name: Update translations
@@ -65,6 +65,10 @@ jobs:
         sh ./locale/generate_templates.sh
         cat ./locale/.tx/config
         sh ./locale/update.sh
+    - name: Include obsolete catalog messages (po files) for removal
+      run: |
+        deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
+        if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
     # 4. Commit and push changes
     - name: After success
       run: |

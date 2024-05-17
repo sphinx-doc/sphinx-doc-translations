@@ -35,8 +35,8 @@ msgstr "Sinopse"
 msgid ""
 "**sphinx-build** [*options*] <*sourcedir*> <*outputdir*> [*filenames* ...]"
 msgstr ""
-"**sphinx-build** [*opções*] <*diretório-fonte*> <*diretório-saída*> "
-"[*arquivos-nomes* ...]"
+"**sphinx-build** [*opções*] <*sourcedir*> <*outputdir*> [*nomes de arquivos*"
+" ...]"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:10
 msgid "Description"
@@ -56,9 +56,9 @@ msgid ""
 "configuration settings.  :manpage:`sphinx-quickstart(1)` may be used to "
 "generate template files, including ``conf.py``."
 msgstr ""
-":program:`sphinx-build` busca no ``<diretóriofonte>/conf.py`` por um arquivo"
-" de configurações.  :manpage:`sphinx-quickstart(1)` pode ser usado para "
-"gerar modelos de arquivos, inclusive o arquivo ``conf.py``."
+":program:`sphinx-build` busca no ``<sourcedir>/conf.py`` por um arquivo de "
+"configurações. :manpage:`sphinx-quickstart(1)` pode ser usado para gerar "
+"modelos de arquivos, inclusive o arquivo ``conf.py``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:19
 msgid ""
@@ -68,14 +68,20 @@ msgid ""
 "documentation processing.  For a list of available builders, refer to "
 ":doc:`/usage/builders/index`."
 msgstr ""
+":program:`sphinx-build` pode criar documentação em diversos formatos. Um "
+"formato é selecionado especificando o nome do construtor na linha de "
+"comando; o padrão é HTML. Esses construtores também pode executar outras "
+"tarefas relacionadas ao processamento da documentação. Para uma lista de "
+"construtores disponíveis, consulte :doc:`/usage/builders/index`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:25
 msgid ""
 "By default, everything that is outdated is built.  Output only for selected "
 "files can be built by specifying individual filenames."
 msgstr ""
-"Por padrão tudo que estiver desatualizado é reconstruído. Saída de apenas alguns\n"
-"arquivos pode ser construída através da especificação individual desses arquivos."
+"Por padrão tudo que estiver desatualizado é reconstruído. Saída de apenas "
+"alguns arquivos pode ser construída através da especificação individual "
+"desses arquivos."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:29
 msgid "Options"
@@ -87,6 +93,10 @@ msgid ""
 "for a list of all of Sphinx's built-in builders. Extensions can add their "
 "own builders."
 msgstr ""
+"Seleciona um construtor, usando o *make-mode*. Veja "
+":doc:`/usage/builders/index` para uma lista de todos os construtores "
+"embutidos do Sphinx. As extensões podem adicionar seus próprios "
+"construtores."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:42
 msgid ""
@@ -94,6 +104,9 @@ msgid ""
 " source and output directories, before any other options are passed. For "
 "example::"
 msgstr ""
+"O Sphinx só reconhece a opção ``-M`` se ela for usada primeiro, junto com os"
+" diretórios fonte e de saída, antes de qualquer outra opção ser passada. Por"
+" exemplo::"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:48
 msgid ""
@@ -101,10 +114,13 @@ msgid ""
 ":ref:`Makefile or Make.bat <makefile_options>`, and provides the following "
 "additional build pipelines:"
 msgstr ""
+"O *make-mode* fornece a mesma funcionalidade de construção que um "
+":ref:`Makefile ou Make.bat <makefile_options>` padrão e fornece os seguintes"
+" pipelines de construção adicionais:"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:52
 msgid "*latexpdf*"
-msgstr ""
+msgstr "*latexpdf*"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:53
 msgid ""
@@ -119,40 +135,45 @@ msgstr ""
 
 #: ../../sphinx/doc/man/sphinx-build.rst:58
 msgid "*info*"
-msgstr ""
+msgstr "*info*"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:59
 msgid "Build Texinfo files and run them through :program:`makeinfo`."
 msgstr ""
-"Constrói arquivos Texinfo e executa cada um através de  :program:`makeinfo`."
+"Constrói arquivos Texinfo e executa cada um através de :program:`makeinfo`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:63
 msgid ""
 "The default output directory locations when using *make-mode* differ from "
 "the defaults when using :option:`-b`."
 msgstr ""
+"Os locais padrão do diretório de saída ao usar *make-mode* diferem dos "
+"padrões ao usar :option:`-b`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:66
 msgid "doctrees are saved to ``<outputdir>/doctrees``"
-msgstr ""
+msgstr "doctrees são salvos em ``<outputdir>/doctrees``"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:67
 msgid "output files are saved to ``<outputdir>/<builder name>``"
-msgstr ""
+msgstr "arquivos de saída são salvos em ``<outputdir>/<builder name>``"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:73
 msgid "Selects a builder."
-msgstr ""
+msgstr "Seleciona um construtor."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:75
 msgid ""
 "See :doc:`/usage/builders/index` for a list of all of Sphinx's built-in "
 "builders. Extensions can add their own builders."
 msgstr ""
+"Veja :doc:`/usage/builders/index` para uma lista de todos os construtores "
+"embutidos do Sphinx. As extensões podem adicionar seus próprios "
+"construtores."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:78
 msgid "Add ``--builder`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--builder``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:83
 msgid ""
@@ -160,7 +181,7 @@ msgid ""
 " files for new and changed source files. (This may not apply to all "
 "builders.)"
 msgstr ""
-"Se informado, sempre sobrepõe a gravação de todos arquivos. O padrão é "
+"Se passado, sempre sobrepõe a gravação de todos arquivos. O padrão é "
 "sobrepor somente arquivos de saída para novos e modificados. (isso não se "
 "aplica a todos construtores)."
 
@@ -169,10 +190,12 @@ msgid ""
 "This option does not re-read source files. To read and re-process every "
 "file, use :option:`--fresh-env` instead."
 msgstr ""
+"Esta opção não relê os arquivos fonte. Para ler e reprocessar cada arquivo, "
+"use :option:`--fresh-env`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:91
 msgid "Add ``--write-all`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--write-all``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:96
 msgid ""
@@ -180,26 +203,26 @@ msgid ""
 "references), but rebuild it completely.  The default is to only read and "
 "parse source files that are new or have changed since the last run."
 msgstr ""
-"Não usar :term:`environment` salvo (a estrutura faz cache das ref. "
+"Não usa o :term:`ambiente` salvo (a estrutura faz cache das referências "
 "cruzadas), mas reconstruir completamente. O padrão é só ler e fazer parse "
 "dos arquivos fonte que forem novos ou foram atualizados desde a última "
 "execução."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:100
 msgid "Add ``--fresh-env`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--fresh-env``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:105
 msgid ""
 "Define the tag *tag*.  This is relevant for :rst:dir:`only` directives that "
 "only include their content if this tag is set."
 msgstr ""
-"Definir o rótulo *tag*. Isso é relevante para diretivas :rst:dir:`only` que "
+"Define o rótulo *tag*. Isso é relevante para diretivas :rst:dir:`only` que "
 "incluem somente seu conteúdo se esse rótulo é definido."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:110
 msgid "Add ``--tag`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--tag``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:115
 msgid ""
@@ -218,7 +241,7 @@ msgstr ""
 
 #: ../../sphinx/doc/man/sphinx-build.rst:121
 msgid "Add ``--doctree-dir`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--doctree-dir``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:126
 msgid ""
@@ -227,18 +250,23 @@ msgid ""
 " builders of Sphinx can be parallelized.  If ``auto`` argument is given, "
 "Sphinx uses the number of CPUs as *N*. Defaults to 1."
 msgstr ""
+"Distribui a construção através de *N* processos em paralelo, para permitir o"
+" processo de construção em máquinas com múltiplos processadores ser mais "
+"efetivo. Note que nem todas as partes nem todos os construtores do Sphinx "
+"podem ser executados em paralelo. Se o argumento ``auto`` é fornecido, então"
+" o Sphinx usa o número de CPUs como *N*. O padrão é 1."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:131
 msgid "This option should be considered *experimental*."
-msgstr "Opção considerada *experimental*."
+msgstr "Esta opção deve ser considerada como *experimental*."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:134
 msgid "Support ``auto`` argument."
-msgstr "Suporta  argumento ``auto``."
+msgstr "Suporte ao argumento ``auto``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:137
 msgid "Add ``--jobs`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--jobs``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:142
 msgid ""
@@ -248,39 +276,41 @@ msgid ""
 "configuration directory, so they will have to be present at this location "
 "too."
 msgstr ""
-"Não procure pelo  :file:`conf.py` no diretório fonte, mas use o diretório "
-"informado na configuração. Note que outros arquivos e caminhos obtidos pelos"
-" valores da configuração são esperados como relativos ao diretório da "
+"Não procura pelo :file:`conf.py` no diretório fonte, mas use o diretório de "
+"configuração informado. Note que outros arquivos e caminhos obtidos pelos "
+"valores da configuração são esperados como relativos ao diretório de "
 "configuração, portanto também devem estar presentes nessa localização."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:150
 msgid "Add ``--config-dir`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--config-dir``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:155
 msgid ""
 "Don't look for a configuration file; only take options via the "
 ":option:`--define` option."
 msgstr ""
+"Não usa um arquivo de configuração; obtém as opções por meio da opção "
+":option:`--define`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:159
 msgid "Add ``--isolated`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--isolated``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:164
 msgid ""
 "Override a configuration value set in the :file:`conf.py` file.  The value "
 "must be a number, string, list or dictionary value."
 msgstr ""
-"Sobrepôr valor da configuração definido no arquivo :file:`conf.py`. O valor "
-"deve ser número, string, lista ou dicionário."
+"substitui um valor da configuração definido no arquivo :file:`conf.py`. O "
+"valor deve ser número, string, lista ou dicionário."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:167
 msgid ""
 "For lists, you can separate elements with a comma like this: ``-D "
 "html_theme_path=path1,path2``."
 msgstr ""
-"Para listas, pode separar os elementos por vírgulas como esse: ``-D "
+"Para listas, pode-se separar os elementos por vírgulas como esse: ``-D "
 "html_tema_caminho=caminho1,caminho2``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:170
@@ -305,15 +335,15 @@ msgstr "O valor pode ser um valor de lista."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:181
 msgid "Add ``--define`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--define``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:186
 msgid "Make the *name* assigned to *value* in the HTML templates."
-msgstr "Tornar o *name* assinalado para *value* nos modelos HTML."
+msgstr "Torna o *name* assinalado para *value* nos modelos HTML."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:190
 msgid "Add ``--html-define`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--html-define``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:195
 msgid ""
@@ -321,88 +351,91 @@ msgid ""
 "references.  See the config value :confval:`nitpick_ignore` for a way to "
 "exclude some references as \"known missing\"."
 msgstr ""
-"Executar no modo nit-picky. Atualmente, isso gera avisos para todas as "
-"referências inexistentes. Ver valor config :confval:`nitpick_ignore`  para "
-"não exibir referências conhecidas como \"inexistentes conhecidos\"."
+"Executa no modo minucioso ou nit-picky, em inglês. Atualmente, isso gera "
+"avisos para todas as referências inexistentes. Veja o valor de configuração "
+":confval:`nitpick_ignore` para uma forma de não exibir referências "
+"conhecidas como \"sabidamente ausentes\"."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:199
 msgid "Add ``--nitpicky`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--nitpicky``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:204
 msgid "Do not emit colored output."
-msgstr "Não emitir saída colorida."
+msgstr "Não emite saída colorida."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:206
 msgid "Add ``--no-color`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--no-color``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:211
 msgid "Emit colored output. Auto-detected by default."
-msgstr ""
+msgstr "Emite saída colorida. Detectado automaticamente por padrão."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:217
 msgid ""
 "Increase verbosity (log-level).  This option can be given up to three times "
 "to get more debug logging output.  It implies :option:`-T`."
 msgstr ""
+"Incrementa a verbosidade (log-level). Essa opção pode ser dada até três "
+"vezes mais para maior detalhe de log na saída. Isso implica :option:`-T`."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:222
 msgid "Add ``--verbose`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--verbose``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:227
 msgid ""
 "Do not output anything on standard output, only write warnings and errors to"
 " standard error."
 msgstr ""
-"Não emitir saída nenhuma na saída padrão, só gravar avisos de erros na saída"
-" padrão de erros."
+"Não emite saída nenhuma na saída padrão, só grava avisos de erros na saída "
+"padrão de erros."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:230
 msgid "Add ``--quiet`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--quiet``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:235
 msgid ""
 "Do not output anything on standard output, also suppress warnings.  Only "
 "errors are written to standard error."
 msgstr ""
-"Não emitir nenhuma saída na saída padrão, também suprimir avisos. Só erros "
+"Não emite nenhuma saída na saída padrão, também suprime avisos. Só erros "
 "serão exibidos na saída padrão de erros."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:238
 msgid "Add ``--silent`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--silent``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:243
 msgid ""
 "Write warnings (and errors) to the given file, in addition to standard "
 "error."
 msgstr ""
-" Gravar avisos (e erros) para um determinado arquivo, em adição à saída de "
+"Grava avisos (e erros) para um determinado arquivo, em adição à saída de "
 "erro padrão."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:247
 msgid "ANSI control sequences are stripped when writing to *file*."
-msgstr ""
+msgstr "As sequências de controle ANSI são removidas ao gravar em *file*."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:249
 msgid "Add ``--warning-file`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--warning-file``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:254
 msgid ""
 "Turn warnings into errors.  This means that the build stops at the first "
 "warning and ``sphinx-build`` exits with exit status 1."
 msgstr ""
-"Tornar avisos em erros. Isso significa que a construção irá ser interrompida"
-" ao primeiro aviso e ``sphinx-build``  irá terminar e sair com situação "
-"(status) 1."
+"Torna avisos em erros. Isso significa que a construção irá ser interrompida "
+"ao primeiro aviso e ``sphinx-build`` irá terminar e sair com status de saída"
+" 1."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:257
 msgid "Add ``--fail-on-warning`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--fail-on-warning``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:262
 msgid ""
@@ -418,29 +451,29 @@ msgid ""
 "only a summary is displayed and the traceback information is saved to a file"
 " for further analysis."
 msgstr ""
-"Exibir rastreabilidade completa quando uma exceção não tratada ocorrer. Caso"
-" contrário, só um resumo será exibido e a informação do rastreamento será "
+"Exibe rastreabilidade completa quando uma exceção não tratada ocorrer. Caso "
+"contrário, só um resumo será exibido e a informação do rastreamento será "
 "salva em arquivo para análise posterior."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:275
 msgid "Add ``--show-traceback`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--show-traceback``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:280
 msgid ""
 "(Useful for debugging only.)  Run the Python debugger, :mod:`pdb`, if an "
 "unhandled exception occurs while building."
 msgstr ""
-"(Útil só para depuração). Executar debug Python, :mod:`pdb`, se excessão não"
-" tratada ocorrer enquanto constrói."
+"(Útil só para depuração). Executar o depurador do Python, :mod:`pdb`, se uma"
+" exceção não tratada ocorrer durante a construção."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:283
 msgid "Add ``--pdb`` long option."
-msgstr ""
+msgstr "Adiciona a opção longa ``--pdb``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:288
 msgid "Display usage summary or Sphinx version."
-msgstr "Exibir sumário uso ou versão Sphinx."
+msgstr "Exibe resumo de uso ou versão do Sphinx."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:292
 msgid ""
@@ -471,7 +504,7 @@ msgstr ""
 
 #: ../../sphinx/doc/man/sphinx-build.rst:309
 msgid "Makefile Options"
-msgstr "Opções de Make"
+msgstr "Opções de Makefile"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:310
 msgid ""
@@ -480,10 +513,10 @@ msgid ""
 "and :option:`-d` options.  However, they support the following variables to "
 "customize behavior:"
 msgstr ""
-"Os arquivos :file:`Makefile` e :file:`make.bat` criados pelo  "
-":program:`sphinx-quickstart` normalmente executar  :program:`sphinx-build` "
-"só com a opção :option:`-b` e :option:`-d`.  Contudo suportam as seguintes "
-"variáveis para personalizar o comportamento:"
+"Os arquivos :file:`Makefile` e :file:`make.bat` criados pelo "
+":program:`sphinx-quickstart` normalmente executam :program:`sphinx-build` só"
+" com a opção :option:`-b` e :option:`-d`. Contudo oferecem suporte às "
+"seguintes variáveis para personalizar o comportamento:"
 
 #: ../../sphinx/doc/man/sphinx-build.rst:317
 msgid ""
@@ -491,8 +524,8 @@ msgid ""
 "``PAPER=a4`` sets it to ``'a4paper'`` and ``PAPER=letter`` to "
 "``'letterpaper'``."
 msgstr ""
-"Isso configura ``'papersize'`` chave de :confval:`latex_elements`: i.e. "
-"``PAPER=a4`` configurada para ``'a4paper'`` e ``PAPER=letter`` para "
+"Isso configura a chave ``'papersize'`` de :confval:`latex_elements`: isto é,"
+" ``PAPER=a4`` configura-a para ``'a4paper'`` e ``PAPER=letter`` para "
 "``'letterpaper'``."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:323
@@ -501,9 +534,10 @@ msgid ""
 "``letter`` ended up as option to LaTeX document in place of the needed "
 "``a4paper``, resp. ``letterpaper``.  Fixed at 1.7.7."
 msgstr ""
-"Uso dessa variável de ambiente parece defeituoso em Sphinx 1.5 como ``a4`` "
-"ou ``letter`` para documento LaTeX em lugar de ``a4paper`` ou "
-"``letterpaper``.  Corrigido em 1.7.7."
+"Uso dessa variável de ambiente parece ter quebrado no Sphinx 1.5, pois "
+"``a4`` ou ``letter`` acabou como uma opção para documento LaTeX no lugar do "
+"``a4paper`` ou ``letterpaper`` necessários, respectivamente. Corrigido em "
+"1.7.7."
 
 #: ../../sphinx/doc/man/sphinx-build.rst:330
 msgid "The command to use instead of ``sphinx-build``."

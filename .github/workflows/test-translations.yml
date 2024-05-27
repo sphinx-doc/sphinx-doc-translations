@@ -58,7 +58,7 @@ jobs:
         python-version: 3
         cache: 'pip'
     - name: Install graphviz
-      run: sudo apt-get install graphviz
+      run: sudo apt-get update && sudo apt-get install -y graphviz
     - name: Install dependencies
       run: |
         pip install -U pip setuptools
@@ -67,7 +67,7 @@ jobs:
       uses: sphinx-doc/github-problem-matcher@v1.0
     - name: Build translated docs in ${{ matrix.language }}
       run: |
-        make html -C sphinx/doc SPHINXOPTS='-W -D locale_dirs=$(realpath locale) -D language=${{ matrix.language }}'
+        TZ=UTC make html -C sphinx/doc SPHINXOPTS='-W -D locale_dirs=$(realpath locale) -D language=${{ matrix.language }}'
     - name: Set Sphinx Lint problem matcher
       if: always()
       uses: rffontenelle/sphinx-lint-problem-matcher@v1.0.0

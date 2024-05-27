@@ -8,7 +8,6 @@ environment variables must be set.
 """
 
 import os
-import re
 import argparse
 import configparser
 import dateutil.parser

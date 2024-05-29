@@ -11,7 +11,7 @@ LANGS_PULL=$(echo $LANGS | sed 's| |,|g')
 cd `dirname $0`
 
 # Skip Transifex commands when running pull requests event on GitHub Actions
-if [[ "$GITHUB_EVENT_NAME" != 'pull_request' ]]; then
+if [ -n "$GITHUB_EVENT_NAME" ] && [ "$GITHUB_EVENT_NAME" != 'pull_request' ]; then
   tx push -s --skip
   rm -R -f ${LANGS}
   tx pull --silent -f -l ${LANGS_PULL}

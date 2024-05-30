@@ -1,6 +1,16 @@
 Sphinx official documentation translations
 ==========================================
 
+|main| |test|
+
+.. |main| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml/badge.svg
+          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml
+          :alt: Update status badge
+
+.. |test| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml/badge.svg
+          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml
+          :alt: Test translations badge
+
 This is a project to provide Sphinx official documentation, hosted on the Read The Docs platform, in multiple languages.
 
 .. note:: The current procedure is bit tricky because Read The Docs doesn't have a way to specify options for ``sphinx-build`` command.

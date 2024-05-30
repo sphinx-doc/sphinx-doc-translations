@@ -1,71 +1,80 @@
 name: update-translations
 
 on:
+  workflow_dispatch:
   pull_request:
   schedule:
     - cron: "0 0 * * *" #runs at 00:00 UTC everyday
 
 jobs:
-  ubuntu:
+  update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # for git push; turn all other permissions 'read'
     env:
       SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
       SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
     steps:
+    # 1. Set up environment
     - uses: actions/checkout@v4
-    - name: Get date
-      id: get-date
+    - name: Initialize and update submodule
       run: |
-        echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
-        echo "yyyymm=$(/bin/date -u "+%Y%m")" >> $GITHUB_OUTPUT
-      shell: bash
-    - name: cache pip
-      id: cache-pip
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.cache/pip
-          ~/.local/
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}-${{ steps.get-date.outputs.yyyymm }}
+        git submodule init
+        git submodule update
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
-        python-version: 3.9
-    - name: Check Python version
-      run: python --version
+        python-version: 3
+        cache: 'pip'
+    - name: Set up git config
+      run: |
+        git config --global user.email "sphinx-auto-update"
+        git config --global user.name "sphinx-auto-update"
     - name: Install graphviz
       run: sudo apt-get install graphviz
     - name: Install dependencies
       run: |
-        git fetch origin master --depth 1
-        git branch -a
-        git checkout master  # attach this repo
-        git submodule init
-        git submodule update
-        (cd sphinx; git fetch origin; git checkout master; git reset --hard origin/master; git branch -a)
         pip install -U pip setuptools
         pip install -r ./requirements.txt
     - name: Install Transifex CLI
+      working-directory: /usr/local/bin
       run: |
         curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-        mv tx /usr/local/bin/tx
         tx --version
+    # 2. Remove obsolete POT files from repository and obsolete resources from Transifex
+    - name: Generate templates from scratch
+      run: |
+        rm -rf ./locale/pot
+        ./locale/generate_templates.sh
+    - name: Just print what would be locked and deleted of the resources in Transifex
+      if: github.event_name == 'pull_request'
+      run: locale/lock-translations.py locale/.tx/config -d
+    - name: Lock and delete obsolete resources in Transifex
+      if: github.event_name != 'pull_request'
+      run: locale/lock-translations.py locale/.tx/config
+    - name: Include obsolete catalog templates (pot files) for removal
+      run: |
+        deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
+        if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
+        git checkout locale/
+    # 3. Update translation files
     - name: Update translations
-      run: sh ./locale/update.sh
+      run: |
+        sh ./locale/generate_templates.sh
+        cat ./locale/.tx/config
+        sh ./locale/update.sh
+    - name: Include obsolete catalog messages (po files) for removal
+      run: |
+        deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
+        if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
+    # 4. Commit and push changes
     - name: After success
       run: |
-        git branch -a
-        git checkout master  # attach this repo
-        git config --global user.email "sphinx-auto-update"
-        git config --global user.name "sphinx-auto-update"
         git add locale
         git add sphinx
-        git commit -m "[skip ci] by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
+        git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
     - name: GitHub Push
       if: github.event_name != 'pull_request'
-      uses: ad-m/github-push-action@v0.8.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+      run: git push

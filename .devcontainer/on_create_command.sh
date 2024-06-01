@@ -1,0 +1,13 @@
+#!/bin/sh
+# setup
+
+set -ex
+
+sudo apt-get update && sudo apt-get install -y graphviz
+sudo pip install -U pip setuptools
+sudo pip install -r requirements.txt
+
+# Install Transifex CLI tool into /usr/local/bin
+# refer to Installation instructions https://github.com/transifex/cli#installation
+
+(cd /usr/local/bin && curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash)

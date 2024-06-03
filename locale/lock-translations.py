@@ -75,7 +75,7 @@ def get_unused_resources(remote_resources, local_resources, dry_run):
                         "warning",
                         f"Deleting '{resource.slug}', locked for 3 days or more.",
                     )
-                    # resource.delete()
+                    resource.delete()
                 elif delete_status and dry_run:
                     printmsg(
                         "warning",
@@ -94,8 +94,8 @@ def lock_resources(unused_resources, dry_run):
     for resource in unused_resources.values():
         if not dry_run:
             printmsg("warning", f"Locking '{resource.slug}' ... ")
-            # resource.attributes["accept_translations"] = False
-            # resource.save("accept_translations")
+            resource.attributes["accept_translations"] = False
+            resource.save("accept_translations")
         else:
             printmsg(
                 "warning",

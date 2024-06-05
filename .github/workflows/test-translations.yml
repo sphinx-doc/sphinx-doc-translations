@@ -64,7 +64,7 @@ jobs:
         pip install -U pip setuptools
         pip install -r ./requirements.txt
     - name: Set Sphinx problem matcher
-      uses: sphinx-doc/github-problem-matcher@v1.0
+      uses: sphinx-doc/github-problem-matcher@v1.1
     - name: Build translated docs in ${{ matrix.language }}
       run: |
         TZ=UTC make html -C sphinx/doc SPHINXOPTS='-W -D locale_dirs=$(realpath locale) -D language=${{ matrix.language }}'

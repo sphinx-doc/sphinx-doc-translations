@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Georg Brandl <g.brandl@gmx.net>, 2023
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2023
+# Georg Brandl <g.brandl@gmx.net>, 2023
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-02 00:43+0000\n"
+"POT-Creation-Date: 2024-06-06 00:44+0000\n"
 "PO-Revision-Date: 2023-10-03 00:37+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -49,11 +49,12 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:19
 msgid "This directive will also cause an entry in the global module index."
-msgstr "Esta diretiva também causará uma entrada no índice do módulo global."
+msgstr ""
+"Esta diretiva também adicionará uma entrada no índice global de módulos."
 
 #: ../../sphinx/doc/usage/domains/python.rst:23
 msgid "Module directives support body content."
-msgstr ""
+msgstr "Diretivas de módulo possuem suporte a conteúdo do corpo."
 
 #: ../../sphinx/doc/usage/domains/python.rst:26
 #: ../../sphinx/doc/usage/domains/python.rst:83
@@ -64,7 +65,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/domains/python.rst:296
 #: ../../sphinx/doc/usage/domains/python.rst:327
 msgid "options"
-msgstr ""
+msgstr "opções"
 
 #: ../../sphinx/doc/usage/domains/python.rst:30
 msgid ""
@@ -74,18 +75,27 @@ msgid ""
 "\"Unix\".  It is important to use a key which has already been used when "
 "applicable."
 msgstr ""
+"Indica plataformas nas quais o módulo está disponível (se estiver disponível"
+" em todas as plataformas, a opção deve ser omitida). As chaves são "
+"identificadores curtos; exemplos que estão em uso incluem \"IRIX\", \"Mac\","
+" \"Windows\" e \"Unix\". É importante usar uma chave que já foi usada quando"
+" aplicável."
 
 #: ../../sphinx/doc/usage/domains/python.rst:39
 msgid ""
 "Consist of one sentence describing the module's purpose -- it is currently "
 "only used in the Global Module Index."
 msgstr ""
+"Consiste em em uma frase descrevendo o propósito do módulo -- atualmente ela"
+" é usada apenas no índice global de módulos."
 
 #: ../../sphinx/doc/usage/domains/python.rst:45
 msgid ""
 "Mark a module as deprecated; it will be designated as such in various "
 "locations then."
 msgstr ""
+"Marca um módulo como descontinuado; ele será designado como tal em vários "
+"locais."
 
 #: ../../sphinx/doc/usage/domains/python.rst:51
 msgid ""
@@ -99,8 +109,8 @@ msgid ""
 msgstr ""
 "Esta diretiva diz ao Sphinx que as classes, funções, etc. documentadas a "
 "partir daqui estão no módulo fornecido (como :rst:dir:`py:module`), mas não "
-"criará entradas de índice, uma entrada no Índice Global de Módulo ou um link"
-" de destino para :rst:role:`py:mod`. Isso é útil em situações onde a "
+"criará entradas de índice, uma entrada no índice global de módulos ou um "
+"link de destino para :rst:role:`py:mod`. Isso é útil em situações onde a "
 "documentação para coisas em um módulo é espalhada por vários arquivos ou "
 "seções -- um local tem a diretiva :rst:dir:`py:module`, os outros apenas "
 ":rst:dir:`py:currentmodule` ."
@@ -116,6 +126,9 @@ msgid ""
 "parameters, together with optional type parameters, as given in the Python "
 "function definition, see :ref:`signatures`. For example::"
 msgstr ""
+"Descreve uma função de nível de módulo. A assinatura deve incluir os "
+"parâmetros, junto com parâmetros de tipo opcionais, como fornecidos na "
+"definição da função Python, consulte :ref:`signatures`. Por exemplo::"
 
 #: ../../sphinx/doc/usage/domains/python.rst:73
 msgid "For methods you should use :rst:dir:`py:method`."
@@ -141,7 +154,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:87
 msgid "Indicate the function is an async function."
-msgstr ""
+msgstr "Indica que a função é uma função assíncrona."
 
 #: ../../sphinx/doc/usage/domains/python.rst:94
 #: ../../sphinx/doc/usage/domains/python.rst:145
@@ -152,6 +165,8 @@ msgid ""
 "Describe the location where the object is defined if the object is imported "
 "from other modules"
 msgstr ""
+"Descreve o local onde o objeto está definido, se o objeto for importado de "
+"outros módulos"
 
 #: ../../sphinx/doc/usage/domains/python.rst:108
 msgid ""
@@ -159,6 +174,9 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os argumentos da função serão emitidos em uma única linha "
+"lógica, substituindo :confval:`python_maximum_signature_line_length` e "
+":confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:117
 msgid ""
@@ -166,6 +184,9 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os parâmetros de tipo da função sejam emitidos em uma única "
+"linha lógica, substituindo :confval:`python_maximum_signature_line_length` e"
+" :confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:126
 msgid ""
@@ -183,19 +204,22 @@ msgid ""
 "parentheses with constructor arguments, or may optionally include type "
 "parameters (see :pep:`695`)."
 msgstr ""
+"Descreve uma classe de exceção. A assinatura pode, mas não precisa incluir "
+"parênteses com argumentos do construtor, ou podem opcionalmente incluir "
+"parâmetros de tipo (veja :pep:`695`)."
 
 #: ../../sphinx/doc/usage/domains/python.rst:169
 #: ../../sphinx/doc/usage/domains/python.rst:231
 msgid "Indicate the class is a final class."
-msgstr ""
+msgstr "Indica que a classe é uma classe final."
 
 #: ../../sphinx/doc/usage/domains/python.rst:182
 msgid "See :rst:dir:`py:class:single-line-parameter-list`."
-msgstr ""
+msgstr "Veja :rst:dir:`py:class:single-line-parameter-list`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:189
 msgid "See :rst:dir:`py:class:single-line-type-parameter-list`."
-msgstr ""
+msgstr "Veja :rst:dir:`py:class:single-line-type-parameter-list`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:197
 msgid ""
@@ -203,6 +227,9 @@ msgid ""
 " :pep:`695`) or parentheses with parameters which will be shown as the "
 "constructor arguments. See also :ref:`signatures`."
 msgstr ""
+"Descreve uma classe. A assinatura pode opcionalmente incluir parâmetros de "
+"tipo (veja :pep:`695`) ou parênteses com parâmetros que serão mostrados como"
+" argumentos do construtor. Veja também :ref:`signatures`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:202
 msgid ""
@@ -224,6 +251,10 @@ msgid ""
 "logical line, overriding :confval:`python_maximum_signature_line_length` and"
 " :confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os argumentos do construtor da classe serão emitidos em uma "
+"única linha lógica, substituindo "
+":confval:`python_maximum_signature_line_length` e "
+":confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:253
 msgid ""
@@ -231,6 +262,9 @@ msgid ""
 "overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os parâmetros de tipo da classe sejam emitidos em uma única "
+"linha lógica, substituindo :confval:`python_maximum_signature_line_length` e"
+" :confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:259
 msgid ""
@@ -244,15 +278,15 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:291
 msgid "Describes an object property."
-msgstr ""
+msgstr "Descreve uma propriedade do objeto"
 
 #: ../../sphinx/doc/usage/domains/python.rst:300
 msgid "Indicate the property is abstract."
-msgstr ""
+msgstr "Indica que a propriedade é abstrata."
 
 #: ../../sphinx/doc/usage/domains/python.rst:305
 msgid "Indicate the property is a classmethod."
-msgstr ""
+msgstr "Indica que a propriedade é um método de classe."
 
 #: ../../sphinx/doc/usage/domains/python.rst:321
 msgid ""
@@ -267,19 +301,19 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:331
 msgid "Indicate the method is an abstract method."
-msgstr ""
+msgstr "Indica que o método é um método abstrato."
 
 #: ../../sphinx/doc/usage/domains/python.rst:338
 msgid "Indicate the method is an async method."
-msgstr ""
+msgstr "Indica que o método é um método async, isto é, assíncrono."
 
 #: ../../sphinx/doc/usage/domains/python.rst:353
 msgid "Indicate the method is a class method."
-msgstr ""
+msgstr "Indica que o método é um método de classe."
 
 #: ../../sphinx/doc/usage/domains/python.rst:360
 msgid "Indicate the method is a final method."
-msgstr ""
+msgstr "Indica que o método é um método final."
 
 #: ../../sphinx/doc/usage/domains/python.rst:373
 msgid ""
@@ -287,6 +321,9 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os argumentos do método serão emitidos em uma única linha "
+"lógica, substituindo :confval:`python_maximum_signature_line_length` e "
+":confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:382
 msgid ""
@@ -294,10 +331,13 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os parâmetros de tipo do método sejam emitidos em uma única "
+"linha lógica, substituindo :confval:`python_maximum_signature_line_length` e"
+" :confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:391
 msgid "Indicate the method is a static method."
-msgstr ""
+msgstr "Indica que o método é um método estático."
 
 #: ../../sphinx/doc/usage/domains/python.rst:399
 msgid ""
@@ -341,6 +381,9 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os argumentos do decorador serão emitidos em uma única linha "
+"lógica, substituindo :confval:`python_maximum_signature_line_length` e "
+":confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:456
 msgid ""
@@ -348,6 +391,9 @@ msgid ""
 "line, overriding :confval:`python_maximum_signature_line_length` and "
 ":confval:`maximum_signature_line_length`."
 msgstr ""
+"Garante que os parâmetros de tipo do decorador sejam emitidos em uma única "
+"linha lógica, substituindo :confval:`python_maximum_signature_line_length` e"
+" :confval:`maximum_signature_line_length`."
 
 #: ../../sphinx/doc/usage/domains/python.rst:466
 msgid "Same as :rst:dir:`py:decorator`, but for decorators that are methods."
@@ -401,22 +447,25 @@ msgid ""
 "Python 3.12 introduced *type parameters*, which are type variables declared "
 "directly  within the class or function definition:"
 msgstr ""
+"O Python 3.12 introduziu *parâmetros de tipo*, que são variáveis ​​de tipo "
+"declaradas diretamente na definição de classe ou função:"
 
 #: ../../sphinx/doc/usage/domains/python.rst:505
 msgid "The corresponding reStructuredText documentation would be:"
-msgstr ""
+msgstr "A documentação reStructuredText correspondente seria:"
 
 #: ../../sphinx/doc/usage/domains/python.rst:513
 msgid "See :pep:`695` and :pep:`696` for details and the full specification."
 msgstr ""
+"Veja :pep:`695` e :pep:`696` para detalhes e especificações completas."
 
 #: ../../sphinx/doc/usage/domains/python.rst:518
 msgid "Info field lists"
-msgstr "Lista Informação Campos"
+msgstr "Listas de campos de informações"
 
 #: ../../sphinx/doc/usage/domains/python.rst:523
 msgid "meta fields are added."
-msgstr ""
+msgstr "campos meta adicionados."
 
 #: ../../sphinx/doc/usage/domains/python.rst:525
 msgid ""
@@ -469,12 +518,18 @@ msgid ""
 "indicates the python object is private member.  It is used in "
 ":py:mod:`sphinx.ext.autodoc` for filtering members."
 msgstr ""
+"``meta``: Adiciona metadados à descrição do objeto python. Os metadados não "
+"serão mostrados no documento de saída. Por exemplo, ``:meta private:`` "
+"indica que o objeto python é um membro privado. É usado em "
+":py:mod:`sphinx.ext.autodoc` para filtrar membros."
 
 #: ../../sphinx/doc/usage/domains/python.rst:544
 msgid ""
 "In current release, all ``var``, ``ivar`` and ``cvar`` are represented as "
 "\"Variable\".  There is no difference at all."
 msgstr ""
+"Na versão atual, todos ``var``, ``ivar`` e ``cvar`` são representados como "
+"\"Variável\". Não há diferença alguma."
 
 #: ../../sphinx/doc/usage/domains/python.rst:547
 msgid ""
@@ -520,7 +575,7 @@ msgstr "Retorna"
 
 #: ../../sphinx/doc/usage/domains/python.rst:578
 msgid "the message id"
-msgstr "id da mensagem"
+msgstr "o id da mensagem"
 
 #: ../../sphinx/doc/usage/domains/python.rst:0
 msgid "Return type"
@@ -627,7 +682,7 @@ msgstr "Referencia um atributo de dados de um objeto."
 
 #: ../../sphinx/doc/usage/domains/python.rst:650
 msgid "The role is also able to refer to property."
-msgstr ""
+msgstr "O papel também é capaz de fazer referência à propriedade."
 
 #: ../../sphinx/doc/usage/domains/python.rst:654
 msgid "Reference an exception.  A dotted name may be used."
@@ -689,6 +744,13 @@ msgid ""
 "``tarfile``.  Since this can get ambiguous, if there is more than one "
 "possible match, you will get a warning from Sphinx."
 msgstr ""
+"Além disso, se o nome for prefixado com um ponto e nenhuma correspondência "
+"exata for encontrada, o destino será considerado um sufixo e todos os nomes "
+"de objeto com esse sufixo serão pesquisados. Por exemplo, "
+"``:py:meth:`.TarFile.close``` faz referência à função "
+"``tarfile.TarFile.close()``, mesmo se o módulo atual não for ``tarfile``. "
+"Como isso pode ficar ambíguo, se houver mais de uma correspondência "
+"possível, você receberá um aviso do Sphinx."
 
 #: ../../sphinx/doc/usage/domains/python.rst:686
 msgid ""

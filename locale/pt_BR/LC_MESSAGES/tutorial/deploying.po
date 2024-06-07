@@ -271,14 +271,17 @@ msgid ""
 "Similarly to GitHub, the fastest way to upload your project to GitLab is "
 "using the web interface:"
 msgstr ""
+"Da mesma forma que no GitHub, a maneira mais rápida de enviar seu projeto "
+"para o GitLab é usando a interface web:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:124
 msgid "`Sign up for a GitLab account <https://gitlab.com/users/sign_up>`_."
 msgstr ""
+"`Inscreva-se para uma conta GitLab <https://gitlab.com/users/sign_up>`_."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:125
 msgid "`Create a new blank project <https://gitlab.com/projects/new>`_."
-msgstr ""
+msgstr "`Crie um novo projeto vazio <https://gitlab.com/projects/new>`_."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:126
 msgid ""
@@ -286,22 +289,29 @@ msgid ""
 "makefiles under the ``docs`` directory, and everything under "
 "``docs/source``) one by one using the :guilabel:`Upload File` button [#f1]_."
 msgstr ""
+"Faça o upload dos arquivos do projeto (no seu caso ``README.rst``, "
+"``lumache.py``, os makefiles no diretório ``docs`` e tudo em ``docs/source``"
+" ) um de cada vez usando o botão :guilabel:`Upload File` [#f1]_."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:130
 msgid ""
 "Again, these steps do not require additional software on your computer. To "
 "learn more, you can:"
 msgstr ""
+"Novamente, essas etapas não requerem software adicional em seu computador. "
+"Para saber mais, você pode:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:133
 msgid "Follow `this tutorial`_ to install Git on your machine."
-msgstr ""
+msgstr "Siga `este tutorial`_ para instalar o Git em sua máquina."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:134
 msgid ""
 "Browse the `GitLab User documentation`_ to understand the possibilities of "
 "the platform."
 msgstr ""
+"Explore a `documentação do usuário do GitLab`_ para entender as "
+"possibilidades da plataforma."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:146
 msgid ""
@@ -309,10 +319,13 @@ msgid ""
 "the web interface <https://gitlab.com/gitlab-org/gitlab/-/issues/228490>`_ "
 "is not yet implemented."
 msgstr ""
+"No momento em que este artigo foi escrito, o `upload de diretórios inteiros "
+"para o GitLab usando apenas a interface da web <https://gitlab.com/gitlab-"
+"org/gitlab/-/issues/228490>`_ ainda não estava implementado."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:152
 msgid "Publishing your HTML documentation"
-msgstr ""
+msgstr "Publicando sua documentação em HTML"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:155
 msgid "Read the Docs"
@@ -328,6 +341,13 @@ msgid ""
 ":ref:`readthedocs:tutorial/index:Creating a Read the Docs account`. If you "
 "choose GitLab instead, the process is similar."
 msgstr ""
+"`Read the Docs`_ oferece integração com GitHub e GitLab. A maneira mais "
+"rápida de começar é seguir :doc:`o tutorial do RTD "
+"<readthedocs:tutorial/index>`, que é vagamente baseado neste. Você pode "
+"publicar suas fontes no GitHub conforme explicado :ref:`na seção anterior "
+"<publishing-sources>` e, em seguida, pular diretamente para "
+":ref:`readthedocs:tutorial/index:Creating a Read the Docs account`. Se você "
+"escolher o GitLab, o processo será semelhante."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:166
 msgid "GitHub Pages"
@@ -340,6 +360,10 @@ msgid ""
 "performs the ``make html`` step every time the sources change. That can be "
 "achieved using `GitHub Actions`_."
 msgstr ""
+"`GitHub Pages`_ requer que você :ref:`publique suas fontes <publishing-"
+"sources>` no `GitHub`_. Depois disso, você precisará de um processo "
+"automatizado que execute a etapa ``make html`` toda vez que as fontes forem "
+"alteradas. Isso pode ser conseguido usando `GitHub Actions`_."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:173
 msgid ""
@@ -347,36 +371,44 @@ msgid ""
 "``.github/workflows/sphinx.yml`` in your repository with the following "
 "contents:"
 msgstr ""
+"Depois de publicar suas fontes no GitHub, crie um arquivo chamado "
+"``.github/workflows/sphinx.yml`` em seu repositório com o seguinte conteúdo:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:177
 msgid ".github/workflows/"
-msgstr ""
+msgstr ".github/workflows/"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:205
 msgid ""
 "This contains a GitHub Actions workflow with a single job of four steps:"
 msgstr ""
+"Contém um fluxo de trabalho do GitHub Actions com um único \"job\" de quatro"
+" etapas:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:207
 msgid "Checkout the code."
-msgstr ""
+msgstr "Fazer checkout do código."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:208
 #: ../../sphinx/doc/tutorial/deploying.rst:266
 msgid "Build the HTML documentation using Sphinx."
-msgstr ""
+msgstr "Construir a documentação HTML usando Sphinx."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:209
 msgid ""
 "Attach the HTML output the artifacts to the GitHub Actions job, for easier "
 "inspection."
 msgstr ""
+"Anexar a saída HTML dos artefatos ao trabalho GitHub Actions, para facilitar"
+" a inspeção."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:211
 msgid ""
 "If the change happens on the default branch, take the contents of "
 "``docs/build/html`` and push it to the ``gh-pages`` branch."
 msgstr ""
+"Se a mudança acontecer no branch padrão, pegue o conteúdo de "
+"``docs/build/html`` e envie-o para o branch ``gh-pages``."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:214
 msgid ""
@@ -384,10 +416,13 @@ msgid ""
 "successful. For that, create a file ``docs/requirements.txt`` and add the "
 "following contents:"
 msgstr ""
+"Em seguida, você precisa especificar as dependências para que a atapa ``make"
+" html`` seja bem-sucedido. Para isso, crie um arquivo "
+"``docs/requirements.txt`` e adicione o seguinte conteúdo:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:218
 msgid "docs/requirements.txt"
-msgstr ""
+msgstr "docs/requirements.txt"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:223
 msgid ""
@@ -397,10 +432,15 @@ msgid ""
 " click :guilabel:`Save`. After a few minutes, you should be able to see your"
 " HTML at the designated URL."
 msgstr ""
+"E finalmente, você está pronto para `ativar páginas do GitHub em seu "
+"repositório`_. Para isso, vá em :guilabel:`Settings`, depois em "
+":guilabel:`Pages` na barra lateral esquerda, selecione o brnach ``gh-pages``"
+" no menu suspenso \"Source\" e clique em :guilabel:`Save`. Depois de alguns "
+"minutos, você poderá ver seu HTML no URL designado."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:232
 msgid "GitLab Pages"
-msgstr ""
+msgstr "GitLab Pages"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:234
 msgid ""
@@ -408,37 +448,46 @@ msgid ""
 "sources <publishing-sources>` on `GitLab`_. When you are ready, you can "
 "automate the process of running ``make html`` using `GitLab CI`_."
 msgstr ""
+"`GitLab Pages`_, por outro lado, exige que você :ref:`publique suas fontes "
+"<publishing-sources>` no `GitLab`_. Quando estiver pronto, você pode "
+"automatizar o processo de execução do ``make html`` usando o `GitLab CI`_."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:238
 msgid ""
 "After you have published your sources on GitLab, create a file named "
 "``.gitlab-ci.yml`` in your repository with these contents:"
 msgstr ""
+"Depois de publicar suas fontes no GitLab, crie um arquivo chamado ``.gitlab-"
+"ci.yml`` em seu repositório com este conteúdo:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:241
 msgid ".gitlab-ci.yml"
-msgstr ""
+msgstr ".gitlab-ci.yml"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:263
 msgid "This contains a GitLab CI workflow with one job of several steps:"
-msgstr ""
+msgstr "Contém um fluxo de trabalho de GitLab CI com um job de várias etapas:"
 
 #: ../../sphinx/doc/tutorial/deploying.rst:265
 msgid "Install the necessary dependencies."
-msgstr ""
+msgstr "Instalar as dependências necessárias."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:267
 msgid "Move the output to a known artifacts location."
-msgstr ""
+msgstr "Mover a saída para um local de artefatos conhecido."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:270
 msgid ""
 "You will need to `validate your account`_ by entering a payment method (you "
 "will be charged a small amount that will then be reimbursed)."
 msgstr ""
+"Você precisará `validar sua conta`_ inserindo um método de pagamento (será "
+"cobrado um pequeno valor que será reembolsado)."
 
 #: ../../sphinx/doc/tutorial/deploying.rst:275
 msgid ""
 "After that, if the pipeline is successful, you should be able to see your "
 "HTML at the designated URL."
 msgstr ""
+"Depois disso, se o pipeline for bem-sucedido, você poderá ver seu HTML no "
+"URL designado."

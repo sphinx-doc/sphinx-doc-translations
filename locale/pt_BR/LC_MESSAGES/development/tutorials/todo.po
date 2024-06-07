@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:2
 msgid "Developing a \"TODO\" extension"
-msgstr ""
+msgstr "Desenvolvendo uma extensão \"TODO\""
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:4
 msgid ""
@@ -38,6 +38,15 @@ msgid ""
 " place. This is similar the ``sphinxext.todo`` extension distributed with "
 "Sphinx."
 msgstr ""
+"O objetivo deste tutorial é criar uma extensão mais abrangente que a criada "
+"em :doc:`helloworld`. Considerando que esse guia apenas cobriu a escrita de "
+"uma :term:`diretiva` personalizado, este guia adiciona múltiplas diretivas, "
+"juntamente com nós personalizados, valores de configuração adicionais e "
+"manipuladores de eventos personalizados. Para este fim, iremos cobrir uma "
+"extensão ``todo`` que adiciona capacidades para incluir entradas de tarefas "
+"pendentes (ToDo significa para fazer, em inglês) na documentação, e coletá-"
+"las em um local central. Isto é semelhante à extensão ``sphinxext.todo`` "
+"distribuída com o Sphinx."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:14
 msgid "Overview"
@@ -48,6 +57,8 @@ msgid ""
 "To understand the design of this extension, refer to :ref:`important-"
 "objects` and :ref:`build-phases`."
 msgstr ""
+"Para entender o design desta extensão, consulte :ref:`important-objects` e "
+":ref:`build-phases`."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:20
 msgid "We want the extension to add the following to Sphinx:"
@@ -59,16 +70,21 @@ msgid ""
 "and only shown in the output if a new config value is set. Todo entries "
 "should not be in the output by default."
 msgstr ""
+"Uma diretiva ``todo``, contendo algum conteúdo marcado com \"TODO\" e "
+"somente mostrado na saída se um novo valor de configuração for definido. As "
+"entradas \"todo\" não devem estar na saída por padrão."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:26
 msgid ""
 "A ``todolist`` directive that creates a list of all todo entries throughout "
 "the documentation."
 msgstr ""
+"Uma diretiva ``todolist`` que cria uma lista de todas as entradas de tarefas"
+" em toda a documentação."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:29
 msgid "For that, we will need to add the following elements to Sphinx:"
-msgstr ""
+msgstr "Para isso, precisaremos adicionar os seguintes elementos ao Sphinx:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:31
 msgid "New directives, called ``todo`` and ``todolist``."
@@ -80,6 +96,10 @@ msgid ""
 "called ``todo`` and ``todolist``.  We wouldn't need new nodes if the new "
 "directives only produced some content representable by existing nodes."
 msgstr ""
+"Novos nós de árvore de documentos para representar essas diretivas, "
+"convencionalmente também chamados de ``todo`` e ``todolist``. Não "
+"precisaríamos de novos nós se as novas diretivas produzissem apenas algum "
+"conteúdo representável pelos nós existentes."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:37
 msgid ""
@@ -87,6 +107,9 @@ msgid ""
 "with the extension name, in order to stay unique) that controls whether todo"
 " entries make it into the output."
 msgstr ""
+"Um novo valor de configuração ``todo_include_todos`` (os nomes dos valores "
+"de configuração devem começar com o nome da extensão, para permanecerem "
+"únicos) que controla se as entradas de tarefas chegam à saída."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:41
 msgid ""
@@ -95,6 +118,10 @@ msgid ""
 "intermediate results from parallel builds, and one for :event:`env-purge-"
 "doc` (the reason for that will be covered later)."
 msgstr ""
+"Novos manipuladores de eventos: um para o evento :event:`doctree-resolved`, "
+"para substituir os nós de todo e todolist, um para :event:`env-merge-info` "
+"para mesclar resultados intermediários de construções paralelas, e um para "
+":event:`env-purge-doc` (a razão para isso será abordada mais tarde)."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:48
 msgid "Prerequisites"
@@ -106,6 +133,10 @@ msgid ""
 "so once again we need a Sphinx project to call this from. You can use an "
 "existing project or create a new one using :program:`sphinx-quickstart`."
 msgstr ""
+"Assim como acontece com :doc:`helloworld`, não distribuiremos este plugin "
+"via PyPI, então mais uma vez precisamos de um projeto Sphinx para chamar "
+"isso. Você pode usar um projeto existente ou criar um novo usando "
+":program:`sphinx-quickstart`."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:54
 msgid ""
@@ -125,6 +156,7 @@ msgstr "Crie uma pasta :file:`_ext` em :file:`source`"
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called :file:`todo.py`"
 msgstr ""
+"Crie um novo arquivo Python na pasta :file:`_ext` chamado :file:`todo.py`"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:61
 msgid "Here is an example of the folder structure you might obtain:"
@@ -139,6 +171,8 @@ msgid ""
 "Open :file:`todo.py` and paste the following code in it, all of which we "
 "will explain in detail shortly:"
 msgstr ""
+"Abra :file:`todo.py` e cole o seguinte código nele, que explicaremos em "
+"detalhes em breve:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:86
 msgid ""
@@ -146,14 +180,17 @@ msgid ""
 ":doc:`helloworld`, however, we will will look at each piece step-by-step to "
 "explain what's happening."
 msgstr ""
+"Esta é uma extensão muito mais extensa do que a detalhada em "
+":doc:`helloworld`, no entanto, examinaremos cada parte passo a passo para "
+"explicar o que está acontecendo."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:91
 msgid "The node classes"
-msgstr ""
+msgstr "As classes de nós"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:92
 msgid "Let's start with the node classes:"
-msgstr ""
+msgstr "Vamos começar com as classes de nós:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:99
 msgid ""
@@ -162,6 +199,10 @@ msgid ""
 "inherits from ``Admonition`` because it should be handled like a note or "
 "warning, ``todolist`` is just a \"general\" node."
 msgstr ""
+"As classes de nós geralmente não precisam fazer nada, exceto herdar das "
+"classes padrão do docutils definidas em :mod:`docutils.nodes`. ``todo`` "
+"herda de ``Admonition`` porque deve ser tratado como uma nota ou aviso, "
+"``todolist`` é apenas um nó \"geral\"."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:106
 msgid ""
@@ -170,6 +211,10 @@ msgid ""
 "<https://docutils.sourceforge.io/docs/ref/doctree.html>`__ and :ref:`Sphinx "
 "<nodes>`."
 msgstr ""
+"Muitas extensões não terão que criar suas próprias classes de nós e "
+"funcionarão bem com os nós já fornecidos por `docutils "
+"<https://docutils.sourceforge.io/docs/ref/doctree.html>`__ e :ref:`Sphinx "
+"<nodes>`."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:113
 msgid ""
@@ -178,26 +223,30 @@ msgid ""
 "an unobvious :py:class:`~pickle.PickleError`. So if something goes wrong, "
 "please make sure that you put inherited nodes into a separate Python module."
 msgstr ""
+"É importante saber que embora você possa estender o Sphinx sem sair do seu "
+"``conf.py``, se você declarar um nó herdado ali mesmo, você encontrará um "
+":py:class:`~pickle.PickleError` não óbvio. Portanto, se algo der errado, "
+"certifique-se de colocar os nós herdados em um módulo Python separado."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:119
 msgid "For more details, see:"
-msgstr ""
+msgstr "Para mais detalhes, consulte:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:121
 msgid "https://github.com/sphinx-doc/sphinx/issues/6751"
-msgstr ""
+msgstr "https://github.com/sphinx-doc/sphinx/issues/6751"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:122
 msgid "https://github.com/sphinx-doc/sphinx/issues/1493"
-msgstr ""
+msgstr "https://github.com/sphinx-doc/sphinx/issues/1493"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:123
 msgid "https://github.com/sphinx-doc/sphinx/issues/1424"
-msgstr ""
+msgstr "https://github.com/sphinx-doc/sphinx/issues/1424"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:126
 msgid "The directive classes"
-msgstr ""
+msgstr "As classes de diretiva"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:127
 msgid ""
@@ -207,10 +256,15 @@ msgid ""
 "that the class should have attributes that configure the allowed markup, and"
 " a ``run`` method that returns a list of nodes."
 msgstr ""
+"Uma classe de diretiva é uma classe que normalmente deriva de "
+":class:`docutils.parsers.rst.Directive`. A interface da diretiva também é "
+"abordada em detalhes na `documentação do docutils`_; o importante é que a "
+"classe possua atributos que configurem a marcação permitida, e um método "
+"``run`` que retorne uma lista de nós."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:133
 msgid "Looking first at the ``TodolistDirective`` directive:"
-msgstr ""
+msgstr "Olhando primeiro para a diretiva ``TodolistDirective``:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:140
 msgid ""
@@ -219,6 +273,10 @@ msgid ""
 "nor arguments that need to be handled. That brings us to the "
 "``TodoDirective`` directive:"
 msgstr ""
+"É muito simples criar e retornar uma instância da nossa classe de nó "
+"``todolist``. A diretiva ``TodolistDirective`` em si não possui conteúdo nem"
+" argumentos que precisam ser manipulados. Isso nos leva à diretiva "
+"``TodoDirective``:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:150
 msgid ""
@@ -235,6 +293,19 @@ msgid ""
 "therefore leads to unique target names. The target node is instantiated "
 "without any text (the first two arguments)."
 msgstr ""
+"Várias coisas importantes são abordadas aqui. Primeiro, como você pode ver, "
+"agora estamos criando uma subclasse da classe auxiliar "
+":class:`~sphinx.util.docutils.SphinxDirective` em vez da classe "
+":class:`~docutils.parsers.rst.Directive` usual. Isso nos dá acesso à "
+":ref:`instância de ambiente de construção <important-objects>` usando a "
+"propriedade ``self.env``. Sem isso, teríamos que usar o bastante complicado "
+"``self.state.document.settings.env``. Então, para atuar como um link alvo "
+"(de ``TodolistDirective``), a diretiva ``TodoDirective`` precisa retornar um"
+" nó alvo além do nó ``todo``. O ID do alvo (em HTML, este será o nome da "
+"âncora) é gerado usando ``env.new_serialno`` que retorna um novo número "
+"inteiro exclusivo em cada chamada e, portanto, leva a nomes de destino "
+"exclusivos. O nó alvo é instanciado sem nenhum texto (os dois primeiros "
+"argumentos)."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:162
 msgid ""
@@ -251,20 +322,34 @@ msgid ""
 " if necessary.  Various information about the todo entry's location are "
 "stored along with a copy of the node."
 msgstr ""
+"Ao criar o nó de admonição, o corpo do conteúdo da diretiva é analisado "
+"usando ``self.state.nested_parse``. O primeiro argumento fornece o corpo do "
+"conteúdo e o segundo fornece o deslocamento do conteúdo. O terceiro "
+"argumento fornece o nó pai do resultado analisado, no nosso caso o nó "
+"``todo``. Em seguida, o nó ``todo`` é adicionado ao ambiente. Isto é "
+"necessário para poder criar uma lista de todas as entradas de tarefas ao "
+"longo da documentação, no local onde o autor coloca uma diretiva "
+"``todolist``. Para este caso, o atributo de ambiente ``todo_all_todos`` é "
+"usado (novamente, o nome deve ser único, portanto é prefixado pelo nome da "
+"extensão). Não existe quando um novo ambiente é criado, portanto a diretiva "
+"deve verificá-lo e criá-lo se necessário. Várias informações sobre a "
+"localização da entrada de tarefas são armazenadas junto com uma cópia do nó."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:174
 msgid ""
 "In the last line, the nodes that should be put into the doctree are "
 "returned: the target node and the admonition node."
 msgstr ""
+"Na última linha são retornados os nós que devem ser colocados na doctree: o "
+"nó alvo e o nó de admonição."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:177
 msgid "The node structure that the directive returns looks like this::"
-msgstr ""
+msgstr "A estrutura do nó que a diretiva retorna é semelhante a esta::"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:194
 msgid "The event handlers"
-msgstr ""
+msgstr "OS manipuladores de eventos"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:195
 msgid ""
@@ -273,12 +358,19 @@ msgid ""
 " provided by Sphinx itself, as detailed in :ref:`the API guide <events>`, "
 "and we're going to use a subset of them here."
 msgstr ""
+"Os manipuladores de eventos são um dos recursos mais poderosos do Sphinx, "
+"fornecendo uma maneira de se conectar a qualquer parte do processo de "
+"documentação. Existem muitos eventos fornecidos pelo próprio Sphinx, "
+"conforme detalhado no :ref:`guia de API <events>`, e usaremos um subconjunto"
+" deles aqui."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:200
 msgid ""
 "Let's look at the event handlers used in the above example.  First, the one "
 "for the :event:`env-purge-doc` event:"
 msgstr ""
+"Vejamos os manipuladores de eventos usados ​​no exemplo acima. Primeiro, "
+"aquele para o evento :event:`env-purge-doc`:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:208
 msgid ""
@@ -290,6 +382,13 @@ msgid ""
 "one from the ``todo_all_todos`` list.  If there are todos left in the "
 "document, they will be added again during parsing."
 msgstr ""
+"Como armazenamos informações dos arquivos fonte no ambiente, que é "
+"persistente, elas podem ficar desatualizadas quando o arquivo fonte for "
+"alterado. Portanto, antes de cada arquivo fonte ser lido, os registros do "
+"ambiente são limpos, e o evento :event:`env-purge-doc` dá às extensões a "
+"chance de fazer o mesmo. Aqui limpamos todos os todos cujo nome de documento"
+" corresponde ao fornecido na lista ``todo_all_todos``. Se ainda houver todos"
+" no documento, eles serão adicionados novamente durante a análise."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:216
 msgid ""
@@ -297,10 +396,14 @@ msgid ""
 "parallel builds. As during parallel builds all threads have their own "
 "``env``, there's multiple ``todo_all_todos`` lists that need to be merged:"
 msgstr ""
+"O próximo manipulador, para o evento :event:`env-merge-info`, é usado "
+"durante construções paralelas. Como durante construções paralelas todas as "
+"threads possuem seu próprio ``env``, existem múltiplas listas de "
+"``todo_all_todos`` que precisam ser mescladas:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:227
 msgid "The other handler belongs to the :event:`doctree-resolved` event:"
-msgstr ""
+msgstr "O outro manipulador pertence ao evento :event:`doctree-resolved`:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:234
 msgid ""
@@ -319,6 +422,21 @@ msgid ""
 "suitable URI depending on the used builder, and appending the todo node's "
 "(the target's) ID as the anchor name."
 msgstr ""
+"O evento :event:`doctree-resolved` é emitido no final da :ref:`fase 3 "
+"(resolução) <build-phases>` e permite que a resolução personalizada seja "
+"feita. O manipulador que escrevemos para este evento é um pouco mais "
+"envolvente. Se o valor de configuração ``todo_include_todos`` (que "
+"descreveremos em breve) for falso, todos os nós ``todo`` e ``todolist`` "
+"serão removidos dos documentos. Caso contrário, os nós ``todo`` apenas "
+"permanecem onde e como estão. Os nós ``todolist`` são substituídos por uma "
+"lista de entradas de tarefas completas com backlinks para o local de onde "
+"elas vêm. Os itens da lista são compostos pelos nós da entrada ``todo`` e "
+"nós docutils criados dinamicamente: um parágrafo para cada entrada, contendo"
+" texto que fornece o local, e um link (nó de referência contendo um nó em "
+"itálico) com o referência retroativa. O URI de referência é construído por "
+":meth:`sphinx.builders.Builder.get_relative_uri` que cria um URI adequado "
+"dependendo do construtor usado e anexando o ID do nó de tarefas (o alvo) "
+"como o nome da âncora."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:250
 msgid "The ``setup`` function"
@@ -331,12 +449,18 @@ msgid ""
 " it to hook up the other parts of our extension. Let's look at our ``setup``"
 " function:"
 msgstr ""
+"Como observado :doc:`anteriormente <helloworld>`, a função ``setup`` é um "
+"requisito e é usada para inserir diretivas no Sphinx. No entanto, também o "
+"usamos para conectar as outras partes da nossa extensão. Vejamos nossa "
+"função ``setup``:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:262
 msgid ""
 "The calls in this function refer to the classes and functions we added "
 "earlier. What the individual calls do is the following:"
 msgstr ""
+"As chamadas nesta função fazem referência às classes e funções que "
+"adicionamos anteriormente. O que as chamadas individuais fazem é o seguinte:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:265
 msgid ""
@@ -344,6 +468,10 @@ msgid ""
 "the new *config value* ``todo_include_todos``, whose default value should be"
 " ``False`` (this also tells Sphinx that it is a boolean value)."
 msgstr ""
+":meth:`~Sphinx.add_config_value` permite ao Sphinx saber que ele deve "
+"reconhecer o novo *valor de configuração* ``todo_include_todos``, cujo valor"
+" padrão deve ser ``False`` (isso também diz ao Sphinx que é um valor "
+"booleano) ."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:269
 msgid ""
@@ -351,6 +479,10 @@ msgid ""
 "if the config value changed its value.  This is needed for config values "
 "that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
 msgstr ""
+"Se o terceiro argumento fosse ``'html'``, os documentos HTML seriam "
+"reconstruídos completamente se o valor de configuração mudasse seu valor. "
+"Isto é necessário para valores de configuração que influenciam a leitura "
+"(:ref:`fase 1 (leitura) <build-phases>` da construção)."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:273
 msgid ""
@@ -360,12 +492,20 @@ msgid ""
 "(writing) <build-phases>`. Since the ``todolist`` node is always replaced in"
 " :ref:`phase 3 (resolving) <build-phases>`, it doesn't need any."
 msgstr ""
+":meth:`~Sphinx.add_node` adiciona uma nova *classe de nó* ao sistema de "
+"construção. Ele também pode especificar funções de visitante para cada "
+"formato de saída compatível. Estas funções visitantes são necessárias quando"
+" os novos nós permanecem até a :ref:`fase 4 (escrita) <build-phases>`. Como "
+"o nó ``todolist`` é sempre substituído na :ref:`fase 3 (resolução) <build-"
+"phases>`, ele não precisa de nenhum."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:279
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
 msgstr ""
+":meth:`~Sphinx.add_directive` adiciona uma nova *diretiva*, dada pelo nome e"
+" pela classe."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:281
 msgid ""
@@ -373,10 +513,13 @@ msgid ""
 "name is given by the first argument.  The event handler function is called "
 "with several arguments which are documented with the event."
 msgstr ""
+"Finalmente, :meth:`~Sphinx.connect` adiciona um *manipulador de eventos* ao "
+"evento cujo nome é dado pelo primeiro argumento. A função manipuladora de "
+"eventos é chamada com vários argumentos que são documentados com o evento."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:285
 msgid "With this, our extension is complete."
-msgstr ""
+msgstr "Com isso, nossa extensão está completa."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:289
 msgid "Using the extension"
@@ -387,6 +530,8 @@ msgid ""
 "As before, we need to enable the extension by declaring it in our "
 ":file:`conf.py` file. There are two steps necessary here:"
 msgstr ""
+"Como antes, precisamos habilitar a extensão declarando-a em nosso arquivo "
+":file:`conf.py`. Existem duas etapas necessárias aqui:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:294
 msgid ""
@@ -409,6 +554,9 @@ msgid ""
 "In addition, we may wish to set the ``todo_include_todos`` config value. As "
 "noted above, this defaults to ``False`` but we can set it explicitly."
 msgstr ""
+"Além disso, podemos desejar definir o valor de configuração "
+"``todo_include_todos``. Como observado acima, o padrão é ``False``, mas "
+"podemos defini-lo explicitamente."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:303
 msgid "For example:"
@@ -416,19 +564,19 @@ msgstr "Por exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:316
 msgid "You can now use the extension throughout your project. For example:"
-msgstr ""
+msgstr "Agora você pode usar a extensão em todo o seu projeto. Por exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:318
 msgid "index.rst"
-msgstr ""
+msgstr "index.rst"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:332
 msgid "somefile.rst"
-msgstr ""
+msgstr "algumarquivo.rst"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:342
 msgid "someotherfile.rst"
-msgstr ""
+msgstr "outroarquivo.rst"
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:352
 msgid ""
@@ -437,6 +585,9 @@ msgid ""
 " However, if we toggle this to true, we will see the output described "
 "previously."
 msgstr ""
+"Como configuramos ``todo_include_todos`` para ``False``, na verdade não "
+"veremos nada renderizado para as diretivas ``todo`` e ``todolist``. No "
+"entanto, se mudarmos para true, veremos a saída descrita anteriormente."
 
 #: ../../sphinx/doc/development/tutorials/todo.rst:359
 msgid "Further reading"
@@ -447,3 +598,5 @@ msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."
 msgstr ""
+"Para mais informações, consulte a documentação do `docutils`_ e de "
+":doc:`/extdev/index`."

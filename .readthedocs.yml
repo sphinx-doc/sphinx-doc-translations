@@ -4,16 +4,14 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3"
-  commands:
-    # install requirements
-    - pip install -r requirements.txt
-    # initialise submodule (https://github.com/sphinx-doc/sphinx.git)
-    - git submodule init
-    - git submodule update
-    # run Sphinx
-    - >
-      sphinx-build ./sphinx/doc/ ./_readthedocs/html 
-      -b html  
-      -D locale_dirs=$(realpath locale)
-      -D language=$(python convert_language_tag.py)
-      -D gettext_compact=0
+  apt_packages:
+    - graphviz
+  jobs:
+    post_create_environment:
+      - git clone https://github.com/sphinx-docs/sphinx ../sphinx
+      - cp -A locale ../sphinx/doc/
+
+sphinx:
+  builder: html
+  configuration: ../sphinx/doc/conf.py
+  fail_on_warning: true

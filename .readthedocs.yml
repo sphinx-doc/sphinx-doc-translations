@@ -8,10 +8,11 @@ build:
     - graphviz
   jobs:
     post_create_environment:
-      - git clone https://github.com/sphinx-doc/sphinx ../sphinx
-      - cp -a locale ../sphinx/doc/
+      - git clone https://github.com/sphinx-doc/sphinx sphinx
+      - cp -a locale sphinx/doc/
 
-sphinx:
-  builder: html
-  configuration: ../sphinx/doc/conf.py
-  fail_on_warning: true
+python:
+  install:
+    - requirements: requirements.txt
+    - method: pip
+      path: .

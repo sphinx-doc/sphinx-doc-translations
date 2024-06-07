@@ -8,9 +8,11 @@ build:
     - graphviz
   jobs:
     post_create_environment:
-      - git clone https://github.com/sphinx-doc/sphinx sphinx
       - cp -a locale sphinx/doc/
 
+submodules:
+  include: all
+  
 formats:
   - pdf
 

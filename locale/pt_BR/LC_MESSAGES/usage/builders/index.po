@@ -32,16 +32,20 @@ msgid ""
 "These are the built-in Sphinx builders.  More builders can be added by "
 ":doc:`extensions </usage/extensions/index>`."
 msgstr ""
+"Esses são os construtores embutidos do Sphinx. Mais construtores podem ser "
+"adicionados através das :doc:`extensões </usage/extensions/index>`."
 
 #: ../../sphinx/doc/usage/builders/index.rst:13
 msgid ""
 "The builder's \"name\" must be given to the **-M** or **-b** command-line "
 "options of :program:`sphinx-build` to select a builder."
 msgstr ""
+"O \"nome\" do construtor deve ser passado para as opções de linha de comando"
+" **-M** ou **-b** do :program:`sphinx-build` para selecionar o construtor."
 
 #: ../../sphinx/doc/usage/builders/index.rst:16
 msgid "The most common builders are:"
-msgstr ""
+msgstr "Os construtores mais comuns são:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:18
 msgid "**html**"
@@ -304,6 +308,9 @@ msgid ""
 "(Obviously this only works with smaller projects.)  The file is named like "
 "the root document.  No indices will be generated."
 msgstr ""
+"Esse é um construtor HTML que combina todo o projeto em um único arquivo de "
+"saída, (obviamente isso só funciona em pequenos projetos). O arquivo será "
+"nomeado como documento raiz. Nenhum índice será gerado."
 
 #: ../../sphinx/doc/usage/builders/index.rst:120
 msgid ""
@@ -326,7 +333,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:139
 msgid "Moved to sphinxcontrib.qthelp from sphinx.builders package."
-msgstr ""
+msgstr "Movido para sphinxcontrib.qthelp do pacote sphinx.builders."
 
 #: ../../sphinx/doc/usage/builders/index.rst:152
 msgid ""
@@ -359,14 +366,14 @@ msgstr ""
 "Para gerar um livro de ajuda válido, esse construtor requer o uso da "
 "ferramenta de linha de comando :program:`hiutil`, o qual só está disponível "
 "no Mac OS X 10.6 ou versão posterior. O passo da indexação pode ser "
-"desabilitado com a configuração:confval:`applehelp_disable_external_tools` "
+"desabilitado com a configuração :confval:`applehelp_disable_external_tools` "
 "com ``True``, caso em que a saída não será válida até o término do "
 ":program:`hiutil` ter sido executado em todas as pastas ``.lproj`` dentro do"
 " pacote."
 
 #: ../../sphinx/doc/usage/builders/index.rst:177
 msgid "Moved to sphinxcontrib.applehelp from sphinx.builders package."
-msgstr ""
+msgstr "Movido para sphinxcontrib.applehelp do pacote sphinx.builders."
 
 #: ../../sphinx/doc/usage/builders/index.rst:182
 msgid ""
@@ -380,7 +387,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/builders/index.rst:194
 msgid "Moved to sphinxcontrib.devhelp from sphinx.builders package."
-msgstr ""
+msgstr "Movido para sphinxcontrib.devhelp do pacote sphinx.builders."
 
 #: ../../sphinx/doc/usage/builders/index.rst:199
 msgid ""
@@ -390,11 +397,18 @@ msgid ""
 "`<https://idpf.org/epub>`_ or `<https://en.wikipedia.org/wiki/EPUB>`_. The "
 "builder creates *EPUB 3* files."
 msgstr ""
+"Esse construtor produz a mesma saída do construtor HTML e também gera "
+"arquivos *epub* para leitores de ebook readers. Veja :ref:`epub-faq` para "
+"detalhes sobre isso.  Para definições do formato epub, veja "
+"`<https://idpf.org/epub>`_ ou `<https://en.wikipedia.org/wiki/EPUB>`_. O "
+"construtor cria arquivos *EPUB 3*."
 
 #: ../../sphinx/doc/usage/builders/index.rst:215
 msgid ""
 "Since Sphinx 1.5, the epub3 builder is used as the default epub builder."
 msgstr ""
+"Desde Sphinx 1.5, o construtor epub3 é usado como o construtor padrão de "
+"epub."
 
 #: ../../sphinx/doc/usage/builders/index.rst:220
 msgid ""
@@ -405,12 +419,20 @@ msgid ""
 " (i.e. ``-M latexpdf`` not ``-b latexpdf``) or :program:`make latexpdf` at "
 "the project root."
 msgstr ""
+"Este construtor produz arquivos fonte LaTeX no diretório de saída. As "
+"construções reais do PDF acontecem dentro deste diretório de saída e "
+"precisam ser acionadas em uma segunda etapa. Isso pode ser feito via "
+":program:`make all-pdf`. Para combinar as duas etapas em apenas uma, use "
+":option:`sphinx-build -M` (ou seja, ``-M latexpdf`` e não ``-b latexpdf``) "
+"ou :program:`make latexpdf` na raiz do projeto."
 
 #: ../../sphinx/doc/usage/builders/index.rst:228
 msgid ""
 "See :confval:`latex_documents` and the chapter :ref:`latex-options` for "
 "available options."
 msgstr ""
+"Veja :confval:`latex_documents` e o capítulo :ref:`latex-options` para "
+"opções disponíveis."
 
 #: ../../sphinx/doc/usage/builders/index.rst:231
 msgid ""
@@ -419,65 +441,80 @@ msgid ""
 "matches upstream TeXLive 2021 as of 2022/02/04, but PDF builds can be "
 "successfully done on much older LaTeX installations."
 msgstr ""
+"As construções de PDF precisam de uma instalação LaTeX suficientemente "
+"completa. O teste é atualmente (desde 5.3.0) feito no Ubuntu 22.04LTS, cuja "
+"distribuição LaTeX corresponde ao TeXLive 2021 upstream em 04/02/2022, mas "
+"construções de PDF podem ser feitas com sucesso em instalações LaTeX muito "
+"mais antigas."
 
 #: ../../sphinx/doc/usage/builders/index.rst:236
 msgid ""
 "At any rate, on Ubuntu for example, following packages must all be present:"
 msgstr ""
+"De qualquer forma, no Ubuntu, por exemplo, os seguintes pacotes devem estar "
+"presentes:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:238
 msgid "``texlive-latex-recommended``"
-msgstr ""
+msgstr "``texlive-latex-recommended``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:239
 msgid "``texlive-fonts-recommended``"
-msgstr ""
+msgstr "``texlive-fonts-recommended``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:240
 msgid "``tex-gyre`` (if :confval:`latex_engine` left to default)"
-msgstr ""
+msgstr "``tex-gyre`` (se :confval:`latex_engine` deixado como padrão)"
 
 #: ../../sphinx/doc/usage/builders/index.rst:241
 msgid "``texlive-latex-extra``"
-msgstr ""
+msgstr "``texlive-latex-extra``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:242
 msgid "``latexmk``"
-msgstr ""
+msgstr "``latexmk``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:244
 msgid "TeX Gyre fonts now required for ``'pdflatex'`` engine (default)."
 msgstr ""
+"Fontes TeX Gyre agora são necessárias para o mecanismo ``'pdflatex'`` "
+"(padrão)."
 
 #: ../../sphinx/doc/usage/builders/index.rst:247
 msgid "Additional packages are needed in some circumstances:"
-msgstr ""
+msgstr "Pacotes adicionais são necessários em algumas circunstâncias:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:249
 msgid ""
 "``texlive-lang-cyrillic`` for Cyrillic (and also then ``cm-super`` if using "
 "the default fonts),"
 msgstr ""
+"``texlive-lang-cyrillic`` para cirílico (e também ``cm-super`` se estiver "
+"usando as fontes padrão),"
 
 #: ../../sphinx/doc/usage/builders/index.rst:251
 msgid ""
 "``texlive-lang-greek`` for Greek (and also then ``cm-super`` if using the "
 "default fonts),"
 msgstr ""
+"``texlive-lang-greek`` para grego (e também ``cm-super`` se estiver usando "
+"as fontes padrão),"
 
 #: ../../sphinx/doc/usage/builders/index.rst:253
 msgid "``texlive-xetex`` if :confval:`latex_engine` is ``'xelatex'``,"
-msgstr ""
+msgstr "``texlive-xetex`` se :confval:`latex_engine` é ``'xelatex'``,"
 
 #: ../../sphinx/doc/usage/builders/index.rst:254
 msgid "``texlive-luatex`` if :confval:`latex_engine` is ``'lualatex'``,"
-msgstr ""
+msgstr "``texlive-luatex`` se :confval:`latex_engine` é ``'lualatex'``,"
 
 #: ../../sphinx/doc/usage/builders/index.rst:255
 msgid ""
 "``fonts-freefont-otf`` if :confval:`latex_engine` is either ``'xelatex'`` or"
 " ``'lualatex'``."
 msgstr ""
+"``fonts-freefont-otf`` se :confval:`latex_engine` é ou ``'xelatex'`` ou "
+"``'lualatex'``."
 
 #: ../../sphinx/doc/usage/builders/index.rst:260
 msgid ""
@@ -486,6 +523,10 @@ msgid ""
 "Windows the PDF builds execute a fix number of LaTeX runs (three, then "
 "``makeindex``, then two more)."
 msgstr ""
+"Desde a versão 1.6, ``make latexpdf`` usa no GNU/Linux e macOS "
+":program:`latexmk`, pois garante que o número necessário de execuções seja "
+"executado automaticamente. No Windows, as construções de PDF executam um "
+"número fixo de execuções de LaTeX (três, depois ``makeindex`` e mais duas)."
 
 #: ../../sphinx/doc/usage/builders/index.rst:266
 msgid ""
@@ -505,12 +546,17 @@ msgid ""
 "``LATEXMKOPTS=\"-xelatex\"`` speeds up PDF builds via XeLateX in case of "
 "numerous graphics inclusions."
 msgstr ""
+"Além disso, se ``latexmk`` estiver na versão 4.52b ou posterior (Janeiro de "
+"2017), ``LATEXMKOPTS=\"-xelatex\"`` aumenta a velocidade da construção de "
+"PDF via XeLateX em caso de inclusões diversos gráficos."
 
 #: ../../sphinx/doc/usage/builders/index.rst:279
 msgid ""
 "To pass options directly to the ``(pdf|xe|lua)latex`` binary, use variable "
 "``LATEXOPTS``, for example:"
 msgstr ""
+"Para passar opções diretamente ao binário ``(pdf|xe|lua)latex``, use a "
+"variável ``LATEXOPTS``. por exemplo:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:292
 msgid ""
@@ -573,6 +619,10 @@ msgid ""
 "(``pickle``, ``simplejson``, ``phpserialize``, and others) to dump the "
 "generated HTML documentation.  The pickle builder is a subclass of it."
 msgstr ""
+"Esse construtor usa um módulo que implementa API de serialização Python "
+"(``pickle``, ``simplejson``, ``phpserialize`` e outros) para dump da "
+"documentação HTML gerada.  O construtor pickle é uma subclasse desse "
+"construtor."
 
 #: ../../sphinx/doc/usage/builders/index.rst:359
 msgid ""
@@ -589,6 +639,10 @@ msgid ""
 " module.  Known modules implementing this interface are ``simplejson``, "
 "``phpserialize``, ``plistlib``, and others."
 msgstr ""
+"O módulo que implementa funções ``dump()``, ``load()``, ``dumps()`` e "
+"``loads()`` em acordo com funções com o mesmo nome do módulo usado. Módulos "
+"conhecidos que implementam essa interface são ``simplejson``, "
+"``phpserialize``, ``plistlib`` e outros."
 
 #: ../../sphinx/doc/usage/builders/index.rst:382
 msgid "The suffix for all regular files."
@@ -673,6 +727,10 @@ msgid ""
 ":rst:dir:`versionremoved` directives for the current :confval:`version`.  "
 "This is useful to generate a changelog file, for example."
 msgstr ""
+"Este construtor produz uma visão geral em HTML de todas as diretivas "
+":rst:dir:`versionadded`, :rst:dir:`versionchanged`, :rst:dir:`deprecated` e "
+":rst:dir:`versionremoved` para :confval:`version` atual. Isso é útil para "
+"gerar um arquivo de changelog, por exemplo."
 
 #: ../../sphinx/doc/usage/builders/index.rst:469
 msgid ""
@@ -688,18 +746,20 @@ msgid ""
 " ``requests``, and writes an overview which ones are broken and redirected "
 "to standard output and to :file:`output.txt` in the output directory."
 msgstr ""
-"Esses construtores buscam em todos os documentos para ligações externas, "
-"tenta abrir esses links com ``requests``, e grava uma visão com os "
-"inconsistentes e redireciona para a saída padrão e para :file:`output.txt` "
-"no diretório de saída."
+"Esse construtor busca links externos em todos os documentos, tenta abrir "
+"esses links com ``requests``, e grava uma visão com os inconsistentes e "
+"redireciona para a saída padrão e para :file:`output.txt` no diretório de "
+"saída."
 
 #: ../../sphinx/doc/usage/builders/index.rst:493
 msgid "Since Sphinx 1.5, the linkcheck builder uses the requests module."
-msgstr ""
+msgstr "Desde Sphinx 1.5, o construtor linkcheck usa o módulo requests."
 
 #: ../../sphinx/doc/usage/builders/index.rst:497
 msgid "The linkcheck builder retries links when servers apply rate limits."
 msgstr ""
+"O construtor linkcheck tenta acessar links novamente quando os servidores "
+"aplicam limites de taxa de acesso."
 
 #: ../../sphinx/doc/usage/builders/index.rst:502
 msgid ""
@@ -707,7 +767,7 @@ msgid ""
 "transformed with standard XML tools such as XSLT processors into arbitrary "
 "final forms."
 msgstr ""
-"Esse construtor produz arquivos XML nativos Docutils. A saída pode ser "
+"Esse construtor produz arquivos XML nativos de Docutils. A saída pode ser "
 "transformada com ferramentas XML padrão como processadores XSLT em "
 "formulários prontos arbitrários."
 
@@ -739,7 +799,7 @@ msgstr ":mod:`~sphinx.ext.coverage`"
 
 #: ../../sphinx/doc/usage/builders/index.rst:540
 msgid "Serialization builder details"
-msgstr "Detalhes Construtor de Serialização"
+msgstr "Detalhes de construtores de serialização"
 
 #: ../../sphinx/doc/usage/builders/index.rst:542
 msgid ""
@@ -756,8 +816,8 @@ msgid ""
 "The :class:`.PickleHTMLBuilder` is a builtin subclass that implements the "
 "pickle serialization interface."
 msgstr ""
-"A :class:`.PickleHTMLBuilder` é uma subclasse implícita que implementa o "
-"interface de serialização."
+"A :class:`.PickleHTMLBuilder` é uma subclasse embutida que implementa o "
+"interface de serialização com pickle."
 
 #: ../../sphinx/doc/usage/builders/index.rst:549
 msgid ""
@@ -766,10 +826,10 @@ msgid ""
 " just as the source files are.  They unserialize to a dictionary (or "
 "dictionary like structure) with these keys:"
 msgstr ""
-"Os arquivos dos fontes tem extensão  "
-":attr:`~.SerializingHTMLBuilder.out_suffix`, e são arranjados em diretórios "
-"como estão os arquivos fonte.  São desconstruídos para um dicionário (ou "
-"estrutura similar a um dicionário) com essas chaves:"
+"Os arquivos por arquivo fonte têm extensões de "
+":attr:`~.SerializingHTMLBuilder.out_suffix`, e são organizadas em diretórios"
+" como estão os arquivos fonte. Eles são desserializados para um dicionário, "
+"ou estrutura similar, com essas chaves:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:554
 msgid "``body``"
@@ -789,7 +849,7 @@ msgstr "``title``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:559
 msgid "The title of the document, as HTML (may contain markup)."
-msgstr "O título do documento, como HTML (pode conter marcas)."
+msgstr "O título do documento, como HTML (pode conter marcação)."
 
 #: ../../sphinx/doc/usage/builders/index.rst:561
 msgid "``toc``"
@@ -798,7 +858,8 @@ msgstr "``toc``"
 #: ../../sphinx/doc/usage/builders/index.rst:562
 msgid "The table of contents for the file, rendered as an HTML ``<ul>``."
 msgstr ""
-"Tabela de conteúdo do arquivo ou sumário, renderizado como HTML ``<ul>``."
+"A tabela de conteúdo ou sumário do arquivo, renderizado como um ``<ul>`` de "
+"HTML."
 
 #: ../../sphinx/doc/usage/builders/index.rst:564
 msgid "``display_toc``"
@@ -807,7 +868,7 @@ msgstr "``display_toc``"
 #: ../../sphinx/doc/usage/builders/index.rst:565
 msgid ""
 "A boolean that is ``True`` if the ``toc`` contains more than one entry."
-msgstr "Um booleano que é ``True`` se o ``toc`` contém mais que uma entrada."
+msgstr "Um booleano que é ``True`` se o ``toc`` contém mais de uma entrada."
 
 #: ../../sphinx/doc/usage/builders/index.rst:567
 msgid "``current_page_name``"
@@ -815,11 +876,11 @@ msgstr "``current_page_name``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:568
 msgid "The document name of the current file."
-msgstr "Nome do documento corrente do arquivo corrente."
+msgstr "O nome do documento do arquivo atual."
 
 #: ../../sphinx/doc/usage/builders/index.rst:570
 msgid "``parents``, ``prev`` and ``next``"
-msgstr "``parents``, ``prev`` and ``next``"
+msgstr "``parents``, ``prev`` e ``next``"
 
 #: ../../sphinx/doc/usage/builders/index.rst:571
 msgid ""
@@ -828,10 +889,10 @@ msgid ""
 "(title of the related document, as HTML).  ``parents`` is a list of "
 "relations, while ``prev`` and ``next`` are a single relation."
 msgstr ""
-"Informação sobre os capítulos relacionados com a árvore do TOC. Cada relação"
-" é um dicionario com as chaves ``link`` (HREF da relação) e ``title``  "
-"(título do documento relacionado, como HTML). ``parents`` é a lista de "
-"relações, enquanto ``prev`` e ``next`` são relações simples."
+"Informações sobre os capítulos relacionados na árvore de TOC. Cada relação é"
+" um dicionário com as chaves ``link`` (HREF da relação) e ``title`` (título "
+"do documento relacionado, como HTML). ``parents`` é a lista de relações, "
+"enquanto ``prev`` e ``next`` são relações simples."
 
 #: ../../sphinx/doc/usage/builders/index.rst:576
 msgid "``sourcename``"
@@ -851,7 +912,7 @@ msgstr ":attr:`.SerializingHTMLBuilder.globalcontext_filename`"
 
 #: ../../sphinx/doc/usage/builders/index.rst:582
 msgid "A pickled dict with these keys:"
-msgstr "Um dicionário montado com as seguintes chaves:"
+msgstr "Um dicionário serializado com pickle com as seguintes chaves:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:584
 msgid "``project``, ``copyright``, ``release``, ``version``"
@@ -886,7 +947,8 @@ msgid ""
 "Name of the used builder, in the case of pickles this is always "
 "``'pickle'``."
 msgstr ""
-"Nome do construtor usado, no caso de montagens será sempre ``'pickle'``."
+"Nome do construtor usado, no caso de serializações com pickle isso sempre "
+"será ``'pickle'``."
 
 #: ../../sphinx/doc/usage/builders/index.rst:597
 msgid "``titles``"
@@ -905,12 +967,12 @@ msgid ""
 "An index that can be used for searching the documentation.  It is a pickled "
 "list with these entries:"
 msgstr ""
-"Um índice que pode ser usado para busca nos documentos. É uma lista  com "
+"Um índice que pode ser usado para busca na documentação. É uma lista com "
 "estas entradas:"
 
 #: ../../sphinx/doc/usage/builders/index.rst:604
 msgid "A list of indexed docnames."
-msgstr "Lista de nomes de documentos indexados."
+msgstr "Uma lista de nomes de documentos (docnames) indexados."
 
 #: ../../sphinx/doc/usage/builders/index.rst:605
 msgid ""
@@ -925,9 +987,9 @@ msgid ""
 "A dict mapping word roots (processed by an English-language stemmer) to a "
 "list of integers, which are indices into the first list."
 msgstr ""
-"Dicionário mapeando palavras raízes (processadas por tratamento idioma "
-"Inglês) para uma lista de inteiros, os quais possuem índices na primeira "
-"lista."
+"Um dicionário mapeando raízes de palavras (processadas por tratamento de "
+"idioma Inglês) para uma lista de inteiros, os quais possuem índices na "
+"primeira lista."
 
 #: ../../sphinx/doc/usage/builders/index.rst:610
 msgid "``environment.pickle``"
@@ -956,4 +1018,4 @@ msgid ""
 "package is available on unpickling."
 msgstr ""
 "Diferentemente de outros arquivos pickle, esse arquivo requer que o pacote "
-"``sphinx`` esteja disponível no processo."
+"``sphinx`` esteja disponível na desserialização com pickle."

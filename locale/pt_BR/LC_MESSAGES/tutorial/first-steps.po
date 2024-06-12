@@ -27,7 +27,7 @@ msgstr "Primeiros passos para documentar seu projeto usando Sphinx"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:5
 msgid "Building your HTML documentation"
-msgstr ""
+msgstr "Construindo sua documentação HTML"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:7
 msgid ""
@@ -35,10 +35,13 @@ msgid ""
 "already, and it gets rendered as the front page of your HTML documentation."
 "  It is written in reStructuredText, a powerful markup language."
 msgstr ""
+"O arquivo ``index.rst`` que o ``sphinx-quickstart`` criou já tem algum "
+"conteúdo e é renderizado como a primeira página da sua documentação HTML. "
+"Está escrito em reStructuredText, uma linguagem de marcação poderosa."
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:11
 msgid "Modify the file as follows:"
-msgstr ""
+msgstr "Modifique o arquivo da seguinte forma:"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:13
 msgid "docs/source/index.rst"
@@ -47,43 +50,52 @@ msgstr "docs/source/index.rst"
 #: ../../sphinx/doc/tutorial/first-steps.rst:28
 msgid ""
 "This showcases several features of the reStructuredText syntax, including:"
-msgstr ""
+msgstr "Isso mostra vários recursos da sintaxe reStructuredText, incluindo:"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:30
 msgid "a **section header** using ``===`` for the underline,"
-msgstr ""
+msgstr "um **cabeçalho de seção** usando ``===`` para o sublinhado,"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:31
 msgid ""
 "two examples of :ref:`rst-inline-markup`: ``**strong emphasis**`` (typically"
 " bold) and ``*emphasis*`` (typically italics),"
 msgstr ""
+"dois exemplos de :ref:`rst-inline-markup`: ``**ênfase forte**`` (normalmente"
+" em negrito) e ``*ênfase*`` (normalmente em itálico),"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:33
 msgid "an **inline external link**,"
-msgstr ""
+msgstr "um **link externo em linha**,"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:34
 msgid ""
 "and a ``note`` **admonition** (one of the available :ref:`directives <rst-"
 "directives>`)"
 msgstr ""
+"e uma ``nota`` **advertência** (uma das :ref:`diretivas <rst-directives>` "
+"disponíveis)"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:37
 msgid ""
 "Now to render it with the new content, you can use the ``sphinx-build`` "
 "command as before, or leverage the convenience script as follows:"
 msgstr ""
+"Agora, para renderizá-la com o novo conteúdo, você pode usar o comando "
+"``sphinx-build`` como antes, ou aproveitar o script de conveniência da "
+"seguinte forma:"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:45
 msgid ""
 "After running this command, you will see that ``index.html`` reflects the "
 "new changes!"
 msgstr ""
+"Após executar este comando, você verá que ``index.html`` reflete as novas "
+"alterações!"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:49
 msgid "Building your documentation in other formats"
-msgstr ""
+msgstr "Construindo sua documentação em outros formatos"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:51
 msgid ""
@@ -91,6 +103,9 @@ msgid ""
 ":ref:`and more <builders>`.  For example, to build your documentation in "
 "EPUB format, run this command from the ``docs`` directory:"
 msgstr ""
+"Sphinx oferece suporte a uma variedade de formatos além de HTML, incluindo "
+"PDF, EPUB :ref:`e mais <builders>`. Por exemplo, para construir sua "
+"documentação no formato EPUB, execute este comando no diretório ``docs``:"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:59
 msgid ""
@@ -99,12 +114,18 @@ msgid ""
 "compatible e-book viewer, like `Calibre <https://calibre-ebook.com/>`_, or "
 "preview ``index.xhtml`` on a web browser."
 msgstr ""
+"Depois disso, você verá os arquivos correspondentes ao e-book em "
+"``docs/build/epub/``. Você pode abrir ``Lumache.epub`` com um visualizador "
+"de e-book compatível com EPUB, como `Calibre <https://calibre-ebook.com/>`_ "
+"ou visualizar ``index.xhtml`` em um navegador web."
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:66
 msgid ""
 "To quickly display a complete list of possible output formats, plus some "
 "extra useful commands, you can run :code:`make help`."
 msgstr ""
+"Para exibir rapidamente uma lista completa de possíveis formatos de saída, "
+"além de alguns comandos extras úteis, você pode executar :code:`make help`."
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:69
 msgid ""
@@ -115,6 +136,12 @@ msgid ""
 "change that behavior by adding the following code at the end of your "
 "``conf.py``:"
 msgstr ""
+"Cada formato de saída possui algumas opções de configuração específicas que "
+"você pode ajustar, :ref:`incluindo EPUB <epub-options>`. Por exemplo, o "
+"valor padrão de :confval:`epub_show_urls` é ``inline``, o que significa que,"
+" por padrão, as URLs são mostradas logo após o link correspondente, entre "
+"parênteses. Você pode mudar esse comportamento adicionando o seguinte código"
+" no final do seu ``conf.py``:"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:80
 msgid ""
@@ -123,6 +150,10 @@ msgid ""
 "text. Sweet! Read on to explore :doc:`other ways to customize Sphinx "
 "</tutorial/more-sphinx-customization>`."
 msgstr ""
+"Com este valor de configuração, e após executar novamente ``make epub``, "
+"você notará que as URLs aparecem agora como notas de rodapé, o que evita "
+"sobrecarregar o texto. Legal! Continue lendo para explorar :doc:`outras "
+"maneiras de personalizar o Sphinx </tutorial/more-sphinx-customization>`."
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:87
 msgid ""
@@ -133,3 +164,10 @@ msgid ""
 " LaTeX requires careful configuration in some cases, so PDF generation is "
 "out of scope for this tutorial."
 msgstr ""
+"A geração de um PDF usando o Sphinx pode ser feita executando ``make "
+"latexpdf``, desde que o sistema tenha uma instalação LaTeX funcional, "
+"conforme explicado na documentação de "
+":class:`sphinx.builders.latex.LaTeXBuilder`. Embora isso seja perfeitamente "
+"viável, tais instalações costumam ser grandes e, em geral, o LaTeX requer "
+"configuração cuidadosa em alguns casos, portanto a geração de PDF está fora "
+"do escopo deste tutorial."

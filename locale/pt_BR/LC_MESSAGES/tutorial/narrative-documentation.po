@@ -37,12 +37,19 @@ msgid ""
 "you to assemble a project from different files, which is helpful when the "
 "project grows."
 msgstr ""
+"O arquivo ``index.rst`` criado por ``sphinx-quickstart`` é o "
+":term:`documento raiz`, cuja principal função é servir como uma página de "
+"boas-vindas e conter a raiz da \"árvore do tabela de conteúdo\" (ou "
+"*toctree*). O Sphinx permite montar um projeto a partir de diferentes "
+"arquivos, o que é útil quando o projeto cresce."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:13
 msgid ""
 "As an example, create a new file ``docs/source/usage.rst`` (next to "
 "``index.rst``) with these contents:"
 msgstr ""
+"Como exemplo, crie um novo arquivo ``docs/source/usage.rst`` (ao lado de "
+"``index.rst``) com este conteúdo:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:16
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:99
@@ -56,6 +63,10 @@ msgid ""
 "of content as source code, with appropriate syntax highlighting (in this "
 "case, generic ``console`` text)."
 msgstr ""
+"Este novo arquivo contém dois cabeçalhos de :ref:`seção <rst-sections>`, "
+"texto de parágrafo normal e uma diretiva :rst:dir:`code-block` que renderiza"
+" um bloco de conteúdo como código-fonte, com realce de sintaxe apropriado "
+"(neste caso, texto genérico ``console``)."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:36
 msgid ""
@@ -64,6 +75,10 @@ msgid ""
 "after ``===`` for the \"Usage\" section, you have declared \"Installation\" "
 "to be a *subsection* of \"Usage\"."
 msgstr ""
+"A estrutura do documento é determinada pela sucessão de estilos de "
+"cabeçalho, o que significa que, ao usar ``---`` para a seção "
+"\"Installation\" depois de ``===`` para a seção \"Usage\", você declarou "
+"\"Installation\" como uma *subseção* de \"Usage\"."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:41
 msgid ""
@@ -71,6 +86,9 @@ msgid ""
 " at the end of ``index.rst`` including the document you just created, as "
 "follows:"
 msgstr ""
+"Para completar o processo, adicione uma :ref:`diretiva <rst-directives>` "
+"``toctree`` no final de ``index.rst`` incluindo o documento que você acabou "
+"de criar, como segue:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:44
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:83
@@ -83,6 +101,8 @@ msgid ""
 "This step inserts that document in the root of the *toctree*, so now it "
 "belongs to the structure of your project, which so far looks like this:"
 msgstr ""
+"Este passo insere esse documento na raiz do *toctree*, então agora ele "
+"pertence à estrutura do seu projeto, que até agora está assim:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:62
 msgid ""
@@ -90,6 +110,9 @@ msgid ""
 " the ``toctree`` gets rendered as a list of hyperlinks, and this allows you "
 "to navigate to the new page you just created.  Neat!"
 msgstr ""
+"Se você construir a documentação HTML executando ``make html``, você verá "
+"que o ``toctree`` é renderizado como uma lista de hiperlinks, e isso permite"
+" que você navegue para a nova página que acabou de criar. Bem organizado!"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:68
 msgid ""
@@ -97,10 +120,13 @@ msgid ""
 "included in any toctree`` messages during the build process, and will be "
 "unreachable for users."
 msgstr ""
+"Documentos fora de um *toctree* resultarão em mensagens ``AVISO: o documento"
+" não está incluído em nenhum toctree`` durante o processo de construção e "
+"ficarão inacessíveis para os usuários."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:73
 msgid "Adding cross-references"
-msgstr ""
+msgstr "Adicionando referências cruzadas"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:75
 msgid ""
@@ -109,12 +135,18 @@ msgid ""
 "document, a section, a figure, a code object, etc.  This tutorial is full of"
 " them!"
 msgstr ""
+"Um recurso poderoso do Sphinx é a capacidade de adicionar :ref:`referências "
+"cruzadas <xref-syntax>` para partes específicas da documentação: um "
+"documento, uma seção, uma figura, um objeto código, etc. Este tutorial está "
+"cheio deles!"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:80
 msgid ""
 "To add a cross-reference, write this sentence right after the introduction "
 "paragraph in ``index.rst``:"
 msgstr ""
+"Para adicionar uma referência cruzada, escreva esta frase logo após o "
+"parágrafo de introdução em ``index.rst``:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:88
 msgid ""
@@ -122,6 +154,9 @@ msgid ""
 "references a specific document in the project, in this case the "
 "``usage.rst`` you created earlier."
 msgstr ""
+"O :rst:role:`doc` :ref:`papel <rst-roles-alt>` que você usou automaticamente"
+" faz referência a um documento específico no projeto, neste caso o "
+"``usage.rst`` que você criou anteriormente."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:92
 msgid ""
@@ -129,16 +164,23 @@ msgid ""
 "the project. For that, you need to use the :rst:role:`ref` role, and add an "
 "explicit *label* that acts as :duref:`a target <hyperlink-targets>`."
 msgstr ""
+"Alternativamente, você também pode adicionar uma referência cruzada a uma "
+"parte arbitrária do projeto. Para isso, você precisa usar o papel "
+":rst:role:`ref`, e adicionar um *rótulo* explícito que atue como :duref:`um "
+"alvo <hyperlink-targets>`."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:96
 msgid ""
 "For example, to reference the \"Installation\" subsection, add a label right"
 " before the heading, as follows:"
 msgstr ""
+"Por exemplo, para fazer referência à subseção \"Installation\", adicione um "
+"rótulo logo antes do título da seguinte forma:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:113
 msgid "And make the sentence you added in ``index.rst`` look like this:"
 msgstr ""
+"E faça com que a frase que você adicionou em ``index.rst`` fique assim:"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:121
 msgid ""
@@ -150,9 +192,18 @@ msgid ""
 " ``Installation``). Both the ``:doc:`` and the ``:ref:`` roles will be "
 "rendered as hyperlinks in the HTML documentation."
 msgstr ""
+"Observe um truque aqui: a parte ``install`` especifica como será a aparência"
+" do link (queremos que seja uma palavra específica, para que a frase faça "
+"sentido), enquanto a parte ``<installation>`` refere-se ao rótulo real ao "
+"qual queremos adicionar uma referência cruzada. Se você não incluir um "
+"título explícito, portanto usando ``:ref:`installation```, o título da seção"
+" será usado (neste caso, ``Installation``). Ambas os papéis ``:doc:`` e "
+"``:ref:`` serão renderizadas como hiperlinks na documentação HTML."
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:129
 msgid ""
 "What about :doc:`documenting code objects in Sphinx </tutorial/describing-"
 "code>`? Read on!"
 msgstr ""
+"E quanto a :doc:`documentar objetos código no Sphinx </tutorial/describing-"
+"code>`? Continue lendo!"

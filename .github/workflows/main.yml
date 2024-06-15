@@ -74,7 +74,7 @@ jobs:
       run: |
         git add locale
         git add sphinx
-        git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_number }}"
+        git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
     - name: GitHub Push
       if: github.event_name != 'pull_request'
       run: git push

@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:2
 msgid "LaTeX customization"
-msgstr "Configuração LaTeX"
+msgstr "Personalização de LaTeX"
 
 #: ../../sphinx/doc/latex.rst:45
 msgid ""
@@ -35,6 +35,10 @@ msgid ""
 " the :ref:`latex_elements <latex_elements_confval>` variable, provides much "
 "of the interface for customization. For example:"
 msgstr ""
+"Ao contrário dos :ref:`construtores HTML <html-themes>`, o construtor "
+"``latex`` não se beneficia de temas preparados. As :ref:`latex-options`, e "
+"particularmente a variável :ref:`latex_elements <latex_elements_confval>`, "
+"fornece grande parte da interface para personalização. Por exemplo:"
 
 #: ../../sphinx/doc/latex.rst:74
 msgid ""
@@ -42,6 +46,9 @@ msgid ""
 "avoid interpretation as escape sequences. Alternatively, you may use raw "
 "strings as is done above."
 msgstr ""
+"Tenha em mente que as barras invertidas devem ser duplicadas em literais de "
+"string Python para evitar interpretação como sequências de escape. "
+"Alternativamente, você pode usar strings brutas como feito acima."
 
 #: ../../sphinx/doc/latex.rst:81
 msgid "The ``latex_elements`` configuration setting"
@@ -56,23 +63,31 @@ msgid ""
 "For example, in the PDF documentation this chapter is styled especially, as "
 "will be described later."
 msgstr ""
+"Um dicionário que contém trechos de LaTeX substituindo aqueles que o Sphinx "
+"geralmente coloca nos arquivos ``.tex`` gerados. Sua chave ``'sphinxsetup'``"
+" é descrita :ref:`separadamente <latexsphinxsetup>`. Permite também "
+"configurações locais inseridas nos arquivos gerados, via diretivas "
+":dudir:`raw`. Por exemplo, na documentação em PDF este capítulo tem um "
+"estilo especial, como será descrito mais adiante."
 
 #: ../../sphinx/doc/latex.rst:90
 msgid "Keys that you may want to override include:"
-msgstr "Chaves que podem ser sobrepostas são:"
+msgstr "Chaves que você pode querer substituir incluem:"
 
 #: ../../sphinx/doc/latex.rst:92
 msgid "``'papersize'``"
-msgstr "``'tamanhopapel'``"
+msgstr "``'papersize'``"
 
 #: ../../sphinx/doc/latex.rst:93
 msgid ""
 "Paper size option of the document class (``'a4paper'`` or ``'letterpaper'``)"
 msgstr ""
+"Opção de tamanho papel para a classe de documento (``'a4paper'`` ou "
+"``'letterpaper'``)"
 
 #: ../../sphinx/doc/latex.rst:96
 msgid "Default: ``'letterpaper'``"
-msgstr ""
+msgstr "Padrão: ``'letterpaper'``"
 
 #: ../../sphinx/doc/latex.rst:98
 msgid "``'pointsize'``"
@@ -83,10 +98,12 @@ msgid ""
 "Point size option of the document class (``'10pt'``, ``'11pt'`` or "
 "``'12pt'``)"
 msgstr ""
+"Opção de tamanho de pontos para a classe de documento (``'10pt'``, "
+"``'11pt'`` ou ``'12pt'``)"
 
 #: ../../sphinx/doc/latex.rst:102
 msgid "Default: ``'10pt'``"
-msgstr ""
+msgstr "Padrão: ``'10pt'``"
 
 #: ../../sphinx/doc/latex.rst:104
 msgid "``'pxunit'``"
@@ -102,10 +119,17 @@ msgid ""
 "``72px=1in``, simply use ``'1bp'``; for ``90px=1in``, use ``'0.8bp'`` or "
 "``'0.803pt'``."
 msgstr ""
+"O valor de ``px`` quando usado nos atributos de imagem ``width`` e "
+"``height``. O valor padrão é ``'0.75bp'`` que alcança ``96px=1in`` (em TeX "
+"``1in = 72bp = 72.27pt``.) Para obter, por exemplo, ``100px=1in``, use `` "
+"'0.01in'`` ou ``'0.7227pt'`` (este último leva ao TeX calcular um valor mais"
+" preciso, devido à unidade menor usada na especificação); para ``72px=1in``,"
+" simplesmente use ``'1bp'``; para ``90px=1in``, use ``'0.8bp'`` ou "
+"``'0.803pt'``."
 
 #: ../../sphinx/doc/latex.rst:113
 msgid "Default: ``'0.75bp'``"
-msgstr ""
+msgstr "Padrão: ``'0.75bp'``"
 
 #: ../../sphinx/doc/latex.rst:117
 msgid "``'passoptionstopackages'``"
@@ -116,6 +140,8 @@ msgid ""
 "A string which will be positioned early in the preamble, designed to contain"
 " ``\\\\PassOptionsToPackage{options}{foo}`` commands."
 msgstr ""
+"O termo que será posicionado antes do preâmbulo, designado para conter "
+"comandos ``\\\\PassOptionsToPackage{options}{foo}``."
 
 #: ../../sphinx/doc/latex.rst:123
 msgid ""
@@ -123,12 +149,15 @@ msgid ""
 "For example package ``fancybox`` is incompatible with being loaded via the "
 "``'preamble'`` key, it must be loaded earlier."
 msgstr ""
+"Também pode ser usado para carregar pacotes LaTeX bem no início do "
+"preâmbulo. Por exemplo o pacote ``fancybox`` é incompatível com ser "
+"carregado através da chave ``'preamble'``, ele deve ser carregado antes."
 
 #: ../../sphinx/doc/latex.rst:127 ../../sphinx/doc/latex.rst:225
 #: ../../sphinx/doc/latex.rst:241 ../../sphinx/doc/latex.rst:261
 #: ../../sphinx/doc/latex.rst:268 ../../sphinx/doc/latex.rst:280
 msgid "Default: ``''``"
-msgstr ""
+msgstr "Padrão: ``''``"
 
 #: ../../sphinx/doc/latex.rst:131
 msgid "``'babel'``"
@@ -144,7 +173,7 @@ msgstr ""
 "Inclusão do pacote ``babel``, padrão ``'\\\\usepackage{babel}'`` (a string "
 "adequada do idioma do documento é transmitida como opção de classe e "
 "``english`` é utilizada se não houver linguagem.) Para documentos em "
-"japonês, o padrão é a cadeia vazia."
+"japonês, o padrão é a string vazia."
 
 #: ../../sphinx/doc/latex.rst:137
 msgid ""
@@ -153,6 +182,10 @@ msgid ""
 "its support for Unicode engines in recent years and for some languages it "
 "may make sense to prefer ``babel`` over ``polyglossia``."
 msgstr ""
+"Com XeLaTeX e LuaLaTeX, o Sphinx configura o documento LaTeX para usar "
+"`polyglossia`_, mas deve-se estar ciente de que o atual `babel`_ melhorou "
+"seu suporte para mecanismos Unicode nos últimos anos e para algumas "
+"linguagens pode fazer sentido preferir ``babel`` sobre ``polyglossia``."
 
 #: ../../sphinx/doc/latex.rst:147
 msgid ""
@@ -160,10 +193,14 @@ msgid ""
 "repertory before next PDF build, else left-over auxiliary files are likely "
 "to break the build."
 msgstr ""
+"Depois de modificar uma chave principal do LaTeX como esta, limpe o "
+"repertório de construção do LaTeX antes da próxima construção de PDF, caso "
+"contrário, os arquivos auxiliares restantes provavelmente quebrarão a "
+"construção."
 
 #: ../../sphinx/doc/latex.rst:151
 msgid "Default:  ``'\\\\usepackage{babel}'`` (``''`` for Japanese documents)"
-msgstr ""
+msgstr "Padrão: ``'\\\\usepackage{babel}'`` (``''`` para documentos em japonês)"
 
 #: ../../sphinx/doc/latex.rst:153
 msgid ""
@@ -175,13 +212,15 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:157
 msgid "``'lualatex'`` uses same default setting as ``'xelatex'``"
-msgstr "``'lualatex'`` usa mesmo padrão de ``'xelatex'``"
+msgstr "``'lualatex'`` usa o mesmo padrão de ``'xelatex'``"
 
 #: ../../sphinx/doc/latex.rst:160
 msgid ""
 "For French, ``xelatex`` and ``lualatex`` default to using ``babel``, not "
 "``polyglossia``."
 msgstr ""
+"Para francês, ``xelatex`` e ``lualatex`` têm como padrão ``babel``, e não "
+"``polyglossia``."
 
 #: ../../sphinx/doc/latex.rst:164
 msgid "``'fontpkg'``"
@@ -189,24 +228,29 @@ msgstr "``'fontpkg'``"
 
 #: ../../sphinx/doc/latex.rst:165
 msgid "Font package inclusion. The default is::"
-msgstr ""
+msgstr "Inclusão de pacote de fontes. O padrão é::"
 
 #: ../../sphinx/doc/latex.rst:172
 msgid ""
 "For ``'xelatex'`` and ``'lualatex'`` however the default is to use the GNU "
 "FreeFont."
 msgstr ""
+"Para ``'xelatex'`` e ``'lualatex'``, entretanto, o padrão é usar o GNU "
+"FreeFont."
 
 #: ../../sphinx/doc/latex.rst:175
 msgid ""
 "Defaults to ``''`` when the :confval:`language` uses the Cyrillic script."
-msgstr "Padrão para ``''`` quando :confval:`language` usa script Cirílico."
+msgstr "O padrão é  ``''`` quando :confval:`language` usa script Cirílico."
 
 #: ../../sphinx/doc/latex.rst:179
 msgid ""
 "Incorporates some font substitution commands to help support occasional "
 "Greek or Cyrillic in a document using ``'pdflatex'`` engine."
 msgstr ""
+"Incorpora alguns comandos de substituição de fonte para ajudar a ter suporte"
+" a grego ou cirílico ocasional em um documento usando o mecanismo "
+"``'pdflatex'``."
 
 #: ../../sphinx/doc/latex.rst:185
 msgid ""
@@ -214,6 +258,9 @@ msgid ""
 "``'fontsubstitution'`` key, as their presence here made it complicated for "
 "user to customize the value of ``'fontpkg'``."
 msgstr ""
+"Os comandos de substituição de fontes adicionados em ``2.0`` foram movidos "
+"para a chave ``'fontsubstitution'``, pois sua presença aqui tornava "
+"complicado para o usuário personalizar o valor de ``'fontpkg'``."
 
 #: ../../sphinx/doc/latex.rst:188
 msgid ""
@@ -222,6 +269,10 @@ msgid ""
 " associated LaTeX packages.  The monospace font has been changed to better "
 "match the Times clone."
 msgstr ""
+"A configuração de fonte padrão mudou: ela ainda usa clones de Times e "
+"Helvetica para serif e sans serif, mas através de fontes TeX melhores e mais"
+" completas e pacotes LaTeX associados. A fonte monoespaçada foi alterada "
+"para melhor corresponder ao clone de Times."
 
 #: ../../sphinx/doc/latex.rst:193
 msgid "``'fncychap'``"
@@ -239,13 +290,13 @@ msgid ""
 "fncychap."
 msgstr ""
 "Inclusão do pacote \"fncychap\" (que cria títulos de capítulos "
-"extravagantes), padrão ``'\\\\usepackage[Bjarne]{fncychap}'`` ​​para "
-"documentação em inglês (esta opção é ligeiramente customizada pelo Sphinx), "
-"``'\\\\usepackage[Sonny]{fncychap}'`` para documentos internacionalizados "
-"(porque o estilo \"Bjarne\" usa números escritos em inglês). Outros estilos "
-"\"fncychap\" que você pode experimentar são \"Lenny\", \"Glenn\", \"Conny\","
-" \"Rejne\" e \"Bjornstrup\". Você também pode definir isso para ``''`` para "
-"desabilitar o fncychap."
+"extravagantes), tem como padrão ``'\\\\usepackage[Bjarne]{fncychap}'`` "
+"​​para documentação em inglês (esta opção é ligeiramente personalizada pelo "
+"Sphinx), ``'\\\\usepackage[Sonny]{fncychap}'`` para documentos "
+"internacionalizados (porque o estilo \"Bjarne\" usa números escritos em "
+"inglês). Outros estilos \"fncychap\" que você pode experimentar são "
+"\"Lenny\", \"Glenn\", \"Conny\", \"Rejne\" e \"Bjornstrup\". Você também "
+"pode definir isso para ``''`` para desabilitar o fncychap."
 
 #: ../../sphinx/doc/latex.rst:202
 msgid ""
@@ -253,6 +304,9 @@ msgid ""
 "``'\\\\usepackage[Sonny]{fncychap}'`` for internationalized documents, and "
 "``''`` for Japanese documents."
 msgstr ""
+"Padrão: ``'\\\\usepackage[Bjarne]{fncychap}'`` para documentos em inglês, "
+"``'\\\\usepackage[Sonny]{fncychap}'`` para documentos internacionalizados e "
+"``''`` para documentos em japonês."
 
 #: ../../sphinx/doc/latex.rst:206
 msgid "``'preamble'``"
@@ -264,18 +318,26 @@ msgid ""
 ":file:`mystyle.tex.txt` of the project source repertory, and get LaTeX to "
 "import it at run time::"
 msgstr ""
+"Conteúdo adicional do preâmbulo. Pode-se mover todas as macros necessárias "
+"para algum arquivo :file:`mystyle.tex.txt` do repertório fonte do projeto, e"
+" fazer com que o LaTeX importe-o em tempo de execução::"
 
 #: ../../sphinx/doc/latex.rst:215
 msgid ""
 "It is then needed to set appropriately :confval:`latex_additional_files`, "
 "for example:"
 msgstr ""
+"É então necessário definir adequadamente :confval:`latex_additional_files`, "
+"por exemplo:"
 
 #: ../../sphinx/doc/latex.rst:222
 msgid ""
 "Do not use ``.tex`` as suffix, else the file is submitted itself to the PDF "
 "build process, use ``.tex.txt`` or ``.sty`` as in the examples above."
 msgstr ""
+"Não use ``.tex`` como sufixo, caso contrário o arquivo será submetido ao "
+"processo de construção do PDF, use ``.tex.txt`` ou ``.sty`` como nos "
+"exemplos acima."
 
 #: ../../sphinx/doc/latex.rst:227
 msgid "``'figure_align'``"
@@ -289,10 +351,15 @@ msgid ""
 "floating and position figures strictly in the order they appear in the "
 "source."
 msgstr ""
+"Alinhamento de flutuador de figura de latex. Sempre que uma imagem não "
+"couber na página atual, ela será 'flutuada' na página seguinte, mas poderá "
+"ser precedida por qualquer outro texto. Se você não gosta deste "
+"comportamento, use 'H' que desabilitará a flutuação e posicionará as figuras"
+" estritamente na ordem em que aparecem na fonte."
 
 #: ../../sphinx/doc/latex.rst:234
 msgid "Default: ``'htbp'`` (here, top, bottom, page)"
-msgstr ""
+msgstr "Padrão: ``'htbp'`` (here, top, bottom, page)"
 
 #: ../../sphinx/doc/latex.rst:238
 msgid "``'atendofbody'``"
@@ -300,27 +367,31 @@ msgstr "``'atendofbody'``"
 
 #: ../../sphinx/doc/latex.rst:239
 msgid "Additional document content (right before the indices)."
-msgstr ""
+msgstr "Conteúdo adicional do documento (imediatamente antes dos índices)."
 
 #: ../../sphinx/doc/latex.rst:245
 msgid "``'extrapackages'``"
-msgstr ""
+msgstr "``'extrapackages'``"
 
 #: ../../sphinx/doc/latex.rst:246
 msgid "Additional LaTeX packages.  For example:"
-msgstr ""
+msgstr "Pacotes LaTeX adicionais. Por exemplo:"
 
 #: ../../sphinx/doc/latex.rst:254
 msgid ""
 "The specified LaTeX packages will be loaded before hyperref package and "
 "packages loaded from Sphinx extensions."
 msgstr ""
+"Os pacotes LaTeX especificados serão carregados antes do pacote hyperref e "
+"dos pacotes carregados das extensões Sphinx."
 
 #: ../../sphinx/doc/latex.rst:258
 msgid ""
 "If you'd like to load additional LaTeX packages after hyperref, use "
 "``'preamble'`` key instead."
 msgstr ""
+"Se você quiser carregar pacotes LaTeX adicionais após o hyperref, use a "
+"chave ``'preamble'``."
 
 #: ../../sphinx/doc/latex.rst:265
 msgid "``'footer'``"
@@ -328,11 +399,11 @@ msgstr "``'footer'``"
 
 #: ../../sphinx/doc/latex.rst:266
 msgid "Additional footer content (before the indices)."
-msgstr ""
+msgstr "Conteúdo adicional do rodapé (antes dos índices)."
 
 #: ../../sphinx/doc/latex.rst:270
 msgid "Use ``'atendofbody'`` key instead."
-msgstr "Usar chave ``'atendofbody'`` no lugar."
+msgstr "Use a chave ``'atendofbody'`` no lugar desta."
 
 #: ../../sphinx/doc/latex.rst:273
 msgid "Keys that don't need to be overridden unless in special cases are:"
@@ -395,7 +466,7 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:303
 msgid "Default: ``6``"
-msgstr ""
+msgstr "Padrão: ``6``"
 
 #: ../../sphinx/doc/latex.rst:307
 msgid "``'inputenc'``"
@@ -403,13 +474,15 @@ msgstr "``'inputenc'``"
 
 #: ../../sphinx/doc/latex.rst:308
 msgid "\"inputenc\" package inclusion."
-msgstr ""
+msgstr "Inclusão do pacote \"inputenc\"."
 
 #: ../../sphinx/doc/latex.rst:310
 msgid ""
 "Default: ``'\\\\usepackage[utf8]{inputenc}'`` when using pdflatex, else "
 "``''``."
 msgstr ""
+"Padrão: ``'\\\\usepackage[utf8]{inputenc}'`` ao usar pdflatex; caso "
+"contrário, ``''``."
 
 #: ../../sphinx/doc/latex.rst:315
 msgid ""

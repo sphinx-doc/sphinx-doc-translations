@@ -6,9 +6,8 @@
 # Translators:
 # SHIMIZU Taku <shimizu.taku@gmail.com>, 2018
 # shirou - しろう <shirou.faw@gmail.com>, 2018
-# Arihiro TAKASE, 2018
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
-# Yusuke Iwaki <yusuke.iwaki@crowdworks.co.jp>, 2019
+# Arihiro TAKASE, 2018
 # Tetsuo Koyama <tkoyama010@gmail.com>, 2020
 # 
 #, fuzzy
@@ -16,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 00:40+0000\n"
+"POT-Creation-Date: 2024-06-24 06:45+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://app.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -30,20 +29,24 @@ msgstr ""
 msgid "Builder API"
 msgstr "Builder API"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:6
-msgid "Todo"
-msgstr "Todo"
-
-#: ../../sphinx/doc/extdev/builderapi.rst:6
-msgid "Expand this."
-msgstr "もっと拡張すること。"
-
-#: ../../sphinx/doc/extdev/builderapi.rst:12
+#: ../../sphinx/doc/extdev/builderapi.rst:10
 msgid "This is the base class for all builders."
 msgstr "このクラスはすべてのビルダーのベースクラスです。"
 
+#: ../../sphinx/doc/extdev/builderapi.rst:12
+msgid "It follows this basic workflow:"
+msgstr ""
+
 #: ../../sphinx/doc/extdev/builderapi.rst:14
-msgid "These attributes should be set on builder classes:"
+msgid "UML for the standard Sphinx build workflow"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:18
+msgid "Overridable Attributes"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:19
+msgid "These attributes should be set on builder sub-classes:"
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.name:1
@@ -84,20 +87,15 @@ msgid ""
 ":py:meth:`~sphinx.application.Sphinx.set_translator`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:25
-msgid "These methods are predefined and will be called from the application:"
-msgstr "これらのメソッドは事前に定義されており、アプリケーションから呼び出されます。"
+#: ../../sphinx/doc/extdev/builderapi.rst:31
+msgid "Core Methods"
+msgstr ""
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:1
-msgid "Return a relative URI between two source filenames."
-msgstr "2つのソースファイル間の相対URIを返します。"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:3
+#: ../../sphinx/doc/extdev/builderapi.rst:32
 msgid ""
-"May raise environment.NoUri if there's no way to return a sensible URI."
-msgstr "URIを返す方法がない場合には、 environment.NoUri 例外を投げる場合があります。"
+"These methods are predefined and should generally not be overridden, since "
+"they form the core of the build process:"
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.build_all:1
@@ -124,16 +122,35 @@ msgstr ""
 msgid "First updates the environment, and then calls :meth:`!write`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:33
-msgid "These methods can be overridden in concrete builder classes:"
-msgstr "これらのメソッドは派生されたビルダークラス側でオーバーライドできます:"
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.read:1
+msgid "(Re-)read all files new or changed since last update."
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.init:1
+#: of sphinx.builders.Builder.read:3
 msgid ""
-"Load necessary templates and perform initialization.  The default "
-"implementation does nothing."
-msgstr "必要なテンプレートをロードしたり、初期化を行うためのメソッドです。 デフォルトの実装では、何も行いません。"
+"Store all environment docnames in the canonical format (ie using SEP as a "
+"separator in place of os.path.sep)."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.read_doc:1
+msgid "Parse a file and add/update inventory entries for the doctree."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doctree:1
+msgid "Write the doctree to a file, to be used as a cache by re-builds."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:44
+msgid "Overridable Methods"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:45
+msgid "These must be implemented in builder sub-classes:"
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.get_outdated_docs:1
@@ -153,6 +170,16 @@ msgstr ""
 "もしもビルダーがソースファイルに関連する、個別のファイルを出力しない場合には、ここでは文字列を返してください。その場合には、書かれるべきファイルのイテレータを返します。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.prepare_writing:1
+msgid "A place where you can add logic before :meth:`write_doc` is run"
+msgstr ":meth:`write_doc` が実行される前に実行したい動作を記述する場所です。"
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:1
+msgid "Where you actually write something to the filesystem."
+msgstr "ファイルシステムに実際になにかを書き込む際に使う場所です。"
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.get_target_uri:1
 msgid "Return the target URI for a document name."
 msgstr "ドキュメント名に関連する、対象のURLを返します。"
@@ -164,15 +191,37 @@ msgid ""
 "builders."
 msgstr "*typ* はそれぞれのビルダーごとのリンクの修飾子として使うことができます。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.prepare_writing:1
-msgid "A place where you can add logic before :meth:`write_doc` is run"
-msgstr ":meth:`write_doc` が実行される前に実行したい動作を記述する場所です。"
+#: ../../sphinx/doc/extdev/builderapi.rst:52
+msgid "These methods can be overridden in builder sub-classes:"
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.write_doc:1
-msgid "Where you actually write something to the filesystem."
-msgstr "ファイルシステムに実際になにかを書き込む際に使う場所です。"
+#: of sphinx.builders.Builder.init:1
+msgid ""
+"Load necessary templates and perform initialization.  The default "
+"implementation does nothing."
+msgstr "必要なテンプレートをロードしたり、初期化を行うためのメソッドです。 デフォルトの実装では、何も行いません。"
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write:1
+msgid "Write builder specific output files."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.copy_assets:1
+msgid "Where assets (images, static files, etc) are copied before writing"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:1
+msgid "Return a relative URI between two source filenames."
+msgstr "2つのソースファイル間の相対URIを返します。"
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:3
+msgid ""
+"May raise environment.NoUri if there's no way to return a sensible URI."
+msgstr "URIを返す方法がない場合には、 environment.NoUri 例外を投げる場合があります。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.finish:1
@@ -184,10 +233,14 @@ msgstr "ビルドプロセスの終了です。"
 msgid "The default implementation does nothing."
 msgstr "デフォルトの実装では何も呼び出されません。"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:42
-msgid "**Attributes**"
-msgstr "**属性**"
+#: ../../sphinx/doc/extdev/builderapi.rst:61
+msgid "Attributes"
+msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:46
+#: ../../sphinx/doc/extdev/builderapi.rst:62
+msgid "Attributes that are callable from the builder instance:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:66
 msgid "An :class:`.EventManager` object."
 msgstr ":class:`.EventManager` オブジェクト。"

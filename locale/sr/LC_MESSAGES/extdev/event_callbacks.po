@@ -1,0 +1,489 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2024, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Vladimir Milovanović <vmilovanovic@gmail.com>, 2024
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 7.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-24 06:44+0000\n"
+"PO-Revision-Date: 2024-06-24 06:45+0000\n"
+"Last-Translator: Vladimir Milovanović <vmilovanovic@gmail.com>, 2024\n"
+"Language-Team: Serbian (https://app.transifex.com/sphinx-doc/teams/15434/sr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:4
+msgid "Event callbacks API"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:6
+msgid ""
+"Connecting callback functions to events is a simple way to extend Sphinx, by"
+" hooking into the build process at various points."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:9
+msgid ""
+"Use :meth:`.Sphinx.connect` in an extension's ``setup`` function, or a "
+"``setup`` function in your projects :file:`conf.py`, to connect functions to"
+" the events:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:23
+msgid ""
+"Extensions can add their own events by using :meth:`.Sphinx.add_event`, and "
+"calling them them with :meth:`.Sphinx.emit` or "
+":meth:`.Sphinx.emit_firstresult`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:28
+msgid "Core events overview"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:30
+msgid "Below is an overview of the core event that happens during a build."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:71
+msgid ""
+"Here is also a flow diagram of the events, within the context of the Sphinx "
+"build process:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:74
+msgid "Sphinx core events flow"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:78
+msgid "Core event details"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:80
+msgid "Here is a more detailed list of these events."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:0
+msgid "Parameters"
+msgstr "Параметри"
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:84
+#: ../../sphinx/doc/extdev/event_callbacks.rst:93
+#: ../../sphinx/doc/extdev/event_callbacks.rst:100
+#: ../../sphinx/doc/extdev/event_callbacks.rst:117
+#: ../../sphinx/doc/extdev/event_callbacks.rst:134
+#: ../../sphinx/doc/extdev/event_callbacks.rst:152
+#: ../../sphinx/doc/extdev/event_callbacks.rst:171
+#: ../../sphinx/doc/extdev/event_callbacks.rst:193
+#: ../../sphinx/doc/extdev/event_callbacks.rst:206
+#: ../../sphinx/doc/extdev/event_callbacks.rst:215
+#: ../../sphinx/doc/extdev/event_callbacks.rst:239
+#: ../../sphinx/doc/extdev/event_callbacks.rst:256
+#: ../../sphinx/doc/extdev/event_callbacks.rst:269
+#: ../../sphinx/doc/extdev/event_callbacks.rst:289
+#: ../../sphinx/doc/extdev/event_callbacks.rst:307
+#: ../../sphinx/doc/extdev/event_callbacks.rst:317
+#: ../../sphinx/doc/extdev/event_callbacks.rst:327
+#: ../../sphinx/doc/extdev/event_callbacks.rst:346
+#: ../../sphinx/doc/extdev/event_callbacks.rst:359
+#: ../../sphinx/doc/extdev/event_callbacks.rst:398
+msgid ":class:`.Sphinx`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:85
+msgid ":class:`.Config`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:87
+msgid "Emitted when the config object has been initialized."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:95
+msgid ""
+"Emitted when the builder object has been created (available as "
+"``app.builder``)."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:101
+#: ../../sphinx/doc/extdev/event_callbacks.rst:118
+#: ../../sphinx/doc/extdev/event_callbacks.rst:135
+#: ../../sphinx/doc/extdev/event_callbacks.rst:216
+#: ../../sphinx/doc/extdev/event_callbacks.rst:270
+#: ../../sphinx/doc/extdev/event_callbacks.rst:272
+#: ../../sphinx/doc/extdev/event_callbacks.rst:290
+#: ../../sphinx/doc/extdev/event_callbacks.rst:308
+#: ../../sphinx/doc/extdev/event_callbacks.rst:318
+msgid ":class:`.BuildEnvironment`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:102
+#: ../../sphinx/doc/extdev/event_callbacks.rst:103
+#: ../../sphinx/doc/extdev/event_callbacks.rst:104
+msgid "``set[str]``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:0
+msgid "returns"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:105
+msgid "``list[str]`` of additional docnames to re-read"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:107
+msgid ""
+"Emitted when the environment determines which source files have changed and "
+"should be re-read. *added*, *changed* and *removed* are sets of docnames "
+"that the environment has determined. You can return a list of docnames to "
+"re-read in addition to these."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:119
+#: ../../sphinx/doc/extdev/event_callbacks.rst:153
+#: ../../sphinx/doc/extdev/event_callbacks.rst:194
+#: ../../sphinx/doc/extdev/event_callbacks.rst:195
+#: ../../sphinx/doc/extdev/event_callbacks.rst:258
+#: ../../sphinx/doc/extdev/event_callbacks.rst:360
+#: ../../sphinx/doc/extdev/event_callbacks.rst:361
+msgid "``str``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:121
+msgid ""
+"Emitted when all traces of a source file should be cleaned from the "
+"environment, that is, if the source file is removed or before it is freshly "
+"read. This is for extensions that keep their own caches in attributes of the"
+" environment."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:126
+msgid ""
+"For example, there is a cache of all modules on the environment. When a "
+"source file has been changed, the cache's entries for the file are cleared, "
+"since the module declarations could have been removed from the file."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:136
+#: ../../sphinx/doc/extdev/event_callbacks.rst:271
+msgid "``list[str]``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:138
+msgid ""
+"Emitted after the environment has determined the list of all added and "
+"changed files and just before it reads them. It allows extension authors to "
+"reorder the list of docnames (*inplace*) before processing, or add more "
+"docnames that Sphinx did not consider changed (but never add any docnames "
+"that are not in :attr:`.found_docs`)."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:145
+msgid ""
+"You can also remove document names; do this with caution since it will make "
+"Sphinx treat changed files as unchanged."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:154
+#: ../../sphinx/doc/extdev/event_callbacks.rst:178
+msgid ""
+"``list[str]`` with a single element, representing the content of the "
+"included file."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:158
+msgid "Emitted when a source file has been read."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:160
+msgid ""
+"You can process the ``content`` and replace this item to implement source-"
+"level transformations."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:163
+msgid ""
+"For example, if you want to use ``$`` signs to delimit inline math, like in "
+"LaTeX, you can use a regular expression to replace ``$...$`` by "
+"``:math:`...```."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:172
+msgid ""
+":class:`~pathlib.Path` representing the included file relative to the "
+":term:`source directory`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:175
+msgid ""
+"``str`` of the document name that contains the :dudir:`include` directive."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:182
+msgid "Emitted when a file has been read with the :dudir:`include` directive."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:184
+msgid ""
+"You can process the ``content`` and replace this item to transform the "
+"included content, as with the :event:`source-read` event."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:189
+msgid "The :dudir:`include` directive and the :event:`source-read` event."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:196
+msgid ":class:`.desc_content`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:198
+msgid ""
+"Emitted when an object description directive has run.  The *domain* and "
+"*objtype* arguments are strings indicating object description of the object."
+" And *contentnode* is a content for the object.  It can be modified in-"
+"place."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:207
+#: ../../sphinx/doc/extdev/event_callbacks.rst:257
+msgid ":class:`docutils.nodes.document`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:209
+msgid ""
+"Emitted when a doctree has been parsed and read by the environment, and is "
+"about to be pickled. The ``doctree`` can be modified in-place."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:217
+msgid ""
+"The :class:`.pending_xref` node to be resolved. Its ``reftype``, "
+"``reftarget``, ``modname`` and ``classname`` attributes determine the type "
+"and target of the reference."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:220
+msgid ""
+"The node that carries the text and formatting inside the future reference "
+"and should be a child of the returned reference node."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:222
+msgid ""
+"A new node to be inserted in the document tree in place of the node, or "
+"``None`` to let other handlers try."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:225
+msgid ""
+"Emitted when a cross-reference to an object cannot be resolved. If the event"
+" handler can resolve the reference, it should return a new docutils node to "
+"be inserted in the document tree in place of the node *node*.  Usually this "
+"node is a :class:`~nodes.reference` node containing *contnode* as a child. "
+"If the handler can not resolve the cross-reference, it can either return "
+"``None`` to let other handlers try, or raise :class:`~sphinx.errors.NoUri` "
+"to prevent other handlers in trying and suppress a warning about this cross-"
+"reference being unresolved."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:240
+msgid "The :class:`.Domain` of the missing reference."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:241
+msgid "The :class:`.pending_xref` node that could not be resolved."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:242
+msgid "``True`` if a warning was emitted, else ``None``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:244
+msgid ""
+"Emitted when a cross-reference to an object cannot be resolved even after "
+":event:`missing-reference`. If the event handler can emit warnings for the "
+"missing reference, it should return ``True``. The configuration variables "
+":confval:`nitpick_ignore` and :confval:`nitpick_ignore_regex` prevent the "
+"event from being emitted for the corresponding nodes."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:260
+msgid ""
+"Emitted when a doctree has been \"resolved\" by the environment, that is, "
+"all references have been resolved and TOCs have been inserted.  The "
+"*doctree* can be modified in place."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:264
+msgid ""
+"Here is the place to replace custom nodes that don't have visitor methods in"
+" the writers, so that they don't cause errors when the writers encounter "
+"them."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:274
+msgid ""
+"This event is only emitted when parallel reading of documents is enabled.  "
+"It is emitted once for every subprocess that has read some documents."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:277
+msgid ""
+"You must handle this event in an extension that stores data in the "
+"environment in a custom location.  Otherwise the environment in the main "
+"process will not be aware of the information stored in the subprocess."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:281
+msgid ""
+"*other* is the environment object from the subprocess, *env* is the "
+"environment from the main process.  *docnames* is a set of document names "
+"that have been read in the subprocess."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:291
+#: ../../sphinx/doc/extdev/event_callbacks.rst:309
+msgid "iterable of ``str``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:293
+msgid ""
+"Emitted after reading all documents, when the environment and all doctrees "
+"are now up-to-date."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:296
+msgid ""
+"You can return an iterable of docnames from the handler.  These documents "
+"will then be considered updated, and will be (re-)written during the writing"
+" phase."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:302
+msgid "The handlers' return value is now used."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:311
+msgid ""
+"Emitted when the environment determines which source files have changed and "
+"should be re-read. You can return an iterable of docnames to re-read."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:320
+msgid ""
+"Emitted when Consistency checks phase.  You can check consistency of "
+"metadata for whole of documents."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:328
+msgid "``Exception`` or ``None``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:330
+msgid ""
+"Emitted when a build has finished, before Sphinx exits, usually used for "
+"cleanup.  This event is emitted even when the build process raised an "
+"exception, given as the *exception* argument.  The exception is reraised in "
+"the application after the event handlers have run.  If the build process "
+"raised no exception, *exception* will be ``None``.  This allows to customize"
+" cleanup actions depending on the exception status."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:340
+msgid "Builder specific events"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:342
+msgid "These events are emitted by specific builders."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:347
+msgid ""
+"iterable of ``(pagename, context, templatename)`` where *pagename* and "
+"*templatename* are strings and *context* is a ``dict[str, Any]``."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:351
+msgid "Emitted when the HTML builder is starting to write non-document pages."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:353
+msgid "You can add pages to write by returning an iterable from this event."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:362
+msgid "``dict[str, Any]``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:363
+msgid ":class:`docutils.nodes.document` or ``None``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:364
+#: ../../sphinx/doc/extdev/event_callbacks.rst:400
+msgid "``str`` or ``None``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:366
+msgid ""
+"Emitted when the HTML builder has created a context dictionary to render a "
+"template with -- this can be used to add custom elements to the context."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:369
+msgid ""
+"The *pagename* argument is the canonical name of the page being rendered, "
+"that is, without ``.html`` suffix and using slashes as path separators. The "
+"*templatename* is the name of the template to render, this will be "
+"``'page.html'`` for all pages from reST documents."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:374
+msgid ""
+"The *context* argument is a dictionary of values that are given to the "
+"template engine to render the page and can be modified to include custom "
+"values."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:378
+msgid ""
+"The *doctree* argument will be a doctree when the page is created from a "
+"reST documents; it will be ``None`` when the page is created from an HTML "
+"template alone."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:382
+msgid ""
+"You can return a string from the handler, it will then replace "
+"``'page.html'`` as the HTML template for this page."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:387
+msgid ""
+"You can install JS/CSS files for the specific page via "
+":meth:`.Sphinx.add_js_file` and :meth:`.Sphinx.add_css_file` (since v3.5.0)."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:393
+msgid "The return value can now specify a template name."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:399
+msgid "``str`` of the collected URI"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:402
+msgid "Emitted when the linkcheck builder collects hyperlinks from document."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/event_callbacks.rst:404
+msgid "The event handlers can modify the URI by returning a string."
+msgstr ""

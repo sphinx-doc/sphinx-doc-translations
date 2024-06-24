@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2019
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
@@ -12,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 00:40+0000\n"
+"POT-Creation-Date: 2024-06-24 06:45+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -26,21 +25,25 @@ msgstr ""
 msgid "Builder API"
 msgstr "API de Builder"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:6
-msgid "Todo"
-msgstr "Por fazer"
-
-#: ../../sphinx/doc/extdev/builderapi.rst:6
-msgid "Expand this."
-msgstr "Expandir isso."
-
-#: ../../sphinx/doc/extdev/builderapi.rst:12
+#: ../../sphinx/doc/extdev/builderapi.rst:10
 msgid "This is the base class for all builders."
 msgstr "Esta é a classe base para todos os construtores."
 
+#: ../../sphinx/doc/extdev/builderapi.rst:12
+msgid "It follows this basic workflow:"
+msgstr ""
+
 #: ../../sphinx/doc/extdev/builderapi.rst:14
-msgid "These attributes should be set on builder classes:"
-msgstr "Esses atributos devem ser definidos nas classes de construtores:"
+msgid "UML for the standard Sphinx build workflow"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:18
+msgid "Overridable Attributes"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:19
+msgid "These attributes should be set on builder sub-classes:"
+msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.name:1
 msgid "The builder's name, for the -b command line option."
@@ -89,22 +92,15 @@ msgstr ""
 "Classe tradutora padrão para o construtor. Isso pode ser substituído por "
 ":py:meth:`~sphinx.application.Sphinx.set_translator`."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:25
-msgid "These methods are predefined and will be called from the application:"
+#: ../../sphinx/doc/extdev/builderapi.rst:31
+msgid "Core Methods"
 msgstr ""
-"Esses métodos são predefinidos e serão chamados a partir da aplicação:"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:1
-msgid "Return a relative URI between two source filenames."
-msgstr "Retorna um URI relativo entre dois nomes de arquivos fonte."
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:3
+#: ../../sphinx/doc/extdev/builderapi.rst:32
 msgid ""
-"May raise environment.NoUri if there's no way to return a sensible URI."
+"These methods are predefined and should generally not be overridden, since "
+"they form the core of the build process:"
 msgstr ""
-"Pode aumentar Environment.NoUri se não houver como retornar um URI sensato."
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.build_all:1
@@ -135,19 +131,35 @@ msgstr ""
 msgid "First updates the environment, and then calls :meth:`!write`."
 msgstr "Primeiro atualiza o ambiente e depois chama :meth:`!write`."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:33
-msgid "These methods can be overridden in concrete builder classes:"
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.read:1
+msgid "(Re-)read all files new or changed since last update."
 msgstr ""
-"Esses métodos podem ser substituídos em classes concretas de construtores:"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.init:1
+#: of sphinx.builders.Builder.read:3
 msgid ""
-"Load necessary templates and perform initialization.  The default "
-"implementation does nothing."
+"Store all environment docnames in the canonical format (ie using SEP as a "
+"separator in place of os.path.sep)."
 msgstr ""
-"Carrega os modelos necessários e executa a inicialização. A implementação "
-"padrão não faz nada."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.read_doc:1
+msgid "Parse a file and add/update inventory entries for the doctree."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doctree:1
+msgid "Write the doctree to a file, to be used as a cache by re-builds."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:44
+msgid "Overridable Methods"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:45
+msgid "These must be implemented in builder sub-classes:"
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.get_outdated_docs:1
@@ -170,20 +182,6 @@ msgstr ""
 "arquivos que precisam ser escritos."
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_target_uri:1
-msgid "Return the target URI for a document name."
-msgstr "Retorna o URI de destino para um nome do documento."
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_target_uri:3
-msgid ""
-"*typ* can be used to qualify the link characteristic for individual "
-"builders."
-msgstr ""
-"*typ* pode ser usado para qualificar a característica do link para "
-"construtores individuais."
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.prepare_writing:1
 msgid "A place where you can add logic before :meth:`write_doc` is run"
 msgstr ""
@@ -196,6 +194,55 @@ msgid "Where you actually write something to the filesystem."
 msgstr "Onde você realmente escreve algo no sistema de arquivos."
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_target_uri:1
+msgid "Return the target URI for a document name."
+msgstr "Retorna o URI alvo para um nome do documento."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_target_uri:3
+msgid ""
+"*typ* can be used to qualify the link characteristic for individual "
+"builders."
+msgstr ""
+"*typ* pode ser usado para qualificar a característica do link para "
+"construtores individuais."
+
+#: ../../sphinx/doc/extdev/builderapi.rst:52
+msgid "These methods can be overridden in builder sub-classes:"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.init:1
+msgid ""
+"Load necessary templates and perform initialization.  The default "
+"implementation does nothing."
+msgstr ""
+"Carrega os modelos necessários e executa a inicialização. A implementação "
+"padrão não faz nada."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write:1
+msgid "Write builder specific output files."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.copy_assets:1
+msgid "Where assets (images, static files, etc) are copied before writing"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:1
+msgid "Return a relative URI between two source filenames."
+msgstr "Retorna um URI relativo entre dois nomes de arquivos fonte."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:3
+msgid ""
+"May raise environment.NoUri if there's no way to return a sensible URI."
+msgstr ""
+"Pode aumentar Environment.NoUri se não houver como retornar um URI sensato."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.finish:1
 msgid "Finish the building process."
 msgstr "Conclui o processo de construção."
@@ -205,10 +252,14 @@ msgstr "Conclui o processo de construção."
 msgid "The default implementation does nothing."
 msgstr "A implementação padrão não faz nada."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:42
-msgid "**Attributes**"
-msgstr "**Atributos**"
+#: ../../sphinx/doc/extdev/builderapi.rst:61
+msgid "Attributes"
+msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:46
+#: ../../sphinx/doc/extdev/builderapi.rst:62
+msgid "Attributes that are callable from the builder instance:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/builderapi.rst:66
 msgid "An :class:`.EventManager` object."
 msgstr "Um objeto :class:`.EventManager`."

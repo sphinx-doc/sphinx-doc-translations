@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 00:37+0000\n"
+"POT-Creation-Date: 2024-06-24 06:45+0000\n"
 "PO-Revision-Date: 2018-11-20 17:14+0000\n"
 "Last-Translator: Milan Popovic <milan.popovic@gmail.com>, 2019\n"
 "Language-Team: Serbian (https://app.transifex.com/sphinx-doc/teams/15434/sr/)\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid ""
 "Initially project maintainers have to collect all translatable strings (also"
 " referred to as *messages*) to make them known to translators.  Sphinx "
-"extracts these through invocation of ``sphinx-build -M gettext``."
+"extracts these through invocation of :command:`sphinx-build -M gettext`."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:32
@@ -92,17 +92,17 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:54
 msgid ""
-"An example: you have a document ``usage.rst`` in your Sphinx project.  The "
-"*gettext* builder will put its messages into ``usage.pot``.  Imagine you "
-"have Spanish translations [2]_ stored in ``usage.po`` --- for your builds to"
-" be translated you need to follow these instructions:"
+"An example: you have a document :file:`usage.rst` in your Sphinx project.  "
+"The *gettext* builder will put its messages into :file:`usage.pot`.  Imagine"
+" you have Spanish translations [2]_ stored in :file:`usage.po` --- for your "
+"builds to be translated you need to follow these instructions:"
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:59
 msgid ""
 "Compile your message catalog to a locale directory, say ``locale``, so it "
-"ends up in ``./locale/es/LC_MESSAGES/usage.mo`` in your source directory "
-"(where ``es`` is the language code for Spanish.) ::"
+"ends up in :file:`./locale/es/LC_MESSAGES/usage.mo` in your source directory"
+" (where ``es`` is the language code for Spanish.) ::"
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:65
@@ -158,7 +158,7 @@ msgid "Install `sphinx-intl`_."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:104
-msgid "Add configurations to ``conf.py``."
+msgid "Add configurations to :file:`conf.py`."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:111
@@ -206,8 +206,8 @@ msgstr ""
 #: ../../sphinx/doc/usage/advanced/intl.rst:139
 msgid ""
 "As noted above, these are located in the ``./locale/<lang>/LC_MESSAGES`` "
-"directory.  An example of one such file, from Sphinx, ``builders.po``, is "
-"given below."
+"directory.  An example of one such file, from Sphinx, :file:`builders.po`, "
+"is given below."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:150
@@ -227,7 +227,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:168
 msgid ""
-"You need a :confval:`language` parameter in ``conf.py`` or you may also "
+"You need a :confval:`language` parameter in :file:`conf.py` or you may also "
 "specify the parameter on the command line."
 msgstr ""
 
@@ -284,43 +284,56 @@ msgstr ""
 #: ../../sphinx/doc/usage/advanced/intl.rst:220
 msgid ""
 "Transifex_ is one of several services that allow collaborative translation "
-"via a web interface.  It has a nifty Python-based command line client that "
-"makes it easy to fetch and push translations."
+"via a web interface.  It has a nifty Go-based command line client that makes"
+" it easy to fetch and push translations."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:227
-msgid "Install `transifex-client`_."
+msgid "Install the `Transifex CLI tool`_."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:229
-msgid "You need :command:`tx` command to upload resources (pot files)."
+msgid ""
+"You need the :command:`tx` command line tool for uploading resources (pot "
+"files). The official installation process place the :file:`tx` binary file "
+"in the current directory along with a README and a LICENSE file, and adds "
+"the current directory to ``$PATH``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:235
+#: ../../sphinx/doc/usage/advanced/intl.rst:238
 msgid "`Transifex Client documentation`_"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:237
+#: ../../sphinx/doc/usage/advanced/intl.rst:240
 msgid ""
-"Create your Transifex_ account and create new project for your document."
+"Create your Transifex_ account and create a new project and an organization "
+"for your document."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:239
+#: ../../sphinx/doc/usage/advanced/intl.rst:243
 msgid ""
 "Currently, Transifex does not allow for a translation project to have more "
 "than one version of the document, so you'd better include a version number "
 "in your project name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:243
+#: ../../sphinx/doc/usage/advanced/intl.rst:247
 msgid "For example:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:0
+msgid "Organization ID"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:249
+msgid "``sphinx-document``"
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:0
 msgid "Project ID"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:245
+#: ../../sphinx/doc/usage/advanced/intl.rst:250
 msgid "``sphinx-document-test_1_0``"
 msgstr ""
 
@@ -328,154 +341,190 @@ msgstr ""
 msgid "Project URL"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:246
+#: ../../sphinx/doc/usage/advanced/intl.rst:251
 msgid "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:248
-msgid "Create config files for :command:`tx` command."
+#: ../../sphinx/doc/usage/advanced/intl.rst:253
+msgid "Create an API token to be used in the command-line."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:250
+#: ../../sphinx/doc/usage/advanced/intl.rst:255
 msgid ""
-"This process will create ``.tx/config`` in the current directory, as well as"
-" a ``~/.transifexrc`` file that includes auth information."
+"Go to your `Transifex API token`_ page and generate a token. Copy the "
+"generated token now, as you will not be able to see it again later."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:264
-msgid "Upload pot files to Transifex service."
+#: ../../sphinx/doc/usage/advanced/intl.rst:258
+msgid ""
+"Set your Transifex API token in the user configuration file "
+":file:`$HOME/.transifexrc`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:266
-msgid "Register pot files to ``.tx/config`` file:"
+#: ../../sphinx/doc/usage/advanced/intl.rst:267
+msgid ""
+"Alternatively, you can store your Transifex API token as the environment "
+"variable ``TX_TOKEN``, which is recognized and used by :command:`tx`."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:274
-msgid "and upload pot files:"
+msgid "Create the project's config file for :command:`tx` command."
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:276
+msgid "This process will create ``.tx/config`` in the current directory."
 msgstr ""
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:285
+msgid "Upload pot files to Transifex service."
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:287
+msgid ""
+"Register pot files to ``.tx/config`` file using :command:`sphinx-intl "
+"update-txconfig-resources`, adjusting ``--pot-dir`` value to your project's "
+"pot files' directory:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:298
+msgid ""
+"You can use the ``SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME`` and "
+"``SPHINXINTL_TRANSIFEX_PROJECT_NAME`` environment variables instead of the "
+"respective command line arguments."
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:302
+msgid "`sphinx-intl update-txconfig-resources documentation`_"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:304
+msgid "and upload pot files:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/advanced/intl.rst:319
 msgid "Forward the translation on Transifex."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:289
+#: ../../sphinx/doc/usage/advanced/intl.rst:323
 msgid "Pull translated po files and make translated HTML."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:291
+#: ../../sphinx/doc/usage/advanced/intl.rst:325
 msgid ""
 "Get translated catalogs and build mo files. For example, to build mo files "
 "for German (de):"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:303
-msgid "Invoke :command:`make html` (for BSD/GNU make):"
+#: ../../sphinx/doc/usage/advanced/intl.rst:343
+msgid ""
+"Invoke :command:`make html` (for BSD/GNU make) passing the language code:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:309
+#: ../../sphinx/doc/usage/advanced/intl.rst:349
 msgid "That's all!"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:311
+#: ../../sphinx/doc/usage/advanced/intl.rst:351
 msgid "Translating locally and on Transifex"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:313
+#: ../../sphinx/doc/usage/advanced/intl.rst:353
 msgid ""
 "If you want to push all language's po files, you can be done by using "
 ":command:`tx push -t` command.  Watch out! This operation overwrites "
 "translations in Transifex."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:317
+#: ../../sphinx/doc/usage/advanced/intl.rst:357
 msgid ""
 "In other words, if you have updated each in the service and local po files, "
 "it would take much time and effort to integrate them."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:322
+#: ../../sphinx/doc/usage/advanced/intl.rst:362
 msgid "Using Weblate service for team translation"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:324
+#: ../../sphinx/doc/usage/advanced/intl.rst:364
 msgid "Read more in `Weblate's documentation`_."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:328
+#: ../../sphinx/doc/usage/advanced/intl.rst:368
 msgid "Contributing to Sphinx reference translation"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:330
+#: ../../sphinx/doc/usage/advanced/intl.rst:370
 msgid ""
 "The recommended way for new contributors to translate Sphinx reference is to"
 " join the translation team on Transifex."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:333
+#: ../../sphinx/doc/usage/advanced/intl.rst:373
 msgid ""
 "There is a `sphinx translation page`_ for Sphinx (master) documentation."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:335
+#: ../../sphinx/doc/usage/advanced/intl.rst:375
 msgid "Login to Transifex_ service."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:336
+#: ../../sphinx/doc/usage/advanced/intl.rst:376
 msgid "Go to `sphinx translation page`_."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:337
+#: ../../sphinx/doc/usage/advanced/intl.rst:377
 msgid "Click ``Request language`` and fill form."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:338
+#: ../../sphinx/doc/usage/advanced/intl.rst:378
 msgid "Wait acceptance by Transifex sphinx translation maintainers."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:339
+#: ../../sphinx/doc/usage/advanced/intl.rst:379
 msgid "(After acceptance) Translate on Transifex."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:341
+#: ../../sphinx/doc/usage/advanced/intl.rst:381
 msgid ""
-"Detail is here: https://docs.transifex.com/getting-started-1/translators"
+"Detail is here: https://help.transifex.com/en/articles/6248698-getting-"
+"started-as-a-translator"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:345
+#: ../../sphinx/doc/usage/advanced/intl.rst:386
 msgid "Translation progress and statistics"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:349
+#: ../../sphinx/doc/usage/advanced/intl.rst:390
 msgid ""
 "During the rendering process, Sphinx marks each translatable node with a "
 "``translated`` attribute, indicating if a translation was found for the text"
 " in that node."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:353
+#: ../../sphinx/doc/usage/advanced/intl.rst:394
 msgid ""
 "The :confval:`translation_progress_classes` configuration value can be used "
 "to add a class to each element, depending on the value of the ``translated``"
 " attribute."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:357
+#: ../../sphinx/doc/usage/advanced/intl.rst:398
 msgid ""
 "The ``|translation progress|`` substitution can be used to display the "
 "percentage of nodes that have been translated on a per-document basis."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:361
+#: ../../sphinx/doc/usage/advanced/intl.rst:402
 msgid "Footnotes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:362
+#: ../../sphinx/doc/usage/advanced/intl.rst:403
 msgid ""
 "See the `GNU gettext utilities "
 "<https://www.gnu.org/software/gettext/manual/gettext.html#Introduction>`_ "
 "for details on that software suite."
 msgstr ""
 
-#: ../../sphinx/doc/usage/advanced/intl.rst:365
+#: ../../sphinx/doc/usage/advanced/intl.rst:406
 msgid "Because nobody expects the Spanish Inquisition!"
 msgstr ""

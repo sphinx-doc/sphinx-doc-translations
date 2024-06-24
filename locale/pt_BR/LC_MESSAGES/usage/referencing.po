@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-06 00:44+0000\n"
+"POT-Creation-Date: 2024-06-24 00:42+0000\n"
 "PO-Revision-Date: 2023-10-04 00:36+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -32,17 +32,17 @@ msgid ""
 "created to the item named *target* of the type indicated by *role*.  The "
 "link's text will be the same as *target*."
 msgstr ""
-"As referências cruzadas são geradas por muitas roles de texto interpretado "
-"semântico. Basicamente, você só precisa escrever ``:role:`destino```, e um "
-"link será criado para o item chamado *destino* do tipo indicado por *role*. "
-"O texto do link será o mesmo que *destino*."
+"As referências cruzadas são geradas por muitos papéis semânticas de texto "
+"interpretado. Basicamente, você só precisa escrever ``papel:`alvo```, e um "
+"link será criado para o item chamado *alvo* do tipo indicado por *papel*. O "
+"texto do link será o mesmo que *alvo*."
 
 #: ../../sphinx/doc/usage/referencing.rst:12
 msgid ""
 "There are some additional facilities, however, that make cross-referencing "
 "roles more versatile:"
 msgstr ""
-"Existem alguns recursos adicionais, no entanto, que tornam as roles de "
+"Existem alguns recursos adicionais, no entanto, que tornam os papéis de "
 "referência cruzada mais versáteis:"
 
 #: ../../sphinx/doc/usage/referencing.rst:15
@@ -51,9 +51,9 @@ msgid ""
 "hyperlinks: ``:role:`title <target>``` will refer to *target*, but the link "
 "text will be *title*."
 msgstr ""
-"Você pode fornecer um título explícito e destino de referência, como nos "
-"hiperlinks reST diretos: ``:role:`título <destino>``` vai fazer referência a"
-" *destino*, mas o texto do link será *título*."
+"Você pode fornecer um título explícito e alvo de referência, como nos "
+"hiperlinks reST diretos: ``papel:`título <alvo>``` vai fazer referência a "
+"*alvo*, mas o texto do link será *título*."
 
 #: ../../sphinx/doc/usage/referencing.rst:19
 msgid ""
@@ -71,19 +71,18 @@ msgid ""
 "This does not work with all cross-reference roles, but is domain specific."
 msgstr ""
 "Se você prefixar o conteúdo com ``~``, o texto do link será apenas o último "
-"componente do destino. Por exemplo, ``:py:meth:`~Queue.Queue.get``` vai "
-"fazer referência a ``Queue.Queue.get``, mas somente exibirá ``get`` como o "
-"texto do link. Isso não funciona com todas as funções de referência cruzada,"
-" mas é específico do domínio."
+"componente do alvo. Por exemplo, ``:py:meth:`~Queue.Queue.get``` vai fazer "
+"referência a ``Queue.Queue.get``, mas somente exibirá ``get`` como o texto "
+"do link. Isso não funciona com todas os papéis de referência cruzada, mas é "
+"específico do domínio."
 
 #: ../../sphinx/doc/usage/referencing.rst:26
 msgid ""
 "In HTML output, the link's ``title`` attribute (that is e.g. shown as a "
 "tool-tip on mouse-hover) will always be the full target name."
 msgstr ""
-"Na saída HTML, o atributo ``title`` do link (por exemplo, mostrado como uma "
-"dica de ferramenta ao passar o mouse) sempre será o nome completo do "
-"destino."
+"Na saída HTML, o atributo ``título`` do link (por exemplo, mostrado como uma"
+" dica de ferramenta ao passar o mouse) sempre será o nome completo do alvo."
 
 #: ../../sphinx/doc/usage/referencing.rst:33
 msgid "Cross-referencing anything"
@@ -94,7 +93,7 @@ msgid ""
 "This convenience role tries to do its best to find a valid target for its "
 "reference text."
 msgstr ""
-"Essa role de conveniência tenta fazer o melhor para localizar um destino "
+"Esse papel de conveniência tenta fazer o melhor para localizar um alvo "
 "válido para seu texto de referência."
 
 #: ../../sphinx/doc/usage/referencing.rst:42
@@ -102,7 +101,7 @@ msgid ""
 "First, it tries standard cross-reference targets that would be referenced by"
 " :rst:role:`doc`, :rst:role:`ref` or :rst:role:`option`."
 msgstr ""
-"Primeiro, ele tenta destinos de referência cruzada padrão que seriam "
+"Primeiro, ele tenta alvos de referência cruzada padrão que seriam "
 "referenciados por :rst:role:`doc`, :rst:role:`ref` ou :rst:role:`option`."
 
 #: ../../sphinx/doc/usage/referencing.rst:45
@@ -120,18 +119,18 @@ msgid ""
 "reference of ``:any:`Builder``` would match the ``sphinx.builders.Builder`` "
 "class."
 msgstr ""
-"Em seguida, ele procura por objetos (destinos) em todos os domínios "
-"carregados. Depende dos domínios quão específica deve ser uma "
-"correspondência. Por exemplo, no domínio Python uma referência de "
-"``:any:`Builder``` corresponderia à classe ``sphinx.builders.Builder``."
+"Em seguida, ele procura por objetos (alvos) em todos os domínios carregados."
+" Depende dos domínios quão específica deve ser uma correspondência. Por "
+"exemplo, no domínio Python uma referência de ``:any:`Builder``` "
+"corresponderia à classe ``sphinx.builders.Builder``."
 
 #: ../../sphinx/doc/usage/referencing.rst:53
 msgid ""
 "If none or multiple targets are found, a warning will be emitted.  In the "
 "case of multiple targets, you can change \"any\" to a specific role."
 msgstr ""
-"Se nenhum ou vários destinos forem encontrados, um aviso será emitido. No "
-"caso de vários destinos, você pode alterar \"any\" para uma role específica."
+"Se nenhum ou vários alvos forem encontrados, um aviso será emitido. No caso "
+"de vários alvos, você pode alterar \"any\" para um papel específico."
 
 #: ../../sphinx/doc/usage/referencing.rst:56
 msgid ""
@@ -139,6 +138,9 @@ msgid ""
 "do, you can write cross-references without a lot of markup overhead.  For "
 "example, in this Python function documentation::"
 msgstr ""
+"Este papel é uma bom candidato para configurar :confval:`default_role`. Se "
+"você fizer isso, poderá escrever referências cruzadas sem muita sobrecarga "
+"de marcação. Por exemplo, nesta documentação de função Python::"
 
 #: ../../sphinx/doc/usage/referencing.rst:65
 msgid ""
@@ -147,7 +149,7 @@ msgid ""
 "section (usually ``:ref:`about-signals```)."
 msgstr ""
 "pode haver referências a um termo do glossário (normalmente "
-"``:term:`texto```), um módulo Python (normalmente ``:py:mod:`signal``` ou "
+"``:term:`handler```), um módulo Python (normalmente ``:py:mod:`signal``` ou "
 "``:mod:`signal``` ) e uma seção (normalmente ``:ref:`about-signs```)."
 
 #: ../../sphinx/doc/usage/referencing.rst:69
@@ -156,7 +158,7 @@ msgid ""
 ":mod:`~sphinx.ext.intersphinx` extension: when no local cross-reference is "
 "found, all object types of intersphinx inventories are also searched."
 msgstr ""
-"A role :rst:role:`any` também funciona junto com a extensão "
+"O papel :rst:role:`any` também funciona junto com a extensão "
 ":mod:`~sphinx.ext.intersphinx`: quando nenhuma referência cruzada local é "
 "encontrada, todos os tipos de objetos de inventários intersphinx também são "
 "pesquisados."
@@ -167,7 +169,7 @@ msgstr "Objetos de referência cruzada"
 
 #: ../../sphinx/doc/usage/referencing.rst:76
 msgid "These roles are described with their respective domains:"
-msgstr "Essas roles são descritas com seus respectivos domínios:"
+msgstr "Esses papéis são descritos com seus respectivos domínios:"
 
 #: ../../sphinx/doc/usage/referencing.rst:78
 msgid ":ref:`Python <python-roles>`"
@@ -225,7 +227,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/referencing.rst:113
 msgid "Automatic labels also work with figures. For example::"
-msgstr "Etiquetas automáticas também funcionam com figuras. Por exemplo::"
+msgstr "Rótulos automáticos também funcionam com figuras. Por exemplo::"
 
 #: ../../sphinx/doc/usage/referencing.rst:121
 msgid ""
@@ -258,6 +260,8 @@ msgid ""
 "Reference labels must start with an underscore. When referencing a label, "
 "the underscore must be omitted (see examples above)."
 msgstr ""
+"Os rótulos de referência devem começar com um sublinhado. Ao fazer "
+"referência a um rótulo, o sublinhado deve ser omitido (veja exemplos acima)."
 
 #: ../../sphinx/doc/usage/referencing.rst:136
 msgid ""
@@ -266,14 +270,19 @@ msgid ""
 "section headings are changed, will raise warnings if incorrect, and works "
 "for all builders that support cross-references."
 msgstr ""
+"Usar :rst:role:`ref` é aconselhável em vez de links reStructuredText padrão "
+"para seções (como ```Título da seção`_``) porque funciona em arquivos, "
+"quando os títulos das seções são alterados, vai levantar avisos se "
+"incorretos e funciona para todos os construtores que oferecem suporte a "
+"referências cruzadas."
 
 #: ../../sphinx/doc/usage/referencing.rst:143
 msgid "Cross-referencing documents"
-msgstr ""
+msgstr "Fazendo referência cruzada a documentos"
 
 #: ../../sphinx/doc/usage/referencing.rst:147
 msgid "There is also a way to directly link to documents:"
-msgstr ""
+msgstr "Também existe uma maneira de vincular diretamente aos documentos:"
 
 #: ../../sphinx/doc/usage/referencing.rst:151
 msgid ""
@@ -283,22 +292,33 @@ msgid ""
 "refers to ``sketches/parrot``.  If the reference is ``:doc:`/people``` or "
 "``:doc:`../people```, the link refers to ``people``."
 msgstr ""
+"Link para o documento especificado; o nome do documento pode ser "
+"especificado de forma absoluta ou relativa. Por exemplo, se a referência "
+"``:doc:`papagaio``` ocorre no documento ``rascunhos/index``, então o link "
+"refere-se a ``rascunhos/papagaio``. Se a referência for ``:doc:`/pessoas``` "
+"ou ``:doc:`../pessoas```, o link se refere a ``pessoas``."
 
 #: ../../sphinx/doc/usage/referencing.rst:157
 msgid ""
 "If no explicit link text is given (like usual: ``:doc:`Monty Python members "
 "</people>```), the link caption will be the title of the given document."
 msgstr ""
+"Se nenhum texto de link explícito for fornecido (como de costume: "
+"``:doc:`Membros do Monty Python </pessoas>```), a legenda do link será o "
+"título do documento fornecido."
 
 #: ../../sphinx/doc/usage/referencing.rst:162
 msgid "Referencing downloadable files"
-msgstr ""
+msgstr "Fazendo referência a arquivos baixáveis"
 
 #: ../../sphinx/doc/usage/referencing.rst:168
 msgid ""
 "This role lets you link to files within your source tree that are not reST "
 "documents that can be viewed, but files that can be downloaded."
 msgstr ""
+"Esse papel permite vincular arquivos em sua árvore de fontes que não são "
+"documentos reST que podem ser visualizados, mas arquivos que podem ser "
+"baixados."
 
 #: ../../sphinx/doc/usage/referencing.rst:171
 msgid ""
@@ -307,10 +327,15 @@ msgid ""
 " downloadable files are put into a ``_downloads/<unique hash>/`` "
 "subdirectory of the output directory; duplicate filenames are handled."
 msgstr ""
+"Quando você usa esse papel, o arquivo referenciado é automaticamente marcado"
+" para inclusão na saída durante a construção (obviamente, apenas para saída "
+"HTML). Todos os arquivos para download são colocados em um subdiretório "
+"``_downloads/<hash único>/`` do diretório de saída; nomes de arquivos "
+"duplicados são tratados."
 
 #: ../../sphinx/doc/usage/referencing.rst:176
 msgid "An example::"
-msgstr ""
+msgstr "Um exemplo::"
 
 #: ../../sphinx/doc/usage/referencing.rst:180
 msgid ""
@@ -318,28 +343,37 @@ msgid ""
 "file is contained in, but if it absolute (starting with ``/``), it is taken "
 "as relative to the top source directory."
 msgstr ""
+"O nome de arquivo fornecido geralmente é relativo ao diretório no qual o "
+"arquivo fonte atual está contido, mas se for absoluto (começando com ``/``),"
+" será considerado relativo ao diretório fonte superior."
 
 #: ../../sphinx/doc/usage/referencing.rst:184
 msgid ""
 "The ``example.py`` file will be copied to the output directory, and a "
 "suitable link generated to it."
 msgstr ""
+"O arquivo ``example.py`` será copiado para o diretório de saída e um link "
+"adequado será gerado para ele."
 
 #: ../../sphinx/doc/usage/referencing.rst:187
 msgid ""
 "Not to show unavailable download links, you should wrap whole paragraphs "
 "that have this role::"
 msgstr ""
+"Para não mostrar links de download indisponíveis, você deve agrupar "
+"parágrafos inteiros que tenham este papel::"
 
 #: ../../sphinx/doc/usage/referencing.rst:195
 msgid "Cross-referencing figures by figure number"
-msgstr ""
+msgstr "Fazendo referência cruzada a figuras por número de figura"
 
 #: ../../sphinx/doc/usage/referencing.rst:199
 msgid ""
 ":rst:role:`numref` role can also refer sections. And :rst:role:`numref` "
 "allows ``{name}`` for the link text."
 msgstr ""
+"Papel :rst:role:`numref` também pode fazer referência a seções. E "
+":rst:role:`numref` permite ``{name}`` para o texto do link."
 
 #: ../../sphinx/doc/usage/referencing.rst:205
 msgid ""
@@ -348,6 +382,10 @@ msgid ""
 "reference to the figure with link text by its figure number like \"Fig. "
 "1.1\"."
 msgstr ""
+"Link para as figuras, tabelas, blocos de código e seções especificadas; os "
+"rótulos reST padrão são usados. Ao usar esta função, ele irá inserir uma "
+"referência à figura com o texto do link pelo número da figura como \"Fig. "
+"1.1\"."
 
 #: ../../sphinx/doc/usage/referencing.rst:209
 msgid ""
@@ -357,52 +395,72 @@ msgid ""
 "number and  `{name}` by the figure caption. If no explicit link text is "
 "given, the :confval:`numfig_format` setting is used as fall-back default."
 msgstr ""
+"Se um texto de link explícito for fornecido (como de costume: "
+"``:numref:`Imagem da Sphinx (Fig. %s) <minha-figura>```), a legenda do link "
+"servirá como título da referência. Como espaços reservados, `%s` e "
+"`{number}` são substituídos pelo número da figura e `{name}` pela legenda da"
+" figura. Se nenhum texto de link explícito for fornecido, a configuração "
+":confval:`numfig_format` é usada como padrão substituto."
 
 #: ../../sphinx/doc/usage/referencing.rst:216
 msgid ""
 "If :confval:`numfig` is ``False``, figures are not numbered, so this role "
 "inserts not a reference but the label or the link text."
 msgstr ""
+"Se :confval:`numfig` for ``False``, as figuras não são numeradas, então este"
+" papel insere não uma referência, mas o rótulo ou o texto do link."
 
 #: ../../sphinx/doc/usage/referencing.rst:220
 msgid "Cross-referencing other items of interest"
-msgstr ""
+msgstr "Fazendo referência cruzada a outros itens de interesse"
 
 #: ../../sphinx/doc/usage/referencing.rst:222
 msgid ""
 "The following roles do possibly create a cross-reference, but do not refer "
 "to objects:"
 msgstr ""
+"Os seguintes papéis possivelmente criam uma referência cruzada, mas não se "
+"referem a objetos:"
 
 #: ../../sphinx/doc/usage/referencing.rst:227
 msgid ""
 "An environment variable.  Index entries are generated.  Also generates a "
 "link to the matching :rst:dir:`envvar` directive, if it exists."
 msgstr ""
+"Uma variável de ambiente. Entradas de índice são geradas. Também gera um "
+"link para a diretiva :rst:dir:`envvar` correspondente, se existir."
 
 #: ../../sphinx/doc/usage/referencing.rst:232
 msgid ""
 "The name of a grammar token (used to create links between "
 ":rst:dir:`productionlist` directives)."
 msgstr ""
+"O nome de um token gramatical (usado para criar links entre as diretivas "
+":rst:dir:`productionlist`)."
 
 #: ../../sphinx/doc/usage/referencing.rst:237
 msgid ""
 "The name of a keyword in Python.  This creates a link to a reference label "
 "with that name, if it exists."
 msgstr ""
+"O nome de uma palavra-chave no Python. Isso cria um link para um rótulo de "
+"referência com esse nome, se existir."
 
 #: ../../sphinx/doc/usage/referencing.rst:242
 msgid ""
 "A command-line option to an executable program.  This generates a link to a "
 ":rst:dir:`option` directive, if it exists."
 msgstr ""
+"Uma opção de linha de comando para um programa executável. Isto gera um link"
+" para uma diretiva :rst:dir:`option`, se existir."
 
 #: ../../sphinx/doc/usage/referencing.rst:246
 msgid ""
 "The following role creates a cross-reference to a term in a :ref:`glossary "
 "<glossary-directive>`:"
 msgstr ""
+"O papel a seguir cria uma referência cruzada para um termo em um "
+":ref:`glossário <glossary-directive>`:"
 
 #: ../../sphinx/doc/usage/referencing.rst:251
 msgid ""
@@ -412,9 +470,16 @@ msgid ""
 "markup, for example the Python docs have one global glossary in the "
 "``glossary.rst`` file."
 msgstr ""
+"Referência a um termo em um glossário. Um glossário é criado usando a "
+"diretiva ``glossary`` contendo uma lista de definições com termos e "
+"definições. Não precisa estar no mesmo arquivo que a marcação ``term``, por "
+"exemplo, os documentos do Python têm um glossário global no arquivo "
+"``glossary.rst``."
 
 #: ../../sphinx/doc/usage/referencing.rst:257
 msgid ""
 "If you use a term that's not explained in a glossary, you'll get a warning "
 "during build."
 msgstr ""
+"Se você usar um termo que não esteja explicado em um glossário, receberá um "
+"aviso durante a construção."

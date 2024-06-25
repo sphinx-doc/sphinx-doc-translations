@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2024
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 06:44+0000\n"
+"POT-Creation-Date: 2024-06-25 00:40+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
-"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2024\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,13 +24,15 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:4
 msgid "Event callbacks API"
-msgstr ""
+msgstr "API de retorno de chamada de eventos"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:6
 msgid ""
 "Connecting callback functions to events is a simple way to extend Sphinx, by"
 " hooking into the build process at various points."
 msgstr ""
+"Conectar funções de retorno de chamada a eventos é uma maneira simples de "
+"estender o Sphinx, conectando-se ao processo de construção em vários pontos."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:9
 msgid ""
@@ -37,6 +40,9 @@ msgid ""
 "``setup`` function in your projects :file:`conf.py`, to connect functions to"
 " the events:"
 msgstr ""
+"Use :meth:`.Sphinx.connect` em uma função ``setup`` da extensão, ou uma "
+"função ``setup`` em seus projetos :file:`conf.py`, para conectar funções aos"
+" eventos:"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:23
 msgid ""
@@ -44,32 +50,39 @@ msgid ""
 "calling them them with :meth:`.Sphinx.emit` or "
 ":meth:`.Sphinx.emit_firstresult`."
 msgstr ""
+"As extensões podem adicionar seus próprios eventos usando "
+":meth:`.Sphinx.add_event` e chamando-os com :meth:`.Sphinx.emit` ou "
+":meth:`.Sphinx.emit_firstresult`."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:28
 msgid "Core events overview"
-msgstr ""
+msgstr "Visão geral de eventos principais"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:30
 msgid "Below is an overview of the core event that happens during a build."
 msgstr ""
+"Abaixo está uma visão geral do evento principal que acontece durante uma "
+"construção."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:71
 msgid ""
 "Here is also a flow diagram of the events, within the context of the Sphinx "
 "build process:"
 msgstr ""
+"Aqui está também um diagrama de fluxo dos eventos, dentro do contexto do "
+"processo de construção do Sphinx:"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:74
 msgid "Sphinx core events flow"
-msgstr ""
+msgstr "Fluxo de eventos principais do Sphinx"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:78
 msgid "Core event details"
-msgstr ""
+msgstr "Detalhes de eventos principais"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:80
 msgid "Here is a more detailed list of these events."
-msgstr ""
+msgstr "Aqui está uma lista mais detalhada desses eventos."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:0
 msgid "Parameters"
@@ -96,21 +109,23 @@ msgstr "Parâmetros"
 #: ../../sphinx/doc/extdev/event_callbacks.rst:359
 #: ../../sphinx/doc/extdev/event_callbacks.rst:398
 msgid ":class:`.Sphinx`"
-msgstr ""
+msgstr ":class:`.Sphinx`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:85
 msgid ":class:`.Config`"
-msgstr ""
+msgstr ":class:`.Config`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:87
 msgid "Emitted when the config object has been initialized."
-msgstr ""
+msgstr "Emitido quando o objeto de configuração foi inicializado."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:95
 msgid ""
 "Emitted when the builder object has been created (available as "
 "``app.builder``)."
 msgstr ""
+"Emitido quando o objeto construtor foi criado (disponível como "
+"``app.builder``)."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:101
 #: ../../sphinx/doc/extdev/event_callbacks.rst:118
@@ -122,21 +137,21 @@ msgstr ""
 #: ../../sphinx/doc/extdev/event_callbacks.rst:308
 #: ../../sphinx/doc/extdev/event_callbacks.rst:318
 msgid ":class:`.BuildEnvironment`"
-msgstr ""
+msgstr ":class:`.BuildEnvironment`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:102
 #: ../../sphinx/doc/extdev/event_callbacks.rst:103
 #: ../../sphinx/doc/extdev/event_callbacks.rst:104
 msgid "``set[str]``"
-msgstr ""
+msgstr "``set[str]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:0
 msgid "returns"
-msgstr ""
+msgstr "retorna"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:105
 msgid "``list[str]`` of additional docnames to re-read"
-msgstr ""
+msgstr "``list[str]`` de docnames adicionais para ler novamente"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:107
 msgid ""
@@ -145,6 +160,10 @@ msgid ""
 "that the environment has determined. You can return a list of docnames to "
 "re-read in addition to these."
 msgstr ""
+"Emitido quando o ambiente determina quais arquivos fonte foram alterados e "
+"devem ser relidos. *add*, *changed* e *removed* são conjuntos de docnames "
+"determinados pelo ambiente. Você pode retornar uma lista de docnames para "
+"reler além destes."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:119
 #: ../../sphinx/doc/extdev/event_callbacks.rst:153
@@ -154,7 +173,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/event_callbacks.rst:360
 #: ../../sphinx/doc/extdev/event_callbacks.rst:361
 msgid "``str``"
-msgstr ""
+msgstr "``str``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:121
 msgid ""
@@ -163,6 +182,10 @@ msgid ""
 "read. This is for extensions that keep their own caches in attributes of the"
 " environment."
 msgstr ""
+"Emitido quando todos os rastros de um arquivo fonte devem ser limpos do "
+"ambiente, ou seja, se o arquivo fonte for removido ou antes de ser lido "
+"recentemente. Isto é para extensões que mantêm seus próprios caches em "
+"atributos do ambiente."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:126
 msgid ""
@@ -170,11 +193,14 @@ msgid ""
 "source file has been changed, the cache's entries for the file are cleared, "
 "since the module declarations could have been removed from the file."
 msgstr ""
+"Por exemplo, existe um cache de todos os módulos no ambiente. Quando um "
+"arquivo fonte é alterado, as entradas do cache do arquivo são limpas, pois "
+"as declarações do módulo podem ter sido removidas do arquivo."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:136
 #: ../../sphinx/doc/extdev/event_callbacks.rst:271
 msgid "``list[str]``"
-msgstr ""
+msgstr "``list[str]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:138
 msgid ""
@@ -184,12 +210,20 @@ msgid ""
 "docnames that Sphinx did not consider changed (but never add any docnames "
 "that are not in :attr:`.found_docs`)."
 msgstr ""
+"Emitido após o ambiente ter determinado a lista de todos os arquivos "
+"adicionados e alterados e pouco antes de lê-los. Ele permite que os autores "
+"da extensão reordenem a lista de docnames (*inplace*) antes do "
+"processamento, ou adicionem mais docnames que o Sphinx não considerou "
+"alterados (mas nunca adicionem quaisquer docnames que não estejam em "
+":attr:`.found_docs`)."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:145
 msgid ""
 "You can also remove document names; do this with caution since it will make "
 "Sphinx treat changed files as unchanged."
 msgstr ""
+"Você também pode remover nomes dos documentos; faça isso com cuidado, pois "
+"fará com que o Sphinx trate os arquivos alterados como inalterados."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:154
 #: ../../sphinx/doc/extdev/event_callbacks.rst:178
@@ -197,16 +231,20 @@ msgid ""
 "``list[str]`` with a single element, representing the content of the "
 "included file."
 msgstr ""
+"``list[str]`` com um único elemento, representando o conteúdo do arquivo "
+"incluído."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:158
 msgid "Emitted when a source file has been read."
-msgstr ""
+msgstr "Emitido quando um arquivo fonte foi lido."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:160
 msgid ""
 "You can process the ``content`` and replace this item to implement source-"
 "level transformations."
 msgstr ""
+"Você pode processar o ``content`` e substituir este item para implementar "
+"transformações no nível de fontes."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:163
 msgid ""
@@ -214,35 +252,42 @@ msgid ""
 "LaTeX, you can use a regular expression to replace ``$...$`` by "
 "``:math:`...```."
 msgstr ""
+"Por exemplo, se você quiser usar sinais ``$`` para delimitar matemática em "
+"linha, como no LaTeX, você pode usar uma expressão regular para substituir "
+"``$...$`` por ``:math:`... ```."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:172
 msgid ""
 ":class:`~pathlib.Path` representing the included file relative to the "
 ":term:`source directory`."
 msgstr ""
+":class:`~pathlib.Path` representando o arquivo incluído relativo ao "
+":term:`diretório fonte."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:175
 msgid ""
 "``str`` of the document name that contains the :dudir:`include` directive."
-msgstr ""
+msgstr "``str`` do nome do documento que contém a diretiva :dudir:`include`."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:182
 msgid "Emitted when a file has been read with the :dudir:`include` directive."
-msgstr ""
+msgstr "Emitido quando um arquivo foi lido com a diretiva :dudir:`include`."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:184
 msgid ""
 "You can process the ``content`` and replace this item to transform the "
 "included content, as with the :event:`source-read` event."
 msgstr ""
+"Você pode processar o ``content`` e substituir este item para transformar o "
+"conteúdo incluído, como acontece com o evento :event:`source-read`."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:189
 msgid "The :dudir:`include` directive and the :event:`source-read` event."
-msgstr ""
+msgstr "A diretiva :dudir:`include` e o evento :event:`source-read`."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:196
 msgid ":class:`.desc_content`"
-msgstr ""
+msgstr ":class:`.desc_content`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:198
 msgid ""
@@ -251,17 +296,23 @@ msgid ""
 " And *contentnode* is a content for the object.  It can be modified in-"
 "place."
 msgstr ""
+"Emitido quando uma diretiva de descrição de objeto é executada. Os "
+"argumentos *domain* e *objtype* são strings que indicam a descrição do "
+"objeto. E *contentnode* é um conteúdo para o objeto. Ele pode ser modificado"
+" no local."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:207
 #: ../../sphinx/doc/extdev/event_callbacks.rst:257
 msgid ":class:`docutils.nodes.document`"
-msgstr ""
+msgstr ":class:`docutils.nodes.document`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:209
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled. The ``doctree`` can be modified in-place."
 msgstr ""
+"Emitido quando uma doctree foi analisada e lida pelo ambiente e está prestes"
+" a ser serializada com pickle. O ``doctree`` pode ser modificado no local."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:217
 msgid ""
@@ -269,18 +320,25 @@ msgid ""
 "``reftarget``, ``modname`` and ``classname`` attributes determine the type "
 "and target of the reference."
 msgstr ""
+"O nó :class:`.pending_xref` a ser resolvido. Seus atributos ``reftype``, "
+"``reftarget``, ``modname`` e ``classname`` determinam o tipo e o alvo da "
+"referência."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:220
 msgid ""
 "The node that carries the text and formatting inside the future reference "
 "and should be a child of the returned reference node."
 msgstr ""
+"O nó que carrega o texto e a formatação dentro da referência futura e deve "
+"ser filho do nó de referência retornado."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:222
 msgid ""
 "A new node to be inserted in the document tree in place of the node, or "
 "``None`` to let other handlers try."
 msgstr ""
+"Um novo nó a ser inserido na árvore do documento no lugar do nó, ou ``None``"
+" para permitir que outros manipuladores tentem."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:225
 msgid ""
@@ -293,18 +351,27 @@ msgid ""
 "to prevent other handlers in trying and suppress a warning about this cross-"
 "reference being unresolved."
 msgstr ""
+"Emitido quando uma referência cruzada a um objeto não pode ser resolvida. Se"
+" o manipulador de eventos puder resolver a referência, ele deverá retornar "
+"um novo nó docutils a ser inserido na árvore de documentos no lugar do nó "
+"*node*. Normalmente este nó é um nó :class:`~nodes.reference` contendo "
+"*contnode* como filho. Se o manipulador não puder resolver a referência "
+"cruzada, ele pode retornar ``None`` para permitir que outros manipuladores "
+"tentem ou aumentar :class:`~sphinx.errors.NoUri` para evitar que outros "
+"manipuladores tentem e suprimir um aviso sobre esta referência cruzada não "
+"foi resolvida."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:240
 msgid "The :class:`.Domain` of the missing reference."
-msgstr ""
+msgstr "O :class:`.Domain` da referência ausente."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:241
 msgid "The :class:`.pending_xref` node that could not be resolved."
-msgstr ""
+msgstr "O nó :class:`.pending_xref` que não pôde ser resolvido."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:242
 msgid "``True`` if a warning was emitted, else ``None``"
-msgstr ""
+msgstr "``True`` se um aviso foi emitido, caso contrário ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:244
 msgid ""
@@ -314,6 +381,12 @@ msgid ""
 ":confval:`nitpick_ignore` and :confval:`nitpick_ignore_regex` prevent the "
 "event from being emitted for the corresponding nodes."
 msgstr ""
+"Emitido quando uma referência cruzada a um objeto não pode ser resolvida "
+"mesmo após :event:`missing-reference`. Se o manipulador de eventos puder "
+"emitir avisos para a referência ausente, ele deverá retornar ``True``. As "
+"variáveis ​​de configuração :confval:`nitpick_ignore` e "
+":confval:`nitpick_ignore_regex` evitam que o evento seja emitido para os nós"
+" correspondentes."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:260
 msgid ""
@@ -321,6 +394,9 @@ msgid ""
 "all references have been resolved and TOCs have been inserted.  The "
 "*doctree* can be modified in place."
 msgstr ""
+"Emitido quando uma doctree foi \"resolvida\" pelo ambiente, ou seja, todas "
+"as referências foram resolvidas e os TOCs foram inseridos. A *doctree* pode "
+"ser modificada no local."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:264
 msgid ""
@@ -328,12 +404,17 @@ msgid ""
 " the writers, so that they don't cause errors when the writers encounter "
 "them."
 msgstr ""
+"Este é o lugar para substituir nós personalizados que não possuem métodos de"
+" visitante nos escritores, para que não causem erros quando os escritores os"
+" encontrarem."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:274
 msgid ""
 "This event is only emitted when parallel reading of documents is enabled.  "
 "It is emitted once for every subprocess that has read some documents."
 msgstr ""
+"Este evento só é emitido quando a leitura paralela de documentos está "
+"habilitada. É emitido uma vez para cada subprocesso que leu algum documento."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:277
 msgid ""
@@ -341,6 +422,9 @@ msgid ""
 "environment in a custom location.  Otherwise the environment in the main "
 "process will not be aware of the information stored in the subprocess."
 msgstr ""
+"Você deve manipular esse evento em uma extensão que armazene dados no "
+"ambiente em um local customizado. Caso contrário, o ambiente do processo "
+"principal não terá conhecimento das informações armazenadas no subprocesso."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:281
 msgid ""
@@ -348,17 +432,22 @@ msgid ""
 "environment from the main process.  *docnames* is a set of document names "
 "that have been read in the subprocess."
 msgstr ""
+"*other* é o objeto de ambiente do subprocesso, *env* é o ambiente do "
+"processo principal. *docnames* é um conjunto de nomes dos documentos que "
+"foram lidos no subprocesso."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:291
 #: ../../sphinx/doc/extdev/event_callbacks.rst:309
 msgid "iterable of ``str``"
-msgstr ""
+msgstr "iterável de ``str``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:293
 msgid ""
 "Emitted after reading all documents, when the environment and all doctrees "
 "are now up-to-date."
 msgstr ""
+"Emitido após a leitura de todos os documentos, quando o ambiente e todas as "
+"doctrees estão atualizados."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:296
 msgid ""
@@ -366,26 +455,33 @@ msgid ""
 "will then be considered updated, and will be (re-)written during the writing"
 " phase."
 msgstr ""
+"Você pode retornar um iterável de docnames do manipulador. Estes documentos "
+"serão então considerados atualizados e serão (re)escritos durante a fase de "
+"redação."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:302
 msgid "The handlers' return value is now used."
-msgstr ""
+msgstr "O valor de retorno dos manipuladores agora é usado."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:311
 msgid ""
 "Emitted when the environment determines which source files have changed and "
 "should be re-read. You can return an iterable of docnames to re-read."
 msgstr ""
+"Emitido quando o ambiente determina quais arquivos fonte foram alterados e "
+"devem ser relidos. Você pode retornar um iterável de docnames para reler."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:320
 msgid ""
 "Emitted when Consistency checks phase.  You can check consistency of "
 "metadata for whole of documents."
 msgstr ""
+"Emitido durante a fase de verificação de consistência. Você pode verificar a"
+" consistência dos metadados de todos os documentos."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:328
 msgid "``Exception`` or ``None``"
-msgstr ""
+msgstr "``Exception`` ou ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:330
 msgid ""
@@ -396,47 +492,63 @@ msgid ""
 "raised no exception, *exception* will be ``None``.  This allows to customize"
 " cleanup actions depending on the exception status."
 msgstr ""
+"Emitido quando uma construção é concluída, antes da saída do Sphinx, "
+"geralmente usado para limpeza. Este evento é emitido mesmo quando o processo"
+" de construção levanta uma exceção, fornecida como argumento *exception*. A "
+"exceção é levantada novamente na aplicação após a execução dos manipuladores"
+" de eventos. Se o processo de construção não levantou nenhuma exceção, "
+"*exception* será ``None``. Isto permite personalizar ações de limpeza "
+"dependendo do status da exceção."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:340
 msgid "Builder specific events"
-msgstr ""
+msgstr "Eventos específicos do construtor"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:342
 msgid "These events are emitted by specific builders."
-msgstr ""
+msgstr "Esses eventos são emitidos por construtores específicos."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:347
 msgid ""
 "iterable of ``(pagename, context, templatename)`` where *pagename* and "
 "*templatename* are strings and *context* is a ``dict[str, Any]``."
 msgstr ""
+"iterável de ``(pagename, context, templatename)`` onde *pagename* e "
+"*templatename* são strings e *context* é um ``dict[str, Any]``."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:351
 msgid "Emitted when the HTML builder is starting to write non-document pages."
 msgstr ""
+"Emitido quando o construtor HTML está começando a escrever páginas que não "
+"são de documento."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:353
 msgid "You can add pages to write by returning an iterable from this event."
 msgstr ""
+"Você pode adicionar páginas para escrever retornando um iterável deste "
+"evento."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:362
 msgid "``dict[str, Any]``"
-msgstr ""
+msgstr "``dict[str, Any]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:363
 msgid ":class:`docutils.nodes.document` or ``None``"
-msgstr ""
+msgstr ":class:`docutils.nodes.document` ou ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:364
 #: ../../sphinx/doc/extdev/event_callbacks.rst:400
 msgid "``str`` or ``None``"
-msgstr ""
+msgstr "``str`` ou ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:366
 msgid ""
 "Emitted when the HTML builder has created a context dictionary to render a "
 "template with -- this can be used to add custom elements to the context."
 msgstr ""
+"Emitido quando o construtor HTML cria um dicionário de contexto para "
+"renderizar um modelo -- isso pode ser usado para adicionar elementos "
+"personalizadosao contexto."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:369
 msgid ""
@@ -445,6 +557,10 @@ msgid ""
 "*templatename* is the name of the template to render, this will be "
 "``'page.html'`` for all pages from reST documents."
 msgstr ""
+"O argumento *pagename* é o nome canônico da página que está sendo "
+"renderizada, ou seja, sem o sufixo ``.html`` e usando barras como "
+"separadores de caminho. O *templatename* é o nome do modelo a ser "
+"renderizado, será ``'page.html'`` para todas as páginas dos documentos reST."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:374
 msgid ""
@@ -452,6 +568,9 @@ msgid ""
 "template engine to render the page and can be modified to include custom "
 "values."
 msgstr ""
+"O argumento *context* é um dicionário de valores que são fornecidos ao "
+"mecanismo de modelo para renderizar a página e pode ser modificado para "
+"incluir valores personalizados."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:378
 msgid ""
@@ -459,31 +578,39 @@ msgid ""
 "reST documents; it will be ``None`` when the page is created from an HTML "
 "template alone."
 msgstr ""
+"O argumento *doctree* será uma doctree quando a página for criada a partir "
+"de documentos reST; será ``None`` quando a página for criada apenas a partir"
+" de um modelo HTML."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:382
 msgid ""
 "You can return a string from the handler, it will then replace "
 "``'page.html'`` as the HTML template for this page."
 msgstr ""
+"Você pode retornar uma string do manipulador, ele substituirá "
+"``'page.html'`` como o modelo HTML para esta página."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:387
 msgid ""
 "You can install JS/CSS files for the specific page via "
 ":meth:`.Sphinx.add_js_file` and :meth:`.Sphinx.add_css_file` (since v3.5.0)."
 msgstr ""
+"Você pode instalar arquivos JS/CSS para a página específica via "
+":meth:`.Sphinx.add_js_file` e :meth:`.Sphinx.add_css_file` (desde v3.5.0)."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:393
 msgid "The return value can now specify a template name."
-msgstr ""
+msgstr "O valor de retorno agora pode especificar um nome de modelo."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:399
 msgid "``str`` of the collected URI"
-msgstr ""
+msgstr "``str`` do URI coletado"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:402
 msgid "Emitted when the linkcheck builder collects hyperlinks from document."
-msgstr ""
+msgstr "Emitido quando o construtor linkcheck coleta hiperlinks do documento."
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:404
 msgid "The event handlers can modify the URI by returning a string."
 msgstr ""
+"Os manipuladores de eventos podem modificar o URI retornando uma string."

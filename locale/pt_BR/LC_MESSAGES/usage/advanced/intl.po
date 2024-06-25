@@ -66,6 +66,10 @@ msgid ""
 " referred to as *messages*) to make them known to translators.  Sphinx "
 "extracts these through invocation of :command:`sphinx-build -M gettext`."
 msgstr ""
+"Inicialmente os mantenedores do projeto coletam todas as strings que serão "
+"traduzidas (também referidas como *mensagens* ou *frases*) para torná-las "
+"conhecidas para os tradutores. Sphinx extrai isso através da chamada de "
+":command:`sphinx-build -M gettext`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:32
 msgid ""
@@ -127,6 +131,11 @@ msgid ""
 " you have Spanish translations [2]_ stored in :file:`usage.po` --- for your "
 "builds to be translated you need to follow these instructions:"
 msgstr ""
+"Um exemplo: você tem um documento :file:`usage.rst` no seu projeto Sphinx. O"
+" construtor *gettext* colocará suas mensagens em :file:`usage.pot`. Imagine "
+"que você tenha as traduções para espanhol [2]_ armazenadas em "
+":file:`usage.po` --- para que suas construções sejam traduzidas, é "
+"necessário seguir estas instruções:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:59
 msgid ""
@@ -134,6 +143,10 @@ msgid ""
 "ends up in :file:`./locale/es/LC_MESSAGES/usage.mo` in your source directory"
 " (where ``es`` is the language code for Spanish.) ::"
 msgstr ""
+"Compile seu catálogo de mensagens para um diretório de localidade, digamos "
+"``locale``, de forma que ele fique em "
+":file:`./locale/es/LC_MESSAGES/usage.mo` em seu diretório fonte (sendo "
+"``es`` o código de idioma para espanhol.) ::"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:65
 msgid "Set :confval:`locale_dirs` to ``[\"locale/\"]``."
@@ -202,7 +215,7 @@ msgstr "Instale `sphinx-intl`_."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:104
 msgid "Add configurations to :file:`conf.py`."
-msgstr ""
+msgstr "Adicione configurações ao :file:`conf.py`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:111
 msgid ""
@@ -259,6 +272,9 @@ msgid ""
 "directory.  An example of one such file, from Sphinx, :file:`builders.po`, "
 "is given below."
 msgstr ""
+"Como mencionado acima, eles estão localizados no diretório "
+"``./locale/<lang>/LC_MESSAGES``. Um exemplo de um tal arquivo, do Sphinx, "
+":file:`builders.po`, é fornecido abaixo."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:150
 msgid ""
@@ -284,6 +300,8 @@ msgid ""
 "You need a :confval:`language` parameter in :file:`conf.py` or you may also "
 "specify the parameter on the command line."
 msgstr ""
+"Você precisa de um parâmetro :confval:`language` em :file:`conf.py` ou "
+"também pode especificar o parâmetro na linha de comando."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:171
 msgid "For BSD/GNU make, run:"
@@ -349,10 +367,13 @@ msgid ""
 "via a web interface.  It has a nifty Go-based command line client that makes"
 " it easy to fetch and push translations."
 msgstr ""
+"Transifex_ é um dos diversos serviços que permite tradução colaborativa via "
+"interface web. Possui um cliente bacana de linha de comando baseado em Go "
+"que permite baixar e enviar traduções."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:227
 msgid "Install the `Transifex CLI tool`_."
-msgstr ""
+msgstr "Instale a `ferramenta de CLI do Transifex`_."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:229
 msgid ""
@@ -361,6 +382,10 @@ msgid ""
 "in the current directory along with a README and a LICENSE file, and adds "
 "the current directory to ``$PATH``."
 msgstr ""
+"Você precisa da ferramenta de linha de comando :command:`tx` para enviar "
+"recursos (arquivos pot). O processo de instalação oficial coloca o arquivo "
+"binário :file:`tx` no diretório atual junto com um arquivo README e um "
+"arquivo LICENSE, e adiciona o diretório atual ao ``$PATH``."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:238
 msgid "`Transifex Client documentation`_"
@@ -371,6 +396,8 @@ msgid ""
 "Create your Transifex_ account and create a new project and an organization "
 "for your document."
 msgstr ""
+"Crie sua conta no Transifex_ e crie um novo projeto e uma organização para "
+"sua documentação."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:243
 msgid ""
@@ -388,11 +415,11 @@ msgstr "Por exemplo:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:0
 msgid "Organization ID"
-msgstr ""
+msgstr "ID da organização"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:249
 msgid "``sphinx-document``"
-msgstr ""
+msgstr "``sphinx-document``"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:0
 msgid "Project ID"
@@ -412,33 +439,41 @@ msgstr "``https://www.transifex.com/projects/p/sphinx-document-test_1_0/``"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:253
 msgid "Create an API token to be used in the command-line."
-msgstr ""
+msgstr "Crie um token de API para ser usado na linha de comando."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:255
 msgid ""
 "Go to your `Transifex API token`_ page and generate a token. Copy the "
 "generated token now, as you will not be able to see it again later."
 msgstr ""
+"Vá para sua página de `token de API do Transifex`_ e gere um token. Copie o "
+"token gerado agora, pois você não poderá vê-lo novamente mais tarde."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:258
 msgid ""
 "Set your Transifex API token in the user configuration file "
 ":file:`$HOME/.transifexrc`."
 msgstr ""
+"Defina seu token da API Transifex no arquivo de configuração de usuário "
+":file:`$HOME/.transifexrc`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:267
 msgid ""
 "Alternatively, you can store your Transifex API token as the environment "
 "variable ``TX_TOKEN``, which is recognized and used by :command:`tx`."
 msgstr ""
+"Alternativamente, você pode armazenar seu token da API do Transifex como a "
+"variável de ambiente ``TX_TOKEN``, que é reconhecida e usada pelo "
+":command:`tx`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:274
 msgid "Create the project's config file for :command:`tx` command."
 msgstr ""
+"Crie o arquivo de configuração do projeto para o comando :command:`tx`."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:276
 msgid "This process will create ``.tx/config`` in the current directory."
-msgstr ""
+msgstr "Este processo criará ``.tx/config`` no diretório atual."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:285
 msgid "Upload pot files to Transifex service."
@@ -450,6 +485,9 @@ msgid ""
 "update-txconfig-resources`, adjusting ``--pot-dir`` value to your project's "
 "pot files' directory:"
 msgstr ""
+"Registre os arquivos pot no arquivo ``.tx/config`` usando :command:`sphinx-"
+"intl update-txconfig-resources`, ajustando o valor ``--pot-dir`` para o "
+"diretório dos arquivos pot do seu projeto:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:298
 msgid ""
@@ -457,10 +495,14 @@ msgid ""
 "``SPHINXINTL_TRANSIFEX_PROJECT_NAME`` environment variables instead of the "
 "respective command line arguments."
 msgstr ""
+"Você pode usar as variáveis ​​de ambiente "
+"``SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME`` e "
+"``SPHINXINTL_TRANSIFEX_PROJECT_NAME`` em vez dos respectivos argumentos de "
+"linha de comando."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:302
 msgid "`sphinx-intl update-txconfig-resources documentation`_"
-msgstr ""
+msgstr "`Documentação de sphinx-intl update-txconfig-resources`_"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:304
 msgid "and upload pot files:"
@@ -486,6 +528,8 @@ msgstr ""
 msgid ""
 "Invoke :command:`make html` (for BSD/GNU make) passing the language code:"
 msgstr ""
+"Execute :command:`make html` (para BSD/GNU make) passando o código do "
+"idioma:"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:349
 msgid "That's all!"
@@ -567,6 +611,8 @@ msgid ""
 "Detail is here: https://help.transifex.com/en/articles/6248698-getting-"
 "started-as-a-translator"
 msgstr ""
+"Detalhes aqui: https://help.transifex.com/en/articles/6248698-getting-"
+"started-as-a-translator"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:386
 msgid "Translation progress and statistics"

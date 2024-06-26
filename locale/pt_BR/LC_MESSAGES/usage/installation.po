@@ -6,7 +6,6 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2018
 # gilberto dos santos alves <gsavix@gmail.com>, 2019
-# Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2019
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
@@ -14,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 00:37+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2018-02-12 13:49+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -28,51 +27,124 @@ msgstr ""
 msgid "Installing Sphinx"
 msgstr "Instalando Sphinx"
 
-#: ../../sphinx/doc/usage/installation.rst:13
-msgid "Overview"
-msgstr "Visão geral"
+#: ../../sphinx/doc/usage/installation.rst:5
+msgid ""
+"Sphinx is a Python application. It can be installed in one of the ways "
+"described below."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:11
+msgid "Installation methods"
+msgstr ""
 
 #: ../../sphinx/doc/usage/installation.rst:15
 msgid ""
-"Sphinx is written in `Python`__ and supports Python 3.9+. It builds upon the"
-" shoulders of many third-party libraries such as `Docutils`__ and `Jinja`__,"
-" which are installed when Sphinx is installed."
+"After installation, you can check that Sphinx is available by running ::"
 msgstr ""
-"Sphinx é escrito em `Python`__ e suporta Python 3.9+. Ele se baseia em "
-"muitas bibliotecas de terceiros, como `Docutils`__ e `Jinja`__, que são "
-"instaladas quando o Sphinx é instalado."
 
-#: ../../sphinx/doc/usage/installation.rst:25
+#: ../../sphinx/doc/usage/installation.rst:19
+msgid "This should print out the Sphinx version number."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:24
+msgid ""
+"For local development, it is generally recommended to install Sphinx into a "
+"non-global environment (using for example `venv`__ or `conda`__ "
+"environments). This will allow for the use of separate sphinx versions and "
+"third-party extensions for each sphinx project."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:37
+msgid "PyPI package"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:39
+msgid ""
+"Sphinx packages are published on the `Python Package Index "
+"<https://pypi.org/project/Sphinx/>`_ (PyPI).  The preferred tool for "
+"installing packages from PyPI is :command:`pip`, which is included in all "
+"modern versions of Python."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:44
+msgid "Run the following command::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:50
+msgid ""
+"To avoid issues when rebuilding your environment, it is advisable to pin "
+"sphinx and third-party extension versions in a `requirements.txt file`__::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:56
+msgid ""
+"Or, if writing documentation for a Python package, place the dependencies in"
+" the `pyproject.toml file`__::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:67
+msgid "Conda package"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:68
+msgid ""
+"To work with :command:`conda`, you need a conda-based Python distribution "
+"such as `anaconda`__, `miniconda`__, `miniforge`__ or `micromamba`__."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:77
+msgid ""
+"Sphinx is available both via the *anaconda main* channel (maintained by "
+"Anaconda Inc.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:84
+msgid "as well as via the *conda-forge* community channel ::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:89
+msgid "OS-specific package manager"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:91
+msgid ""
+"You may install a global version of Sphinx into your system using OS-"
+"specific package managers. However, be aware that this is less flexible and "
+"you may run into compatibility issues if you want to work across different "
+"projects."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:96
 msgid "Linux"
 msgstr "Linux"
 
-#: ../../sphinx/doc/usage/installation.rst:28
+#: ../../sphinx/doc/usage/installation.rst:99
 msgid "Debian/Ubuntu"
 msgstr "Debian/Ubuntu"
 
-#: ../../sphinx/doc/usage/installation.rst:30
+#: ../../sphinx/doc/usage/installation.rst:101
 msgid "Install either ``python3-sphinx`` using :command:`apt-get`:"
 msgstr "Instale ``python3-sphinx`` usando :command:`apt-get`:"
 
-#: ../../sphinx/doc/usage/installation.rst:36
-#: ../../sphinx/doc/usage/installation.rst:47
+#: ../../sphinx/doc/usage/installation.rst:107
+#: ../../sphinx/doc/usage/installation.rst:118
 msgid "If it not already present, this will install Python for you."
 msgstr ""
 "Se Python não estiver presente, este também será automaticamente instalado."
 
-#: ../../sphinx/doc/usage/installation.rst:39
+#: ../../sphinx/doc/usage/installation.rst:110
 msgid "RHEL, CentOS"
 msgstr "RHEL, CentOS"
 
-#: ../../sphinx/doc/usage/installation.rst:41
+#: ../../sphinx/doc/usage/installation.rst:112
 msgid "Install ``python-sphinx`` using :command:`yum`:"
 msgstr "Instale ``python-sphinx`` usando :command:`yum`:"
 
-#: ../../sphinx/doc/usage/installation.rst:50
+#: ../../sphinx/doc/usage/installation.rst:121
 msgid "Other distributions"
 msgstr "Outras distribuições"
 
-#: ../../sphinx/doc/usage/installation.rst:52
+#: ../../sphinx/doc/usage/installation.rst:123
 msgid ""
 "Most Linux distributions have Sphinx in their package repositories.  Usually"
 " the package is called ``python3-sphinx``, ``python-sphinx`` or ``sphinx``."
@@ -86,61 +158,49 @@ msgstr ""
 "seus nomes: uma ferramenta de reconhecimento voz (*CMU Sphinx*) e outra "
 "mecanismo banco de dados texto completo (*Sphinx search*)."
 
-#: ../../sphinx/doc/usage/installation.rst:60
+#: ../../sphinx/doc/usage/installation.rst:130
 msgid "macOS"
 msgstr "macOS"
 
-#: ../../sphinx/doc/usage/installation.rst:62
-msgid ""
-"Sphinx can be installed using `Homebrew`__, `MacPorts`__, or as part of a "
-"Python distribution such as `Anaconda`__."
+#: ../../sphinx/doc/usage/installation.rst:132
+msgid "Sphinx can be installed using `Homebrew`__, `MacPorts`__."
 msgstr ""
-"O Sphinx pode ser instalado usando `Homebrew`__, `MacPorts`__ ou como parte "
-"de uma distribuição do Python, como `Anaconda`__."
 
-#: ../../sphinx/doc/usage/installation.rst:70
+#: ../../sphinx/doc/usage/installation.rst:138
 msgid "Homebrew"
 msgstr "Homebrew"
 
-#: ../../sphinx/doc/usage/installation.rst:76
-#: ../../sphinx/doc/usage/installation.rst:96
+#: ../../sphinx/doc/usage/installation.rst:144
+#: ../../sphinx/doc/usage/installation.rst:164
 msgid "For more information, refer to the `package overview`__."
 msgstr "Para mais informações, consulte a `visão geral do pacote`__."
 
-#: ../../sphinx/doc/usage/installation.rst:81
+#: ../../sphinx/doc/usage/installation.rst:149
 msgid "MacPorts"
 msgstr "MacPorts"
 
-#: ../../sphinx/doc/usage/installation.rst:83
+#: ../../sphinx/doc/usage/installation.rst:151
 msgid "Install either ``python3x-sphinx`` using :command:`port`:"
 msgstr "Instale ``python3x-sphinx`` usando :command:`port`:"
 
-#: ../../sphinx/doc/usage/installation.rst:89
+#: ../../sphinx/doc/usage/installation.rst:157
 msgid "To set up the executable paths, use the ``port select`` command:"
 msgstr ""
 "Para configurar os caminhos dos executáveis, use o comando ``port select``:"
 
-#: ../../sphinx/doc/usage/installation.rst:101
-msgid "Anaconda"
-msgstr "Anaconda"
-
-#: ../../sphinx/doc/usage/installation.rst:108
+#: ../../sphinx/doc/usage/installation.rst:169
 msgid "Windows"
 msgstr "Windows"
 
-#: ../../sphinx/doc/usage/installation.rst:110
-msgid ""
-"Sphinx can be install using `Chocolatey`__ or :ref:`installed manually "
-"<windows-other-method>`."
+#: ../../sphinx/doc/usage/installation.rst:171
+msgid "Sphinx can be install using `Chocolatey`__."
 msgstr ""
-"Sphinx pode ser instalado usando `Chocolatey`__ ou :ref:`instalado "
-"manualmente <windows-other-method>`."
 
-#: ../../sphinx/doc/usage/installation.rst:116
+#: ../../sphinx/doc/usage/installation.rst:176
 msgid "Chocolatey"
 msgstr "Chocolatey"
 
-#: ../../sphinx/doc/usage/installation.rst:122
+#: ../../sphinx/doc/usage/installation.rst:182
 msgid ""
 "You would need to `install Chocolatey <https://chocolatey.org/install>`_ "
 "before running this."
@@ -148,128 +208,15 @@ msgstr ""
 "Você precisaria `instalar Chocolatey <https://chocolatey.org/install>`_ "
 "antes de executar isso."
 
-#: ../../sphinx/doc/usage/installation.rst:126
+#: ../../sphinx/doc/usage/installation.rst:186
 msgid "For more information, refer to the `chocolatey page`__."
 msgstr "Para mais informações, consulte a `página do chocolatey`__."
 
-#: ../../sphinx/doc/usage/installation.rst:133
-msgid "Other Methods"
-msgstr "Outros Métodos"
-
-#: ../../sphinx/doc/usage/installation.rst:135
-msgid ""
-"Most Windows users do not have Python installed by default, so we begin with"
-" the installation of Python itself.  To check if you already have Python "
-"installed, open the *Command Prompt* (:kbd:`⊞Win-r` and type "
-":command:`cmd`). Once the command prompt is open, type :command:`python "
-"--version` and press Enter.  If Python is installed, you will see the "
-"version of Python printed to the screen.  If you do not have Python "
-"installed, refer to the `Hitchhikers Guide to Python's`__ Python on Windows "
-"installation guides. You must install `Python 3`__."
-msgstr ""
-"A maioria dos usuários do Windows não tem o Python instalado por padrão, "
-"então começamos com a instalação do próprio Python. Para verificar se você "
-"já tem o Python instalado, abra o *Prompt de Comando* (:kbd:`⊞Win-r` e "
-"digite :command:`cmd`). Quando o prompt de comando estiver aberto, digite "
-":command:`python --version` e pressione Enter. Se o Python estiver "
-"instalado, você verá a versão do Python impressa na tela. Se você não tem o "
-"Python instalado, consulte o guia de instalação do Python no `Hitchhikers "
-"Guide to Python's`__ para o Python. Você deve instalar o `Python 3`__."
-
-#: ../../sphinx/doc/usage/installation.rst:144
-msgid ""
-"Once Python is installed, you can install Sphinx using :command:`pip`.  "
-"Refer to the :ref:`pip installation instructions <install-pypi>` below for "
-"more information."
-msgstr ""
-"Quando Python estiver instalado, poderá instalar Sphinx usando "
-":command:`pip`. Consulte as :ref:`instruções de instalação do pip <install-"
-"pypi>` abaixo para mais informação."
-
-#: ../../sphinx/doc/usage/installation.rst:155
-msgid "Installation from PyPI"
-msgstr "Instalar a partir do PyPI"
-
-#: ../../sphinx/doc/usage/installation.rst:157
-msgid ""
-"Sphinx packages are published on the `Python Package Index "
-"<https://pypi.org/project/Sphinx/>`_.  The preferred tool for installing "
-"packages from *PyPI* is :command:`pip`.  This tool is provided with all "
-"modern versions of Python."
-msgstr ""
-"Os pacotes do Sphinx são publicados no `Python Package Index "
-"<https://pypi.org/project/Sphinx/>`_. A ferramenta preferida para instalar "
-"pacotes do *PyPI* é :command:`pip`. Esta ferramenta é fornecida com todas as"
-" versões modernas do Python."
-
-#: ../../sphinx/doc/usage/installation.rst:162
-msgid ""
-"On Linux or MacOS, you should open your terminal and run the following "
-"command."
-msgstr "Em Linux ou MacOS, abra seu terminal e execute o seguinte comando."
-
-#: ../../sphinx/doc/usage/installation.rst:168
-msgid ""
-"On Windows, you should open *Command Prompt* (:kbd:`⊞Win-r` and type "
-":command:`cmd`) and run the same command."
-msgstr ""
-"No Windows, você deve abrir o *Prompt de Comando* (:kbd:`⊞Win-r` e digitar "
-":command:`cmd`) e executar o mesmo comando."
-
-#: ../../sphinx/doc/usage/installation.rst:175
-msgid ""
-"After installation, type :command:`sphinx-build --version` on the command "
-"prompt.  If everything worked fine, you will see the version number for the "
-"Sphinx package you just installed."
-msgstr ""
-"Após instalação, digitar :command:`sphinx-build --version`  Para saber se "
-"tudo funcionou bem, confirme o número da versão instalada do pacote Sphinx."
-
-#: ../../sphinx/doc/usage/installation.rst:179
-msgid ""
-"Installation from *PyPI* also allows you to install the latest development "
-"release.  You will not generally need (or want) to do this, but it can be "
-"useful if you see a possible bug in the latest stable release.  To do this, "
-"use the ``--pre`` flag."
-msgstr ""
-"Instalação a partir de *PyPI* também permite instalar a última versão ainda "
-"em desenvolvimento. Geralmente não é necessário fazer isso, mas pode ser "
-"útil para confirmar se ainda há erro na última versão do release estável. "
-"Para instalar use o sinalizador ``--pre``."
-
-#: ../../sphinx/doc/usage/installation.rst:189
-msgid "Using virtual environments"
-msgstr "Usando ambientes virtuais"
-
 #: ../../sphinx/doc/usage/installation.rst:191
-msgid ""
-"When installing Sphinx using pip, it is highly recommended to use *virtual "
-"environments*, which isolate the installed packages from the system "
-"packages, thus removing the need to use administrator privileges. To create "
-"a virtual environment in the ``.venv`` directory, use the following command."
-msgstr ""
-"Ao instalar o Sphinx usando pip, é altamente recomendável usar *ambientes "
-"virtuais*, que isolam os pacotes instalados dos pacotes do sistema, "
-"eliminando assim a necessidade de usar privilégios de administrador. Para "
-"criar um ambiente virtual no diretório ``.venv``, use o seguinte comando."
-
-#: ../../sphinx/doc/usage/installation.rst:202
-msgid ":mod:`venv` -- creating virtual environments"
-msgstr ":mod:`venv` -- criando ambientes virtuais"
-
-#: ../../sphinx/doc/usage/installation.rst:206
-msgid ""
-"Note that in some Linux distributions, such as Debian and Ubuntu, this might"
-" require an extra installation step as follows."
-msgstr ""
-"Observe que em algumas distribuições Linux, como Debian e Ubuntu, isso pode "
-"exigir uma etapa de instalação extra, conforme a seguir."
-
-#: ../../sphinx/doc/usage/installation.rst:214
 msgid "Docker"
 msgstr "Docker"
 
-#: ../../sphinx/doc/usage/installation.rst:216
+#: ../../sphinx/doc/usage/installation.rst:193
 msgid ""
 "Docker images for Sphinx are published on the `Docker Hub`_.  There are two "
 "kind of images:"
@@ -277,15 +224,15 @@ msgstr ""
 "Imagens docker para Sphinx são publicadas no `Docker Hub`_. Há dois tipos de"
 " imagens:"
 
-#: ../../sphinx/doc/usage/installation.rst:219
+#: ../../sphinx/doc/usage/installation.rst:196
 msgid "`sphinxdoc/sphinx`_"
 msgstr "`sphinxdoc/sphinx`_"
 
-#: ../../sphinx/doc/usage/installation.rst:220
+#: ../../sphinx/doc/usage/installation.rst:197
 msgid "`sphinxdoc/sphinx-latexpdf`_"
 msgstr "`sphinxdoc/sphinx-latexpdf`_"
 
-#: ../../sphinx/doc/usage/installation.rst:226
+#: ../../sphinx/doc/usage/installation.rst:203
 msgid ""
 "Former one is used for standard usage of Sphinx, and latter one is mainly "
 "used for PDF builds using LaTeX.  Please choose one for your purpose."
@@ -294,7 +241,7 @@ msgstr ""
 "principalmente para construções de PDF usando LaTeX. Escolha uma para o seu "
 "propósito."
 
-#: ../../sphinx/doc/usage/installation.rst:231
+#: ../../sphinx/doc/usage/installation.rst:208
 msgid ""
 "sphinxdoc/sphinx-latexpdf contains TeXLive packages. So the image is very "
 "large (over 2GB!)."
@@ -302,7 +249,7 @@ msgstr ""
 "sphinxdoc/sphinx-latexpdf contém pacotes TeXLive. Então, a imagem é bem "
 "grande (mais de 2GB!)."
 
-#: ../../sphinx/doc/usage/installation.rst:236
+#: ../../sphinx/doc/usage/installation.rst:213
 msgid ""
 "When using docker images, please use ``docker run`` command to invoke sphinx"
 " commands.  For example, you can use following command to create a Sphinx "
@@ -312,20 +259,36 @@ msgstr ""
 "sphinx. Por exemplo, você pode usar o seguinte comando para criar um projeto"
 " Sphinx:"
 
-#: ../../sphinx/doc/usage/installation.rst:244
+#: ../../sphinx/doc/usage/installation.rst:221
 msgid "And you can use the following command to build HTML document:"
 msgstr "E você pode usar o seguinte comando para construir o documento HTML:"
 
-#: ../../sphinx/doc/usage/installation.rst:250
+#: ../../sphinx/doc/usage/installation.rst:227
 msgid "For more details, please read `README file`__ of docker images."
 msgstr ""
 "Para obter mais detalhes, leia o `arquivo README`__ das imagens do docker."
 
-#: ../../sphinx/doc/usage/installation.rst:256
+#: ../../sphinx/doc/usage/installation.rst:232
+msgid "Installation of the latest development release"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:234
+msgid ""
+"You can install the latest development from *PyPI* using the ``--pre`` "
+"flag::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:240
+msgid ""
+"You will not generally need (or want) to do this, but it can be useful if "
+"you see a possible bug in the latest stable release."
+msgstr ""
+
+#: ../../sphinx/doc/usage/installation.rst:244
 msgid "Installation from source"
 msgstr "Instalar a partir dos fontes"
 
-#: ../../sphinx/doc/usage/installation.rst:258
+#: ../../sphinx/doc/usage/installation.rst:246
 msgid ""
 "You can install Sphinx directly from a clone of the `Git repository`__.  "
 "This can be done either by cloning the repo and installing from the local "
@@ -335,7 +298,7 @@ msgstr ""
 "Isso pode ser feito clonando o repositório e instalando a partir de um clone"
 " local, ou simplesmente instalando diretamente a partir do :command:`git`."
 
-#: ../../sphinx/doc/usage/installation.rst:272
+#: ../../sphinx/doc/usage/installation.rst:260
 msgid ""
 "You can also download a snapshot of the Git repo in either `tar.gz`__ or "
 "`zip`__ format.  Once downloaded and extracted, these can be installed with "

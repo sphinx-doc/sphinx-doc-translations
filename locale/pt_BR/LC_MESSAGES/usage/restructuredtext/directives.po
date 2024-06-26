@@ -735,10 +735,18 @@ msgid ""
 ":confval:`highlight_language` config value. The following values are "
 "supported:"
 msgstr ""
+"Em todos os casos, o realce de sintaxe é fornecido por `Pygments "
+"<https://pygments.org>`_. Ao usar blocos literais, isso é configurado usando"
+" qualquer diretiva :rst:dir:`highlight` no arquivo fonte. Quando uma "
+"diretiva ``highlight`` é encontrada, ela é usada até que a próxima diretiva "
+"``highlight`` seja encontrada. Se não houver nenhuma diretiva ``highlight`` "
+"no arquivo, a linguagem de realce global será usada. O padrão é ``python``, "
+"mas pode ser configurado usando o valor de configuração "
+":confval:`highlight_language`. Os seguintes valores são suportados:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:448
 msgid "``none`` (no highlighting)"
-msgstr ""
+msgstr "``none`` (sem realce)"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:449
 msgid ""
@@ -746,34 +754,41 @@ msgid ""
 "warning highlighting fails; the default when :confval:`highlight_language` "
 "isn't set)"
 msgstr ""
+"``default`` (semelhante a ``python3``, mas com um fallback para ``none`` sem"
+" aviso o realce falha; o padrão quando :confval:`highlight_language` não "
+"está definido)"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:452
 msgid ""
 "``guess`` (let Pygments guess the lexer based on contents, only works with "
 "certain well-recognizable languages)"
 msgstr ""
+"``guess`` (deixa Pygments adivinhar o lexador com base no conteúdo, só "
+"funciona com certas linguagens bem reconhecíveis)"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:454
 msgid "``python``"
-msgstr ""
+msgstr "``python``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:455
 msgid "``rest``"
-msgstr ""
+msgstr "``rest``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:456
 msgid "``c``"
-msgstr ""
+msgstr "``c``"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:457
 msgid "... and any other `lexer alias that Pygments supports`__"
-msgstr ""
+msgstr "... e qualquer outro `alias de lexador compatível com Pygments`__"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:459
 msgid ""
 "If highlighting with the selected language fails (i.e. Pygments emits an "
 "\"Error\" token), the block is not highlighted in any way."
 msgstr ""
+"Se o realce com o idioma selecionado falhar (ou seja, o Pygments emitir um "
+"token \"Error\"), o bloco não será realçado de forma alguma."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:464
 msgid ""
@@ -781,6 +796,9 @@ msgid ""
 "want to ensure consistent highlighting, you should fix your version of "
 "Pygments."
 msgstr ""
+"A lista de aliases de lexador suportados está vinculada à versão do Pygment."
+" Se quiser garantir um realce consistente, você deve corrigir sua versão do "
+"Pygments."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:476
 msgid ""
@@ -788,6 +806,9 @@ msgid ""
 " As discussed previously, *language* can be any lexer alias supported by "
 "Pygments."
 msgstr ""
+"Esta linguagem é usada até que a próxima diretiva ``highlight`` seja "
+"encontrada. Conforme discutido anteriormente, *language* pode ser qualquer "
+"alias de lexador suportado pelo Pygments."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:481
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:525
@@ -797,7 +818,7 @@ msgstr "opções"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:485
 msgid "Enable to generate line numbers for code blocks."
-msgstr ""
+msgstr "Habilite a geração de números de linha para blocos de código."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:487
 msgid ""
@@ -806,11 +827,15 @@ msgid ""
 "blocks longer than N lines.  If not given, line numbers will be produced for"
 " all of code blocks."
 msgstr ""
+"Esta opção utiliza um número opcional como parâmetro de limite. Se for "
+"fornecido algum limite, a diretiva produzirá números de linha apenas para os"
+" blocos de código maiores que N linhas. Se não for fornecido, os números de "
+"linha serão produzidos para todos os blocos de código."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:500
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:636
 msgid "If given, minor errors on highlighting are ignored."
-msgstr ""
+msgstr "Se fornecido, pequenos erros no realce serão ignorados."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:513
 msgid ""
@@ -822,32 +847,41 @@ msgid ""
 "*inline* within other text, rather than as a separate block, you can use the"
 " :rst:role:`code` role instead."
 msgstr ""
+"O nome alternativo da diretiva :rst:dir:`sourcecode` também funciona. Esta "
+"diretiva leva um nome da linguagem como argumento. Pode ser `qualquer alias "
+"de lexador suportado por Pygments <https://pygments.org/docs/lexers/>`_. Se "
+"não for fornecido, a configuração da diretiva :rst:dir:`highlight` será "
+"usada. Se não for definido, :confval:`highlight_language` será usado. Para "
+"exibir um exemplo de código *em linha* dentro de outro texto, em vez de como"
+" um bloco separado, você pode usar o papel :rst:role:`code`."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:521
 msgid "The ``language`` argument becomes optional."
-msgstr ""
+msgstr "O argumento ``language`` se torna opcional."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:529
 msgid "Enable to generate line numbers for the code block::"
-msgstr ""
+msgstr "Habilite a geração de números de linha para o bloco de código::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:539
 msgid ""
 "Set the first line number of the code block.  If present, ``linenos`` option"
 " is also automatically activated::"
 msgstr ""
+"Define o número da primeira linha do bloco de código. Se presente, a opção "
+"``linenos`` também é ativada automaticamente::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:552
 msgid "Emphasize particular lines of the code block::"
-msgstr ""
+msgstr "Enfatiza linhas específicas do bloco de código::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:564
 msgid "LaTeX supports the ``emphasize-lines`` option."
-msgstr ""
+msgstr "LaTeX tem suporte à opção ``emphasize-lines``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:577
 msgid "Set a caption to the code block."
-msgstr ""
+msgstr "Define uma legenda para o bloco de código."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:584
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1017
@@ -855,6 +889,8 @@ msgid ""
 "Define implicit target name that can be referenced by using :rst:role:`ref`."
 "  For example::"
 msgstr ""
+"Define o nome do alvo implícito que pode ser referenciado usando "
+":rst:role:`ref`. Por exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:593
 msgid ""
@@ -863,6 +899,10 @@ msgid ""
 ":strong:`caption` be defined. The argument of :strong:`name` can then be "
 "given to :rst:role:`numref` to generate the cross-reference. Example::"
 msgstr ""
+"Para fazer referência cruzada de um bloco de código usando o papel "
+":rst:role:`ref` ou :rst:role:`numref`, é necessário que ambos :strong:`name`"
+" e :strong:`caption` ser definido. O argumento de :strong:`name` pode então "
+"ser dado a :rst:role:`numref` para gerar a referência cruzada. Exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:601
 msgid ""
@@ -870,6 +910,9 @@ msgid ""
 "with only :strong:`name` defined, provided an explicit title is given. "
 "Example::"
 msgstr ""
+"Ao usar :rst:role:`ref`, é possível gerar uma referência cruzada com apenas "
+":strong:`name` definido, desde que um título explícito seja fornecido. "
+"Exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:612
 msgid "The class name of the graph."
@@ -881,6 +924,10 @@ msgid ""
 "leading N characters are removed.  When no argument given, leading spaces "
 "are removed via :func:`textwrap.dedent()`.  For example::"
 msgstr ""
+"Retira os caracteres de recuo do bloco de código. Quando o número é "
+"fornecido, os N caracteres iniciais são removidos. Quando nenhum argumento é"
+" fornecido, os espaços iniciais são removidos via :func:`textwrap.dedent()`."
+" Por exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:630
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:795

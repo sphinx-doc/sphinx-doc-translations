@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2024, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Lu <lu2github@gmail.com>, 2024
+# wendi cao <651645601@qq.com>, 2024
+# Georg Brandl <g.brandl@gmx.net>, 2024
+# Izabel Wang <izabelwang@pku.edu.cn>, 2024
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 7.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-28 00:40+0000\n"
+"PO-Revision-Date: 2024-06-28 00:41+0000\n"
+"Last-Translator: Izabel Wang <izabelwang@pku.edu.cn>, 2024\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:4
+msgid "Extending syntax with roles and directives"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:7
+msgid "Overview"
+msgstr "概述"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:9
+msgid ""
+"The syntax of both reStructuredText and MyST can be extended by creating new"
+" **directives** - for block-level elements - and **roles** - for inline "
+"elements."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:13
+msgid "In this tutorial we shall extend Sphinx to add:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:15
+msgid "A ``hello`` role, that will simply output the text ``Hello {text}!``."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:16
+msgid ""
+"A ``hello`` directive, that will simply output the text ``Hello {text}!``, "
+"as a paragraph."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:19
+msgid ""
+"For this extension, you will need some basic understanding of Python, and we"
+" shall also introduce aspects of the docutils_ API."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:23
+msgid "Setting up the project"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:25
+msgid ""
+"You can either use an existing Sphinx project or create a new one using "
+":program:`sphinx-quickstart`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:28
+msgid ""
+"With this we will add the extension to the project, within the "
+":file:`source` folder:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:31
+msgid "Create an :file:`_ext` folder in :file:`source`"
+msgstr "创建了  :file:`_ext` folder in :file:`source`"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:32
+msgid ""
+"Create a new Python file in the :file:`_ext` folder called "
+":file:`helloworld.py`"
+msgstr "在 :file:`_ext` folder called :file:`helloworld.py` 创建了一个  Python 文件"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:35
+msgid "Here is an example of the folder structure you might obtain:"
+msgstr "这是您将获得的文件夹结构的示例："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:47
+msgid "Writing the extension"
+msgstr "编写插件"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:49
+msgid "Open :file:`helloworld.py` and paste the following code in it:"
+msgstr "打开 :file:`helloworld.py` 并将下列代码粘进去："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:55
+msgid "Some essential things are happening in this example:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:58
+msgid "The role class"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:60
+msgid "Our new role is declared in the ``HelloRole`` class."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:67
+msgid ""
+"This class extends the :class:`.SphinxRole` class. The class contains a "
+"``run`` method, which is a requirement for every role. It contains the main "
+"logic of the role and it returns a tuple containing:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:73
+msgid "a list of inline-level docutils nodes to be processed by Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:74
+msgid "an (optional) list of system message nodes"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:77
+msgid "The directive class"
+msgstr "指令类"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:79
+msgid "Our new directive is declared in the ``HelloDirective`` class."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:86
+msgid ""
+"This class extends the :class:`.SphinxDirective` class. The class contains a"
+" ``run`` method, which is a requirement for every directive. It contains the"
+" main logic of the directive and it returns a list of block-level docutils "
+"nodes to be processed by Sphinx. It also contains a ``required_arguments`` "
+"attribute, which tells Sphinx how many arguments are required for the "
+"directive."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:95
+msgid "What are docutils nodes?"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:97
+msgid ""
+"When Sphinx parses a document, it creates an \"Abstract Syntax Tree\" (AST) "
+"of nodes that represent the content of the document in a structured way, "
+"that is generally independent of any one input (rST, MyST, etc) or output "
+"(HTML, LaTeX, etc) format. It is a tree because each node can have children "
+"nodes, and so on:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:111
+msgid ""
+"The docutils_ package provides many `built-in nodes <docutils nodes_>`_, to "
+"represent different types of content such as text, paragraphs, references, "
+"tables, etc."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:115
+msgid ""
+"Each node type generally only accepts a specific set of direct child nodes, "
+"for example the ``document`` node should only contain \"block-level\" nodes,"
+" such as ``paragraph``, ``section``, ``table``, etc, whilst the "
+"``paragraph`` node should only contain \"inline-level\" nodes, such as "
+"``text``, ``emphasis``, ``strong``, etc."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:123
+msgid ""
+"The docutils documentation on `creating directives <docutils directives_>`_,"
+" and `creating roles <docutils roles_>`_."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:128
+msgid "The ``setup`` function"
+msgstr "setup 功能"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:130
+msgid ""
+"This function is a requirement. We use it to plug our new directive into "
+"Sphinx."
+msgstr "此功能是必需的。 我们使用它将我们的新指令插入 Sphinx。"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:137
+msgid ""
+"The simplest thing you can do is to call the :meth:`.Sphinx.add_role` and "
+":meth:`.Sphinx.add_directive` methods, which is what we've done here. For "
+"this particular call, the first argument is the name of the role/directive "
+"itself as used in a reST file. In this case, we would use ``hello``. For "
+"example:"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:152
+msgid ""
+"We also return the :ref:`extension metadata <ext-metadata>` that indicates "
+"the version of our extension, along with the fact that it is safe to use the"
+" extension for both parallel reading and writing."
+msgstr "我们还返回了扩展元数据<ext-metadata>，它指示扩展的版本，以及可以安全地将扩展用于并行读取和写入的事实。"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:157
+msgid "Using the extension"
+msgstr "使用扩展"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:159
+msgid ""
+"The extension has to be declared in your :file:`conf.py` file to make Sphinx"
+" aware of it. There are two steps necessary here:"
+msgstr "该扩展名必须在您的：file：`conf.py`文件中声明，以使 Sphinx 意识到这一点。 这里需要两个步骤："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:162
+msgid ""
+"Add the :file:`_ext` directory to the `Python path`_ using "
+"``sys.path.append``. This should be placed at the top of the file."
+msgstr "使用sys.path.append将`_ext`目录将新增到 Python 路径_中。 这应该放在文件的顶部。"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:165
+msgid ""
+"Update or create the :confval:`extensions` list and add the extension file "
+"name to the list"
+msgstr "更新或创建扩展名列表，并将扩展名添加到列表中"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:168
+msgid "For example:"
+msgstr "例如："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:181
+msgid ""
+"Because we haven't installed our extension as a `Python package`_, we need "
+"to modify the `Python path`_ so Sphinx can find our extension. This is why "
+"we need the call to ``sys.path.append``."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:185
+msgid "You can now use the extension in a file. For example:"
+msgstr "现在，您可以在文件中使用扩展名。 例如："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:195
+msgid "The sample above would generate:"
+msgstr "上面的示例将生成："
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:207
+msgid "Further reading"
+msgstr "延伸阅读"
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:209
+msgid ""
+"This is the very basic principle of an extension that creates a new role and"
+" directive."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:212
+msgid "For a more advanced example, refer to :ref:`tutorial-extend-build`."
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/extending_syntax.rst:214
+msgid ""
+"If you wish to share your extension across multiple projects or with others,"
+" check out the :ref:`third-party-extensions` section."
+msgstr ""

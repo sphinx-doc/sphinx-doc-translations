@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 00:37+0000\n"
+"POT-Creation-Date: 2024-06-28 00:41+0000\n"
 "PO-Revision-Date: 2021-03-10 00:20+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2021\n"
 "Language-Team: Korean (https://app.transifex.com/sphinx-doc/teams/15434/ko/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:4
-msgid "Developing autodoc extension for IntEnum"
+msgid "Developing autodoc extensions"
 msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:6
@@ -73,25 +73,25 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:30
 msgid ""
-"We need the same setup as in :doc:`the previous extensions <todo>`. This "
-"time, we will be putting out extension in a file called "
+"We need the same setup as in :ref:`the previous extensions <tutorial-extend-"
+"build>`. This time, we will be putting out extension in a file called "
 ":file:`autodoc_intenum.py`. The :file:`my_enums.py` will contain the sample "
 "enums we will document."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:34
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:36
 msgid "Here is an example of the folder structure you might obtain:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:47
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:49
 msgid "Writing the extension"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:49
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:51
 msgid "Start with ``setup`` function for the extension."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:57
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:59
 msgid ""
 "The :meth:`~sphinx.application.Sphinx.setup_extension` method will pull the "
 "autodoc extension because our new extension depends on autodoc. "
@@ -99,11 +99,11 @@ msgid ""
 "registers our new auto documenter class."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:62
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:64
 msgid "We want to import certain objects from the autodoc extension:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:70
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:72
 msgid ""
 "There are several different documenter classes such as ``MethodDocumenter`` "
 "or ``AttributeDocumenter`` available in the autodoc extension but our new "
@@ -111,108 +111,118 @@ msgid ""
 "by autodoc to document classes."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:75
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:77
 msgid "This is the definition of our new the auto-documenter class:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:83
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:85
 msgid "Important attributes of the new class:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:85
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:87
 msgid "**objtype**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:86
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:88
 msgid ""
 "This attribute determines the ``auto`` directive name. In this case the auto"
 " directive will be ``autointenum``."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:89
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:91
 msgid "**directivetype**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:90
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:92
 msgid ""
 "This attribute sets the generated directive name. In this example the "
 "generated directive will be ``.. :py:class::``."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:93
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:95
 msgid "**priority**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:94
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:96
 msgid ""
 "the larger the number the higher is the priority. We want our documenter be "
 "higher priority than the parent."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:97
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:99
 msgid "**option_spec**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:98
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:100
 msgid ""
 "option specifications. We copy the parent class options and add a new option"
 " *hex*."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:102
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:104
 msgid "Overridden members:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:104
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:106
 msgid "**can_document_member**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:105
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:107
 msgid ""
 "This member is important to override. It should return *True* when the "
 "passed object can be documented by this class."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:108
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:110
 msgid "**add_directive_header**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:109
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:111
 msgid ""
 "This method generates the directive header. We add **:final:** directive "
 "option. Remember to call **super** or no directive will be generated."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:113
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:115
 msgid "**add_content**"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:114
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:116
 msgid ""
 "This method generates the body of the class documentation. After calling the"
 " super method we generate lines for enum description."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:119
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:121
 msgid "Using the extension"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:121
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:123
 msgid "You can now use the new autodoc directive to document any ``IntEnum``."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:123
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:125
 msgid "For example, you have the following ``IntEnum``:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:125
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:127
 msgid "my_enums.py"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:136
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:138
 msgid "This will be the documentation file with auto-documentation directive:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:138
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:140
 msgid "index.rst"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:146
+msgid "Further reading"
+msgstr ""
+
+#: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:148
+msgid ""
+"If you wish to share your extension across multiple projects or with others,"
+" check out the :ref:`third-party-extensions` section."
 msgstr ""

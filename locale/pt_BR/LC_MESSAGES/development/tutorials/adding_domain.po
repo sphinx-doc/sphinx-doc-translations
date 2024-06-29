@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-28 00:40+0000\n"
+"POT-Creation-Date: 2024-06-29 00:40+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:4
 msgid "Adding a reference domain"
-msgstr ""
+msgstr "Adicionando um domínio de referência"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:6
 msgid ""
@@ -32,12 +32,17 @@ msgid ""
 "domains. Once complete, we will be able to use this extension to describe a "
 "recipe and reference that recipe from elsewhere in our documentation."
 msgstr ""
+"O objetivo deste tutorial é ilustrar papéis, diretivas e domínios. Depois de"
+" concluído, poderemos usar esta extensão para descrever uma receita e fazer "
+"referência a essa receita em outras partes de nossa documentação."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:12
 msgid ""
 "This tutorial is based on a guide first published on `opensource.com`_ and "
 "is provided here with the original author's permission."
 msgstr ""
+"Este tutorial é baseado em um guia publicado pela primeira vez em "
+"`opensource.com`_ e é fornecido aqui com a permissão do autor original."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:19
 msgid "Overview"
@@ -53,18 +58,25 @@ msgid ""
 "recipe steps, along with a ``:contains:`` option highlighting the main "
 "ingredients of the recipe."
 msgstr ""
+"Uma :term:`diretiva` ``recipe``, contendo algum conteúdo descrevendo as "
+"etapas da receita, junto com uma opção ``:contains:`` realçando os "
+"principais ingredientes da receita."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:27
 msgid ""
 "A ``ref`` :term:`role`, which provides a cross-reference to the recipe "
 "itself."
 msgstr ""
+"Um :term:`papel` ``ref``, que fornece uma referência cruzada para a própria "
+"receita."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:30
 msgid ""
 "A ``recipe`` :term:`domain`, which allows us to tie together the above role "
 "and domain, along with things like indices."
 msgstr ""
+"Um :term:`domínio` ``recipe``, que nos permite unir o papel e o domínio "
+"acima, junto com coisas como índices."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:33
 msgid "For that, we will need to add the following elements to Sphinx:"
@@ -72,17 +84,19 @@ msgstr "Para isso, precisaremos adicionar os seguintes elementos ao Sphinx:"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:35
 msgid "A new directive called ``recipe``"
-msgstr ""
+msgstr "Uma nova diretiva chamada ``recipe``"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:37
 msgid "New indexes to allow us to reference ingredient and recipes"
-msgstr ""
+msgstr "Novos índices para nos permitir referenciar ingredientes e receitas"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:39
 msgid ""
 "A new domain called ``recipe``, which will contain the ``recipe`` directive "
 "and ``ref`` role"
 msgstr ""
+"Um novo domínio chamado ``recipe``, que conterá a diretiva ``recipe`` e o "
+"papel ``ref``"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:44
 msgid "Prerequisites"
@@ -94,6 +108,9 @@ msgid ""
 "build>`. This time, we will be putting out extension in a file called "
 ":file:`recipe.py`."
 msgstr ""
+"Precisamos da mesma configuração que em :ref:`as extensões anteriores "
+"<tutorial-extend-build>`. Desta vez, colocaremos a extensão em um arquivo "
+"chamado :file:`recipe.py`."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:51
 msgid "Here is an example of the folder structure you might obtain:"
@@ -108,12 +125,16 @@ msgid ""
 "Open :file:`recipe.py` and paste the following code in it, all of which we "
 "will explain in detail shortly:"
 msgstr ""
+"Abra :file:`recipe.py` e cole o seguinte código nele, que explicaremos em "
+"detalhes em breve:"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:72
 msgid ""
 "Let's look at each piece of this extension step-by-step to explain what's "
 "going on."
 msgstr ""
+"Vejamos cada parte desta extensão passo a passo para explicar o que está "
+"acontecendo."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:76
 msgid "The directive class"
@@ -121,7 +142,7 @@ msgstr "A classe da diretiva"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:77
 msgid "The first thing to examine is the ``RecipeDirective`` directive:"
-msgstr ""
+msgstr "A primeira coisa a examinar é a diretiva ``RecipeDirective``:"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:84
 msgid ""
@@ -137,6 +158,17 @@ msgid ""
 "``add_target_and_index`` adds a target (to link to) and an entry to the "
 "index for this node."
 msgstr ""
+"Ao contrário de :ref:`tutorial-extending-syntax` e :ref:`tutorial-extend-"
+"build`, esta diretiva não deriva de :class:`docutils.parsers.rst.Directive` "
+"e não define um método ``run``. Em vez disso, ela deriva de "
+":class:`sphinx.directives.ObjectDescription` e define os métodos "
+"``handle_signature`` e ``add_target_and_index``. Isso ocorre porque "
+"``ObjectDescription`` é uma diretiva de propósito especial que se destina a "
+"descrever coisas como classes, funções ou, no nosso caso, receitas. Mais "
+"especificamente, ``handle_signature`` implementa a análise da assinatura da "
+"diretiva e passa o nome e tipo do objeto para sua superclasse, enquanto "
+"``add_target_and_index`` adiciona um alvo (para vincular) e uma entrada ao "
+"índice para este nó."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:96
 msgid ""
@@ -146,10 +178,15 @@ msgid ""
 "this directive takes a single argument, the recipe name, and an option, "
 "``contains``, in addition to the nested reStructuredText in the body."
 msgstr ""
+"Vemos também que esta diretiva define ``has_content``, "
+"``required_arguments`` e ``option_spec``. Ao contrário da diretiva "
+"``TodoDirective`` adicionada no :ref:`tutorial anterior <tutorial-extend-"
+"build>`, esta diretiva leva um único argumento, o nome da receita, e uma "
+"opção, ``contains``, além do reStructuredText aninhado no corpo."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:104
 msgid "The index classes"
-msgstr ""
+msgstr "As classes de índices"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:107
 msgid "Todo"
@@ -157,7 +194,7 @@ msgstr "Por fazer"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:107
 msgid "Add brief overview of indices"
-msgstr ""
+msgstr "Adicionar uma breve visão geral sobre índices"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:119
 msgid ""
@@ -167,6 +204,11 @@ msgid ""
 "only one entry. Extending it to cover more object types is not yet part of "
 "the code."
 msgstr ""
+"Ambos ``IngredientIndex`` e ``RecipeIndex`` são derivados de :class:`Index`."
+" Eles implementam lógica personalizada para gerar uma tupla de valores que "
+"definem o índice. Observe que ``RecipeIndex`` é um índice simples que possui"
+" apenas uma entrada. Estendê-lo para cobrir mais tipos de objetos ainda não "
+"faz parte do código."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:124
 msgid ""
@@ -192,10 +234,14 @@ msgid ""
 "``RecipeIndex`` can be referenced with ``:ref:`recipe-recipe``` and "
 "``IngredientIndex`` can be referenced with ``:ref:`recipe-ingredient```."
 msgstr ""
+"Essas páginas de índice podem ser referenciadas com o papel :rst:role:`ref` "
+"combinando o nome de domínio e o valor do índice ``name``. Por exemplo, "
+"``RecipeIndex`` pode ser referenciado com ``:ref:`recipe-recipe``` e "
+"``IngredientIndex`` pode ser referenciado com ``:ref:`recipe-ingredient```."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:137
 msgid "The domain"
-msgstr ""
+msgstr "O domínio"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:138
 msgid ""
@@ -203,6 +249,8 @@ msgid ""
 "directives, and indices, among other things. Let's look at the domain we're "
 "creating here."
 msgstr ""
+"Um domínio do Sphinx é um contêiner especializado que une papéis, diretivas "
+"e índices, entre outras coisas. Vejamos o domínio que estamos criando aqui."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:147
 msgid ""
@@ -217,6 +265,18 @@ msgid ""
 "and its target name. We'll use ``target`` to resolve our destination from "
 "our domain's ``recipes`` because we currently have only one type of node."
 msgstr ""
+"Há algumas coisas interessantes a serem observadas sobre este domínio de "
+"``recipe`` e sobre os domínios em geral. Primeiramente, nós registramos "
+"nossas diretivas, papéis e índices aqui, através dos atributos "
+"``directives``, ``roles`` e ``indices``, ao invés de através de chamadas "
+"posteriores em ``setup``. Também podemos notar que não estamos realmente "
+"definindo um papel personalizado e, em vez disso, estamos reutilizando o "
+"papel :class:`sphinx.roles.XRefRole` e definindo o método "
+":class:`sphinx.domains.Domain.resolve_xref`. Este método recebe dois "
+"argumentos, ``typ`` e ``target``, que se referem ao tipo de referência "
+"cruzada e seu nome de alvo. Usaremos ``target`` para resolver nosso alvo a "
+"partir de ``recipes`` de nosso domínio porque atualmente temos apenas um "
+"tipo de nó."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:158
 msgid ""
@@ -235,6 +295,21 @@ msgid ""
 "canonical name and central place for our objects is a huge advantage. Both "
 "our indices and our cross-referencing code use this feature."
 msgstr ""
+"Seguindo em frente, podemos ver que definimos ``initial_data``. Os valores "
+"definidos em ``initial_data`` serão copiados para "
+"``env.domaindata[domain_name]`` como os dados iniciais do domínio, e as "
+"instâncias do domínio podem acessá-los via ``self.data``. Vemos que "
+"definimos dois itens em ``initial_data``: ``recipes`` e "
+"``recipe_ingredients``. Cada um contém uma lista de todos os objetos "
+"definidos (ou seja, todas as receitas) e um hash que mapeia o nome de um "
+"ingrediente canônico para a lista de objetos. A forma como nomeamos objetos "
+"é comum em nossa extensão e é definida no método "
+"``get_full_qualified_name``. Para cada objeto criado, o nome canônico é "
+"``recipe.<recipename>``, onde ``<recipename>`` é o nome que o redator da "
+"documentação dá ao objeto (uma receita). Isso permite que a extensão use "
+"diferentes tipos de objetos que compartilham o mesmo nome. Ter um nome "
+"canônico e um local central para nossos objetos é uma grande vantagem. Tanto"
+" nossos índices quanto nosso código de referência cruzada usam esse recurso."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:173
 msgid "The ``setup`` function"
@@ -246,6 +321,9 @@ msgid ""
 "requirement and is used to hook the various parts of our extension into "
 "Sphinx. Let's look at the ``setup`` function for this extension."
 msgstr ""
+":ref:`Como sempre <tutorial-extend-build>`, a função ``setup`` é um "
+"requisito e é usada para conectar as várias partes de nossa extensão ao "
+"Sphinx. Vejamos a função ``setup`` para esta extensão."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:186
 msgid ""
@@ -256,6 +334,13 @@ msgid ""
 " This is because we had already registered our directives, roles and indexes"
 " as part of the directive itself."
 msgstr ""
+"Isso parece um pouco diferente do que estamos acostumados a ver. Não há "
+"chamadas para :meth:`~Sphinx.add_directive` ou mesmo "
+":meth:`~Sphinx.add_role`. Em vez disso, temos uma única chamada para "
+":meth:`~Sphinx.add_domain` seguida por alguma inicialização do :doc:`domínio"
+" padrão </usage/domains/standard>`. Isso ocorre porque já havíamos "
+"registrado nossas diretivas, papéis e índices como parte da própria "
+"diretiva."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:195
 msgid "Using the extension"
@@ -271,7 +356,7 @@ msgstr "index.rst"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:212
 msgid "tomato-soup.rst"
-msgstr ""
+msgstr "tomato-soup.rst"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:223
 msgid ""
@@ -279,6 +364,9 @@ msgid ""
 "cross-reference the recipe actually defined elsewhere (using the "
 "``:recipe:recipe:`` directive)."
 msgstr ""
+"As coisas importantes a serem observadas são o uso do papel ``:recipe:ref:``"
+" para fazer referência cruzada da receita realmente definida em outro lugar "
+"(usando a diretiva ``:recipe:recipe:``)."
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:229
 msgid "Further reading"
@@ -297,3 +385,5 @@ msgid ""
 "If you wish to share your extension across multiple projects or with others,"
 " check out the :ref:`third-party-extensions` section."
 msgstr ""
+"Se você deseja compartilhar sua extensão entre vários projetos ou com outras"
+" pessoas, confira a seção :ref:`third-party-extensions`."

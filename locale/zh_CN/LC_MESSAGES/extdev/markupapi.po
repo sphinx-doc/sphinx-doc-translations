@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 06:45+0000\n"
+"POT-Creation-Date: 2024-07-04 00:41+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -28,19 +28,57 @@ msgstr "Docutils标记接口"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:4
 msgid ""
-"This section describes the API for adding ReST markup elements (roles and "
-"directives)."
-msgstr "本节介绍用于添加ReST标记元素（角色和指令）的接口。"
+"This section describes the API for adding reStructuredText markup elements "
+"(roles and directives)."
+msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:8
+#: ../../sphinx/doc/extdev/markupapi.rst:9
 msgid "Roles"
 msgstr "角色"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:12
+#: ../../sphinx/doc/extdev/markupapi.rst:11
+msgid ""
+"Roles follow the interface described below. They have to be registered by an"
+" extension using :meth:`.Sphinx.add_role` or "
+":meth:`.Sphinx.add_role_to_domain`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:27
+msgid ""
+"The *options* and *content* parameters are only used for custom roles "
+"created via the :dudir:`role` directive. The return value is a tuple of two "
+"lists, the first containing the text nodes and elements from the role, and "
+"the second containing any system messages generated. For more information, "
+"see the `custom role overview`_ from Docutils."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:38
+msgid "Creating custom roles"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:40
+msgid ""
+"Sphinx provides two base classes for creating custom roles, "
+":class:`~sphinx.util.docutils.SphinxRole` and "
+":class:`~sphinx.util.docutils.ReferenceRole`."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:43
+msgid ""
+"These provide a class-based interface for creating roles, where the main "
+"logic must be implemented in your ``run()`` method. The classes provide a "
+"number of useful methods and attributes, such as ``self.text``, "
+"``self.config``, and ``self.env``. The ``ReferenceRole`` class implements "
+"Sphinx's ``title <target>`` logic, exposing ``self.target`` and "
+"``self.title`` attributes. This is useful for creating cross-reference "
+"roles."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:53
 msgid "Directives"
 msgstr "指令"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:14
+#: ../../sphinx/doc/extdev/markupapi.rst:55
 msgid ""
 "Directives are handled by classes derived from "
 "``docutils.parsers.rst.Directive``.  They have to be registered by an "
@@ -49,7 +87,7 @@ msgid ""
 msgstr ""
 "指令由派生自``docutils.parsers.rst。指令``。它们必须通过使用：meth:`的扩展进行注册。Sphinx.add_指令`或者：冰毒。Sphinx.add_指令_到\\u域`."
 
-#: ../../sphinx/doc/extdev/markupapi.rst:22
+#: ../../sphinx/doc/extdev/markupapi.rst:63
 msgid ""
 "The markup syntax of the new directive is determined by the follow five "
 "class attributes:"
@@ -71,7 +109,7 @@ msgstr "最后一个参数可以包含空格吗？"
 msgid "Mapping of option names to validator functions."
 msgstr "选项名到验证器函数的映射。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:30
+#: ../../sphinx/doc/extdev/markupapi.rst:71
 msgid ""
 "Option validator functions take a single parameter, the option argument (or "
 "``None`` if not given), and should validate it or convert it to the proper "
@@ -79,7 +117,7 @@ msgid ""
 msgstr ""
 "选项验证器函数接受一个参数，即Option参数（如果未给定，则为“None”），并应验证它或将其转换为正确的形式。它们发出：exc:`ValueError`或：exc:`TypeError`来表示失败。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:35
+#: ../../sphinx/doc/extdev/markupapi.rst:76
 msgid ""
 "There are several predefined and possibly useful validators in the "
 ":mod:`docutils.parsers.rst.directives` module."
@@ -89,139 +127,163 @@ msgstr "在：mod:mod:`docutils.parsers.rst.directives`模块。"
 msgid "May the directive have content?"
 msgstr "指令是否有内容？"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:40
+#: ../../sphinx/doc/extdev/markupapi.rst:81
 msgid "New directives must implement the :meth:`run` method:"
 msgstr "新指令必须实现：meth:`run`方法："
 
-#: ../../sphinx/doc/extdev/markupapi.rst:44
+#: ../../sphinx/doc/extdev/markupapi.rst:85
 msgid ""
 "This method must process the directive arguments, options and content, and "
 "return a list of Docutils/Sphinx nodes that will be inserted into the "
 "document tree at the point where the directive was encountered."
 msgstr "此方法必须处理指令参数、选项和内容，并返回Docutils/Sphinx节点列表，这些节点将在遇到指令的位置插入到文档树中。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:48
+#: ../../sphinx/doc/extdev/markupapi.rst:89
 msgid "Instance attributes that are always set on the directive are:"
 msgstr "始终在指令上设置的实例属性包括："
 
-#: ../../sphinx/doc/extdev/markupapi.rst:52
+#: ../../sphinx/doc/extdev/markupapi.rst:93
 msgid ""
 "The directive name (useful when registering the same directive class under "
 "multiple names)."
 msgstr "指令名（在多个名称下注册同一个指令类时很有用）。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:57
+#: ../../sphinx/doc/extdev/markupapi.rst:98
 msgid "The arguments given to the directive, as a list."
 msgstr "以列表形式提供给指令的参数。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:61
+#: ../../sphinx/doc/extdev/markupapi.rst:102
 msgid ""
 "The options given to the directive, as a dictionary mapping option names to "
 "validated/converted values."
 msgstr "给指令的选项，作为将选项名称映射到已验证/转换的值的字典。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:66
+#: ../../sphinx/doc/extdev/markupapi.rst:107
 msgid "The directive content, if given, as a :class:`!ViewList`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:70
+#: ../../sphinx/doc/extdev/markupapi.rst:111
 msgid ""
 "The absolute line number on which the directive appeared.  This is not "
 "always a useful value; use :attr:`srcline` instead."
 msgstr "出现指令的绝对行号。这并不总是有用的值；请改用：attr:`srcline'。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:75
+#: ../../sphinx/doc/extdev/markupapi.rst:116
 msgid ""
 "Internal offset of the directive content.  Used when calling "
 "``nested_parse`` (see below)."
 msgstr "指令内容的内部偏移量。调用“nested_parse”时使用（请参见下文）。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:80
+#: ../../sphinx/doc/extdev/markupapi.rst:121
 msgid "The string containing the entire directive."
 msgstr "包含整个指令的字符串。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:85
+#: ../../sphinx/doc/extdev/markupapi.rst:126
 msgid ""
 "The state and state machine which controls the parsing.  Used for "
 "``nested_parse``."
 msgstr "控制解析的状态和状态机。用于“嵌套”分析。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:90
-msgid "ViewLists"
-msgstr "查看列表"
+#: ../../sphinx/doc/extdev/markupapi.rst:131
+msgid "`Creating directives`_ HOWTO of the Docutils documentation"
+msgstr "`创建Docutils文档的“HOWTO”指令"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:92
-msgid ""
-"Docutils represents document source lines in a class "
-"``docutils.statemachine.ViewList``.  This is a list with extended "
-"functionality -- for one, slicing creates views of the original list, and "
-"also the list contains information about the source line numbers."
+#: ../../sphinx/doc/extdev/markupapi.rst:139
+msgid "Parsing directive content as reStructuredText"
 msgstr ""
-"Docutils表示类中的文档源行``docutils.statemachine.ViewList``. "
-"这是一个具有扩展功能的列表——首先，切片创建原始列表的视图，并且该列表还包含有关源行号的信息。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:97
+#: ../../sphinx/doc/extdev/markupapi.rst:141
 msgid ""
-"The :attr:`Directive.content` attribute is a ViewList.  If you generate "
-"content to be parsed as ReST, you have to create a ViewList yourself.  "
-"Important for content generation are the following points:"
+"Many directives will contain more markup that must be parsed. To do this, "
+"use one of the following APIs from the :meth:`~Directive.run` method:"
 msgstr ""
-"属性：`Directive.content`属性是一个ViewList。如果生成要解析为ReST的内容，则必须自己创建一个ViewList。以下几点对于内容生成很重要："
 
-#: ../../sphinx/doc/extdev/markupapi.rst:101
+#: ../../sphinx/doc/extdev/markupapi.rst:144
+msgid ":py:meth:`.SphinxDirective.parse_content_to_nodes()`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:145
+msgid ":py:meth:`.SphinxDirective.parse_text_to_nodes()`"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:147
 msgid ""
-"The constructor takes a list of strings (lines) and a source (document) "
-"name."
-msgstr "构造函数接受字符串（行）和源（文档）名称的列表。"
+"The first method parses all the directive's content as markup, whilst the "
+"second only parses the given *text* string. Both methods return the parsed "
+"Docutils nodes in a list."
+msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:103
-msgid "The ``.append()`` method takes a line and a source name as well."
-msgstr "`.append（）``方法也接受一行和一个源名称。"
+#: ../../sphinx/doc/extdev/markupapi.rst:151
+msgid "The methods are used as follows:"
+msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:107
-msgid "Parsing directive content as ReST"
-msgstr "将指令内容解析为ReST"
-
-#: ../../sphinx/doc/extdev/markupapi.rst:109
+#: ../../sphinx/doc/extdev/markupapi.rst:164
 msgid ""
-"Many directives will contain more markup that must be parsed.  To do this, "
-"use one of the following APIs from the :meth:`Directive.run` method:"
-msgstr "许多指令将包含更多必须解析的标记。为此，请使用以下API中的一个：meth：`指令.运行`方法："
+"The above utility methods were added in Sphinx 7.4. Prior to Sphinx 7.4, the"
+" following methods should be used to parse content:"
+msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:112
+#: ../../sphinx/doc/extdev/markupapi.rst:167
 msgid "``self.state.nested_parse``"
 msgstr "``self.state.nested_parse``"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:113
+#: ../../sphinx/doc/extdev/markupapi.rst:168
 msgid ""
 ":func:`sphinx.util.nodes.nested_parse_with_titles` -- this allows titles in "
 "the parsed content."
 msgstr "：函数：`sphinx.util.nodes.nested_parse_with_titles`—这允许解析内容中包含标题。"
 
-#: ../../sphinx/doc/extdev/markupapi.rst:116
+#: ../../sphinx/doc/extdev/markupapi.rst:182
 msgid ""
-"Both APIs parse the content into a given node. They are used like this::"
-msgstr "这两个接口都将内容解析为给定的节点。它们是这样使用的："
-
-#: ../../sphinx/doc/extdev/markupapi.rst:126
-msgid ""
-"``sphinx.util.docutils.switch_source_input()`` allows to change a target "
-"file during nested_parse.  It is useful to mixed contents. For example, "
-"``sphinx.ext.autodoc`` uses it to parse docstrings::"
+"To parse inline markup, use "
+":py:meth:`~sphinx.util.docutils.SphinxDirective.parse_inline()`. This must "
+"only be used for text which is a single line or paragraph, and does not "
+"contain any structural elements (headings, transitions, directives, etc)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:141
+#: ../../sphinx/doc/extdev/markupapi.rst:190
+msgid ""
+"``sphinx.util.docutils.switch_source_input()`` allows changing the source "
+"(input) file during parsing content in a directive. It is useful to parse "
+"mixed content, such as in ``sphinx.ext.autodoc``, where it is used to parse "
+"docstrings."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:208
 msgid ""
 "Until Sphinx 1.6, ``sphinx.ext.autodoc.AutodocReporter`` was used for this "
 "purpose.  It is replaced by ``switch_source_input()``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:144
-msgid ""
-"If you don't need the wrapping node, you can use any concrete node type and "
-"return ``node.children`` from the Directive."
-msgstr "如果不需要包装节点，可以使用任何具体的节点类型并返回``节点.子项``从指令中。"
+#: ../../sphinx/doc/extdev/markupapi.rst:215
+msgid "ViewLists and StringLists"
+msgstr ""
 
-#: ../../sphinx/doc/extdev/markupapi.rst:150
-msgid "`Creating directives`_ HOWTO of the Docutils documentation"
-msgstr "`创建Docutils文档的“HOWTO”指令"
+#: ../../sphinx/doc/extdev/markupapi.rst:217
+msgid ""
+"Docutils represents document source lines in a ``StringList`` class, which "
+"inherits from ``ViewList``, both in the ``docutils.statemachine`` module. "
+"This is a list with extended functionality, including that slicing creates "
+"views of the original list and that the list contains information about "
+"source line numbers."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:223
+msgid ""
+"The :attr:`Directive.content` attribute is a ``StringList``. If you generate"
+" content to be parsed as reStructuredText, you have to create a "
+"``StringList`` for the Docutils APIs. The utility functions provided by "
+"Sphinx handle this automatically. Important for content generation are the "
+"following points:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:229
+msgid ""
+"The ``ViewList`` constructor takes a list of strings (lines) and a source "
+"(document) name."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/markupapi.rst:231
+msgid ""
+"The ``ViewList.append()`` method takes a line and a source name as well."
+msgstr ""

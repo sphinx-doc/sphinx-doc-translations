@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-29 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:41+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:4
 msgid "Extending syntax with roles and directives"
-msgstr ""
+msgstr "Estendendo a sintaxe com papéis e diretivas"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:7
 msgid "Overview"
@@ -36,42 +36,54 @@ msgid ""
 " **directives** - for block-level elements - and **roles** - for inline "
 "elements."
 msgstr ""
+"A sintaxe de reStructuredText e MyST pode ser estendida criando novas "
+"**diretivas** - para elementos em nível de bloco - e **papéis** - para "
+"elementos embutidos."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:13
 msgid "In this tutorial we shall extend Sphinx to add:"
-msgstr ""
+msgstr "Neste tutorial vamos estender o Sphinx para adicionar:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:15
 msgid "A ``hello`` role, that will simply output the text ``Hello {text}!``."
 msgstr ""
+"Um papel ``hello``, que simplesmente produzirá o texto ``Hello {text}!``."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:16
 msgid ""
 "A ``hello`` directive, that will simply output the text ``Hello {text}!``, "
 "as a paragraph."
 msgstr ""
+"Uma diretiva ``hello``, que simplesmente produzirá o texto ``Hello "
+"{text}!``, como um parágrafo."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:19
 msgid ""
 "For this extension, you will need some basic understanding of Python, and we"
 " shall also introduce aspects of the docutils_ API."
 msgstr ""
+"Para esta extensão, você precisará de algum conhecimento básico de Python e "
+"também apresentaremos aspectos da API do docutils_."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:23
 msgid "Setting up the project"
-msgstr ""
+msgstr "Configurando o projeto"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:25
 msgid ""
 "You can either use an existing Sphinx project or create a new one using "
 ":program:`sphinx-quickstart`."
 msgstr ""
+"Você pode usar um projeto Sphinx existente ou criar um novo usando "
+":program:`sphinx-quickstart`."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:28
 msgid ""
 "With this we will add the extension to the project, within the "
 ":file:`source` folder:"
 msgstr ""
+"Com isso vamos adicionar a extensão ao projeto, dentro da pasta "
+":file:`source`:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:31
 msgid "Create an :file:`_ext` folder in :file:`source`"
@@ -99,15 +111,15 @@ msgstr "Abra :file:`helloworld.py` e cole o seguinte código nele:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:55
 msgid "Some essential things are happening in this example:"
-msgstr ""
+msgstr "Algumas coisas essenciais estão acontecendo neste exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:58
 msgid "The role class"
-msgstr ""
+msgstr "A classe do papel"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:60
 msgid "Our new role is declared in the ``HelloRole`` class."
-msgstr ""
+msgstr "Nosso novo papel é declarado na classe ``HelloRole``."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:67
 msgid ""
@@ -115,14 +127,19 @@ msgid ""
 "``run`` method, which is a requirement for every role. It contains the main "
 "logic of the role and it returns a tuple containing:"
 msgstr ""
+"Esta classe estende a classe :class:`.SphinxRole`. A classe contém um método"
+" ``run``, que é um requisito para cada papel. Contém a lógica principal do "
+"papel e retorna uma tupla contendo:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:73
 msgid "a list of inline-level docutils nodes to be processed by Sphinx."
 msgstr ""
+"uma lista de nós docutils de nível em linha a serem processados ​​pelo "
+"Sphinx."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:74
 msgid "an (optional) list of system message nodes"
-msgstr ""
+msgstr "uma lista (opcional) de nós de mensagens do sistema"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:77
 msgid "The directive class"
@@ -130,7 +147,7 @@ msgstr "A classe da diretiva"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:79
 msgid "Our new directive is declared in the ``HelloDirective`` class."
-msgstr ""
+msgstr "Nossa nova diretiva é declarada na classe ``HelloDirective``."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:86
 msgid ""
@@ -141,10 +158,16 @@ msgid ""
 "attribute, which tells Sphinx how many arguments are required for the "
 "directive."
 msgstr ""
+"Esta classe estende a classe :class:`.SphinxDirective`. A classe contém um "
+"método ``run``, que é um requisito para toda diretiva. Ele contém a lógica "
+"principal da diretiva e retorna uma lista de nós docutils em nível de bloco "
+"a serem processados ​​pelo Sphinx. Ele também contém um atributo "
+"``required_arguments``, que informa ao Sphinx quantos argumentos são "
+"necessários para a diretiva."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:95
 msgid "What are docutils nodes?"
-msgstr ""
+msgstr "O que são nós de docutils?"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:97
 msgid ""
@@ -154,6 +177,11 @@ msgid ""
 "(HTML, LaTeX, etc) format. It is a tree because each node can have children "
 "nodes, and so on:"
 msgstr ""
+"Quando o Sphinx analisa um documento, ele cria uma \"Árvore Sintática "
+"Abstrata\" (AST) de nós que representam o conteúdo do documento de uma forma"
+" estruturada, que geralmente é independente de qualquer entrada (rST, MyST, "
+"etc) ou saída (HTML , LaTeX, etc.). É uma árvore porque cada nó pode ter nós"
+" filhos e assim por diante:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:111
 msgid ""
@@ -161,6 +189,9 @@ msgid ""
 "represent different types of content such as text, paragraphs, references, "
 "tables, etc."
 msgstr ""
+"O pacote docutils_ fornece muitos `nós embutidos <docutils nodes_>`_, para "
+"representar diferentes tipos de conteúdo, como texto, parágrafos, "
+"referências, tabelas, etc."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:115
 msgid ""
@@ -170,12 +201,19 @@ msgid ""
 "``paragraph`` node should only contain \"inline-level\" nodes, such as "
 "``text``, ``emphasis``, ``strong``, etc."
 msgstr ""
+"Cada tipo de nó geralmente aceita apenas um conjunto específico de nós "
+"filhos diretos, por exemplo, o nó ``document`` deve conter apenas nós de "
+"\"nível de bloco\", como ``paragraph``, ``section``, ``table ``, etc, "
+"enquanto o nó ``paragraph`` deve conter apenas nós de \"nível em linha\", "
+"como ``text``, ``emphasis``, ``strong``, etc."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:123
 msgid ""
 "The docutils documentation on `creating directives <docutils directives_>`_,"
 " and `creating roles <docutils roles_>`_."
 msgstr ""
+"A documentação do docutils sobre a `criação de diretivas <docutils "
+"directives_>`_ e `criação de papéis <docutils roles_>`_."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:128
 msgid "The ``setup`` function"
@@ -197,6 +235,11 @@ msgid ""
 "itself as used in a reST file. In this case, we would use ``hello``. For "
 "example:"
 msgstr ""
+"A coisa mais simples que você pode fazer é chamar os métodos "
+":meth:`.Sphinx.add_role` e :meth:`.Sphinx.add_directive`, que é o que "
+"fizemos aqui. Para esta chamada específica, o primeiro argumento é o nome do"
+" próprio papel ou da própria diretiva usados em um arquivo reST. Neste caso,"
+" usaríamos ``hello``. Por exemplo:"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:152
 msgid ""
@@ -246,6 +289,9 @@ msgid ""
 "to modify the `Python path`_ so Sphinx can find our extension. This is why "
 "we need the call to ``sys.path.append``."
 msgstr ""
+"Por não termos instalado nossa extensão como um `pacote Python`_, precisamos"
+" modificar o `caminho Python`_ para que o Sphinx possa encontrar nossa "
+"extensão. É por isso que precisamos da chamada para ``sys.path.append``."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:185
 msgid "You can now use the extension in a file. For example:"
@@ -264,10 +310,12 @@ msgid ""
 "This is the very basic principle of an extension that creates a new role and"
 " directive."
 msgstr ""
+"Este é o princípio básico de uma extensão que cria um novo papel e uma nova "
+"diretiva."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:212
 msgid "For a more advanced example, refer to :ref:`tutorial-extend-build`."
-msgstr ""
+msgstr "Para um exemplo mais avançado, consulte :ref:`tutorial-extend-build`."
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:214
 msgid ""

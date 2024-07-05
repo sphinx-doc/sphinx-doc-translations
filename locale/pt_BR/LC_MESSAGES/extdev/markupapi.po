@@ -31,6 +31,8 @@ msgid ""
 "This section describes the API for adding reStructuredText markup elements "
 "(roles and directives)."
 msgstr ""
+"Esta seção descreve a API para adicionar elementos de marcação "
+"reStructuredText (papéis e diretivas)."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:9
 msgid "Roles"
@@ -42,6 +44,9 @@ msgid ""
 " extension using :meth:`.Sphinx.add_role` or "
 ":meth:`.Sphinx.add_role_to_domain`."
 msgstr ""
+"Os papéis seguem a interface descrita abaixo. Eles devem ser registrados por"
+" uma extensão usando :meth:`.Sphinx.add_role` ou "
+":meth:`.Sphinx.add_role_to_domain`."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:27
 msgid ""
@@ -51,10 +56,16 @@ msgid ""
 "the second containing any system messages generated. For more information, "
 "see the `custom role overview`_ from Docutils."
 msgstr ""
+"Os parâmetros *options* e *content* são usados ​​apenas para papéis "
+"personalizados criados através da diretiva :dudir:`role`. O valor de retorno"
+" é uma tupla de duas listas, a primeira contendo os nós de texto e os "
+"elementos do papel, e a segunda contendo quaisquer mensagens do sistema "
+"geradas. Para obter mais informações, consulte a `visão geral de papel "
+"personalizado`_ do Docutils."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:38
 msgid "Creating custom roles"
-msgstr ""
+msgstr "Criando papéis personalizados"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:40
 msgid ""
@@ -62,6 +73,9 @@ msgid ""
 ":class:`~sphinx.util.docutils.SphinxRole` and "
 ":class:`~sphinx.util.docutils.ReferenceRole`."
 msgstr ""
+"O Sphinx fornece duas classes base para a criação de papéis personalizados, "
+":class:`~sphinx.util.docutils.SphinxRole` e "
+":class:`~sphinx.util.docutils.ReferenceRole`."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:43
 msgid ""
@@ -73,6 +87,12 @@ msgid ""
 "``self.title`` attributes. This is useful for creating cross-reference "
 "roles."
 msgstr ""
+"Eles fornecem uma interface baseada em classes para criação de papéis, onde "
+"a lógica principal deve ser implementada em seu método ``run()``. As classes"
+" fornecem vários métodos e atributos úteis, como ``self.text``, "
+"``self.config`` e ``self.env``. A classe ``ReferenceRole`` implementa a "
+"lógica ``título <alvo>`` do Sphinx, expondo os atributos ``self.alvo`` e "
+"``self.título``. Isto é útil para criar papéis de referência cruzada."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:53
 msgid "Directives"
@@ -213,21 +233,23 @@ msgstr "HOWTO `Creating directives`_ da documentação do Docutils"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:139
 msgid "Parsing directive content as reStructuredText"
-msgstr ""
+msgstr "Analisando o conteúdo da diretiva como reStructuredText"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:141
 msgid ""
 "Many directives will contain more markup that must be parsed. To do this, "
 "use one of the following APIs from the :meth:`~Directive.run` method:"
 msgstr ""
+"Muitas diretivas conterão mais marcações que devem ser analisadas. Para "
+"fazer isso, use uma das seguintes APIs do método :meth:`~Directive.run`:"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:144
 msgid ":py:meth:`.SphinxDirective.parse_content_to_nodes()`"
-msgstr ""
+msgstr ":py:meth:`.SphinxDirective.parse_content_to_nodes()`"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:145
 msgid ":py:meth:`.SphinxDirective.parse_text_to_nodes()`"
-msgstr ""
+msgstr ":py:meth:`.SphinxDirective.parse_text_to_nodes()`"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:147
 msgid ""

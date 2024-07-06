@@ -257,16 +257,22 @@ msgid ""
 "second only parses the given *text* string. Both methods return the parsed "
 "Docutils nodes in a list."
 msgstr ""
+"O primeiro método analisa todo o conteúdo da diretiva como marcação, "
+"enquanto o segundo analisa apenas a string *text* fornecida. Ambos os "
+"métodos retornam os nós Docutils analisados ​​em uma lista."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:151
 msgid "The methods are used as follows:"
-msgstr ""
+msgstr "Os métodos são usados como demonstrado a seguir."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:164
 msgid ""
 "The above utility methods were added in Sphinx 7.4. Prior to Sphinx 7.4, the"
 " following methods should be used to parse content:"
 msgstr ""
+"Os métodos utilitários acima foram adicionados no Sphinx 7.4. Antes do "
+"Sphinx 7.4, os seguintes métodos deviam ser usados ​​para analisar o "
+"conteúdo:"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:167
 msgid "``self.state.nested_parse``"
@@ -287,6 +293,11 @@ msgid ""
 "only be used for text which is a single line or paragraph, and does not "
 "contain any structural elements (headings, transitions, directives, etc)."
 msgstr ""
+"Para analisar a marcação em linha, use "
+":py:meth:`~sphinx.util.docutils.SphinxDirective.parse_inline()`. Deve ser "
+"utilizado apenas para textos que sejam de uma única linha ou parágrafo e não"
+" contenham quaisquer elementos estruturais (títulos, transições, diretivas, "
+"etc.)."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:190
 msgid ""
@@ -295,6 +306,10 @@ msgid ""
 "mixed content, such as in ``sphinx.ext.autodoc``, where it is used to parse "
 "docstrings."
 msgstr ""
+"``sphinx.util.docutils.switch_source_input()`` permite alterar o arquivo "
+"fonte (entrada) durante a análise do conteúdo de uma diretiva. É útil "
+"analisar conteúdo misto, como em ``sphinx.ext.autodoc``, onde é usado para "
+"analisar docstrings."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:208
 msgid ""
@@ -306,7 +321,7 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/markupapi.rst:215
 msgid "ViewLists and StringLists"
-msgstr ""
+msgstr "ViewLists e StringLists"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:217
 msgid ""
@@ -316,6 +331,11 @@ msgid ""
 "views of the original list and that the list contains information about "
 "source line numbers."
 msgstr ""
+"Docutils representa as linhas fonte do documento em uma classe "
+"``StringList``, que herda de ``ViewList``, ambas no módulo "
+"``docutils.statemachine``. Esta é uma lista com funcionalidade estendida, "
+"incluindo que o fatiamento cria visualizações da lista original e que a "
+"lista contém informações sobre os números das linhas do código-fonte."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:223
 msgid ""
@@ -325,14 +345,22 @@ msgid ""
 "Sphinx handle this automatically. Important for content generation are the "
 "following points:"
 msgstr ""
+"O atributo :attr:`Directive.content` é um ``StringList``. Se você gerar "
+"conteúdo para ser analisado como reStructuredText, você terá que criar um "
+"``StringList`` para as APIs do Docutils. As funções utilitárias fornecidas "
+"pelo Sphinx tratam disso automaticamente. Importantes para a geração de "
+"conteúdo são os seguintes pontos:"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:229
 msgid ""
 "The ``ViewList`` constructor takes a list of strings (lines) and a source "
 "(document) name."
 msgstr ""
+"O construtor de ``ViewList`` recebe uma lista de strings (linhas) e um nome "
+"de origem (documento)."
 
 #: ../../sphinx/doc/extdev/markupapi.rst:231
 msgid ""
 "The ``ViewList.append()`` method takes a line and a source name as well."
 msgstr ""
+"O método ``ViewList.append()`` leva uma linha e um nome de origem também."

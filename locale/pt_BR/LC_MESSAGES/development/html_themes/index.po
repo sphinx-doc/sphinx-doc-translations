@@ -5,17 +5,17 @@
 # 
 # Translators:
 # gilberto dos santos alves <gsavix@gmail.com>, 2024
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2024
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 06:44+0000\n"
+"POT-Creation-Date: 2024-07-08 00:43+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
-"Last-Translator: Claudio Rogerio Carvalho Filho <excriptbrasil@gmail.com>, 2024\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,6 +64,8 @@ msgid ""
 "See :ref:`dev-extensions` for more information that may be helpful in "
 "developing themes."
 msgstr ""
+"Veja :ref:`dev-extensions` para mais informações que podem ser úteis no "
+"desenvolvimento de temas."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:30
 msgid "Creating themes"
@@ -81,6 +83,8 @@ msgstr ""
 msgid ""
 "Either a :file:`theme.toml` file (preferred) or a :file:`theme.conf` file."
 msgstr ""
+"Um arquivo :file:`theme.toml` (preferencial) ou um arquivo "
+":file:`theme.conf`."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:36
 msgid "HTML templates, if needed."
@@ -98,17 +102,19 @@ msgstr ""
 
 #: ../../sphinx/doc/development/html_themes/index.rst:41
 msgid "Theme configuration (``theme.toml``)"
-msgstr ""
+msgstr "Configuração do tema (``theme.toml``)"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:43
 msgid ""
 "The :file:`theme.toml` file is a TOML_ document, containing two tables: "
 "``[theme]`` and ``[options]``."
 msgstr ""
+"O arquivo :file:`theme.toml` é um documento TOML_, contendo duas tabelas: "
+"``[theme]`` e ``[options]``."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:46
 msgid "The ``[theme]`` table defines the theme's settings:"
-msgstr ""
+msgstr "A tabela ``[theme]`` define as configurações do tema:"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:48
 msgid ""
@@ -119,6 +125,12 @@ msgid ""
 "templates (for example, if ``\"basic\"`` is used as the base theme, most "
 "templates will already be defined)."
 msgstr ""
+"**inherit** (string): O nome do tema base do qual vai se herdar "
+"configurações, opções, modelos e arquivos estáticos. Todos os arquivos "
+"estáticos dos 'ancestrais' do tema serão usados. O tema utilizará todas as "
+"opções definidas nos temas herdados. Finalmente, os temas herdados serão "
+"usados ​​para localizar modelos ausentes (por exemplo, se ``\"basic\"`` for "
+"usado como tema base, a maioria dos modelos já estará definida)."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:56
 msgid ""
@@ -126,6 +138,9 @@ msgid ""
 "Inheritance is recursive, forming a chain of inherited themes (e.g. "
 "``default`` -> ``classic`` -> ``basic`` -> ``none``)."
 msgstr ""
+"Se definido como ``\"none\"``, o tema não herdará de nenhum outro tema. A "
+"herança é recursiva, formando uma cadeia de temas herdados (por exemplo, "
+"``default`` -> ``classic`` -> ``basic`` -> ``none``)."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:60
 msgid ""
@@ -133,6 +148,9 @@ msgid ""
 "included in generated HTML header. Setting the   :confval:`html_style` "
 "config value will override this setting."
 msgstr ""
+"**stylesheets** (lista de strings): Uma lista de nomes de arquivos CSS que "
+"serão incluídos no cabeçalho HTML gerado. Definir o valor de configuração "
+":confval:`html_style` substituirá esta configuração."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:64
 msgid ""
@@ -140,12 +158,18 @@ msgid ""
 "CSS or using a custom HTML template with appropriate ``<link "
 "rel=\"stylesheet\">`` tags."
 msgstr ""
+"Outros mecanismos para incluir múltiplas folhas de estilo incluem "
+"``@import`` em CSS ou usar um modelo HTML personalizado com tags ``<link "
+"rel=\"stylesheet\">`` apropriadas."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:67
 msgid ""
 "**sidebars** (list of strings): A list of sidebar templates. This can be "
 "overridden by the user via the :confval:`html_sidebars` config value."
 msgstr ""
+"**sidebars** (lista de strings): Uma lista de modelos de barra lateral. Isto"
+" pode ser substituído pelo usuário através do valor de configuração "
+":confval:`html_sidebars`."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:70
 msgid ""
@@ -155,12 +179,19 @@ msgid ""
 " when the CSS media query ``(prefers-color-scheme: dark)`` evaluates to "
 "true."
 msgstr ""
+"**pygments_style** (tabela): Uma tabela TOML que define os nomes dos estilos"
+" Pygments a serem usados ​​para realçar a sintaxe. A tabela possui duas "
+"chaves reconhecidas: ``default`` e ``dark``. O estilo definido na chave "
+"``dark`` será usado quando a media query CSS ``(prefers-color-scheme: "
+"dark)`` for avaliada como verdadeira."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:76
 msgid ""
 "``[theme.pygments_style.default]`` can be overridden by the user via the "
 ":confval:`pygments_style` config value."
 msgstr ""
+"``[theme.pygments_style.default]`` pode ser substituído pelo usuário através"
+" do valor de configuração :confval:`pygments_style`."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:79
 msgid ""
@@ -170,24 +201,31 @@ msgid ""
 ":confval:`html_theme_options` and are accessible from all templates as "
 "``theme_<name>``."
 msgstr ""
+"A tabela ``[options]`` define as opções para o tema. Está estruturado de "
+"forma que cada par de chave-valor corresponda a um nome de variável e ao "
+"valor padrão correspondente. Estas opções podem ser substituídas pelo "
+"usuário em :confval:`html_theme_options` e são acessíveis a partir de todos "
+"os modelos como ``theme_<nome>``."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:85
 msgid "``theme.toml`` support."
-msgstr ""
+msgstr "Suporte a ``theme.toml``."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:90
 msgid "Exemplar :file:`theme.toml` file:"
-msgstr ""
+msgstr "Exemplo de arquivo :file:`theme.toml`:"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:112
 msgid "Theme configuration (``theme.conf``)"
-msgstr ""
+msgstr "Configuração do tema (``theme.conf``)"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:114
 msgid ""
 "The :file:`theme.conf` file is in INI format [1]_ (readable by the standard "
 "Python :mod:`configparser` module) and has the following structure:"
 msgstr ""
+"O arquivo :file:`theme.conf` está no formato INI [1]_ (legível pelo módulo "
+"padrão Python :mod:`configparser`) e possui a seguinte estrutura:"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:128
 msgid ""
@@ -213,6 +251,12 @@ msgid ""
 "template that adds ``<link rel=\"stylesheet\">`` tags as necessary.  Setting"
 " the :confval:`html_style` config value will override this setting."
 msgstr ""
+"A configuração **stylesheet** fornece uma lista de nomes de arquivos CSS "
+"separados por vírgulas que serão referenciados no cabeçalho HTML. Você "
+"também pode usar a técnica CSS para incluir um do outro, ou usar um modelo "
+"HTML personalizado que adicione tags ``<link rel=\"stylesheet\">`` conforme "
+"necessário. Definir o valor de configuração :confval:`html_style` "
+"substituirá esta configuração."
 
 #: ../../sphinx/doc/development/html_themes/index.rst:141
 msgid ""

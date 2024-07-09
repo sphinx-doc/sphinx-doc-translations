@@ -932,7 +932,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:630
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:795
 msgid "Support automatic dedent."
-msgstr ""
+msgstr "Suporte automático a dedent."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:642
 msgid ""
@@ -941,6 +941,10 @@ msgid ""
 "using the ``literalinclude`` directive. [#]_ For example, to include the "
 "Python source file :file:`example.py`, use::"
 msgstr ""
+"Exibições mais longas de texto literal podem ser incluídas armazenando o "
+"texto de exemplo em um arquivo externo contendo apenas texto simples. O "
+"arquivo pode ser incluído usando a diretiva ``literalinclude``. [#]_ Por "
+"exemplo, para incluir o arquivo fonte Python :file:`example.py`, use::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:649
 msgid ""
@@ -948,6 +952,9 @@ msgid ""
 "it is absolute (starting with ``/``), it is relative to the top source "
 "directory."
 msgstr ""
+"O nome do arquivo geralmente é relativo ao caminho do arquivo atual. No "
+"entanto, se for absoluto (começando com ``/``), é relativo ao diretório "
+"fonte superior."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:655
 msgid ""
@@ -961,12 +968,23 @@ msgid ""
 " this can be provided with no argument to use the filename as the caption. "
 "Example with options::"
 msgstr ""
+"Assim como :rst:dir:`code-block`, a diretiva tem suporte à opção de "
+"sinalizador ``linenos`` para alternar números de linha, a opção ``lineno-"
+"start`` para selecionar o número da primeira linha, a opção ``enphasize- "
+"linhas`` para enfatizar linhas específicas, a opção ``name`` para fornecer "
+"um nome alvo implícito, a opção ``dedent`` para remover caracteres de "
+"indentação para o bloco de código, e uma opção ``idioma`` para selecionar um"
+" idioma diferente do idioma padrão do arquivo atual. Além disso, tem suporte"
+" à opção ``caption``; no entanto, isso pode ser fornecido sem nenhum "
+"argumento para usar o nome do arquivo como legenda. Exemplo com opções::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:670
 msgid ""
 "Tabs in the input are expanded if you give a ``tab-width`` option with the "
 "desired tab width."
 msgstr ""
+"As tabulações na entrada são expandidas se você fornecer uma opção ``tab-"
+"width`` com a largura desejada da tabulação."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:673
 msgid ""
@@ -974,6 +992,9 @@ msgid ""
 "If the file has a different encoding, you can specify it with the "
 "``encoding`` option::"
 msgstr ""
+"Os arquivos de inclusão são considerados codificados em "
+":confval:`source_encoding`. Se o arquivo tiver uma codificação diferente, "
+"você pode especificá-la com a opção ``encoding``::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:680
 msgid ""
@@ -981,22 +1002,29 @@ msgid ""
 "Python module, you can select a class, function or method to include using "
 "the ``pyobject`` option::"
 msgstr ""
+"A diretiva também tem suporte à inclusão apenas de partes do arquivo. Se for"
+" um módulo Python, você pode selecionar uma classe, função ou método para "
+"incluir usando a opção ``pyobject``::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:687
 msgid ""
 "This would only include the code lines belonging to the ``start()`` method "
 "in the ``Timer`` class within the file."
 msgstr ""
+"Isso incluiria apenas as linhas de código pertencentes ao método ``start()``"
+" na classe ``Timer`` dentro do arquivo."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:690
 msgid ""
 "Alternately, you can specify exactly which lines to include by giving a "
 "``lines`` option::"
 msgstr ""
+"Alternativamente, você pode especificar exatamente quais linhas incluir, "
+"dando uma opção ``lines``::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:696
 msgid "This includes the lines 1, 3, 5 to 10 and lines 20 to the last line."
-msgstr ""
+msgstr "Isso inclui as linhas 1, 3, 5 a 10 e as linhas 20 até a última linha."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:698
 msgid ""
@@ -1008,6 +1036,14 @@ msgid ""
 "string are included. The ``start-at`` and ``end-at`` options behave in a "
 "similar way, but the lines containing the matched string are included."
 msgstr ""
+"Outra forma de controlar qual parte do arquivo será incluída é usar as "
+"opções ``start-after`` e ``end-before`` (ou apenas uma delas). Se ``start-"
+"after`` for fornecido como uma opção de string, apenas as linhas que seguem "
+"a primeira linha contendo aquela string serão incluídas. Se ``end-before`` "
+"for fornecido como uma opção de string, apenas as linhas que precedem as "
+"primeiras linhas contendo aquela string serão incluídas. As opções ``start-"
+"at`` e ``end-at`` se comportam de maneira semelhante, mas as linhas contendo"
+" a string correspondente são incluídas."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:706
 msgid ""
@@ -1017,6 +1053,12 @@ msgid ""
 "before``/``end-at`` filter lines after the line that contains option string "
 "(``end-at`` will keep the line and ``end-before`` skip the first line)."
 msgstr ""
+"``start-after``/``start-at`` e ``end-before``/``end-at`` podem ter a mesma "
+"string. ``start-after``/``start-at`` filtra as linhas antes da linha que "
+"contém a string de opção (``start-at`` manterá a linha). Então ``end-"
+"before``/``end-at`` filtra as linhas após a linha que contém a string de "
+"opção (``end-at`` manterá a linha e ``end-before`` pulará a primeira linha) "
+"."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:714
 msgid ""
@@ -1024,6 +1066,9 @@ msgid ""
 "following, you can use ``:start-at: [second-section]`` and ``:end-before: "
 "[third-section]``:"
 msgstr ""
+"Se você deseja selecionar apenas ``[second-section]`` do arquivo ini como a "
+"seguir, você pode usar ``:start-at: [second-section]`` e ``:end-before: "
+"[third-section]``:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:732
 msgid ""
@@ -1031,6 +1076,9 @@ msgid ""
 "[initialize]`` and ``:end-before: [initialized]`` options keep lines between"
 " comments:"
 msgstr ""
+"Casos úteis dessa opção são trabalhar com comentários de tags. As opções "
+"``:start-after: [initialize]`` e ``:end-before: [initialized]`` mantêm "
+"linhas entre os comentários:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:744
 msgid ""
@@ -1038,6 +1086,9 @@ msgid ""
 "numbers in ``emphasize-lines`` refer to those selected lines, counted "
 "consecutively starting at ``1``."
 msgstr ""
+"Quando as linhas foram selecionadas de qualquer uma das maneiras descritas "
+"acima, os números das linhas em ``emphasize-lines`` referem-se às linhas "
+"selecionadas, contadas consecutivamente começando em ``1``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:748
 msgid ""
@@ -1046,6 +1097,10 @@ msgid ""
 "match`` option, which is however allowed only when the selection consists of"
 " contiguous lines."
 msgstr ""
+"Ao especificar partes específicas de um arquivo para exibição, pode ser útil"
+" exibir os números de linha originais. Isto pode ser feito usando a opção "
+"``lineno-match``, que no entanto é permitida apenas quando a seleção "
+"consiste em linhas contíguas."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:753
 msgid ""
@@ -1053,60 +1108,73 @@ msgid ""
 "``prepend`` and ``append`` option, respectively.  This is useful e.g. for "
 "highlighting PHP code that doesn't include the ``<?php``/``?>`` markers."
 msgstr ""
+"Você pode preceder e/ou anexar uma linha ao código incluído, usando as "
+"opções ``prepend`` e ``append``, respectivamente. Isto é útil, por ex. para "
+"realçar o código PHP que não inclui os marcadores ``<?php``/``?>``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:757
 msgid ""
 "If you want to show the diff of the code, you can specify the old file by "
 "giving a ``diff`` option::"
 msgstr ""
+"Se você quiser mostrar o diff do código, você pode especificar o arquivo "
+"antigo dando uma opção ``diff``::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:763
 msgid ""
 "This shows the diff between ``example.py`` and ``example.py.orig`` with "
 "unified diff format."
 msgstr ""
+"Isso mostra a diferença entre ``example.py`` e ``example.py.orig`` com "
+"formato de comparação unificado."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:766
 msgid "A ``force`` option can ignore minor errors on highlighting."
-msgstr ""
+msgstr "Uma opção ``force`` pode ignorar pequenos erros no realce."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:768
 msgid "Added the ``encoding`` option."
-msgstr ""
+msgstr "Adicionada a opção ``encoding``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:771
 msgid ""
 "Added the ``pyobject``, ``lines``, ``start-after`` and ``end-before`` "
 "options, as well as support for absolute filenames."
 msgstr ""
+"Adicionadas as opções ``pyobject``, ``lines``, ``start-after`` e ``end-"
+"before``, bem como suporte para nomes de arquivos absolutos."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:775
 msgid "Added the ``prepend``, ``append``, and ``tab-width`` options."
-msgstr ""
+msgstr "Adicionadas as opções ``prepend``, ``append`` e ``tab-width``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:778
 msgid ""
 "Added the ``diff``, ``lineno-match``, ``caption``, ``name``, and ``dedent`` "
 "options."
 msgstr ""
+"Adicionadas as opções ``diff``, ``lineno-match``, ``caption``, ``name`` e "
+"``dedent``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:782
 msgid "Added the ``class`` option."
-msgstr ""
+msgstr "Adicionada a opção ``class``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:785
 msgid "Added the ``start-at``, and ``end-at`` options."
-msgstr ""
+msgstr "Adicionadas as opções ``start-at`` e ``end-at``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:788
 msgid ""
 "With both ``start-after`` and ``lines`` in use, the first line as per "
 "``start-after`` is considered to be with line number ``1`` for ``lines``."
 msgstr ""
+"Com ``start-after`` e ``lines`` em uso, a primeira linha de ``start-after`` "
+"é considerada como sendo o número de linha ``1`` para ``lines``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:792
 msgid "Added the ``force`` option."
-msgstr ""
+msgstr "Adicionada a opção ``force``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:801
 msgid "Glossary"
@@ -1118,6 +1186,9 @@ msgid ""
 "and definitions.  The definitions will then be referenceable with the "
 ":rst:role:`term` role.  Example::"
 msgstr ""
+"Esta diretiva deve conter uma marcação semelhante a uma lista de definições "
+"reST com termos e definições. As definições serão então referenciáveis ​​com"
+" o papel :rst:role:`term`. Exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:821
 msgid ""
@@ -1125,17 +1196,25 @@ msgid ""
 "allowed, and inline markup is allowed in terms.  You can link to all of the "
 "terms.  For example::"
 msgstr ""
+"Em contraste com as listas de definição regulares, são permitidos "
+"*múltiplos* termos por entrada e a marcação em linha é permitida em termos. "
+"Você pode vincular todos os termos. Por exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:831
 msgid ""
 "(When the glossary is sorted, the first term determines the sort order.)"
 msgstr ""
+"(Quando o glossário está ordenado, o primeiro termo determina a ordem de "
+"classificação.)"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:833
 msgid ""
 "If you want to specify \"grouping key\" for general index entries, you can "
 "put a \"key\" as \"term : key\". For example::"
 msgstr ""
+"Se você deseja especificar uma \"chave de agrupamento\" para entradas de "
+"índice geral, você pode colocar uma \"chave\" como \"termo : chave\". Por "
+"exemplo::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:842
 msgid ""
@@ -1144,6 +1223,11 @@ msgid ""
 "characters in \"key\" is used instead of a first character; it is used for "
 "\"Combining Character Sequence\" and \"Surrogate Pairs\" grouping key."
 msgstr ""
+"Observe que \"chave\" é usada para agrupar a chave como está. A \"chave\" "
+"não está normalizada; as chaves \"A\" e \"a\" tornam-se grupos diferentes. "
+"Os caracteres inteiros em \"chave\" são usados ​​em vez do primeiro "
+"caractere; é usado para a chave de agrupamento \"Combining Character "
+"Sequence\" e \"Surrogate Pairs\"."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:847
 msgid ""
@@ -1151,26 +1235,35 @@ msgid ""
 " text only have \"term\" part. In this case, translated \"localized term\" "
 "will be categorized in \"key\" group."
 msgstr ""
+"Na situação de i18n, você pode especificar \"termo localizado : chave\" "
+"mesmo que o texto original tenha apenas a parte \"termo\". Neste caso, o "
+"“termo localizado” traduzido será categorizado no grupo “chave”."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:851
 msgid ""
 "You can now give the glossary directive a ``:sorted:`` flag that will "
 "automatically sort the entries alphabetically."
 msgstr ""
+"Agora você pode dar à diretiva do glossário um sinalizador ``:sorted:`` que "
+"classificará automaticamente as entradas em ordem alfabética."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:855
 msgid "Now supports multiple terms and inline markup in terms."
-msgstr ""
+msgstr "Agora oferece suporte a vários termos e marcação embutida em termos."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:858
 msgid "Index key for glossary term should be considered *experimental*."
 msgstr ""
+"A chave de índice para o termo do glossário deve ser considerada "
+"*experimental*."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:861
 msgid ""
 "In internationalized documentation, the ``:sorted:`` flag sorts according to"
 " translated terms."
 msgstr ""
+"Na documentação internacionalizada, o sinalizador ``:sorted:`` classifica de"
+" acordo com os termos traduzidos."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:866
 msgid "Meta-information markup"
@@ -1221,6 +1314,9 @@ msgid ""
 "(like functions, classes or attributes) like discussed in "
 ":doc:`/usage/domains/index`."
 msgstr ""
+"O Sphinx cria automaticamente entradas de índice a partir de todas as "
+"descrições de objetos (como funções, classes ou atributos) como discutido em"
+" :doc:`/usage/domains/index`."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:898
 msgid ""
@@ -1278,16 +1374,22 @@ msgid ""
 "entry text with a semicolon (this notation is also used below to describe "
 "what entries are created). Examples:"
 msgstr ""
+"Cria uma única entrada de índice. Pode ser feita uma subentrada separando o "
+"texto da subentrada com um ponto e vírgula (esta notação também é usada "
+"abaixo para descrever quais entradas são criadas). Exemplos:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:942
 msgid "``single: execution`` creates an index entry labelled ``execution``."
 msgstr ""
+"``single: execution`` cria uma entrada de índice chamada ``execution``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:943
 msgid ""
 "``single: execution; context`` creates an sub-entry of ``execution`` "
 "labelled ``context``."
 msgstr ""
+"``single: execution; context`` cria uma subentrada de ``execution`` chamada "
+"``context``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:945
 msgid "pair"
@@ -1298,12 +1400,16 @@ msgid ""
 "A shortcut to create two index entries. The pair of values must be separated"
 " by a semicolon. Example:"
 msgstr ""
+"Um atalho para criar duas entradas de índice. O par de valores deve ser "
+"separado por ponto e vírgula. Exemplo:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:954
 msgid ""
 "This would create two index entries; ``loop; statement`` and ``statement; "
 "loop``."
 msgstr ""
+"Isto criaria duas entradas de índice; ``loop; statement`` e ``statement; "
+"loop``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:955
 msgid "triple"
@@ -1314,12 +1420,16 @@ msgid ""
 "A shortcut to create three index entries. All three values must be separated"
 " by a semicolon. Example:"
 msgstr ""
+"Um atalho para criar três entradas de índice. Todos os três valores devem "
+"ser separados por ponto e vírgula. Exemplo:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:964
 msgid ""
 "This would create three index entries; ``module; search path``, ``search; "
 "path, module``, and ``path; module search``."
 msgstr ""
+"Isto criaria três entradas de índice; ``module; search path``, ``search; "
+"path, module`` e ``path; module search``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:966
 msgid "see"
@@ -1329,12 +1439,16 @@ msgstr "ver"
 msgid ""
 "A shortcut to create an index entry that refers to another entry. Example:"
 msgstr ""
+"Um atalho para criar uma entrada de índice que se refere a outra entrada. "
+"Exemplo:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:974
 msgid ""
 "This would create an index entry referring from ``entry`` to ``other`` (i.e."
 " 'entry': See 'other')."
 msgstr ""
+"Isto criaria uma entrada de índice referente a ``entry`` para ``other`` (ou "
+"seja, 'entry': Veja 'other')."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:976
 msgid "seealso"
@@ -1342,7 +1456,7 @@ msgstr "ver também"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:977
 msgid "Like ``see``, but inserts 'see also' instead of 'see'."
-msgstr ""
+msgstr "Como ``see``, mas insere 'see also' em vez de 'see'."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:978
 msgid "module, keyword, operator, object, exception, statement, builtin"
@@ -1355,16 +1469,21 @@ msgid ""
 "``module: hashlib`` creates the entries ``module; hashlib`` and ``hashlib; "
 "module``."
 msgstr ""
+"Todos esses atalhos **descontinuados** criam duas entradas de índice. Por "
+"exemplo, ``module: hashlib`` cria as entradas ``module; hashlib`` e "
+"``hashlib; module``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:983
 msgid "These Python-specific entry types are deprecated."
-msgstr ""
+msgstr "Esses tipos de entrada específicos do Python estão descontinuados."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:986
 msgid ""
 "Removal version set to Sphinx 9.0. Using these entry types will now emit "
 "warnings with the ``index`` category."
 msgstr ""
+"Versão de remoção definida como Sphinx 9.0. Usar esses tipos de entrada "
+"agora emitirá avisos com a categoria ``index``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:990
 msgid ""
@@ -1448,6 +1567,10 @@ msgid ""
 "expressions, also using parentheses (like ``(latex or html) and draft``) are"
 " supported."
 msgstr ""
+"Tags não definidas têm valor false, tags definidas (através da opção de "
+"linha de comando ``-t`` ou dentro do :file:`conf.py`, veje :ref:`aqui <conf-"
+"tags>`) têm valor true. Expressões booleanas, também usam parênteses (como "
+"``(latex or html) and draft``) são suportadas."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1060
 msgid ""
@@ -1481,6 +1604,14 @@ msgid ""
 "uppercase and lowercase letters ``A`` through ``Z``, the underscore ``_`` "
 "and, except for the first character, the digits ``0`` through ``9``."
 msgstr ""
+"Todas as tags devem seguir a sintaxe de identificador padrão do Python, "
+"conforme estabelecido na documentação `Identificadores e palavras-chave "
+"<https://docs.python.org/pt-"
+"br/3/reference/lexical_analysis.html#identifiers>`_. Ou seja, uma expressão "
+"de tag pode consistir apenas em tags que estejam em conformidade com a "
+"sintaxe das variáveis ​​Python. Em ASCII, consiste em letras maiúsculas e "
+"minúsculas ``A`` a ``Z``, o sublinhado ``_`` e, exceto o primeiro caractere,"
+" os dígitos ``0`` a ``9``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1078
 msgid "Added the name of the builder and the prefixes."
@@ -1531,6 +1662,8 @@ msgid ""
 "They work fine in HTML output, but rendering tables to LaTeX is complex. "
 "Check the :confval:`latex_table_style`."
 msgstr ""
+"Eles funcionam bem na saída HTML, mas renderizar tabelas para LaTeX é "
+"complexo. Confira o :confval:`latex_table_style`."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1104
 msgid ""
@@ -1538,6 +1671,10 @@ msgid ""
 "complex contents such as multiple paragraphs, blockquotes, lists, literal "
 "blocks, will render correctly to LaTeX output."
 msgstr ""
+"Células mescladas (várias linhas, múltiplas colunas, ambas) de tabelas de "
+"grade contendo conteúdos complexos, como vários parágrafos, citações em "
+"bloco, listas, blocos literais, serão renderizadas corretamente na saída "
+"LaTeX."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1111
 msgid ""
@@ -1547,12 +1684,20 @@ msgid ""
 "documentation, such as the `wiki page`_, for basics of such a column "
 "specification."
 msgstr ""
+"Esta diretiva influencia apenas a saída do LaTeX para a próxima tabela no "
+"código-fonte. O argumento obrigatório é uma especificação de coluna "
+"(conhecida como \"preâmbulo de alinhamento\" no idioma LaTeX). Por favor, "
+"consulte a documentação do LaTeX, como a `página wiki`_, para obter "
+"informações básicas sobre essa especificação de coluna."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1123
 msgid ""
 ":rst:dir:`tabularcolumns` conflicts with ``:widths:`` option of table "
 "directives.  If both are specified, ``:widths:`` option will be ignored."
 msgstr ""
+":rst:dir:`tabularcolumns` entra em conflito com a opção ``:widths:`` das "
+"diretivas de tabela. Se ambos forem especificados, a opção ``:widths:`` será"
+" ignorada."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1126
 msgid ""
@@ -1563,6 +1708,13 @@ msgid ""
 " 1.6) where ``f`` is a decimal: for example ``\\Y{0.2}`` means that the "
 "column will occupy ``0.2`` times the line width."
 msgstr ""
+"O Sphinx irá renderizar tabelas com mais de 30 linhas com ``longtable``. "
+"Além dos especificadores de colunas ``l``, ``r``, ``c`` e ``p{width}``, "
+"também é possível usar ``\\X{a}{b}`` (novo no versão 1.5) que configura a "
+"largura da coluna como uma fração ``a/b`` da largura total da linha e "
+"``\\Y{f}`` (novo na versão 1.6) onde ``f`` é um decimal: por exemplo "
+"``\\Y{0.2}`` significa que a coluna ocupará ``0.2`` vezes a largura da "
+"linha."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1133
 msgid ""
@@ -1573,6 +1725,12 @@ msgid ""
 "the specified internal text alignment and an automatically computed "
 "``width``."
 msgstr ""
+"Quando esta diretiva é usada para uma tabela com no máximo 30 linhas, o "
+"Sphinx irá renderizá-la com ``tabulary``. Pode-se então usar tipos de "
+"colunas específicos ``L`` (esquerda), ``R`` (direita), ``C`` (centralizado) "
+"e ``J`` (justificado). Eles têm o efeito de um ``p{width}`` (ou seja, cada "
+"célula é um LaTeX ``\\parbox``) com o alinhamento interno do texto "
+"especificado e uma ``width`` calculada automaticamente."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1142
 msgid ""
@@ -1581,6 +1739,10 @@ msgid ""
 " types.  The column type must then be some ``p{width}`` with an explicit "
 "``width`` (or ``\\X{a}{b}`` or ``\\Y{f}``)."
 msgstr ""
+"Células que contêm elementos semelhantes a listas, como descrições de "
+"objetos, aspas ou qualquer tipo de lista, não são compatíveis com os tipos "
+"de coluna ``LRCJ``. O tipo de coluna deve então ser algum ``p{width}`` com "
+"uma ``width`` explícita (ou ``\\X{a}{b}`` ou ``\\Y{f}``)."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1147
 msgid ""
@@ -1588,6 +1750,9 @@ msgid ""
 "to ``tabular`` or ``longtable`` environments and generate a suitable column "
 "specification."
 msgstr ""
+"Blocos literais não funcionam com ``tabulary``. O Sphinx retornará aos "
+"ambientes ``tabular`` ou ``longtable`` e gerará uma especificação de coluna "
+"adequada."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1151
 msgid ""
@@ -1595,6 +1760,9 @@ msgid ""
 "at most 30 rows and no problematic cells as described in the above warning, "
 "Sphinx uses ``tabulary`` and the ``J`` column-type for every column."
 msgstr ""
+"Na ausência da diretiva :rst:dir:`tabularcolumns`, e para uma tabela com no "
+"máximo 30 linhas e sem células problemáticas como descrito no aviso acima, o"
+" Sphinx usa ``tabulary`` e o tipo de coluna ``J`` para cada coluna."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1157
 msgid ""
@@ -1602,6 +1770,10 @@ msgid ""
 "to this, include ``\\newcolumntype{T}{L}`` in the LaTeX preamble, as in fact"
 " Sphinx uses ``T`` and sets it by default to be an alias of ``J``."
 msgstr ""
+"Anteriormente, o tipo de coluna ``L`` era usado (o texto fica alinhado à "
+"esquerda). Para reverter isso, inclua ``\\newcolumntype{T}{L}`` no preâmbulo"
+" do LaTeX, pois na verdade o Sphinx usa ``T`` e o define por padrão como um "
+"alias de ``J``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1163
 msgid ""
@@ -1610,6 +1782,10 @@ msgid ""
 "``\\setlength{\\tymin}{40pt}`` to ensure a minimal column width of ``40pt``,"
 " the ``tabulary`` default of ``10pt`` being too small."
 msgstr ""
+"Um problema frequente com ``tabulary`` é que colunas com pouco conteúdo "
+"parecem estar \"comprimidas\". Pode-se adicionar ao preâmbulo do LaTeX, por "
+"exemplo, ``\\setlength{\\tymin}{40pt}`` para garantir uma largura mínima de "
+"coluna de ``40pt``, sendo o padrão ``tabulary`` de ``10pt`` também pequeno."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1170
 msgid ""
@@ -1617,6 +1793,9 @@ msgid ""
 "a ``:class:`` option to :dudir:`table`, :dudir:`csv-table`, or :dudir:`list-"
 "table`.  Use :ref:`rst-class <rstclass>` for other tables."
 msgstr ""
+"Para forçar o uso do ambiente LaTeX ``longtable``,. passe ``longtable`` como"
+" uma opção ``:class:`` para :dudir:`table`, :dudir:`csv-table` ou "
+":dudir:`list-table`. Use :ref:`rst-class <rstclass>` para outras tabelas."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1175
 msgid "Math"
@@ -1710,21 +1889,23 @@ msgstr ":ref:`math-support`"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1238
 msgid "Rendering options for math with HTML builders."
-msgstr ""
+msgstr "Opções de renderização para matemática com construtores HTML."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1240
 msgid ":confval:`latex_engine`"
-msgstr ""
+msgstr ":confval:`latex_engine`"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1241
 msgid ""
 "Explains how to configure LaTeX builder to support Unicode literals in math "
 "mark-up."
 msgstr ""
+"Explica como configurar o construtor LaTeX para oferecer suporte a literais "
+"Unicode na marcação matemática."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1246
 msgid "Grammar production displays"
-msgstr ""
+msgstr "Exibições de produção gramatical"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1248
 msgid ""
@@ -1735,6 +1916,12 @@ msgid ""
 "rendered as hyperlinks to the definition of the symbol.  There is this "
 "directive:"
 msgstr ""
+"Marcação especial está disponível para exibir as produções de uma gramática "
+"formal. A marcação é simples e não tenta modelar todos os aspectos da BNF "
+"(ou quaisquer formas derivadas), mas fornece o suficiente para permitir que "
+"gramáticas livres de contexto sejam exibidas de uma forma que faça com que "
+"os usos de um símbolo sejam renderizados como hiperlinks para a definição do"
+" símbolo. Existe esta diretiva:"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1256
 msgid ""
@@ -1745,6 +1932,12 @@ msgid ""
 "the first line. Blank lines are not allowed within ``productionlist`` "
 "directive arguments."
 msgstr ""
+"Esta diretiva é usada para incluir um grupo de produções. Cada produção é "
+"fornecida em uma única linha e consiste em um nome, separado por dois pontos"
+" da definição a seguir. Se a definição abranger várias linhas, cada linha de"
+" continuação deverá começar com dois pontos colocados na mesma coluna da "
+"primeira linha. Linhas em branco não são permitidas nos argumentos da "
+"diretiva ``productionlist``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1263
 msgid ""
@@ -1753,6 +1946,11 @@ msgid ""
 "references to the productions of these tokens.  Outside of the production "
 "list, you can reference to token productions using :rst:role:`token`."
 msgstr ""
+"A definição pode conter nomes de tokens que são marcados como texto "
+"interpretado (por exemplo, \"``soma ::= `integer` \"+\" `integer```\") -- "
+"isso gera referências cruzadas para as produções desses tokens. Fora da "
+"lista de produção, você pode fazer referência a produções de tokens usando "
+":rst:role:`token`."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1269
 msgid ""
@@ -1761,6 +1959,10 @@ msgid ""
 "grammars.  Multiple production lists with the same *productionGroup* thus "
 "define rules in the same scope."
 msgstr ""
+"O argumento *productionGroup* para :rst:dir:`productionlist` serve para "
+"distinguir diferentes conjuntos de listas de produção que pertencem a "
+"diferentes gramáticas. Várias listas de produção com o mesmo "
+"*productionGroup* definem, portanto, regras no mesmo escopo."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1274
 msgid ""
@@ -1772,6 +1974,14 @@ msgid ""
 "To refer to a production from an unnamed grammar, the token should be "
 "prefixed by a colon, e.g., \"``:sum``\"."
 msgstr ""
+"Dentro da lista de produção, os tokens referem-se implicitamente às "
+"produções do grupo atual. Você pode se referir à produção de outra gramática"
+" prefixando o token com seu nome de grupo e dois pontos, por exemplo, "
+"\"``outroGrupo:soma``\". Se o grupo do token não deve ser mostrado na "
+"produção, ele pode ser prefixado com um til, por exemplo, "
+"\"``~outroGrupo:soma``\". Para se referir a uma produção de uma gramática "
+"sem nome, o token deve ser prefixado por dois pontos, por exemplo, "
+"\"``:soma``\"."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1282
 msgid ""
@@ -1782,16 +1992,25 @@ msgid ""
 "either an explicit title can be given (e.g., \"``myTitle <myGroup:sum>``\"),"
 " or the target can be prefixed with a tilde (e.g., \"``~myGroup:sum``\")."
 msgstr ""
+"Fora da lista de produção, se você forneceu um argumento *grupoProdução* "
+"você deve prefixar o nome do token na referência cruzada com o nome do grupo"
+" e dois pontos, por exemplo, \"``meuGrupo:soma``\" em vez de apenas "
+"\"``soma``\". Se o grupo não deve ser mostrado no título do link, um título "
+"explícito pode ser fornecido (por exemplo, \"``meuTítulo "
+"<meuGrupo:soma>``\") ou o alvo pode ser prefixado com um til (por exemplo, "
+"\"``~meuGrupo:soma``\")."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1290
 msgid ""
 "Note that no further reST parsing is done in the production, so that you "
 "don't have to escape ``*`` or ``|`` characters."
 msgstr ""
+"Observe que nenhuma análise reST adicional é feita na produção, então você "
+"não precisa escapar dos caracteres ``*`` ou ``|``."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1293
 msgid "The following is an example taken from the Python Reference Manual::"
-msgstr ""
+msgstr "A seguir está um exemplo retirado do Manual de Referência do Python::"
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1306
 msgid "Footnotes"
@@ -1822,6 +2041,8 @@ msgid ""
 "There is a standard ``.. include`` directive, but it raises errors if the "
 "file is not found.  This one only emits a warning."
 msgstr ""
+"Existe uma diretiva padrão ``.. include``, mas ela levanta erros se o "
+"arquivo não for encontrado. Este apenas emite um aviso."
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1318
 msgid ""
@@ -1838,5 +2059,5 @@ msgid ""
 "Note that the current builder tag is not available in ``conf.py``, it is "
 "only available after the builder is initialized."
 msgstr ""
-"Notar que o construtor corrente não possui entrada no ``conf.py``, o "
-"construtor só está disponível depois de inicializado."
+"Note que o construtor atual não possui entrada no ``conf.py``, o construtor "
+"só está disponível depois de inicializado."

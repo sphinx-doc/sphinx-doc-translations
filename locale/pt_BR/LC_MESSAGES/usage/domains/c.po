@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-10 00:42+0000\n"
+"POT-Creation-Date: 2024-07-11 00:42+0000\n"
 "PO-Revision-Date: 2023-10-03 00:37+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -246,6 +246,12 @@ msgid ""
 "though nested symbols will be found even when omitted. The ``@...`` name "
 "will always be rendered as **[anonymous]** (possibly as a link)."
 msgstr ""
+"C oferece uniões, enums e structs anônimos. Para fins de documentação, eles "
+"devem receber algum nome que comece com ``@``, por exemplo, ``@42`` ou "
+"``@data``. Esses nomes também podem ser usados ​​em referências cruzadas, "
+"embora símbolos aninhados sejam encontrados mesmo quando omitidos. O nome "
+"``@...`` sempre será renderizado como **[anonymous]** (possivelmente como um"
+" link)."
 
 #: ../../sphinx/doc/usage/domains/c.rst:169
 msgid "Example::"
@@ -258,6 +264,8 @@ msgstr "Isso será renderizado como:"
 #: ../../sphinx/doc/usage/domains/c.rst:199
 msgid "Explicit ref: :c:var:`Data.@data.a`. Short-hand ref: :c:var:`Data.a`."
 msgstr ""
+"Referência explícita: :c:var:`Data.@data.a`. Referência abreviada: "
+":c:var:`Data.a`."
 
 #: ../../sphinx/doc/usage/domains/c.rst:205
 msgid "Aliasing Declarations"
@@ -269,12 +277,17 @@ msgid ""
 "documentation, e.g., when creating a synopsis of an interface. The following"
 " directive can be used for this purpose."
 msgstr ""
+"Às vezes, declarações de lista podem ser úteis em outros lugares além da "
+"documentação principal, por exemplo, ao criar uma sinopse de uma interface. "
+"A seguinte diretiva pode ser usada para esse propósito."
 
 #: ../../sphinx/doc/usage/domains/c.rst:215
 msgid ""
 "Insert one or more alias declarations. Each entity can be specified as they "
 "can in the :rst:role:`c:any` role."
 msgstr ""
+"Insere uma ou mais declarações de alias. Cada entidade pode ser especificada"
+" como pode na função :rst:role:`c:any`."
 
 #: ../../sphinx/doc/usage/domains/c.rst:226
 msgid "becomes"
@@ -310,6 +323,8 @@ msgid ""
 "Insert a C expression or type either as inline code (``cpp:expr``) or inline"
 " text (``cpp:texpr``). For example::"
 msgstr ""
+"Insere uma expressão C ou digite como código embutido (``cpp:expr``) ou "
+"texto embutido (``cpp:texpr``). Por exemplo::"
 
 #: ../../sphinx/doc/usage/domains/c.rst:281
 msgid "will be rendered as follows:"
@@ -318,10 +333,12 @@ msgstr "será renderizado da seguinte maneira:"
 #: ../../sphinx/doc/usage/domains/c.rst:291
 msgid "An expression: :c:expr:`a * f(a)` (or as text: :c:texpr:`a * f(a)`)."
 msgstr ""
+"Uma expressão: :c:expr:`a * f(a)` (ou como texto: :c:texpr:`a * f(a)`)."
 
 #: ../../sphinx/doc/usage/domains/c.rst:293
 msgid "A type: :c:expr:`const Data*` (or as text :c:texpr:`const Data*`)."
 msgstr ""
+"Um tipo: :c:expr:`const Data*` (ou como texto :c:texpr:`const Data*`)."
 
 #: ../../sphinx/doc/usage/domains/c.rst:300
 msgid "Namespacing"
@@ -334,6 +351,10 @@ msgid ""
 "declarations. The feature may also be used to document members of "
 "structs/unions/enums separate from their parent declaration."
 msgstr ""
+"A linguagem C em si não oferece suporte o uso de espaço de nomes, mas às "
+"vezes pode ser útil emulá-lo na documentação, por exemplo, para mostrar "
+"declarações alternativas. O recurso também pode ser usado para documentar "
+"membros de structs/uniões/enums separados de sua declaração mãe."
 
 #: ../../sphinx/doc/usage/domains/c.rst:309
 msgid ""
@@ -341,18 +362,25 @@ msgid ""
 "manage a stack declarations where ``c:namespace`` resets the stack and "
 "changes a given scope."
 msgstr ""
+"O escopo atual pode ser alterado usando três diretivas de espaço de nomes. "
+"Eles gerenciam declarações de pilha onde ``c:namespace`` redefine a pilha e "
+"altera um determinado escopo."
 
 #: ../../sphinx/doc/usage/domains/c.rst:313
 msgid ""
 "The ``c:namespace-push`` directive changes the scope to a given inner scope "
 "of the current one."
 msgstr ""
+"A diretiva ``c:namespace-push`` altera o escopo para um determinado escopo "
+"interno do atual."
 
 #: ../../sphinx/doc/usage/domains/c.rst:316
 msgid ""
 "The ``c:namespace-pop`` directive undoes the most recent ``c:namespace-"
 "push`` directive."
 msgstr ""
+"A diretiva ``c:namespace-pop`` desfaz a diretiva ``c:namespace-push`` mais "
+"recente."
 
 #: ../../sphinx/doc/usage/domains/c.rst:321
 msgid ""
@@ -360,6 +388,9 @@ msgid ""
 " resets the namespace directive stack. Note that nested scopes can be "
 "specified by separating with a dot, e.g.::"
 msgstr ""
+"Altera o escopo atual dos objetos subsequentes para o escopo especificado e "
+"redefine a pilha de diretivas de espaço de nomes. Observe que os escopos "
+"aninhados podem ser especificados separando-os com um ponto, por exemplo::"
 
 #: ../../sphinx/doc/usage/domains/c.rst:327
 msgid ""
@@ -373,7 +404,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/c.rst:331
 msgid "Using ``NULL`` or ``0`` as the scope will change to global scope."
-msgstr ""
+msgstr "Usar ``NULL`` ou ``0`` como escopo mudará para escopo global."
 
 #: ../../sphinx/doc/usage/domains/c.rst:335
 msgid "Change the scope relatively to the current scope. For example, after::"
@@ -382,17 +413,19 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/domains/c.rst:341
 msgid "the current scope will be ``A.B.C.D``."
-msgstr ""
+msgstr "o escopo atual será ``A.B.C.D``."
 
 #: ../../sphinx/doc/usage/domains/c.rst:345
 msgid ""
 "Undo the previous ``c:namespace-push`` directive (*not* just pop a scope). "
 "For example, after::"
 msgstr ""
+"Desfaz a diretiva ``c:namespace-push`` anterior (*não* apenas abre um "
+"escopo). Por exemplo, depois de::"
 
 #: ../../sphinx/doc/usage/domains/c.rst:354
 msgid "the current scope will be ``A.B`` (*not* ``A.B.C``)."
-msgstr ""
+msgstr "o escopo atual será ``A.B`` (*não* ``A.B.C``)."
 
 #: ../../sphinx/doc/usage/domains/c.rst:356
 msgid ""
@@ -400,6 +433,9 @@ msgid ""
 "``c:namespace`` directive, then the current scope will be reset to global "
 "scope.  That is, ``.. c:namespace:: A.B`` is equivalent to::"
 msgstr ""
+"Se nenhuma diretiva ``c:namespace-push`` anterior tiver sido usada, mas "
+"apenas uma diretiva ``c:namespace``, então o escopo atual será redefinido "
+"para o escopo global. Ou seja, ``.. c:namespace:: A.B`` é equivalente a::"
 
 #: ../../sphinx/doc/usage/domains/c.rst:365
 msgid "Configuration Variables"
@@ -407,4 +443,4 @@ msgstr "Variáveis de configuração"
 
 #: ../../sphinx/doc/usage/domains/c.rst:367
 msgid "See :ref:`c-config`."
-msgstr ""
+msgstr "Veja :ref:`c-config`."

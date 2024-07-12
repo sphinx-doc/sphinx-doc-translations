@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 00:43+0000\n"
+"POT-Creation-Date: 2024-07-12 00:41+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -35,6 +35,11 @@ msgid ""
 "configuration file\" and contains (almost) all configuration needed to "
 "customise Sphinx input and output behaviour."
 msgstr ""
+"O :term:`diretório de configuração <configuration directory>` deve conter um"
+" arquivo chamado :file:`conf.py`. Esse arquivo (contendo código Python) é "
+"chamado \"arquivo de configuração da construção\" e (geralmente) contém toda"
+" configuração necessária para personalizar o comportamento das entradas e "
+"saídas do Sphinx."
 
 #: ../../sphinx/doc/usage/configuration.rst:28
 msgid ""
@@ -65,12 +70,19 @@ msgid ""
 "name :code-py:`\"sphinx.builders.Builder\"` means the :code-py:`Builder` "
 "class in the :code-py:`sphinx.builders` module."
 msgstr ""
+"O termo \"nome totalmente qualificado\" (do inglês fully-qualified name - "
+"FQN) refere-se a uma string que nomeia um objeto Python importável dentro de"
+" um módulo; por exemplo:, o nome totalmente qualificado :code-"
+"py:`\"sphinx.builders.Builder\"` quer dizer a classe :code-py:`Builder` no "
+"módulo :code-py:`sphinx.builders`."
 
 #: ../../sphinx/doc/usage/configuration.rst:45
 msgid ""
 "Document names use ``/`` as the path separator and do not contain the file "
 "name extension."
 msgstr ""
+"Nomes dos documentos usam ``/`` como separador do caminho e não contêm o "
+"nome da extensão do arquivo."
 
 #: ../../sphinx/doc/usage/configuration.rst:50
 msgid ""
@@ -79,6 +91,11 @@ msgid ""
 "none of these will match slashes (``/``). A double star ``**`` can be used "
 "to match any sequence of characters *including* slashes."
 msgstr ""
+"One padrões estilo glob são permitidos, você pode usar as construções "
+"padrões do shell (``*``, ``?``, ``[...]`` e ``[!...]``) com a funcionalidade"
+" que nenhuma dessas vai corresponder barras (``/``). Asterisco duplo ``**`` "
+"pode ser usada para combinar com qualquer sequência de caracteres "
+"*incluindo* barras."
 
 #: ../../sphinx/doc/usage/configuration.rst:59
 msgid ""
@@ -87,6 +104,10 @@ msgid ""
 ":term:`configuration directory`), and therefore can execute arbitrarily "
 "complex code."
 msgstr ""
+"O arquivo de configuração é executado com código Python em tempo de "
+"construção (usando :func:`importlib.import_module`, com o diretório atual "
+"definido para o :term:`diretório de configuração`) e suporta a execução "
+"arbitrária de códigos complexos."
 
 #: ../../sphinx/doc/usage/configuration.rst:64
 msgid ""
@@ -94,6 +115,9 @@ msgid ""
 "configuration. In general, configuration values should be simple strings, "
 "numbers, or lists or dictionaries of simple values."
 msgstr ""
+"O Sphinx então lê nomes simples do espaço de nomes do arquivo como sua "
+"configuração. Em geral, os valores de configuração devem ser sequências "
+"simples, números ou listas ou dicionários de valores simples."
 
 #: ../../sphinx/doc/usage/configuration.rst:68
 msgid ""
@@ -102,10 +126,15 @@ msgid ""
 "-- delete them from the namespace with ``del`` if appropriate. Modules are "
 "removed automatically, so deleting imported modules is not needed."
 msgstr ""
+"O conteúdo do espaço de nomes config é obtido (é assim que Sphinx pode "
+"encontrar modificações externas da configuração), portando não pode conter "
+"valores impossíveis de interpretação -- remova esses no espaço de nomes com "
+"o comando ``del`` conforme apropriado. Módulos são removidos "
+"automaticamente, de forma que excluir módulos importados não é necessário."
 
 #: ../../sphinx/doc/usage/configuration.rst:77
 msgid "Project tags"
-msgstr ""
+msgstr "Tags do projeto"
 
 #: ../../sphinx/doc/usage/configuration.rst:79
 msgid ""
@@ -115,22 +144,29 @@ msgid ""
 "py:`tags.add('tag')`. Note that the builder's name and format tags are not "
 "available in :file:`conf.py`."
 msgstr ""
+"Existe um objeto especial chamado ``tags`` disponível no arquivo de "
+"configuração, que expõe as :ref:`tags do projeto <tags>`. Tags são definidas"
+" através da opção de linha de comando :option:`--tag <sphinx-build --tag>` "
+"ou :code-py:`tags.add('tag')`. Observe que o nome do construtor e as tags de"
+" formato não estão disponíveis em :file:`conf.py`."
 
 #: ../../sphinx/doc/usage/configuration.rst:86
 msgid "It can be used to query and change the defined tags as follows:"
 msgstr ""
+"Pode ser usado para consultar e alterar as tags definidas da seguinte forma:"
 
 #: ../../sphinx/doc/usage/configuration.rst:88
 msgid "To query whether a tag is set, use :code-py:`'tag' in tags`."
 msgstr ""
+"Para consultar se uma tag está definida, use :code-py:`'tag' in tags`."
 
 #: ../../sphinx/doc/usage/configuration.rst:89
 msgid "To add a tag, use :code-py:`tags.add('tag')`."
-msgstr ""
+msgstr "Para adicionar uma tag, use :code-py:`tags.add('tag')`."
 
 #: ../../sphinx/doc/usage/configuration.rst:90
 msgid "To remove a tag, use :code-py:`tags.remove('tag')`."
-msgstr ""
+msgstr "Para remover uma tag, use :code-py:`tags.remove('tag')`."
 
 #: ../../sphinx/doc/usage/configuration.rst:93
 msgid "Project information"
@@ -138,49 +174,51 @@ msgstr "Informações do projeto"
 
 #: ../../sphinx/doc/usage/configuration.rst:0
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: ../../sphinx/doc/usage/configuration.rst:0
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #: ../../sphinx/doc/usage/configuration.rst:99
 msgid "The documented project's name. Example:"
-msgstr ""
+msgstr "O nome do projeto documento. Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:110
 msgid "The project's author(s). Example:"
-msgstr ""
+msgstr "Os autores do projeto. Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:122
 msgid ""
 "A copyright statement. Permitted styles are as follows, where 'YYYY' "
 "represents a four-digit year."
 msgstr ""
+"Uma instrução de direitos autorais. Os estilos permitidos são os seguintes, "
+"onde 'AAAA' representa um ano de quatro dígitos."
 
 #: ../../sphinx/doc/usage/configuration.rst:125
 msgid ":code-py:`copyright = 'YYYY'`"
-msgstr ""
+msgstr ":code-py:`copyright = 'AAAA'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:126
 msgid ":code-py:`copyright = 'YYYY, Author Name'`"
-msgstr ""
+msgstr ":code-py:`copyright = 'AAAA, Nome do Autor'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:127
 msgid ":code-py:`copyright = 'YYYY Author Name'`"
-msgstr ""
+msgstr ":code-py:`copyright = 'AAAA Nome do Autor'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:128
 msgid ":code-py:`copyright = 'YYYY-YYYY, Author Name'`"
-msgstr ""
+msgstr ":code-py:`copyright = 'AAAA-AAAA, Nome do Autor'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:129
 msgid ":code-py:`copyright = 'YYYY-YYYY Author Name'`"
-msgstr ""
+msgstr ":code-py:`copyright = 'AAAA-AAAA Nome do Autor'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:131
 msgid "The :code-py:`project_copyright` alias."
-msgstr ""
+msgstr "O apelido :code-py:`project_copyright`.;"
 
 #: ../../sphinx/doc/usage/configuration.rst:134
 msgid ""
@@ -195,12 +233,16 @@ msgid ""
 "The major project version, used as the replacement for the :code-"
 "rst:`|version|` :ref:`default substitution <default-substitutions>`."
 msgstr ""
+"A versão principal do projeto, usada como substituto para a "
+":ref:`substituição padrão <default-substitutions>` :code-rst:`|version|`."
 
 #: ../../sphinx/doc/usage/configuration.rst:145
 msgid ""
 "This may be something like :code-py:`version = '4.2'`. The full project "
 "version is defined in :confval:`release`."
 msgstr ""
+"Isso pode ser algo como :code-py:`version = '4.2'`. A versão completa do "
+"projeto é definida em :confval:`release`."
 
 #: ../../sphinx/doc/usage/configuration.rst:148
 #: ../../sphinx/doc/usage/configuration.rst:163
@@ -209,6 +251,9 @@ msgid ""
 "'full' and 'major' version, set both :code-py:`version` and :code-"
 "py:`release` to the same value."
 msgstr ""
+"Se o seu projeto não fizer uma distinção significativa entre uma versão "
+"'completa' e 'principal', defina :code-py:`version` e :code-py:`release` com"
+" o mesmo valor."
 
 #: ../../sphinx/doc/usage/configuration.rst:156
 msgid ""
@@ -216,12 +261,17 @@ msgid ""
 "rst:`|release|` :ref:`default substitution <default-substitutions>`, and "
 "e.g. in the HTML templates."
 msgstr ""
+"A versão completa do projeto, usada como substituto para a "
+":ref:`substituição padrão <default-substitutions>` :code-rst:`|release|` e, "
+"por exemplo, nos modelos HTML."
 
 #: ../../sphinx/doc/usage/configuration.rst:160
 msgid ""
 "This may be something like :code-py:`release = '4.2.1b0'`. The major (short)"
 " project version is defined in :confval:`version`."
 msgstr ""
+"Isso pode ser algo como :code-py:`release = '4.2.1b0'`. A versão principal "
+"(curta) do projeto é definida em :confval:`version`."
 
 #: ../../sphinx/doc/usage/configuration.rst:169
 msgid "General configuration"
@@ -235,10 +285,15 @@ msgid ""
 "running version of Sphinx is too old. By default, there is no minimum "
 "version."
 msgstr ""
+"Define uma versão mínima suportada do Sphinx necessária para construir o "
+"projeto. O formato deve ser uma string de versão ``'major.minor'`` como "
+"``'1.1'`` O Sphinx irá compará-lo com sua versão e se recusará a construir o"
+" projeto se a versão em execução do Sphinx for muito antiga. Por padrão, não"
+" há versão mínima."
 
 #: ../../sphinx/doc/usage/configuration.rst:183
 msgid "Allow a ``'major.minor.micro'`` version string."
-msgstr ""
+msgstr "Permite uma string de versão ``'major.minor.micro'``."
 
 #: ../../sphinx/doc/usage/configuration.rst:190
 msgid ""
@@ -246,12 +301,17 @@ msgid ""
 "<extensions/index>`. These can be extensions bundled with Sphinx (named "
 "``sphinx.ext.*``) or custom first-party or third-party extensions."
 msgstr ""
+"Uma lista de strings que são nomes de módulos de :doc:`extensões Sphinx "
+"<extensions/index>`. Essas podem ser extensões inclusas no Sphinx (chamadas "
+"``sphinx.ext.*``) e extensões de originais personalizadas ou de terceiros.."
 
 #: ../../sphinx/doc/usage/configuration.rst:195
 msgid ""
 "To use a third-party extension, you must ensure that it is installed and "
 "include it in the :code-py:`extensions` list, like so:"
 msgstr ""
+"Para usar uma extensão de terceiros, você deve garantir que ela esteja "
+"instalada e incluí-la na lista :code-py:`extensions`, assim:"
 
 #: ../../sphinx/doc/usage/configuration.rst:205
 msgid ""
@@ -261,6 +321,11 @@ msgid ""
 "extension is importable, and located in a directory that is in the Python "
 "path."
 msgstr ""
+"Existem duas opções para extensões originais. O próprio arquivo de "
+"configuração pode ser uma extensão; para isso, você só precisa fornecer uma "
+"função :func:`setup` nele. Caso contrário, você deverá garantir que sua "
+"extensão personalizada seja importável e esteja localizada em um diretório "
+"que esteja no caminho do Python."
 
 #: ../../sphinx/doc/usage/configuration.rst:211
 msgid ""
@@ -268,10 +333,14 @@ msgid ""
 " custom extensions live in a directory that is relative to the "
 ":term:`configuration directory`, use :func:`os.path.abspath` like so:"
 msgstr ""
+"Certifique-se de que caminhos absolutos sejam usados ​​ao modificar "
+":data:`sys.path`. Se suas extensões personalizadas residem em um diretório "
+"relativo ao :term:`diretório de configuração`, use :func:`os.path.abspath` "
+"assim:"
 
 #: ../../sphinx/doc/usage/configuration.rst:224
 msgid "The directory structure illustrated above would look like this:"
-msgstr ""
+msgstr "A estrutura de diretórios ilustrada acima ficaria assim:"
 
 #: ../../sphinx/doc/usage/configuration.rst:238
 msgid ""
@@ -280,44 +349,56 @@ msgid ""
 "``'major.minor'`` form. Requirements do not have to be specified for all "
 "extensions, only for those you want to check. Example:"
 msgstr ""
+"Se definido, este valor deve ser um dicionário especificando os "
+"requerimentos das extensões em :confval:`extensions`. As strings de versão "
+"devem estar no formato ``major.minor``. Requerimentos não precisam ser "
+"especificado para todas as extensões, apenas para as que devem ser "
+"verificadas. Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:251
 msgid ""
 "This requires that the extension declares its version in the :code-"
 "py:`setup()` function. See :ref:`dev-extensions` for further details."
 msgstr ""
+"Isto requer que a extensão declare sua versão na função :code-py:`setup()`. "
+"Veja :ref:`dev-extensions` para mais detalhes."
 
 #: ../../sphinx/doc/usage/configuration.rst:260
 msgid ""
 "A URL to cross-reference :rst:role:`manpage` roles. If this is defined to "
-"``https://manpages.debian.org/{path}``, the :literal:`:manpage:`man(1)` role"
-" will link to <https://manpages.debian.org/man(1)>. The patterns available "
-"are:"
+"``https://manpages.debian.org/{path}``, the :literal:`:manpage:`man(1)`` "
+"role will link to <https://manpages.debian.org/man(1)>. The patterns "
+"available are:"
 msgstr ""
+"Um URL para fazer referência cruzada aos papéis :rst:role:`manpage`. Se "
+"estiver definido para ``https://manpages.debian.org/{path}``, o papel "
+":literal:`:manpage:`man(1)`` será vinculado a "
+"<https://manpages.debian.org/man(1)>. Os padrões disponíveis são:"
 
 #: ../../sphinx/doc/usage/configuration.rst:266
 msgid "``page``"
-msgstr ""
+msgstr "``page``"
 
 #: ../../sphinx/doc/usage/configuration.rst:267
 msgid "The manual page (``man``)"
-msgstr ""
+msgstr "A página de manual (``man``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:268
 msgid "``section``"
-msgstr ""
+msgstr "``section``"
 
 #: ../../sphinx/doc/usage/configuration.rst:269
 msgid "The manual section (``1``)"
-msgstr ""
+msgstr "A seção do manual (``1``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:270
 msgid "``path``"
-msgstr ""
+msgstr "``path``"
 
 #: ../../sphinx/doc/usage/configuration.rst:271
 msgid "The original manual page and section specified (``man(1)``)"
 msgstr ""
+"``path`` - a página de manual original e a seção especificada (``man(1)``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:273
 msgid "This also supports manpages specified as ``man.1``."

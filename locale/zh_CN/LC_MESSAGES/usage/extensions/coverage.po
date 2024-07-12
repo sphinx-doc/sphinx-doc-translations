@@ -5,16 +5,17 @@
 # 
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2018
-# wendi cao <651645601@qq.com>, 2020
+# wendi cao <651645601@qq.com>, 2024
+# ChizumiKonos, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 00:37+0000\n"
+"POT-Creation-Date: 2024-07-12 00:41+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
-"Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
+"Last-Translator: ChizumiKonos, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,65 +33,121 @@ msgid ""
 ":class:`CoverageBuilder`."
 msgstr "这个扩展还有一个生成器：class:`CoverageBuilder`。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:11
-msgid ""
-"To use this builder, activate the coverage extension in your configuration "
-"file and give ``-M coverage`` on the command line."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/coverage.rst:14
+#: ../../sphinx/doc/usage/extensions/coverage.rst:9
 msgid "Todo"
 msgstr "待处理"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:14
+#: ../../sphinx/doc/usage/extensions/coverage.rst:9
 msgid "Write this section."
 msgstr "撰写本章节"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:16
+#: ../../sphinx/doc/usage/extensions/coverage.rst:13
+msgid ""
+"The :doc:`sphinx-apidoc </man/sphinx-apidoc>` command can be used to "
+"automatically generate API documentation for all code in a project, avoiding"
+" the need to manually author these documents and keep them up-to-date."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:19
+msgid ""
+":mod:`~sphinx.ext.coverage` **imports** the modules to be documented. If any"
+" modules have side effects on import, these will be executed by the coverage"
+" builder when ``sphinx-build`` is run."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:23
+msgid ""
+"If you document scripts (as opposed to library modules), make sure their "
+"main routine is protected by a ``if __name__ == '__main__'`` condition."
+msgstr "如果你要引入脚本（而不是库模块），确保主程序 main 有这个条件保护着： ``if __name__ == '__main__'`` 。"
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:29
+msgid ""
+"For Sphinx (actually, the Python interpreter that executes Sphinx) to find "
+"your module, it must be importable. That means that the module or the "
+"package must be in one of the directories on :data:`sys.path` -- adapt your "
+":data:`sys.path` in the configuration file accordingly."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:35
+msgid ""
+"To use this builder, activate the coverage extension in your configuration "
+"file and run ``sphinx-build -M coverage`` on the command line."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:40
+msgid "Builder"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:46
+msgid "Configuration"
+msgstr "配置"
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:48
 msgid ""
 "Several configuration values can be used to specify what the builder should "
 "check:"
 msgstr "可以使用多个配置值来指定生成器应检查的内容："
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:27
+#: ../../sphinx/doc/usage/extensions/coverage.rst:0
+msgid "Type"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:0
+msgid "Default"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:55
+msgid ""
+"List of Python packages or modules to test coverage for. When this is "
+"provided, Sphinx will introspect each package or module provided in this "
+"list as well as all sub-packages and sub-modules found in each. When this is"
+" not provided, Sphinx will only provide coverage for Python packages and "
+"modules that it is aware of: that is, any modules documented using the "
+":rst:dir:`py:module` directive provided in the :doc:`Python domain "
+"</usage/domains/python>` or the :rst:dir:`automodule` directive provided by "
+"the :mod:`~sphinx.ext.autodoc` extension."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/coverage.rst:76
 msgid "List of `Python regular expressions`_."
 msgstr "“Python正则表达式”列表。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:29
+#: ../../sphinx/doc/usage/extensions/coverage.rst:78
 msgid ""
 "If any of these regular expressions matches any part of the full import path"
 " of a Python object, that Python object is excluded from the documentation "
 "coverage report."
 msgstr "如果这些正则表达式中的任何一个与Python对象的完整导入路径的任何部分匹配，那么该Python对象将从文档覆盖率报告中排除。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:45
+#: ../../sphinx/doc/usage/extensions/coverage.rst:94
 msgid "Set to ``False`` to not write headlines."
 msgstr "设置为“False”不写标题。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:51
+#: ../../sphinx/doc/usage/extensions/coverage.rst:100
 msgid ""
 "Skip objects that are not documented in the source with a docstring. "
 "``False`` by default."
 msgstr "跳过源文件中没有用docstring记录的对象。``默认情况下为False。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:58
+#: ../../sphinx/doc/usage/extensions/coverage.rst:107
 msgid ""
 "Print objects that are missing to standard output also. ``False`` by "
 "default."
 msgstr "打印标准输出中缺少的对象。``默认情况下为False。"
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:65
+#: ../../sphinx/doc/usage/extensions/coverage.rst:114
 msgid ""
 "Print a tabular report of the coverage statistics to the coverage report. "
 "``True`` by default."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:68
-#: ../../sphinx/doc/usage/extensions/coverage.rst:87
+#: ../../sphinx/doc/usage/extensions/coverage.rst:117
+#: ../../sphinx/doc/usage/extensions/coverage.rst:136
 msgid "Example output:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/coverage.rst:84
+#: ../../sphinx/doc/usage/extensions/coverage.rst:133
 msgid ""
 "Print a tabular report of the coverage statistics to standard output. "
 "``False`` by default."

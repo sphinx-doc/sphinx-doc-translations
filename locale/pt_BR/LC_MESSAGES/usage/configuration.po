@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 7.4.0\n"
+"Project-Id-Version: Sphinx 7.4.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 00:46+0000\n"
+"POT-Creation-Date: 2024-07-16 00:42+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -410,6 +410,8 @@ msgid ""
 "replacement for the :code-rst:`|today|` :ref:`default substitution <default-"
 "substitutions>`."
 msgstr ""
+"Esses valores determinam como formatar a data atual, usada como substituto "
+"para o :ref:`substituto padrão <default-substitutions>` :code-rst:`|today|`."
 
 #: ../../sphinx/doc/usage/configuration.rst:295
 msgid "If you set :confval:`today` to a non-empty value, it is used."
@@ -431,10 +433,14 @@ msgid ""
 "enabled with :confval:`language`, an equivalent format for the selected "
 "locale)."
 msgstr ""
+"O padrão para :confval:`today` é :code-py:`''` e o padrão para "
+":confval:`today_fmt` é :code-py:`'%b %d, %Y'` (ou se tradução estiver "
+"habilitada com :confval:`language`, um formato será selecionado na "
+"localidade equivalente)."
 
 #: ../../sphinx/doc/usage/configuration.rst:306
 msgid "Options for figure numbering"
-msgstr ""
+msgstr "Opções para numeração de figuras"
 
 #: ../../sphinx/doc/usage/configuration.rst:312
 msgid ""
@@ -442,6 +448,9 @@ msgid ""
 "numbered if they have a caption. The :rst:role:`numref` role is enabled. "
 "Obeyed so far only by HTML and LaTeX builders."
 msgstr ""
+"Se :code-py:`True`, figuras, tabelas e blocos de código são automaticamente "
+"numerados, caso tenham legenda. Se o papel :rst:role:`numref` estivar "
+"habilitada. Abrange atualmente os construtores de HTML e LaTeX."
 
 #: ../../sphinx/doc/usage/configuration.rst:319
 msgid ""
@@ -458,16 +467,22 @@ msgid ""
 "format of figure numbers. The marker ``%s`` will be replaced with the figure"
 " number."
 msgstr ""
+"Um dicionário mapeando :code-py:`'figure'`, :code-py:`'table'`, :code-"
+"py:`'code-block'` e :code-py:`'section'` para strings que são usadas para o "
+"formato de números de figura. o marcador ``%s`` será substituído pelo número"
+" da figura."
 
 #: ../../sphinx/doc/usage/configuration.rst:333
 msgid "The defaults are:"
-msgstr ""
+msgstr "Os padrões são:"
 
 #: ../../sphinx/doc/usage/configuration.rst:350
 msgid ""
 "If set to :code-py:`0`, figures, tables, and code-blocks are continuously "
 "numbered starting at ``1``."
 msgstr ""
+"Se definido para :code-py:`0`, as figuras, os tabelas e os blocos de código "
+"são continuamente numerados iniciando em ``1``."
 
 #: ../../sphinx/doc/usage/configuration.rst:352
 msgid ""
@@ -477,6 +492,11 @@ msgid ""
 " has been activated via the ``:numbered:`` option of the :rst:dir:`toctree` "
 "directive."
 msgstr ""
+"Se :code-py:`1`, a numeração será ``x.1``, ``x.2``, ... com ``x`` "
+"representando o número da seção. (Se não houver seção de nível superior, o "
+"prefixo não será adicionado). Isso naturalmente se aplica, somente se "
+"numeração foi ativada através da opção ``:numbered:`` da diretiva "
+":rst:dir:`toctree`."
 
 #: ../../sphinx/doc/usage/configuration.rst:357
 msgid ""
@@ -485,20 +505,28 @@ msgid ""
 " directly under a section, there will be no ``y.`` prefix, and if there is "
 "no top-level section, the prefix will not be added."
 msgstr ""
+"Se :code-py:`2`, a numeração será ``x.y.1``, ``x.y.2``, ... com ``x`` "
+"representando o número da seção e ``y`` o número da subseção. Se localizado "
+"diretamente abaixo de uma seção, não haverá prefixo ``y.``, e se não houver "
+"seção de nível superior, o prefixo não será adicionado."
 
 #: ../../sphinx/doc/usage/configuration.rst:361
 msgid "Any other positive integer can be used, following the rules above."
 msgstr ""
+"Qualquer outro número inteiro positivo pode ser utilizado, seguindo as "
+"regras acima."
 
 #: ../../sphinx/doc/usage/configuration.rst:365
 msgid ""
 "The LaTeX builder obeys this setting if :confval:`numfig` is set to :code-"
 "py:`True`."
 msgstr ""
+"O construtor LaTeX obedece essa configuração se :confval:`numfig` estiver "
+"definido para :code-py:`True`."
 
 #: ../../sphinx/doc/usage/configuration.rst:371
 msgid "Options for highlighting"
-msgstr ""
+msgstr "Opções de realce"
 
 #: ../../sphinx/doc/usage/configuration.rst:377
 msgid ""
@@ -506,6 +534,8 @@ msgid ""
 "py:`'default'`, which suppresses warnings if highlighting as Python code "
 "fails."
 msgstr ""
+"A linguagem padrão para realçar o código-fonte. O padrão é :code-"
+"py:`'default'`, que suprime avisos se o realce como código Python falhar."
 
 #: ../../sphinx/doc/usage/configuration.rst:381
 msgid ""
@@ -517,7 +547,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:386
 msgid "The default is now :code-py:`'default'`."
-msgstr ""
+msgstr "O padrão é agora :code-py:`'default'`."
 
 #: ../../sphinx/doc/usage/configuration.rst:393
 msgid ""
@@ -525,6 +555,10 @@ msgid ""
 "lexer-specific; for the options understood by each, see the `Pygments "
 "documentation <https://pygments.org/docs/lexers>`_."
 msgstr ""
+"Um dicionário que mapeia nomes de analisadores léxicos de Pygments para suas"
+" opções. Estes são específicos do analisador léxico; para as opções "
+"compreendidas por cada um, consulte a `documentação do Pygments "
+"<https://pygments.org/docs/lexers>`_."
 
 #: ../../sphinx/doc/usage/configuration.rst:397
 #: ../../sphinx/doc/usage/configuration.rst:1573
@@ -553,7 +587,7 @@ msgstr "Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:409
 msgid "Allow configuring highlight options for multiple lexers."
-msgstr ""
+msgstr "Permite configurar opções de realce para vários analisadores léxicos."
 
 #: ../../sphinx/doc/usage/configuration.rst:415
 msgid ""
@@ -561,6 +595,9 @@ msgid ""
 "either the theme's default style or :code-py:`'sphinx'` is selected for HTML"
 " output."
 msgstr ""
+"O nome do estilo usado para realce de código-fonte com Pygments. Se não "
+"definido, usa estilo padrão do tema ou :code-py:`'sphinx'` é selecionado na "
+"saída HTML."
 
 #: ../../sphinx/doc/usage/configuration.rst:419
 msgid ""
@@ -572,11 +609,11 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:425
 msgid "Options for HTTP requests"
-msgstr ""
+msgstr "Opções para solicitações HTTP"
 
 #: ../../sphinx/doc/usage/configuration.rst:431
 msgid "If True, Sphinx verifies server certificates."
-msgstr ""
+msgstr "Se verdadeiro, o Sphinx verifica os certificados do servidor."
 
 #: ../../sphinx/doc/usage/configuration.rst:439
 msgid ""
@@ -585,6 +622,10 @@ msgid ""
 "certificate file path. The certificates are used to verify server "
 "certifications."
 msgstr ""
+"Caminho para um arquivo de certificado de AC ou caminho para o diretório que"
+" contém os certificados. Também permite um dicionário mapeando nomes do host"
+" para o caminho do arquivo de certificado. Os certificados são usados para "
+"verificar os certificados do servidor."
 
 #: ../../sphinx/doc/usage/configuration.rst:449
 msgid ""
@@ -592,20 +633,27 @@ msgid ""
 ":confval:`!tls_cacerts` is not set, Sphinx falls back to requests' default "
 "behaviour. See :ref:`requests:verification` for further details."
 msgstr ""
+"O Sphinx usa requests_ como uma biblioteca HTTP internamente. Se "
+":confval:`!tls_cacerts` não estiver definido, o Sphinx volta ao "
+"comportamento padrão do requests. Veja :ref:`requests:verification` para "
+"mais detalhes."
 
 #: ../../sphinx/doc/usage/configuration.rst:461
 msgid "Set the User-Agent used by Sphinx for HTTP requests."
-msgstr ""
+msgstr "Define o User-Agent usado pelo Sphinx para solicitações HTTP."
 
 #: ../../sphinx/doc/usage/configuration.rst:469
 msgid "Options for internationalisation"
-msgstr ""
+msgstr "Opções para internacionalização"
 
 #: ../../sphinx/doc/usage/configuration.rst:471
 msgid ""
 "These options influence Sphinx's *Native Language Support*. See the "
 "documentation on :ref:`intl` for details."
 msgstr ""
+"Essas opções influenciam no *Native Language Support* (que, em português, "
+"significa \"suporte a idioma nativo\") do Sphinx. Veja a documentação em "
+":ref:`intl` para detalhes."
 
 #: ../../sphinx/doc/usage/configuration.rst:478
 msgid ""
@@ -619,6 +667,15 @@ msgid ""
 "builder, a suitable language will be selected as an option for the *Babel* "
 "package."
 msgstr ""
+"O código para o idioma em que os documentos são escritos. Qualquer texto "
+"gerado automaticamente pelo Sphinx estará nesse idioma. Além disso, o Sphinx"
+" tentará substituir parágrafos individuais de seus documentos com os "
+"conjuntos de tradução obtidos em :confval:`locale_dirs`. O Sphinx irá "
+"pesquisar figuras específicas de um idioma nomeadas por "
+":confval:`figure_language_filename` (por exemplo, a versão alemã de "
+"``myfigure.png`` será ``myfigure.de.png`` por padrão) e as substituirá por "
+"figuras originais. No construtor LaTeX, um idioma adequado será selecionado "
+"como uma opção para o pacote *Babel*."
 
 #: ../../sphinx/doc/usage/configuration.rst:493
 msgid "Support figure substitution"
@@ -626,7 +683,7 @@ msgstr "Suporte substituição figura"
 
 #: ../../sphinx/doc/usage/configuration.rst:496
 msgid "The default is now :code-py:`'en'` (previously :code-py:`None`)."
-msgstr ""
+msgstr "O padrão agora é :code-py:`'en'` (anteriormente :code-py:`None`)."
 
 #: ../../sphinx/doc/usage/configuration.rst:499
 msgid "Currently supported languages by Sphinx are:"
@@ -872,6 +929,9 @@ msgid ""
 ":confval:`language`), relative to the source directory. The directories on "
 "this path are searched by the :mod:`gettext` module."
 msgstr ""
+"Diretórios para pesquisar por catálogos de mensagens adicionais (veja "
+":confval:`language`), relativos ao diretório fonte. Os diretórios desse "
+"caminho de pesquisa serão usados pelo módulo :mod:`gettext`."
 
 #: ../../sphinx/doc/usage/configuration.rst:565
 msgid ""
@@ -881,12 +941,17 @@ msgid ""
 ":file:`./locale/{language}/LC_MESSAGES/sphinx.mo`. The text domain of "
 "individual documents depends on :confval:`gettext_compact`."
 msgstr ""
+"Mensagens internas do Sphinx são recuperadas de um domínio ``sphinx``; se "
+"adicionar o arquivo :file:`./locale` nessa configuração, o catálogo de "
+"mensagem (compilado no formato ``.po`` usando o programa :program:`msgfmt`) "
+"deve estar em :file:`./locale/{language}/LC_MESSAGES/sphinx.mo`.  O domínio "
+"textual de documentos individuais depende de :confval:`gettext_compact`."
 
 #: ../../sphinx/doc/usage/configuration.rst:574
 msgid ""
 "The :option:`-v option to sphinx-build <sphinx-build -v>` is useful to check"
 " the :confval:`!locale_dirs` setting is working as expected. If the message "
-"catalog directory not found, debug messages are emmitted."
+"catalog directory not found, debug messages are emitted."
 msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:580
@@ -898,22 +963,31 @@ msgid ""
 "If True, \"fuzzy\" messages in the message catalogs are used for "
 "translation."
 msgstr ""
+"Se True, as mensagens aproximadas, isto é, marcadas com \"fuzzy\" nos "
+"catálogos de mensagens são usadas para tradução."
 
 #: ../../sphinx/doc/usage/configuration.rst:595
 msgid ""
 "If :code-py:`True`, a document's text domain is its docname if it is a top-"
 "level project file and its very base directory otherwise."
 msgstr ""
+"Se :code-py:`True`, o domínio de texto de um documento será seu docname se "
+"for um arquivo de projeto de nível superior e, caso contrário, seu diretório"
+" base."
 
 #: ../../sphinx/doc/usage/configuration.rst:598
 msgid "If :code-py:`False`, a document's text domain is the docname, in full."
 msgstr ""
+"Se :code-py:`False`, o domínio de texto de um documento é o docname, por "
+"extenso."
 
 #: ../../sphinx/doc/usage/configuration.rst:600
 msgid ""
 "If set to a string, every document's text domain is set to this string, "
 "making all documents use single text domain."
 msgstr ""
+"Se definido com uma string, o domínio de texto de todos os documentos é esta"
+" string, fazendo com que todos os documentos usem um único domínio de texto."
 
 #: ../../sphinx/doc/usage/configuration.rst:603
 msgid ""
@@ -922,123 +996,150 @@ msgid ""
 "py:`False`, it is ``markup/code``. With this option set to :code-"
 "py:`'sample'`, it is ``sample``."
 msgstr ""
+"Com :code-py:`gettext_compact = True`, o documento :file:`markup/code.rst` "
+"termina no domínio de texto ``markup``. Com esta opção definida como :code-"
+"py:`False`, é ``markup/code``. Com esta opção definida como :code-"
+"py:`'sample'`, é ``sample``."
 
 #: ../../sphinx/doc/usage/configuration.rst:610
 msgid "Allow string values."
-msgstr ""
+msgstr "Permite valores de string."
 
 #: ../../sphinx/doc/usage/configuration.rst:617
 msgid ""
 "If :code-py:`True`, Sphinx generates UUID information for version tracking "
 "in message catalogs. It is used to:"
 msgstr ""
+"Se :code-py:`True`, Sphinx gera informação UUID para rastrear versão os "
+"catálogos de mensagens. Usado para:"
 
 #: ../../sphinx/doc/usage/configuration.rst:621
 msgid "Add a UUID line for each *msgid* in ``.pot`` files."
-msgstr ""
+msgstr "Adiciona uma linha de UUID para cada *msgid* nos arquivos ``.pot``."
 
 #: ../../sphinx/doc/usage/configuration.rst:622
 msgid ""
 "Calculate similarity between new msgids and previously saved old msgids. "
 "(This calculation can take a long time.)"
 msgstr ""
+"Calcula a similaridade entre novas msgids e as anteriormente salvas msgids "
+"antigas. (Esse cálculo pode levar algum tempo.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:626
 msgid ""
 "If you want to accelerate the calculation, you can use a third-party package"
 " (Levenshtein_) by running :command:`pip install levenshtein`."
 msgstr ""
+"Se deseja acelerar o cálculo, pode usar um pacote de terceiros "
+"(Levenshtein_) executando :command:`pip install levenshtein`."
 
 #: ../../sphinx/doc/usage/configuration.rst:638
 msgid ""
 "If :code-py:`True`, Sphinx generates location information for messages in "
 "message catalogs."
 msgstr ""
+"Se :code-py:`True`, Sphinx gera informação de local de mensagens em "
+"catálogos de mensagens."
 
 #: ../../sphinx/doc/usage/configuration.rst:647
 msgid ""
 "If :code-py:`True`, Sphinx builds a ``.mo`` file for each translation "
 "catalog file."
 msgstr ""
+"Se :code-py:`True`, Sphinx constrói um arquivo ``.mo`` para cada catálogo de"
+" mensagens."
 
 #: ../../sphinx/doc/usage/configuration.rst:656
 msgid "Enable ``gettext`` translation for certain element types. Example:"
 msgstr ""
+"Habilita a tradução ``gettext`` para certos tipos de elementos. Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:663
 msgid "The following element types are supported:"
-msgstr ""
+msgstr "Os seguintes tipos de elementos são suportados:"
 
 #: ../../sphinx/doc/usage/configuration.rst:665
 msgid ":code-py:`'index'` -- index terms"
-msgstr ""
+msgstr ":code-py:`'index'` -- termos de índice"
 
 #: ../../sphinx/doc/usage/configuration.rst:666
 msgid ""
 ":code-py:`'literal-block'` -- literal blocks (``::`` annotation and ``code-"
 "block`` directive)"
 msgstr ""
+":code-py:`'literal-block'` -- blocos literais (anotação ``::`` e diretiva "
+"``code-block``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:668
 msgid ":code-py:`'doctest-block'` -- doctest block"
-msgstr ""
+msgstr ":code-py:`'doctest-block'` -- bloco de doctest"
 
 #: ../../sphinx/doc/usage/configuration.rst:669
 msgid ":code-py:`'raw'` -- raw content"
-msgstr ""
+msgstr ":code-py:`'raw'` -- conteúdo bruto"
 
 #: ../../sphinx/doc/usage/configuration.rst:670
 msgid ":code-py:`'image'` -- image/figure uri"
-msgstr ""
+msgstr ":code-py:`'image'` -- uri de imagem/figura"
 
 #: ../../sphinx/doc/usage/configuration.rst:673
 msgid "The alt text for images is translated by default."
-msgstr ""
+msgstr "O texto alternativo de imagens é traduzido por padrão."
 
 #: ../../sphinx/doc/usage/configuration.rst:675
 #: ../../sphinx/doc/usage/configuration.rst:1831
 #: ../../sphinx/doc/usage/configuration.rst:2936
 #: ../../sphinx/doc/usage/configuration.rst:3447
 msgid "Permit and prefer a set type."
-msgstr ""
+msgstr "Permite e prefere um tipo definido."
 
 #: ../../sphinx/doc/usage/configuration.rst:682
 msgid ""
 "The filename format for language-specific figures. The available format "
 "tokens are:"
 msgstr ""
+"O formato do nome do arquivo para figuras específicas de idioma. Os tokens "
+"de formato disponíveis são:"
 
 #: ../../sphinx/doc/usage/configuration.rst:685
 msgid ""
 "``{root}``: the filename, including any path component, without the file "
 "extension. For example: ``images/filename``."
 msgstr ""
+"``{root}``: o nome do arquivo, incluindo componentes de caminho, porem sem a"
+" extensão do arquivo. Por exemplo: ``images/filename``."
 
 #: ../../sphinx/doc/usage/configuration.rst:688
 msgid ""
 "``{path}``: the directory path component of the filename, with a trailing "
 "slash if non-empty. For example: ``images/``."
 msgstr ""
+"``{path}``: o caminho do diretório do nome do arquivo, com barra final se "
+"não for vazio. Por exemplo: ``images/``."
 
 #: ../../sphinx/doc/usage/configuration.rst:691
 msgid ""
 "``{basename}``: the filename without the directory path or file extension "
 "components. For example: ``filename``."
 msgstr ""
+"``{basename}``: nome do arquivo sem o caminho do diretório e sem a extensão "
+"do arquivo. Por exemplo: ``filename``."
 
 #: ../../sphinx/doc/usage/configuration.rst:694
 msgid "``{ext}``: the file extension. For example: ``.png``."
-msgstr ""
+msgstr "``{ext}``: a extensão do arquivo. Por exemplo: ``.png``."
 
 #: ../../sphinx/doc/usage/configuration.rst:696
 msgid "``{language}``: the translation language. For example: ``en``."
-msgstr ""
+msgstr "``{language}``: idioma da tradução. Por exemplo: ``en``."
 
 #: ../../sphinx/doc/usage/configuration.rst:698
 msgid ""
 "``{docpath}``: the directory path component for the current document, with a"
 " trailing slash if non-empty. For example: ``dirname/``."
 msgstr ""
+"``{docpath}``: o caminho do diretório do documento atual, com barra final se"
+" não for vazio. Por exemplo: ``dirname/``."
 
 #: ../../sphinx/doc/usage/configuration.rst:702
 msgid ""
@@ -1046,12 +1147,18 @@ msgid ""
 "using an image at :file:`images/filename.png`, will use the language-"
 "specific figure filename :file:`images/filename.en.png`."
 msgstr ""
+"Por padrão, uma diretiva de imagem :code-rst:`.. image:: "
+"images/filename.png`, usando uma imagem em :file:`images/filename.png`, "
+"usará um nome de arquivo da figura específico do idioma "
+":file:`images/filename.en.png`."
 
 #: ../../sphinx/doc/usage/configuration.rst:707
 msgid ""
 "If :confval:`!figure_language_filename` is set as below, the language-"
 "specific figure filename will be :file:`images/en/filename.png` instead."
 msgstr ""
+"Se :confval:`!figure_language_filename` for definido como abaixo, o nome do "
+"arquivo da figura específico do idioma será :file:`images/en/filename.png`."
 
 #: ../../sphinx/doc/usage/configuration.rst:717
 msgid "Added ``{path}`` and ``{basename}`` tokens."
@@ -1075,42 +1182,46 @@ msgstr ""
 #: ../../sphinx/doc/usage/configuration.rst:731
 #: ../../sphinx/doc/usage/configuration.rst:2981
 msgid ":code-py:`True`"
-msgstr ""
+msgstr ":code-py:`True`"
 
 #: ../../sphinx/doc/usage/configuration.rst:732
 msgid ""
 "Add ``translated`` and ``untranslated`` classes to all nodes with "
 "translatable content."
 msgstr ""
+"Adiciona as classes ``translated`` e ``untranslated`` para todos os nós com "
+"conteúdo traduzido."
 
 #: ../../sphinx/doc/usage/configuration.rst:734
 msgid ":code-py:`'translated'`"
-msgstr ""
+msgstr ":code-py:`'translated'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:735
 msgid "Only add the ``translated`` class."
-msgstr ""
+msgstr "Adiciona apenas a classe ``translated``."
 
 #: ../../sphinx/doc/usage/configuration.rst:736
 msgid ":code-py:`'untranslated'`"
-msgstr ""
+msgstr ":code-py:`'untranslated'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:737
 msgid "Only add the ``untranslated`` class."
-msgstr ""
+msgstr "Adiciona apenas a classe ``untranslated``."
 
 #: ../../sphinx/doc/usage/configuration.rst:738
 #: ../../sphinx/doc/usage/configuration.rst:2975
 msgid ":code-py:`False`"
-msgstr ""
+msgstr ":code-py:`False`"
 
 #: ../../sphinx/doc/usage/configuration.rst:739
 msgid "Do not add any classes to indicate translation progress."
 msgstr ""
+"Não adiciona qualquer classe para indicar o progresso de tradução. not add "
+"any classes to indicate translation progress."
 
 #: ../../sphinx/doc/usage/configuration.rst:745
 msgid "Options for markup"
-msgstr ""
+msgstr "Opções para marcação"
 
 #: ../../sphinx/doc/usage/configuration.rst:753
 msgid ""
@@ -1119,12 +1230,18 @@ msgid ""
 "set to :code-py:`'py:obj'` to make ```filter``` a cross-reference to the "
 "Python function \"filter\"."
 msgstr ""
+"O nome de um papel reStructuredText (embutido ou extensão Sphinx) para usar "
+"o papel padrão, isso é, para o texto marcado ```como esse```. Pode ser "
+"definido para :code-py:`'py:obj'` para tornar ```filter``` uma referência "
+"cruzada para a função Python \"filter\"."
 
 #: ../../sphinx/doc/usage/configuration.rst:758
 msgid ""
 "The default role can always be set within individual documents using the "
 "standard reStructuredText :dudir:`default-role` directive."
 msgstr ""
+"O papel padrão pode ser sempre definido dentro de documentos individuais "
+"usando a diretiva reStructuredText :dudir:`default-role`."
 
 #: ../../sphinx/doc/usage/configuration.rst:767
 msgid ""
@@ -1132,6 +1249,9 @@ msgid ""
 "Warnings are always written to the standard error stream when "
 ":program:`sphinx-build` is run, regardless of this setting."
 msgstr ""
+"Mantém os avisos como parágrafos de \"mensagens do sistema\" nos documentos "
+"renderizados. Os avisos são sempre escritos no fluxo de erros padrão quando "
+":program:`sphinx-build` é executado, independentemente desta configuração."
 
 #: ../../sphinx/doc/usage/configuration.rst:777
 msgid ""
@@ -1140,6 +1260,10 @@ msgid ""
 "``option_emphasise_placeholders=True`` and ``.. option:: -foption={TYPE}`` "
 "would render with ``TYPE`` emphasised."
 msgstr ""
+"Quando habilitado, enfatiza os espaços reservados nas diretivas "
+":rst:dir:`option`. Para exibir chaves literais, escape com uma barra "
+"invertida (``\\{``). Por exemplo, ``option_emphasise_placeholders=True`` e "
+"``.. option:: -foption={TYPE}`` seriam renderizados com ``TYPE`` enfatizado."
 
 #: ../../sphinx/doc/usage/configuration.rst:790
 msgid ""
@@ -1147,6 +1271,9 @@ msgid ""
 ":code-py:`None` to disable a default domain. The default is :code-py:`'py'`,"
 " for the Python domain."
 msgstr ""
+"O nome do :doc:`domínio </usage/domains/index>` padrão. Também pode ser "
+":code-py:`None` para desabilitar um domínio padrão. O padrão é :code-"
+"py:`'py'`, para o domínio Python."
 
 #: ../../sphinx/doc/usage/configuration.rst:794
 msgid ""
@@ -1156,6 +1283,11 @@ msgid ""
 "Python functions will be named \"Python function\", not just \"function\"). "
 "Example:"
 msgstr ""
+"Esses objetos em outro domínio (onde o nome de domínio é dado explicitamente"
+" ou selecionado por uma diretiva :rst:dir:`default-domain`) irá ter o nome "
+"de domínio prefixado quando renomeado (por exemplo, quando o domínio padrão "
+"é C, as funções Python serão nomeadas \"função Python\", não \"função\"). "
+"Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:814
 msgid ""
@@ -1164,6 +1296,10 @@ msgid ""
 " should be available in every file (another being :confval:`rst_prolog`). "
 "Example:"
 msgstr ""
+"Uma string de reStructuredText que pode ser incluída ao final de todo "
+"arquivo fonte que for lido. Isso é possível adicionar uma substituição que "
+"estará disponível em todo arquivo (outro como :confval:`rst_prolog`). "
+"Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:834
 msgid ""
@@ -1172,6 +1308,10 @@ msgid ""
 "that should be available in every file (another being "
 ":confval:`rst_epilog`). Example:"
 msgstr ""
+"Uma string de reStructuredText que será incluída no início de cada arquivo "
+"fonte que é lido. Este é um local possível para adicionar substituições que "
+"devem estar disponíveis em todos os arquivos (outro sendo "
+":confval:`rst_epilog`). Um exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:852
 msgid ""
@@ -1187,14 +1327,17 @@ msgid ""
 "reStructuredText parser to recognise the footnote, but do not look too nice "
 "in the output."
 msgstr ""
+"Espaços antes das referências de rodapé são necessários para o analisador de"
+" reStructuredText reconhecer notas de rodapé, mas não tem aparência boa na "
+"saída."
 
 #: ../../sphinx/doc/usage/configuration.rst:869
 msgid "Options for Maths"
-msgstr ""
+msgstr "Opções para matemática"
 
 #: ../../sphinx/doc/usage/configuration.rst:871
 msgid "These options control maths markup and notation."
-msgstr ""
+msgstr "Essas opções controlam a marcação e notação matemática."
 
 #: ../../sphinx/doc/usage/configuration.rst:877
 msgid ""
@@ -1211,7 +1354,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:888
 msgid "Force all displayed equations to be numbered. Example:"
-msgstr ""
+msgstr "Força todas as equações exibidas a serem numeradas. Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:901
 msgid ""
@@ -1220,6 +1363,11 @@ msgid ""
 "respected. The :rst:role:`eq`, not :rst:role:`numref`, role must be used to "
 "reference equation numbers."
 msgstr ""
+"Se :code-py:`True`, equações matemáticas serão exibidas como numeradas "
+"através das páginas quando :confval:`numfig` estiver habilitada. A "
+"configuração :confval:`numfig_secnum_depth` será respeitada. O papel "
+":rst:role:`eq`, e não :rst:role:`numref`, deve ser usado para referenciar "
+"número de equações."
 
 #: ../../sphinx/doc/usage/configuration.rst:913
 msgid ""
@@ -1227,14 +1375,17 @@ msgid ""
 " number when :confval:`numfig` is enabled and :confval:`numfig_secnum_depth`"
 " is positive."
 msgstr ""
+"Uma string que define o separador entre os números da seção e o número da "
+"equação quando :confval:`numfig` está habilitada e "
+":confval:`numfig_secnum_profundidade` é positiva."
 
 #: ../../sphinx/doc/usage/configuration.rst:917
 msgid "Example: :code-py:`'-'` gets rendered as ``1.2-3``."
-msgstr ""
+msgstr "Exemplo: :code-py:`'-'` é renderizado como ``1.2-3``."
 
 #: ../../sphinx/doc/usage/configuration.rst:923
 msgid "Options for the nitpicky mode"
-msgstr ""
+msgstr "Opções para modo nitpicky"
 
 #: ../../sphinx/doc/usage/configuration.rst:929
 msgid ""
@@ -1243,6 +1394,10 @@ msgid ""
 "recommended for new projects as it ensures that all references are to valid "
 "targets."
 msgstr ""
+"Habilita o modo nitpicky se :code-py:`True`. No modo nitpicky (em português,"
+" minuncioso), o Sphinx avisará sobre *todas* as referências onde o alvo não "
+"pode ser encontrado. Isto é recomendado para novos projetos, pois garante "
+"que todas as referências sejam a metas válidas."
 
 #: ../../sphinx/doc/usage/configuration.rst:935
 msgid ""
@@ -1251,6 +1406,10 @@ msgid ""
 ":confval:`nitpick_ignore` for a way to mark missing references as \"known "
 "missing\"."
 msgstr ""
+"Você pode ativar este modo temporariamente usando a opção de linha de "
+"comando :option:`--nitpicky <sphinx-build --nitpicky>`. Veja "
+":confval:`nitpick_ignore` para uma maneira de marcar referências ausentes "
+"como \"sabidamente ausentes\"."
 
 #: ../../sphinx/doc/usage/configuration.rst:950
 msgid ""
@@ -1259,6 +1418,10 @@ msgid ""
 " Note that ``warning_type`` should include the domain name if present. "
 "Example:"
 msgstr ""
+"Um conjunto ou lista de tuplas :code-py:`(warning_type, target)` que devem "
+"ser ignoradas ao gerar avisos no :confval:`\"modo nitpicky\" <nitpicky>`. "
+"Observe que ``warning_type`` deve incluir o nome do domínio, se presente. "
+"Exemplo:"
 
 #: ../../sphinx/doc/usage/configuration.rst:964
 #: ../../sphinx/doc/usage/configuration.rst:984
@@ -1272,6 +1435,10 @@ msgid ""
 "that the regular expression must match the whole string (as if the ``^`` and"
 " ``$`` markers were inserted)."
 msgstr ""
+"Uma versão estendida da :confval:`nitpick_ignore`, que interpreta as strings"
+" ``warning_type`` e ``target`` como expressões regulares. Note que a "
+"expressão regular deve corresponder a toda a string (como se os marcadores "
+"``^`` e ``$`` tivessem sido inseridos.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:977
 msgid ""
@@ -1280,6 +1447,10 @@ msgid ""
 "them, such as  :code-py:`('py:const', 'foo_package.bar.BAZ_VALUE')` or "
 ":code-py:`('py:class', 'food.bar.Barman')`."
 msgstr ""
+"Por exemplo, ``(r'py:.*', r'foo.*bar\\.B.*')`` vai ignorar avisos nitpicky "
+"para todas as entidades python que comecem com ``'foo'`` e tenham "
+"``'bar.B'`` neles, tal como :code-py:`('py:const', "
+"'foo_package.bar.BAZ_VALUE')` ou :code-py:`('py:class', 'food.bar.Barman')`."
 
 #: ../../sphinx/doc/usage/configuration.rst:989
 msgid "Options for object signatures"

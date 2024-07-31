@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007-2024, the Sphinx developers
+# This file is distributed under the same license as the Sphinx package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx 8.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-31 00:35+0000\n"
+"PO-Revision-Date: 2024-07-31 00:36+0000\n"
+"Language-Team: Serbian (https://app.transifex.com/sphinx-doc/teams/15434/sr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../../sphinx/doc/changes/0.2.rst:3
+msgid "Sphinx 0.2"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:7
+msgid "Release 0.2 (Apr 27, 2008)"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:10
+msgid "Incompatible changes"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:12
+msgid ""
+"Jinja, the template engine used for the default HTML templates, is now no "
+"longer shipped with Sphinx.  If it is not installed automatically for you "
+"(it is now listed as a dependency in ``setup.py``), install it manually from"
+" PyPI.  This will also be needed if you're using Sphinx from a SVN checkout;"
+" in that case please also remove the ``sphinx/jinja`` directory that may be "
+"left over from old revisions."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:19
+msgid ""
+"The clumsy handling of the ``index.html`` template was removed.  The config "
+"value ``html_index`` is gone, and ``html_additional_pages`` should be used "
+"instead.  If you need it, the old ``index.html`` template is still there, "
+"called ``defindex.html``, and you can port your html_index template, using "
+"Jinja inheritance, by changing your template::"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:30
+msgid ""
+"and putting ``'index': name of your template`` in ``html_additional_pages``."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:32
+msgid ""
+"In the layout template, redundant ``block``\\s were removed; you should use "
+"Jinja's standard ``{{ super() }}`` mechanism instead, as explained in the "
+"(newly written) templating docs."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:37
+msgid "New features added"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:39
+msgid "Extension API (Application object):"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:41
+msgid ""
+"Support a new method, ``add_crossref_type``.  It works like "
+"``add_description_unit`` but the directive will only create a target and no "
+"output."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:44
+msgid ""
+"Support a new method, ``add_transform``.  It takes a standard Docutils "
+"``Transform`` subclass which is then applied by Sphinx's reader on parsing "
+"reST document trees."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:47
+msgid ""
+"Add support for other template engines than Jinja, by adding an abstraction "
+"called a \"template bridge\".  This class handles rendering of templates and"
+" can be changed using the new configuration value \"template_bridge\"."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:51
+msgid ""
+"The config file itself can be an extension (if it provides a ``setup()`` "
+"function)."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:54
+msgid "Markup:"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:56
+msgid ""
+"New directive, ``currentmodule``.  It can be used to indicate the module "
+"name of the following documented things without creating index entries."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:58
+msgid "Allow giving a different title to documents in the toctree."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:59
+msgid "Allow giving multiple options in a ``cmdoption`` directive."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:60
+msgid "Fix display of class members without explicit class name given."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:62
+msgid "Templates (HTML output):"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:64
+msgid "``index.html`` renamed to ``defindex.html``, see above."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:65
+msgid ""
+"There's a new config value, ``html_title``, that controls the overall "
+"\"title\" of the set of Sphinx docs.  It is used instead everywhere instead "
+"of \"Projectname vX.Y documentation\" now."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:68
+msgid ""
+"All references to \"documentation\" in the templates have been removed, so "
+"that it is now easier to use Sphinx for non-documentation documents with the"
+" default templates."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:71
+msgid ""
+"Templates now have an XHTML doctype, to be consistent with Docutils' HTML "
+"output."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:73
+msgid ""
+"You can now create an OpenSearch description file with the "
+"``html_use_opensearch`` config value."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:75
+msgid ""
+"You can now quickly include a logo in the sidebar, using the ``html_logo`` "
+"config value."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:77
+msgid ""
+"There are new blocks in the sidebar, so that you can easily insert content "
+"into the sidebar."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:80
+msgid "LaTeX output:"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:82
+msgid "The ``sphinx.sty`` package was cleaned of unused stuff."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:83
+msgid ""
+"You can include a logo in the title page with the ``latex_logo`` config "
+"value."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:85
+msgid ""
+"You can define the link colors and a border and background color for "
+"verbatim environments."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:88
+msgid ""
+"Thanks to Jacob Kaplan-Moss, Talin, Jeroen Ruigrok van der Werven and "
+"Sebastian Wiesner for suggestions."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:92
+msgid "Bugs fixed"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:94
+msgid ""
+"sphinx.ext.autodoc: Don't check ``__module__`` for explicitly given members."
+"  Remove \"self\" in class constructor argument list."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:97
+msgid "sphinx.htmlwriter: Don't use os.path for joining image HREFs."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:99
+msgid "sphinx.htmlwriter: Don't use SmartyPants for HTML attribute values."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:101
+msgid ""
+"sphinx.latexwriter: Implement option lists.  Also, some other changes were "
+"made to ``sphinx.sty`` in order to enhance compatibility and remove old "
+"unused stuff.  Thanks to Gael Varoquaux for that!"
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:105
+msgid "sphinx.roles: Fix referencing glossary terms with explicit targets."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:107
+msgid "sphinx.environment: Don't swallow TOC entries when resolving subtrees."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:109
+msgid "sphinx.quickstart: Create a sensible default latex_documents setting."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:111
+msgid ""
+"sphinx.builder, sphinx.environment: Gracefully handle some user error cases."
+msgstr ""
+
+#: ../../sphinx/doc/changes/0.2.rst:114
+msgid "sphinx.util: Follow symbolic links when searching for documents."
+msgstr ""

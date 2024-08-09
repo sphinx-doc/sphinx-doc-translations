@@ -2381,6 +2381,12 @@ msgid ""
 "URI with scheme like :code-py:`'https://example.org/style.css'`. The "
 "*attributes* dictionary is used for the ``<link>`` tag's attributes."
 msgstr ""
+"Uma lista de arquivos CSS. A entrada deve ser uma string *nome de arquivo* "
+"ou uma tupla contendo a string *nome de arquivo* e o dicionário de "
+"*atributos*. O *nome de arquivo* deve ser relativo ao "
+":confval:`html_static_path`, ou um URI completo com esquema como :code-"
+"py:`'https://example.org/style.css'`. O dicionário *attributes* é usado para"
+" os atributos da tag ``<link>``."
 
 #: ../../sphinx/doc/usage/configuration.rst:1613
 msgid ""
@@ -2388,11 +2394,14 @@ msgid ""
 "file at an earlier or later step. For more information, refer to "
 ":meth:`.Sphinx.add_css_file()`."
 msgstr ""
+"O atributo especial *priority* pode ser definido como um inteiro para "
+"carregar o arquivo CSS em um passo anterior ou posterior. Para mais "
+"informações, consulte :meth:`.Sphinx.add_css_file()`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1618
 #: ../../sphinx/doc/usage/configuration.rst:1647
 msgid "Support the *priority* attribute"
-msgstr ""
+msgstr "Suporte ao atributo *priority*."
 
 #: ../../sphinx/doc/usage/configuration.rst:1625
 msgid ""
@@ -2402,6 +2411,11 @@ msgid ""
 "URI with scheme like :code-py:`'https://example.org/script.js'`. The "
 "*attributes* dictionary is used for the ``<script>`` tag's attributes."
 msgstr ""
+"Uma lista de arquivos JavaScript. A entrada deve ser uma string *filename* "
+"ou uma tupla contendo a string *filename* e o dicionário *attributes*. O "
+"*filename* deve ser relativo ao :confval:`html_static_path`, ou um URI "
+"completo com esquema como :code-py:`'https://example.org/script.js'`. O "
+"dicionário *attributes* é usado para os atributos da tag ``<script>``."
 
 #: ../../sphinx/doc/usage/configuration.rst:1642
 msgid ""
@@ -2409,6 +2423,9 @@ msgid ""
 "JavaScript file at an earlier or later step. For more information, refer to "
 ":meth:`.Sphinx.add_js_file()`."
 msgstr ""
+"Como um atributo especial, *priority* pode ser definido como um inteiro para"
+" carregar o arquivo JavaScript em um passo anterior ou posterior. Para mais "
+"informações, consulte :meth:`.Sphinx.add_js_file()`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1654
 msgid ""
@@ -2418,6 +2435,11 @@ msgid ""
 ":file:`_static` directory after the theme's static files, so a file named "
 ":file:`default.css` will overwrite the theme's :file:`default.css`."
 msgstr ""
+"Lista de caminhos que contém arquivos estáticos (como folhas de estilo ou "
+"arquivos script). Relativos ao :term:`diretório de configuração`. São "
+"copiados para o arquivo saída :file:`_static` diretório após arquivos "
+"estáticos de tema, portante um arquivo chamado :file:`default.css` será "
+"sobreposto pelo arquivo tema :file:`default.css`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1662
 #: ../../sphinx/doc/usage/configuration.rst:1700
@@ -2434,12 +2456,17 @@ msgid ""
 "be copied. If you would like to copy them intentionally, explicitly add each"
 " file to this setting:"
 msgstr ""
+"Por razões de segurança, dotfiles em :confval:`!html_static_path` não serão "
+"copiados. Se desejar copiá-los intencionalmente, adicione explicitamente "
+"cada arquivo a esta configuração::"
 
 #: ../../sphinx/doc/usage/configuration.rst:1676
 msgid ""
 "An alternative approach is to use :confval:`html_extra_path`, which allows "
 "copying dotfiles under the directories."
 msgstr ""
+"Uma abordagem alternativa é usar :confval:`html_extra_path`, que permite "
+"copiar dotfiles nos diretórios."
 
 #: ../../sphinx/doc/usage/configuration.rst:1679
 msgid ""
@@ -2465,6 +2492,11 @@ msgid ""
 " copied to the output directory. They will overwrite any existing file of "
 "the same name."
 msgstr ""
+"A lista de caminhos que contem arquivos extras, não diretamente relacionados"
+" com a documentação, como :file:`robots.txt` ou :file:`.htaccess`. Caminhos "
+"Relativos são obtidos no :term:`diretório de configuração`. Serão copiados "
+"para o diretório de saída. Irão sobrepor arquivo já existente com o mesmo "
+"nome."
 
 #: ../../sphinx/doc/usage/configuration.rst:1705
 msgid ""
@@ -2483,16 +2515,22 @@ msgid ""
 "using the given :func:`~time.strftime` format. The empty string is "
 "equivalent to :code-py:`'%b %d, %Y'` (or a locale-dependent equivalent)."
 msgstr ""
+"Se definido, o registro de data e hora de 'Última atualização em:' é "
+"inserido no rodapé de página, usando formato :func:`~time.strftime`dado. A "
+"string vazia é equivalente a :code-py:`'%b %d, %Y'` (ou ao equivalente "
+"conforme a localidade)."
 
 #: ../../sphinx/doc/usage/configuration.rst:1724
 msgid "Add link anchors for each heading and description environment."
-msgstr ""
+msgstr "Adiciona âncoras de link para cada ambiente de título e descrição."
 
 #: ../../sphinx/doc/usage/configuration.rst:1732
 msgid ""
 "Text for link anchors for each heading and description environment. HTML "
 "entities and Unicode are allowed."
 msgstr ""
+"Texto para âncoras de link para cada título e ambiente de descrição. "
+"Entidades HTML e Unicode são permitidas."
 
 #: ../../sphinx/doc/usage/configuration.rst:1741
 #: ../../sphinx/doc/usage/configuration.rst:2180
@@ -2500,6 +2538,8 @@ msgid ""
 "A dictionary defining custom sidebar templates, mapping document names to "
 "template names."
 msgstr ""
+"Um dicionário que define modelos de barra lateral personalizados, mapeando "
+"nomes de documentos para nomes de modelos."
 
 #: ../../sphinx/doc/usage/configuration.rst:1744
 msgid ""
@@ -2507,6 +2547,9 @@ msgid ""
 "documents will get the specified sidebars. (A warning is emitted when a more"
 " than one glob-style pattern matches for any document.)"
 msgstr ""
+"As chaves podem conter `padrões estilo glob`_, nos casos onde os documentos "
+"que atenderem o critério, terão barras laterais especificadas. (Um aviso é "
+"emitido quando mais de um padrão de estilo glob combinar com um documento.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:1749
 msgid ""
@@ -2514,6 +2557,9 @@ msgid ""
 "sidebar templates to include. If all or some of the default sidebars are to "
 "be included, they must be put into this list as well."
 msgstr ""
+"Cada valor deve ser uma lista de strings que a lista completa de modelos de "
+"barra lateral para inclusão. Se todas ou algumas barras laterais padrão são "
+"incluídas, elas devem estar nessa lista também."
 
 #: ../../sphinx/doc/usage/configuration.rst:1754
 msgid ""
@@ -2522,10 +2568,16 @@ msgid ""
 ":code-py:`'localtoc.html'`, :code-py:`'relations.html'`, :code-"
 "py:`'sourcelink.html'`, and :code-py:`'searchbox.html'`."
 msgstr ""
+"As barras laterais padrão (para documentos que não correspondem a nenhum "
+"padrão) são definidas pelo próprio tema. Os temas embutidos usam modelos por"
+" padrão: :code-py:`'localtoc.html'`, :code-py:`'relations.html'`, :code-"
+"py:`'sourcelink.html'` e :code-py:`'searchbox.html'`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1760
 msgid "The bundled first-party sidebar templates that can be rendered are:"
 msgstr ""
+"Os modelos de barra lateral incluídos no Sphinx que podem ser renderizados "
+"são:"
 
 #: ../../sphinx/doc/usage/configuration.rst:1762
 msgid ""
@@ -2565,6 +2617,10 @@ msgid ""
 "sidebars for all other pages (except that the local TOC is replaced by the "
 "global TOC)."
 msgstr ""
+"Isso vai renderizar o modelo personalizado ``windows-sidebar.html`` e a "
+"caixa de pesquisa dentro da barra lateral de um dado documento e renderizar "
+"as barras laterais padrão para outras páginas (exceto a tabela local de "
+"conteúdo TOC que será substituída pela TOC global)."
 
 #: ../../sphinx/doc/usage/configuration.rst:1785
 msgid ""
@@ -2582,12 +2638,15 @@ msgstr ""
 #: ../../sphinx/doc/usage/configuration.rst:1792
 msgid "A single string value for :confval:`!html_sidebars` will be removed."
 msgstr ""
+"Um valor de string simples para :confval:`!html_sidebars` será removido."
 
 #: ../../sphinx/doc/usage/configuration.rst:1795
 msgid ""
 ":confval:`!html_sidebars` must be a list of strings, and no longer accepts a"
 " single string value."
 msgstr ""
+":confval:`!html_sidebars` deve ser uma lista de strings e não aceita mais um"
+" único valor de string."
 
 #: ../../sphinx/doc/usage/configuration.rst:1803
 msgid ""
@@ -2602,6 +2661,8 @@ msgid ""
 "This will render the template :file:`custom-download.html.jinja` as the page"
 " :file:`download.html`."
 msgstr ""
+"Isso renderizará o modelo :file:`custom-download.html.jinja` como a página "
+":file:`download.html`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1821
 #: ../../sphinx/doc/usage/configuration.rst:2926
@@ -2610,6 +2671,8 @@ msgid ""
 "If True, generate domain-specific indices in addition to the general index. "
 "For e.g. the Python domain, this is the global module index."
 msgstr ""
+"Se True, gera índices específicos do domínio além do índice geral. Por "
+"exemplo, para o domínio Python, é um índice global de módulos."
 
 #: ../../sphinx/doc/usage/configuration.rst:1824
 #: ../../sphinx/doc/usage/configuration.rst:2929
@@ -2620,34 +2683,47 @@ msgid ""
 " file name. For example, the Python module index has the name ``'py-"
 "modindex'``."
 msgstr ""
+"Esse valor pode ser Booleano ou lista de nomes de índices que devem ser "
+"gerados. Para encontrar o nome do índice para um índice específico, veja "
+"nome do arquivo HTML. Por exemplo: índice módulo Python tem nome ``'py-"
+"modindex'``."
 
 #: ../../sphinx/doc/usage/configuration.rst:1844
 msgid "Controls if an index is added to the HTML documents."
-msgstr ""
+msgstr "Controla se um índice é adicionado aos documentos HTML."
 
 #: ../../sphinx/doc/usage/configuration.rst:1852
 msgid ""
 "Generates two versions of the index: once as a single page with all the "
 "entries, and once as one page per starting letter."
 msgstr ""
+"Gera duas versões do índice: uma como uma única página com todas as entradas"
+" e uma como uma página por letra inicial."
 
 #: ../../sphinx/doc/usage/configuration.rst:1862
 msgid ""
 "If True, the  reStructuredText sources are included in the HTML build as "
 ":file:`_sources/{docname}`."
 msgstr ""
+"Se True, as fontes reStructuredText são incluídas no construtor HTML como "
+":file:`_sources/{docname}`"
 
 #: ../../sphinx/doc/usage/configuration.rst:1869
 msgid ""
 "If True (and :confval:`html_copy_source` is true as well), links to the "
 "reStructuredText sources will be added to the sidebar."
 msgstr ""
+"Se True (e :confval:`html_copy_source` for verdadeiro também), links para "
+"fontes reStructuredText irão aparecer na barra lateral."
 
 #: ../../sphinx/doc/usage/configuration.rst:1878
 msgid ""
 "The suffix to append to source links (see :confval:`html_show_sourcelink`), "
 "unless files they have this suffix already."
 msgstr ""
+"O sufixo a ser anexado aos links de fontes (veja "
+":confval:`html_show_sourcelink`), a menos que os arquivos já tenham este "
+"sufixo."
 
 #: ../../sphinx/doc/usage/configuration.rst:1888
 msgid ""
@@ -2658,6 +2734,12 @@ msgid ""
 "which these documents are served (without trailing slash), e.g. :code-"
 "py:`'https://docs.python.org'`."
 msgstr ""
+"Se não estiver vazio, um arquivo de descrição `OpenSearch "
+"<https://github.com/dewitt/opensearch>`_ será gerado e todas as páginas "
+"conterão uma tag ``<link>`` referente a ele. Como o OpenSearch não oferece "
+"suporte a URLs relativos para o local da página de pesquisa, o valor dessa "
+"opção deve ser o URL base do qual esses documentos são veiculados (sem barra"
+" final), por exemplo, :code-py:`'https://docs.python.org'`."
 
 #: ../../sphinx/doc/usage/configuration.rst:1902
 msgid "The file name suffix (file extension) for generated HTML files."

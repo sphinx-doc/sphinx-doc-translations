@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.0.0rc1\n"
+"Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-25 00:42+0000\n"
+"POT-Creation-Date: 2024-08-14 00:43+0000\n"
 "PO-Revision-Date: 2018-02-12 13:49+0000\n"
 "Last-Translator: Melia Lee <lixiuyu97@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -356,73 +356,95 @@ msgstr ""
 
 #: ../../sphinx/doc/man/sphinx-build.rst:256
 msgid ""
-"Turn warnings into errors.  This means that the build stops at the first "
-"warning and ``sphinx-build`` exits with exit status 1."
-msgstr "将警告变为错误。这意味着在第一次警告时停止生成，sphinx-build 退出，且退出状态为1."
+"Turn warnings into errors. This means that :program:`sphinx-build` exits "
+"with exit status 1 if any warnings are generated during the build."
+msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:259
+#: ../../sphinx/doc/man/sphinx-build.rst:260
 msgid "Add ``--fail-on-warning`` long option."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:264
+#: ../../sphinx/doc/man/sphinx-build.rst:262
 msgid ""
-"Only applicable whilst using :option:`--fail-on-warning`, which by default "
-"exits :program:`sphinx-build` on the first warning. Using :option:`!--keep-"
-"going` runs :program:`!sphinx-build` to completion and exits with exit "
-"status 1 if errors are encountered."
+":program:`sphinx-build` no longer exits on the first warning, but instead "
+"runs the entire build and exits with exit status 1 if any warnings were "
+"generated. This behaviour was previously enabled with :option:`--keep-"
+"going`."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:273
+#: ../../sphinx/doc/man/sphinx-build.rst:270
+msgid ""
+"From Sphinx 8.1, :option:`!--keep-going` is always enabled. Previously, it "
+"was only applicable whilst using :option:`--fail-on-warning`, which by "
+"default exited :program:`sphinx-build` on the first warning. Using "
+":option:`!--keep-going` runs :program:`!sphinx-build` to completion and "
+"exits with exit status 1 if errors are encountered."
+msgstr ""
+
+#: ../../sphinx/doc/man/sphinx-build.rst:277
+msgid ""
+":program:`sphinx-build` no longer exits on the first warning, meaning that "
+"in effect :option:`!--fail-on-warning` is always enabled. The option is "
+"retained for compatibility, but may be removed at some later date."
+msgstr ""
+
+#: ../../sphinx/doc/man/sphinx-build.rst:288
 msgid ""
 "Display the full traceback when an unhandled exception occurs.  Otherwise, "
 "only a summary is displayed and the traceback information is saved to a file"
 " for further analysis."
 msgstr "遇到未处理的异常时，显示完整的跟踪记录（traceback）。否则只显示一个简要的说明，详细的跟踪记录保存为文件以供后续分析。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:279
+#: ../../sphinx/doc/man/sphinx-build.rst:294
 msgid "Add ``--show-traceback`` long option."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:284
+#: ../../sphinx/doc/man/sphinx-build.rst:299
 msgid ""
 "(Useful for debugging only.)  Run the Python debugger, :mod:`pdb`, if an "
 "unhandled exception occurs while building."
 msgstr "（仅供调试使用。）如果生成过程中遇到未处理的异常，运行 Python 调试器 :mod:`pdb`。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:287
+#: ../../sphinx/doc/man/sphinx-build.rst:302
 msgid "Add ``--pdb`` long option."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:292
+#: ../../sphinx/doc/man/sphinx-build.rst:307
+msgid ""
+"Raise an exception when a warning is emitted during the build. This can be "
+"useful in combination with :option:`--pdb` to debug warnings."
+msgstr ""
+
+#: ../../sphinx/doc/man/sphinx-build.rst:314
 msgid "Display usage summary or Sphinx version."
 msgstr "显示使用方法简要，或 Sphinx 版本。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:296
+#: ../../sphinx/doc/man/sphinx-build.rst:318
 msgid ""
 "You can also give one or more filenames on the command line after the source"
 " and build directories. Sphinx will then try to build only these output "
 "files (and their dependencies)."
 msgstr "您还可以在源和生成目录之后的命令行上提供一个或多个文件名，Sphinx将尝试仅生成这些输出文件（及其依赖项）。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:301
+#: ../../sphinx/doc/man/sphinx-build.rst:323
 msgid "Environment Variables"
 msgstr "环境变量"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:303
+#: ../../sphinx/doc/man/sphinx-build.rst:325
 msgid "The :program:`sphinx-build` refers following environment variables:"
 msgstr " :program:`sphinx-build` 指的是以下环境变量："
 
-#: ../../sphinx/doc/man/sphinx-build.rst:307
+#: ../../sphinx/doc/man/sphinx-build.rst:329
 msgid ""
 "A path to make command.  A command name is also allowed. :program:`sphinx-"
 "build` uses it to invoke sub-build process on make-mode."
 msgstr "制作命令的路径，同时允许使用命令名称。:program:`sphinx-build`使用它来调用make-mode上的子生成过程."
 
-#: ../../sphinx/doc/man/sphinx-build.rst:313
+#: ../../sphinx/doc/man/sphinx-build.rst:335
 msgid "Makefile Options"
 msgstr "Makefile选项"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:314
+#: ../../sphinx/doc/man/sphinx-build.rst:336
 msgid ""
 "The :file:`Makefile` and :file:`make.bat` files created by :program:`sphinx-"
 "quickstart` usually run :program:`sphinx-build` only with the :option:`-b` "
@@ -433,7 +455,7 @@ msgstr ""
 " :program:`sphinx-build` 时，通常只有 :option:`-b` 和 :option:`-d` "
 "两个选项。不过它们也支持如下变量来定制他们的操作："
 
-#: ../../sphinx/doc/man/sphinx-build.rst:321
+#: ../../sphinx/doc/man/sphinx-build.rst:343
 msgid ""
 "This sets the ``'papersize'`` key of :confval:`latex_elements`: i.e. "
 "``PAPER=a4`` sets it to ``'a4paper'`` and ``PAPER=letter`` to "
@@ -441,7 +463,7 @@ msgid ""
 msgstr ""
 "这设置了“'纸张大小'”键:confval:`latex_elements`：即“PAPER=a4”将它设置为“'a4paper'”并将“PAPER=letter”设置为“'letterpaper'”。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:327
+#: ../../sphinx/doc/man/sphinx-build.rst:349
 msgid ""
 "Usage of this environment variable got broken at Sphinx 1.5 as ``a4`` or "
 "``letter`` ended up as option to LaTeX document in place of the needed "
@@ -450,23 +472,23 @@ msgstr ""
 "这个环境变量的使用在Sphinx "
 "1.5中被打断了，因为“a4”或“letter”最终被用来替代所需的“a4paper（A4纸）”resp.“letterpaper”，固定为1.7.7。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:334
+#: ../../sphinx/doc/man/sphinx-build.rst:356
 msgid "The command to use instead of ``sphinx-build``."
 msgstr "使用的命令代替“sphinx-build”。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:338
+#: ../../sphinx/doc/man/sphinx-build.rst:360
 msgid ""
 "The build directory to use instead of the one chosen in :program:`sphinx-"
 "quickstart`."
 msgstr "选定生成目录，不使用 :program:`sphinx-quickstart` 所指定的。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:343
+#: ../../sphinx/doc/man/sphinx-build.rst:365
 msgid ""
 "Additional options for :program:`sphinx-build`. These options can also be "
 "set via the shortcut variable **O** (capital 'o')."
 msgstr "附加选项:program:`sphinx-build`。这些选项也可以通过快捷变量**O**（大写'o'）来设置。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:348
+#: ../../sphinx/doc/man/sphinx-build.rst:370
 msgid ""
 "When set (regardless of value), :program:`sphinx-build`  will not use color "
 "in terminal output. ``NO_COLOR`` takes precedence over ``FORCE_COLOR``. See "
@@ -474,17 +496,17 @@ msgid ""
 " community standard."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:357
+#: ../../sphinx/doc/man/sphinx-build.rst:379
 msgid ""
 "When set (regardless of value), :program:`sphinx-build` will use color in "
 "terminal output. ``NO_COLOR`` takes precedence over ``FORCE_COLOR``."
 msgstr ""
 
-#: ../../sphinx/doc/man/sphinx-build.rst:365
+#: ../../sphinx/doc/man/sphinx-build.rst:387
 msgid "Deprecation Warnings"
 msgstr "弃用警告"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:367
+#: ../../sphinx/doc/man/sphinx-build.rst:389
 msgid ""
 "If any deprecation warning like ``RemovedInSphinxXXXWarning`` are displayed "
 "when building a user's document, some Sphinx extension is using deprecated "
@@ -493,32 +515,32 @@ msgstr ""
 "如果在生成用户文档时显示任何弃用警告, "
 "如“RemovedInSphinxXXXWarning”，即某些Sphinx扩展使用不推荐使用的功能。在这种情况下，请向扩展的作者报告。"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:371
+#: ../../sphinx/doc/man/sphinx-build.rst:393
 msgid ""
 "To disable the deprecation warnings, please set ``PYTHONWARNINGS=`` "
 "environment variable to your environment. For example:"
 msgstr "要禁用弃用警告，请将“PYTHONWARNINGS=”环境变量设置为您的环境。例如："
 
-#: ../../sphinx/doc/man/sphinx-build.rst:374
+#: ../../sphinx/doc/man/sphinx-build.rst:396
 msgid "``PYTHONWARNINGS= make html`` (Linux/Mac)"
 msgstr "“PYTHONWARNINGS= make html”（适用于Linux/Mac系统）"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:375
+#: ../../sphinx/doc/man/sphinx-build.rst:397
 msgid "``export PYTHONWARNINGS=`` and do ``make html`` (Linux/Mac)"
 msgstr "“export PYTHONWARNINGS=”然后“make html” （适用于Linux/Mac系统）"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:376
+#: ../../sphinx/doc/man/sphinx-build.rst:398
 msgid "``set PYTHONWARNINGS=`` and do ``make html`` (Windows)"
 msgstr "“set PYTHONWARNINGS=”然后“make html”（适用于 Windows 系统）"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:377
+#: ../../sphinx/doc/man/sphinx-build.rst:399
 msgid "modify your Makefile/make.bat and set the environment variable"
 msgstr "修改 Makefilie 和/或 make.bat 文件，设置其中的环境变量"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:380
+#: ../../sphinx/doc/man/sphinx-build.rst:402
 msgid "See also"
 msgstr "另请参阅"
 
-#: ../../sphinx/doc/man/sphinx-build.rst:382
+#: ../../sphinx/doc/man/sphinx-build.rst:404
 msgid ":manpage:`sphinx-quickstart(1)`"
 msgstr ":manpage:`sphinx-quickstart(1)`"

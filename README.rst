@@ -104,7 +104,12 @@ Key points:
           :target: https://www.sphinx-doc.org/es/master/?badge=master
           :alt: Documentation Status
      - http://www.sphinx-doc.org/es
-     - https://readthedocs.org/projects/sphinx-es/
+     - https://readthedocs.org/projects/sphinx-ta/
+   * - .. image:: https://readthedocs.org/projects/sphinx-ta/badge/?version=master
+          :target: https://www.sphinx-doc.org/ta/master/?badge=master
+          :alt: Documentation Status
+     - http://www.sphinx-doc.org/ta
+     - https://readthedocs.org/projects/sphinx-ta/
 
 How to add a new language translation
 -------------------------------------

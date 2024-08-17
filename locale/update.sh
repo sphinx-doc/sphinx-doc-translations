@@ -3,7 +3,7 @@
 
 set -ex
 
-LANGS='ar ca_ES de es fr it_IT ja ko pl_PL pt_BR ru sr zh_CN'
+LANGS='ar ca_ES de es fr it_IT ja ko pl_PL pt_BR ru sr zh_CN ta'
 
 LANGS_PULL=$(echo $LANGS | sed 's| |,|g')
 

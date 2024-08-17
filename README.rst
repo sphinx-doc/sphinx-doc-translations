@@ -113,10 +113,8 @@ How to add a new language translation
 
    .. code-block:: diff
 
-      - rm -R es ja
-      - tx pull -l es,ja
-      + rm -R es ja pt_BR
-      + tx pull -l es,ja,pt_BR
+      - LANGS='es ja'
+      + LANGS='es ja pt_BR'
 
 2. Update po files:
 

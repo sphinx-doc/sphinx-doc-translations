@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-22 00:44+0000\n"
+"POT-Creation-Date: 2024-09-03 00:44+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -107,8 +107,6 @@ msgstr "对象描述是包含六项的元组："
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
 #: of sphinx.domains.Domain.get_objects:5
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:19
 msgid "``name``"
 msgstr "``名字``"
 
@@ -139,8 +137,6 @@ msgstr "对象类型，一个键``self.object_类型``."
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
 #: of sphinx.domains.Domain.get_objects:14
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:32
 msgid "``docname``"
 msgstr "``文档名``"
 
@@ -151,8 +147,6 @@ msgstr "找到它的文件。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
 #: of sphinx.domains.Domain.get_objects:17
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:35
 msgid "``anchor``"
 msgstr "``定位点``"
 
@@ -174,9 +168,8 @@ msgid ""
 msgstr "对象的“重要性”（决定搜索结果中的位置）。之一："
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
-#: of sphinx.domains.Domain.get_objects:24
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:27
+#: of sphinx.domains.Domain.get_objects:24 ../docstring of
+#: sphinx.domains.IndexEntry.subtype:5
 msgid "``1``"
 msgstr "``1``"
 
@@ -186,9 +179,8 @@ msgid "Default priority (placed before full-text matches)."
 msgstr "默认优先级（放在全文匹配项之前）。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
-#: of sphinx.domains.Domain.get_objects:26
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:25
+#: of sphinx.domains.Domain.get_objects:26 ../docstring of
+#: sphinx.domains.IndexEntry.subtype:3
 msgid "``0``"
 msgstr "``0``"
 
@@ -198,9 +190,8 @@ msgid "Object is important (placed before default-priority objects)."
 msgstr "对象很重要（放在默认优先级对象之前）。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/__init__.pydocstring
-#: of sphinx.domains.Domain.get_objects:28
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:29
+#: of sphinx.domains.Domain.get_objects:28 ../docstring of
+#: sphinx.domains.IndexEntry.subtype:7
 msgid "``2``"
 msgstr "``2``"
 
@@ -471,88 +462,61 @@ msgstr "``content``:"
 msgid ""
 "A sequence of ``(letter, entries)`` tuples, where ``letter`` is the "
 "\"heading\" for the given ``entries``, usually the starting letter, and "
-"``entries`` is a sequence of single entries. Each entry is a sequence "
-"``[name, subtype, docname, anchor, extra, qualifier, descr]``. The items in "
-"this sequence have the following meaning:"
+"``entries`` is a sequence of single entries. Each entry is an "
+":py:class:`IndexEntry`."
 msgstr ""
-"一个`（字母，条目）``元组的序列，其中``字母``是给定``条目``的“标题”，通常是起始字母，``entries`是单个词条的序列。每个条目都是一个序列`[name，subtype，docname，anchor，extra，qualifier，descr]``。此序列中的项目具有以下含义："
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:20
+#: of sphinx.domains._index.IndexEntry:1
+msgid "An index entry."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
+#: of sphinx.domains._index.IndexEntry:5
+msgid ""
+"The *qualifier* and *description* are not rendered for some output formats, "
+"such as LaTeX."
+msgstr ""
+
+#: ../docstring of sphinx.domains.IndexEntry.name:1
 msgid "The name of the index entry to be displayed."
 msgstr "要显示的索引项的名称。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:22
-msgid "``subtype``"
-msgstr "``subtype``"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:23
+#: ../docstring of sphinx.domains.IndexEntry.subtype:1
 msgid "The sub-entry related type. One of:"
 msgstr "子条目相关类型。之一："
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:26
+#: ../docstring of sphinx.domains.IndexEntry.subtype:4
 msgid "A normal entry."
 msgstr "正常的条目。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:28
+#: ../docstring of sphinx.domains.IndexEntry.subtype:6
 msgid "An entry with sub-entries."
 msgstr "包含子条目的条目。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:30
+#: ../docstring of sphinx.domains.IndexEntry.subtype:8
 msgid "A sub-entry."
 msgstr "子条目。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:33
+#: ../docstring of sphinx.domains.IndexEntry.docname:1
 msgid "*docname* where the entry is located."
 msgstr "条目所在的*文档名*。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:36
-msgid "Anchor for the entry within ``docname``"
-msgstr "在``docname``中定位项"
+#: ../docstring of sphinx.domains.IndexEntry.anchor:1
+msgid "Anchor for the entry within `docname`"
+msgstr ""
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:38
-msgid "``extra``"
-msgstr "``extra``"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:39
+#: ../docstring of sphinx.domains.IndexEntry.extra:1
 msgid "Extra info for the entry."
 msgstr "条目的附加信息。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:41
-msgid "``qualifier``"
-msgstr "``qualifier``"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:42
+#: ../docstring of sphinx.domains.IndexEntry.qualifier:1
 msgid "Qualifier for the description."
 msgstr "描述的限定符。"
 
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:44
-msgid "``descr``"
-msgstr "``descr``"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:45
+#: ../docstring of sphinx.domains.IndexEntry.descr:1
 msgid "Description for the entry."
 msgstr "条目的说明。"
-
-#: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/domains/_index.pydocstring
-#: of sphinx.domains._index.Index.generate:47
-msgid ""
-"Qualifier and description are not rendered for some output formats such as "
-"LaTeX."
-msgstr "对于某些输出格式（如LaTeX），不呈现限定符和描述。"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/sphinx/directives/__init__.pydocstring
 #: of sphinx.directives.ObjectDescription:1
@@ -741,7 +705,7 @@ msgstr "必需参数后的可选参数数目。"
 msgid "Number of required directive arguments."
 msgstr "必需的指令参数数。"
 
-#: ../../sphinx/doc/extdev/domainapi.rst:23
+#: ../../sphinx/doc/extdev/domainapi.rst:27
 msgid "Python Domain"
 msgstr "Python域"
 

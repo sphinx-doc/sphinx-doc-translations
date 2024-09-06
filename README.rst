@@ -5,18 +5,13 @@ Sphinx official documentation translations
 
 .. |main| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml/badge.svg
           :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml
-          :alt: Update status badge
+          :alt: Badge for the update status
 
 .. |test| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml/badge.svg
           :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml
-          :alt: Test translations badge
+          :alt: Badge for the translation tests
 
 This is a project to provide Sphinx official documentation, hosted on the Read The Docs platform, in multiple languages.
-
-.. note:: The current procedure is bit tricky because Read The Docs doesn't have a way to specify options for ``sphinx-build`` command.
-   **conf.py** files for each languages have ``language`` and ``locale_dirs`` values without having full copy of **conf.py** of sphinx doc.
-   If we want to specify **conf.py** file that is out of source directory, we will use ``-c`` option for the ``sphinx-build`` command.
-   Unfortunately Read the Docs doesn't support that. If there is a better way, open an issue.
 
 How the translated documentation projects are setup on RTD
 ----------------------------------------------------------

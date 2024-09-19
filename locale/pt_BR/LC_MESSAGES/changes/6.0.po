@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 00:45+0000\n"
+"POT-Creation-Date: 2024-09-19 00:46+0000\n"
 "PO-Revision-Date: 2024-07-31 00:36+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../sphinx/doc/changes/6.0.rst:3
 msgid "Sphinx 6.0"
-msgstr ""
+msgstr "Sphinx 6.0"
 
 #: ../../sphinx/doc/changes/6.0.rst:7
 msgid "Release 6.0.1 (released Jan 05, 2023)"
@@ -46,6 +46,8 @@ msgstr "Erros corrigidos"
 msgid ""
 "#10944: imgmath: Fix resolving image paths for files in nested folders."
 msgstr ""
+"#10944: imgmath: Corrige resolução de caminhos de imagem para arquivos em "
+"pastas aninhadas."
 
 #: ../../sphinx/doc/changes/6.0.rst:20
 msgid "Release 6.0.0 (released Dec 29, 2022)"
@@ -53,13 +55,15 @@ msgstr "Versão 6.0.0 (lançada em 29 dez 2022)"
 
 #: ../../sphinx/doc/changes/6.0.rst:25
 msgid "#10468: Drop Python 3.6 support"
-msgstr ""
+msgstr "#10468: Descarta o suporte a Python 3.6"
 
 #: ../../sphinx/doc/changes/6.0.rst:26
 msgid ""
 "#10470: Drop Python 3.7, Docutils 0.14, Docutils 0.15, Docutils 0.16, and "
 "Docutils 0.17 support. Patch by Adam Turner"
 msgstr ""
+"#10470: Remove o suporte ao Python 3.7, Docutils 0.14, Docutils 0.15, "
+"Docutils 0.16 e Docutils 0.17. Patch de Adam Turner"
 
 #: ../../sphinx/doc/changes/6.0.rst:30
 msgid "Incompatible changes"
@@ -67,7 +71,7 @@ msgstr "Atualizações incompatíveis"
 
 #: ../../sphinx/doc/changes/6.0.rst:32
 msgid "#7405: Removed the jQuery and underscore.js JavaScript frameworks."
-msgstr ""
+msgstr "#7405: Removidas os frameworks JavaScript jQuery e underscore.js."
 
 #: ../../sphinx/doc/changes/6.0.rst:34
 msgid ""
@@ -76,6 +80,10 @@ msgid ""
 "``$``, or ``$u`` global objects, you need to update your JavaScript to "
 "modern standards, or use the mitigation below."
 msgstr ""
+"Esses frameworks não serão mais injetados automaticamente em temas do Sphinx"
+" 6.0. Se você desenvolver um tema ou extensão que use os objetos globais "
+"``jQuery``, ``$`` ou ``$u``, você precisa atualizar seu JavaScript para "
+"padrões modernos ou usar a mitigação abaixo."
 
 #: ../../sphinx/doc/changes/6.0.rst:39
 msgid ""
@@ -85,6 +93,11 @@ msgid ""
 "``app.setup_extension(\"sphinxcontrib.jquery\")`` if you develop a Sphinx "
 "theme or extension."
 msgstr ""
+"A primeira opção é usar a extensão sphinxcontrib.jquery_, que foi "
+"desenvolvida pela equipe e contribuidores do Sphinx. Para usar isso, "
+"adicione ``sphinxcontrib.jquery`` à lista ``extensions`` em ``conf.py``, ou "
+"chame ``app.setup_extension(\"sphinxcontrib.jquery\")`` se você desenvolver "
+"um tema ou extensão do Sphinx."
 
 #: ../../sphinx/doc/changes/6.0.rst:45
 msgid ""
@@ -93,6 +106,10 @@ msgid ""
 "``underscore.js`` from `the Sphinx repository`_ to your ``static`` "
 "directory, and add the following to your ``layout.html``:"
 msgstr ""
+"A segunda opção é garantir manualmente que os frameworks estejam presentes. "
+"Para adicionar novamente jQuery e underscore.js, você precisará copiar "
+"``jquery.js`` e ``underscore.js`` do `repositório Sphinx`_ para seu "
+"diretório ``static`` e adicionar o seguinte ao seu ``layout.html``:"
 
 #: ../../sphinx/doc/changes/6.0.rst:61
 msgid "Patch by Adam Turner."
@@ -103,6 +120,9 @@ msgid ""
 "#10471, #10565: Removed deprecated APIs scheduled for removal in Sphinx 6.0."
 " See :ref:`dev-deprecated-apis` for details. Patch by Adam Turner."
 msgstr ""
+"#10471, #10565: APIs descontinuadas removidas programadas para remoção no "
+"Sphinx 6.0. Veja :ref:`dev-deprecated-apis` para detalhes. Patch de Adam "
+"Turner."
 
 #: ../../sphinx/doc/changes/6.0.rst:64
 msgid ""
@@ -110,6 +130,10 @@ msgid ""
 "and roles. Also remove associated configuration variables ``c_allow_pre_v3``"
 " and ``c_warn_on_allowed_pre_v3``. Patch by Adam Turner."
 msgstr ""
+"#10901: Domínio C: Remove o suporte para análise de diretivas e papéis de "
+"tipo de estilo pré-v3. Remova também as variáveis ​​de configuração "
+"associadas ``c_allow_pre_v3`` e ``c_warn_on_allowed_pre_v3``. Patch de Adam "
+"Turner."
 
 #: ../../sphinx/doc/changes/6.0.rst:69
 msgid "Features added"
@@ -122,9 +146,15 @@ msgid ""
 "``pre_background-TeXcolor`` :ref:`additionalcss` for the former defaults and"
 " how to re-enact them if desired."
 msgstr ""
+"#10924: LaTeX: adota padrões de melhor aparência para tabelas e blocos de "
+"código. Veja :confval:`latex_table_style` e as :ref:`additionalcss` "
+"``pre_border-radius`` e ``pre_background-TeXcolor`` para os padrões "
+"anteriores e como recriá-los, se desejado."
 
 #: ../../sphinx/doc/changes/6.0.rst:79
 msgid ""
 "#10984: LaTeX: Document :confval:`latex_additional_files` behavior for files"
 " with ``.tex`` extension."
 msgstr ""
+"#10984: LaTeX: Comportamento do documento :confval:`latex_additional_files` "
+"para arquivos com extensão ``.tex``."

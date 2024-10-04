@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-15 00:53+0000\n"
+"POT-Creation-Date: 2024-10-04 00:49+0000\n"
 "PO-Revision-Date: 2023-10-03 00:37+0000\n"
 "Last-Translator: Naofumi SAKAGUCHI <nskgch@gmail.com>, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/sphinx-doc/teams/15434/ja/)\n"
@@ -627,39 +627,76 @@ msgid ""
 ":confval:`default_role`."
 msgstr "型が指定されていないオブジェクトの名前です。 :confval:`default_role` 一緒に使用すると便利です。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:719
-msgid ""
-"The name enclosed in this markup can include a module name and/or a class "
-"name. For example, ``:py:func:`filter``` could refer to a function named "
-"``filter`` in the current module, or the built-in function of that name.  In"
-" contrast, ``:py:func:`foo.filter``` clearly refers to the ``filter`` "
-"function in the ``foo`` module."
+#: ../../sphinx/doc/usage/domains/python.rst:721
+msgid "Target specification"
 msgstr ""
-"このマークアップの中の名前には、モジュール名, クラス名なども含めることができます。例えば、 ``:py:func:`filter``` "
-"は現在のモジュールに定義されている ``filter`` という名前の関数か、その名前を持つ組み込み関数をあらわします。 "
-"``:py:func:`foo.filter``` と明示的に書くと、 ``foo`` モジュールの中の ``filter`` 関数を表します。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:725
+#: ../../sphinx/doc/usage/domains/python.rst:723
 msgid ""
-"Normally, names in these roles are searched first without any further "
-"qualification, then with the current module name prepended, then with the "
-"current module and class name (if any) prepended.  If you prefix the name "
-"with a dot, this order is reversed.  For example, in the documentation of "
-"Python's :mod:`codecs` module, ``:py:func:`open``` always refers to the "
-"built-in function, while ``:py:func:`.open``` refers to :func:`codecs.open`."
+"The target can be specified as a fully qualified name (e.g. "
+"``:py:meth:`my_module.MyClass.my_method```) or any shortened version (e.g. "
+"``:py:meth:`MyClass.my_method``` or ``:py:meth:`my_method```). See `target "
+"resolution`_ for details on the resolution of shortened names."
 msgstr ""
-"通常、これらのロールで使用される名前は、最初は修飾子なしで検索されます。次に現在のモジュール名を前に付けて検索されます。その次に現在のモジュール名とクラス名(あれば)を付けて検索されます。もし、ドットが先頭についた名前が指定された場合には、この探索順は逆になります。例えば、"
-" :mod:`codecs` というPythonモジュールの定義の中で ``:py:func:`open``` "
-"が定義されると、常に組み込み関数を参照しますが、 ``:py:func:`.open``` と書かれると、 :func:`codecs.open` "
-"を参照するようになります。"
+
+#: ../../sphinx/doc/usage/domains/python.rst:729
+msgid ""
+":ref:`Cross-referencing modifiers <xref-modifiers>` can be applied. In "
+"short:"
+msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:732
+msgid ""
+"You may supply an explicit title and reference target: "
+"``:py:mod:`mathematical functions <math>``` will refer to the ``math`` "
+"module, but the link text will be \"mathematical functions\"."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:736
+msgid ""
+"If you prefix the content with an exclamation mark (``!``), no "
+"reference/hyperlink will be created."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:739
+msgid ""
+"If you prefix the content with ``~``, the link text will only be the last "
+"component of the target. For example, ``:py:meth:`~queue.Queue.get``` will "
+"refer to ``queue.Queue.get`` but only display ``get`` as the link text."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:746
+msgid "Target resolution"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:748
+msgid ""
+"A given link target name is resolved to an object using the following "
+"strategy:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:750
+msgid ""
+"Names in these roles are searched first without any further qualification, "
+"then with the current module name prepended, then with the current module "
+"and class name (if any) prepended."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:754
+msgid ""
+"If you prefix the name with a dot (``.``), this order is reversed. For "
+"example, in the documentation of Python's :py:mod:`codecs` module, "
+"``:py:func:`open``` always refers to the built-in function, while "
+"``:py:func:`.open``` refers to :func:`codecs.open`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:759
 msgid ""
 "A similar heuristic is used to determine whether the name is an attribute of"
 " the currently documented class."
 msgstr "属性名が、現在のクラスのものかどうかを決定するのにも、同様の名前検索の仕組みが使用されます。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:735
+#: ../../sphinx/doc/usage/domains/python.rst:762
 msgid ""
 "Also, if the name is prefixed with a dot, and no exact match is found, the "
 "target is taken as a suffix and all object names with that suffix are "
@@ -669,7 +706,7 @@ msgid ""
 "possible match, you will get a warning from Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/usage/domains/python.rst:742
+#: ../../sphinx/doc/usage/domains/python.rst:769
 msgid ""
 "Note that you can combine the ``~`` and ``.`` prefixes: "
 "``:py:meth:`~.TarFile.close``` will reference the "

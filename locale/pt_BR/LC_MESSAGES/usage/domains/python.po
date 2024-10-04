@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-18 00:46+0000\n"
+"POT-Creation-Date: 2024-10-04 00:49+0000\n"
 "PO-Revision-Date: 2023-10-03 00:37+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -743,38 +743,70 @@ msgstr ""
 "Referencia um objeto de tipo não especificado. Útil, por exemplo, como "
 ":confval:`default_role`."
 
-#: ../../sphinx/doc/usage/domains/python.rst:719
-msgid ""
-"The name enclosed in this markup can include a module name and/or a class "
-"name. For example, ``:py:func:`filter``` could refer to a function named "
-"``filter`` in the current module, or the built-in function of that name.  In"
-" contrast, ``:py:func:`foo.filter``` clearly refers to the ``filter`` "
-"function in the ``foo`` module."
+#: ../../sphinx/doc/usage/domains/python.rst:721
+msgid "Target specification"
 msgstr ""
-"O nome incluído nesta marcação pode incluir um nome de módulo e/ou um nome "
-"de classe. Por exemplo, ``:py:func:`filter``` pode fazer referência a uma "
-"função chamada ``filter`` no módulo atual, ou a função embutida com esse "
-"nome. Em contraste, ``:py:func:`foo.filter``` claramente se refere à função "
-"``filter`` no módulo ``foo``."
 
-#: ../../sphinx/doc/usage/domains/python.rst:725
+#: ../../sphinx/doc/usage/domains/python.rst:723
 msgid ""
-"Normally, names in these roles are searched first without any further "
-"qualification, then with the current module name prepended, then with the "
-"current module and class name (if any) prepended.  If you prefix the name "
-"with a dot, this order is reversed.  For example, in the documentation of "
-"Python's :mod:`codecs` module, ``:py:func:`open``` always refers to the "
-"built-in function, while ``:py:func:`.open``` refers to :func:`codecs.open`."
+"The target can be specified as a fully qualified name (e.g. "
+"``:py:meth:`my_module.MyClass.my_method```) or any shortened version (e.g. "
+"``:py:meth:`MyClass.my_method``` or ``:py:meth:`my_method```). See `target "
+"resolution`_ for details on the resolution of shortened names."
 msgstr ""
-"Normalmente, os nomes nessas funções são pesquisados primeiro sem qualquer "
-"qualificação adicional, depois com o nome do módulo atual prefixado e, em "
-"seguida, com o módulo atual e o nome da classe (se houver) prefixados. Se "
-"você prefixar o nome com um ponto, a ordem será invertida. Por exemplo, na "
-"documentação do módulo :mod:`codecs` do Python, ``:py:func:`open``` sempre "
-"se refere à função embutida, enquanto ``:py:func:`.open``` refere-se a "
-":func:`codecs.open`."
+
+#: ../../sphinx/doc/usage/domains/python.rst:729
+msgid ""
+":ref:`Cross-referencing modifiers <xref-modifiers>` can be applied. In "
+"short:"
+msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:732
+msgid ""
+"You may supply an explicit title and reference target: "
+"``:py:mod:`mathematical functions <math>``` will refer to the ``math`` "
+"module, but the link text will be \"mathematical functions\"."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:736
+msgid ""
+"If you prefix the content with an exclamation mark (``!``), no "
+"reference/hyperlink will be created."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:739
+msgid ""
+"If you prefix the content with ``~``, the link text will only be the last "
+"component of the target. For example, ``:py:meth:`~queue.Queue.get``` will "
+"refer to ``queue.Queue.get`` but only display ``get`` as the link text."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:746
+msgid "Target resolution"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:748
+msgid ""
+"A given link target name is resolved to an object using the following "
+"strategy:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:750
+msgid ""
+"Names in these roles are searched first without any further qualification, "
+"then with the current module name prepended, then with the current module "
+"and class name (if any) prepended."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:754
+msgid ""
+"If you prefix the name with a dot (``.``), this order is reversed. For "
+"example, in the documentation of Python's :py:mod:`codecs` module, "
+"``:py:func:`open``` always refers to the built-in function, while "
+"``:py:func:`.open``` refers to :func:`codecs.open`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:759
 msgid ""
 "A similar heuristic is used to determine whether the name is an attribute of"
 " the currently documented class."
@@ -782,7 +814,7 @@ msgstr ""
 "Uma heurística semelhante é usada para determinar se o nome é um atributo da"
 " classe documentada atualmente."
 
-#: ../../sphinx/doc/usage/domains/python.rst:735
+#: ../../sphinx/doc/usage/domains/python.rst:762
 msgid ""
 "Also, if the name is prefixed with a dot, and no exact match is found, the "
 "target is taken as a suffix and all object names with that suffix are "
@@ -799,7 +831,7 @@ msgstr ""
 "Como isso pode ficar ambíguo, se houver mais de uma correspondência "
 "possível, você receberá um aviso do Sphinx."
 
-#: ../../sphinx/doc/usage/domains/python.rst:742
+#: ../../sphinx/doc/usage/domains/python.rst:769
 msgid ""
 "Note that you can combine the ``~`` and ``.`` prefixes: "
 "``:py:meth:`~.TarFile.close``` will reference the "

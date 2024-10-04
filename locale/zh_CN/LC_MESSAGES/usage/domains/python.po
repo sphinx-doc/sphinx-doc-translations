@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-15 00:53+0000\n"
+"POT-Creation-Date: 2024-10-04 00:49+0000\n"
 "PO-Revision-Date: 2023-10-03 00:37+0000\n"
 "Last-Translator: Melia Lee <lixiuyu97@163.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -615,36 +615,76 @@ msgid ""
 ":confval:`default_role`."
 msgstr "引用未指定类型的对象。例如有用 :confval:`default_role`。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:719
-msgid ""
-"The name enclosed in this markup can include a module name and/or a class "
-"name. For example, ``:py:func:`filter``` could refer to a function named "
-"``filter`` in the current module, or the built-in function of that name.  In"
-" contrast, ``:py:func:`foo.filter``` clearly refers to the ``filter`` "
-"function in the ``foo`` module."
+#: ../../sphinx/doc/usage/domains/python.rst:721
+msgid "Target specification"
 msgstr ""
-"此标记中包含的名称可以包括模块名称和/或类名称。例如，“`:py:func:`filter”可以引用当前模块中名为“filter”的函数，或者该名称的内置函数。相比之下，“:py:func:`foo.filter`”清楚地引用了“foo”模块中的“filter”函数。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:725
+#: ../../sphinx/doc/usage/domains/python.rst:723
 msgid ""
-"Normally, names in these roles are searched first without any further "
-"qualification, then with the current module name prepended, then with the "
-"current module and class name (if any) prepended.  If you prefix the name "
-"with a dot, this order is reversed.  For example, in the documentation of "
-"Python's :mod:`codecs` module, ``:py:func:`open``` always refers to the "
-"built-in function, while ``:py:func:`.open``` refers to :func:`codecs.open`."
+"The target can be specified as a fully qualified name (e.g. "
+"``:py:meth:`my_module.MyClass.my_method```) or any shortened version (e.g. "
+"``:py:meth:`MyClass.my_method``` or ``:py:meth:`my_method```). See `target "
+"resolution`_ for details on the resolution of shortened names."
 msgstr ""
-"通常，首先搜索这些角色中的名称而不进一步限定，然后将当前模块名称添加到前面，然后使用当前模块和类名（如果有）作为前缀。如果您在名称前加一个点，则此顺序相反。例如，在Python的文档“"
-" :mod:`codecs` "
-"”模块中，“:py:func:`open`”总是引用内置函数，而“:py:func:`.open`”指“:func:`codecs.open`”。"
+
+#: ../../sphinx/doc/usage/domains/python.rst:729
+msgid ""
+":ref:`Cross-referencing modifiers <xref-modifiers>` can be applied. In "
+"short:"
+msgstr ""
 
 #: ../../sphinx/doc/usage/domains/python.rst:732
+msgid ""
+"You may supply an explicit title and reference target: "
+"``:py:mod:`mathematical functions <math>``` will refer to the ``math`` "
+"module, but the link text will be \"mathematical functions\"."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:736
+msgid ""
+"If you prefix the content with an exclamation mark (``!``), no "
+"reference/hyperlink will be created."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:739
+msgid ""
+"If you prefix the content with ``~``, the link text will only be the last "
+"component of the target. For example, ``:py:meth:`~queue.Queue.get``` will "
+"refer to ``queue.Queue.get`` but only display ``get`` as the link text."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:746
+msgid "Target resolution"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:748
+msgid ""
+"A given link target name is resolved to an object using the following "
+"strategy:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:750
+msgid ""
+"Names in these roles are searched first without any further qualification, "
+"then with the current module name prepended, then with the current module "
+"and class name (if any) prepended."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:754
+msgid ""
+"If you prefix the name with a dot (``.``), this order is reversed. For "
+"example, in the documentation of Python's :py:mod:`codecs` module, "
+"``:py:func:`open``` always refers to the built-in function, while "
+"``:py:func:`.open``` refers to :func:`codecs.open`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/domains/python.rst:759
 msgid ""
 "A similar heuristic is used to determine whether the name is an attribute of"
 " the currently documented class."
 msgstr "类似的启发式方法用于确定名称是否是当前记录的类的属性。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:735
+#: ../../sphinx/doc/usage/domains/python.rst:762
 msgid ""
 "Also, if the name is prefixed with a dot, and no exact match is found, the "
 "target is taken as a suffix and all object names with that suffix are "
@@ -655,7 +695,7 @@ msgid ""
 msgstr ""
 "此外，如果名称以点为前缀，并且未找到完全匹配，则将目标作为后缀，并搜索具有该后缀的所有对象名称。例如，“:py:meth:`.TarFile.close`”引用“tarfile.TarFile.close()”函数，即使当前模块不是“tarfile”。由于这可能会变得模棱两可，如果有多个可能匹配，您将收到Sphinx的警告。"
 
-#: ../../sphinx/doc/usage/domains/python.rst:742
+#: ../../sphinx/doc/usage/domains/python.rst:769
 msgid ""
 "Note that you can combine the ``~`` and ``.`` prefixes: "
 "``:py:meth:`~.TarFile.close``` will reference the "

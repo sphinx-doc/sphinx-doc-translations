@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.1.0\n"
+"Project-Id-Version: Sphinx 8.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-11 00:49+0000\n"
+"POT-Creation-Date: 2024-10-12 00:47+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -34,26 +34,31 @@ msgid "It follows this basic workflow:"
 msgstr "Ela segue este fluxo de trabalho básico:"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:14
-msgid "UML for the standard Sphinx build workflow"
-msgstr "UML para o fluxo de trabalho padrão de construção do Sphinx"
+msgid "Call graph for the standard Sphinx build workflow"
+msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:18
 msgid "Overridable Attributes"
 msgstr "Atributos substituíveis"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:19
-msgid "These attributes should be set on builder sub-classes:"
-msgstr "Estes atributos devem ser definidos em subclasses de construtor:"
+msgid "These class attributes should be set on builder sub-classes:"
+msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.name:1
-msgid "The builder's name, for the -b command line option."
-msgstr "O nome do construtor, para a opção de linha de comando -b."
+msgid ""
+"The builder's name. This is the value used to select builders on the command"
+" line."
+msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.format:1
-msgid "The builder's output format, or '' if no document output is produced."
+msgid ""
+"The builder's output format, or '' if no document output is produced. This "
+"is commonly the file extension, e.g. \"html\", though any string value is "
+"accepted. The builder's format string can be used by various components such"
+" as :class:`.SphinxPostTransform` or extensions to determine their "
+"compatibility with the builder."
 msgstr ""
-"O formato de saída do construtor ou '', se nenhuma saída de documento é "
-"produzida."
 
 #: ../docstring of sphinx.builders.Builder.epilog:1
 msgid ""
@@ -65,8 +70,9 @@ msgstr ""
 "``outdir``, ``project``"
 
 #: ../docstring of sphinx.builders.Builder.allow_parallel:1
-msgid "allow parallel write_doc() calls"
-msgstr "permite chamadas de write_docs() em paralelo"
+msgid ""
+"Whether it is safe to make parallel :meth:`~.Builder.write_doc()` calls."
+msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.supported_image_types:1
 msgid ""
@@ -106,11 +112,8 @@ msgstr "Métodos principais"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:32
 msgid ""
-"These methods are predefined and should generally not be overridden, since "
-"they form the core of the build process:"
+"These methods define the core build workflow and must not be overridden:"
 msgstr ""
-"Esses métodos são predefinidos e geralmente não devem ser substituídos, pois"
-" constituem o núcleo do processo de construção:"
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.build_all:1
@@ -175,11 +178,11 @@ msgstr ""
 msgid "Write builder specific output files."
 msgstr "Escreve arquivos de saída específicos do construtor."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:45
+#: ../../sphinx/doc/extdev/builderapi.rst:44
 msgid "Abstract Methods"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:46
+#: ../../sphinx/doc/extdev/builderapi.rst:45
 msgid "These must be implemented in builder sub-classes:"
 msgstr "Estes devem ser implementados em subclasses de construtor:"
 
@@ -205,8 +208,31 @@ msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.write_doc:1
-msgid "Where you actually write something to the filesystem."
-msgstr "Onde você realmente escreve algo no sistema de arquivos."
+msgid "Write the output file for the document"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:0
+msgid "Parameters"
+msgstr "Parameters"
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:3
+msgid "the :term:`docname <document name>`."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:4
+msgid "defines the content to be written."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:6
+msgid ""
+"The output filename must be determined within this method, typically by "
+"calling :meth:`~.Builder.get_target_uri` or "
+":meth:`~.Builder.get_relative_uri`."
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.get_target_uri:1
@@ -222,11 +248,11 @@ msgstr ""
 "*typ* pode ser usado para qualificar a característica do link para "
 "construtores individuais."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:53
+#: ../../sphinx/doc/extdev/builderapi.rst:52
 msgid "Overridable Methods"
 msgstr "Métodos substituíveis"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:54
+#: ../../sphinx/doc/extdev/builderapi.rst:53
 msgid "These methods can be overridden in builder sub-classes:"
 msgstr "Esses métodos podem ser substituídos nas subclasses do construtor:"
 
@@ -271,11 +297,14 @@ msgid "Return a relative URI between two source filenames."
 msgstr "Retorna um URI relativo entre dois nomes de arquivos fonte."
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
-#: of sphinx.builders.Builder.get_relative_uri:3
-msgid ""
-"May raise environment.NoUri if there's no way to return a sensible URI."
+#: of sphinx.builders.Builder.get_relative_uri:0
+msgid "raises"
 msgstr ""
-"Pode aumentar Environment.NoUri se não houver como retornar um URI sensato."
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:3
+msgid ":exc:`!NoUri` if there's no way to return a sensible URI."
+msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.finish:1
@@ -287,23 +316,23 @@ msgstr "Conclui o processo de construção."
 msgid "The default implementation does nothing."
 msgstr "A implementação padrão não faz nada."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:64
+#: ../../sphinx/doc/extdev/builderapi.rst:63
 msgid "Attributes"
 msgstr "Atributos"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:65
+#: ../../sphinx/doc/extdev/builderapi.rst:64
 msgid "Attributes that are callable from the builder instance:"
 msgstr "Atributos que são chamáveis a partir da instância do construtor:"
 
-#: ../../sphinx/doc/extdev/builderapi.rst:69
+#: ../../sphinx/doc/extdev/builderapi.rst:68
 msgid "An :class:`.EventManager` object."
 msgstr "Um objeto :class:`.EventManager`."
 
-#: ../../sphinx/doc/extdev/builderapi.rst:72
+#: ../../sphinx/doc/extdev/builderapi.rst:71
 msgid "Overridable Attributes (extensions)"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:73
+#: ../../sphinx/doc/extdev/builderapi.rst:72
 msgid ""
 "Builder sub-classes can set these attributes to support built-in extensions:"
 msgstr ""
@@ -311,7 +340,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/builderapi.rst:77
 msgid ""
 "By default, the :mod:`linkcode <sphinx.ext.linkcode>` extension will only "
-"inject references for an ``html`` builder. The ``supported_linkcode`` "
+"inject references for an ``html`` builder. The ``supported_linkcode`` class "
 "attribute can be defined in a non-HTML builder to support managing "
 "references generated by linkcode. The expected value for this attribute is "
 "an expression which is compatible with :rst:dir:`only`."

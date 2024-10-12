@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.1.0\n"
+"Project-Id-Version: Sphinx 8.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-11 00:49+0000\n"
+"POT-Creation-Date: 2024-10-12 00:47+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Language-Team: Italian (Italy) (https://app.transifex.com/sphinx-doc/teams/15434/it_IT/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgid "It follows this basic workflow:"
 msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:14
-msgid "UML for the standard Sphinx build workflow"
+msgid "Call graph for the standard Sphinx build workflow"
 msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:18
@@ -38,15 +38,22 @@ msgid "Overridable Attributes"
 msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:19
-msgid "These attributes should be set on builder sub-classes:"
+msgid "These class attributes should be set on builder sub-classes:"
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.name:1
-msgid "The builder's name, for the -b command line option."
+msgid ""
+"The builder's name. This is the value used to select builders on the command"
+" line."
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.format:1
-msgid "The builder's output format, or '' if no document output is produced."
+msgid ""
+"The builder's output format, or '' if no document output is produced. This "
+"is commonly the file extension, e.g. \"html\", though any string value is "
+"accepted. The builder's format string can be used by various components such"
+" as :class:`.SphinxPostTransform` or extensions to determine their "
+"compatibility with the builder."
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.epilog:1
@@ -56,7 +63,8 @@ msgid ""
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.allow_parallel:1
-msgid "allow parallel write_doc() calls"
+msgid ""
+"Whether it is safe to make parallel :meth:`~.Builder.write_doc()` calls."
 msgstr ""
 
 #: ../docstring of sphinx.builders.Builder.supported_image_types:1
@@ -89,8 +97,7 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:32
 msgid ""
-"These methods are predefined and should generally not be overridden, since "
-"they form the core of the build process:"
+"These methods define the core build workflow and must not be overridden:"
 msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
@@ -145,11 +152,11 @@ msgstr ""
 msgid "Write builder specific output files."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:45
+#: ../../sphinx/doc/extdev/builderapi.rst:44
 msgid "Abstract Methods"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:46
+#: ../../sphinx/doc/extdev/builderapi.rst:45
 msgid "These must be implemented in builder sub-classes:"
 msgstr ""
 
@@ -170,7 +177,30 @@ msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.write_doc:1
-msgid "Where you actually write something to the filesystem."
+msgid "Write the output file for the document"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:3
+msgid "the :term:`docname <document name>`."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:4
+msgid "defines the content to be written."
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.write_doc:6
+msgid ""
+"The output filename must be determined within this method, typically by "
+"calling :meth:`~.Builder.get_target_uri` or "
+":meth:`~.Builder.get_relative_uri`."
 msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
@@ -185,11 +215,11 @@ msgid ""
 "builders."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:53
+#: ../../sphinx/doc/extdev/builderapi.rst:52
 msgid "Overridable Methods"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:54
+#: ../../sphinx/doc/extdev/builderapi.rst:53
 msgid "These methods can be overridden in builder sub-classes:"
 msgstr ""
 
@@ -228,9 +258,13 @@ msgid "Return a relative URI between two source filenames."
 msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
+#: of sphinx.builders.Builder.get_relative_uri:0
+msgid "raises"
+msgstr ""
+
+#: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
 #: of sphinx.builders.Builder.get_relative_uri:3
-msgid ""
-"May raise environment.NoUri if there's no way to return a sensible URI."
+msgid ":exc:`!NoUri` if there's no way to return a sensible URI."
 msgstr ""
 
 #: ../../../../../../../opt/hostedtoolcache/Python/3.12.7/x64/lib/python3.12/site-packages/sphinx/builders/__init__.pydocstring
@@ -243,23 +277,23 @@ msgstr ""
 msgid "The default implementation does nothing."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:64
+#: ../../sphinx/doc/extdev/builderapi.rst:63
 msgid "Attributes"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:65
+#: ../../sphinx/doc/extdev/builderapi.rst:64
 msgid "Attributes that are callable from the builder instance:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:69
+#: ../../sphinx/doc/extdev/builderapi.rst:68
 msgid "An :class:`.EventManager` object."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:72
+#: ../../sphinx/doc/extdev/builderapi.rst:71
 msgid "Overridable Attributes (extensions)"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/builderapi.rst:73
+#: ../../sphinx/doc/extdev/builderapi.rst:72
 msgid ""
 "Builder sub-classes can set these attributes to support built-in extensions:"
 msgstr ""
@@ -267,7 +301,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/builderapi.rst:77
 msgid ""
 "By default, the :mod:`linkcode <sphinx.ext.linkcode>` extension will only "
-"inject references for an ``html`` builder. The ``supported_linkcode`` "
+"inject references for an ``html`` builder. The ``supported_linkcode`` class "
 "attribute can be defined in a non-HTML builder to support managing "
 "references generated by linkcode. The expected value for this attribute is "
 "an expression which is compatible with :rst:dir:`only`."

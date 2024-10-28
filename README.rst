@@ -104,7 +104,7 @@ Key points:
 How to add a new language translation
 -------------------------------------
 
-1. Add new language to ``locale/update.sh``:
+1. Add new language to ``locales/update.sh``:
 
    .. code-block:: diff
 
@@ -115,7 +115,7 @@ How to add a new language translation
 
    .. code-block::
 
-      sh ./locale/update.sh
+      sh ./locales/update.sh
 
 4. Commit them
 

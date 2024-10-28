@@ -114,7 +114,7 @@ How to add a new language translation
 2. Update po files:
 
    .. code-block::
-                           
+
       sh ./locale/update.sh
 
 4. Commit them

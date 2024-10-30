@@ -3125,14 +3125,18 @@ msgid ""
 "Output file base name for HTML help builder. The default is the "
 ":confval:`project name <project>` with spaces removed and ``doc`` appended."
 msgstr ""
+"Emite o nome base do arquivo para o construtor de ajuda HTML. O padrão é "
+":confval:`nome do projeto <project>` com espaços removidos e ``doc`` "
+"anexado."
 
 #: ../../sphinx/doc/usage/configuration.rst:2230
 msgid "This is the file name suffix for generated HTML help files."
 msgstr ""
+"Este é o sufixo do nome do arquivo para arquivos de ajuda HTML gerados."
 
 #: ../../sphinx/doc/usage/configuration.rst:2238
 msgid "Suffix for generated links to HTML files."
-msgstr ""
+msgstr "Sufixo para links gerados para arquivos HTML."
 
 #: ../../sphinx/doc/usage/configuration.rst:2246
 msgid "Options for Apple Help output"
@@ -3143,6 +3147,8 @@ msgid ""
 "These options influence Apple Help output. This builder derives from the "
 "HTML builder, so the HTML options also apply where appropriate."
 msgstr ""
+"Essas opções influenciam saída Ajuda Apple. Esse construtor deriva do "
+"construtor HTML, portanto opções também se aplicam onde apropriadas."
 
 #: ../../sphinx/doc/usage/configuration.rst:2256
 msgid ""
@@ -3150,6 +3156,9 @@ msgid ""
 " the :program:`hiutil` and :program:`codesign` command-line tools, neither "
 "of which are Open Source."
 msgstr ""
+"Saída Ajuda Apple só funciona no Mac OS X 10.6 e posterior, como requer "
+":program:`hiutil` e :program:`codesign` na linha de comando, ambos não são "
+"Open Source."
 
 #: ../../sphinx/doc/usage/configuration.rst:2260
 msgid ""
@@ -3158,12 +3167,17 @@ msgid ""
 "valid help book until the indexer is run over the ``.lproj`` directories "
 "within the bundle."
 msgstr ""
+"Pode desabilitar essa funcionalidade usando "
+":confval:`applehelp_disable_external_tools`, mas o resultado só será válido "
+"quando o indexador for executado nos diretórios ``.lproj``."
 
 #: ../../sphinx/doc/usage/configuration.rst:2272
 msgid ""
 "The basename for the Apple Help Book. The default is the :confval:`project "
 "name <project>` with spaces removed."
 msgstr ""
+"O nome base para o Apple Help Book. O padrão é :confval:`nome do projeto "
+"<project>` com espaços removidos."
 
 #: ../../sphinx/doc/usage/configuration.rst:2280
 msgid "The bundle ID for the help book bundle."
@@ -3175,13 +3189,15 @@ msgstr "Esse valor *deve* ser configurado para gerar Ajuda Apple."
 
 #: ../../sphinx/doc/usage/configuration.rst:2290
 msgid "The bundle version, as a string."
-msgstr ""
+msgstr "A versão empacotada, como um string."
 
 #: ../../sphinx/doc/usage/configuration.rst:2296
 msgid ""
 "The development region. Defaults to Apple’s recommended setting, :code-"
 "py:`'en-us'`."
 msgstr ""
+"A região de desenvolvimento. Usa como padrão a configuração recomendada da "
+"Apple, :code-py:`'en-us'`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2303
 msgid ""
@@ -3189,10 +3205,14 @@ msgid ""
 "to Apple's documentation, this should be a 16-by-16 pixel version of the "
 "application's icon with a transparent background, saved as a PNG file."
 msgstr ""
+"O caminho para o pacote de ajuda ou :code-py:`None` para nenhum ícone. De "
+"acordo com a documentação da Apple, esta deve ser uma versão de 16x16 pixels"
+" do ícone do aplicativo com um fundo transparente, salvo como um arquivo "
+"PNG."
 
 #: ../../sphinx/doc/usage/configuration.rst:2312
 msgid "The product tag for use with :confval:`applehelp_kb_url`."
-msgstr ""
+msgstr "A etiqueta produto usada com :confval:`applehelp_kb_url`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2318
 msgid ""
@@ -3202,10 +3222,15 @@ msgid ""
 ":confval:`applehelp_kb_product`, ``'query'`` with the text entered by the "
 "user in the search box, and ``'lang'`` with the user's system language."
 msgstr ""
+"A URL para seu servidor de base de conhecimento, por exemplo, "
+"``https://example.com/kbsearch.py?p='product'&q='query'&l='lang'``. Em tempo"
+" de execução, o Help Viewer substituirá ``'product'`` pelo conteúdo de "
+":confval:`applehelp_kb_product`, ``'query'`` pelo texto inserido pelo "
+"usuário na caixa de pesquisa e ``'lang'`` pelo idioma do sistema do usuário."
 
 #: ../../sphinx/doc/usage/configuration.rst:2325
 msgid "Set this to to :code-py:`None` to disable remote search."
-msgstr ""
+msgstr "Defina isso para :code-py:`None` para desabilitar a pesquisa remota."
 
 #: ../../sphinx/doc/usage/configuration.rst:2331
 msgid ""
@@ -3213,6 +3238,9 @@ msgid ""
 "``Resources`` directory at this location and Help Viewer will attempt to use"
 " it to fetch updated content."
 msgstr ""
+"O URL para conteúdo remoto. Você pode colocar uma cópia do diretório "
+"``Resources`` de seu Livro de Ajuda neste local e o Visualizador de Ajuda "
+"tentará usá-la para buscar conteúdo atualizado."
 
 #: ../../sphinx/doc/usage/configuration.rst:2336
 msgid ""
@@ -3220,10 +3248,13 @@ msgid ""
 "Viewer wants a copy of ``index.html`` for an English speaking customer, it "
 "will look at ``https://example.com/help/Foo/en.lproj/index.html``."
 msgstr ""
+"Por exemplo, se você definir para``https://example.com/help/Foo/`` e "
+"Visualizador Help utiliza uma cópia de ``index.html`` para idioma Inglês, "
+"irá parecer com ``https://example.com/help/Foo/en.lproj/index.html``."
 
 #: ../../sphinx/doc/usage/configuration.rst:2341
 msgid "Set this to to :code-py:`None` for no remote content."
-msgstr ""
+msgstr "Defina isso para :code-py:`None` para nenhum conteúdo remoto."
 
 #: ../../sphinx/doc/usage/configuration.rst:2347
 msgid ""
@@ -3233,12 +3264,19 @@ msgid ""
 "allows you to use ``help:anchor`` URLs; see the Apple documentation for more"
 " information on this topic."
 msgstr ""
+"Informa ao indexador help para ancorar índices gerados em HTML. Pode ser "
+"útil na hora de navegar para um tópico em particular usando função "
+"``AHLookupAnchor`` ou o método ``openHelpAnchor:inBook:`` em seu código.  "
+"Também possibilita uso de URLs ``help:anchor``; veja a documentação Apple "
+"para maiores informações sobre esse tópico."
 
 #: ../../sphinx/doc/usage/configuration.rst:2358
 msgid ""
 "Controls the minimum term length for the help indexer. If :code-py:`None`, "
 "use the default length."
 msgstr ""
+"Controla o tamanho mínimo para indexador de ajuda. Se :code-py:`None`, usa o"
+" tamanho padrão."
 
 #: ../../sphinx/doc/usage/configuration.rst:2365
 msgid ""
@@ -3248,34 +3286,39 @@ msgid ""
 "``/usr/share/hiutil/Stopwords.plist`` and contains, at time of writing, "
 "stopwords for the following languages:"
 msgstr ""
+"Especificação do idioma (usado para palavras-chave), ou o caminho para plist"
+" de palavras-chave ou :code-py:`None` caso não desejar palavras-chave. A "
+"plist padrão de palavras-chave pode ser encontrada em "
+"``/usr/share/hiutil/Stopwords.plist`` e contém, em tempo de geração, "
+"stopwords para os idiomas:"
 
 #: ../../sphinx/doc/usage/configuration.rst:2372
 msgid "German (``de``)"
-msgstr ""
+msgstr "Alemão (``de``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2373
 msgid "English (``en``)"
-msgstr ""
+msgstr "Inglês (``en``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2374
 msgid "Spanish (``es``)"
-msgstr ""
+msgstr "Espanhol (``es``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2375
 msgid "French (``fr``)"
-msgstr ""
+msgstr "Francês (``fr``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2376
 msgid "Hungarian (``hu``)"
-msgstr ""
+msgstr "Húngaro (``hu``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2377
 msgid "Italian (``it``)"
-msgstr ""
+msgstr "Italiano (``it``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2378
 msgid "Swedish (``sv``)"
-msgstr ""
+msgstr "Sueco (``sv``)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2384
 msgid ""
@@ -3283,16 +3326,21 @@ msgid ""
 "name of the ``.lproj`` directory inside the Help Book’s ``Resources``, and "
 "is passed to the help indexer."
 msgstr ""
+"Especifíca para qual locale será gerado o Help. Isso é usado para determinar"
+" o nome do diretório ``.lproj`` dento do Help ``Resources``, e é passado ao "
+"indexador de ajuda."
 
 #: ../../sphinx/doc/usage/configuration.rst:2393
 msgid "Specifies the help book title."
-msgstr ""
+msgstr "Especifica o título do livro de ajuda."
 
 #: ../../sphinx/doc/usage/configuration.rst:2399
 msgid ""
 "Specifies the identity to use for code signing. Use :code-py:`None` if code "
 "signing is not to be performed."
 msgstr ""
+"Especifica a identidade a ser usada para assinatura de código. Use :code-"
+"py:`None` se a assinatura de código não for realizada."
 
 #: ../../sphinx/doc/usage/configuration.rst:2402
 msgid ""
@@ -3300,6 +3348,9 @@ msgid ""
 "variable, which is set by Xcode for script build phases, or :code-py:`None` "
 "if that variable is not set."
 msgstr ""
+"O padrão é o valor da variável de ambiente :envvar:`!CODE_SIGN_IDENTITY`, "
+"que é definida pelo Xcode para fases de construção de script, ou :code-"
+"py:`None` se essa variável não estiver definida."
 
 #: ../../sphinx/doc/usage/configuration.rst:2410
 msgid ""
@@ -3315,20 +3366,26 @@ msgid ""
 ":envvar:`!OTHER_CODE_SIGN_FLAGS` environment variable, which is set by Xcode"
 " for script build phases, or the empty list if that variable is not set."
 msgstr ""
+"O padrão é uma lista baseada no valor da variável de ambiente "
+":envvar:`!OTHER_CODE_SIGN_FLAGS`, que é definida pelo Xcode para fases de "
+"construção de script, ou a lista vazia se essa variável não estiver "
+"definida."
 
 #: ../../sphinx/doc/usage/configuration.rst:2421
 msgid "The path to the :program:`codesign` program."
-msgstr ""
+msgstr "O caminho para o programa :program:`codesign`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2427
 msgid "The path to the :program:`hiutil` program."
-msgstr ""
+msgstr "O caminho para o programa :program:`hiutil`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2433
 msgid ""
 "Do not run the indexer or the code signing tool, no matter what other "
 "settings are specified."
 msgstr ""
+"Não executa o indexador ou a ferramenta de assinatura de código, não importa"
+" quais outras configurações sejam especificadas."
 
 #: ../../sphinx/doc/usage/configuration.rst:2436
 msgid ""
@@ -3336,26 +3393,33 @@ msgid ""
 " on a non-macOS platform and then complete the final steps on a Mac for some"
 " reason."
 msgstr ""
+"Isso é útil principalmente para testes ou quando você deseja executar a "
+"construção do Sphinx em uma plataforma que não seja macOS e, por algum "
+"motivo, concluir as etapas finais em um Mac."
 
 #: ../../sphinx/doc/usage/configuration.rst:2444
 msgid "Options for EPUB output"
-msgstr ""
+msgstr "Opções para saída EPUB"
 
 #: ../../sphinx/doc/usage/configuration.rst:2446
 msgid ""
 "These options influence EPUB output. This builder derives from the HTML "
 "builder, so the HTML options also apply where appropriate."
 msgstr ""
+"Essas opções influenciam a saída de EPUB. Este construtor deriva do "
+"construtor HTML, então as opções HTML também se aplicam quando apropriado."
 
 #: ../../sphinx/doc/usage/configuration.rst:2451
 msgid ""
 "The actual value for some of these options is not important, but they are "
 "required for the `Dublin Core metadata`_."
 msgstr ""
+"O valor real de algumas dessas opções não é importante, mas elas são "
+"necessárias para os `metadados do Dublin Core`_."
 
 #: ../../sphinx/doc/usage/configuration.rst:2460
 msgid "The basename for the EPUB file."
-msgstr ""
+msgstr "O nome base para o arquivo EPUB."
 
 #: ../../sphinx/doc/usage/configuration.rst:2466
 msgid ""
@@ -3364,38 +3428,46 @@ msgid ""
 "output is usually not wise. This defaults to :code-py:`'epub'`, a theme "
 "designed to save visual space."
 msgstr ""
+"O tema HTML para a saída EPUB. Como os temas padrão não são otimizados para "
+"espaço de tela pequeno, usar o mesmo tema para saída HTML e EPUB geralmente "
+"não é sensato. O padrão é :code-py:`'epub'`, um tema projetado para "
+"economizar espaço visual."
 
 #: ../../sphinx/doc/usage/configuration.rst:2488
 msgid "The title of the document."
-msgstr ""
+msgstr "O título do documento."
 
 #: ../../sphinx/doc/usage/configuration.rst:2490
 msgid ""
 "It defaults to the :confval:`!project` option (previously "
 ":confval:`!html_title`)."
 msgstr ""
+"O padrão é a opção :confval:`!project` (anteriormente "
+":confval:`!html_title`)."
 
 #: ../../sphinx/doc/usage/configuration.rst:2498
 msgid "The description of the document."
-msgstr ""
+msgstr "A descrição do documento."
 
 #: ../../sphinx/doc/usage/configuration.rst:2502
 msgid "Renamed from :confval:`!epub3_description`"
-msgstr ""
+msgstr "Renomeada de :confval:`!epub3_description`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2509
 msgid "The author of the document. This is put in the Dublin Core metadata."
-msgstr ""
+msgstr "O autor do documento. Isso é colocado em metadados Dublin Core."
 
 #: ../../sphinx/doc/usage/configuration.rst:2516
 msgid ""
 "The name of a person, organisation, etc. that played a secondary role in the"
 " creation of the content of an EPUB Publication."
 msgstr ""
+"O nome de uma pessoa, organização, etc. que desempenhou um papel secundário "
+"na criação do conteúdo de uma publicação EPUB."
 
 #: ../../sphinx/doc/usage/configuration.rst:2521
 msgid "Renamed from :confval:`!epub3_contributor`"
-msgstr ""
+msgstr "Renomeada de :confval:`!epub3_contributor`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2528
 msgid "The language of the document. This is put in the Dublin Core metadata."

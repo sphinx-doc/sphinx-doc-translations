@@ -63,11 +63,13 @@ jobs:
       run: |
         pip install -U pip setuptools
         pip install -r ./requirements.txt
+    - name: Place locales directory in Sphinx doc
+      run: cp -a locales sphinx/doc/
     - name: Set Sphinx problem matcher
       uses: sphinx-doc/github-problem-matcher@v1.1
     - name: Build translated docs in ${{ matrix.language }}
       run: |
-        TZ=UTC make html -C sphinx/doc SPHINXOPTS='-W --keep-going -D locale_dirs=$(realpath locales) -D language=${{ matrix.language }}'
+        TZ=UTC make html -C sphinx/doc SPHINXOPTS='-W --keep-going -D language=${{ matrix.language }}'
     - name: Set Sphinx Lint problem matcher
       if: always()
       uses: rffontenelle/sphinx-lint-problem-matcher@v1.0.0

@@ -46,25 +46,25 @@ jobs:
     # 2. Remove obsolete POT files from repository and obsolete resources from Transifex
     - name: Generate templates from scratch
       run: |
-        rm -rf ./locale/pot
-        ./locale/generate_templates.sh
+        rm -rf ./locales/pot
+        ./locales/generate_templates.sh
     - name: Just print what would be locked and deleted of the resources in Transifex
       if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'sphinx-doc/sphinx-doc-translations' }}
-      run: locale/lock-translations.py locale/.tx/config -d
+      run: locales/lock-translations.py locales/.tx/config -d
     - name: Lock and delete obsolete resources in Transifex
       if: github.event_name != 'pull_request'
-      run: locale/lock-translations.py locale/.tx/config
+      run: locales/lock-translations.py locales/.tx/config
     - name: Include obsolete catalog templates (pot files) for removal
       run: |
         deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
         if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
-        git checkout locale/
+        git checkout locales/
     # 3. Update translation files
     - name: Update translations
       run: |
-        sh ./locale/generate_templates.sh
-        cat ./locale/.tx/config
-        sh ./locale/update.sh
+        sh ./locales/generate_templates.sh
+        cat ./locales/.tx/config
+        sh ./locales/update.sh
     - name: Include obsolete catalog messages (po files) for removal
       run: |
         deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
@@ -72,7 +72,7 @@ jobs:
     # 4. Commit and push changes
     - name: After success
       run: |
-        git add locale
+        git add locales
         git add sphinx
         git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
     - name: GitHub Push

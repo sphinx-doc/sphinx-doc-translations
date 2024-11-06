@@ -359,6 +359,10 @@ msgid ""
 " custom extensions live in a directory that is relative to the "
 ":term:`configuration directory`, use :meth:`pathlib.Path.resolve` like so:"
 msgstr ""
+"Certifique-se de que caminhos absolutos sejam usados ​​ao modificar "
+":data:`sys.path`. Se suas extensões personalizadas residem em um diretório "
+"relativo ao :term:`diretório de configuração`, use "
+":meth:`pathlib.Path.resolve` assim:"
 
 #: ../../sphinx/doc/usage/configuration.rst:240
 msgid "The directory structure illustrated above would look like this:"
@@ -1404,7 +1408,7 @@ msgid ""
 msgstr ""
 "Uma string que define o separador entre os números da seção e o número da "
 "equação quando :confval:`numfig` está habilitada e "
-":confval:`numfig_secnum_profundidade` é positiva."
+":confval:`numfig_secnum_depth` é positiva."
 
 #: ../../sphinx/doc/usage/configuration.rst:933
 msgid "Example: :code-py:`'-'` gets rendered as ``1.2-3``."
@@ -2540,7 +2544,7 @@ msgid ""
 "equivalent to :code-py:`'%b %d, %Y'` (or a locale-dependent equivalent)."
 msgstr ""
 "Se definido, o registro de data e hora de 'Última atualização em:' é "
-"inserido no rodapé de página, usando formato :func:`~time.strftime`dado. A "
+"inserido no rodapé de página, usando formato :func:`~time.strftime` dado. A "
 "string vazia é equivalente a :code-py:`'%b %d, %Y'` (ou ao equivalente "
 "conforme a localidade)."
 
@@ -3467,19 +3471,23 @@ msgstr "Renomeada de :confval:`!epub3_contributor`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2531
 msgid "The language of the document. This is put in the Dublin Core metadata."
-msgstr ""
+msgstr "Idioma do documento. Isso é colocado em metadados Dublin Core."
 
 #: ../../sphinx/doc/usage/configuration.rst:2538
 msgid ""
 "The publisher of the document. This is put in the Dublin Core metadata. You "
 "may use any sensible string, e.g. the project homepage."
 msgstr ""
+"Editor ou publicador do documento. Isso é colocado metadados Dublin Core. "
+"Pode ser qualquer string, como página e nome projeto."
 
 #: ../../sphinx/doc/usage/configuration.rst:2546
 msgid ""
 "The copyright of the document. See :confval:`copyright` for permitted "
 "formats."
 msgstr ""
+"Os direitos autorais ou `copyright` do documento. Veja :confval:`copyright` "
+"para formatos permitidos."
 
 #: ../../sphinx/doc/usage/configuration.rst:2553
 msgid ""
@@ -3487,6 +3495,9 @@ msgid ""
 " published documents this is the ISBN number, but you can also use an "
 "alternative scheme, e.g. the project homepage."
 msgstr ""
+"Identificador para o documento. Isso é colocado nos metadados Dublin Core. "
+"Para documentos publicados é o número ISBN, mas pode ser usado um schema "
+"alternativo como, por exemplo, site do projeto."
 
 #: ../../sphinx/doc/usage/configuration.rst:2562
 msgid ""
@@ -3494,6 +3505,9 @@ msgid ""
 "the Dublin Core metadata. For published books the scheme is ``'ISBN'``. If "
 "you use the project homepage, ``'URL'`` seems reasonable."
 msgstr ""
+"Esquema da publicação para :confval:`epub_identifier`. Isso é colocado nos "
+"metadados do Dublin Core. Para livros publicados o esquema é ``'ISBN'``. Se "
+"usar o site do projeto, ``'URL'`` parece razoável."
 
 #: ../../sphinx/doc/usage/configuration.rst:2571
 msgid ""
@@ -3501,6 +3515,9 @@ msgid ""
 "metadata. You may use a `XML's Name format`_ string. You can't use hyphen, "
 "period, numbers as a first character."
 msgstr ""
+"Identificador único para o documento. Isso é colocado nos metadados Dublin "
+"Core. Pode ser usado uma string de `formato de NOME do XML`_. Não pode "
+"conter hífen, ponto ou números como primeiro caractere."
 
 #: ../../sphinx/doc/usage/configuration.rst:2582
 msgid ""
@@ -3510,10 +3527,15 @@ msgid ""
 "filename is empty, no html cover page is created. No cover at all is created"
 " if the tuple is empty."
 msgstr ""
+"Informação de rosto. É uma tupla contendo nomes de arquivo da imagem de "
+"rosto do modelo html. A página de rosto html renderizada é inserida como "
+"primeiro item no :file:`content.opf`. Se o nome de arquivo do modelo estiver"
+" vazio, nenhuma página de rosto html será criada. Nenhuma capa será criada "
+"se a tupla estiver vazia."
 
 #: ../../sphinx/doc/usage/configuration.rst:2590
 msgid "Examples:"
-msgstr ""
+msgstr "Exemplos:"
 
 #: ../../sphinx/doc/usage/configuration.rst:2604
 msgid ""
@@ -3537,7 +3559,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:2635
 msgid "The default value is :code-py:`()`."
-msgstr ""
+msgstr "O valor padrão é :code-py:`()`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2641
 msgid ""
@@ -3586,19 +3608,19 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/configuration.rst:2703
 msgid ":code-py:`'default'`"
-msgstr ""
+msgstr ":code-py:`'default'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2704
 msgid "Include all ToC entries that are not hidden"
-msgstr ""
+msgstr "Inclui todas as entradas de ToC não ocultas"
 
 #: ../../sphinx/doc/usage/configuration.rst:2705
 msgid ":code-py:`'includehidden'`"
-msgstr ""
+msgstr ":code-py:`'includehidden'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2706
 msgid "Include all ToC entries"
-msgstr ""
+msgstr "Inclui todas as entradas de ToC"
 
 #: ../../sphinx/doc/usage/configuration.rst:2714
 msgid ""
@@ -3632,7 +3654,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/configuration.rst:2992
 #: ../../sphinx/doc/usage/configuration.rst:3534
 msgid ":code-py:`'footnote'`"
-msgstr ""
+msgstr ":code-py:`'footnote'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2750
 #: ../../sphinx/doc/usage/configuration.rst:3535
@@ -3643,7 +3665,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/configuration.rst:2990
 #: ../../sphinx/doc/usage/configuration.rst:3536
 msgid ":code-py:`'no'`"
-msgstr ""
+msgstr ":code-py:`'no'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:2752
 #: ../../sphinx/doc/usage/configuration.rst:3537

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-18 00:49+0000\n"
+"POT-Creation-Date: 2024-11-14 00:50+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Language-Team: German (https://app.transifex.com/sphinx-doc/teams/15434/de/)\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgid ""
 "<extension-tutorials-index>`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:93
+#: ../../sphinx/doc/extdev/index.rst:93 ../../sphinx/doc/extdev/index.rst:98
 msgid "Build phases"
 msgstr ""
 
@@ -185,11 +185,11 @@ msgid ""
 "way in which a Sphinx project is built: this works in several phases."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:98
+#: ../../sphinx/doc/extdev/index.rst:101
 msgid "**Phase 0: Initialization**"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:100
+#: ../../sphinx/doc/extdev/index.rst:103
 msgid ""
 "In this phase, almost nothing of interest to us happens.  The source "
 "directory is searched for source files, and extensions are initialized. "
@@ -197,11 +197,11 @@ msgid ""
 "is created."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:105
+#: ../../sphinx/doc/extdev/index.rst:108
 msgid "**Phase 1: Reading**"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:107
+#: ../../sphinx/doc/extdev/index.rst:110
 msgid ""
 "In Phase 1, all source files (and on subsequent builds, those that are new "
 "or changed) are read and parsed.  This is the phase where directives and "
@@ -211,14 +211,14 @@ msgid ""
 " existing files are read, temporary nodes are created."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:114
+#: ../../sphinx/doc/extdev/index.rst:117
 msgid ""
 "There are nodes provided by docutils, which are documented `in the docutils "
 "documentation <https://docutils.sourceforge.io/docs/ref/doctree.html>`__. "
 "Additional nodes are provided by Sphinx and :ref:`documented here <nodes>`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:118
+#: ../../sphinx/doc/extdev/index.rst:121
 msgid ""
 "During reading, the build environment is updated with all meta- and cross "
 "reference data of the read documents, such as labels, the names of headings,"
@@ -226,25 +226,25 @@ msgid ""
 "replace the temporary nodes."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:123
+#: ../../sphinx/doc/extdev/index.rst:126
 msgid ""
 "The parsed doctrees are stored on the disk, because it is not possible to "
 "hold all of them in memory."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:126
+#: ../../sphinx/doc/extdev/index.rst:129
 msgid "**Phase 2: Consistency checks**"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:128
+#: ../../sphinx/doc/extdev/index.rst:131
 msgid "Some checking is done to ensure no surprises in the built documents."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:130
+#: ../../sphinx/doc/extdev/index.rst:133
 msgid "**Phase 3: Resolving**"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:132
+#: ../../sphinx/doc/extdev/index.rst:135
 msgid ""
 "Now that the metadata and cross-reference data of all existing documents is "
 "known, all temporary nodes are replaced by nodes that can be converted into "
@@ -253,11 +253,11 @@ msgid ""
 "those that don't."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:138
+#: ../../sphinx/doc/extdev/index.rst:141
 msgid "**Phase 4: Writing**"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:140
+#: ../../sphinx/doc/extdev/index.rst:143
 msgid ""
 "This phase converts the resolved doctrees to the desired output format, such"
 " as HTML or LaTeX.  This happens via a so-called docutils writer that visits"
@@ -265,29 +265,29 @@ msgid ""
 "process."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:146
+#: ../../sphinx/doc/extdev/index.rst:149
 msgid ""
 "Some builders deviate from this general build plan, for example, the builder"
 " that checks external links does not need anything more than the parsed "
 "doctrees and therefore does not have phases 2--4."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:150
+#: ../../sphinx/doc/extdev/index.rst:153
 msgid ""
 "To see an example of application, refer to :ref:`tutorial-extend-build`."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:155
+#: ../../sphinx/doc/extdev/index.rst:158
 msgid "Extension metadata"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:159
+#: ../../sphinx/doc/extdev/index.rst:162
 msgid ""
 "The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
 " as metadata of the extension.  Metadata keys currently recognized are:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:162
+#: ../../sphinx/doc/extdev/index.rst:165
 msgid ""
 "``'version'``: a string that identifies the extension version.  It is used "
 "for extension version requirement checking (see :confval:`needs_extensions`)"
@@ -295,7 +295,7 @@ msgid ""
 "substituted."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:165
+#: ../../sphinx/doc/extdev/index.rst:168
 msgid ""
 "``'env_version'``: an integer that identifies the version of env data "
 "structure if the extension stores any data to environment.  It is used to "
@@ -305,7 +305,7 @@ msgid ""
 "environment."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:170
+#: ../../sphinx/doc/extdev/index.rst:173
 msgid ""
 "``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
 "source files can be used when the extension is loaded.  It defaults to "
@@ -313,47 +313,47 @@ msgid ""
 "parallel-read-safe after checking that it is."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:175
+#: ../../sphinx/doc/extdev/index.rst:178
 msgid ""
 "The *parallel-read-safe* extension must satisfy the following conditions:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:178
+#: ../../sphinx/doc/extdev/index.rst:181
 msgid ""
 "The core logic of the extension is parallelly executable during the reading "
 "phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:180
+#: ../../sphinx/doc/extdev/index.rst:183
 msgid ""
 "It has event handlers for :event:`env-merge-info` and :event:`env-purge-doc`"
 " events if it stores data to the build environment object (env) during the "
 "reading phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:184
+#: ../../sphinx/doc/extdev/index.rst:187
 msgid ""
 "``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
 "output files can be used when the extension is loaded.  Since extensions "
 "usually don't negatively influence the process, this defaults to ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:188
+#: ../../sphinx/doc/extdev/index.rst:191
 msgid ""
 "The *parallel-write-safe* extension must satisfy the following conditions:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:191
+#: ../../sphinx/doc/extdev/index.rst:194
 msgid ""
 "The core logic of the extension is parallelly executable during the writing "
 "phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:196
+#: ../../sphinx/doc/extdev/index.rst:199
 msgid "APIs used for writing extensions"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:198
+#: ../../sphinx/doc/extdev/index.rst:201
 msgid ""
 "These sections provide a more complete description of the tools at your "
 "disposal when developing Sphinx extensions. Some are core to Sphinx (such as"

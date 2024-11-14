@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-18 00:49+0000\n"
+"POT-Creation-Date: 2024-11-14 00:50+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Language-Team: German (https://app.transifex.com/sphinx-doc/teams/15434/de/)\n"
 "MIME-Version: 1.0\n"
@@ -90,13 +90,30 @@ msgid ""
 "builders, but executed before the doctests of the group(s) it belongs to."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:57
+#: ../../sphinx/doc/usage/extensions/doctest.rst:55
+#: ../../sphinx/doc/usage/extensions/doctest.rst:71
+#: ../../sphinx/doc/usage/extensions/doctest.rst:87
+#: ../../sphinx/doc/usage/extensions/doctest.rst:161
+msgid "Options"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:59
+#: ../../sphinx/doc/usage/extensions/doctest.rst:75
+#: ../../sphinx/doc/usage/extensions/doctest.rst:153
+#: ../../sphinx/doc/usage/extensions/doctest.rst:177
+#: ../../sphinx/doc/usage/extensions/doctest.rst:225
+msgid ""
+"Skip the directive if the python expression *condition* is True. See "
+":ref:`skipping tests conditionally <doctest-skipif>`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:65
 msgid ""
 "A cleanup code block.  This code is not shown in the output for other "
 "builders, but executed after the doctests of the group(s) it belongs to."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:65
+#: ../../sphinx/doc/usage/extensions/doctest.rst:81
 msgid ""
 "A doctest-style code block.  You can use standard :mod:`doctest` flags for "
 "controlling how actual output is compared with what you give as output.  The"
@@ -104,162 +121,142 @@ msgid ""
 "configuration variable."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:70
-msgid "This directive supports five options:"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:72
-msgid ""
-"``hide``, a flag option, hides the doctest block in other builders.  By "
-"default it is shown as a highlighted doctest block."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:75
-msgid ""
-"``options``, a string option, can be used to give a comma-separated list of "
-"doctest flags that apply to each example in the tests.  (You still can give "
-"explicit flags per example, with doctest comments, but they will show up in "
-"other builders too.)"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:80
-msgid ""
-"``pyversion``, a string option, can be used to specify the required Python "
-"version for the example to be tested. For instance, in the following case "
-"the example will be tested only for Python versions greater than 3.12::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:87
-msgid "The following operands are supported:"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:89
-msgid "``~=``: Compatible release clause"
-msgstr ""
-
 #: ../../sphinx/doc/usage/extensions/doctest.rst:90
-msgid "``==``: Version matching clause"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:91
-msgid "``!=``: Version exclusion clause"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:92
-msgid "``<=``, ``>=``: Inclusive ordered comparison clause"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:93
-msgid "``<``, ``>``: Exclusive ordered comparison clause"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:94
-msgid "``===``: Arbitrary equality clause."
+#: ../../sphinx/doc/usage/extensions/doctest.rst:207
+msgid ""
+"Hide the doctest block in other builders. By default it is shown as a "
+"highlighted doctest block."
 msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/doctest.rst:96
+msgid ""
+"A comma-separated list of doctest flags that apply to each example in the "
+"tests.  (You still can give explicit flags per example, with doctest "
+"comments, but they will show up in other builders too.)"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:100
+msgid "Alternatively, you can give inline doctest options, like in doctest:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:107
+msgid ""
+"They will be respected when the test is run, but by default will be stripped"
+" from presentation output. You can prevent stripping using the option "
+":rst:dir:`doctest:no-trim-doctest-flags`."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:114
+msgid ""
+"Specify the required Python version for the example to be tested. For "
+"instance, in the following case the example will be tested only for Python "
+"versions greater than 3.12::"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:121
+msgid "The following operands are supported:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:123
+msgid "``~=``: Compatible release clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:124
+msgid "``==``: Version matching clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:125
+msgid "``!=``: Version exclusion clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:126
+msgid "``<=``, ``>=``: Inclusive ordered comparison clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:127
+msgid "``<``, ``>``: Exclusive ordered comparison clause"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:128
+msgid "``===``: Arbitrary equality clause."
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/doctest.rst:130
 msgid ""
 "``pyversion`` option is followed :pep:`PEP-440: Version Specifiers "
 "<440#version-specifiers>`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:103
+#: ../../sphinx/doc/usage/extensions/doctest.rst:137
 msgid "Supported PEP-440 operands and notations"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:105
-#: ../../sphinx/doc/usage/extensions/doctest.rst:132
+#: ../../sphinx/doc/usage/extensions/doctest.rst:142
 #: ../../sphinx/doc/usage/extensions/doctest.rst:170
+#: ../../sphinx/doc/usage/extensions/doctest.rst:218
 msgid ""
-"``trim-doctest-flags`` and ``no-trim-doctest-flags``, a flag option, doctest"
-" flags (comments looking like ``# doctest: FLAG, ...``) at the ends of lines"
-" and ``<BLANKLINE>`` markers are removed (or not removed) individually.  "
-"Default is ``trim-doctest-flags``."
+"Whether to trim remove doctest flags (comments looking like ``# doctest: "
+"FLAG, ...``) at the ends of lines and ``<BLANKLINE>`` markers individually."
+"  Default is ``trim-doctest-flags``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:110
+#: ../../sphinx/doc/usage/extensions/doctest.rst:146
 msgid ""
 "Note that like with standard doctests, you have to use ``<BLANKLINE>`` to "
 "signal a blank line in the expected output.  The ``<BLANKLINE>`` is removed "
 "when building presentation output (HTML, LaTeX etc.)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:114
-msgid "Also, you can give inline doctest options, like in doctest::"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:119
-msgid ""
-"They will be respected when the test is run, but stripped from presentation "
-"output."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:125
+#: ../../sphinx/doc/usage/extensions/doctest.rst:158
 msgid "A code block for a code-output-style test."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:127
-msgid "This directive supports three options:"
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:129
+#: ../../sphinx/doc/usage/extensions/doctest.rst:164
 msgid ""
-"``hide``, a flag option, hides the code block in other builders.  By default"
-" it is shown as a highlighted code block."
+"Hide the code block in other builders. By default it is shown as a "
+"highlighted code block."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:139
+#: ../../sphinx/doc/usage/extensions/doctest.rst:182
 msgid ""
 "Code in a ``testcode`` block is always executed all at once, no matter how "
 "many statements it contains.  Therefore, output will *not* be generated for "
 "bare expressions -- use ``print``.  Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:152
+#: ../../sphinx/doc/usage/extensions/doctest.rst:195
 msgid ""
 "Also, please be aware that since the doctest module does not support mixing "
 "regular output and an exception message in the same snippet, this applies to"
 " testcode/testoutput as well."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:159
+#: ../../sphinx/doc/usage/extensions/doctest.rst:202
 msgid ""
 "The corresponding output, or the exception message, for the last "
 ":rst:dir:`testcode` block."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:162
-msgid "This directive supports four options:"
+#: ../../sphinx/doc/usage/extensions/doctest.rst:213
+msgid "A comma-separated list of doctest flags."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:164
-msgid ""
-"``hide``, a flag option, hides the output block in other builders.  By "
-"default it is shown as a literal block without highlighting."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:167
-msgid ""
-"``options``, a string option, can be used to give doctest flags (comma-"
-"separated) just like in normal doctest blocks."
-msgstr ""
-
-#: ../../sphinx/doc/usage/extensions/doctest.rst:175
+#: ../../sphinx/doc/usage/extensions/doctest.rst:228
 msgid "Example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:187
+#: ../../sphinx/doc/usage/extensions/doctest.rst:240
 msgid ""
 "The following is an example for the usage of the directives.  The test via "
 ":rst:dir:`doctest` and the test via :rst:dir:`testcode` and "
 ":rst:dir:`testoutput` are equivalent. ::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:221
+#: ../../sphinx/doc/usage/extensions/doctest.rst:276
 msgid "Skipping tests conditionally"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:223
+#: ../../sphinx/doc/usage/extensions/doctest.rst:278
 msgid ""
 "``skipif``, a string option, can be used to skip directives conditionally. "
 "This may be useful e.g. when a different set of tests should be run "
@@ -269,171 +266,171 @@ msgid ""
 " when used for different directives:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:230
+#: ../../sphinx/doc/usage/extensions/doctest.rst:285
 msgid ":rst:dir:`testsetup` and :rst:dir:`testcleanup`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:232
+#: ../../sphinx/doc/usage/extensions/doctest.rst:287
 msgid "conditionally skip test setup and/or cleanup"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:233
+#: ../../sphinx/doc/usage/extensions/doctest.rst:288
 msgid "customize setup/cleanup code per environment"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:235
+#: ../../sphinx/doc/usage/extensions/doctest.rst:290
 msgid ":rst:dir:`doctest`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:237
+#: ../../sphinx/doc/usage/extensions/doctest.rst:292
 msgid "conditionally skip both a test and its output verification"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:239
+#: ../../sphinx/doc/usage/extensions/doctest.rst:294
 msgid ":rst:dir:`testcode`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:241
+#: ../../sphinx/doc/usage/extensions/doctest.rst:296
 msgid "conditionally skip a test"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:242
+#: ../../sphinx/doc/usage/extensions/doctest.rst:297
 msgid "customize test code per environment"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:244
+#: ../../sphinx/doc/usage/extensions/doctest.rst:299
 msgid ":rst:dir:`testoutput`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:246
+#: ../../sphinx/doc/usage/extensions/doctest.rst:301
 msgid "conditionally skip output assertion for a skipped test"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:247
+#: ../../sphinx/doc/usage/extensions/doctest.rst:302
 msgid "expect different output depending on the environment"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:249
+#: ../../sphinx/doc/usage/extensions/doctest.rst:304
 msgid ""
 "The value of the ``skipif`` option is evaluated as a Python expression. If "
 "the result is a true value, the directive is omitted from the test run just "
 "as if it wasn't present in the file at all."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:253
+#: ../../sphinx/doc/usage/extensions/doctest.rst:308
 msgid ""
 "Instead of repeating an expression, the :confval:`doctest_global_setup` "
 "configuration option can be used to assign it to a variable which can then "
 "be used instead."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:257
+#: ../../sphinx/doc/usage/extensions/doctest.rst:312
 msgid "Here's an example which skips some tests if Pandas is not installed:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:259
+#: ../../sphinx/doc/usage/extensions/doctest.rst:314
 msgid "conf.py"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:270
+#: ../../sphinx/doc/usage/extensions/doctest.rst:325
 msgid "contents.rst"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:296
+#: ../../sphinx/doc/usage/extensions/doctest.rst:351
 msgid "Configuration"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:298
+#: ../../sphinx/doc/usage/extensions/doctest.rst:353
 msgid "The doctest extension uses the following configuration values:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:302
+#: ../../sphinx/doc/usage/extensions/doctest.rst:357
 msgid "By default, these options are enabled:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:304
+#: ../../sphinx/doc/usage/extensions/doctest.rst:359
 msgid ""
 "``ELLIPSIS``, allowing you to put ellipses in the expected output that match"
 " anything in the actual output;"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:306
+#: ../../sphinx/doc/usage/extensions/doctest.rst:361
 msgid ""
 "``IGNORE_EXCEPTION_DETAIL``, causing everything following the leftmost colon"
 " and any module information in the exception name to be ignored;"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:308
+#: ../../sphinx/doc/usage/extensions/doctest.rst:363
 msgid ""
 "``DONT_ACCEPT_TRUE_FOR_1``, rejecting \"True\" in the output where \"1\" is "
 "given -- the default behavior of accepting this substitution is a relic of "
 "pre-Python 2.2 times."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:316
+#: ../../sphinx/doc/usage/extensions/doctest.rst:371
 msgid "Defaults to ``True``. Controls whether successes are reported."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:319
+#: ../../sphinx/doc/usage/extensions/doctest.rst:374
 msgid ""
 "For a project with many doctests, it may be useful to set this to ``False`` "
 "to only highlight failures."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:326
+#: ../../sphinx/doc/usage/extensions/doctest.rst:381
 msgid ""
 "A list of directories that will be added to :data:`sys.path` when the "
 "doctest builder is used.  (Make sure it contains absolute paths.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:331
+#: ../../sphinx/doc/usage/extensions/doctest.rst:386
 msgid ""
 "Python code that is treated like it were put in a ``testsetup`` directive "
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. import modules you will always need in your doctests."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:339
+#: ../../sphinx/doc/usage/extensions/doctest.rst:394
 msgid ""
 "Python code that is treated like it were put in a ``testcleanup`` directive "
 "for *every* file that is tested, and for every group.  You can use this to "
 "e.g. remove any temporary files that the tests leave behind."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:347
+#: ../../sphinx/doc/usage/extensions/doctest.rst:402
 msgid ""
 "If this is a nonempty string (the default is ``'default'``), standard "
 "reStructuredText doctest blocks will be tested too. They will be assigned to"
 " the group name given."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:351
+#: ../../sphinx/doc/usage/extensions/doctest.rst:406
 msgid ""
 "reStructuredText doctest blocks are simply doctests put into a paragraph of "
 "their own, like so::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:361
+#: ../../sphinx/doc/usage/extensions/doctest.rst:416
 msgid ""
 "(Note that no special ``::`` is used to introduce a doctest block; docutils "
 "recognizes them from the leading ``>>>``.  Also, no additional indentation "
 "is used, though it doesn't hurt.)"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:365
+#: ../../sphinx/doc/usage/extensions/doctest.rst:420
 msgid ""
 "If this value is left at its default value, the above snippet is interpreted"
 " by the doctest builder exactly like the following::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:377
+#: ../../sphinx/doc/usage/extensions/doctest.rst:432
 msgid ""
 "This feature makes it easy for you to test doctests in docstrings included "
 "with the :mod:`~sphinx.ext.autodoc` extension without marking them up with a"
 " special directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/doctest.rst:381
+#: ../../sphinx/doc/usage/extensions/doctest.rst:436
 msgid ""
 "Note though that you can't have blank lines in reStructuredText doctest "
 "blocks. They will be interpreted as one block ending and another one "

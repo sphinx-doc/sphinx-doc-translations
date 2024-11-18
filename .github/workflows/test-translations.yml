@@ -75,4 +75,4 @@ jobs:
       uses: rffontenelle/sphinx-lint-problem-matcher@v1.0.0
     - name: Lint translation file
       if: always()
-      run: sphinx-lint locales/${{ matrix.language }}
+      run: cd locales/${{ matrix.language }}/LC_MESSAGES && sphinx-lint

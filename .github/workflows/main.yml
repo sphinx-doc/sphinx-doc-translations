@@ -48,6 +48,12 @@ jobs:
       run: |
         rm -rf ./locales/pot
         ./locales/generate_templates.sh
+    # Upload sphinx environment.pickle as artifact 
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: sphinx-environment-pickle
+        path: locales/pot/.doctrees/environment.pickle
     - name: Just print what would be locked and deleted of the resources in Transifex
       if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'sphinx-doc/sphinx-doc-translations' }}
       run: locales/lock-translations.py locales/.tx/config -d
@@ -62,6 +68,8 @@ jobs:
     # 3. Update translation files
     - name: Update translations
       run: |
+        git status
+        ls -lR ./locales/pot
         sh ./locales/generate_templates.sh
         cat ./locales/.tx/config
         sh ./locales/update.sh
@@ -87,9 +95,3 @@ jobs:
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/${{ github.repository }}/actions/workflows/test-translations.yml/dispatches \
           -d '{"ref":"master"}'
-    #5. Upload sphinx environment.pickle as artifact 
-    - uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: sphinx-environment-pickle
-        path: locales/pot/.doctrees/environment.pickle

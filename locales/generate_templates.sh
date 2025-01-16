@@ -10,5 +10,5 @@ set -ex
 
 cd `dirname $0`
 #rm -R pot  # skip this line cause "already unused pot files will not removed" but we must keep these files to avoid commit for only "POT-Creation-Time" line updated. see: https://github.com/sphinx-doc/sphinx/issues/3443
-sphinx-build -E -T -j auto -b gettext ../sphinx/doc pot
+sphinx-build -T -j auto -b gettext ../sphinx/doc pot
 sphinx-intl update-txconfig-resources -p pot -d .

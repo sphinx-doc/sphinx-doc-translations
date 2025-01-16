@@ -69,7 +69,7 @@ jobs:
     - name: Update translations
       run: |
         git status
-        ls -lR ./locales/pot
+        ls -laFR ./locales/pot
         sh ./locales/generate_templates.sh
         cat ./locales/.tx/config
         sh ./locales/update.sh

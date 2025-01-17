@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-01 00:55+0000\n"
+"POT-Creation-Date: 2025-01-17 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,112 +20,120 @@ msgstr ""
 msgid ":mod:`sphinx.ext.inheritance_diagram` -- Include inheritance diagrams"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:11
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:14
 msgid "This extension allows you to include inheritance diagrams, rendered via the :mod:`Graphviz extension <sphinx.ext.graphviz>`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:14
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:17
 msgid "It adds this directive:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:18
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:21
 msgid "This directive has one or more arguments, each giving a module or class name.  Class names can be unqualified; in that case they are taken to exist in the currently described module (see :rst:dir:`py:module`)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:22
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:25
 msgid "For each given class, and each class in each given module, the base classes are determined.  Then, from all classes and their base classes, a graph is generated which is then rendered via the graphviz extension to a directed graph."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:27
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:30
 msgid "This directive supports an option called ``parts`` that, if given, must be an integer, advising the directive to keep that many dot-separated parts in the displayed names (from right to left). For example, ``parts=1`` will only display class names, without the names of the modules that contain them."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:33
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:36
 msgid "The value of for ``parts`` can also be negative, indicating how many parts to drop from the left.  For example, if all your class names start with ``lib.``, you can give ``:parts: -1`` to remove that prefix from the displayed node names."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:39
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:42
 msgid "The directive also supports a ``private-bases`` flag option; if given, private base classes (those whose name starts with ``_``) will be included."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:42
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:45
 msgid "You can use ``caption`` option to give a caption to the diagram."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:44
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:47
 msgid "Added ``private-bases`` option; previously, all bases were always included."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:48
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:51
 msgid "Added ``caption`` option"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:51
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:54
 msgid "It also supports a ``top-classes`` option which requires one or more class names separated by comma. If specified inheritance traversal will stop at the specified class names. Given the following Python module::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:81
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:84
 msgid "If you have specified a module in the inheritance diagram like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:86
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:89
 msgid "any base classes which are ancestors to ``top-classes`` and are also defined in the same module will be rendered as stand alone nodes. In this example class A will be rendered as stand alone node in the graph. This is a known issue due to how this extension works internally."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:91
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:94
 msgid "If you don't want class A (or any other ancestors) to be visible then specify only the classes you would like to generate the diagram for like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:97
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:100
 msgid "Added ``top-classes`` option to limit the scope of inheritance graphs."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:102
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:105
 msgid "Examples"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:104
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:107
 msgid "The following are different inheritance diagrams for the internal ``InheritanceDiagram`` class that implements the directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:107
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:110
 msgid "With full names::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:114
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:117
 msgid "Showing class names only::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:122
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:125
 msgid "Stopping the diagram at :class:`sphinx.util.docutils.SphinxDirective` (the highest superclass still part of Sphinx), and dropping the common left-most part (``sphinx``) from all names::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:138
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:141
 msgid "The internal class that implements the ``inheritance-diagram`` directive."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:142
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:145
 msgid "Configuration"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:146
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:0
+msgid "Type"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:0
+msgid "Default"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:151
 msgid "A dictionary of graphviz graph attributes for inheritance diagrams."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:148
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:157
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:172
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:153
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:164
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:183
 msgid "For example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:155
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:162
 msgid "A dictionary of graphviz node attributes for inheritance diagrams."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:164
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:173
 msgid "A dictionary of graphviz edge attributes for inheritance diagrams."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/inheritance.rst:168
+#: ../../sphinx/doc/usage/extensions/inheritance.rst:179
 msgid "Allows mapping the full qualified name of the class to custom values (useful when exposing the underlying path of a class is not desirable, e.g. it's a private class and should not be instantiated by the user)."
 msgstr ""

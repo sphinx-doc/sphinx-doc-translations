@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-03 00:50+0000\n"
+"POT-Creation-Date: 2025-01-17 00:48+0000\n"
 "PO-Revision-Date: 2024-07-31 00:36+0000\n"
 "Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/sphinx-doc/teams/15434/ru/)\n"
@@ -41,50 +41,148 @@ msgstr ""
 msgid "Incompatible changes"
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:13
+#: ../../sphinx/CHANGES.rst:12
+msgid ""
+"#13044: Remove the internal and undocumented ``has_equations`` data from the"
+" :py:class:`!MathDomain`` domain. The undocumented "
+":py:meth:`!MathDomain.has_equations` method now unconditionally returns "
+"``True``. These are replaced by the ``has_maths_elements`` key of the page "
+"context dict. Patch by Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:18
+msgid ""
+"#13227: HTML output for sequences of keys in the :rst:role:`kbd` role no "
+"longer uses a ``<kbd class=\"kbd compound\">`` element to wrap the keys and "
+"separators, but places them directly in the relevant parent node. This means"
+" that CSS rulesets targeting ``kbd.compound`` or ``.kbd.compound`` will no "
+"longer have any effect. Patch by Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:26
 msgid "Deprecated"
 msgstr "Не рекомендуется"
 
-#: ../../sphinx/CHANGES.rst:15
+#: ../../sphinx/CHANGES.rst:28
 msgid ""
 "#13037: Deprecate the ``SingleHTMLBuilder.fix_refuris`` method. Patch by "
 "James Addison."
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:19
+#: ../../sphinx/CHANGES.rst:32
 msgid "Features added"
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:22
+#: ../../sphinx/CHANGES.rst:34
+msgid ""
+"Add a new ``duplicate_declaration`` warning type, with "
+"``duplicate_declaration.c`` and ``duplicate_declaration.cpp`` subtypes. "
+"Patch by Julien Lecomte and Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:37
+msgid ""
+"#11824: linkcode: Allow extensions to add support for a domain by defining "
+"the keys that should be present. Patch by Nicolas Peugnet."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:40
+msgid ""
+"#13144: Add a ``class`` option to the :rst:dir:`autosummary` directive. "
+"Patch by Tim Hoffmann."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:42
+msgid ""
+"#13146: Napoleon: Unify the type preprocessing logic to allow Google-style "
+"docstrings to use the optional and default keywords. Patch by Chris Barrick."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:45
+msgid ""
+"#13227: Implement the :rst:role:`kbd` role as a ``SphinxRole``. Patch by "
+"Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:47
+msgid ""
+"#13065: Enable colour by default in when running on CI. Patch by Adam "
+"Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:49
+msgid ""
+"Allow supressing warnings from the :rst:dir:`toctree` directive when a glob "
+"pattern doesn't match any documents, via the new ``toc.glob_not_matching`` "
+"warning sub-type. Patch by Slawek Figiel."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:55
 msgid "Bugs fixed"
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:24
+#: ../../sphinx/CHANGES.rst:57
+msgid ""
+"#12463: autosummary: Respect an empty module ``__all__``. Patch by Valentin "
+"Pratz"
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:59
 msgid ""
 "#13060: HTML Search: use ``Map`` to store per-file term scores. Patch by "
 "James Addison"
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:26
+#: ../../sphinx/CHANGES.rst:61
 msgid ""
 "#13130: LaTeX docs: ``pdflatex`` index creation may fail for index entries "
 "in French.  See :confval:`latex_use_xindy`. Patch by Jean-François B."
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:29
+#: ../../sphinx/CHANGES.rst:64
 msgid ""
 "LaTeX: fix a ``7.4.0`` typo in a default for ``\\sphinxboxsetup`` (refs: PR "
 "#13152). Patch by Jean-François B."
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:32
+#: ../../sphinx/CHANGES.rst:67
 msgid ""
 "#13096: HTML Search: check that query terms exist as properties in term "
 "indices before accessing them."
 msgstr ""
 
-#: ../../sphinx/CHANGES.rst:36
+#: ../../sphinx/CHANGES.rst:69
+msgid ""
+"#11233: linkcheck: match redirect URIs against :confval:`linkcheck_ignore` "
+"by overriding session-level ``requests.get_redirect_target``."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:71
+msgid ""
+"#13195: viewcode: Fix issue where import paths differ from the directory "
+"structure. Patch by Ben Egan and Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:74
+msgid ""
+"#13188: autodoc: fix detection of class methods implemented in C. Patch by "
+"Bénédikt Tran."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:76
+msgid ""
+"#1810: Always copy static files when building, regardless of whether any "
+"documents have changed since the previous build. Patch by Adam Turner."
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:81
 msgid "Testing"
+msgstr ""
+
+#: ../../sphinx/CHANGES.rst:83
+msgid ""
+"#13224: Correctness fixup for ``test_html_multi_line_copyright``. Patch by "
+"Colin Watson, applied by James Addison."
 msgstr ""
 
 #: ../../sphinx/doc/changes/index.rst:22

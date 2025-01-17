@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2024, the Sphinx developers
+# Copyright (C) 2007-2025, the Sphinx developers
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-14 00:50+0000\n"
+"POT-Creation-Date: 2025-01-17 00:48+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: wendi cao <651645601@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -299,81 +299,105 @@ msgstr "扩展元数据"
 
 #: ../../sphinx/doc/extdev/index.rst:162
 msgid ""
-"The ``setup()`` function can return a dictionary.  This is treated by Sphinx"
-" as metadata of the extension.  Metadata keys currently recognized are:"
-msgstr "“`setup（）`”函数可以返回字典。Sphinx将其视为扩展的元数据。当前识别的元数据键包括："
-
-#: ../../sphinx/doc/extdev/index.rst:165
-msgid ""
-"``'version'``: a string that identifies the extension version.  It is used "
-"for extension version requirement checking (see :confval:`needs_extensions`)"
-" and informational purposes.  If not given, ``\"unknown version\"`` is "
-"substituted."
+"The ``setup()`` function should return a dictionary. This is treated by "
+"Sphinx as metadata of the extension. Metadata keys currently recognized are:"
 msgstr ""
-"``“version”`：标识扩展版本的字符串。它用于扩展版本需求检查（请参阅：confval:`needs_extensions`）和信息目的。如果未给出，则替换为“未知版本”。"
 
-#: ../../sphinx/doc/extdev/index.rst:168
-msgid ""
-"``'env_version'``: an integer that identifies the version of env data "
-"structure if the extension stores any data to environment.  It is used to "
-"detect the data structure has been changed from last build.  The extensions "
-"have to increment the version when data structure has changed.  If not "
-"given, Sphinx considers the extension does not stores any data to "
-"environment."
+#: ../../sphinx/doc/extdev/index.rst:166
+msgid "``'version'``"
 msgstr ""
-"``“env_version”``：如果扩展将任何数据存储到环境中，则标识env数据结构的版本的整数。它用于检测数据结构是否已从上次生成更改。当数据结构发生变化时，扩展必须增加版本。如果没有给出，Sphinx认为扩展不向环境存储任何数据。"
+
+#: ../../sphinx/doc/extdev/index.rst:167
+msgid ""
+"A string that identifies the extension version. It is used for extension "
+"version requirement checking (see :confval:`needs_extensions`) and "
+"informational purposes. If no version string is returned, ``'unknown "
+"version'`` is used by default."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:172
+msgid "``'env_version'``"
+msgstr ""
 
 #: ../../sphinx/doc/extdev/index.rst:173
 msgid ""
-"``'parallel_read_safe'``: a boolean that specifies if parallel reading of "
-"source files can be used when the extension is loaded.  It defaults to "
-"``False``, i.e. you have to explicitly specify your extension to be "
-"parallel-read-safe after checking that it is."
+"A non-zero positive integer integer that records the version of data stored "
+"in the environment by the extension."
 msgstr ""
-"``“parallel_read_safe”`：一个布尔值，指定加载扩展时是否可以使用并行读取源文件。它默认为“False”，也就是说，在检查扩展是否是并行读安全的之后，必须显式地将扩展指定为安全的。"
 
-#: ../../sphinx/doc/extdev/index.rst:178
+#: ../../sphinx/doc/extdev/index.rst:177
 msgid ""
-"The *parallel-read-safe* extension must satisfy the following conditions:"
+"If ``'env_version'`` is not set, the extension **must not** store any data "
+"or state directly on the environment object  (``env``)."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:181
+#: ../../sphinx/doc/extdev/index.rst:180
+msgid ""
+"This key must be defined if the extension uses the ``env`` object to store "
+"data. The version number must be incremented whenever the type, structure,  "
+"or meaning of the stored data change, to ensure Sphinx does not try and load"
+" invalid data from a cached environment."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:187
+msgid "``'parallel_read_safe'``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:188
+msgid ""
+"A boolean that specifies if parallel reading of source files can be used "
+"when the extension is loaded. It defaults to ``False``, meaning that you "
+"have to explicitly specify your extension to be safe for parallel reading "
+"after checking that it is."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:195
+msgid ""
+"When *parallel-read-safe* is ``True``, the extension must satisfy the "
+"following conditions:"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:198
 msgid ""
 "The core logic of the extension is parallelly executable during the reading "
 "phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:183
+#: ../../sphinx/doc/extdev/index.rst:200
 msgid ""
 "It has event handlers for :event:`env-merge-info` and :event:`env-purge-doc`"
-" events if it stores data to the build environment object (env) during the "
-"reading phase."
+" events if it stores data to the build environment object (``env``) during "
+"the reading phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:187
+#: ../../sphinx/doc/extdev/index.rst:204
+msgid "``'parallel_write_safe'``"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/index.rst:205
 msgid ""
-"``'parallel_write_safe'``: a boolean that specifies if parallel writing of "
-"output files can be used when the extension is loaded.  Since extensions "
-"usually don't negatively influence the process, this defaults to ``True``."
+"A boolean that specifies if parallel writing of output files can be used "
+"when the extension is loaded. Since extensions usually don't negatively "
+"influence the process, this defaults to ``True``."
 msgstr ""
-"``“parallel_write_safe”`：一个布尔值，指定加载扩展时是否可以使用输出文件的并行写入。由于扩展通常不会对过程产生负面影响，因此默认为“True”。"
 
-#: ../../sphinx/doc/extdev/index.rst:191
+#: ../../sphinx/doc/extdev/index.rst:212
 msgid ""
-"The *parallel-write-safe* extension must satisfy the following conditions:"
+"When *parallel-write-safe* is ``True``, the extension must satisfy the "
+"following conditions:"
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:194
+#: ../../sphinx/doc/extdev/index.rst:215
 msgid ""
 "The core logic of the extension is parallelly executable during the writing "
 "phase."
 msgstr ""
 
-#: ../../sphinx/doc/extdev/index.rst:199
+#: ../../sphinx/doc/extdev/index.rst:220
 msgid "APIs used for writing extensions"
 msgstr "用于编写插件的接口"
 
-#: ../../sphinx/doc/extdev/index.rst:201
+#: ../../sphinx/doc/extdev/index.rst:222
 msgid ""
 "These sections provide a more complete description of the tools at your "
 "disposal when developing Sphinx extensions. Some are core to Sphinx (such as"

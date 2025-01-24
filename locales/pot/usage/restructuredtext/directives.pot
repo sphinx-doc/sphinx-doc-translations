@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-01 00:55+0000\n"
+"POT-Creation-Date: 2025-01-24 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1078,78 +1078,86 @@ msgstr ""
 msgid "Prevent wrapping of the given math in a math environment. When you give this option, you must make sure yourself that the math is properly set up. For example::"
 msgstr ""
 
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1573
+msgid "The directive option ``:nowrap:`` was renamed to ``:no-wrap:``."
+msgstr ""
+
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1575
+msgid "The previous name has been retained as an alias, but will be deprecated and removed in a future version of Sphinx."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1583
 msgid ":ref:`math-support`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1576
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1584
 msgid "Rendering options for math with HTML builders."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1578
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1586
 msgid ":confval:`latex_engine`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1579
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1587
 msgid "Explains how to configure LaTeX builder to support Unicode literals in math mark-up."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1584
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1592
 msgid "Grammar production displays"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1586
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1594
 msgid "Special markup is available for displaying the productions of a formal grammar. The markup is simple and does not attempt to model all aspects of BNF (or any derived forms), but provides enough to allow context-free grammars to be displayed in a way that causes uses of a symbol to be rendered as hyperlinks to the definition of the symbol.  There is this directive:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1594
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1602
 msgid "This directive is used to enclose a group of productions.  Each production is given on a single line and consists of a name, separated by a colon from the following definition.  If the definition spans multiple lines, each continuation line must begin with a colon placed at the same column as in the first line. Blank lines are not allowed within ``productionlist`` directive arguments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1601
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1609
 msgid "The definition can contain token names which are marked as interpreted text (e.g., \"``sum ::= `integer` \"+\" `integer```\") -- this generates cross-references to the productions of these tokens.  Outside of the production list, you can reference to token productions using :rst:role:`token`."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1607
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1615
 msgid "The *productionGroup* argument to :rst:dir:`productionlist` serves to distinguish different sets of production lists that belong to different grammars.  Multiple production lists with the same *productionGroup* thus define rules in the same scope."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1612
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1620
 msgid "Inside of the production list, tokens implicitly refer to productions from the current group. You can refer to the production of another grammar by prefixing the token with its group name and a colon, e.g, \"``otherGroup:sum``\". If the group of the token should not be shown in the production, it can be prefixed by a tilde, e.g., \"``~otherGroup:sum``\". To refer to a production from an unnamed grammar, the token should be prefixed by a colon, e.g., \"``:sum``\"."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1620
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1628
 msgid "Outside of the production list, if you have given a *productionGroup* argument you must prefix the token name in the cross-reference with the group name and a colon, e.g., \"``myGroup:sum``\" instead of just \"``sum``\". If the group should not be shown in the title of the link either an explicit title can be given (e.g., \"``myTitle <myGroup:sum>``\"), or the target can be prefixed with a tilde (e.g., \"``~myGroup:sum``\")."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1628
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1636
 msgid "Note that no further reStructuredText parsing is done in the production, so that you don't have to escape ``*`` or ``|`` characters."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1631
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1639
 msgid "The following is an example taken from the Python Reference Manual::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1644
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1652
 msgid "Footnotes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1645
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1653
 msgid "The LaTeX writer only refers the ``maxdepth`` option of first toctree directive in the document."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1648
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1656
 msgid "A note on available globbing syntax: you can use the standard shell constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that these all don't match slashes.  A double star ``**`` can be used to match any sequence of characters *including* slashes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1653
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1661
 msgid "There is a standard ``.. include`` directive, but it raises errors if the file is not found.  This one only emits a warning."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1656
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1664
 msgid "For most builders name and format are the same. At the moment only builders derived from the html builder distinguish between the builder format and the builder name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1660
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1668
 msgid "Note that the current builder tag is not available in ``conf.py``, it is only available after the builder is initialized."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-27 00:50+0000\n"
+"POT-Creation-Date: 2025-02-04 00:49+0000\n"
 "PO-Revision-Date: 2018-06-26 15:59+0000\n"
 "Language-Team: Polish (Poland) (https://app.transifex.com/sphinx-doc/teams/15434/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -192,53 +192,71 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:140
 msgid ""
+"If provided, :confval:`!intersphinx_resolve_self` overrides intersphinx's "
+"resolution mechanism to resolve all references to the current project, "
+"rather than an external reference. This is useful when documentation is "
+"shared between projects, with the 'upstream' or 'parent' project using "
+"intersphinx-style references in its documentation. For example, a project "
+"such as *Astropy* might set:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:152
+msgid ""
+"Projects re-using *Astropy*'s documentation or inheriting their docstrings "
+"would then configure their :confval:`!intersphinx_mapping` with an :code-"
+"py:`'astropy'` key, pointing to *astropy*'s :file:`objects.inv`. For "
+"example:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:167
+msgid ""
 "The maximum number of days to cache remote inventories. Set this to a "
 "negative value to cache inventories for unlimited time."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:147
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:174
 msgid "The number of seconds for timeout. Use ``None`` for no timeout."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:151
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:178
 msgid ""
 "timeout is not a time limit on the entire response download; rather, an "
 "exception is raised if the server has not issued a response for *timeout* "
 "seconds."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:163
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:190
 msgid "Changed default value from an empty list to ``['std:doc']``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:165
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:192
 msgid "A list of strings being either:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:167
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:194
 msgid ""
 "the name of a specific reference type in a domain, e.g., ``std:doc``, "
 "``py:func``, or ``cpp:class``,"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:169
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:196
 msgid ""
 "the name of a domain, and a wildcard, e.g., ``std:*``, ``py:*``, or "
 "``cpp:*``, or"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:171
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:198
 msgid "simply a wildcard ``*``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:173
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:200
 msgid ""
 "When a non-:rst:role:`external` cross-reference is being resolved by "
 "intersphinx, skip resolution if it matches one of the specifications in this"
 " list."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:177
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:204
 msgid ""
 "For example, with ``intersphinx_disabled_reftypes = ['std:doc']`` a cross-"
 "reference ``:doc:`installation``` will not be attempted to be resolved by "
@@ -249,21 +267,21 @@ msgid ""
 "resolved by intersphinx."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:185
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:212
 msgid ""
 "If ``*`` is in the list of domains, then no non-:rst:role:`external` "
 "references will be resolved by intersphinx."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:189
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:216
 msgid "Explicitly Reference External Objects"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:191
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:218
 msgid "The Intersphinx extension provides the following role."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:197
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:224
 msgid ""
 "Use Intersphinx to perform lookup only in external projects, and not the "
 "current project. Intersphinx still needs to know the type of object you "
@@ -272,42 +290,42 @@ msgid ""
 "with ``:external``. The two forms are then"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:204
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:231
 msgid ""
 "``:external:domain:reftype:`target```, e.g., "
 "``:external:py:class:`zipfile.ZipFile```, or"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:206
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:233
 msgid ""
 "``:external:reftype:`target```, e.g., ``:external:doc:`installation```. With"
 " this shorthand, the domain is assumed to be ``std``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:210
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:237
 msgid ""
 "If you would like to constrain the lookup to a specific external project, "
 "then the key of the project, as specified in :confval:`intersphinx_mapping`,"
 " is added as well to get the two forms"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:214
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:241
 msgid ""
 "``:external+invname:domain:reftype:`target```, e.g., "
 "``:external+python:py:class:`zipfile.ZipFile```, or"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:216
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:243
 msgid ""
 "``:external+invname:reftype:`target```, e.g., "
 "``:external+python:doc:`installation```."
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:220
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:247
 msgid "Showing all links of an Intersphinx mapping file"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:222
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:249
 msgid ""
 "To show all Intersphinx links and their targets of an Intersphinx mapping "
 "file, run ``python -m sphinx.ext.intersphinx url-or-path``.  This is helpful"
@@ -316,15 +334,15 @@ msgid ""
 "of the Python documentation:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:233
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:260
 msgid "Using Intersphinx with inventory file under Basic Authorization"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:235
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:262
 msgid "Intersphinx supports Basic Authorization like this::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/extensions/intersphinx.rst:240
+#: ../../sphinx/doc/usage/extensions/intersphinx.rst:267
 msgid ""
 "The user and password will be stripped from the URL when generating the "
 "links."

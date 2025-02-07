@@ -191,6 +191,10 @@ msgid ""
 "``:external+python:ref:`comparison manual <comparisons>``` will link to the "
 "label \"comparisons\" in the doc set \"python\", if it exists."
 msgstr ""
+"O identificador exclusivo pode ser usado no papel :rst:role:`external`, para"
+" que fique claro a qual interesphinx definido o alvo pertence. Um link como "
+"``:external+python:ref:`comparison manual <comparisons>`` será vinculado ao "
+"rótulo \"comparações\" no conjunto de documentação \"python\", se existir."
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:89
 msgid "**Example**"
@@ -273,6 +277,12 @@ msgid ""
 "intersphinx-style references in its documentation. For example, a project "
 "such as *Astropy* might set:"
 msgstr ""
+"Se fornecido, :confval:`!intersphinx_resolve_self` substitui o mecanismo de "
+"resolução do intersphinx para resolver todas as referências ao projeto "
+"atual, em vez de uma referência externa. Isso é útil quando a documentação é"
+" compartilhada entre projetos, com o projeto 'upstream' ou 'parent' usando "
+"referências no estilo intersphinx em sua documentação. Por exemplo, um "
+"projeto como *Astropy* pode definir:"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:152
 msgid ""
@@ -281,16 +291,24 @@ msgid ""
 "py:`'astropy'` key, pointing to *astropy*'s :file:`objects.inv`. For "
 "example:"
 msgstr ""
+"Projetos que reutilizam a documentação do *Astropy* ou herdam suas "
+"docstrings configurariam então seu :confval:`!intersphinx_mapping` com uma "
+"chave :code-py:`'astropy'`, apontando para :file:`objects.inv` do *astropy*."
+" Por exemplo:"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:167
 msgid ""
 "The maximum number of days to cache remote inventories. Set this to a "
 "negative value to cache inventories for unlimited time."
 msgstr ""
+"O número máximo de dias para manter em cache inventários. Defina isso para "
+"um valor negativo para manter inventários por tempo indeterminado."
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:174
 msgid "The number of seconds for timeout. Use ``None`` for no timeout."
 msgstr ""
+"O número de segundos para o tempo limite. Use ``None`` para nenhum tempo "
+"limite."
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:178
 msgid ""
@@ -298,6 +316,9 @@ msgid ""
 "exception is raised if the server has not issued a response for *timeout* "
 "seconds."
 msgstr ""
+"o timeout não é um limite de tempo para todo o download da resposta; em vez "
+"disso, uma exceção é levantada se o servidor não tiver emitido uma resposta "
+"para os segundos de *timeout*."
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:190
 msgid "Changed default value from an empty list to ``['std:doc']``."
@@ -440,6 +461,11 @@ msgid ""
 "documentation project. The following example prints the Intersphinx mapping "
 "of the Python documentation:"
 msgstr ""
+"Para mostrar todos os links Intersphinx e seus alvos de um arquivo de "
+"mapeamento Intersphinx, execute ``python -m sphinx.ext.intersphinx url-or-"
+"path``. Isso é útil ao procurar a causa raiz de um link Intersphinx quebrado"
+" em um projeto de documentação. O exemplo a seguir imprime o mapeamento "
+"Intersphinx da documentação do Python::"
 
 #: ../../sphinx/doc/usage/extensions/intersphinx.rst:260
 msgid "Using Intersphinx with inventory file under Basic Authorization"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 00:48+0000\n"
+"POT-Creation-Date: 2025-02-13 00:51+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Last-Translator: Yinian Chin <yinian1992@live.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -1658,82 +1658,73 @@ msgstr "语法生成显示"
 msgid ""
 "Special markup is available for displaying the productions of a formal "
 "grammar. The markup is simple and does not attempt to model all aspects of "
-"BNF (or any derived forms), but provides enough to allow context-free "
+"BNF_ (or any derived forms), but provides enough to allow context-free "
 "grammars to be displayed in a way that causes uses of a symbol to be "
-"rendered as hyperlinks to the definition of the symbol.  There is this "
+"rendered as hyperlinks to the definition of the symbol. There is this "
 "directive:"
 msgstr ""
-"特殊标记可用于显示形式语法的结果。标记很简单，并不试图对BNF的所有方面（或任何派生形式）进行建模，但提供了足够的内容，允许上下文无关的语法以某种方式显示，从而使符号的使用呈现为符号定义的超链接。有这样的指令："
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1652
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1655
 msgid ""
-"This directive is used to enclose a group of productions.  Each production "
-"is given on a single line and consists of a name, separated by a colon from "
-"the following definition.  If the definition spans multiple lines, each "
+"This directive is used to enclose a group of productions. Each production is"
+" given on a single line and consists of a name, separated by a colon from "
+"the following definition. If the definition spans multiple lines, each "
 "continuation line must begin with a colon placed at the same column as in "
 "the first line. Blank lines are not allowed within ``productionlist`` "
 "directive arguments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1659
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1662
 msgid ""
-"The definition can contain token names which are marked as interpreted text "
-"(e.g., \"``sum ::= `integer` \"+\" `integer```\") -- this generates cross-"
-"references to the productions of these tokens.  Outside of the production "
-"list, you can reference to token productions using :rst:role:`token`."
+"The optional *production_group* directive argument serves to distinguish "
+"different sets of production lists that belong to different grammars. "
+"Multiple production lists with the same *production_group* thus define rules"
+" in the same scope. This can also be used to split the description of a long"
+" or complex grammar accross multiple ``productionlist`` directives with the "
+"same *production_group*."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1665
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1669
 msgid ""
-"The *productionGroup* argument to :rst:dir:`productionlist` serves to "
-"distinguish different sets of production lists that belong to different "
-"grammars.  Multiple production lists with the same *productionGroup* thus "
-"define rules in the same scope."
-msgstr ""
-":rst:dir:`productionlist`的*productionGroup*参数用于区分属于不同语法的不同的生产列表集。具有相同*productionGroup*的多个生产列表在相同范围内定义规则。"
-
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1670
-msgid ""
-"Inside of the production list, tokens implicitly refer to productions from "
-"the current group. You can refer to the production of another grammar by "
-"prefixing the token with its group name and a colon, e.g, "
-"\"``otherGroup:sum``\". If the group of the token should not be shown in the"
-" production, it can be prefixed by a tilde, e.g., \"``~otherGroup:sum``\". "
-"To refer to a production from an unnamed grammar, the token should be "
-"prefixed by a colon, e.g., \"``:sum``\"."
+"The definition can contain token names which are marked as interpreted text,"
+" (e.g. \"``sum ::= `integer` \"+\" `integer```\"), to generate cross-"
+"references to the productions of these tokens. Such cross-references "
+"implicitly refer to productions from the current group. To reference a "
+"production from another grammar, the token name must be prefixed with the "
+"group name and a colon, e.g. \"``other-group:sum``\". If the group of the "
+"token should not be shown in the production, it can be prefixed by a tilde, "
+"e.g., \"``~other-group:sum``\". To refer to a production from an unnamed "
+"grammar, the token should be prefixed by a colon, e.g., \"``:sum``\". No "
+"further reStructuredText parsing is done in the production, so that special "
+"characters (``*``, ``|``, etc) do not need to be escaped."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1678
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1682
 msgid ""
-"Outside of the production list, if you have given a *productionGroup* "
-"argument you must prefix the token name in the cross-reference with the "
-"group name and a colon, e.g., \"``myGroup:sum``\" instead of just "
-"\"``sum``\". If the group should not be shown in the title of the link "
-"either an explicit title can be given (e.g., \"``myTitle <myGroup:sum>``\"),"
-" or the target can be prefixed with a tilde (e.g., \"``~myGroup:sum``\")."
+"Token productions can be cross-referenced outwith the production list by "
+"using the :rst:role:`token` role. If you have used a *production_group* "
+"argument, the token name must be prefixed with the group name and a colon, "
+"e.g., \"``my_group:sum``\" instead of just \"``sum``\". Standard "
+":ref:`cross-referencing modifiers <xref-modifiers>` may be used with the "
+"``:token:`` role, such as custom link text and suppressing the group name "
+"with a tilde (``~``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1686
-msgid ""
-"Note that no further reStructuredText parsing is done in the production, so "
-"that you don't have to escape ``*`` or ``|`` characters."
-msgstr ""
-
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1689
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1691
 msgid "The following is an example taken from the Python Reference Manual::"
 msgstr "以下是摘自《Python参考手册》的示例："
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1702
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1704
 msgid "Footnotes"
 msgstr "脚注"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1703
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1705
 msgid ""
 "The LaTeX writer only refers the ``maxdepth`` option of first toctree "
 "directive in the document."
 msgstr "LaTeX编写器只引用文档中第一个toctree指令的“maxdepth”选项。"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1706
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1708
 msgid ""
 "A note on available globbing syntax: you can use the standard shell "
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
@@ -1742,20 +1733,20 @@ msgid ""
 msgstr ""
 "关于可用的globbing语法的一点说明：您可以使用标准的shell结构``*``，``？``、`[…]``和`[！。。。]``这些都不匹配斜杠。双星“**”可用于匹配任何字符序列*包括*斜杠。"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1711
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1713
 msgid ""
 "There is a standard ``.. include`` directive, but it raises errors if the "
 "file is not found.  This one only emits a warning."
 msgstr "有一个标准`..include``指令，但如果找不到该文件，则会引发错误。这只会发出警告。"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1714
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1716
 msgid ""
 "For most builders name and format are the same. At the moment only builders "
 "derived from the html builder distinguish between the builder format and the"
 " builder name."
 msgstr "对于大多数构建器，名称和格式都是相同的。目前，只有从html构建器派生的构建器才能区分构建器格式和构建器名称。"
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1718
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1720
 msgid ""
 "Note that the current builder tag is not available in ``conf.py``, it is "
 "only available after the builder is initialized."

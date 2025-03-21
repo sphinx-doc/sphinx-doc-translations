@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 00:52+0000\n"
+"POT-Creation-Date: 2025-03-21 00:54+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -26,7 +26,43 @@ msgstr ""
 msgid "Templating"
 msgstr "Criando modelos"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:9
+#: ../../sphinx/doc/development/html_themes/templating.rst:10
+msgid "What Is Templating?"
+msgstr ""
+
+#: ../../sphinx/doc/development/html_themes/templating.rst:12
+msgid ""
+"Templating is a method of generating HTML pages by combining static "
+"templates with variable data. The template files contain the static parts of"
+" the desired HTML output and include special syntax describing how variable "
+"content will be inserted. For example, this can be used to insert the "
+"current date in the footer of each page, or to surround the main content of "
+"the document with a scaffold of HTML for layout and formatting purposes. "
+"Doing so only requires an understanding of HTML and the templating syntax. "
+"Knowledge of Python can be helpful, but is not required."
+msgstr ""
+
+#: ../../sphinx/doc/development/html_themes/templating.rst:22
+msgid ""
+"Templating uses an inheritance mechanism which allows child templates files "
+"(e.g. in a theme) to override as much (or as little) of their 'parents' as "
+"desired. Likewise, content authors can use their own local templates to "
+"override as much (or as little) of the theme templates as desired."
+msgstr ""
+
+#: ../../sphinx/doc/development/html_themes/templating.rst:27
+msgid ""
+"The result is that the Sphinx core, without needing to be changed, provides "
+"basic HTML generation, independent of the structure and appearance of the "
+"final output, while granting a great deal of flexibility to theme and "
+"content authors."
+msgstr ""
+
+#: ../../sphinx/doc/development/html_themes/templating.rst:33
+msgid "Sphinx Templating"
+msgstr ""
+
+#: ../../sphinx/doc/development/html_themes/templating.rst:35
 msgid ""
 "Sphinx uses the `Jinja <https://jinja.palletsprojects.com/>`_ templating "
 "engine for its HTML templates.  Jinja is a text-based engine, inspired by "
@@ -40,15 +76,15 @@ msgstr ""
 "Django tem familiaridade com Jinja. Também possui boa documentação para "
 "aqueles que precisam familiarizar-se com ele."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:17
+#: ../../sphinx/doc/development/html_themes/templating.rst:43
 msgid "Do I need to use Sphinx's templates to produce HTML?"
 msgstr "Preciso usar os modelos do Sphinx para produzir HTML?"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:19
+#: ../../sphinx/doc/development/html_themes/templating.rst:45
 msgid "No.  You have several other options:"
 msgstr "Não. Você tem várias outras opções:"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:21
+#: ../../sphinx/doc/development/html_themes/templating.rst:47
 msgid ""
 "You can write a :class:`~sphinx.application.TemplateBridge` subclass that "
 "calls your template engine of choice, and set the :confval:`template_bridge`"
@@ -58,7 +94,7 @@ msgstr ""
 " que chama o mecanismo de modelo de sua escolha e definir o valor de "
 "configuração :confval:`template_bridge` adequado."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:25
+#: ../../sphinx/doc/development/html_themes/templating.rst:51
 msgid ""
 "You can :ref:`write a custom builder <writing-builders>` that derives from "
 ":class:`~sphinx.builders.html.StandaloneHTMLBuilder` and calls your template"
@@ -68,7 +104,7 @@ msgstr ""
 " deriva de :class:`~sphinx.builders.html.StandaloneHTMLBuilder` e chama o "
 "mecanismo de modelo de sua escolha."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:29
+#: ../../sphinx/doc/development/html_themes/templating.rst:55
 msgid ""
 "You can use the :class:`~sphinxcontrib.serializinghtml.PickleHTMLBuilder` "
 "that produces pickle files with the page contents, and postprocess them "
@@ -78,11 +114,11 @@ msgstr ""
 "que produz arquivos pickle com o conteúdo da página e pós-processá-los "
 "usando uma ferramenta personalizada ou usá-los em sua aplicação web."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:36
+#: ../../sphinx/doc/development/html_themes/templating.rst:62
 msgid "Jinja/Sphinx Templating Primer"
 msgstr "Primer de criação de modelos em Jinja/Sphinx"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:38
+#: ../../sphinx/doc/development/html_themes/templating.rst:64
 msgid ""
 "The default templating language in Sphinx is Jinja.  It's Django/Smarty "
 "inspired and easy to understand.  The most important concept in Jinja is "
@@ -96,7 +132,7 @@ msgstr ""
 "blocos específicos dentro de um modelo, personalizando-o e ao mesmo tempo "
 "mantendo as alterações no mínimo."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:43
+#: ../../sphinx/doc/development/html_themes/templating.rst:69
 msgid ""
 "To customize the output of your documentation you can override all the "
 "templates (both the layout templates and the child templates) by adding "
@@ -108,7 +144,7 @@ msgstr ""
 "arquivos com o mesmo nome do arquivo original no diretório de modelos da "
 "estrutura que a inicialização rápida (quickstart) do Sphinx gerou para você."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:48
+#: ../../sphinx/doc/development/html_themes/templating.rst:74
 msgid ""
 "Sphinx will look for templates in the folders of :confval:`templates_path` "
 "first, and if it can't find the template it's looking for there, it falls "
@@ -118,7 +154,7 @@ msgstr ""
 "primeiro, e se não conseguir encontrar o modelo que está procurando lá, ele "
 "retornará aos modelos do tema selecionado."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:52
+#: ../../sphinx/doc/development/html_themes/templating.rst:78
 msgid ""
 "A template contains **variables**, which are replaced with values when the "
 "template is evaluated, **tags**, which control the logic of the template and"
@@ -128,7 +164,7 @@ msgstr ""
 "modelo é avaliado, **tags**, que controlam a lógica do modelo e **blocos** "
 "que são usados para herança de modelo."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:56
+#: ../../sphinx/doc/development/html_themes/templating.rst:82
 msgid ""
 "Sphinx's *basic* theme provides base templates with a couple of blocks it "
 "will fill with data.  These are located in the :file:`themes/basic` "
@@ -143,7 +179,7 @@ msgstr ""
 ":confval:`templates_path` substituem os modelos fornecidos pelo tema "
 "selecionado."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:62
+#: ../../sphinx/doc/development/html_themes/templating.rst:88
 msgid ""
 "For example, to add a new link to the template area containing related links"
 " all you have to do is to add a new template called ``layout.html`` with the"
@@ -153,7 +189,7 @@ msgstr ""
 "relacionados, tudo o que você precisa fazer é adicionar um novo modelo "
 "chamado ``layout.html`` com o seguinte conteúdo:"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:72
+#: ../../sphinx/doc/development/html_themes/templating.rst:98
 msgid ""
 "By prefixing the name of the overridden template with an exclamation mark, "
 "Sphinx will load the layout template from the underlying HTML theme."
@@ -161,7 +197,7 @@ msgstr ""
 "Ao prefixar o nome do modelo substituído com um ponto de exclamação, o "
 "Sphinx carregará o modelo de layout do tema HTML subjacente."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:76
+#: ../../sphinx/doc/development/html_themes/templating.rst:102
 msgid ""
 "If you override a block, call ``{{ super() }}`` somewhere to render the "
 "block's original content in the extended template -- unless you don't want "
@@ -171,11 +207,11 @@ msgstr ""
 "renderizar o conteúdo original do bloco no modelo estendido -- a menos que "
 "você não queira que esse conteúdo apareça."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:82
+#: ../../sphinx/doc/development/html_themes/templating.rst:108
 msgid "Working with the builtin templates"
 msgstr "Trabalhando com os modelos embutidos"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:84
+#: ../../sphinx/doc/development/html_themes/templating.rst:110
 msgid ""
 "The builtin **basic** theme supplies the templates that all builtin Sphinx "
 "themes are based on.  It has the following elements you can override or use:"
@@ -184,19 +220,19 @@ msgstr ""
 "embutidos do Sphinx são baseados. Possui os seguintes elementos que você "
 "pode substituir ou usar:"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:88
+#: ../../sphinx/doc/development/html_themes/templating.rst:114
 msgid "Blocks"
 msgstr "Blocos"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:90
+#: ../../sphinx/doc/development/html_themes/templating.rst:116
 msgid "The following blocks exist in the ``layout.html`` template:"
 msgstr "Os seguintes blocos existem no modelo ``layout.html``:"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:92
+#: ../../sphinx/doc/development/html_themes/templating.rst:118
 msgid "``doctype``"
 msgstr "``doctype``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:93
+#: ../../sphinx/doc/development/html_themes/templating.rst:119
 msgid ""
 "The doctype of the output format.  By default this is XHTML 1.0 Transitional"
 " as this is the closest to what Sphinx and Docutils generate and it's a good"
@@ -208,21 +244,21 @@ msgstr ""
 "não alterá-lo, a menos que você queira mudar para HTML 5 ou um tipo de "
 "documento XHTML diferente, mas compatível."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:98
+#: ../../sphinx/doc/development/html_themes/templating.rst:124
 msgid "``linktags``"
 msgstr "``linktags``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:99
+#: ../../sphinx/doc/development/html_themes/templating.rst:125
 msgid ""
 "This block adds a couple of ``<link>`` tags to the head section of the "
 "template."
 msgstr "Este bloco adiciona algumas tags ``<link>`` à seção head do modelo."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:102
+#: ../../sphinx/doc/development/html_themes/templating.rst:128
 msgid "``extrahead``"
 msgstr "``extrahead``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:103
+#: ../../sphinx/doc/development/html_themes/templating.rst:129
 msgid ""
 "This block is empty by default and can be used to add extra contents into "
 "the ``<head>`` tag of the generated HTML file.  This is the right place to "
@@ -232,11 +268,11 @@ msgstr ""
 "extra na tag ``<head>`` do arquivo HTML gerado. Este é o lugar certo para "
 "adicionar referências a JavaScript ou arquivos CSS extras."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:107
+#: ../../sphinx/doc/development/html_themes/templating.rst:133
 msgid "``relbar1``, ``relbar2``"
 msgstr "``relbar1``, ``relbar2``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:108
+#: ../../sphinx/doc/development/html_themes/templating.rst:134
 msgid ""
 "This block contains the *relation bar*, the list of related links (the "
 "parent documents on the left, and the links to index, modules etc. on the "
@@ -250,11 +286,11 @@ msgstr ""
 "documento. Por padrão, ambos os blocos são preenchidos; para mostrar a "
 "relbar apenas antes do documento, você iria substituir ``relbar2`` assim::"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:116
+#: ../../sphinx/doc/development/html_themes/templating.rst:142
 msgid "``rootrellink``, ``relbaritems``"
 msgstr "``rootrellink``, ``relbaritems``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:117
+#: ../../sphinx/doc/development/html_themes/templating.rst:143
 msgid ""
 "Inside the relbar there are three sections: The ``rootrellink``, the links "
 "from the documentation and the custom ``relbaritems``.  The ``rootrellink`` "
@@ -270,11 +306,11 @@ msgstr ""
 "para adicionar links extras na barra, certifique-se de que sejam itens de "
 "lista e terminem com :data:`reldelim1`."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:124
+#: ../../sphinx/doc/development/html_themes/templating.rst:150
 msgid "``document``"
 msgstr "``document``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:125
+#: ../../sphinx/doc/development/html_themes/templating.rst:151
 msgid ""
 "The contents of the document itself.  It contains the block \"body\" where "
 "the individual content is put by subtemplates like ``page.html``."
@@ -282,7 +318,7 @@ msgstr ""
 "O conteúdo do próprio documento. Ele contém o bloco \"body\" onde o conteúdo"
 " individual é colocado por submodelos como ``page.html``."
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:129
+#: ../../sphinx/doc/development/html_themes/templating.rst:155
 msgid ""
 "In order for the built-in JavaScript search to show a page preview on the "
 "results page, the document or body content should be wrapped in an HTML "
@@ -293,11 +329,11 @@ msgstr ""
 "envolvido em um elemento HTML contendo o atributo ``role=\"main\"``. Por "
 "exemplo::"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:137
+#: ../../sphinx/doc/development/html_themes/templating.rst:163
 msgid "``sidebar1``, ``sidebar2``"
 msgstr "``sidebar1``, ``sidebar2``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:138
+#: ../../sphinx/doc/development/html_themes/templating.rst:164
 msgid ""
 "A possible location for a sidebar.  ``sidebar1`` appears before the document"
 " and is empty by default, ``sidebar2`` after the document and contains the "
@@ -309,7 +345,7 @@ msgstr ""
 " a barra lateral padrão. Se você quiser trocar o local da barra lateral, "
 "substitua isso e chame o helper ``sidebar``::"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:146
+#: ../../sphinx/doc/development/html_themes/templating.rst:172
 msgid ""
 "(The ``sidebar2`` location for the sidebar is needed by the "
 "``sphinxdoc.css`` stylesheet, for example.)"
@@ -317,27 +353,27 @@ msgstr ""
 "(A localização ``sidebar2`` para a barra lateral é necessária para a folha "
 "de estilo ``sphinxdoc.css``, por exemplo.)"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:149
+#: ../../sphinx/doc/development/html_themes/templating.rst:175
 msgid "``sidebarlogo``"
 msgstr "``sidebarlogo``"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:150
+#: ../../sphinx/doc/development/html_themes/templating.rst:176
 msgid ""
 "The logo location within the sidebar.  Override this if you want to place "
 "some content at the top of the sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:153
+#: ../../sphinx/doc/development/html_themes/templating.rst:179
 msgid "``footer``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:154
+#: ../../sphinx/doc/development/html_themes/templating.rst:180
 msgid ""
 "The block for the footer div.  If you want a custom footer or markup before "
 "or after it, override this one."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:157
+#: ../../sphinx/doc/development/html_themes/templating.rst:183
 msgid ""
 "The following four blocks are *only* used for pages that do not have "
 "assigned a list of custom sidebars in the :confval:`html_sidebars` config "
@@ -345,192 +381,192 @@ msgid ""
 "which can be included via :confval:`html_sidebars`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:162
+#: ../../sphinx/doc/development/html_themes/templating.rst:188
 msgid "``sidebartoc``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:163
+#: ../../sphinx/doc/development/html_themes/templating.rst:189
 msgid "The table of contents within the sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:167
+#: ../../sphinx/doc/development/html_themes/templating.rst:193
 msgid "``sidebarrel``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:168
+#: ../../sphinx/doc/development/html_themes/templating.rst:194
 msgid "The relation links (previous, next document) within the sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:172
+#: ../../sphinx/doc/development/html_themes/templating.rst:198
 msgid "``sidebarsourcelink``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:173
+#: ../../sphinx/doc/development/html_themes/templating.rst:199
 msgid ""
 "The \"Show source\" link within the sidebar (normally only shown if this is "
 "enabled by :confval:`html_show_sourcelink`)."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:178
+#: ../../sphinx/doc/development/html_themes/templating.rst:204
 msgid "``sidebarsearch``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:179
+#: ../../sphinx/doc/development/html_themes/templating.rst:205
 msgid ""
 "The search box within the sidebar.  Override this if you want to place some "
 "content at the bottom of the sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:186
+#: ../../sphinx/doc/development/html_themes/templating.rst:212
 msgid "Configuration Variables"
 msgstr "Variáveis de configuração"
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:188
+#: ../../sphinx/doc/development/html_themes/templating.rst:214
 msgid ""
 "Inside templates you can set a couple of variables used by the layout "
 "template using the ``{% set %}`` tag:"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:193
+#: ../../sphinx/doc/development/html_themes/templating.rst:219
 msgid ""
 "The delimiter for the items on the left side of the related bar.  This "
 "defaults to ``' &raquo;'`` Each item in the related bar ends with the value "
 "of this variable."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:199
+#: ../../sphinx/doc/development/html_themes/templating.rst:225
 msgid ""
 "The delimiter for the items on the right side of the related bar.  This "
 "defaults to ``' |'``.  Each item except of the last one in the related bar "
 "ends with the value of this variable."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:203
+#: ../../sphinx/doc/development/html_themes/templating.rst:229
 msgid "Overriding works like this::"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:210
+#: ../../sphinx/doc/development/html_themes/templating.rst:236
 msgid "Add additional script files here, like this::"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:216
+#: ../../sphinx/doc/development/html_themes/templating.rst:242
 msgid "Please use ``.Sphinx.add_js_file()`` instead."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:219
+#: ../../sphinx/doc/development/html_themes/templating.rst:245
 msgid "Helper Functions"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:221
+#: ../../sphinx/doc/development/html_themes/templating.rst:247
 msgid ""
 "Sphinx provides various Jinja functions as helpers in the template.  You can"
 " use them to generate links or output multiply used elements."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:226
+#: ../../sphinx/doc/development/html_themes/templating.rst:252
 msgid ""
 "Return the path to a Sphinx document as a URL.  Use this to refer to built "
 "documents."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:232
+#: ../../sphinx/doc/development/html_themes/templating.rst:258
 msgid ""
 "Return the path to a *file* which is a filename relative to the root of the "
 "generated output.  Use this to refer to static files."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:237
+#: ../../sphinx/doc/development/html_themes/templating.rst:263
 msgid "Check if a document with the name *document* exists."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:241
+#: ../../sphinx/doc/development/html_themes/templating.rst:267
 msgid "Return the rendered sidebar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:245
+#: ../../sphinx/doc/development/html_themes/templating.rst:271
 msgid "Return the rendered relation bar."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:249
+#: ../../sphinx/doc/development/html_themes/templating.rst:275
 msgid "Emit a warning message."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:252
+#: ../../sphinx/doc/development/html_themes/templating.rst:278
 msgid "Global Variables"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:254
+#: ../../sphinx/doc/development/html_themes/templating.rst:280
 msgid ""
 "These global variables are available in every template and are safe to use. "
 "There are more, but most of them are an implementation detail and might "
 "change in the future."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:260
+#: ../../sphinx/doc/development/html_themes/templating.rst:286
 msgid "The name of the builder (e.g. ``html`` or ``htmlhelp``)."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:264
+#: ../../sphinx/doc/development/html_themes/templating.rst:290
 msgid "The value of :confval:`copyright`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:268
+#: ../../sphinx/doc/development/html_themes/templating.rst:294
 msgid ""
 "The title of the documentation (the value of :confval:`html_title`), except "
 "when the \"single-file\" builder is used, when it is set to ``None``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:273
+#: ../../sphinx/doc/development/html_themes/templating.rst:299
 msgid ""
 "True if the built HTML is meant to be embedded in some viewing application "
 "that handles navigation, not the web browser, such as for HTML help or Qt "
 "help formats.  In this case, the sidebar is not included."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:279
+#: ../../sphinx/doc/development/html_themes/templating.rst:305
 msgid ""
 "The relative path to the HTML favicon image from the current document, or "
 "URL to the favicon, or ``''``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:286
+#: ../../sphinx/doc/development/html_themes/templating.rst:312
 msgid ""
 "The value of the builder's :attr:`~.SerializingHTMLBuilder.out_suffix` "
 "attribute, i.e. the file name extension that the output files will get.  For"
 " a standard HTML builder, this is usually ``.html``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:292
+#: ../../sphinx/doc/development/html_themes/templating.rst:318
 msgid ""
 "True if the reStructuredText document sources are copied (if "
 ":confval:`html_copy_source` is ``True``)."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:297
+#: ../../sphinx/doc/development/html_themes/templating.rst:323
 msgid "The value of :confval:`language`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:301
+#: ../../sphinx/doc/development/html_themes/templating.rst:327
 msgid "The build date."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:305
+#: ../../sphinx/doc/development/html_themes/templating.rst:331
 msgid ""
 "The relative path to the HTML logo image from the current document, or URL "
 "to the logo, or ``''``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:313
+#: ../../sphinx/doc/development/html_themes/templating.rst:339
 msgid ""
 "The value of :confval:`master_doc` or :confval:`root_doc` (aliases), for "
 "usage with :func:`pathto`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:316
+#: ../../sphinx/doc/development/html_themes/templating.rst:342
 msgid "The :data:`!root_doc` template variable."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:321
+#: ../../sphinx/doc/development/html_themes/templating.rst:347
 msgid ""
 "The \"page name\" of the current file, i.e. either the document name if the "
 "file is generated from a reStructuredText source, or the equivalent "
@@ -538,15 +574,15 @@ msgid ""
 "(``[directory/]filename_without_extension``)."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:328
+#: ../../sphinx/doc/development/html_themes/templating.rst:354
 msgid "The value of :confval:`project`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:332
+#: ../../sphinx/doc/development/html_themes/templating.rst:358
 msgid "The value of :confval:`release`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:336
+#: ../../sphinx/doc/development/html_themes/templating.rst:362
 msgid ""
 "A list of links to put at the left side of the relbar, next to \"next\" and "
 "\"prev\".  This usually contains links to the general index and other "
@@ -554,21 +590,21 @@ msgid ""
 " must be a tuple ``(pagename, link title, accesskey, link text)``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:343
+#: ../../sphinx/doc/development/html_themes/templating.rst:369
 msgid "The value of :confval:`html_short_title`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:347
+#: ../../sphinx/doc/development/html_themes/templating.rst:373
 msgid "True if :confval:`html_show_sourcelink` is ``True``."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:351
+#: ../../sphinx/doc/development/html_themes/templating.rst:377
 msgid ""
 "The version of Sphinx used to build represented as a string for example "
 "\"3.5.1\"."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:355
+#: ../../sphinx/doc/development/html_themes/templating.rst:381
 msgid ""
 "The version of Sphinx used to build represented as a tuple of five elements."
 " For Sphinx version 3.5.1 beta 3 this would be ``(3, 5, 1, 'beta', 3)``. The"
@@ -576,7 +612,7 @@ msgid ""
 "``final`` always has 0 as the last element."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:364
+#: ../../sphinx/doc/development/html_themes/templating.rst:390
 msgid ""
 "The version of Docutils used to build represented as a tuple of five "
 "elements. For Docutils version 0.16.1 beta 2 this would be ``(0, 16, 1, "
@@ -584,134 +620,134 @@ msgid ""
 "``candidate``, ``final``. ``final`` always has 0 as the last element."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:373
+#: ../../sphinx/doc/development/html_themes/templating.rst:399
 msgid ""
 "A list of the names of the main stylesheets as given by the theme or "
 ":confval:`html_style`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:380
+#: ../../sphinx/doc/development/html_themes/templating.rst:406
 msgid "The title of the current document, as used in the ``<title>`` tag."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:384
+#: ../../sphinx/doc/development/html_themes/templating.rst:410
 msgid "The value of :confval:`html_use_opensearch`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:388
+#: ../../sphinx/doc/development/html_themes/templating.rst:414
 msgid "The value of :confval:`version`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:391
+#: ../../sphinx/doc/development/html_themes/templating.rst:417
 msgid ""
 "In addition to these values, there are also all **theme options** available "
 "(prefixed by ``theme_``), as well as the values given by the user in "
 ":confval:`html_context`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:395
+#: ../../sphinx/doc/development/html_themes/templating.rst:421
 msgid ""
 "In documents that are created from source files (as opposed to "
 "automatically-generated files like the module index, or documents that "
 "already are in HTML form), these variables are also available:"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:401
+#: ../../sphinx/doc/development/html_themes/templating.rst:427
 msgid ""
 "A string containing the content of the page in HTML form as produced by the "
 "HTML builder, before the theme is applied."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:406
+#: ../../sphinx/doc/development/html_themes/templating.rst:432
 msgid "A boolean that is True if the toc contains more than one entry."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:410
+#: ../../sphinx/doc/development/html_themes/templating.rst:436
 msgid "Document metadata (a dictionary), see :ref:`metadata`."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:414
+#: ../../sphinx/doc/development/html_themes/templating.rst:440
 msgid "A string containing the page's HTML :dudir:`meta` tags."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:418
+#: ../../sphinx/doc/development/html_themes/templating.rst:444
 msgid ""
 "The next document for the navigation.  This variable is either false or has "
 "two attributes ``link`` and ``title``.  The title contains HTML markup.  For"
 " example, to generate a link to the next page, you can use this snippet::"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:428
+#: ../../sphinx/doc/development/html_themes/templating.rst:454
 msgid ""
 "The suffix of the file that was rendered. Since we support a list of "
 ":confval:`source_suffix`, this will allow you to properly link to the "
 "original source file."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:434
+#: ../../sphinx/doc/development/html_themes/templating.rst:460
 msgid ""
 "A list of parent documents for navigation, structured like the :data:`next` "
 "item."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:439
+#: ../../sphinx/doc/development/html_themes/templating.rst:465
 msgid "Like :data:`next`, but for the previous page."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:443
+#: ../../sphinx/doc/development/html_themes/templating.rst:469
 msgid ""
 "The name of the copied source file for the current document.  This is only "
 "nonempty if the :confval:`html_copy_source` value is ``True``. This has "
 "empty value on creating automatically-generated files."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:449
+#: ../../sphinx/doc/development/html_themes/templating.rst:475
 msgid ""
 "The local table of contents for the current page, rendered as HTML bullet "
 "lists."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:454
+#: ../../sphinx/doc/development/html_themes/templating.rst:480
 msgid ""
 "A callable yielding the global TOC tree containing the current page, "
 "rendered as HTML bullet lists.  Optional keyword arguments:"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:457
+#: ../../sphinx/doc/development/html_themes/templating.rst:483
 msgid "``collapse``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:458
+#: ../../sphinx/doc/development/html_themes/templating.rst:484
 msgid ""
 "If true, all TOC entries that are not ancestors of the current page are "
 "collapsed. ``True`` by default."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:462
+#: ../../sphinx/doc/development/html_themes/templating.rst:488
 msgid "``maxdepth``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:463
+#: ../../sphinx/doc/development/html_themes/templating.rst:489
 msgid ""
 "The maximum depth of the tree. Set it to ``-1`` to allow unlimited depth. "
 "Defaults to the max depth selected in the toctree directive."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:466
+#: ../../sphinx/doc/development/html_themes/templating.rst:492
 msgid "``titles_only``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:467
+#: ../../sphinx/doc/development/html_themes/templating.rst:493
 msgid ""
 "If true, put only top-level document titles in the tree. ``False`` by "
 "default."
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:470
+#: ../../sphinx/doc/development/html_themes/templating.rst:496
 msgid "``includehidden``"
 msgstr ""
 
-#: ../../sphinx/doc/development/html_themes/templating.rst:471
+#: ../../sphinx/doc/development/html_themes/templating.rst:497
 msgid ""
 "If true, the ToC tree will also contain hidden entries. ``False`` by "
 "default."

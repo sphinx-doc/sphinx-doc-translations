@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 00:58+0000\n"
+"POT-Creation-Date: 2025-05-26 00:59+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Korean (https://app.transifex.com/sphinx-doc/teams/15434/ko/)\n"
@@ -1409,58 +1409,59 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:1009
 msgid ""
-"The name of the LaTeX package used for icons in the admonition titles.  It "
-"defaults to ``fontawesome5`` or to fall-back ``fontawesome``.  In case "
-"neither one is available the option value will automatically default to "
-"``none``, which means that no attempt at loading a package is done. "
-"Independently of this setting, arbitrary LaTeX code can be associated to "
-"each admonition type via ``div.<type>_icon-title`` keys which are described "
-"in the :ref:`additionalcss` section.  If these keys are not used, Sphinx "
-"will either apply its default choices of icons (if ``fontawesome{5,}`` is "
-"available) or not draw the icon at all.  Notice that if fall-back "
-"``fontawesome`` is used the common icon for :dudir:`caution` and "
-":dudir:`danger` will default to \"bolt\" not \"radiation\", which is only "
-"found in ``fontawesome5``."
+"The name of the LaTeX package used for rendering icons in the admonition "
+"titles.  Its default is set dynamically to either ``fontawesome6``, "
+"``fontawesome5``, or ``fontawesome``, or ``none``, depending on whether "
+"packages with those names exist in the used LaTeX installation.  The LaTeX "
+"code will use ``\\faIcon`` command if with ``fontawesome6/fontawesome5``, "
+"and ``\\faicon`` if with ``fontawesome``.  In the latter case the icon used "
+"both for :dudir:`caution` and :dudir:`danger` will default to \"bolt\" not "
+"\"radiation\", which is only found in ``fontawesome6`` and ``fontawesome5``."
+" If no \"Font Awesome\" related package is found (or if the option is set "
+"forcefully to ``none``) the icons are silently dropped.  User can set this "
+"option to some specific package and must configure the ``div.note_title-"
+"icon`` and similar keys to use then that LaTeX package interface (see the "
+":ref:`additionalcss` section for these extra ``'sphinxsetup'`` keys)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1024
+#: ../../sphinx/doc/latex.rst:1026
 msgid "|notebdcolors|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1025 ../../sphinx/doc/latex.rst:1073
-#: ../../sphinx/doc/latex.rst:1082
+#: ../../sphinx/doc/latex.rst:1027 ../../sphinx/doc/latex.rst:1075
+#: ../../sphinx/doc/latex.rst:1084
 msgid "The color for the admonition border."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1027
+#: ../../sphinx/doc/latex.rst:1029
 msgid "Default: ``{RGB}{134,152,155}``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1031
+#: ../../sphinx/doc/latex.rst:1033
 msgid "|notebgcolors|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1032
+#: ../../sphinx/doc/latex.rst:1034
 msgid "The color for the admonition background."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1034 ../../sphinx/doc/latex.rst:1091
+#: ../../sphinx/doc/latex.rst:1036 ../../sphinx/doc/latex.rst:1093
 msgid "Default: ``{RGB}{247,247,247}``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1040
+#: ../../sphinx/doc/latex.rst:1042
 msgid "|notetextcolors|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1041
+#: ../../sphinx/doc/latex.rst:1043
 msgid "The color for the admonition contents."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1043
+#: ../../sphinx/doc/latex.rst:1045
 msgid "Default: unset (contents text uses ambient text color, a priori black)"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1047
+#: ../../sphinx/doc/latex.rst:1049
 msgid ""
 "To be considered experimental until 7.0.0.  These options have aliases "
 "``div.note_TeXcolor`` (etc) described in :ref:`additionalcss`.  Using the "
@@ -1468,121 +1469,121 @@ msgid ""
 "the customizability described in :ref:`additionalcss`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1052
+#: ../../sphinx/doc/latex.rst:1054
 msgid "|notetexextras|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1053
+#: ../../sphinx/doc/latex.rst:1055
 msgid ""
 "Some extra LaTeX code (such as :code-tex:`\\\\bfseries`  or :code-"
 "tex:`\\\\footnotesize`) to be executed at start of the contents."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1056
+#: ../../sphinx/doc/latex.rst:1058
 msgid "Default: empty"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1060
+#: ../../sphinx/doc/latex.rst:1062
 msgid ""
 "To be considered experimental until 7.0.0.  These options have aliases "
 "``div.note_TeXextras`` (etc) described in :ref:`additionalcss`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1063
+#: ../../sphinx/doc/latex.rst:1065
 msgid "``noteborder``, ``hintborder``, ``importantborder``, ``tipborder``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1064
+#: ../../sphinx/doc/latex.rst:1066
 msgid ""
 "The width of the border.   See :ref:`additionalcss` for keys allowing to "
 "configure separately each border width."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1068
+#: ../../sphinx/doc/latex.rst:1070
 msgid "Default: ``0.5pt``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1072
+#: ../../sphinx/doc/latex.rst:1074
 msgid "|warningbdcolors|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1075 ../../sphinx/doc/latex.rst:1084
+#: ../../sphinx/doc/latex.rst:1077 ../../sphinx/doc/latex.rst:1086
 msgid "Default: ``{RGB}{148,0,0}`` except for ``error`` which uses ``red``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1081
+#: ../../sphinx/doc/latex.rst:1083
 msgid "|wgbdcolorslatex|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1088
+#: ../../sphinx/doc/latex.rst:1090
 msgid "|warningbgcolors|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1089
+#: ../../sphinx/doc/latex.rst:1091
 msgid "The background color for the admonition background."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1095
+#: ../../sphinx/doc/latex.rst:1097
 msgid "|warningborders|"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1096
+#: ../../sphinx/doc/latex.rst:1098
 msgid ""
 "The width of the admonition frame.  See :ref:`additionalcss` for keys "
 "allowing to configure separately each border width."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1100
+#: ../../sphinx/doc/latex.rst:1102
 msgid "Default: ``1pt`` except for ``error`` which uses ``1.25pt``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1104
+#: ../../sphinx/doc/latex.rst:1106
 msgid "``AtStartFootnote``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1105
+#: ../../sphinx/doc/latex.rst:1107
 msgid ""
 "LaTeX macros inserted at the start of the footnote text at bottom of page, "
 "after the footnote number."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1108
+#: ../../sphinx/doc/latex.rst:1110
 msgid "Default: :code-tex:`\\\\mbox{ }`"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1110
+#: ../../sphinx/doc/latex.rst:1112
 msgid "``BeforeFootnote``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1111
+#: ../../sphinx/doc/latex.rst:1113
 msgid ""
 "LaTeX macros inserted before the footnote mark. The default removes possible"
 " space before it (else, TeX could insert a line break there)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1114
+#: ../../sphinx/doc/latex.rst:1116
 msgid "Default: :code-tex:`\\\\leavevmode\\\\unskip`"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1118
+#: ../../sphinx/doc/latex.rst:1120
 msgid "``HeaderFamily``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1119
+#: ../../sphinx/doc/latex.rst:1121
 msgid "default :code-tex:`\\\\sffamily\\\\bfseries`. Sets the font used by headings."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1154
+#: ../../sphinx/doc/latex.rst:1156
 msgid "Additional  CSS-like ``'sphinxsetup'`` keys"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1158
+#: ../../sphinx/doc/latex.rst:1160
 msgid ""
 "For :rst:dir:`code-block`, :dudir:`topic` and contents_ directive, and "
 "strong-type admonitions (:dudir:`warning`, :dudir:`error`, ...)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1163
+#: ../../sphinx/doc/latex.rst:1165
 msgid ""
 "Also the :dudir:`note`, :dudir:`hint`, :dudir:`important` and :dudir:`tip` "
 "admonitions can be styled this way.  Using for them *any* of the listed "
@@ -1592,13 +1593,13 @@ msgid ""
 "``sphinxheavybox`` for :dudir:`note` (or :dudir:`hint`, ...)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1172
+#: ../../sphinx/doc/latex.rst:1174
 msgid ""
 "For *all* admonition types, the default configuration does set a background "
 "color (hence the richer ``sphinxheavybox`` is always used)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1177
+#: ../../sphinx/doc/latex.rst:1179
 msgid ""
 "Further, all admonition titles are by default styled using a colored row and"
 " an icon, which are modeled on the current rendering of Sphinx own docs at "
@@ -1607,18 +1608,18 @@ msgid ""
 " the icon."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1183
+#: ../../sphinx/doc/latex.rst:1185
 msgid ""
 "Customizability of the :rst:dir:`seealso` and :rst:dir:`todo` directives."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1187
+#: ../../sphinx/doc/latex.rst:1189
 msgid ""
 "Separate customizability and new defaults for the :dudir:`topic`, contents_,"
 " and :dudir:`sidebar` directives."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1191
+#: ../../sphinx/doc/latex.rst:1193
 msgid ""
 "Perhaps in future these 5.1.0 (and 6.2.0) novel settings will be optionally "
 "imported from some genuine CSS external file, but currently they have to be "
@@ -1627,43 +1628,43 @@ msgid ""
 "is only imitated."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1196
+#: ../../sphinx/doc/latex.rst:1198
 msgid ""
 "Low-level LaTeX errors causing a build failure can happen if the input "
 "syntax is not respected."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1199
+#: ../../sphinx/doc/latex.rst:1201
 msgid ""
 "In particular colors must be input as for the other color related options "
 "previously described, i.e. either in the :code-tex:`\\\\definecolor` syntax "
 "or via the :code-tex:`\\\\colorlet` syntax::"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1208
+#: ../../sphinx/doc/latex.rst:1210
 msgid "A colon in place of the equal sign will break LaTeX."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1210
+#: ../../sphinx/doc/latex.rst:1212
 msgid ""
 "``...border-width`` or ``...padding`` expect a *single* dimension: they can "
 "not be used so far with space separated dimensions."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1213
+#: ../../sphinx/doc/latex.rst:1215
 msgid ""
 "``...top-right-radius`` et al. values may be either a single or *two* space "
 "separated dimensions."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1216
+#: ../../sphinx/doc/latex.rst:1218
 msgid ""
 "Dimension specifications must use TeX units such as ``pt`` or ``cm`` or "
 "``in``.  The ``px`` unit is recognized by ``pdflatex`` and ``lualatex`` but "
 "not by ``xelatex`` or ``platex``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1220
+#: ../../sphinx/doc/latex.rst:1222
 msgid ""
 "It is allowed for such specifications to be so-called \"dimensional "
 "expressions\", e.g. :code-tex:`\\\\fboxsep+2pt` or :code-"
@@ -1674,7 +1675,7 @@ msgid ""
 "<latexsphinxsetup>` key."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1228
+#: ../../sphinx/doc/latex.rst:1230
 msgid ""
 "As a rule, avoid inserting unneeded spaces in the key values: especially for"
 " the radii an input such ``2 pt 3pt`` will break LaTeX.  Beware also that "
@@ -1683,7 +1684,7 @@ msgid ""
 "directly ``3pt 3pt`` which is a priori equivalent and simpler."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1234
+#: ../../sphinx/doc/latex.rst:1236
 msgid ""
 "The options are all named in a similar pattern which depends on a "
 "``prefix``, which is then followed by an underscore, then the property name."
@@ -1813,7 +1814,7 @@ msgstr ""
 msgid "``sphinxtodo``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1251
+#: ../../sphinx/doc/latex.rst:1253
 msgid ""
 "Here are now these options as well as their common defaults. Replace below "
 "``<prefix>`` by the actual prefix as explained above.  Don't forget the "
@@ -1842,45 +1843,45 @@ msgid ""
 "dimension which then sets all four others."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1262
+#: ../../sphinx/doc/latex.rst:1264
 msgid "The default is that all those dimensions are equal.  They are set to:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1264
+#: ../../sphinx/doc/latex.rst:1266
 msgid "``0.4pt`` for :rst:dir:`code-block`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1265
+#: ../../sphinx/doc/latex.rst:1267
 msgid "``0.5pt`` for :dudir:`topic` and contents_ directive,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1266
+#: ../../sphinx/doc/latex.rst:1268
 msgid "``1pt`` for :dudir:`sidebar` directive,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1267
+#: ../../sphinx/doc/latex.rst:1269
 msgid "``0.5pt`` for :dudir:`note` and other \"light\" admonitions,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1268
+#: ../../sphinx/doc/latex.rst:1270
 msgid "``0.5pt`` for :rst:dir:`seealso` and :rst:dir:`todo` directives,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1269
+#: ../../sphinx/doc/latex.rst:1271
 msgid ""
 "``1pt`` for  :dudir:`warning` and other \"strong\" admonitions except "
 ":dudir:`error` which uses ``1.25pt``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1272
+#: ../../sphinx/doc/latex.rst:1274
 msgid "Changed defaults for :dudir:`topic` and :dudir:`error`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1275
+#: ../../sphinx/doc/latex.rst:1277
 msgid "Distinct from :dudir:`topic` defaults for :dudir:`sidebar`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1278
+#: ../../sphinx/doc/latex.rst:1280
 msgid ""
 "``<prefix>_box-decoration-break`` can be set to either ``clone`` or "
 "``slice`` and configures the behavior at page breaks. It defaults to "
@@ -1910,39 +1911,39 @@ msgid ""
 "dimension which then sets all four others."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1289 ../../sphinx/doc/latex.rst:1319
+#: ../../sphinx/doc/latex.rst:1291 ../../sphinx/doc/latex.rst:1321
 msgid "The defaults:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1291
+#: ../../sphinx/doc/latex.rst:1293
 msgid "all four ``3pt`` for :rst:dir:`code-block`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1292
+#: ../../sphinx/doc/latex.rst:1294
 msgid "``6pt``, ``7pt``, ``6pt``, ``7pt`` for :dudir:`topic`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1293
+#: ../../sphinx/doc/latex.rst:1295
 msgid "``10pt``, ``7pt``, ``12pt``, ``7pt`` for contents_,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1294
+#: ../../sphinx/doc/latex.rst:1296
 msgid "``6pt``, ``5.5pt``, ``6pt``, ``5.5pt`` for :dudir:`sidebar`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1295
+#: ../../sphinx/doc/latex.rst:1297
 msgid ""
 "``6pt``, ``7pt``, ``6pt``, ``7pt`` for all \"light\" admonitions as well as "
 "the :rst:dir:`seealso` and :rst:dir:`todo` directives."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1297
+#: ../../sphinx/doc/latex.rst:1299
 msgid ""
 "``6pt``, ``6.5pt``, ``6pt``, ``6.5pt`` for the strong admonition types "
 "except :dudir:`error` which uses horizontal padding of ``6.25pt``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1302
+#: ../../sphinx/doc/latex.rst:1304
 msgid ""
 "All defaults were changed, except for :rst:dir:`code-block`.  Admonitions "
 "are set-up so that left (or right) padding plus left (or right) border-width"
@@ -1951,7 +1952,7 @@ msgid ""
 "not a constraint on possible user choices."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1308 ../../sphinx/doc/latex.rst:1334
+#: ../../sphinx/doc/latex.rst:1310 ../../sphinx/doc/latex.rst:1336
 msgid "Separate defaults for :dudir:`topic`, contents_, and :dudir:`sidebar`."
 msgstr ""
 
@@ -1978,77 +1979,77 @@ msgid ""
 " which are then space separated."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1321
+#: ../../sphinx/doc/latex.rst:1323
 msgid "``3pt`` for :rst:dir:`code-block` (since 6.0.0) and all corners,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1322
+#: ../../sphinx/doc/latex.rst:1324
 msgid "``8pt`` for all corners of :dudir:`topic`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1323
+#: ../../sphinx/doc/latex.rst:1325
 msgid "``12pt`` for the bottom right corner of contents_, others use ``0pt``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1324
+#: ../../sphinx/doc/latex.rst:1326
 msgid ""
 "``12pt`` for the top-left and bottom-right corners for :dudir:`sidebar`, "
 "``0pt`` for top-right and bottom-left."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1326
+#: ../../sphinx/doc/latex.rst:1328
 msgid ""
 "all radii set to ``5pt`` for :dudir:`note`, :dudir:`hint` and :dudir:`tip`,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1328
+#: ../../sphinx/doc/latex.rst:1330
 msgid "``0pt``, i.e. straight corners for all other directives."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1330
+#: ../../sphinx/doc/latex.rst:1332
 msgid ""
 ":dudir:`topic` and :dudir:`note`\\ -like admonitions acquire (at least one) "
 "rounded corners."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1337
+#: ../../sphinx/doc/latex.rst:1339
 msgid "See a remark above about traps with spaces in LaTeX."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1338
+#: ../../sphinx/doc/latex.rst:1340
 msgid "``<prefix>_box-shadow`` is special in so far as it may be:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1340
+#: ../../sphinx/doc/latex.rst:1342
 msgid "the ``none`` keyword,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1341
+#: ../../sphinx/doc/latex.rst:1343
 msgid "or a single dimension (giving both x-offset and y-offset),"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1342
+#: ../../sphinx/doc/latex.rst:1344
 msgid "or two dimensions (separated by a space),"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1343
+#: ../../sphinx/doc/latex.rst:1345
 msgid "or two dimensions followed by the keyword ``inset``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1345
+#: ../../sphinx/doc/latex.rst:1347
 msgid ""
 "The x-offset and y-offset may be negative.  A negative x-offset means that "
 "the shadow is on the left.  The shadow extends into the page margin, whether"
 " the offset is positive or negative."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1349
+#: ../../sphinx/doc/latex.rst:1351
 msgid ""
 "The default is ``none`` *except* for the  contents_ directive which uses "
 "``4pt 4pt``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1352
+#: ../../sphinx/doc/latex.rst:1354
 msgid "No shadow per default for :dudir:`topic` and :dudir:`sidebar`."
 msgstr ""
 
@@ -2068,45 +2069,45 @@ msgstr ""
 msgid "``<prefix>_TeXcolor``. These are colors."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1361
+#: ../../sphinx/doc/latex.rst:1363
 msgid ""
 "Since 6.0.0 the border and background colors of :rst:dir:`code-block`, "
 "default respectively to ``{RGB}{32,32,32}`` (i.e. ``{HTML}{202020}``), and "
 "``{RGB}{242,242,242}`` (i.e. ``{gray}{0.95}`` or ``{HTML}{F2F2F2}``)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1365
+#: ../../sphinx/doc/latex.rst:1367
 msgid ""
 "At 7.4.0 other directives acquire non-black/white default border and "
 "background colors.  Here they are using ``xcolor`` hexadecimal notation "
 "(which requires always 6 hexadecimal digits):"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1369
+#: ../../sphinx/doc/latex.rst:1371
 msgid "``{HTML}{F7F7F7}`` serves as background color to all."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1370
+#: ../../sphinx/doc/latex.rst:1372
 msgid ""
 "``{HTML}{86989B}`` is border color of light admonitions (inclusive of "
 ":rst:dir:`seealso` and :rst:dir:`todo`) as well as of :dudir:`topic`, "
 "contents_ and :dudir:`sidebar` directives."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1373
+#: ../../sphinx/doc/latex.rst:1375
 msgid ""
 "``{HTML}{940000}`` is border color of :dudir:`warning`-type admonitions, "
 "except :dudir:`error` which uses ``{HTML}{B40000}``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1376
+#: ../../sphinx/doc/latex.rst:1378
 msgid ""
 "The only directives displaying a shadow per default are contents_ and "
 ":dudir:`sidebar`.  The shadow-color for the former is ``{HTML}{6C6C6C}`` and"
 " for the latter ``{HTML}{9EACAF}``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1380
+#: ../../sphinx/doc/latex.rst:1382
 msgid ""
 "The ``<prefix>_TeXcolor`` stands for the CSS property \"color\", i.e. it "
 "influences the text color of the contents.  As for the three other options, "
@@ -2118,14 +2119,14 @@ msgid ""
 ":confval:`latex_elements`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1388
+#: ../../sphinx/doc/latex.rst:1390
 msgid ""
 "If ``<prefix>_TeXcolor`` is set, a :code-tex:`\\\\color` command is inserted"
 " at start of the directive contents; for admonitions, this happens after the"
 " heading which reproduces the admonition type."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1392
+#: ../../sphinx/doc/latex.rst:1394
 msgid ""
 "``<prefix>_TeXextras``: if set, its value must be some LaTeX command or "
 "commands, for example :code-tex:`\\\\itshape`.  These commands will be "
@@ -2133,20 +2134,20 @@ msgid ""
 "the heading which reproduces the admonition type."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1397
+#: ../../sphinx/doc/latex.rst:1399
 msgid ""
 "The next keys, for admonitions, :dudir:`topic`, contents_, and "
 ":dudir:`sidebar`, were all three added at 7.4.0 (and 8.1.0 for the latter "
 "three)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1400
+#: ../../sphinx/doc/latex.rst:1402
 msgid ""
 "``div.<type>_title-background-TeXcolor``: the background color for the "
 "title."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1404
+#: ../../sphinx/doc/latex.rst:1406
 msgid ""
 "The colored title-row is produced as a result of the Sphinx default "
 "definitions for the various :code-tex:`\\\\sphinxstyle<type>title` commands,"
@@ -2154,88 +2155,85 @@ msgid ""
 ":ref:`latex-macros`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1409
+#: ../../sphinx/doc/latex.rst:1411
 msgid ""
 "``div.<type>_title-foreground-TeXcolor``: the color to be used for the icon "
 "(it applies only to the icon, not to the title of the admonition)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1412
+#: ../../sphinx/doc/latex.rst:1414
 msgid ""
 "``div.<type>_title-icon``: the LaTeX code responsible for producing the "
-"icon.  For example, the default for :dudir:`note` is ``div.note_title-"
-"icon=\\faIcon{info-circle}``.  This uses a command from the LaTeX "
-"``fontawesome5`` package, which is loaded automatically if available."
+"icon.  If you want to modify the icons used by Sphinx, employ in these keys "
+"the ``\\faIcon`` LaTeX command (assuming either ``fontawesome6`` or "
+"``fontawesome5`` LaTeX package is available on your system).  For example "
+"the default for :dudir:`note` is ``div.note_title-icon=\\faIcon{info-"
+"circle}`` with ``fontawesome5`` and ``div.note_title-icon=\\faIcon{circle-"
+"info}`` with ``fontawesome6`` (which is used automatically if available).  "
+"If your system only provides the ``fontawesome`` package (automatically "
+"detected) use its command ``\\faicon`` rather in order to modify the choice "
+"of icons.  The ``iconpackage`` key can be used to use some other package "
+"providing icons, use then the commands suitable to that package as values of"
+" the ``div.<type>_title-icon`` keys."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1417
-msgid ""
-"If neither ``fontawesome5`` nor fall-back ``fontawesome`` (for which the "
-"associated command is :code-tex:`\\\\faicon`, not :code-tex:`\\\\faIcon`) "
-"are found, or if the ``iconpackage`` key of :ref:`'sphinxsetup' "
-"<latexsphinxsetup>` is set to load some other user-chosen package, or no "
-"package at all, all the ``title-icons`` default to empty LaTeX code.  It is "
-"up to user to employ this interface to inject the icon (or anything else) "
-"into the PDF output."
-msgstr ""
-
-#: ../../sphinx/doc/latex.rst:1427
+#: ../../sphinx/doc/latex.rst:1429
 msgid ""
 "All directives support ``box-decoration-break`` to be set to ``slice``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1431
+#: ../../sphinx/doc/latex.rst:1433
 msgid ""
 "Formerly, only :rst:dir:`code-block` did.  The default remains ``clone`` for"
 " all other directives, but this will probably change at 7.0.0."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1435
+#: ../../sphinx/doc/latex.rst:1437
 msgid "The corners of rounded boxes may be elliptical."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1439
+#: ../../sphinx/doc/latex.rst:1441
 msgid ""
 "Formerly, only circular rounded corners were supported and a rounded corner "
 "forced the whole frame to use the same constant width from "
 "``<prefix>_border-width``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1443
+#: ../../sphinx/doc/latex.rst:1445
 msgid ""
 "Inset shadows are incompatible with rounded corners.  In case both are "
 "specified the inset shadow will simply be ignored."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1448
+#: ../../sphinx/doc/latex.rst:1450
 msgid ""
 "Formerly it was to the contrary the rounded corners which were ignored in "
 "case an inset shadow was specified."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1451
+#: ../../sphinx/doc/latex.rst:1453
 msgid "``<prefix>_TeXcolor`` and ``<prefix>_TeXextras`` are new with 6.2.0."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1453
+#: ../../sphinx/doc/latex.rst:1455
 msgid "Usefulness is doubtful in the case of :rst:dir:`code-block`:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1455
+#: ../../sphinx/doc/latex.rst:1457
 msgid ""
 "``pre_TeXcolor`` will influence only the few non-Pygments highlighted "
 "tokens; it does color the line numbers, but if one wants to color *only* "
 "them one has to go through the ``fancyvrb`` interface."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1459
+#: ../../sphinx/doc/latex.rst:1461
 msgid ""
 "``pre_TeXextras=\\footnotesize`` (as an example) is equivalent to setting "
 ":ref:`fvset` key value to :code-"
 "tex:`r'\\\\fvset{fontsize=\\\\footnotesize}'`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1462
+#: ../../sphinx/doc/latex.rst:1464
 msgid ""
 "Consider these options experimental and that some implementation details may"
 " change.  For example if the ``pre_TeXextras`` LaTeX commands were put by "
@@ -2243,25 +2241,25 @@ msgid ""
 "perhaps this is what will be done in a future release."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1467
+#: ../../sphinx/doc/latex.rst:1469
 msgid ""
 "Rounded boxes are done using the pict2e_ interface to some basic PDF "
 "graphics operations.  If this LaTeX package can not be found the build will "
 "proceed and render all boxes with straight corners."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1471
+#: ../../sphinx/doc/latex.rst:1473
 msgid ""
 "Elliptic corners use the ellipse_ LaTeX package which extends pict2e_. If "
 "this LaTeX package can not be found rounded corners will be circular arcs "
 "(or straight if pict2e_ is not available)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1479
+#: ../../sphinx/doc/latex.rst:1481
 msgid "The following legacy behavior applies:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1481
+#: ../../sphinx/doc/latex.rst:1483
 msgid ""
 "For :rst:dir:`code-block` or :rst:dir:`literalinclude`, padding and border-"
 "width and shadow (if any) will go into the margin; the code lines remain at "
@@ -2270,23 +2268,23 @@ msgid ""
 "due to the width of the border or external shadow."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1487
+#: ../../sphinx/doc/latex.rst:1489
 msgid ""
 "For the other directives, shadows extend horizontally into the page margins,"
 " but the border and the extra padding are kept within the text area."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1490
+#: ../../sphinx/doc/latex.rst:1492
 msgid ""
 ":rst:dir:`code-block` and :rst:dir:`literalinclude` use the same LaTeX "
 "environment and commands and are not separately customizable."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1495
+#: ../../sphinx/doc/latex.rst:1497
 msgid "LaTeX macros and environments"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1497
+#: ../../sphinx/doc/latex.rst:1499
 msgid ""
 "The \"LaTeX package\" file :file:`sphinx.sty` loads various components "
 "providing support macros (aka commands), and environments, which are used in"
@@ -2297,14 +2295,14 @@ msgid ""
 "build repertory."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1504
+#: ../../sphinx/doc/latex.rst:1506
 msgid ""
 "Some of these provide facilities not available from pre-existing LaTeX "
 "packages and work around LaTeX limitations with lists, table cells, verbatim"
 " rendering, footnotes, etc..."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1508
+#: ../../sphinx/doc/latex.rst:1510
 msgid ""
 "Others simply define macros with public names to make overwriting their "
 "defaults easy via user-added contents to the preamble.  We will survey most "
@@ -2312,7 +2310,7 @@ msgid ""
 "respective definition files."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1515
+#: ../../sphinx/doc/latex.rst:1517
 msgid ""
 "Sphinx LaTeX support code is split across multiple smaller-sized files. "
 "Rather than adding code to the preamble via `latex_elements "
@@ -2323,17 +2321,17 @@ msgid ""
 "Check the LaTeX build repertory for the filenames and contents."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1524
+#: ../../sphinx/doc/latex.rst:1526
 msgid ""
 "split of :file:`sphinx.sty` into multiple smaller units, to facilitate "
 "customization of many aspects simultaneously."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1531
+#: ../../sphinx/doc/latex.rst:1533
 msgid "Macros"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1533
+#: ../../sphinx/doc/latex.rst:1535
 msgid "Text styling commands:"
 msgstr ""
 
@@ -2437,25 +2435,25 @@ msgstr ""
 msgid "``[#1]`` with larger brackets, see source"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1558
+#: ../../sphinx/doc/latex.rst:1560
 msgid ""
 "Use of ``\\sphinx`` prefixed macro names to limit possibilities of conflict "
 "with LaTeX packages."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1562
+#: ../../sphinx/doc/latex.rst:1564
 msgid ":code-tex:`\\\\sphinxguilabel`"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1565
+#: ../../sphinx/doc/latex.rst:1567
 msgid ":code-tex:`\\\\sphinxkeyboard`"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1568
+#: ../../sphinx/doc/latex.rst:1570
 msgid ":code-tex:`\\\\sphinxparam`, :code-tex:`\\\\sphinxsamedocref`"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1571
+#: ../../sphinx/doc/latex.rst:1573
 msgid ""
 ":code-tex:`\\\\sphinxparamcomma` which defaults to a comma followed by a "
 "space and :code-tex:`\\\\sphinxparamcommaoneperline`.  It is sed for one-"
@@ -2463,7 +2461,7 @@ msgid ""
 " and defaults to :code-tex:`\\\\texttt{,}`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1578
+#: ../../sphinx/doc/latex.rst:1580
 msgid ""
 "Signatures of Python functions are rendered as ``name<space>(parameters)`` "
 "or ``name<space>[type parameters]<space>(parameters)`` (see :pep:`695`) "
@@ -2472,7 +2470,7 @@ msgid ""
 "instance."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1584
+#: ../../sphinx/doc/latex.rst:1586
 msgid "More text styling:"
 msgstr ""
 
@@ -2700,75 +2698,75 @@ msgstr ""
 msgid "``\\sphinxdotitlerow{sidebar}{#1}``"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1628
+#: ../../sphinx/doc/latex.rst:1630
 msgid ""
 "To let this table fit on the page width in PDF output we have lied a bit. "
 "For instance, the actual definition of :code-tex:`\\\\sphinxstylenotetitle` "
 "is:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1636
+#: ../../sphinx/doc/latex.rst:1638
 msgid ""
 "The same remark applies to all other similar commands associated with "
 "admonitions.  The :dudir:`topic`, contents_, and :dudir:`sidebar` do not use"
 " :code-tex:`\\\\sphinxremovefinalcolon` as they don't need it."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1640
+#: ../../sphinx/doc/latex.rst:1642
 msgid ""
 "These macros were formerly hard-coded as non customizable :code-"
 "tex:`\\\\texttt`, :code-tex:`\\\\emph`, etc..."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1644
+#: ../../sphinx/doc/latex.rst:1646
 msgid ""
 ":code-tex:`\\\\sphinxstyletheadfamily` which defaults to :code-"
 "tex:`\\\\sffamily` and allows multiple paragraphs in header cells of tables."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1649
+#: ../../sphinx/doc/latex.rst:1651
 msgid ""
 ":code-tex:`\\\\sphinxstylecodecontinued` and :code-"
 "tex:`\\\\sphinxstylecodecontinues`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1653
+#: ../../sphinx/doc/latex.rst:1655
 msgid ""
 ":code-tex:`\\\\sphinxstyleindexlettergroup`, :code-"
 "tex:`\\\\sphinxstyleindexlettergroupDefault`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1657
+#: ../../sphinx/doc/latex.rst:1659
 msgid ""
 ":code-tex:`\\\\sphinxstylenotetitle` et al.  The ``#1`` is the localized "
 "name of the directive, with a final colon.  Wrap it as :code-"
 "tex:`\\\\sphinxremovefinalcolon{#1}` if this final colon is to be removed."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1663
+#: ../../sphinx/doc/latex.rst:1665
 msgid "Added the :code-tex:`\\\\sphinxdotitlerowwithicon` LaTeX command."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1666
+#: ../../sphinx/doc/latex.rst:1668
 msgid ""
 ":code-tex:`\\\\sphinxdotitlerowwithicon` now detects automatically if an "
 "icon is associated or not with the rendered element used as first argument."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1670
+#: ../../sphinx/doc/latex.rst:1672
 msgid ""
 "Make :code-tex:`\\\\sphinxdotitlerow` an alias to :code-"
 "tex:`\\\\sphinxdotitlerowwithicon`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1673
+#: ../../sphinx/doc/latex.rst:1675
 msgid ""
 "Titles of :dudir:`topic`, contents_, and :dudir:`sidebar` directives are "
 "also styled using :code-tex:`\\\\sphinxdotitlerow` (they have no default "
 "icons associated with them)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1678
+#: ../../sphinx/doc/latex.rst:1680
 msgid ""
 ":code-tex:`\\\\sphinxtableofcontents`: A wrapper (defined differently in "
 ":file:`sphinxhowto.cls` and in :file:`sphinxmanual.cls`) of standard :code-"
@@ -2777,13 +2775,13 @@ msgid ""
 "before :code-tex:`\\\\tableofcontents` itself."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1684
+#: ../../sphinx/doc/latex.rst:1686
 msgid ""
 "Formerly, the meaning of :code-tex:`\\\\tableofcontents` was modified by "
 "Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1687
+#: ../../sphinx/doc/latex.rst:1689
 msgid ""
 "Hard-coded redefinitions of :code-tex:`\\\\l@section` and :code-"
 "tex:`\\\\l@subsection` formerly done during loading of ``'manual'`` docclass"
@@ -2792,7 +2790,7 @@ msgid ""
 "with it."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1696
+#: ../../sphinx/doc/latex.rst:1698
 msgid ""
 "If adding to preamble the loading of ``tocloft`` package, also add to "
 "preamble :code-tex:`\\\\renewcommand\\\\sphinxtableofcontentshook{}` else it"
@@ -2800,20 +2798,20 @@ msgid ""
 "cancelling ``tocloft`` customization."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1701
+#: ../../sphinx/doc/latex.rst:1703
 msgid ""
 ":code-tex:`\\\\sphinxmaketitle`: Used as the default setting of the "
 "``'maketitle'`` :confval:`latex_elements` key. Defined in the class files "
 ":file:`sphinxmanual.cls` and :file:`sphinxhowto.cls`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1706
+#: ../../sphinx/doc/latex.rst:1708
 msgid ""
 "Formerly, :code-tex:`\\\\maketitle` from LaTeX document class was modified "
 "by Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1710
+#: ../../sphinx/doc/latex.rst:1712
 msgid ""
 ":code-tex:`\\\\sphinxbackoftitlepage`: For ``'manual'`` docclass, and if it "
 "is defined, it gets executed at end of :code-tex:`\\\\sphinxmaketitle`, "
@@ -2822,17 +2820,17 @@ msgid ""
 "definition of :code-tex:`\\\\sphinxbackoftitlepage`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1718
+#: ../../sphinx/doc/latex.rst:1720
 msgid ""
 ":code-tex:`\\\\sphinxcite`: A wrapper of standard :code-tex:`\\\\cite` for "
 "citation references."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1725
+#: ../../sphinx/doc/latex.rst:1727
 msgid "The :code-tex:`\\\\sphinxbox` command"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1729
+#: ../../sphinx/doc/latex.rst:1731
 msgid ""
 "The :code-tex:`\\\\sphinxbox[key=value,...]{inline text}` command can be "
 "used to \"box\" inline text elements with all the customizability which has "
@@ -2842,57 +2840,57 @@ msgid ""
 "use any prefix."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1735
+#: ../../sphinx/doc/latex.rst:1737
 msgid "``border-width``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1736
+#: ../../sphinx/doc/latex.rst:1738
 msgid ""
 "``border-top-width``, ``border-right-width``, ``border-bottom-width``, "
 "``border-left-width``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1738
+#: ../../sphinx/doc/latex.rst:1740
 msgid "``padding``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1739
+#: ../../sphinx/doc/latex.rst:1741
 msgid ""
 "``padding-top``, ``padding-right``, ``padding-bottom``, ``padding-left``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1740
+#: ../../sphinx/doc/latex.rst:1742
 msgid "``border-radius``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1741
+#: ../../sphinx/doc/latex.rst:1743
 msgid ""
 "``border-top-left-radius``, ``border-top-right-radius``, ``border-bottom-"
 "right-radius``, ``border-bottom-left-radius``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1743
+#: ../../sphinx/doc/latex.rst:1745
 msgid "``box-shadow``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1744
+#: ../../sphinx/doc/latex.rst:1746
 msgid ""
 "``border-TeXcolor``, ``background-TeXcolor``, ``box-shadow-TeXcolor``, "
 "``TeXcolor``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1746
+#: ../../sphinx/doc/latex.rst:1748
 msgid "``TeXextras``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1747
+#: ../../sphinx/doc/latex.rst:1749
 msgid ""
 "and ``addstrut`` which is a boolean key, i.e. to be used as "
 "``addstrut=true``, or ``addstrut`` alone where ``=true`` is omitted, or "
 "``addstrut=false``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1750
+#: ../../sphinx/doc/latex.rst:1752
 msgid ""
 "This last key is specific to :code-tex:`\\\\sphinxbox` and it means to add a"
 " :code-tex:`\\\\strut` so that heights and depths are equalized across "
@@ -2901,7 +2899,7 @@ msgid ""
 "padding-top=1pt`` is often satisfactory."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1756
+#: ../../sphinx/doc/latex.rst:1758
 msgid ""
 "Refer to :ref:`additionalcss` for important syntax information regarding the"
 " other keys.  The default configuration uses no shadow, a border-width of "
@@ -2910,7 +2908,7 @@ msgid ""
 "as for the default rendering of code-blocks."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1762
+#: ../../sphinx/doc/latex.rst:1764
 msgid ""
 "When a :code-tex:`\\\\sphinxbox` usage is nested within another one, it will"
 " ignore the options of the outer one: it first resets all options to their "
@@ -2918,7 +2916,7 @@ msgid ""
 "applies its own specific ones."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1767
+#: ../../sphinx/doc/latex.rst:1769
 msgid ""
 "One can modify these defaults via the command :code-"
 "tex:`\\\\sphinxboxsetup{key=value,...}`.  The effect is cumulative, if one "
@@ -2926,18 +2924,18 @@ msgid ""
 " so are within curly braces, not square brackets."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1772
+#: ../../sphinx/doc/latex.rst:1774
 msgid "Here is some example of use:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1787
+#: ../../sphinx/doc/latex.rst:1789
 msgid ""
 "A utility :code-tex:`\\\\newsphinxbox` is provided to create a new boxing "
 "macro, say :code-tex:`\\\\foo` which will act exactly like :code-"
 "tex:`\\\\sphinxbox` but with a given extra configuration:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1799
+#: ../../sphinx/doc/latex.rst:1801
 msgid ""
 "Boxes rendered with :code-tex:`\\\\foo` obey as the ones using directly "
 ":code-tex:`\\\\sphinxbox` the current configuration as set possibly mid-way "
@@ -2946,71 +2944,71 @@ msgid ""
 " default extras."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1805
+#: ../../sphinx/doc/latex.rst:1807
 msgid ""
 "In the above examples, you can probably use :code-tex:`\\\\renewcommand` "
 "syntax if you prefer it to :code-tex:`\\\\protected\\\\def` (with ``[1]`` in"
 " place of ``#1`` then)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1811
+#: ../../sphinx/doc/latex.rst:1813
 msgid "Environments"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1813
+#: ../../sphinx/doc/latex.rst:1815
 msgid ""
 "A :dudir:`figure` may have an optional legend with arbitrary body elements: "
 "they are rendered in a ``sphinxlegend`` environment. The default definition "
 "issues :code-tex:`\\\\small`, and ends with :code-tex:`\\\\par`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1817
+#: ../../sphinx/doc/latex.rst:1819
 msgid ""
 "Formerly, the :code-tex:`\\\\small` was hardcoded in LaTeX writer and the "
 "ending :code-tex:`\\\\par` was lacking."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1821
+#: ../../sphinx/doc/latex.rst:1823
 msgid "Environments associated with admonitions:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1823
+#: ../../sphinx/doc/latex.rst:1825
 msgid "``sphinxnote``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1824
+#: ../../sphinx/doc/latex.rst:1826
 msgid "``sphinxhint``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1825
+#: ../../sphinx/doc/latex.rst:1827
 msgid "``sphinximportant``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1826
+#: ../../sphinx/doc/latex.rst:1828
 msgid "``sphinxtip``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1827
+#: ../../sphinx/doc/latex.rst:1829
 msgid "``sphinxwarning``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1828
+#: ../../sphinx/doc/latex.rst:1830
 msgid "``sphinxcaution``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1829
+#: ../../sphinx/doc/latex.rst:1831
 msgid "``sphinxattention``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1830
+#: ../../sphinx/doc/latex.rst:1832
 msgid "``sphinxdanger``,"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1831
+#: ../../sphinx/doc/latex.rst:1833
 msgid "``sphinxerror``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1833
+#: ../../sphinx/doc/latex.rst:1835
 msgid ""
 "They may be :code-tex:`\\\\renewenvironment` 'd individually, and must then "
 "be defined with one argument (it is the heading of the notice, for example "
@@ -3021,27 +3019,27 @@ msgid ""
 "set via ``'sphinxsetup'`` string."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1841
+#: ../../sphinx/doc/latex.rst:1843
 msgid ""
 "Use of public environment names, separate customizability of the parameters,"
 " such as ``noteBorderColor``, ``noteborder``, ``warningBgColor``, "
 "``warningBorderColor``, ``warningborder``, ..."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1846
+#: ../../sphinx/doc/latex.rst:1848
 msgid ""
 "Environment for the :rst:dir:`seealso` directive: ``sphinxseealso``. It "
 "takes one argument which will be the localized string ``See also`` followed "
 "with a colon."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1851
+#: ../../sphinx/doc/latex.rst:1853
 msgid ""
 "Colon made part of the mark-up rather than being inserted by the environment"
 " for coherence with how admonitions are handled generally."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1855
+#: ../../sphinx/doc/latex.rst:1857
 msgid ""
 "Environment for the :rst:dir:`todo` directive: ``sphinxtodo``. It takes one "
 "argument, namely the localization of ``Todo`` (with a colon at the end; the "
@@ -3049,28 +3047,28 @@ msgid ""
 " own colored title-row)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1862
+#: ../../sphinx/doc/latex.rst:1864
 msgid ""
 "The :dudir:`topic`, contents_ and :dudir:`sidebar` directives are associated"
 " with respectively ``sphinxtopic``, ``sphinxcontents``, and "
 "``sphinxsidebar`` environments."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1866
+#: ../../sphinx/doc/latex.rst:1868
 msgid "Former code refactored into an environment allowing page breaks."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1869
+#: ../../sphinx/doc/latex.rst:1871
 msgid "Options ``shadowsep``, ``shadowsize``,  ``shadowrule``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1872
+#: ../../sphinx/doc/latex.rst:1874
 msgid ""
 "Separate environments (all three wrappers around ``sphinxShadowBox``) and "
 "separate customizability."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1876
+#: ../../sphinx/doc/latex.rst:1878
 msgid ""
 "The literal blocks (via ``::`` or :rst:dir:`code-block`), and literal "
 "includes (:rst:dir:`literalinclude`) are implemented using "
@@ -3081,30 +3079,30 @@ msgid ""
 "does not draw a frame, but allows a caption)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1885
+#: ../../sphinx/doc/latex.rst:1887
 msgid ""
 "``Verbatim`` keeps exact same meaning as in ``fancyvrb.sty`` (also under the"
 " name ``OriginalVerbatim``); ``sphinxVerbatimintable`` is used inside "
 "tables."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1890
+#: ../../sphinx/doc/latex.rst:1892
 msgid ""
 "Options ``verbatimwithframe``, ``verbatimwrapslines``, ``verbatimsep``, "
 "``verbatimborder``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1894
+#: ../../sphinx/doc/latex.rst:1896
 msgid "Support for ``:emphasize-lines:`` option"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1897
+#: ../../sphinx/doc/latex.rst:1899
 msgid ""
 "Easier customizability of the formatting via exposed to user LaTeX macros "
 "such as :code-tex:`\\\\sphinxVerbatimHighlightLine`."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1901
+#: ../../sphinx/doc/latex.rst:1903
 msgid ""
 "The bibliography uses ``sphinxthebibliography`` and the Python Module index "
 "as well as the general index both use ``sphinxtheindex``; these environments"
@@ -3112,15 +3110,15 @@ msgid ""
 "environments as provided by the document class (or packages)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1906
+#: ../../sphinx/doc/latex.rst:1908
 msgid "Formerly, the original environments were modified by Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1910
+#: ../../sphinx/doc/latex.rst:1912
 msgid "Miscellany"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1912
+#: ../../sphinx/doc/latex.rst:1914
 msgid ""
 "Every text paragraph in document body starts with :code-"
 "tex:`\\\\sphinxAtStartPar`. Currently, this is used to insert a zero width "
@@ -3130,13 +3128,13 @@ msgid ""
 "nothing."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1920
+#: ../../sphinx/doc/latex.rst:1922
 msgid ""
 "The section, subsection, ... headings are set using  *titlesec*'s :code-"
 "tex:`\\\\titleformat` command."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1923
+#: ../../sphinx/doc/latex.rst:1925
 msgid ""
 "For the ``'manual'`` docclass, the chapter headings can be customized using "
 "*fncychap*'s commands :code-tex:`\\\\ChNameVar`, :code-tex:`\\\\ChNumVar`, "
@@ -3144,13 +3142,13 @@ msgid ""
 "definitions in case of *fncychap* option ``Bjarne``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1928
+#: ../../sphinx/doc/latex.rst:1930
 msgid ""
 "Formerly, use of *fncychap* with other styles than ``Bjarne`` was "
 "dysfunctional."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1932
+#: ../../sphinx/doc/latex.rst:1934
 msgid ""
 "The :dudir:`role` directive allows to mark inline text with class arguments."
 " This is handled in LaTeX output via the :code-tex:`\\\\DUrole` dispatcher "
@@ -3159,7 +3157,7 @@ msgid ""
 "names as in HTML output."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1938
+#: ../../sphinx/doc/latex.rst:1940
 msgid ""
 "When multiple classes are injected via a a custom role, the LaTeX output "
 "uses nested :code-tex:`\\\\DUrole`'s as in the `Docutils documentation "
@@ -3167,7 +3165,7 @@ msgid ""
 "comma separated classes, making the LaTeX customization more arduous."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1948
+#: ../../sphinx/doc/latex.rst:1950
 msgid ""
 "Docutils :dudir:`container` directives are supported in LaTeX output: to let"
 " a container class with name ``foo`` influence the final PDF via LaTeX, it "
@@ -3175,31 +3173,31 @@ msgid ""
 "  A simple example would be:"
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1957
+#: ../../sphinx/doc/latex.rst:1959
 msgid ""
 "Currently the class names must contain only ASCII characters and avoid "
 "characters special to LaTeX such as ``\\``."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1964
+#: ../../sphinx/doc/latex.rst:1966
 msgid ""
 "As an experimental feature, Sphinx can use user-defined template file for "
 "LaTeX source if you have a file named ``_templates/latex.tex.jinja`` in your"
 " project."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1968
+#: ../../sphinx/doc/latex.rst:1970
 msgid ""
 "Additional files ``longtable.tex.jinja``, ``tabulary.tex.jinja`` and "
 "``tabular.tex.jinja`` can be added to ``_templates/`` to configure some "
 "aspects of table rendering (such as the caption position)."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1972
+#: ../../sphinx/doc/latex.rst:1974
 msgid "currently all template variables are unstable and undocumented."
 msgstr ""
 
-#: ../../sphinx/doc/latex.rst:1975
+#: ../../sphinx/doc/latex.rst:1977
 msgid ""
 "Added support for the ``.jinja`` file extension, which is preferred. The old"
 " file names remain supported. (``latex.tex_t``, ``longtable.tex_t``, "

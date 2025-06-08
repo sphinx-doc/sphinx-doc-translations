@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-24 00:54+0000\n"
+"POT-Creation-Date: 2025-06-08 01:05+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -332,21 +332,48 @@ msgstr "Links externos"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:211
 msgid ""
-"Use ```Link text <https://domain.invalid/>`_`` for inline web links.  If the"
-" link text should be the web address, you don't need special markup at all, "
-"the parser finds links and mail addresses in ordinary text."
+"URLs and email addresses in text are automatically linked and do not need "
+"explicit markup at all. For example, https://domain.invalid/ is written with"
+" no special markup in the source of this document, and is recognised as an "
+"external hyperlink."
 msgstr ""
-"Use ```Texto do link <https://domínio.inválido/>`_`` para links da Web "
-"embutidos. Se o texto do link deve ser o endereço da web, você não precisa "
-"de nenhuma marcação especial, o analisador encontra links e endereços de "
-"e-mail em texto comum."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:215
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:216
 msgid ""
-"There must be a space between the link text and the opening \\< for the URL."
-msgstr "Deve haver um espaço enter o texto do link da URL e o \\< de abertura."
+"To create text with a link, the best approach is generally to put the URL "
+"below the paragraph as follows (:duref:`ref <hyperlink-targets>`)::"
+msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:217
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:223
+msgid "This keeps the paragraph more readable in source code."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:225
+msgid ""
+"Alternatively, you can embed the URL within the prose for an 'inline link'. "
+"This can lead to longer lines, but has the benefit of keeping the link text "
+"and the URL pointed to in the same place. This uses the following syntax: "
+"```Link text <https://domain.invalid/>`__`` (:duref:`ref <embedded-uris-and-"
+"aliases>`)."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:233
+msgid ""
+"There must be a space between the link text and the opening angle bracket "
+"('``<``') for the URL."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:238
+msgid ""
+"Use two trailing underscores when embedding the URL. Technically, a single "
+"underscore works as well, but that would create a named reference instead of"
+" an anonymous one. Named references typically do not have a benefit when the"
+" URL is embedded. Moreover, they have the disadvantage that you must make "
+"sure that you do not use the same \"Link text\" for another link in your "
+"document."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:245
 msgid ""
 "You can also separate the link and the target definition (:duref:`ref "
 "<hyperlink-targets>`), like this::"
@@ -354,11 +381,11 @@ msgstr ""
 "Também é possível separar o link da definição do alvo (:duref:`ref "
 "<hyperlink-targets>`) como isso::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:225
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:253
 msgid "Internal links"
 msgstr "Links internos"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:227
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:255
 msgid ""
 "Internal linking is done via a special reStructuredText role provided by "
 "Sphinx, see the section on specific markup, :ref:`ref-role`."
@@ -366,11 +393,11 @@ msgstr ""
 "Ligações internas são feitas através de papéis reStructuredText fornece por "
 "Sphinx, veja a seção sobre marcação específica, :ref:`ref-role`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:234
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:262
 msgid "Sections"
 msgstr "Seções"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:236
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:264
 msgid ""
 "Section headers (:duref:`ref <sections>`) are created by underlining (and "
 "optionally overlining) the section title with a punctuation character, at "
@@ -380,7 +407,7 @@ msgstr ""
 "(e opcionalmente sobreposição) no título da seção com pontuação de caracter,"
 " pelo menos como um texto::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:244
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:272
 msgid ""
 "Normally, there are no heading levels assigned to certain characters as the "
 "structure is determined from the succession of headings.  However, this "
@@ -394,31 +421,31 @@ msgstr ""
 "<https://devguide.python.org/documentation/markup/#sections>`_ que você pode"
 " seguir:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:250
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:278
 msgid "``#`` with overline, for parts"
 msgstr "``#`` com sublinhado para componentes"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:251
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:279
 msgid "``*`` with overline, for chapters"
 msgstr "``*`` com sublinhado para capítulos"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:252
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:280
 msgid "``=`` for sections"
 msgstr "``=`` para seções"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:253
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:281
 msgid "``-`` for subsections"
 msgstr "``-`` para subseções"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:254
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:282
 msgid "``^`` for subsubsections"
 msgstr "``^`` para subsubseções"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:255
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:283
 msgid "``\"`` for paragraphs"
 msgstr "``\"`` para parágrafos"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:257
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:285
 msgid ""
 "Of course, you are free to use your own marker characters (see the "
 "reStructuredText documentation), and use a deeper nesting level, but keep in"
@@ -429,11 +456,11 @@ msgstr ""
 "documentação reStructuredText) e use um maior nível, mas tenha em mente que "
 "os formatos alvo (HTML, LaTeX) possuem limites de aninhamento."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:265
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:293
 msgid "Field Lists"
 msgstr "Listas de campos"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:267
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:295
 msgid ""
 "Field lists (:duref:`ref <field-lists>`) are sequences of fields marked up "
 "like this::"
@@ -441,11 +468,11 @@ msgstr ""
 "Listas de campos (:duref:`ref <field-lists>`) são seqüências de campos "
 "marcados assim::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:272
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:300
 msgid "They are commonly used in Python documentation::"
 msgstr "Eles são comumente usados em documentação do Python::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:283
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:311
 msgid ""
 "Sphinx extends standard docutils behavior and intercepts field lists "
 "specified at the beginning of documents.  Refer to :doc:`field-lists` for "
@@ -455,11 +482,11 @@ msgstr ""
 "de campos especificadas no início dos documentos. Consulte :doc:`field-"
 "lists` para mais informações."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:291
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:319
 msgid "Roles"
 msgstr "Roles"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:293
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:321
 msgid ""
 "A role or \"custom interpreted text role\" (:dupage:`ref <roles>`) is an "
 "inline piece of explicit markup. It signifies that the enclosed text should "
@@ -474,31 +501,31 @@ msgstr ""
 "conforme descrito na seção apropriada. A sintaxe geral é "
 "``:nomedarole:`conteúdo```."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:299
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:327
 msgid "Docutils supports the following roles:"
 msgstr "O ``Docutils`` suporta os seguintes *roles*:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:301
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:329
 msgid ":durole:`emphasis` -- equivalent of ``*emphasis*``"
 msgstr ":durole:`emphasis` -- equivalente a ``*emphasis*``"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:302
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:330
 msgid ":durole:`strong` -- equivalent of ``**strong**``"
 msgstr ":durole:`strong` -- equivalente a ``**strong**``"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:303
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:331
 msgid ":durole:`literal` -- equivalent of ````literal````"
 msgstr ":durole:`literal` -- equivalente a ````literal````"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:304
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:332
 msgid ":durole:`subscript` -- subscript text"
 msgstr ":durole:`subscript` -- texto escrita inferior"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:305
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:333
 msgid ":durole:`superscript` -- superscript text"
 msgstr ":durole:`superscript` -- texto escrita superior"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:306
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:334
 msgid ""
 ":durole:`title-reference` -- for titles of books, periodicals, and other "
 "materials"
@@ -506,15 +533,15 @@ msgstr ""
 ":durole:`title-reference` -- para títulos de livros, periódicos e outros "
 "materiais"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:309
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:337
 msgid "Refer to :doc:`roles` for roles added by Sphinx."
 msgstr "Consulte :doc:`roles` para papéis adicionados pelo Sphinx."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:313
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:341
 msgid "Explicit Markup"
 msgstr "Marcação Explícita"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:315
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:343
 msgid ""
 "\"Explicit markup\" (:duref:`ref <explicit-markup-blocks>`) is used in "
 "reStructuredText for most constructs that need special handling, such as "
@@ -526,7 +553,7 @@ msgstr ""
 "recursos especiais como notas de rodapé, parágrafos destacados, comentários "
 "e diretivas gerais."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:319
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:347
 msgid ""
 "An explicit markup block begins with a line starting with ``..`` followed by"
 " whitespace and is terminated by the next paragraph at the same level of "
@@ -540,11 +567,11 @@ msgstr ""
 " parágrafos normais. Essa maneira pode parecer complicado, mas é a maneira "
 "intuitiva que já usamos para escrever.)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:329
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:357
 msgid "Directives"
 msgstr "Diretivas"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:331
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:359
 msgid ""
 "A directive (:duref:`ref <directives>`) is a generic block of explicit "
 "markup. Along with roles, it is one of the extension mechanisms of "
@@ -554,11 +581,11 @@ msgstr ""
 "explícita. Junto com os papéis, é um dos mecanismos de extensão do "
 "reStructuredText, e o Sphinx faz uso pesado dele."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:335
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:363
 msgid "Docutils supports the following directives:"
 msgstr "Docutils suporta as seguintes diretivas:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:337
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:365
 msgid ""
 "Admonitions: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`, "
 ":dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`, "
@@ -572,23 +599,23 @@ msgstr ""
 "<admonitions>`.  (A maioria temas estilizam apenas \"note\" e \"warning\" "
 "especialmente.)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:343
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:371
 msgid "Images:"
 msgstr "Imagens:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:345
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:373
 msgid ":dudir:`image` (see also Images_ below)"
 msgstr ":dudir:`image` (ver também Imagens_ abaixo)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:346
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:374
 msgid ":dudir:`figure` (an image with caption and optional legend)"
 msgstr ":dudir:`figure` (uma imagem com legenda e legenda opcional)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:348
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:376
 msgid "Additional body elements:"
 msgstr "Elementos adicionais do corpo:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:350
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:378
 msgid ""
 ":dudir:`contents <table-of-contents>` (a local, i.e. for the current file "
 "only, table of contents)"
@@ -596,7 +623,7 @@ msgstr ""
 ":dudir:`contents <table-of-contents>` (um local, ex., para o arquivo autal "
 "somente, sumário toc)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:352
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:380
 msgid ""
 ":dudir:`container` (a container with a custom class, useful to generate an "
 "outer ``<div>`` in HTML)"
@@ -604,26 +631,26 @@ msgstr ""
 ":dudir:`container` (um container com classe configurada, util para gerar "
 "separação ``<div>`` em HTML)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:354
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:382
 msgid ""
 ":dudir:`rubric` (a heading without relation to the document sectioning)"
 msgstr ":dudir:`rubric` (um cabeçalho sem relação com a seção do documento)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:355
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:383
 msgid ":dudir:`topic`, :dudir:`sidebar` (special highlighted body elements)"
 msgstr ""
 ":dudir:`topic`, :dudir:`sidebar` (elementos destadacos especiais no corpo do"
 " documento)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:356
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:384
 msgid ":dudir:`parsed-literal` (literal block that supports inline markup)"
 msgstr ":dudir:`parsed-literal` (bloco literal que suporta marcação inline)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:357
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:385
 msgid ":dudir:`epigraph` (a block quote with optional attribution line)"
 msgstr ":dudir:`epigraph` (bloco epigrafado com atribuito opcional de linha)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:358
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:386
 msgid ""
 ":dudir:`highlights`, :dudir:`pull-quote` (block quotes with their own class "
 "attribute)"
@@ -631,37 +658,37 @@ msgstr ""
 ":dudir:`highlights`, :dudir:`pull-quote` (bloco com seus próprios atributos "
 "de classe)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:360
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:388
 msgid ":dudir:`compound <compound-paragraph>` (a compound paragraph)"
 msgstr ":dudir:`compound <compound-paragraph>` (parágrafo de composição)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:362
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:390
 msgid "Special tables:"
 msgstr "Tabelas Especiais"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:364
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:392
 msgid ":dudir:`table` (a table with title)"
 msgstr ":dudir:`table` (tabela com título)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:365
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:393
 msgid ":dudir:`csv-table` (a table generated from comma-separated values)"
 msgstr ":dudir:`csv-table` (tabela gerada com valores separados por virgulas)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:366
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:394
 msgid ":dudir:`list-table` (a table generated from a list of lists)"
 msgstr ":dudir:`list-table` (tabela gerada lista de listas)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:368
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:396
 msgid "Special directives:"
 msgstr "Diretivas Especiais:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:370
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:398
 msgid ""
 ":dudir:`raw <raw-data-pass-through>` (include raw target-format markup)"
 msgstr ""
 ":dudir:`raw <raw-data-pass-through>` (incluir marcação formato alvo bruto)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:371
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:399
 msgid ""
 ":dudir:`include` (include reStructuredText from another file) -- in Sphinx, "
 "when given an absolute include file path, this directive takes it as "
@@ -671,12 +698,12 @@ msgstr ""
 "quando informado o caminho absoluto do arquivo, essa diretiva torna isso "
 "relativo ao diretório fonte"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:377
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:405
 msgid ":dudir:`class` (assign a class attribute to the next element)"
 msgstr ""
 ":dudir:`class` (atribui um atributo de classe para o próximo elemento)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:381
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:409
 msgid ""
 "When the default domain contains a ``class`` directive, this directive will "
 "be shadowed.  Therefore, Sphinx re-exports it as ``rst-class``."
@@ -684,7 +711,7 @@ msgstr ""
 "Quando um domínio padrão contém diretiva classe ``class``, essa diretiva "
 "será ocultada, entretanto, Sphinx irá reexportá-la como ``rst-class``."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:386
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:414
 msgid ""
 "If you want to add a class to a directive, you may consider the ``:class:`` "
 ":dudir:`option <common-options>` instead, which is supported by most "
@@ -694,11 +721,11 @@ msgstr ""
 ":dudir:`opção <common-options>` ``:class:``, que é suportada pela maioria "
 "das diretivas e permite uma notação mais compacta."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:390
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:418
 msgid "HTML specifics:"
 msgstr "Especificidades HTML:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:392
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:420
 msgid ""
 ":dudir:`meta` (generation of HTML ``<meta>`` tags, see also :ref:`html-meta`"
 " below)"
@@ -706,24 +733,24 @@ msgstr ""
 ":dudir:`meta` (geração de tags ``<meta>`` HTML, veja também :ref:`html-meta`"
 " abaixo)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:394
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:422
 msgid ":dudir:`title <metadata-document-title>` (override document title)"
 msgstr ""
 ":dudir:`title <metadata-document-title>` (sobrepõe título do documento)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:396
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:424
 msgid "Influencing markup:"
 msgstr "Influenciando Markup:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:398
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:426
 msgid ":dudir:`default-role` (set a new default role)"
 msgstr ":dudir:`default-role` (define nova role padrão)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:399
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:427
 msgid ":dudir:`role` (create a new role)"
 msgstr ":dudir:`role` (cria nova role)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:401
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:429
 msgid ""
 "Since these are only per-file, better use Sphinx's facilities for setting "
 "the :confval:`default_role`."
@@ -731,7 +758,7 @@ msgstr ""
 "Desde que haja somente um por arquivo, melhor usar funcionalidades Sphinx "
 "para configurar :confval:`default_role`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:406
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:434
 msgid ""
 "Do *not* use the directives :dudir:`sectnum`, :dudir:`header` and "
 ":dudir:`footer`."
@@ -739,12 +766,12 @@ msgstr ""
 "*Não* utilize as diretivas  :dudir:`sectnum`, :dudir:`header` nem "
 ":dudir:`footer`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:409
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:437
 msgid "Directives added by Sphinx are described in :doc:`directives`."
 msgstr ""
 "As diretivas adicionadas pelo Sphinx são descritas em :doc:`directives`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:411
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:439
 msgid ""
 "Basically, a directive consists of a name, arguments, options and content. "
 "(Keep this terminology in mind, it is used in the next chapter describing "
@@ -754,7 +781,7 @@ msgstr ""
 " (Mantendo esta terminologia em mente, isso será descrito no próximo "
 "capítulo descrevendo diretivas personalizadas.) Veja nesse exemplo::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:421
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:449
 msgid ""
 "``function`` is the directive name.  It is given two arguments here, the "
 "remainder of the first line and the second line, as well as one option "
@@ -767,7 +794,7 @@ msgstr ""
 "(como pode ver, opções são dadas em linhas imediatamente consecutivas aos "
 "argumentos e indicadas por dois pontos)."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:427
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:455
 msgid ""
 "The directive content follows after a blank line and is indented relative to"
 " the directive start or if options are present, by the same amount as the "
@@ -777,7 +804,7 @@ msgstr ""
 "relativa ao início da diretiva ou se as opções estão presentes, pela mesma "
 "quantidade que as opções."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:431
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:459
 msgid ""
 "Be careful as the indent is not a fixed number of whitespace, e.g. three, "
 "but any number whitespace.  This can be surprising when a fixed indent is "
@@ -789,7 +816,7 @@ msgstr ""
 "surpreendente quando um recuo fixo é usado em todo o documento e pode fazer "
 "a diferença para diretivas que são sensíveis a espaços em branco. Comparar::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:445
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:473
 msgid ""
 "In the first code block, the indent for the content was fixated by the "
 "option line to three spaces, consequently the content starts with four "
@@ -801,11 +828,11 @@ msgstr ""
 "espaços. Neste último, o recuo foi fixado pelo próprio conteúdo em sete "
 "espaços, portanto, não inicia com um espaço."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:452
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:480
 msgid "Images"
 msgstr "Imagens"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:454
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:482
 msgid ""
 "reStructuredText supports an image directive (:dudir:`ref <image>`), used "
 "like so::"
@@ -813,7 +840,7 @@ msgstr ""
 "reStructuredText suporta diretiva de imagem (:dudir:`ref <image>`), usada "
 "assim::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:459
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:487
 msgid ""
 "When used within Sphinx, the file name given (here ``gnu.png``) must either "
 "be relative to the source file, or absolute which means that they are "
@@ -826,7 +853,7 @@ msgstr ""
 "projeto. Por exemplo, o arquivo ``sketch/spam.rst`` refere-se a uma imagem "
 "``images/spam.png`` como ``../images/spam.png`` ou ``/images/spam.png``."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:465
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:493
 msgid ""
 "Sphinx will automatically copy image files over to a subdirectory of the "
 "output directory on building (e.g. the ``_static`` directory for HTML "
@@ -835,7 +862,7 @@ msgstr ""
 "Sphinx irá automaticamente copiar o arquivo de imagem para um subdiretório "
 "do diretório de construção (ex.: diretório ``_static`` para saída HTML.)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:468
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:496
 msgid ""
 "Interpretation of image size options (``width`` and ``height``) is as "
 "follows: if the size has no unit or the unit is pixels, the given size will "
@@ -849,7 +876,7 @@ msgstr ""
 " como ``pt`` (pontos) será usado para saída HTML e LaTeX (``pt`` por ``bp`` "
 "pois é uma unidade TeX como ``72bp=1in``)."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:474
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:502
 msgid ""
 "Sphinx extends the standard docutils behavior by allowing an asterisk for "
 "the extension::"
@@ -857,7 +884,7 @@ msgstr ""
 "Sphinx expande os padrões e comportamentos de docutils permitindo "
 "extensões::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:479
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:507
 msgid ""
 "Sphinx then searches for all images matching the provided pattern and "
 "determines their type.  Each builder then chooses the best image out of "
@@ -875,27 +902,27 @@ msgstr ""
 "preferiria o último. Os tipos de imagem suportados e a prioridade de escolha"
 " são definidos em :doc:`/usage/builders/index`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:487
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:515
 msgid "Note that image file names should not contain spaces."
 msgstr "Note que um arquivo com nome de imagem não pode conter espaços."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:489
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:517
 msgid "Added the support for file names ending in an asterisk."
 msgstr "Adicionado suporte a arquivo com nomes terminados com asterisco."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:492
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:520
 msgid "Image paths can now be absolute."
 msgstr "Imagens podem ter caminho absoluto."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:495
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:523
 msgid "latex target supports pixels (default is ``96px=1in``)."
 msgstr "alvo latex tem suporte a pixels (padrão é ``96px=1in``)."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:500
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:528
 msgid "Footnotes"
 msgstr "Notas de Rodapé"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:502
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:530
 msgid ""
 "For footnotes (:duref:`ref <footnotes>`), use ``[#name]_`` to mark the "
 "footnote location, and add the footnote body at the bottom of the document "
@@ -905,7 +932,7 @@ msgstr ""
 "o local da nota de rodapé e adicionar corpo da nota de rodape na base do "
 "documento após a rubrica \"Footnotes\" desse modo::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:513
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:541
 msgid ""
 "You can also explicitly number the footnotes (``[1]_``) or use auto-numbered"
 " footnotes without names (``[#]_``)."
@@ -913,11 +940,11 @@ msgstr ""
 "Pode também ser explicitado o número da nota de rodapé (``[1]_``) ou usar "
 "notas de rodapé autonumeradas sem nomes (``[#]_``)."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:518
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:546
 msgid "Citations"
 msgstr "Citações"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:520
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:548
 msgid ""
 "Standard reStructuredText citations (:duref:`ref <citations>`) are "
 "supported, with the additional feature that they are \"global\", i.e. all "
@@ -927,7 +954,7 @@ msgstr ""
 "suportadas, com a funcionalidade adicional que é ser \"global\", ou seja, "
 "todas citações são referenciadas em todos os arquivos. Use-as assim::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:528
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:556
 msgid ""
 "Citation usage is similar to footnote usage, but with a label that is not "
 "numeric or begins with ``#``."
@@ -935,11 +962,11 @@ msgstr ""
 "Citação é usada de maneira similar ao uso de notas de rodapé, mas com um "
 "rótulo que não é numérico nem começa com ``#``."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:533
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:561
 msgid "Substitutions"
 msgstr "Substituições"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:535
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:563
 msgid ""
 "reStructuredText supports \"substitutions\" (:duref:`ref <substitution-"
 "definitions>`), which are pieces of text and/or markup referred to in the "
@@ -951,11 +978,11 @@ msgstr ""
 "texto por ``|name|``. São definidos como notas de rodapé com blocos de "
 "marcações explícitos como esse::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:541
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:569
 msgid "or this::"
 msgstr "ou assim::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:546
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:574
 msgid ""
 "See the :duref:`reStructuredText reference for substitutions <substitution-"
 "definitions>` for details."
@@ -963,7 +990,7 @@ msgstr ""
 "Veja a :duref:`referência reStructuredText para substituições <substitution-"
 "definitions>` para detalhes."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:551
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:579
 msgid ""
 "If you want to use some substitutions for all documents, put them into "
 ":confval:`rst_prolog` or :confval:`rst_epilog` or put them into a separate "
@@ -980,18 +1007,18 @@ msgstr ""
 "arquivos fonte, para evitar que o Sphinx o encontre como um documento "
 "independente.)"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:558
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:586
 msgid ""
 "Sphinx defines some default substitutions, see :ref:`default-substitutions`."
 msgstr ""
 "Sphinx define algumas substituições padrões, ver :ref:`default-"
 "substitutions`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:562
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:590
 msgid "Comments"
 msgstr "Comentários"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:564
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:592
 msgid ""
 "Every explicit markup block which isn't a valid markup construct (like the "
 "footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For "
@@ -1001,17 +1028,17 @@ msgstr ""
 "notas de rodapé acima) é entendida como um comentário  (:duref:`ref "
 "<comments>`). Por exemplo::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:570
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:598
 msgid "You can indent text after a comment start to form multiline comments::"
 msgstr ""
 "Pode ser indentado texto após um comentário iniciar em um formulário de "
 "múltiplos comentários::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:582
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:610
 msgid "HTML Metadata"
 msgstr "Metadados de HTML"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:584
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:612
 msgid ""
 "The :dudir:`meta` directive allows specifying the HTML `metadata element`_ "
 "of a Sphinx documentation page.  For example, the directive::"
@@ -1019,11 +1046,11 @@ msgstr ""
 "A diretiva :dudir:`meta` permite especificar o `elemento de metadados`_ de "
 "HTML de uma página de documentação do Sphinx. Por exemplo, a diretiva::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:592
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:620
 msgid "will generate the following HTML output:"
 msgstr "vai gerar a seguinte saída HTML:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:599
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:627
 msgid ""
 "Also, Sphinx will add the keywords as specified in the meta directive to the"
 " search index.  Thereby, the ``lang`` attribute of the meta element is "
@@ -1033,7 +1060,7 @@ msgstr ""
 "diretiva meta ao índice de pesquisa. Assim, o atributo ``lang`` do elemento "
 "meta é considerado. Por exemplo, a diretiva::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:608
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:636
 msgid ""
 "adds the following words to the search indices of builds with different "
 "language configurations:"
@@ -1041,25 +1068,25 @@ msgstr ""
 "adiciona as seguintes palavras aos índices de pesquisa de construções com "
 "diferentes configurações do idioma::"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:611
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:639
 msgid "``pleasefindthiskey``, ``pleasefindthiskeytoo`` to *English* builds;"
 msgstr ""
 "``pleasefindthiskey``, ``pleasefindthiskeytoo`` para construções em "
 "*inglês*;"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:612
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:640
 msgid "``bittediesenkeyfinden`` to *German* builds;"
 msgstr "``bittediesenkeyfinden`` para construções em *alemão*;"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:613
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:641
 msgid "``backup`` to builds in all languages."
 msgstr "``backup`` para construções em todos os idiomas."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:619
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:647
 msgid "Source encoding"
 msgstr "Codificação Página"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:621
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:649
 msgid ""
 "Since the easiest way to include special characters like em dashes or "
 "copyright signs in reStructuredText is to directly write them as Unicode "
@@ -1073,11 +1100,11 @@ msgstr ""
 "fonte estejam em UTF-8 por padrão; isso pode ser modificado através do valor"
 " de configuração :confval:`source_encoding`."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:628
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:656
 msgid "Gotchas"
 msgstr "Pegadinhas"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:630
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:658
 msgid ""
 "There are some problems one commonly runs into while authoring "
 "reStructuredText documents:"
@@ -1085,7 +1112,7 @@ msgstr ""
 "Existem algumas pegadinhas que são comuns quando criamos documentos "
 "reStructuredText:"
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:633
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:661
 msgid ""
 "**Separation of inline markup:** As said above, inline markup spans must be "
 "separated from the surrounding text by non-word characters, you have to use "
@@ -1097,7 +1124,7 @@ msgstr ""
 "usado barra invertida como escape de espaço. Ver :duref:`a referência "
 "<substitution-definitions>` para detalhes."
 
-#: ../../sphinx/doc/usage/restructuredtext/basics.rst:638
+#: ../../sphinx/doc/usage/restructuredtext/basics.rst:666
 msgid ""
 "**No nested inline markup:** Something like ``*see :func:`foo`*`` is not "
 "possible."

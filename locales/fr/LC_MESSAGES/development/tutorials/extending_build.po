@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-08 01:05+0000\n"
+"POT-Creation-Date: 2025-06-09 01:03+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/sphinx-doc/teams/15434/fr/)\n"
@@ -257,17 +257,15 @@ msgstr ""
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:170
 msgid ""
 "On creating admonition node, the content body of the directive are parsed "
-"using ``self.state.nested_parse``.  The first argument gives the content "
-"body, and the second one gives content offset.  The third argument gives the"
-" parent node of parsed result, in our case the ``todo`` node. Following "
-"this, the ``todo`` node is added to the environment.  This is needed to be "
-"able to create a list of all todo entries throughout the documentation, in "
-"the place where the author puts a ``todolist`` directive.  For this case, "
-"the environment attribute ``todo_all_todos`` is used (again, the name should"
-" be unique, so it is prefixed by the extension name).  It does not exist "
-"when a new environment is created, so the directive must check and create it"
-" if necessary.  Various information about the todo entry's location are "
-"stored along with a copy of the node."
+"using ``self.parse_content_to_nodes()``. Following this, the ``todo`` node "
+"is added to the environment. This is needed to be able to create a list of "
+"all todo entries throughout the documentation, in the place where the author"
+" puts a ``todolist`` directive. For this case, the environment attribute "
+"``todo_all_todos`` is used (again, the name should be unique, so it is "
+"prefixed by the extension name). It does not exist when a new environment is"
+" created, so the directive must check and create it if necessary. Various "
+"information about the todo entry's location are stored along with a copy of "
+"the node."
 msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:182
@@ -332,9 +330,10 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:242
 msgid ""
-"The :event:`doctree-resolved` event is emitted at the end of :ref:`phase 3 "
-"(resolving) <build-phases>` and allows custom resolving to be done. The "
-"handler we have written for this event is a bit more involved. If the "
+"The :event:`doctree-resolved` event is emitted for each document that is "
+"about to be written at the end of :ref:`phase 3 (resolving) <build-phases>` "
+"and allows custom resolving to be done on that document. The handler we have"
+" written for this event is a bit more involved. If the "
 "``todo_include_todos`` config value (which we'll describe shortly) is false,"
 " all ``todo`` and ``todolist`` nodes are removed from the documents. If not,"
 " ``todo`` nodes just stay where and how they are.  ``todolist`` nodes are "
@@ -348,11 +347,11 @@ msgid ""
 "(the target's) ID as the anchor name."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:258
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:259
 msgid "The ``setup`` function"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:261
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:262
 msgid ""
 "As noted :ref:`previously <tutorial-extending-syntax>`, the ``setup`` "
 "function is a requirement and is used to plug directives into Sphinx. "
@@ -360,31 +359,27 @@ msgid ""
 "look at our ``setup`` function:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:271
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:272
 msgid ""
 "The calls in this function refer to the classes and functions we added "
 "earlier. What the individual calls do is the following:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:274
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:275
 msgid ""
 ":meth:`~Sphinx.add_config_value` lets Sphinx know that it should recognize "
-"the new *config value* ``todo_include_todos``, whose default value should be"
-" ``False`` (this also tells Sphinx that it is a boolean value)."
+"the new *config value* ``todo_include_todos``, whose default value is "
+"``False`` (which also tells Sphinx that it is a boolean value)."
 msgstr ""
-":meth:`~Sphinx.add_config_value` indique à Sphinx qu'il doit reconnaître la "
-"nouvelle valeur *config* ``todo_include_todos``, dont la valeur par défaut "
-"doit être ``False`` (ceci indique également à Sphinx qu'il s'agit d'une "
-"valeur booléenne) ."
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:278
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:279
 msgid ""
-"If the third argument was ``'html'``, HTML documents would be full rebuild "
+"If the third argument was ``'html'``, HTML documents would be fully rebuilt "
 "if the config value changed its value.  This is needed for config values "
 "that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:282
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:283
 msgid ""
 ":meth:`~Sphinx.add_node` adds a new *node class* to the build system.  It "
 "also can specify visitor functions for each supported output format.  These "
@@ -393,13 +388,13 @@ msgid ""
 " :ref:`phase 3 (resolving) <build-phases>`, it doesn't need any."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:288
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:289
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:290
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:291
 msgid ""
 "Finally, :meth:`~Sphinx.connect` adds an *event handler* to the event whose "
 "name is given by the first argument.  The event handler function is called "
@@ -410,59 +405,59 @@ msgstr ""
 "gestionnaire d'événement est appelée avec plusieurs arguments qui sont "
 "documentés avec l'événement."
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:294
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:295
 msgid "With this, our extension is complete."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:298
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:299
 msgid "Using the extension"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:300
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:301
 msgid ""
 "As before, we need to enable the extension by declaring it in our "
 ":file:`conf.py` file. There are two steps necessary here:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:303
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:304
 msgid ""
 "Add the :file:`_ext` directory to the `Python path`_ using "
 "``sys.path.append``. This should be placed at the top of the file."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:306
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:307
 msgid ""
 "Update or create the :confval:`extensions` list and add the extension file "
 "name to the list"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:309
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:310
 msgid ""
 "In addition, we may wish to set the ``todo_include_todos`` config value. As "
 "noted above, this defaults to ``False`` but we can set it explicitly."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:312
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:313
 msgid "For example:"
 msgstr "Par exemple :"
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:325
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:326
 msgid "You can now use the extension throughout your project. For example:"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:327
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:328
 msgid "index.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:341
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:342
 msgid "somefile.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:351
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:352
 msgid "someotherfile.rst"
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:361
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:362
 msgid ""
 "Because we have configured ``todo_include_todos`` to ``False``, we won't "
 "actually see anything rendered for the ``todo`` and ``todolist`` directives."
@@ -470,17 +465,17 @@ msgid ""
 "previously."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:368
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:369
 msgid "Further reading"
 msgstr "Lectures complémentaires"
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:370
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:371
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."
 msgstr ""
 
-#: ../../sphinx/doc/development/tutorials/extending_build.rst:373
+#: ../../sphinx/doc/development/tutorials/extending_build.rst:374
 msgid ""
 "If you wish to share your extension across multiple projects or with others,"
 " check out the :ref:`third-party-extensions` section."

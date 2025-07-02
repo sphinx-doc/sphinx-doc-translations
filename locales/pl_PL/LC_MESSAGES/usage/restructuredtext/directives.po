@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-30 01:04+0000\n"
+"POT-Creation-Date: 2025-07-02 01:01+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Language-Team: Polish (Poland) (https://app.transifex.com/sphinx-doc/teams/15434/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:797
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1218
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1378
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1601
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1624
 msgid "Options"
 msgstr ""
 
@@ -650,7 +650,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:627
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:884
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:926
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1605
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1628
 msgid ""
 "Assign `class attributes`_. This is a :dudir:`common option <common-"
 "options>`."
@@ -658,7 +658,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:633
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:936
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1613
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1636
 msgid ""
 "An implicit target name that can be referenced using :rst:role:`ref`. This "
 "is a :dudir:`common option <common-options>`."
@@ -1475,25 +1475,52 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/restructuredtext/directives.rst:1502
 msgid ""
-":rst:dir:`tabularcolumns` can serve to provide one's own \"colspec\" choice."
-" Here is an advanced example:"
+"The ``tabulary`` algorithm often works well, but in some cases when a cell "
+"contains long paragraphs, the column will be given a large width and other "
+"columns whose cells contain only single words may end up too narrow.  The "
+":rst:dir:`tabularcolumns` can help solve this via providing to LaTeX a "
+"custom \"alignment preamble\" (aka \"colspec\").  For example ``lJJ`` will "
+"be suitable for a three-columns table whose first column contains only "
+"single words and the other two have cells with long paragraphs."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1509
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1512
+msgid ""
+"Of course, a fully automated solution would be better, and it is still hoped"
+" for, but it is an intrinsic aspect of ``tabulary``, and the latter is in "
+"use by Sphinx ever since ``0.3``...  It looks as if solving the problem of "
+"squeezed columns could require substantial changes to that LaTeX package.  "
+"And no good alternative appears to exist, as of 2025."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1520
+msgid ""
+"A way to solve the issue for all tables at once, is to inject in the LaTeX "
+"preamble (see :confval:`latex_elements`) a command such as "
+"``\\setlength{\\tymin}{1cm}`` which causes all columns to be at least "
+"``1cm`` wide (not counting inter-column whitespace).  Currently, Sphinx "
+"configures ``\\tymin`` to allow room for three characters at least."
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1526
+msgid "Here is a more sophisticated \"colspec\", for a 4-columns table:"
+msgstr ""
+
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1532
 msgid ""
 "This is used in Sphinx own PDF docs at :ref:`dev-deprecated-apis`. Regarding"
 " column widths, this \"colspec\" achieves the same as would ``:widths:`` "
 "option set to ``40 10 12 38`` but it injects extra effects."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1515
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1538
 msgid ""
 "In case both :rst:dir:`tabularcolumns` and ``:widths:`` option of table "
 "directives are used, ``:widths:`` option will be ignored by the LaTeX "
 "builder.  Of course it is obeyed by other builders."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1519
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1542
 msgid ""
 "Literal blocks do not work at all with ``tabulary`` and Sphinx will then "
 "fall back to ``tabular`` LaTeX environment.  It will employ the "
@@ -1502,7 +1529,7 @@ msgid ""
 "``C`` and ``J``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1525
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1548
 msgid ""
 "Besides the LaTeX ``l``, ``r``, ``c`` and ``p{width}`` column specifiers, "
 "and the ``tabulary`` specific ``L``, ``R``, ``C`` and ``J``, one can also "
@@ -1512,7 +1539,7 @@ msgid ""
 "``0.2`` times the line width."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1534
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1557
 msgid ""
 "Sphinx uses ``J`` (justified) by default with ``tabulary``, not ``L`` "
 "(flushed-left).  To revert, include ``\\newcolumntype{T}{L}`` in the LaTeX "
@@ -1520,7 +1547,7 @@ msgid ""
 " of ``J``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1541
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1564
 msgid ""
 "Formerly, Sphinx did not use ``tabulary`` if the table had at least one cell"
 " containing \"problematic\" elements such as lists, object descriptions, "
@@ -1535,62 +1562,62 @@ msgid ""
 " with no such contents will be tighter."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1555
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1578
 msgid ""
 "To force usage of the LaTeX ``longtable`` environment pass ``longtable`` as "
 "a ``:class:`` option to :dudir:`table`, :dudir:`csv-table`, or :dudir:`list-"
 "table`.  Use :ref:`rst-class <rstclass>` for other tables."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1560
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1583
 msgid "Math"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1562
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1585
 msgid ""
 "The input language for mathematics is LaTeX markup.  This is the de-facto "
 "standard for plain-text math notation and has the added advantage that no "
 "further translation is necessary when building LaTeX output."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1566
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1589
 msgid ""
 "Keep in mind that when you put math markup in **Python docstrings** read by "
 ":mod:`autodoc <sphinx.ext.autodoc>`, you either have to double all "
 "backslashes, or use Python raw strings (``r\"raw\"``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1572
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1595
 msgid ""
 "Directive for displayed math (math that takes the whole line for itself)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1574
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1597
 msgid ""
 "The directive supports multiple equations, which should be separated by a "
 "blank line::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1583
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1606
 msgid ""
 "In addition, each single equation is set within a ``split`` environment, "
 "which means that you can have multiple aligned lines in an equation, aligned"
 " at ``&`` and separated by ``\\\\``::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1592
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1615
 msgid ""
 "For more details, look into the documentation of the `AmSMath LaTeX "
 "package`_."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1595
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1618
 msgid ""
 "When the math is only one line of text, it can also be given as a directive "
 "argument::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1619
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1642
 msgid ""
 "Normally, equations are not numbered.  If you want your equation to get a "
 "number, use the ``label`` option.  When given, it selects an internal label "
@@ -1599,46 +1626,46 @@ msgid ""
 "numbering style depends on the output format."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1627
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1650
 msgid ""
 "Prevent wrapping of the given math in a math environment. When you give this"
 " option, you must make sure yourself that the math is properly set up. For "
 "example::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1642
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1665
 msgid "The directive option ``:nowrap:`` was renamed to ``:no-wrap:``."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1644
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1667
 msgid ""
 "The previous name has been retained as an alias, but will be deprecated and "
 "removed in a future version of Sphinx."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1652
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1675
 msgid ":ref:`math-support`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1653
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1676
 msgid "Rendering options for math with HTML builders."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1655
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1678
 msgid ":confval:`latex_engine`"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1656
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1679
 msgid ""
 "Explains how to configure LaTeX builder to support Unicode literals in math "
 "mark-up."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1661
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1684
 msgid "Grammar production displays"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1663
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1686
 msgid ""
 "Special markup is available for displaying the productions of a formal "
 "grammar. The markup is simple and does not attempt to model all aspects of "
@@ -1648,7 +1675,7 @@ msgid ""
 "directive:"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1674
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1697
 msgid ""
 "This directive is used to enclose a group of productions. Each production is"
 " given on a single line and consists of a name, separated by a colon from "
@@ -1658,7 +1685,7 @@ msgid ""
 "directive arguments."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1681
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1704
 msgid ""
 "The optional *production_group* directive argument serves to distinguish "
 "different sets of production lists that belong to different grammars. "
@@ -1668,7 +1695,7 @@ msgid ""
 "same *production_group*."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1688
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1711
 msgid ""
 "The definition can contain token names which are marked as interpreted text,"
 " (e.g. \"``sum ::= `integer` \"+\" `integer```\"), to generate cross-"
@@ -1683,7 +1710,7 @@ msgid ""
 "characters (``*``, ``|``, etc) do not need to be escaped."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1701
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1724
 msgid ""
 "Token productions can be cross-referenced outwith the production list by "
 "using the :rst:role:`token` role. If you have used a *production_group* "
@@ -1694,21 +1721,21 @@ msgid ""
 "with a tilde (``~``)."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1710
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1733
 msgid "The following is an example taken from the Python Reference Manual::"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1723
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1746
 msgid "Footnotes"
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1724
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1747
 msgid ""
 "The LaTeX writer only refers the ``maxdepth`` option of first toctree "
 "directive in the document."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1727
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1750
 msgid ""
 "A note on available globbing syntax: you can use the standard shell "
 "constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that "
@@ -1716,20 +1743,20 @@ msgid ""
 "any sequence of characters *including* slashes."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1732
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1755
 msgid ""
 "There is a standard ``.. include`` directive, but it raises errors if the "
 "file is not found.  This one only emits a warning."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1735
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1758
 msgid ""
 "For most builders name and format are the same. At the moment only builders "
 "derived from the html builder distinguish between the builder format and the"
 " builder name."
 msgstr ""
 
-#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1739
+#: ../../sphinx/doc/usage/restructuredtext/directives.rst:1762
 msgid ""
 "Note that the current builder tag is not available in ``conf.py``, it is "
 "only available after the builder is initialized."

@@ -72,7 +72,7 @@ jobs:
     # 4. Commit and push changes
     - name: After success
       run: |
-        git add locales
+        git diff -I'^# Copyright ' -I'^"Project-Id-Version: ' -I'^"POT-Creation-Date: ' -I'^"Language: ' --numstat locales/**/*.po locales/**/*.pot | cut -f3 | xargs -r git add -v
         git add sphinx
         git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
     - name: GitHub Push
@@ -87,7 +87,7 @@ jobs:
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/${{ github.repository }}/actions/workflows/test-translations.yml/dispatches \
           -d '{"ref":"master"}'
-    #5. Upload sphinx log as artifact 
+    #5. Upload sphinx log as artifact
     - uses: actions/upload-artifact@v4
       if: always()
       with:

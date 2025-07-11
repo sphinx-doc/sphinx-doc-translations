@@ -6,16 +6,16 @@
 # Translators:
 # Takayuki SHIMIZUKAWA <shimizukawa@gmail.com>, 2024
 # gilberto dos santos alves <gsavix@gmail.com>, 2024
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2024
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-29 01:07+0000\n"
+"POT-Creation-Date: 2025-07-11 01:02+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
-"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2024\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -329,6 +329,16 @@ msgid ""
 "information about the todo entry's location are stored along with a copy of "
 "the node."
 msgstr ""
+"Ao criar o nó de admonição, o corpo do conteúdo da diretiva é analisado "
+"usando ``self.parse_content_to_nodes()``. Em seguida, o nó ``todo`` é "
+"adicionado ao ambiente. Isto é necessário para poder criar uma lista de "
+"todas as entradas de tarefas ao longo da documentação, no local onde o autor"
+" coloca uma diretiva ``todolist``. Para este caso, o atributo de ambiente "
+"``todo_all_todos`` é usado (novamente, o nome deve ser único, portanto é "
+"prefixado pelo nome da extensão). Não existe quando um novo ambiente é "
+"criado, portanto a diretiva deve verificá-lo e criá-lo se necessário. Várias"
+" informações sobre a localização da entrada de tarefas são armazenadas junto"
+" com uma cópia do nó."
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:182
 msgid ""
@@ -418,6 +428,22 @@ msgid ""
 "suitable URI depending on the used builder, and appending the todo node's "
 "(the target's) ID as the anchor name."
 msgstr ""
+"O evento :event:`doctree-resolved` é emitido para cada documento que está "
+"prestes a ser escrito no final da :ref:`fase 3 (resolução) <build-phases>` e"
+" permite que a resolução personalizada seja feita naquele documento. O "
+"manipulador que escrevemos para este evento é um pouco mais envolvente. Se o"
+" valor de configuração ``todo_include_todos`` (que descreveremos em breve) "
+"for falso, todos os nós ``todo`` e ``todolist`` serão removidos dos "
+"documentos. Caso contrário, os nós ``todo`` apenas permanecem onde e como "
+"estão. Os nós ``todolist`` são substituídos por uma lista de entradas de "
+"tarefas completas com backlinks para o local de onde elas vêm. Os itens da "
+"lista são compostos pelos nós da entrada ``todo`` e nós docutils criados "
+"dinamicamente: um parágrafo para cada entrada, contendo texto que fornece o "
+"local, e um link (nó de referência contendo um nó em itálico) com o "
+"referência retroativa. O URI de referência é construído por "
+":meth:`sphinx.builders.Builder.get_relative_uri` que cria um URI adequado "
+"dependendo do construtor usado e anexando o ID do nó de tarefas (o alvo) "
+"como o nome da âncora."
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:259
 msgid "The ``setup`` function"
@@ -449,6 +475,9 @@ msgid ""
 "the new *config value* ``todo_include_todos``, whose default value is "
 "``False`` (which also tells Sphinx that it is a boolean value)."
 msgstr ""
+":meth:`~Sphinx.add_config_value` permite ao Sphinx saber que ele deve "
+"reconhecer o novo *valor de configuração* ``todo_include_todos``, cujo valor"
+" padrão é ``False`` (o que também diz ao Sphinx que é um valor booleano) ."
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:279
 msgid ""
@@ -456,6 +485,10 @@ msgid ""
 "if the config value changed its value.  This is needed for config values "
 "that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
 msgstr ""
+"Se o terceiro argumento fosse ``'html'``, os documentos HTML seriam "
+"completamente reconstruídos se o valor de configuração mudasse seu valor. "
+"Isto é necessário para valores de configuração que influenciam a leitura "
+"(:ref:`fase 1 (leitura) <build-phases>` da construção)."
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:283
 msgid ""

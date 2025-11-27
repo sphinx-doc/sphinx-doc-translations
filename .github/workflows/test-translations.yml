@@ -62,7 +62,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -U pip setuptools
-        pip install -r ./requirements.txt
+        pip install --group sphinx/pyproject.toml:docs -r requirements.txt
     - name: Place locales directory in Sphinx doc
       run: cp -a locales sphinx/doc/
     - name: Set Sphinx problem matcher

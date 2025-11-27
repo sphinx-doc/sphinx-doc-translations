@@ -5,6 +5,7 @@ set -ex
 
 sudo apt-get update && sudo apt-get install -y graphviz
 pip install -U pip setuptools
+pip install --group sphinx/pyproject.toml:docs
 pip install -r requirements.txt
 
 # Install Transifex CLI tool into /usr/local/bin

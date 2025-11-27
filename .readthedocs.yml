@@ -11,13 +11,9 @@ build:
   jobs:
     post_create_environment:
       - cp -a locales sphinx/doc/
+    install:
+      - pip install --upgrade pip
+      - pip install --group 'docs'
 
 submodules:
   include: all
-
-python:
-  install:
-    - method: pip
-      path: sphinx
-      extra_requirements:
-        - docs

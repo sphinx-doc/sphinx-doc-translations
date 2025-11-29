@@ -37,7 +37,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -U pip setuptools
-        pip install --group sphinx/pyproject.toml:docs -r ./requirements.txt
+        pip install -e sphinx --group sphinx/pyproject.toml:docs -r ./requirements.txt
     - name: Install Transifex CLI
       working-directory: /usr/local/bin
       run: |

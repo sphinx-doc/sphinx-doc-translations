@@ -45,21 +45,21 @@ Key points:
           :alt: Documentation Status
      - http://www.sphinx-doc.org/ca
      - https://app.readthedocs.org/projects/sphinx-ca-es/
-   * - .. image:: https://app.readthedocs.org/projects/sphinx-zh-cn/badge/?version=master
-          :target: https://www.sphinx-doc.org/zh_CN/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/zh-cn
-     - https://app.readthedocs.org/projects/sphinx-zh-cn/
-   * - .. image:: https://app.readthedocs.org/projects/sphinx-fr/badge/?version=master
-          :target: https://www.sphinx-doc.org/fr/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/fr
-     - https://app.readthedocs.org/projects/sphinx-fr/
    * - .. image:: https://app.readthedocs.org/projects/sphinx-de/badge/?version=master
           :target: https://www.sphinx-doc.org/de/master/?badge=master
           :alt: Documentation Status
      - http://www.sphinx-doc.org/de
      - https://app.readthedocs.org/projects/sphinx-de/
+   * - .. image:: https://app.readthedocs.org/projects/sphinx-es/badge/?version=master
+          :target: https://www.sphinx-doc.org/es/master/?badge=master
+          :alt: Documentation Status
+     - http://www.sphinx-doc.org/es
+     - https://app.readthedocs.org/projects/sphinx-es/
+   * - .. image:: https://app.readthedocs.org/projects/sphinx-fr/badge/?version=master
+          :target: https://www.sphinx-doc.org/fr/master/?badge=master
+          :alt: Documentation Status
+     - http://www.sphinx-doc.org/fr
+     - https://app.readthedocs.org/projects/sphinx-fr/
    * - .. image:: https://app.readthedocs.org/projects/sphinx-it-it/badge/?version=master
           :target: https://www.sphinx-doc.org/it/master/?badge=master
           :alt: Documentation Status
@@ -95,11 +95,11 @@ Key points:
           :alt: Documentation Status
      - http://www.sphinx-doc.org/sr
      - https://app.readthedocs.org/projects/sphinx-sr/
-   * - .. image:: https://app.readthedocs.org/projects/sphinx-es/badge/?version=master
-          :target: https://www.sphinx-doc.org/es/master/?badge=master
+   * - .. image:: https://app.readthedocs.org/projects/sphinx-zh-cn/badge/?version=master
+          :target: https://www.sphinx-doc.org/zh_CN/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/es
-     - https://app.readthedocs.org/projects/sphinx-es/
+     - http://www.sphinx-doc.org/zh-cn
+     - https://app.readthedocs.org/projects/sphinx-zh-cn/
 
 How to add a new language translation
 -------------------------------------

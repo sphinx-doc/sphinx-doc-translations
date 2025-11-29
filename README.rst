@@ -128,5 +128,5 @@ How to add a new language translation
 
 7. Add new translation project to parent project:
 
-   https://readthedocs.org/dashboard/sphinx/translations/
+   https://app.readthedocs.org/dashboard/sphinx/translations/
 

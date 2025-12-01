@@ -6,15 +6,16 @@
 # Translators:
 # wendi cao <651645601@qq.com>, 2024
 # YanJun Sun <zxvf6aj@sina.cn>, 2024
+# adams.gh, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-29 01:07+0000\n"
+"POT-Creation-Date: 2025-12-01 18:41+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
-"Last-Translator: YanJun Sun <zxvf6aj@sina.cn>, 2024\n"
+"Last-Translator: adams.gh, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +32,7 @@ msgid ""
 "This document provides information about creating your own theme. If you "
 "simply wish to use a pre-existing HTML themes, refer to "
 ":doc:`/usage/theming`."
-msgstr "本文档提供有关创建您自己的主题的信息。如果您只想使用预先存在的HTML主题，请参阅：doc:`/usage/themming`。"
+msgstr "本文档提供有关创建您自己的主题的信息。如果您只想使用预先存在的HTML主题，请参阅 :doc:`/usage/theming`。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:14
 msgid ""
@@ -79,7 +80,7 @@ msgid ""
 "A ``static/`` directory containing any static files that will be copied to "
 "the output static directory on build.  These can be images, styles, script "
 "files."
-msgstr "“static/`”目录，其中包含将在生成时复制到输出静态目录的任何静态文件。这些可以是图像、样式、脚本文件。"
+msgstr "``static/`` 目录，其中包含将在生成时复制到输出静态目录的任何静态文件。这些可以是图像、样式、脚本文件。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:41
 msgid "Theme configuration (``theme.toml``)"
@@ -89,11 +90,11 @@ msgstr "主题配置（``theme.toml``）"
 msgid ""
 "The :file:`theme.toml` file is a TOML_ document, containing two tables: "
 "``[theme]`` and ``[options]``."
-msgstr ":file:`theme.toml`文件为 TOML_ 文档，其包含两个表格：``[theme]``和 ``[options]``。"
+msgstr ":file:`theme.toml` 文件为 TOML_ 文档，其包含两个表格： ``[theme]`` 和 ``[options]``。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:46
 msgid "The ``[theme]`` table defines the theme's settings:"
-msgstr "``[theme]``表格定义主题设置："
+msgstr "``[theme]`` 表格定义主题设置："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:48
 msgid ""
@@ -132,7 +133,7 @@ msgstr ""
 msgid ""
 "**sidebars** (list of strings): A list of sidebar templates. This can be "
 "overridden by the user via the :confval:`html_sidebars` config value."
-msgstr "**sidebars**（字符串列表）：侧边栏模板列表。可由用户通过 :confval:`html_sidebars` 配置值覆盖之。"
+msgstr "**sidebars** （字符串列表）：侧边栏模板列表。可由用户通过 :confval:`html_sidebars` 配置值覆盖之。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:70
 msgid ""
@@ -142,8 +143,8 @@ msgid ""
 " when the CSS media query ``(prefers-color-scheme: dark)`` evaluates to "
 "true."
 msgstr ""
-"**pygments_style**（表格）：此为 TOML 表格，定义 Pygments 样式名称以用于语法加亮。表格有两个识别键： "
-"``default`` 和 ``dark``。当 CSS 媒体查询 ``(prefers-color-scheme: dark)`` 评估为 True "
+"**pygments_style** （表格）：此为 TOML 表格，定义 Pygments 样式名称以用于语法加亮。表格有两个识别键： "
+"``default`` 和 ``dark``。当 CSS 媒体查询 ``(prefers-color-scheme: dark)`` 为 True "
 "时，使用在 ``dark`` 键内定义的样式。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:76
@@ -179,8 +180,8 @@ msgid ""
 "The :file:`theme.conf` file is in INI format [1]_ (readable by the standard "
 "Python :mod:`configparser` module) and has the following structure:"
 msgstr ""
-":file:`theme.conf` 文件为 INI 格式 [1]_(可由标准的 Python "
-":mod:`configparser`模块读取），具有以下结构： "
+":file:`theme.conf` 文件为 INI 格式 [1]_ (可由标准的 Python :mod:`configparser` "
+"模块读取），具有以下结构： "
 
 #: ../../sphinx/doc/development/html_themes/index.rst:128
 msgid ""
@@ -191,7 +192,9 @@ msgid ""
 "well. If you want to also inherit the stylesheet, include it via CSS' "
 "``@import`` in your own."
 msgstr ""
-"**inherit**设置提供“基本主题”或“无”的名称。基本主题将用于查找缺少的模板（如果大多数主题使用“basic”作为基本主题，则大多数主题不必提供大多数模板），它的选项将被继承，并且它的所有静态文件也将被使用。如果您还想继承样式表，可以通过CSS'`@import``将其包含在自己的样式表中。"
+"**inherit** "
+"设置提供“基本主题”或“无”的名称。基本主题将用于查找缺少的模板（如果大多数主题使用“basic”作为基本主题，则大多数主题不必提供大多数模板），它的选项将被继承，并且它的所有静态文件也将被使用。如果您还想继承样式表，可以通过CSS'"
+" ``@import`` 将其包含在自己的样式表中。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:135
 msgid ""
@@ -208,7 +211,8 @@ msgid ""
 " highlighting.  This can be overridden by the user in the "
 ":confval:`pygments_style` config value."
 msgstr ""
-"**pygments\\ustyle**设置提供用于突出显示的pygments样式的名称。用户可以在：confval:`pygments\\ustyle`配置值中重写此设置。"
+"**pygments_style** 设置提供用于突出显示的pygments样式的名称。用户可以在 :confval:`pygments_style` "
+"配置值中重写此设置。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:145
 msgid ""
@@ -218,8 +222,8 @@ msgid ""
 ":meth:`~sphinx.application.Sphinx.add_css_file`."
 msgstr ""
 "**pygments_dark_style** 设置给予 Pygments 样式名称以在 CSS 媒体查询 ``(prefers-color-"
-"scheme: dark)`` 评估为 True 时用作语法加亮。使用 "
-":meth:`~sphinx.application.Sphinx.add_css_file`将其注射到网页。"
+"scheme: dark)`` 为 True 时用作语法加亮。使用 "
+":meth:`~sphinx.application.Sphinx.add_css_file` 将其注射到网页。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:150
 msgid ""
@@ -227,7 +231,8 @@ msgid ""
 " for constructing sidebars.  This can be overridden by the user in the "
 ":confval:`html_sidebars` config value."
 msgstr ""
-"**sidebars**设置提供了用逗号分隔的侧边栏模板列表，用于构造提要栏。用户可以在：confval:`html_sidebars`配置值中覆盖此值。"
+"**sidebars** 设置提供了用逗号分隔的侧边栏模板列表，用于构造提要栏。用户可以在 :confval:`html_sidebars` "
+"配置值中覆盖此值。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:154
 msgid ""
@@ -236,7 +241,8 @@ msgid ""
 ":confval:`html_theme_options` and are accessible from all templates as "
 "``theme_<name>``."
 msgstr ""
-"**options**部分包含变量名和默认值对。用户可以在以下位置重写这些选项：confval:`html_theme_options`并且可以从所有模板中以“theme_1`”的形式访问这些选项。"
+"**options** 部分包含变量名和默认值对。用户可以在以下位置重写这些选项 :confval:`html_theme_options` "
+"并且可以从所有模板中以 ``theme_<name>`` 的形式访问这些选项。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:158
 msgid "sidebar settings"
@@ -302,7 +308,7 @@ msgstr "“sphinx_themes”入口点功能。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:217
 msgid "``sphinx_themes`` entry_points has been deprecated."
-msgstr "``sphinx_themes``入口点”已被弃用。"
+msgstr "``sphinx_themes`` entry_points 已被弃用。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:220
 msgid "``sphinx.html_themes`` entry_points feature."
@@ -381,7 +387,9 @@ msgid ""
 "The :doc:`guide to templating <templating>` is helpful if you want to write "
 "your own templates.  What is important to keep in mind is the order in which"
 " Sphinx searches for templates:"
-msgstr "如果您想编写自己的模板，：doc:`guide to templating 1`很有帮助。重要的是要记住Sphinx搜索模板的顺序："
+msgstr ""
+"如果您想编写自己的模板， :doc:`guide to templating <templating>` "
+"很有帮助。重要的是要记住Sphinx搜索模板的顺序："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:303
 msgid "First, in the user's ``templates_path`` directories."

@@ -24,20 +24,17 @@ jobs:
       run: |
         git submodule update --init --remote
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: 3
         cache: 'pip'
+        pip-install: -e sphinx --group sphinx/pyproject.toml:docs -r ./requirements.txt
     - name: Set up git config
       run: |
         git config --global user.email "sphinx-auto-update"
         git config --global user.name "sphinx-auto-update"
     - name: Install graphviz
       run: sudo apt-get install graphviz
-    - name: Install dependencies
-      run: |
-        pip install -U pip setuptools
-        pip install -e sphinx --group sphinx/pyproject.toml:docs -r ./requirements.txt
     - name: Install Transifex CLI
       working-directory: /usr/local/bin
       run: |

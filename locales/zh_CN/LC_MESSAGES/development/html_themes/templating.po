@@ -6,15 +6,16 @@
 # Translators:
 # Melia Lee <lixiuyu97@163.com>, 2024
 # wendi cao <651645601@qq.com>, 2024
+# adams.gh, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 01:07+0000\n"
+"POT-Creation-Date: 2025-12-01 06:41+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
-"Last-Translator: wendi cao <651645601@qq.com>, 2024\n"
+"Last-Translator: adams.gh, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,7 +86,8 @@ msgid ""
 "calls your template engine of choice, and set the :confval:`template_bridge`"
 " configuration value accordingly."
 msgstr ""
-"你可以写一个：类：`~sphinx.application.TemplateBridge`调用所选模板引擎的子类，并相应地设置：confval:`template_bridge`配置值。"
+"你可以写一个 :class:`~sphinx.application.TemplateBridge` 调用所选模板引擎的子类，并相应地设置 "
+":confval:`template_bridge` 配置值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:51
 msgid ""
@@ -93,8 +95,8 @@ msgid ""
 ":class:`~sphinx.builders.html.StandaloneHTMLBuilder` and calls your template"
 " engine of choice."
 msgstr ""
-"您可以：ref:`write a custom builder "
-"1`派生自：class:`~sphinx.builders.html.StandaloneHTMLBuilder`并调用您选择的模板引擎。"
+"您可以 :ref:`write a custom builder <writing-builders>` 派生自 "
+":class:`~sphinx.builders.html.StandaloneHTMLBuilder` 并调用您选择的模板引擎。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:55
 msgid ""
@@ -134,14 +136,14 @@ msgid ""
 "first, and if it can't find the template it's looking for there, it falls "
 "back to the selected theme's templates."
 msgstr ""
-"Sphinx将首先在confval:`templates\\u path`的文件夹中查找模板，如果在那里找不到要查找的模板，它将返回到所选主题的模板。"
+"Sphinx将首先在 :confval:`templates_path` 的文件夹中查找模板，如果在那里找不到要查找的模板，它将返回到所选主题的模板。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:78
 msgid ""
 "A template contains **variables**, which are replaced with values when the "
 "template is evaluated, **tags**, which control the logic of the template and"
 " **blocks** which are used for template inheritance."
-msgstr "一个模板包含**变量**，在对模板求值时用值替换**标记**，控制模板逻辑，**块**用于模板继承。"
+msgstr "一个模板包含 **变量** ，在对模板求值时用值替换 **标记** ，控制模板逻辑， **块** 用于模板继承。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:82
 msgid ""
@@ -151,7 +153,8 @@ msgid ""
 "Sphinx themes. Templates with the same name in the :confval:`templates_path`"
 " override templates supplied by the selected theme."
 msgstr ""
-"Sphinx的*basic*主题为基本模板提供了几个它将填充数据的块。它们位于Sphinx安装目录的：file:`themes/basic`子目录中，由所有内置的Sphinx主题使用。在：confval:`Templates_path`中具有相同名称的模板将覆盖所选主题提供的模板。"
+"Sphinx的 *basic* 主题为基本模板提供了几个它将填充数据的块。它们位于Sphinx安装目录的 :file:`themes/basic` "
+"子目录中，由所有内置的Sphinx主题使用。在 :confval:`templates_path` 中具有相同名称的模板将覆盖所选主题提供的模板。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:88
 msgid ""
@@ -283,7 +286,8 @@ msgid ""
 "default sidebar.  If you want to swap the sidebar location override this and"
 " call the ``sidebar`` helper::"
 msgstr ""
-"边栏的可能位置。``sidebar1``出现在文档前面，默认情况下为空，在文档之后显示为`sidebar2``并包含默认的提要栏。如果要交换侧边栏位置，请重写此选项并调用“sidebar”助手："
+"边栏的可能位置。``sidebar1`` 出现在文档前面，默认情况下为空。在文档之后显示为 ``sidebar2`` "
+"并包含默认的提要栏。如果要交换侧边栏位置，请重写此选项并调用 ``sidebar`` 助手："
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:172
 msgid ""
@@ -318,8 +322,9 @@ msgid ""
 "value.  Their use is deprecated in favor of separate sidebar templates, "
 "which can be included via :confval:`html_sidebars`."
 msgstr ""
-"以下四个块*仅*用于未在confval:`html_sidebars` "
-"config值中分配自定义边栏列表的页面。为了支持单独的侧栏模板，不推荐使用它们，可以通过：confval:`html_sidebars`包含这些模板。"
+"以下四个块 *仅* 用于未在 :confval:`html_sidebars` "
+"config值中分配自定义边栏列表的页面。为了支持单独的侧栏模板，不推荐使用它们，可以通过 :confval:`html_sidebars` "
+"包含这些模板。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:188
 msgid "``sidebartoc``"
@@ -345,7 +350,8 @@ msgstr "“边栏源链接”"
 msgid ""
 "The \"Show source\" link within the sidebar (normally only shown if this is "
 "enabled by :confval:`html_show_sourcelink`)."
-msgstr "侧边栏中的“Show source”链接（通常仅在启用此链接的情况下显示：confval:`html_Show_sourcelink`）。"
+msgstr ""
+"侧边栏中的“Show source”链接（通常仅在启用此链接的情况下显示 :confval:`html_show_sourcelink`）。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:204
 msgid "``sidebarsearch``"
@@ -372,14 +378,14 @@ msgid ""
 "The delimiter for the items on the left side of the related bar.  This "
 "defaults to ``' &raquo;'`` Each item in the related bar ends with the value "
 "of this variable."
-msgstr "相关栏左侧项目的分隔符。默认为''&amp;raquo；'``相关栏中的每个项目都以该变量的值结尾。"
+msgstr "相关栏左侧项目的分隔符。默认为 ``' &raquo;'``。相关栏中的每个项目都以该变量的值结尾。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:225
 msgid ""
 "The delimiter for the items on the right side of the related bar.  This "
 "defaults to ``' |'``.  Each item except of the last one in the related bar "
 "ends with the value of this variable."
-msgstr "相关栏右侧项目的分隔符。默认为`` |'``。除相关栏中最后一项之外的每一项都以该变量的值结尾。"
+msgstr "相关栏右侧项目的分隔符。默认为 ``’ |'``。除相关栏中最后一项之外的每一项都以该变量的值结尾。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:229
 msgid "Overriding works like this::"
@@ -448,13 +454,13 @@ msgstr "生成器的名称（例如`html``或``htmlhelp```）。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:290
 msgid "The value of :confval:`copyright`."
-msgstr "值：confval:`copyright`。"
+msgstr " :confval:`copyright` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:294
 msgid ""
 "The title of the documentation (the value of :confval:`html_title`), except "
 "when the \"single-file\" builder is used, when it is set to ``None``."
-msgstr "文档的标题（值：confval:`html_title`），除非使用“single file”生成器，当它被设置为“None`”。"
+msgstr "文档的标题（:confval:`html_title` 的值），除非使用“single file”生成器，当它被设置为“None”。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:299
 msgid ""
@@ -476,8 +482,9 @@ msgid ""
 "attribute, i.e. the file name extension that the output files will get.  For"
 " a standard HTML builder, this is usually ``.html``."
 msgstr ""
-"生成器的值：attr:` "
-"~.Serializingtmlbuilder.out_后缀`属性，即输出文件将获得的文件扩展名。对于标准的HTML生成器，通常是“.HTML”。"
+"生成器的值 "
+":attr:`~.SerializingHTMLBuilder.out_suffix`，即输出文件将获得的文件扩展名。对于标准的HTML生成器，通常是 "
+"``.HTML``。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:318
 msgid ""
@@ -487,7 +494,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:323
 msgid "The value of :confval:`language`."
-msgstr "值：confval:`language`。"
+msgstr " :confval:`language` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:327
 msgid "The build date."
@@ -519,11 +526,11 @@ msgstr ""
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:354
 msgid "The value of :confval:`project`."
-msgstr "值：confval:`project`。"
+msgstr " :confval:`project` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:358
 msgid "The value of :confval:`release`."
-msgstr "值：confval:`release`。"
+msgstr " :confval:`release` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:362
 msgid ""
@@ -537,11 +544,11 @@ msgstr ""
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:369
 msgid "The value of :confval:`html_short_title`."
-msgstr "值：confval:`html_short_title`。"
+msgstr " :confval:`html_short_title` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:373
 msgid "True if :confval:`html_show_sourcelink` is ``True``."
-msgstr "如果：confval:`html_show_sourcelink`为`True`，则为True。"
+msgstr "如果 :confval:`html_show_sourcelink` 为 ``True``，则为True。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:377
 msgid ""
@@ -577,11 +584,11 @@ msgstr "“1”标记中使用的当前文档的标题。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:410
 msgid "The value of :confval:`html_use_opensearch`."
-msgstr "值：confval:`html_use_opensearch`。"
+msgstr " :confval:`html_use_opensearch` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:414
 msgid "The value of :confval:`version`."
-msgstr "值：confval:`version`。"
+msgstr " :confval:`version` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:417
 msgid ""
@@ -589,7 +596,8 @@ msgid ""
 "(prefixed by ``theme_``), as well as the values given by the user in "
 ":confval:`html_context`."
 msgstr ""
-"除了这些值之外，还有所有可用的**主题选项**（前缀为“theme”``），以及用户在：confval:`html_context`中给出的值。"
+"除了这些值之外，还有所有可用的 **主题选项** （前缀为 ``theme_``），以及用户在 :confval:`html_context` "
+"中给出的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:421
 msgid ""
@@ -610,11 +618,11 @@ msgstr "如果toc包含多个条目，则为真的布尔值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:436
 msgid "Document metadata (a dictionary), see :ref:`metadata`."
-msgstr "文档元数据（字典），请参阅：ref:`metadata`。"
+msgstr "文档元数据（字典），请参阅 :ref:`metadata`。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:440
 msgid "A string containing the page's HTML :dudir:`meta` tags."
-msgstr "包含页面的HTML:dudir:`meta`标记的字符串。"
+msgstr "包含页面的HTML :dudir:`meta` 标记的字符串。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:444
 msgid ""
@@ -628,17 +636,17 @@ msgid ""
 "The suffix of the file that was rendered. Since we support a list of "
 ":confval:`source_suffix`, this will allow you to properly link to the "
 "original source file."
-msgstr "渲染的文件的后缀。由于我们支持：confval:`source_suffix`，因此这将允许您正确链接到原始源文件。"
+msgstr "渲染的文件的后缀。由于我们支持 :confval:`source_suffix`，因此这将允许您正确链接到原始源文件。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:460
 msgid ""
 "A list of parent documents for navigation, structured like the :data:`next` "
 "item."
-msgstr "用于导航的父文档列表，其结构类似于：data:`next`项。"
+msgstr "用于导航的父文档列表，其结构类似于 :data:`next` 项。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:465
 msgid "Like :data:`next`, but for the previous page."
-msgstr "例如：data:`next`，但是是对于上一页的。"
+msgstr "例如 :data:`next`，但是是对于上一页的。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:469
 msgid ""
@@ -646,7 +654,8 @@ msgid ""
 "nonempty if the :confval:`html_copy_source` value is ``True``. This has "
 "empty value on creating automatically-generated files."
 msgstr ""
-"当前文档的复制源文件的名称。只有当：confval:`html_copy_source`值为“True”时，此值才是非空的。对于创建自动生成的文件，此值为空。"
+"当前文档的复制源文件的名称。只有当 :confval:`html_copy_source` "
+"值为“True”时，此值才是非空的。对于创建自动生成的文件，此值为空。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:475
 msgid ""
@@ -668,7 +677,7 @@ msgstr "``collapse``"
 msgid ""
 "If true, all TOC entries that are not ancestors of the current page are "
 "collapsed. ``True`` by default."
-msgstr "如果为true，则折叠所有不是当前页的祖先的TOC条目。``默认情况下为True。"
+msgstr "如果为true，则折叠所有不是当前页的祖先的TOC条目。默认情况下为True。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:488
 msgid "``maxdepth``"
@@ -688,7 +697,7 @@ msgstr "``仅标题``"
 msgid ""
 "If true, put only top-level document titles in the tree. ``False`` by "
 "default."
-msgstr "如果为true，则只在树中放置顶级文档标题。``默认情况下为False。"
+msgstr "如果为true，则只在树中放置顶级文档标题。默认情况下为False。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:496
 msgid "``includehidden``"
@@ -698,4 +707,4 @@ msgstr "“包括”"
 msgid ""
 "If true, the ToC tree will also contain hidden entries. ``False`` by "
 "default."
-msgstr "如果为true，ToC树也将包含隐藏项。``默认情况下为False。"
+msgstr "如果为true，ToC树也将包含隐藏项。默认情况下为False。"

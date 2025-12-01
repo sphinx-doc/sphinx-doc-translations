@@ -9,15 +9,16 @@
 # Georg Brandl <g.brandl@gmx.net>, 2024
 # Izabel Wang <izabelwang@pku.edu.cn>, 2024
 # Lu <lu2github@gmail.com>, 2024
+# adams.gh, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 01:07+0000\n"
+"POT-Creation-Date: 2025-12-01 06:41+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
-"Last-Translator: Lu <lu2github@gmail.com>, 2024\n"
+"Last-Translator: adams.gh, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgstr "本教程的目的是说明角色，指令和域。 完成后，我们�
 msgid ""
 "This tutorial is based on a guide first published on `opensource.com`_ and "
 "is provided here with the original author's permission."
-msgstr "本教程基于首先在`opensource.com`_上发布的指南，并在得到原始作者许可的情况下提供。"
+msgstr "本教程基于首先在 `opensource.com`_ 上发布的指南，并在得到原始作者许可的情况下提供。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:19
 msgid "Overview"
@@ -56,19 +57,20 @@ msgid ""
 "recipe steps, along with a ``:contains:`` option highlighting the main "
 "ingredients of the recipe."
 msgstr ""
-"一个``recipe''：term：`directive`，包含一些描述食谱步骤的内容，以及一个``：contains：``选项，突出显示食谱的主要成分。"
+"一个``recipe`` :term:`directive`，包含一些描述食谱步骤的内容，以及一个 ``:contains:`` "
+"选项，突出显示食谱的主要成分。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:27
 msgid ""
 "A ``ref`` :term:`role`, which provides a cross-reference to the recipe "
 "itself."
-msgstr "ref：term：`role`，提供对配方本身的交叉引用。"
+msgstr "ref :term:`role`，提供对配方本身的交叉引用。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:30
 msgid ""
 "A ``recipe`` :term:`domain`, which allows us to tie together the above role "
 "and domain, along with things like indices."
-msgstr "``recipe''：term：`domain`，它使我们可以将上述角色和领域以及索引等东西结合在一起。"
+msgstr "``recipe`` :term:`domain`，它使我们可以将上述角色和领域以及索引等东西结合在一起。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:33
 msgid "For that, we will need to add the following elements to Sphinx:"
@@ -171,8 +173,8 @@ msgid ""
 "only one entry. Extending it to cover more object types is not yet part of "
 "the code."
 msgstr ""
-"IngredientIndex 和 RecipeIndex 都是从 Index 派生的。 它们实现自定义逻辑以生成定义索引的值的元组。 "
-"注意“RecipeIndex”是一个只有一个条目的简单索引。 扩展它以涵盖更多对象类型尚不是代码的一部分。"
+"IngredientIndex 和 RecipeIndex 都是从 :class:`Index` 派生的。 它们实现自定义逻辑以生成定义索引的值的元组。"
+" 注意“RecipeIndex”是一个只有一个条目的简单索引。 扩展它以涵盖更多对象类型尚不是代码的一部分。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:124
 msgid ""
@@ -183,10 +185,11 @@ msgid ""
 "'TomatoSoup', 'test', 'rec-TomatoSoup',...)``. Refer to the :doc:`domain API"
 " guide </extdev/domainapi>` for more information on this API."
 msgstr ""
-"两个索引都使用方法：meth：`Index.generate`来完成工作。 "
-"该方法将来自我们域的信息进行组合，排序，然后以Sphinx接受的列表结构返回。 "
+"两个索引都使用方法 :meth:`Index.generate` "
+"来完成工作。该方法将来自我们域的信息进行组合，排序，然后以Sphinx接受的列表结构返回。 "
 "这看起来可能很复杂，但实际上只是一个元组列表，如``（'tomato'，'TomatoSoup'，'test'，'rec-"
-"TomatoSoup'...）''。 有关此API的更多信息，请参阅：doc：`域API指南</extdev/domainapi>`。"
+"TomatoSoup'...）''。 有关此API的更多信息，请参阅 :doc:`domain API guide "
+"</extdev/domainapi>`。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:131
 msgid ""
@@ -220,11 +223,11 @@ msgid ""
 "and its target name. We'll use ``target`` to resolve our destination from "
 "our domain's ``recipes`` because we currently have only one type of node."
 msgstr ""
-"关于此“recipe”域和一般域，需要注意一些有趣的事情。 首先，我们实际上通过“ directives”，“ roles”和“ "
-"indices”属性在此处注册我们的指令，角色和索引，而不是通过稍后在“ setup”中进行调用。 "
-"我们还可以注意到，我们实际上不是在定义自定义角色，而是在重用sphinx.roles.XRefRole角色并定义sphinx.domains.Domain.resolve_xref方法。"
-" 此方法采用两个参数typ和target，它们引用交叉引用类型及其目标名称。 因为我们目前只有一种类型的节点，所以我们将使用“ target”来从域的“"
-" recipes”中解析出目的地。"
+"关于此“recipe”域和一般域，需要注意一些有趣的事情。 首先，我们实际上通过“ directives”，“ "
+"roles”和“indices”属性在此处注册我们的指令，角色和索引，而不是通过稍后在“ setup”中进行调用。 "
+"我们还可以注意到，我们实际上不是在定义自定义角色，而是在重用 :class:`sphinx.roles.XRefRole` 角色并定义 "
+":class:`sphinx.domains.Domain.resolve_xref` 方法。 "
+"此方法采用两个参数typ和target，它们引用交叉引用类型及其目标名称。因为我们目前只有一种类型的节点，所以我们将使用“target”来从域的“recipes”中解析出目的地。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:158
 msgid ""
@@ -296,7 +299,7 @@ msgstr "延伸阅读"
 msgid ""
 "For more information, refer to the `docutils`_ documentation and "
 ":doc:`/extdev/index`."
-msgstr "有关更多信息，请参考 docutils_ 文档和：doc：/ extdev / index。"
+msgstr "有关更多信息，请参考 `docutils`_ 文档和 :doc:`/extdev/index`。"
 
 #: ../../sphinx/doc/development/tutorials/adding_domain.rst:234
 msgid ""

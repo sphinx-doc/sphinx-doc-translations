@@ -7,15 +7,16 @@
 # cdarlint <cdarling@126.com>, 2018
 # wendi cao <651645601@qq.com>, 2020
 # Lu <lu2github@gmail.com>, 2022
+# adams.gh, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 06:40+0000\n"
+"POT-Creation-Date: 2025-12-01 06:42+0000\n"
 "PO-Revision-Date: 2018-11-20 17:14+0000\n"
-"Last-Translator: Lu <lu2github@gmail.com>, 2022\n"
+"Last-Translator: adams.gh, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +34,7 @@ msgid ""
 " navigation bars, Sphinx provides mechanisms facilitating the translation of"
 " *documents*.  See the :ref:`intl-options` for details on configuration."
 msgstr ""
-"作为对Sphinx生成的消息（如导航栏）提供的翻译的补充，Sphinx提供了促进*文档*翻译的机制。有关配置的详细信息，请参阅：ref:`intl "
+"作为对Sphinx生成的消息（如导航栏）提供的翻译的补充，Sphinx提供了促进*文档*翻译的机制。有关配置的详细信息，请参阅 :ref:`intl-"
 "options`。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:15
@@ -51,7 +52,8 @@ msgid ""
 "**gettext** [1]_ is an established standard for internationalization and "
 "localization.  It naively maps messages in a program to a translated string."
 " Sphinx uses these facilities to translate whole documents."
-msgstr "**gettext**[1]\\u是国际化和本地化的既定标准。它天真地将程序中的消息映射到翻译后的字符串。斯芬克斯使用这些工具翻译整个文件。"
+msgstr ""
+"**gettext** [1]_ 是国际化和本地化的既定标准。它简单地将程序中的消息映射到翻译后的字符串。Sphinx使用这些工具翻译整个文件。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:28
 msgid ""
@@ -79,7 +81,8 @@ msgid ""
 "collection of ``.pot`` files in your output directory.  These are **catalog "
 "templates** and contain messages in your original language *only*."
 msgstr ""
-"在Sphinx成功运行：类之后：`~sphinx.builders.gettext.MessageCatalogBuilder`您将在输出目录中找到一组“.pot”文件。这些是**目录模板**，只包含您的原始语言*的消息*。"
+"在Sphinx成功运行 :class:`~sphinx.builders.gettext.MessageCatalogBuilder` "
+"后，您将在输出目录中找到一组 ``.pot`` 文件。这些是 **catalog templates** ， *只* 包含您的原始语言的消息。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:45
 msgid ""
@@ -95,7 +98,9 @@ msgid ""
 "discoverable with :confval:`locale_dirs` for your :confval:`language`, "
 "Sphinx will pick them up automatically."
 msgstr ""
-"*为了提高效率，gettext*将它们编译成一种称为**二进制目录**的二进制格式：program:`msgfmt'。如果您使用：confval:`locale_dirs`为您的：confval:`language`设置这些文件的可发现性，Sphinx将自动提取它们。"
+"*为了提高效率，*gettext* 使用 :program:`msgfmt` 将它们编译成一种称为 **binary catalogs** "
+"的二进制格式。如果您使用 :confval:`locale_dirs` 为您 :confval:`language` "
+"设置这些文件的可发现性，Sphinx将自动提取它们。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:54
 msgid ""
@@ -160,11 +165,11 @@ msgstr "快速指南"
 msgid ""
 "`sphinx-intl`_ is a useful tool to work with Sphinx translation flow.  This "
 "section describe an easy way to translate with *sphinx-intl*."
-msgstr "`sphinx intl`是一个使用sphinx转换流的有用工具。本节介绍一种使用*sphinx intl*进行翻译的简单方法。"
+msgstr "`sphinx-intl`_ 是一个使用sphinx转换流的有用工具。本节介绍一种使用 *sphinx intl* 进行翻译的简单方法。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:98
 msgid "Install `sphinx-intl`_."
-msgstr "安装`sphinx-intl`_."
+msgstr "安装 `sphinx-intl`_."
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:104
 msgid "Add configurations to :file:`conf.py`."
@@ -176,8 +181,8 @@ msgid ""
 ":confval:`locale_dirs` is set to ``locale/`` and :confval:`gettext_compact` "
 "is set to ``False`` (the Sphinx document is already configured as such)."
 msgstr ""
-"这个案例研究假设BUILDDIR被设置为'`u "
-"build```，：confval:`locale_dirs`被设置为``locale/``并且：confval:`gettext_compact`被设置为`False``（Sphinx文档已经这样配置）。"
+"这个案例研究假设BUILDDIR被设置为 ``_build``， :confval:`locale_dirs` 被设置为``locale/`` 并且 "
+":confval:`gettext_compact` 被设置为 ``False`` （Sphinx文档已经这样配置）。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:115
 msgid "Extract translatable messages into pot files."
@@ -276,8 +281,7 @@ msgid ""
 "If you are using 1.2.x or earlier, please invoke :command:`sphinx-intl "
 "build` command before :command:`make` command."
 msgstr ""
-"如果您使用的是1.2.x或更早版本，请在命令之前调用：command:`sphinx intl "
-"build`命令：command:`make`command。"
+"如果您使用的是1.2.x或更早版本，请在 :command:`sphinx-intl build` 命令之前调用 :command:`make` 命令。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:208
 msgid "Translating"
@@ -294,8 +298,8 @@ msgid ""
 "from a pot file to the po file, use the :command:`sphinx-intl update` "
 "command."
 msgstr ""
-"如果更新了文档，则需要生成更新的pot文件，并将差异应用于已翻译的po文件。要将pot文件中的更新应用于po文件，请使用：命令：`sphinx intl"
-" update`命令。"
+"如果更新了文档，则需要生成更新的pot文件，并将差异应用于已翻译的po文件。要将pot文件中的更新应用于po文件，请使用 "
+":command:`sphinx-intl update` 命令。"
 
 #: ../../sphinx/doc/usage/advanced/intl.rst:223
 msgid "Using Transifex service for team translation"

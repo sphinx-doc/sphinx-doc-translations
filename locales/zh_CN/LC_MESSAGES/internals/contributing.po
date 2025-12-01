@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Georg Brandl <g.brandl@gmx.net>, 2020
 # wendi cao <651645601@qq.com>, 2020
 # Lu <lu2github@gmail.com>, 2022
 # adams.gh, 2025
@@ -12,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
+"Project-Id-Version: Sphinx 9.0.1+/61f9b70b3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 06:42+0000\n"
+"POT-Creation-Date: 2025-12-01 12:55+0000\n"
 "PO-Revision-Date: 2020-06-03 21:56+0000\n"
 "Last-Translator: adams.gh, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -336,7 +335,7 @@ msgstr "sphinx从nose换成了py测试。"
 
 #: ../../sphinx/doc/internals/contributing.rst:246
 msgid "Contribute documentation"
-msgstr ""
+msgstr "为文档做贡献"
 
 #: ../../sphinx/doc/internals/contributing.rst:248
 msgid ""
@@ -345,16 +344,18 @@ msgid ""
 ":ref:`contribute-get-started`, and then take the steps below to work with "
 "the documentation."
 msgstr ""
+"为文档做贡献涉及到修改 :file:`doc/` 目录下的源文件。你需要按照 :ref:`contribute-get-started` "
+"的要求开始，然后按下述步骤对文档展开工作："
 
 #: ../../sphinx/doc/internals/contributing.rst:253
 msgid ""
 "The following sections describe how to get started with contributing "
 "documentation, as well as key aspects of a few different tools that we use."
-msgstr ""
+msgstr "下面章节描述如何开始为文档做贡献，以及一些我们要用到的几个工具的关键方面。"
 
 #: ../../sphinx/doc/internals/contributing.rst:256
 msgid "Todo"
-msgstr "待处理"
+msgstr "待处理事项"
 
 #: ../../sphinx/doc/internals/contributing.rst:256
 msgid "Add a more extensive documentation contribution guide."
@@ -362,17 +363,17 @@ msgstr "添加更广泛的文档贡献指南。"
 
 #: ../../sphinx/doc/internals/contributing.rst:260
 msgid "Build the documentation"
-msgstr ""
+msgstr "构建文档"
 
 #: ../../sphinx/doc/internals/contributing.rst:262
 msgid "To build the documentation, run the following command:"
-msgstr ""
+msgstr "运行下述命令，以构建文档："
 
 #: ../../sphinx/doc/internals/contributing.rst:268
 msgid ""
 "This will parse the Sphinx documentation's source files and generate HTML "
 "for you to preview in :file:`build/sphinx/html`."
-msgstr ""
+msgstr "这会解析Sphinx文档的源文件并且在 :file:`build/sphinx/html` 下生成html文件，供您审阅。"
 
 #: ../../sphinx/doc/internals/contributing.rst:271
 msgid ""
@@ -381,6 +382,8 @@ msgid ""
 "you make edits. To do so, use `sphinx-autobuild`_ to run the following "
 "command:"
 msgstr ""
+"你也可以构建一个可以在浏览器中审阅的 **实时版本的文档**。它将会检查源文件的变化，每次你编辑源文件时，都会重载网页。使用 `sphinx-"
+"autobuild`_ 来运行下述命令即可："
 
 #: ../../sphinx/doc/internals/contributing.rst:283
 msgid "Translations"
@@ -392,29 +395,32 @@ msgid ""
 "several locales.  The translations are kept as gettext ``.po`` files "
 "translated from the master template :file:`sphinx/locale/sphinx.pot`."
 msgstr ""
-"Sphinx中进入构建的消息部分被转换成几个区域设置。翻译保存为从主模板file:sphinx/locale翻译的gettext``.po``文件/shinx.pot`."
+"Sphinx中参与构建的信息被翻译成若干语言(locales)。来自主模板 :file:`sphinx/locale/sphinx.pot` "
+"的信息被翻译、保存为gettext的 ``.po`` 格式的文件"
 
 #: ../../sphinx/doc/internals/contributing.rst:289
 msgid ""
 "These Sphinx core messages are translated using the online `Transifex "
 "<https://explore.transifex.com/sphinx-doc/sphinx-1/>`__ platform."
 msgstr ""
+"这些Sphinx 核心信息是使用在线的 `Transifex <https://explore.transifex.com/sphinx-"
+"doc/sphinx-1/>`__ 平台进行翻译的。"
 
 #: ../../sphinx/doc/internals/contributing.rst:292
 msgid ""
 "Translated strings from the platform are pulled into the Sphinx repository "
 "by a maintainer before a new release."
-msgstr ""
+msgstr "翻译好的文本，会在新版本发布前，被维护者从Transifex拉取到Sphinx 仓库。"
 
 #: ../../sphinx/doc/internals/contributing.rst:295
 msgid ""
 "We do not accept pull requests altering the translation files directly. "
 "Instead, please contribute translations via the Transifex platform."
-msgstr ""
+msgstr "我们不接受通过Pull Request直接修改翻译结果文件。所以请使用 **Transifex平台** 来做翻译贡献。"
 
 #: ../../sphinx/doc/internals/contributing.rst:299
 msgid "Translations notes for maintainers"
-msgstr ""
+msgstr "给维护者的翻译笔记"
 
 #: ../../sphinx/doc/internals/contributing.rst:301
 msgid ""
@@ -425,6 +431,10 @@ msgid ""
 "``python utils/babel_runner.py update`` afterwards to make sure the ``.po`` "
 "file has the canonical Babel formatting."
 msgstr ""
+"`transifex CLI <https://developers.transifex.com/docs/cli>`__ (``tx``) 可以用于从"
+" Transifex·以 ``.po`` 格式拉取翻译结果。在 :file:`sphinx/locale` 下运行 ``tx pull -f -l "
+"LANG`` 即可，其中 ``LANG`` 是已支持的语言的标识符。建议接着运行 ``python utils/babel_runner.py "
+"update`` 命令，以确保 ``.po`` 文件符合 Babel 规范格式。"
 
 #: ../../sphinx/doc/internals/contributing.rst:308
 msgid ""
@@ -432,11 +442,14 @@ msgid ""
 "messages and maintain the catalog files.  The :file:`utils` directory "
 "contains a helper script, :file:`utils/babel_runner.py`."
 msgstr ""
+"Sphinx 使用 `Babel <https://babel.pocoo.org/en/latest/>`_ "
+"来提取信息、维护消息目录文件(\\*.po, \\*.pot, \\*.mo)。 :file:`utils` 目录包含一个辅助脚本 "
+":file:`utils/babel_runner.py`。"
 
 #: ../../sphinx/doc/internals/contributing.rst:312
 msgid ""
 "Use ``python babel_runner.py extract`` to update the ``.pot`` template."
-msgstr ""
+msgstr "使用 ``python babel_runner.py extract`` 来更新 ``.pot`` 模板。"
 
 #: ../../sphinx/doc/internals/contributing.rst:313
 msgid ""
@@ -444,18 +457,23 @@ msgid ""
 "catalogs in ``sphinx/locale/*/LC_MESSAGES`` with the current messages in the"
 " template file."
 msgstr ""
+"使用 ``python babel_runner.py update`` 来更新所有已有翻译语言的消息目录文件。这些文件在 "
+"``sphinx/locale/*/LC_MESSAGES`` 下，带有来自模板文件的当前消息。"
 
 #: ../../sphinx/doc/internals/contributing.rst:316
 msgid ""
 "Use ``python babel_runner.py compile`` to compile the ``.po`` files to "
 "binary ``.mo`` files and ``.js`` files."
 msgstr ""
+"使用 ``python babel_runner.py compile`` 将 ``.po`` 文件编译为二进制的 ``.mo`` 和 ``.js`` "
+"文件。"
 
 #: ../../sphinx/doc/internals/contributing.rst:319
 msgid ""
 "When an updated ``.po`` file is submitted, run ``python babel_runner.py "
 "compile`` to commit both the source and the compiled catalogs."
 msgstr ""
+"当提交一个 ``.po`` 后，运行 ``python babel_runner.py compile`` 以更改源文件和编译好的消息目录文件。"
 
 #: ../../sphinx/doc/internals/contributing.rst:323
 msgid ""
@@ -464,6 +482,8 @@ msgid ""
 "possible values for :confval:`language` in "
 ":file:`doc/usage/configuration.rst`."
 msgstr ""
+"当新增一个翻译目标语言的时候，添加一个符合ISO 639-1 标准的语言标识符作为目录，在其下放一个 ``sphinx.po`` 文件。别忘记在 "
+":file:`doc/usage/configuration.rst` 里更新 :confval:`language` 的值。"
 
 #: ../../sphinx/doc/internals/contributing.rst:329
 msgid "Debugging tips"

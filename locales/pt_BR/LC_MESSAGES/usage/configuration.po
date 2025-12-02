@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
+"Project-Id-Version: Sphinx 9.0.2+/c04384139\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 02:25+0000\n"
+"POT-Creation-Date: 2025-12-02 18:41+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/sphinx-doc/teams/15434/pt_BR/)\n"
@@ -3948,6 +3948,13 @@ msgid ""
 "the extra Unicode characters. Since Sphinx 2.0, the default typeface is GNU "
 "FreeFont, which has good coverage of Latin, Cyrillic, and Greek glyphs."
 msgstr ""
+"O suporte do ``'pdflatex'`` a caracteres Unicode é limitado. Se o seu "
+"projeto utiliza caracteres Unicode, configurar o mecanismo para "
+"``'xelatex'`` ou ``'lualatex'`` e garantir o uso de uma fonte OpenType com "
+"cobertura de glifos suficientemente ampla costuma ser mais fácil do que "
+"tentar fazer o ``'pdflatex'`` funcionar com os caracteres Unicode "
+"adicionais. Desde o Sphinx 2.0, a fonte padrão é a GNU FreeFont, que possui "
+"boa cobertura de glifos latinos, cirílicos e gregos."
 
 #: ../../sphinx/doc/usage/configuration.rst:2877
 msgid ""
@@ -3956,6 +3963,10 @@ msgid ""
 " :ref:`fontenc` key of :ref:`latex_elements <latex_elements_confval>` must "
 "be used appropriately."
 msgstr ""
+"O Sphinx 2.0 adiciona suporte para letras ou palavras cirílicas e gregas "
+"ocasionais em documentos que utilizam um idioma latino e o pacote "
+"``'pdflatex'``. Para habilitar esse recurso, a chave :ref:`fontenc` de "
+":ref:`latex_elements <latex_elements_confval>` deve ser usada adequadamente."
 
 #: ../../sphinx/doc/usage/configuration.rst:2884
 msgid ""
@@ -3968,24 +3979,35 @@ msgid ""
 "style=literal]{unicode-math}'`` to keep a Unicode literal such as ``α`` "
 "(U+03B1) as-is in output, rather than being rendered as :math:`\\alpha`."
 msgstr ""
+"Ao contrário da :ref:`renderização matemática de MathJaX na saída HTML "
+"<math-support>`, o LaTeX requer alguma configuração extra para oferecer "
+"suporte a literais Unicode em :rst:dir:`math`: a única solução abrangente "
+"(até onde sabemos) é usar ``'xelatex'`` ou ``'lualatex'`` *e* para adicionar"
+" ``r'\\usepackage{unicode-math}'`` (por exemplo, através da chave "
+":ref:`preamble` de :ref:latex_elements <latex_elements_confval>`). Você pode"
+" preferir ``r'\\usepackage[math-style=literal]{unicode-math}'`` para manter "
+"um Unicode literal como ``α`` (U+03B1) como está na saída, em vez de sendo "
+"renderizado como :math:`\\alpha`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2896
 msgid ""
 "Use ``'xelatex'`` (and LaTeX package ``xeCJK``) by default for Chinese "
 "documents."
 msgstr ""
+"Usa ``'xelatex'`` (e o pacote LaTeX ``xeCJK``) por padrão para documentos "
+"chineses."
 
 #: ../../sphinx/doc/usage/configuration.rst:2900
 msgid "Use ``'xelatex'`` by default for Greek documents."
-msgstr ""
+msgstr "Usa ``'xelatex'`` por padrão para documentos gregos."
 
 #: ../../sphinx/doc/usage/configuration.rst:2903
 msgid "Add ``'uplatex'`` support."
-msgstr ""
+msgstr "Adiciona suporte a ``'uplatex'``."
 
 #: ../../sphinx/doc/usage/configuration.rst:2906
 msgid "Use ``'uplatex'`` by default for Japanese documents."
-msgstr ""
+msgstr "Usa ``'uplatex'`` por padrão para documentos japoneses."
 
 #: ../../sphinx/doc/usage/configuration.rst:2913
 msgid ""
@@ -4010,6 +4032,11 @@ msgid ""
 "will be included in the LaTeX file. (If you want to use the default master "
 "document for your LaTeX build, provide your :confval:`master_doc` here.)"
 msgstr ""
+"String que especifica o :term:`nome do documento <document name>` do "
+"documento mestre do arquivo LaTeX. Todos os documentos referenciados pelo "
+"documento *startdoc* nas árvores ToC serão incluídos no arquivo LaTeX. (Se "
+"você deseja usar o documento mestre padrão para sua construção LaTeX, "
+"forneça seu :confval:`master_doc` aqui.)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2927
 #: ../../sphinx/doc/usage/configuration.rst:3459
@@ -4032,6 +4059,11 @@ msgid ""
 "backslash or ampersand must be represented by the proper LaTeX commands if "
 "they are to be inserted literally."
 msgstr ""
+"Título do documento LaTeX. Pode estar vazio para usar o título do documento "
+"*startdoc*. Isso é inserido como marcação LaTeX, portanto, caracteres "
+"especiais como uma barra invertida ou \"e\" comercial devem ser "
+"representados pelos comandos LaTeX apropriados se forem inseridos "
+"literalmente."
 
 #: ../../sphinx/doc/usage/configuration.rst:2938
 #: ../../sphinx/doc/usage/configuration.rst:3469
@@ -4044,6 +4076,10 @@ msgid ""
 "applies. Use ``\\\\and`` to separate multiple authors,  as in: ``'John "
 "\\\\and Sarah'`` (backslashes must be Python-escaped to reach LaTeX)."
 msgstr ""
+"Autor do documento LaTeX. A mesma advertência de marcação LaTeX que para "
+"*title* se aplica. Use ``\\\\and`` para separar vários autores, como em: "
+"``'John \\\\and Sarah'`` (as barras invertidas devem ter escape do Python "
+"para chegar ao LaTeX)."
 
 #: ../../sphinx/doc/usage/configuration.rst:2944
 msgid "*theme*"
@@ -4051,7 +4087,7 @@ msgstr "*theme*"
 
 #: ../../sphinx/doc/usage/configuration.rst:2945
 msgid "LaTeX theme. See :confval:`latex_theme`."
-msgstr ""
+msgstr "Tema LaTeX. Veja :confval:`latex_theme`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2948
 #: ../../sphinx/doc/usage/configuration.rst:3484
@@ -4065,10 +4101,15 @@ msgid ""
 " by it via ToC trees. With this option, you can put extra stuff in the "
 "master document that shows up in the HTML, but not the LaTeX output."
 msgstr ""
+"Deve ser :code-py:`True` ou :code-py:`False`. Se verdadeiro, o próprio "
+"documento *startdoc* não é incluído na saída, apenas os documentos "
+"referenciados por ele por meio de árvores ToC. Com esta opção, você pode "
+"colocar coisas extras no documento mestre que aparecem no HTML, mas não na "
+"saída LaTeX."
 
 #: ../../sphinx/doc/usage/configuration.rst:2955
 msgid "The 6th item ``toctree_only``. Tuples with 5 items are still accepted."
-msgstr ""
+msgstr "O 6º item de ``toctree_only``. Tuplas com 5 itens são aceitos."
 
 #: ../../sphinx/doc/usage/configuration.rst:2959
 msgid ""
@@ -4085,6 +4126,9 @@ msgid ""
 ":term:`configuration directory`) that is the logo of the documentation. It "
 "is placed at the top of the title page."
 msgstr ""
+"Se fornecido, este deve ser o nome de um arquivo de imagem (caminho relativo"
+" ao diretório de configuração) que serve como logotipo da documentação. Ele "
+"é posicionado no topo da página de título."
 
 #: ../../sphinx/doc/usage/configuration.rst:2977
 msgid ""
@@ -4094,6 +4138,11 @@ msgid ""
 "``'part'``, which means that LaTeX document will use the :code-"
 "tex:`\\\\part` command."
 msgstr ""
+"Este valor determina a unidade de seção superior. A configuração padrão é "
+"``'section'`` se :confval:`latex_theme` for ``'howto'``, e ``'chapter'`` se "
+"for ``'manual'``. A alternativa em ambos os casos é especificar ``'part'``, "
+"o que significa que o documento LaTeX vai usar o comando :code-"
+"tex:`\\\\part`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2983
 msgid ""
@@ -4102,36 +4151,48 @@ msgid ""
 "tex:`\\\\chapter` numbering (or :code-tex:`\\\\section` for ``'howto'`` "
 "theme) when encountering :code-tex:`\\\\part` command."
 msgstr ""
+"Nesse caso, a numeração das unidades de seção em um nível de profundidade "
+"fica dessincronizada com a numeração HTML, pois por padrão o LaTeX não "
+"redefine a numeração de :code-tex:`\\\\chapter` (ou de :code-"
+"tex:`\\\\section` para o tema ``'howto'``) ao encontrar o comando :code-"
+"tex:`\\\\part`."
 
 #: ../../sphinx/doc/usage/configuration.rst:2994
 msgid ""
 "A list of document names to append as an appendix to all manuals. This is "
 "ignored if :confval:`latex_theme` is set to :code-py:`'howto'`."
 msgstr ""
+"Uma lista de nomes dos documentos a serem anexados como apêndice a todos os "
+"manuais. Isso será ignorado se :confval:`latex_theme` estiver definido como "
+":code-py:`'howto'`."
 
 #: ../../sphinx/doc/usage/configuration.rst:3024
 msgid ""
 "Add page references after internal references. This is very useful for "
 "printed copies of the manual."
 msgstr ""
+"Adiciona referências de página após as referências internas. Isso é muito "
+"útil para cópias impressas do manual."
 
 #: ../../sphinx/doc/usage/configuration.rst:3033
 msgid ""
 "Control how to display URL addresses. This is very useful for printed copies"
 " of the manual. The setting can have the following values:"
 msgstr ""
+"Controla como os endereços URL são exibidos. Isso é muito útil para cópias "
+"impressas do manual. A configuração pode ter os seguintes valores:"
 
 #: ../../sphinx/doc/usage/configuration.rst:3038
 msgid "Do not display URLs"
-msgstr ""
+msgstr "Não exibe URLs"
 
 #: ../../sphinx/doc/usage/configuration.rst:3040
 msgid "Display URLs in footnotes"
-msgstr ""
+msgstr "Exibe URLs em notas de rodapé"
 
 #: ../../sphinx/doc/usage/configuration.rst:3042
 msgid "Display URLs inline in parentheses"
-msgstr ""
+msgstr "Exibe URLs embutidas em parênteses"
 
 #: ../../sphinx/doc/usage/configuration.rst:3045
 msgid ""
@@ -4139,11 +4200,16 @@ msgid ""
 "value selected the :code-py:`'inline'` display. For backwards compatibility,"
 " :code-py:`True` is still accepted."
 msgstr ""
+"O valor é uma string; anteriormente era um valor boleano e valor verdadeiro "
+"slsecionava a exibição :code-py:`'inline'`. Por retrocompatibilidade, :code-"
+"py:`True` ainda é aceito."
 
 #: ../../sphinx/doc/usage/configuration.rst:3054
 msgid ""
 "Use standard LaTeX's :code-tex:`\\\\multicolumn` for merged cells in tables."
 msgstr ""
+"Usa o recurso padrão do LaTeX `:code-tex:`\\\\multicolumn` para células "
+"mescladas em tabelas."
 
 #: ../../sphinx/doc/usage/configuration.rst:3057
 msgid ""
@@ -4153,6 +4219,11 @@ msgid ""
 " mark-up of the type ``>{..}``, ``<{..}``, ``@{..}`` as column "
 "specification."
 msgstr ""
+"As próprias macros do Sphinx são usadas para células mescladas de tabelas de"
+" grade. Eles permitem conteúdos gerais (blocos literais, listas, blocos de "
+"citação, ...) mas podem ter problemas se a diretiva "
+":rst:dir:`tabularcolumns` foi usada para injetar marcação LaTeX do tipo "
+"``>{..}``, ``<{..}``, ``@{..}`` como especificação de coluna."
 
 #: ../../sphinx/doc/usage/configuration.rst:3063
 msgid ""
@@ -4160,32 +4231,37 @@ msgid ""
 "literal blocks in horizontally merged cells, and also with multiple "
 "paragraphs in such cells if the table is rendered using ``tabulary``."
 msgstr ""
+"Usa o padrão do LaTeX :code-tex:`\\\\multicolumn`; isso é incompatível com "
+"blocos literais nas células mescladas horizontalmente e também com vários "
+"parágrafos em tais células se a tabela for renderizada usando ``tabulary``."
 
 #: ../../sphinx/doc/usage/configuration.rst:3074
 msgid "A list of styling classes (strings). Currently supported:"
-msgstr ""
+msgstr "Uma lista de classes de estilo (strings). Atualmente há suporte a:"
 
 #: ../../sphinx/doc/usage/configuration.rst:3077
 msgid ":code-py:`'booktabs'`"
-msgstr ""
+msgstr ":code-py:`'booktabs'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:3078
 msgid ""
 "No vertical lines, and only 2 or 3 horizontal lines (the latter if there is "
 "a header), using the booktabs_ package."
 msgstr ""
+"Sem linhas verticais, e apenas 2 ou 3 linhas horizontais (esta última se "
+"houver cabeçalho), usando o pacote booktabs_."
 
 #: ../../sphinx/doc/usage/configuration.rst:3082
 msgid ":code-py:`'borderless'`"
-msgstr ""
+msgstr ":code-py:`'borderless'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:3083
 msgid "No lines whatsoever."
-msgstr ""
+msgstr "Completamente sem linhas."
 
 #: ../../sphinx/doc/usage/configuration.rst:3085
 msgid ":code-py:`'colorrows'`"
-msgstr ""
+msgstr ":code-py:`'colorrows'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:3086
 msgid ""

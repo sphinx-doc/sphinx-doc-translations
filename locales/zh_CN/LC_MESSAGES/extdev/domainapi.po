@@ -6,16 +6,16 @@
 # Translators:
 # Lu <lu2github@gmail.com>, 2022
 # wendi cao <651645601@qq.com>, 2022
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/61f9b70b3\n"
+"Project-Id-Version: Sphinx 9.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 12:55+0000\n"
+"POT-Creation-Date: 2025-12-02 06:40+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,8 @@ msgid ""
 "a uniform way to parts of Sphinx that allow the user to reference or search "
 "for objects in a domain-agnostic way."
 msgstr ""
-"每个域都有一个单独的存储区，用于存储有关现有对象以及如何在中引用它们的信息`自我数据`，一定是字典。它还必须实现几个函数，以统一的方式向Sphinx的部分公开对象信息，从而允许用户以不确定域的方式引用或搜索对象。"
+"每个域都有一个单独的存储区，用于存储有关现有对象以及如何在中引用它们的信息 "
+"`self.data`，一定是字典。它还必须实现几个函数，以统一的方式向Sphinx的部分公开对象信息，从而允许用户以不确定域的方式引用或搜索对象。"
 
 #: ../../sphinx/sphinx/domains/__init__.pydocstring of
 #: sphinx.domains.Domain:12
@@ -58,8 +59,10 @@ msgid ""
 ":attr:`data_version` attribute.  Otherwise, `OSError` is raised and the "
 "pickled environment is discarded."
 msgstr ""
-"关于`自我数据`：由于所有对象和交叉引用信息都存储在BuildEnvironment实例上，因此`domain.data`对象也存储在`环境域数据`钥匙下的dict`域名`.在生成过程开始之前，每个活动域都被实例化并给定环境对象；“domaindata”必须是不存在的，或者是“version”键等于domain类的字典"
-" :attr:`data_version` 属性。否则，将引发“OSError”，并丢弃处理环境。"
+"关于 `self.data`：由于所有对象和交叉引用信息都存储在BuildEnvironment实例上，因此 `domain.data` 对象也存储在 "
+"`env.domaindata` 字典的 `domain.name` "
+"键下。在生成过程开始之前，每个活动域都被实例化并给定环境对象；`domaindata` 必须是不存在的，或者是 `version` "
+"键等于domain类的字典 :attr:`data_version` 属性。否则，将引发 `OSError`，并丢弃处理环境。"
 
 #: ../../sphinx/sphinx/domains/__init__.pydocstring of
 #: sphinx.domains.Domain.add_object_type:1
@@ -131,7 +134,7 @@ msgstr "``类型``"
 #: ../../sphinx/sphinx/domains/__init__.pydocstring of
 #: sphinx.domains.Domain.get_objects:12
 msgid "Object type, a key in ``self.object_types``."
-msgstr "对象类型，一个键``self.object_类型``."
+msgstr "对象类型， ``self.object_types`` 中的一个键。"
 
 #: ../../sphinx/sphinx/domains/__init__.pydocstring of
 #: sphinx.domains.Domain.get_objects:14
@@ -256,8 +259,8 @@ msgid ""
 "that could have created the same reference, e.g. ``'py:func'``. ``newnode`` "
 "is what :meth:`resolve_xref` would return."
 msgstr ""
-"该方法必须返回元组的列表（可能为空）``('domain:role', newnode）``，其中``'domain:role'`` "
-"是可能创建相同引用的角色的名称，例如``'py:func'``. ``newnode`` 返回的是 :meth:`resolve_xref` "
+"该方法必须返回元组的列表（可能为空） ``('domain:role', newnode)``，其中 ``'domain:role'`` "
+"是可能创建相同引用的角色的名称，例如 ``'py:func'``。``newnode`` 返回的是 :meth:`resolve_xref` "
 "将返回的内容。"
 
 #: ../../sphinx/sphinx/domains/__init__.pydocstring of
@@ -387,7 +390,7 @@ msgid ""
 "defines the object's priority in the full-text search index, see "
 ":meth:`Domain.get_objects()`."
 msgstr ""
-"*attrs*：object attributes —— 目前只知道“searchprio”，它定义了全文搜索索引中对象的优先级，请参见 "
+"*attrs*：object attributes —— 目前只知道 \"searchprio\"，它定义了全文搜索索引中对象的优先级，请参见 "
 ":meth:`Domain.get_objects()`."
 
 #: ../../sphinx/sphinx/domains/_index.pydocstring of
@@ -449,7 +452,7 @@ msgstr "如果给定了“docnames”，则限制为引用这些文档名的条�
 #: ../../sphinx/sphinx/domains/_index.pydocstring of
 #: sphinx.domains._index.Index.generate:6
 msgid "The return value is a tuple of ``(content, collapse)``:"
-msgstr "返回值是一个元组``（content，collapse）``："
+msgstr "返回值是一个元组 ``(content, collapse)``："
 
 #: ../../sphinx/sphinx/domains/_index.pydocstring of
 #: sphinx.domains._index.Index.generate:8

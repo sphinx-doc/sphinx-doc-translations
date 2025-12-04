@@ -8,16 +8,16 @@
 # wendi cao <651645601@qq.com>, 2024
 # ChizumiKonos, 2024
 # YanJun Sun <zxvf6aj@sina.cn>, 2025
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.0rc1\n"
+"Project-Id-Version: Sphinx 9.0.4+/69596331b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 06:39+0000\n"
+"POT-Creation-Date: 2025-12-04 12:57+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,13 +27,13 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:2
 msgid ":mod:`sphinx.ext.coverage` -- Collect doc coverage stats"
-msgstr ":mod:`sphinx.ext.coverage` -- 收集文档覆盖率统计"
+msgstr ":mod:`sphinx.ext.coverage` -- 收集文档覆盖率统计信息"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:10
 msgid ""
 "This extension features one additional builder, the "
 ":class:`CoverageBuilder`."
-msgstr "这个扩展还有一个生成器 :class:`CoverageBuilder`。"
+msgstr "这个扩展还有一个构建器 :class:`CoverageBuilder`。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:12
 msgid "Todo"
@@ -49,6 +49,8 @@ msgid ""
 "automatically generate API documentation for all code in a project, avoiding"
 " the need to manually author these documents and keep them up-to-date."
 msgstr ""
+":doc:`sphinx-apidoc </man/sphinx-apidoc>` 命令可用于自动生成项目中所有代码的 API "
+"文档，避免了手动编写这些文档并保持其最新。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:22
 msgid ""
@@ -56,6 +58,8 @@ msgid ""
 " modules have side effects on import, these will be executed by the coverage"
 " builder when ``sphinx-build`` is run."
 msgstr ""
+":mod:`~sphinx.ext.coverage` **导入** 要记录的模块。如果任何模块在导入时有副作用，当运行 ``sphinx-"
+"build`` 时，这些副作用将由覆盖构建器执行。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:26
 msgid ""
@@ -70,16 +74,18 @@ msgid ""
 "package must be in one of the directories on :data:`sys.path` -- adapt your "
 ":data:`sys.path` in the configuration file accordingly."
 msgstr ""
+"Sphinx（实际上是执行 Sphinx 的 Python 解释器）要找到你的模块，它必须是可导入的。这意味着该模块或包必须位于 "
+":data:`sys.path` 上的某个目录中——请相应地在配置文件中调整你的 :data:`sys.path` 。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:38
 msgid ""
 "To use this builder, activate the coverage extension in your configuration "
 "file and run ``sphinx-build -M coverage`` on the command line."
-msgstr ""
+msgstr "要使用此构建器，请在配置文件中激活覆盖扩展，然后在命令行上运行 ``sphinx-build -M coverage`` 。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:43
 msgid "Builder"
-msgstr ""
+msgstr "构建器"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:49
 msgid "Configuration"
@@ -89,7 +95,7 @@ msgstr "配置"
 msgid ""
 "Several configuration values can be used to specify what the builder should "
 "check:"
-msgstr "可以使用多个配置值来指定生成器应检查的内容："
+msgstr "可以使用多个配置值来指定构建器应检查的内容："
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:0
 msgid "Type"
@@ -110,10 +116,15 @@ msgid ""
 "</usage/domains/python>` or the :rst:dir:`automodule` directive provided by "
 "the :mod:`~sphinx.ext.autodoc` extension."
 msgstr ""
+"要测试覆盖率的 Python 包或模块列表。如果提供了此列表，Sphinx "
+"将检查该列表中提供的每个包或模块以及其中找到的所有子包和子模块。如果未提供此列表，Sphinx 将仅为其已知的 Python "
+"包和模块提供覆盖率：也就是说，使用 :doc:`Python domain </usage/domains/python>` 中提供的 "
+":rst:dir:`py:module` 指令或由 :mod:`~sphinx.ext.autodoc` 扩展提供的 "
+":rst:dir:`automodule` 指令记录的任何模块。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:78
 msgid "List of `Python regular expressions`_."
-msgstr "`Python 正则表达式`_ 列表。"
+msgstr "`Python regular expressions`_ 列表。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:80
 msgid ""
@@ -124,26 +135,26 @@ msgstr "如果这些正则表达式中的任何一个与Python对象的完整导
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:104
 msgid "Set to ``False`` to not write headlines."
-msgstr "设置为“False”不写标题。"
+msgstr "设置为 ``False`` 不写标题。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:112
 msgid "Skip objects that are not documented in the source with a docstring."
-msgstr ""
+msgstr "跳过源代码中没有使用文档字符串记录的对象。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:120
 msgid "Print objects that are missing to standard output also."
-msgstr ""
+msgstr "也将缺失的对象打印到标准输出。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:128
 msgid ""
 "Print a tabular report of the coverage statistics to the coverage report."
-msgstr ""
+msgstr "打印覆盖率统计的表格报告到覆盖率报告。"
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:130
 #: ../../sphinx/doc/usage/extensions/coverage.rst:150
 msgid "Example output:"
-msgstr ""
+msgstr "示例输出："
 
 #: ../../sphinx/doc/usage/extensions/coverage.rst:148
 msgid "Print a tabular report of the coverage statistics to standard output."
-msgstr ""
+msgstr "将覆盖率统计的表格报告打印到标准输出。"

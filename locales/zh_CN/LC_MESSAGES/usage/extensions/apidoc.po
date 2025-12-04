@@ -4,18 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# wendi cao <651645601@qq.com>, 2025
 # Melia Lee <lixiuyu97@163.com>, 2025
+# wendi cao <651645601@qq.com>, 2025
 # YanJun Sun <zxvf6aj@sina.cn>, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.0.4+/69596331b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-22 01:06+0000\n"
+"POT-Creation-Date: 2025-12-04 12:57+0000\n"
 "PO-Revision-Date: 2025-02-18 00:50+0000\n"
-"Last-Translator: YanJun Sun <zxvf6aj@sina.cn>, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,14 +36,14 @@ msgid ""
 "command-line tool as an extension, allowing it to be run during the Sphinx "
 "build process."
 msgstr ""
-":mod:`sphinx.ext.apidoc` 是一款利用 Python 包自动产生 Sphinx 源码的工具。其提供 "
-":program:`sphinx-apidoc` 命令行作为扩展，以允许在 Sphinx 构建期间运行它。"
+":mod:`sphinx.ext.apidoc` 是自动为Python包产生Sphinx源码(rst)的工具。该扩展提供 "
+":program:`sphinx-apidoc` 命令行，允许在Sphinx构建期间运行它。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:23
 msgid ""
 "The extension writes generated source files to a provided directory, which "
 "are then read by Sphinx using the :mod:`sphinx.ext.autodoc` extension."
-msgstr "此扩展将产生的源码文件写到提供的目录内，可供使用 :mod:`sphinx.ext.autodoc` 扩展的 Sphinx 读取。"
+msgstr "此扩展将产生的源码文件写到提供的目录内，然后由Sphinx使用 :mod:`sphinx.ext.autodoc` 扩展读取。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:28
 msgid ""
@@ -51,12 +52,15 @@ msgid ""
 " side effects on import, these will be executed by ``autodoc`` when "
 ":program:`sphinx-build` is run."
 msgstr ""
+"由 :mod:`sphinx.ext.apidoc` 产生的源码文件被 :mod:`sphinx.ext.autodoc` "
+"使用，来为python模块生成文档。若在导入时有任何模块具有副作用，这些副作用将在运行 :program:`sphinx-build` 时由 "
+"``autodoc`` 执行。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:33
 msgid ""
 "If you document scripts (as opposed to library modules), make sure their "
 "main routine is protected by an ``if __name__ == '__main__'`` condition."
-msgstr ""
+msgstr "如果您记录脚本（而不是库模块），请确保它们的主函数受 ``if __name__ == '__main__'`` 保护。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:39
 msgid "Configuration"
@@ -64,7 +68,7 @@ msgstr "配置"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:41
 msgid "The apidoc extension uses the following configuration values:"
-msgstr "扩展 apidoc 使用以下配置值："
+msgstr "apidoc扩展使用以下配置值："
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:0
 msgid "Type"
@@ -79,7 +83,7 @@ msgid ""
 "A list or sequence of dictionaries describing modules to document. If a "
 "value is left unspecified in any dictionary, the general configuration value"
 " is used as the default."
-msgstr ""
+msgstr "一个描述要记录的模块的字典列表或序列。如果在任何字典中未指定某个值，则使用通用配置值作为默认值。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:51
 msgid "For example:"
@@ -87,110 +91,110 @@ msgstr "例如："
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:75
 msgid "Valid keys are:"
-msgstr ""
+msgstr "有效的键有："
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:77
 msgid ":code-py:`'path'`"
-msgstr ""
+msgstr ":code-py:`'path'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:78
 msgid ""
 "The path to the module to document (**required**). This must be absolute or "
 "relative to the configuration directory."
-msgstr ""
+msgstr "需要生成文档的模块的路径（ **必需** ）。该路径必须是绝对路径或相对于配置目录的路径。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:81
 msgid ":code-py:`'destination'`"
-msgstr ""
+msgstr ":code-py:`'destination'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:82
 msgid ""
 "The output directory for generated files (**required**). This must be "
 "relative to the source directory, and will be created if it does not exist."
-msgstr ""
+msgstr "生成文件的输出目录（ **必需** ）。该目录必须相对于源目录，且如果不存在则会被创建。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:86
 msgid ":code-py:`'exclude_patterns'`"
-msgstr ""
+msgstr ":code-py:`'exclude_patterns'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:87
 msgid "See :confval:`apidoc_exclude_patterns`."
-msgstr ""
+msgstr "见 :confval:`apidoc_exclude_patterns`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:89
 msgid ":code-py:`'max_depth'`"
-msgstr ""
+msgstr ":code-py:`'max_depth'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:90
 msgid "See :confval:`apidoc_max_depth`."
-msgstr ""
+msgstr "见 :confval:`apidoc_max_depth`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:92
 msgid ":code-py:`'follow_links'`"
-msgstr ""
+msgstr ":code-py:`'follow_links'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:93
 msgid "See :confval:`apidoc_follow_links`."
-msgstr ""
+msgstr "见 :confval:`apidoc_follow_links`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:95
 msgid ":code-py:`'separate_modules'`"
-msgstr ""
+msgstr ":code-py:`'separate_modules'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:96
 msgid "See :confval:`apidoc_separate_modules`."
-msgstr ""
+msgstr "见 :confval:`apidoc_separate_modules`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:98
 msgid ":code-py:`'include_private'`"
-msgstr ""
+msgstr ":code-py:`'include_private'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:99
 msgid "See :confval:`apidoc_include_private`."
-msgstr ""
+msgstr "见 :confval:`apidoc_include_private`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:101
 msgid ":code-py:`'no_headings'`"
-msgstr ""
+msgstr ":code-py:`'no_headings'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:102
 msgid "See :confval:`apidoc_no_headings`."
-msgstr ""
+msgstr "见 :confval:`apidoc_no_headings`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:104
 msgid ":code-py:`'module_first'`"
-msgstr ""
+msgstr ":code-py:`'module_first'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:105
 msgid "See :confval:`apidoc_module_first`."
-msgstr ""
+msgstr "见 :confval:`apidoc_module_first`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:107
 msgid ":code-py:`'implicit_namespaces'`"
-msgstr ""
+msgstr ":code-py:`'implicit_namespaces'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:108
 msgid "See :confval:`apidoc_implicit_namespaces`."
-msgstr ""
+msgstr "见 :confval:`apidoc_implicit_namespaces`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:110
 msgid ":code-py:`'automodule_options'`"
-msgstr ""
+msgstr ":code-py:`'automodule_options'`"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:111
 msgid "See :confval:`apidoc_automodule_options`."
-msgstr ""
+msgstr "见 :confval:`apidoc_automodule_options`。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:117
 msgid ""
 "A sequence of patterns to exclude from generation. These may be literal "
 "paths or :py:mod:`fnmatch`-style patterns."
-msgstr ""
+msgstr "一个序列，由不需要生成文档的模块的样式组成。可以是字面路径或 :py:mod:`fnmatch` 风格的路径。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:124
 msgid ""
 "The maximum depth of submodules to show in the generated table of contents."
-msgstr ""
+msgstr "生成的目录树中要显示的子模块的最大深度。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:130
 msgid "Follow symbolic links."
@@ -198,22 +202,22 @@ msgstr "遵循符号链接。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:136
 msgid "Put documentation for each module on an individual page."
-msgstr ""
+msgstr "将每个模块的文档放在单独的页面上。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:142
 msgid ""
 "Generate documentation for '_private' modules with leading underscores."
-msgstr ""
+msgstr "为带有前导下划线的“_private”模块生成文档。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:148
 msgid ""
 "Do not create headings for the modules/packages. Useful when source "
 "docstrings already contain headings."
-msgstr ""
+msgstr "不要为模块/包创建标题。当源文档字符串已经包含标题时，这个选项很有用。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:155
 msgid "Place module documentation before submodule documentation."
-msgstr ""
+msgstr "将模块文档放在子模块文档之前。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:161
 msgid ""
@@ -223,13 +227,13 @@ msgid ""
 "(notice that ``bar`` and ``foo`` are namespaces, not modules)."
 msgstr ""
 "默认情况下，sphinx-apidoc 只处理 sys.path 中找到的模块。从 Python 3.3 起，引入了 :pep:`420` "
-"隐式命名空间，允许模块路径结构，比如“foo/bar/module.py”或者 “foo/bar/baz/__init__.py” "
-"（注意这里的“foo”和“bar”都用来表示命名空间，并不是模块）。"
+"隐式命名空间，允许模块路径结构，比如 ``foo/bar/module.py`` 或者 ``foo/bar/baz/__init__.py`` "
+"（注意这里的 ``foo`` 和 ``bar`` 都用来表示命名空间，并不是模块）。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:166
 msgid "Interpret module paths using :pep:`420` implicit namespaces."
-msgstr ""
+msgstr "使用 :pep:`420` 隐式命名空间来解释模块路径。"
 
 #: ../../sphinx/doc/usage/extensions/apidoc.rst:172
 msgid "Options to pass to generated :rst:dir:`automodule` directives."
-msgstr ""
+msgstr "传递给生成的 :rst:dir:`automodule` 指令的选项。"

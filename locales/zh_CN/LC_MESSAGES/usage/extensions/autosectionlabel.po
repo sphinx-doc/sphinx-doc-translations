@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1\n"
+"Project-Id-Version: Sphinx 9.0.4+/69596331b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 06:40+0000\n"
+"POT-Creation-Date: 2025-12-04 12:57+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -27,13 +27,13 @@ msgstr ""
 msgid ""
 ":mod:`sphinx.ext.autosectionlabel` -- Allow referencing sections by their "
 "title"
-msgstr ""
+msgstr ":mod:`sphinx.ext.autosectionlabel` -- 通过标题引用章节"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:14
 msgid ""
 "By default, cross-references to sections use labels (see :rst:role:`ref`). "
 "This extension allows you to instead refer to sections by their title."
-msgstr ""
+msgstr "默认情况下，对章节的交叉引用使用标签（参见 :rst:role:`ref`）。作为替代，此扩展允许通过标题来引用章节。"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:17
 msgid "For example::"
@@ -47,7 +47,8 @@ msgid ""
 "can be used to make headings which appear multiple times but in different "
 "documents unique."
 msgstr ""
-"在内部，这个扩展为每个部分生成标签。若在整个文档中使用相同的节名称，则默认情况下，任何一个节名称都将用于目标。“autosectionlabel_prefix_document”配置变量可用于使多次出现但在不同文档中的标题唯一。"
+"在构建过程中，此扩展为每个章节生成标签。若在整个文档中使用重复的章节名称，则默认情况下，任何一个节名称都将用于目标。如果一个标题名在文档的不同部分之间多次出现，"
+" ``autosectionlabel_prefix_document`` 配置变量可为它们生成不同的标签。"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:35
 msgid "Configuration"
@@ -69,8 +70,8 @@ msgid ""
 "avoiding ambiguity when the same section heading appears in different "
 "documents."
 msgstr ""
-"如果为True，则在每个节标签前面加上它所在文档的名称，后跟冒号。例如 ``index:Introduction`` 对于文档中出现的名为 "
-"``Introdution`` 的部分 ``index.rst``. 当同一节标题出现在不同的文档中时，有助于避免歧义。"
+"如果为True，则在每个节标签前面加上它所在文档的名称，后跟冒号。例如对于文档中出现的、在 ``Introdution`` 部分的 "
+"``index.rst``，生成的标签名为 ``index:Introduction``。当同名的章节标题出现在文档的不同部分中时，有助于避免造成歧义。"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:51
 msgid ""
@@ -79,10 +80,13 @@ msgid ""
 "only for top level sections, and deeper sections are not labeled.  It "
 "defaults to ``None`` (i.e. all sections are labeled)."
 msgstr ""
+"如果设置了该值， autosectionlabel 将根据章节的深度选择要标记的章节。例如，当 "
+"``autosectionlabel_maxdepth`` 设置为 1 时，仅为顶级章节生成标签，而较深的章节则不生成标签。默认值为 ``None`` "
+"（即所有章节均生成标签）。"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:58
 msgid "Debugging"
-msgstr ""
+msgstr "调试"
 
 #: ../../sphinx/doc/usage/extensions/autosectionlabel.rst:60
 msgid ""
@@ -92,3 +96,5 @@ msgid ""
 " have been generated for them. This output can help finding the right "
 "reference label."
 msgstr ""
+"``WARNING: undefined label`` 警告表示您在 :rst:role:`ref` 中的引用拼写错误。使用 ``-vvv`` （参见"
+" :option:`-v` ）调用 :program:`sphinx-build` 将打印所有章节名称及其生成的标签。此输出有助于找到正确的引用标签。"

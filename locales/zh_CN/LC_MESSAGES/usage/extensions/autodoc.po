@@ -14,9 +14,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1\n"
+"Project-Id-Version: Sphinx 9.0.4+/69596331b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 06:40+0000\n"
+"POT-Creation-Date: 2025-12-04 12:57+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -28,13 +28,13 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:4
 msgid ":mod:`sphinx.ext.autodoc` -- Include documentation from docstrings"
-msgstr ":mod:`sphinx.ext.autodoc` -- 包含来自docstrings的文档"
+msgstr ":mod:`sphinx.ext.autodoc` -- 纳入来自docstrings的文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:15
 msgid ""
 "This extension can import the modules you are documenting, and pull in "
 "documentation from docstrings in a semi-automatic way."
-msgstr "这个插件可以导入正在编写文档的模块，并以半自动的方式从文档字符串中拉入文档。"
+msgstr "此扩展导入需要生成文档的模块，并以半自动的方式从文档字符串中拉入文档。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:20
 msgid ""
@@ -42,12 +42,14 @@ msgid ""
 "modules have side effects on import, these will be executed by ``autodoc`` "
 "when :program:`sphinx-build` is run."
 msgstr ""
+":mod:`~sphinx.ext.autodoc` **导入** 需要生成文档的模块。如果任何模块在导入时具有副作用，这些副作用将在运行 "
+":program:`sphinx-build` 时由 ``autodoc`` 执行。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:24
 msgid ""
 "If you document scripts (as opposed to library modules), make sure that the "
 "main routine is protected by an ``if __name__ == '__main__'`` condition."
-msgstr ""
+msgstr "如果要给脚本（而不是库模块）生成文档，请确保主函数由 ``if __name__ == '__main__'`` 保护。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:28
 msgid ""
@@ -58,6 +60,7 @@ msgid ""
 "maintain two locations for documentation, while at the same time avoiding "
 "auto-generated-looking pure API documentation."
 msgstr ""
+"为了autodoc可以正常工作，docstrings当然必须用正确的reStructuredText编写。然后，您可以在docstrings中使用所有常用的Sphinx标记，它最终将正确地出现在文档中。结合手写文档，这种技术减轻了维护两个文档位置的痛苦，同时避免了自动生成的纯API文档的外观。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:36
 msgid ""
@@ -66,6 +69,9 @@ msgid ""
 ":mod:`!napoleon` is a preprocessor that converts docstrings to correct "
 "reStructuredText before ``autodoc`` processes them."
 msgstr ""
+"如果您更喜欢 `NumPy`_ 或 `Google`_ 风格的docstrings而不是reStructuredText风格的，您还可以启用 "
+":mod:`napoleon <sphinx.ext.napoleon>` 扩展。:mod:`!napoleon` 是一个预处理器，在 "
+"``autodoc`` 处理它们之前将docstrings转换为正确的reStructuredText。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:46
 msgid "Getting started"
@@ -73,17 +79,19 @@ msgstr "开始"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:50
 msgid "Setup"
-msgstr ""
+msgstr "设置"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:52
 msgid ""
 "Activate the plugin by adding ``'sphinx.ext.autodoc'`` to the "
 ":confval:`extensions` list in :file:`conf.py`:"
 msgstr ""
+"在 :file:`conf.py` 的 :confval:`extensions` 列表中添加 ``'sphinx.ext.autodoc'`` "
+"来激活该插件："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:64
 msgid "Ensuring the code can be imported"
-msgstr ""
+msgstr "确保代码可以被导入"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:66
 msgid ""
@@ -94,10 +102,13 @@ msgid ""
 "in the python environment that Sphinx runs in, your module import will "
 "fail)."
 msgstr ""
+":mod:`~sphinx.ext.autodoc` 通过 **导入模块** "
+"后的内省来分析代码和docstrings。为了正确导入，您必须确保Sphinx可以找到您的模块并且可以解析依赖项（如果您的模块执行 ``import "
+"foo``，但在运行Sphinx的Python环境中 ``foo`` 不可用，则您的模块导入将失败）。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:73
 msgid "There are two ways to ensure this:"
-msgstr ""
+msgstr "有两种方法可以确保这一点："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:75
 msgid ""
@@ -107,13 +118,14 @@ msgid ""
 "installation process ensures that your package can be found by Sphinx and "
 "that all dependencies are available."
 msgstr ""
+"使用包含您的软件包和Sphinx的环境。这可以是您的本地开发环境（有可编辑的安装实例），或者是在CI中的环境，在其中安装Sphinx和您的软件包。常规安装过程确保Sphinx可以找到您的软件包并且所有依赖项都可用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:81
 msgid ""
 "It is alternatively possible to patch the Sphinx run so that it can operate "
 "directly on the sources; e.g. if you want to be able to do a Sphinx build "
 "from a source checkout."
-msgstr ""
+msgstr "或者，可以修补Sphinx运行，以便它可以直接在源代码上运行；例如，如果您想能够签出源代码、执行Sphinx构建。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:85
 msgid ""
@@ -122,12 +134,15 @@ msgid ""
 " package is at :file:`src/my_package`, then you should add the following to "
 "your :file:`conf.py`."
 msgstr ""
+"在 :file:`conf.py` 中修补 :data:`sys.path` 以包含您的源路径。例如，如果您的存储库结构包含 "
+":file:`doc/conf.py` 并且您的软件包位于 :file:`src/my_package`，则应将以下内容添加到您的 "
+":file:`conf.py` 中。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:97
 msgid ""
 "To cope with missing dependencies, specify the missing modules in the "
 ":confval:`autodoc_mock_imports` setting."
-msgstr ""
+msgstr "为了解决缺少的依赖项，请在 :confval:`autodoc_mock_imports` 设置中指定缺少的模块。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:102
 msgid "Usage"
@@ -140,12 +155,14 @@ msgid ""
 "example, to document the function ``io.open()``, reading its signature and "
 "docstring from the source file, you'd write:"
 msgstr ""
+"现在，您可以使用 :ref:`autodoc-directives` 为函数、类、模块等Python代码元素添加格式化的文档。例如，要记录函数 "
+"``io.open()``，从源文件读取其签名和docstring，您可以这样写："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:113
 msgid ""
 "You can also document whole classes or even modules automatically, using "
 "member options for the auto directives, like:"
-msgstr ""
+msgstr "您还可以使用自动指令的成员选项自动记录整个类甚至模块，例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:122
 msgid ""
@@ -153,10 +170,11 @@ msgid ""
 "module name and the object name to let autodoc know the correct module, if "
 "it is ambiguous:"
 msgstr ""
+"作为对autodoc扩展的提示，您可以在模块名称和对象名称之间放置 ``::`` 分隔符，以便autodoc知道正确的模块（如果存在歧义）："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:132
 msgid "Marking objects as public or private"
-msgstr ""
+msgstr "将对象标记为公共或私有"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:134
 msgid ""
@@ -181,10 +199,12 @@ msgid ""
 "docstring contains ``:meta hide-value:`` in its :ref:`info-field-lists`. "
 "Example:"
 msgstr ""
+"如果某个变量成员的docstring在其 :ref:`info-field-lists` 中包含 ``:meta hide-"
+"value:``，则autodoc认为该变量成员没有任何默认值。示例："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:177
 msgid "Doc comments and docstrings"
-msgstr ""
+msgstr "文档注释和文档字符串"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:179
 msgid ""
@@ -193,6 +213,8 @@ msgid ""
 "special format of :ref:`comment <python:comments>` called a 'doc comment' or"
 " 'documentation comment'."
 msgstr ""
+"Python本身不支持为模块数据成员或类属性编写文档字符串。为了允许记录这些内容，``autodoc`` "
+"识别一种称为“文档注释”或“文档评论”的特殊格式的 :ref:`comment <python:comments>` 。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:184
 msgid ""
@@ -202,23 +224,25 @@ msgid ""
 " doc-comments must always  appear on the lines before the variable's "
 "definition."
 msgstr ""
+"这些注释以冒号和可选的空格字符 ``'#:'`` 或 ``'#: '`` "
+"开头。要被识别，注释必须出现在与变量相同的行上，或者出现在变量之前的一行或多行上。多行文档注释必须始终出现在变量定义之前的行上。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:191
 msgid ""
 "For example, all three of the following variables have valid doc-comments:"
-msgstr ""
+msgstr "例如，以下三个变量都有有效的文档注释："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:205
 msgid ""
 "Alternatively, ``autodoc`` can recognise a docstring on the line immediately"
 " following the definition."
-msgstr ""
+msgstr "或者，``autodoc`` 可以识别紧跟定义之后的行上的docstring。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:208
 msgid ""
 "In the the following class definition, all attributes have documentation "
 "recognised by ``autodoc``:"
-msgstr ""
+msgstr "在以下类定义中，所有属性都有 ``autodoc`` 识别的文档："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:236
 msgid "Directives"
@@ -232,6 +256,9 @@ msgid ""
 "objects, inserting them into the page source under a suitable "
 ":rst:dir:`py:module`, :rst:dir:`py:class` etc. directive."
 msgstr ""
+":mod:`autodoc` 提供了几个通常的 :rst:dir:`py:module`、:rst:dir:`py:class` "
+"等指令的版本。在解析时，它们导入相应的模块并提取给定对象的docstring，将它们插入到页面源中，位于合适的 "
+":rst:dir:`py:module`、:rst:dir:`py:class` 等指令下。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:247
 msgid ""
@@ -239,10 +266,12 @@ msgid ""
 ":rst:dir:`autoclass` will also do so. Likewise, :rst:dir:`automethod` will "
 "respect the current :rst:dir:`py:class`."
 msgstr ""
+"正如 :rst:dir:`py:class` 尊重当前的 :rst:dir:`py:module` 一样，:rst:dir:`autoclass` "
+"也会这样做。同样，:rst:dir:`automethod` 将尊重当前的 :rst:dir:`py:class` 。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:253
 msgid "Default directive options"
-msgstr ""
+msgstr "默认指令选项"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:255
 msgid ""
@@ -268,7 +297,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:284
 msgid "Automatically document modules"
-msgstr ""
+msgstr "自动为模块编写文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:288
 msgid ""
@@ -482,7 +511,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:527
 msgid "Automatically document classes or exceptions"
-msgstr ""
+msgstr "自动为类或异常编写文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:532
 msgid ""
@@ -656,7 +685,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:801
 msgid "Automatically document function-like objects"
-msgstr ""
+msgstr "自动为类似函数的对象编写文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:808
 msgid ""
@@ -706,7 +735,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:885
 msgid "Automatically document attributes or data"
-msgstr ""
+msgstr "自动为属性或数据编写文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:890
 msgid ""
@@ -764,7 +793,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:970
 msgid "Automatically document type aliases"
-msgstr ""
+msgstr "自动为类型别名编写文档"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:976
 msgid ""

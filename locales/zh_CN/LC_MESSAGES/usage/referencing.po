@@ -6,16 +6,16 @@
 # Translators:
 # Melia Lee <lixiuyu97@163.com>, 2023
 # wendi cao <651645601@qq.com>, 2023
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.0rc1\n"
+"Project-Id-Version: Sphinx 9.0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-29 01:57+0000\n"
+"POT-Creation-Date: 2025-12-05 12:54+0000\n"
 "PO-Revision-Date: 2023-10-04 00:36+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../sphinx/doc/usage/referencing.rst:5
 msgid "Cross-references"
-msgstr ""
+msgstr "交叉引用"
 
 #: ../../sphinx/doc/usage/referencing.rst:7
 msgid ""
@@ -35,10 +35,12 @@ msgid ""
 " ``spam()`` is documented, appropriate to each output format (HTML, PDF, "
 "ePUB, etc.)."
 msgstr ""
+"Sphinx最有用的功能之一是通过语义交叉引用角色来创建自动交叉引用。对对象描述（比如 ``:func:`spam```）的交叉引用将创建一个链接，指向"
+" ``spam()`` 文档记录的位置，适用于每种输出格式（HTML、PDF、ePUB等）。"
 
 #: ../../sphinx/doc/usage/referencing.rst:16
 msgid "Syntax"
-msgstr ""
+msgstr "语法"
 
 #: ../../sphinx/doc/usage/referencing.rst:18
 msgid ""
@@ -48,10 +50,12 @@ msgid ""
 "*role*. The link's text depends the role but is often the same as or similar"
 " to *target*."
 msgstr ""
+"Sphinx支持各种交叉引用角色，以创建指向文档中其他元素的链接。通常，编写 ``:role:`target``` 会创建一个指向 *role* "
+"指示的类型的 *target* 对象的链接。链接的文本取决于角色，但通常与 *target* 相同或相似。"
 
 #: ../../sphinx/doc/usage/referencing.rst:26
 msgid "The behavior can be modified in the following ways:"
-msgstr ""
+msgstr "可以通过以下方式修改行为："
 
 #: ../../sphinx/doc/usage/referencing.rst:28
 msgid ""
@@ -60,18 +64,21 @@ msgid ""
 "links>`: ``:role:`custom text <target>``` will refer to *target* and display"
 " *custom text* as the text of the link."
 msgstr ""
+"**自定义链接文本：** 您可以使用与reStructuredText :ref:`external links <rst-external-"
+"links>` 中相同的符号明确指定链接文本： ``:role:`custom text <target>``` 将引用 *target* 并显示 "
+"*custom text* 作为链接文本。"
 
 #: ../../sphinx/doc/usage/referencing.rst:34
 msgid ""
 "**Suppressed link:** Prefixing with an exclamation mark (``!``) prevents the"
 " creation of a link but otherwise keeps the visual output of the role."
-msgstr ""
+msgstr "**抑制链接：** 以感叹号（``!``）为前缀可防止创建链接，但在其他方面保留该角色的视觉输出。"
 
 #: ../../sphinx/doc/usage/referencing.rst:38
 msgid ""
 "For example, writing ``:py:func:`!target``` displays :py:func:`!target`, "
 "with no link generated."
-msgstr ""
+msgstr "例如，编写 ``:py:func:`!target``` 显示 :py:func:`!target`，但不会生成链接。"
 
 #: ../../sphinx/doc/usage/referencing.rst:41
 msgid ""
@@ -81,6 +88,8 @@ msgid ""
 "</usage/extensions/intersphinx>`. Suppressing the link prevents warnings in "
 ":confval:`nitpicky` mode."
 msgstr ""
+"这对于链接目标不存在的情况很有帮助；例如，描述已删除功能的变更日志条目，或不支持 :doc:`intersphinx "
+"</usage/extensions/intersphinx>` 的第三方库。抑制链接可防止在 :confval:`nitpicky` 模式下发出警告。"
 
 #: ../../sphinx/doc/usage/referencing.rst:47
 msgid ""
@@ -89,16 +98,18 @@ msgid ""
 " of the target. For example, ``:py:meth:`~queue.Queue.get``` will refer to "
 "``queue.Queue.get`` but only display ``get`` as the link text."
 msgstr ""
+"**修改域引用：** 当 :ref:`referencing domain objects <ref-objects>` 时，波浪号 ``~`` "
+"前缀将链接文本缩短为目标的最后一个组件。例如，"
 
 #: ../../sphinx/doc/usage/referencing.rst:53
 msgid ""
 "In HTML output, the link's ``title`` attribute (that is e.g. shown as a "
 "tool-tip on mouse-hover) will always be the full target name."
-msgstr "在HTML输出中，链接的“title”属性（即鼠标悬停时显示为工具提示）将始终是完整的目标名称。"
+msgstr "在HTML输出中，链接的 ``title`` 属性（即鼠标悬停时显示为工具提示）将始终是完整的目标名称。"
 
 #: ../../sphinx/doc/usage/referencing.rst:61
 msgid "Cross-referencing objects"
-msgstr "交互参考对象"
+msgstr "交叉引用对象"
 
 #: ../../sphinx/doc/usage/referencing.rst:63
 msgid "These roles are described with their respective domains:"
@@ -106,23 +117,23 @@ msgstr "这些角色用各自的域来描述："
 
 #: ../../sphinx/doc/usage/referencing.rst:65
 msgid ":ref:`C <c-xref-roles>`"
-msgstr ""
+msgstr ":ref:`C <c-xref-roles>`"
 
 #: ../../sphinx/doc/usage/referencing.rst:66
 msgid ":ref:`C++ <cpp-xref-roles>`"
-msgstr ""
+msgstr ":ref:`C++ <cpp-xref-roles>`"
 
 #: ../../sphinx/doc/usage/referencing.rst:67
 msgid ":ref:`JavaScript <js-xref-roles>`"
-msgstr ""
+msgstr ":ref:`JavaScript <js-xref-roles>`"
 
 #: ../../sphinx/doc/usage/referencing.rst:68
 msgid ":ref:`reStructuredText <rst-xref-roles>`"
-msgstr ""
+msgstr ":ref:`reStructuredText <rst-xref-roles>`"
 
 #: ../../sphinx/doc/usage/referencing.rst:69
 msgid ":ref:`Python <python-xref-roles>`"
-msgstr ""
+msgstr ":ref:`Python <python-xref-roles>`"
 
 #: ../../sphinx/doc/usage/referencing.rst:75
 msgid "Cross-referencing arbitrary locations"
@@ -135,6 +146,7 @@ msgid ""
 " be unique throughout the entire documentation. There are two ways in which "
 "you can refer to labels:"
 msgstr ""
+"为了支持对任何文档中任意位置的交叉引用，使用了标准的reStructuredText标签。为了使其工作，标签名称必须在整个文档中是唯一的。引用标签的两种方式："
 
 #: ../../sphinx/doc/usage/referencing.rst:85
 msgid ""
@@ -147,7 +159,9 @@ msgid ""
 "The ``:ref:`` role would then generate a link to the section, with the link "
 "title being \"Section to cross-reference\".  This works just as well when "
 "section and reference are in different source files."
-msgstr "然后，“:ref:”角色将生成一个到节的链接，链接标题为“要交叉引用的节”。当节和引用位于不同的源文件中时，这种方法同样有效。"
+msgstr ""
+"然后，``:ref:`` 角色所在处将生成一个到节的链接，显示的链接文本为\"Section to cross-"
+"reference\"（即label下方的章节的名字）。当节和引用位于不同的源文件中时，这种方法同样有效。"
 
 #: ../../sphinx/doc/usage/referencing.rst:101
 msgid "Automatic labels also work with figures. For example::"
@@ -157,7 +171,7 @@ msgstr "自动标签也适用于图形。例如："
 msgid ""
 "In this case, a  reference ``:ref:`my-figure``` would insert a reference to "
 "the figure with link text \"Figure caption\"."
-msgstr "在这种情况下，引用 ``:ref:`my-figure``` 会插入一个引用到图，链接文本为“Figure caption”。"
+msgstr "在这种情况下，引用 ``:ref:`my-figure``` 会插入一个引用到图，链接文本为 \"Figure caption\"。"
 
 #: ../../sphinx/doc/usage/referencing.rst:112
 msgid ""
@@ -207,6 +221,9 @@ msgid ""
 "reference is ``:doc:`/people``` or ``:doc:`../people```, the link refers to "
 "``people``."
 msgstr ""
+"链接到指定的文档；文档名称可以是相对路径或绝对路径，并且始终区分大小写，即使在Windows上也是如此。例如，如果在文档 "
+"``sketches/index`` 中出现引用 ``:doc:`parrot```，则链接引用 ``sketches/parrot``。如果引用是 "
+"``:doc:`/people``` 或 ``:doc:`../people```，则链接引用 ``people``。"
 
 #: ../../sphinx/doc/usage/referencing.rst:145
 msgid ""
@@ -225,7 +242,7 @@ msgid ""
 "This role lets you link to files within your source tree that are not "
 "reStructuredText documents that can be viewed, but files that can be "
 "downloaded."
-msgstr ""
+msgstr "此角色允许您链接到源树中的文件，这些文件不是可以查看的reStructuredText文档，而是可以下载的文件。"
 
 #: ../../sphinx/doc/usage/referencing.rst:160
 msgid ""
@@ -234,8 +251,8 @@ msgid ""
 " downloadable files are put into a ``_downloads/<unique hash>/`` "
 "subdirectory of the output directory; duplicate filenames are handled."
 msgstr ""
-"当您使用此角色时，被引用的文件将自动标记为在生成时包含在输出中（显然，仅用于HTML输出）。所有可下载的文件都放在输出目录的“_downloads/<unique"
-" hash>/”子目录中；处理重复的文件名。"
+"当您使用此角色时，被引用的文件将自动标记为在生成时包含在输出中（显然，仅用于HTML输出）。所有可下载的文件都放在输出目录的 "
+"``_downloads/<unique hash>/`` 子目录中；处理重复的文件名。"
 
 #: ../../sphinx/doc/usage/referencing.rst:165
 msgid "An example::"
@@ -277,6 +294,8 @@ msgid ""
 "insert a reference to the figure with link text by its figure number like "
 "\"Fig. 1.1\"."
 msgstr ""
+"链接到指定的图、表、代码块和部分；使用标准的reStructuredText标签。使用此角色时，它将插入对图的引用，链接文本为其图号，如“Fig. "
+"1.1”。"
 
 #: ../../sphinx/doc/usage/referencing.rst:199
 msgid ""
@@ -310,7 +329,7 @@ msgstr "以下角色可能会创建交叉引用，但不会引用对象："
 msgid ""
 "A configuration value or setting. Index entries are generated. Also "
 "generates a link to the matching :rst:dir:`confval` directive, if it exists."
-msgstr ""
+msgstr "配置值或设置。生成索引项。同时生成指向匹配项的链接 :rst:dir:`confval` 指令（如果存在）。"
 
 #: ../../sphinx/doc/usage/referencing.rst:224
 msgid ""
@@ -363,7 +382,7 @@ msgstr "如果您使用术语表中没有解释的术语，您将在构建期间
 msgid ""
 "This role also supports :ref:`custom link text <xref-modifiers>` from the "
 "general cross-reference syntax."
-msgstr ""
+msgstr "这个角色还支持来自通用交叉引用语法的 :ref:`custom link text <xref-modifiers>` 。"
 
 #: ../../sphinx/doc/usage/referencing.rst:264
 msgid "Cross-referencing anything"
@@ -411,6 +430,8 @@ msgid ""
 "do, you can write cross-references without a lot of markup overhead.  For "
 "example, in this Python function documentation::"
 msgstr ""
+"这个角色是设置 :confval:`default_role` "
+"的一个好候选。如果您这样做，您可以编写交叉引用，而无需大量标记开销。例如，在这个Python函数文档中::"
 
 #: ../../sphinx/doc/usage/referencing.rst:296
 msgid ""

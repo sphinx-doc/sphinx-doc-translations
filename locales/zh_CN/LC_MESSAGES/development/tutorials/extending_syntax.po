@@ -4,21 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Lu <lu2github@gmail.com>, 2024
 # wendi cao <651645601@qq.com>, 2024
 # Georg Brandl <g.brandl@gmx.net>, 2024
 # Izabel Wang <izabelwang@pku.edu.cn>, 2024
 # YanJun Sun <zxvf6aj@sina.cn>, 2024
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
+"Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 06:41+0000\n"
+"POT-Creation-Date: 2025-12-08 12:55+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +27,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:4
 msgid "Extending syntax with roles and directives"
-msgstr ""
+msgstr "使用角色和指令扩展语法"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:7
 msgid "Overview"
@@ -40,30 +39,32 @@ msgid ""
 " **directives** - for block-level elements - and **roles** - for inline "
 "elements."
 msgstr ""
+"reStructuredText和MyST的语法都可以通过创建新的 **directives** （用于块级元素）和 **roles** "
+"（用于内联元素）来扩展。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:13
 msgid "In this tutorial we shall extend Sphinx to add:"
-msgstr ""
+msgstr "在本教程中，我们将扩展 Sphinx 以添加："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:15
 msgid "A ``hello`` role, that will simply output the text ``Hello {text}!``."
-msgstr ""
+msgstr "一个 ``hello`` 角色，它将简单地输出文本 ``Hello {text}!``。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:16
 msgid ""
 "A ``hello`` directive, that will simply output the text ``Hello {text}!``, "
 "as a paragraph."
-msgstr ""
+msgstr "一个 ``hello`` 指令，它将简单地输出文本 ``Hello {text}!``，作为一个段落。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:19
 msgid ""
 "For this extension, you will need some basic understanding of Python, and we"
 " shall also introduce aspects of the docutils_ API."
-msgstr ""
+msgstr "对于此扩展，您需要对 Python 有一些基本了解，我们还将介绍 docutils_ API 的一些方面。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:23
 msgid "Setting up the project"
-msgstr ""
+msgstr "设置工程"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:25
 msgid ""
@@ -75,17 +76,17 @@ msgstr "您可用现有 Sphinx 工程或使用 :program:`sphinx-quickstart` 创�
 msgid ""
 "With this we will add the extension to the project, within the "
 ":file:`source` folder:"
-msgstr ""
+msgstr "通过此操作，我们将在 :file:`source` 文件夹中将扩展添加到工程中："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:31
 msgid "Create an :file:`_ext` folder in :file:`source`"
-msgstr "创建了  :file:`_ext` folder in :file:`source`"
+msgstr "在 :file:`source` 目录创建 :file:`_ext` 文件夹"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:32
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called "
 ":file:`helloworld.py`"
-msgstr "在 :file:`_ext` folder called :file:`helloworld.py` 创建了一个  Python 文件"
+msgstr "在 :file:`_ext` 文件夹创建一个Python文件 :file:`helloworld.py`"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:35
 msgid "Here is an example of the folder structure you might obtain:"
@@ -93,7 +94,7 @@ msgstr "这是您将获得的文件夹结构的示例："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:47
 msgid "Writing the extension"
-msgstr "编写插件"
+msgstr "编写扩展"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:49
 msgid "Open :file:`helloworld.py` and paste the following code in it:"
@@ -101,15 +102,15 @@ msgstr "打开 :file:`helloworld.py` 并将下列代码粘进去："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:55
 msgid "Some essential things are happening in this example:"
-msgstr ""
+msgstr "在此示例中发生了一些重要的事情："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:58
 msgid "The role class"
-msgstr ""
+msgstr "角色类"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:60
 msgid "Our new role is declared in the ``HelloRole`` class."
-msgstr ""
+msgstr "我们的新角色是在 ``HelloRole`` 类中声明的。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:67
 msgid ""
@@ -117,14 +118,16 @@ msgid ""
 "``run`` method, which is a requirement for every role. It contains the main "
 "logic of the role and it returns a tuple containing:"
 msgstr ""
+"此类扩展了 :class:`.SphinxRole` 类。该类包含一个 ``run`` "
+"方法，这是对每个角色的要求。它包含角色的主要逻辑，并返回一个包含以下内容的元组："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:73
 msgid "a list of inline-level docutils nodes to be processed by Sphinx."
-msgstr ""
+msgstr "一个内联级 docutils 节点列表，由 Sphinx 处理。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:74
 msgid "an (optional) list of system message nodes"
-msgstr ""
+msgstr "一个（可选的）系统消息节点列表"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:77
 msgid "The directive class"
@@ -132,7 +135,7 @@ msgstr "指令类"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:79
 msgid "Our new directive is declared in the ``HelloDirective`` class."
-msgstr ""
+msgstr "我们的新指令是在 ``HelloDirective`` 类中声明的。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:86
 msgid ""
@@ -143,10 +146,13 @@ msgid ""
 "attribute, which tells Sphinx how many arguments are required for the "
 "directive."
 msgstr ""
+"此类扩展了 :class:`.SphinxDirective` 类。该类包含一个 ``run`` "
+"方法，这是每个指令的要求。它包含指令的主要逻辑，并返回一个由 Sphinx 处理的块级 docutils 节点列表。它还包含一个 "
+"``required_arguments`` 属性，该属性告诉 Sphinx 指令需要多少参数。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:95
 msgid "What are docutils nodes?"
-msgstr ""
+msgstr "什么是 docutils 节点？"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:97
 msgid ""
@@ -156,6 +162,8 @@ msgid ""
 "(HTML, LaTeX, etc) format. It is a tree because each node can have children "
 "nodes, and so on:"
 msgstr ""
+"当 Sphinx 解析文档时，它会创建一个“抽象语法树”（AST）节点，以结构化的方式表示文档的内容，这通常独立于任何一种输入（rST、MyST "
+"等）或输出（HTML、LaTeX 等）格式。它是一个树，因为每个节点可以有子节点，依此类推："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:111
 msgid ""
@@ -163,6 +171,8 @@ msgid ""
 "represent different types of content such as text, paragraphs, references, "
 "tables, etc."
 msgstr ""
+"docutils_ 包提供了许多 `built-in nodes <docutils "
+"nodes_>`_，用于表示不同类型的内容，例如文本、段落、引用、表格等。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:115
 msgid ""
@@ -172,16 +182,21 @@ msgid ""
 "``paragraph`` node should only contain \"inline-level\" nodes, such as "
 "``text``, ``emphasis``, ``strong``, etc."
 msgstr ""
+"每种节点类型通常只接受特定的一组直接子节点，例如 ``document`` 节点应仅包含“块级”节点，例如 "
+"``paragraph``、``section``、``table`` 等，而 ``paragraph`` 节点应仅包含“内联级”节点，例如 "
+"``text``、``emphasis``、``strong`` 等。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:123
 msgid ""
 "The docutils documentation on `creating directives <docutils directives_>`_,"
 " and `creating roles <docutils roles_>`_."
 msgstr ""
+"docutils文档 `creating directives <docutils directives_>`_，以及 `creating roles "
+"<docutils roles_>`_。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:128
 msgid "The ``setup`` function"
-msgstr "setup 功能"
+msgstr "setup()函数"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:130
 msgid ""
@@ -197,6 +212,9 @@ msgid ""
 "itself as used in a reStructuredText file. In this case, we would use "
 "``hello``. For example:"
 msgstr ""
+"您可以做的最简单的事情是调用 :meth:`.Sphinx.add_role` 和 :meth:`.Sphinx.add_directive` "
+"方法，这就是我们在这里所做的。对于这个特定的调用，第一个参数是 reStructuredText "
+"文件中使用的角色/指令本身的名称。在这种情况下，我们将使用 ``hello``。例如："
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:152
 msgid ""
@@ -239,6 +257,8 @@ msgid ""
 "to modify the `Python path`_ so Sphinx can find our extension. This is why "
 "we need the call to ``sys.path.append``."
 msgstr ""
+"因为我们没有将扩展安装为 `Python package`_，所以我们需要修改 `Python path`_，Sphinx "
+"才能找到我们的扩展名。这就是为什么我们需要调用 ``sys.path.append``。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:185
 msgid "You can now use the extension in a file. For example:"
@@ -256,14 +276,14 @@ msgstr "延伸阅读"
 msgid ""
 "This is the very basic principle of an extension that creates a new role and"
 " directive."
-msgstr ""
+msgstr "这是创建新角色和指令的扩展的基本原理。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:212
 msgid "For a more advanced example, refer to :ref:`tutorial-extend-build`."
-msgstr ""
+msgstr "有关更高级的示例，请参阅 :ref:`tutorial-extend-build`。"
 
 #: ../../sphinx/doc/development/tutorials/extending_syntax.rst:214
 msgid ""
 "If you wish to share your extension across multiple projects or with others,"
 " check out the :ref:`third-party-extensions` section."
-msgstr ""
+msgstr "如果您希望在多个项目或与其他人共享您的扩展，请查看 :ref:`third-party-extensions` 部分。"

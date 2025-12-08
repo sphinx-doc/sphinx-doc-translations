@@ -6,19 +6,19 @@
 # Translators:
 # Georg Brandl <g.brandl@gmx.net>, 2024
 # cdarlint <cdarling@126.com>, 2024
+# wendi cao <651645601@qq.com>, 2024
 # Lu <lu2github@gmail.com>, 2024
 # Izabel Wang <izabelwang@pku.edu.cn>, 2024
-# wendi cao <651645601@qq.com>, 2024
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
+"Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 06:41+0000\n"
+"POT-Creation-Date: 2025-12-08 12:55+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:4
 msgid "Extending the build process"
-msgstr ""
+msgstr "对构建过程进行扩展"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:6
 msgid ""
@@ -39,6 +39,9 @@ msgid ""
 "multiple directives, along with custom nodes, additional config values and "
 "custom event handlers."
 msgstr ""
+"本教程的目标是创建一个更全面的扩展，相比 :ref:`tutorial-extending-syntax` 中创建的那个。虽然该指南仅涵盖了编写自定义 "
+":term:`role` 和 :term:`directive`，但本指南涵盖了对 Sphinx "
+"构建过程的更复杂扩展；添加多个指令，以及自定义节点、其他配置值和自定义事件处理程序。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:14
 msgid ""
@@ -47,6 +50,8 @@ msgid ""
 " place. This is similar to the :mod:`sphinx.ext.todo` extension distributed "
 "with Sphinx."
 msgstr ""
+"为此，我们将介绍一个 ``todo`` 扩展，它增加了在文档中包含待办事项条目的功能，并将其集中收集在一个地方。这类似于随 Sphinx 分发的 "
+":mod:`sphinx.ext.todo` 扩展。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:20
 msgid "Overview"
@@ -56,7 +61,7 @@ msgstr "概述"
 msgid ""
 "To understand the design of this extension, refer to :ref:`important-"
 "objects` and :ref:`build-phases`."
-msgstr ""
+msgstr "要了解此扩展的设计，请参阅 :ref:`important-objects` 和 :ref:`build-phases`。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:26
 msgid "We want the extension to add the following to Sphinx:"
@@ -68,12 +73,13 @@ msgid ""
 "and only shown in the output if a new config value is set. Todo entries "
 "should not be in the output by default."
 msgstr ""
+"一个 ``todo`` 指令，其中包含一些标记为“TODO”的内容，只有在设置了新的配置值时才显示在输出中。默认情况下，待办事项条目不应出现在输出中。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:32
 msgid ""
 "A ``todolist`` directive that creates a list of all todo entries throughout "
 "the documentation."
-msgstr ""
+msgstr "一个 ``todolist`` 指令，用于创建整个文档中所有待办事项条目的列表。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:35
 msgid "For that, we will need to add the following elements to Sphinx:"
@@ -81,21 +87,23 @@ msgstr "为此，我们需要在 Sphinx 中添加以下元素："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:37
 msgid "New directives, called ``todo`` and ``todolist``."
-msgstr "新指令，称为“todo”和“todolist”。"
+msgstr "新指令，称为 ``todo`` 和 ``todolist``。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:39
 msgid ""
 "New document tree nodes to represent these directives, conventionally also "
 "called ``todo`` and ``todolist``.  We wouldn't need new nodes if the new "
 "directives only produced some content representable by existing nodes."
-msgstr "表示这些指令的新文档树节点，通常也称为“todo”和“todolist”。如果新指令只产生一些可由现有节点表示的内容，我们就不需要新节点。"
+msgstr ""
+"表示这些指令的新文档树节点，通常也称为 ``todo`` 和 ``todolist``。如果新指令只产生一些可由现有节点表示的内容，我们就不需要新节点。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:43
 msgid ""
 "A new config value ``todo_include_todos`` (config value names should start "
 "with the extension name, in order to stay unique) that controls whether todo"
 " entries make it into the output."
-msgstr "一个新的配置值“todo”include_todos`（配置值名称应以扩展名开头，以保持唯一性），用于控制todo条目是否将其放入输出中。"
+msgstr ""
+"一个新的配置值 ``todo_include_todos`` （配置值名称应以扩展名开头，以保持唯一性），用于控制todo条目是否将其放入输出中。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:47
 msgid ""
@@ -104,6 +112,9 @@ msgid ""
 "intermediate results from parallel builds, and one for :event:`env-purge-"
 "doc` (the reason for that will be covered later)."
 msgstr ""
+"新的事件处理程序：一个用于 :event:`doctree-resolved` 事件，以替换 todo 和 todolist 节点，一个用于 "
+":event:`env-merge-info` 以合并来自并行构建的中间结果，以及一个用于 :event:`env-purge-doc` "
+"（稍后将介绍其原因）。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:54
 msgid "Prerequisites"
@@ -116,6 +127,8 @@ msgid ""
 "You can use an existing project or create a new one using :program:`sphinx-"
 "quickstart`."
 msgstr ""
+"与 :ref:`tutorial-extending-syntax` 一样，我们不会通过 PyPI 分发此插件，因此我们再次需要一个 Sphinx "
+"项目来调用它。您可以使用现有项目或使用 :program:`sphinx-quickstart` 创建一个新项目。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:61
 msgid ""
@@ -123,17 +136,17 @@ msgid ""
 "(:file:`build`) folders. Your extension file could be in any folder of your "
 "project. In our case, let's do the following:"
 msgstr ""
-"我们假设您使用的是单独的 source（：file：`source`）和build（：file：`build`）文件夹。 "
+"我们假设您使用的是单独的 source（ :file:`source` ）和 build（ :file:`build`）文件夹。 "
 "您的扩展文件可以在项目的任何文件夹中。 在我们的情况下，让我们执行以下操作："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:65
 msgid "Create an :file:`_ext` folder in :file:`source`"
-msgstr "创建了  :file:`_ext` folder in :file:`source`"
+msgstr "在 :file:`source` 目录创建 :file:`_ext` 文件夹"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:66
 msgid ""
 "Create a new Python file in the :file:`_ext` folder called :file:`todo.py`"
-msgstr ""
+msgstr "在 :file:`_ext` 文件夹中创建一个名为 :file:`todo.py` 的新Python文件"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:68
 msgid "Here is an example of the folder structure you might obtain:"
@@ -141,13 +154,13 @@ msgstr "这是您将获得的文件夹结构的示例："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:84
 msgid "Writing the extension"
-msgstr "编写插件"
+msgstr "编写扩展"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:86
 msgid ""
 "Open :file:`todo.py` and paste the following code in it, all of which we "
 "will explain in detail shortly:"
-msgstr ""
+msgstr "打开 :file:`todo.py` 并将以下代码粘贴到其中，我们将很快详细解释这些代码："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:93
 msgid ""
@@ -155,14 +168,16 @@ msgid ""
 ":ref:`tutorial-extending-syntax`, however, we will will look at each piece "
 "step-by-step to explain what's happening."
 msgstr ""
+"这是一个比 :ref:`tutorial-extending-syntax` "
+"中详细介绍的扩展更广泛的扩展，但是，我们将逐步查看每个部分以解释发生了什么。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:99
 msgid "The node classes"
-msgstr ""
+msgstr "node 类"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:100
 msgid "Let's start with the node classes:"
-msgstr ""
+msgstr "让我们从节点类开始："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:107
 msgid ""
@@ -181,6 +196,9 @@ msgid ""
 "<https://docutils.sourceforge.io/docs/ref/doctree.html>`__ and :ref:`Sphinx "
 "<nodes>`."
 msgstr ""
+"许多扩展不必创建自己的节点类，并且可以使用 `docutils "
+"<https://docutils.sourceforge.io/docs/ref/doctree.html>`__ 和 :ref:`Sphinx "
+"<nodes>` 已经提供的节点正常工作。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:121
 msgid ""
@@ -189,10 +207,12 @@ msgid ""
 "an unobvious :py:class:`~pickle.PickleError`. So if something goes wrong, "
 "please make sure that you put inherited nodes into a separate Python module."
 msgstr ""
+"重要的是要知道，虽然您可以在不离开 ``conf.py`` 的情况下扩展 Sphinx，但如果您在那里声明了一个继承的节点，您将遇到一个不明显的 "
+":py:class:`~pickle.PickleError`。因此，如果出现问题，请确保将继承的节点放入单独的 Python 模块中。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:127
 msgid "For more details, see:"
-msgstr ""
+msgstr "有关更多详细信息，请参见："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:129
 msgid "https://github.com/sphinx-doc/sphinx/issues/6751"
@@ -208,7 +228,7 @@ msgstr "https://github.com/sphinx-doc/sphinx/issues/1424"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:134
 msgid "The directive classes"
-msgstr ""
+msgstr "指令类"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:135
 msgid ""
@@ -218,10 +238,12 @@ msgid ""
 "that the class should have attributes that configure the allowed markup, and"
 " a ``run`` method that returns a list of nodes."
 msgstr ""
+"指令类通常是从 :class:`docutils.parsers.rst.Directive` 派生的类。指令接口在 `docutils "
+"documentation`_ 中也有详细介绍；重要的是该类应具有配置允许的标记的属性，以及返回节点列表的 ``run`` 方法。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:141
 msgid "Looking first at the ``TodolistDirective`` directive:"
-msgstr ""
+msgstr "首先看一下 ``TodolistDirective`` 指令："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:148
 msgid ""
@@ -230,6 +252,8 @@ msgid ""
 "nor arguments that need to be handled. That brings us to the "
 "``TodoDirective`` directive:"
 msgstr ""
+"它非常简单，创建并返回我们 ``todolist`` 节点类的一个实例。 ``TodolistDirective`` "
+"指令本身没有需要处理的内容或参数。这将我们带到了 ``TodoDirective`` 指令："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:158
 msgid ""
@@ -246,6 +270,14 @@ msgid ""
 "therefore leads to unique target names. The target node is instantiated "
 "without any text (the first two arguments)."
 msgstr ""
+"这里涵盖了几个重要的内容。首先，如您所见，我们现在正在子类化 "
+":class:`~sphinx.util.docutils.SphinxDirective` 帮助类，而不是通常的 "
+":class:`~docutils.parsers.rst.Directive` 类。这使我们能够使用 ``self.env`` 属性访问 "
+":ref:`构建环境实例 <important-objects>`。没有这个，我们将不得不使用相当复杂的 "
+"``self.state.document.settings.env``。然后，为了充当链接目标（来自 ``TodolistDirective``）， "
+"``TodoDirective`` 指令需要返回一个目标节点，除了 ``todo`` 节点之外。目标 ID（在 HTML 中，这将是锚名称）是通过使用 "
+"``env.new_serialno`` "
+"生成的，它在每次调用时返回一个新的唯一整数，因此会导致唯一的目标名称。目标节点在没有任何文本的情况下实例化（前两个参数）。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:170
 msgid ""
@@ -260,6 +292,10 @@ msgid ""
 "information about the todo entry's location are stored along with a copy of "
 "the node."
 msgstr ""
+"在创建警告节点时，使用 ``self.parse_content_to_nodes()`` 解析指令的内容主体。随后，``todo`` "
+"节点被添加到环境中。这是为了能够在作者放置 ``todolist`` 指令的位置创建整个文档中所有待办事项条目的列表。对于这种情况，使用环境属性 "
+"``todo_all_todos`` "
+"（同样，名称应该是唯一的，因此它以扩展名为前缀）。当创建新环境时它不存在，因此指令必须检查并在必要时创建它。有关待办事项条目位置的各种信息与节点的副本一起存储。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:182
 msgid ""
@@ -273,7 +309,7 @@ msgstr "指令返回的节点结构如下所示："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:202
 msgid "The event handlers"
-msgstr ""
+msgstr "事件处理程序"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:203
 msgid ""
@@ -282,12 +318,14 @@ msgid ""
 " provided by Sphinx itself, as detailed in :ref:`the API guide <events>`, "
 "and we're going to use a subset of them here."
 msgstr ""
+"事件处理程序是 Sphinx 最强大的功能之一，提供了一种方法来钩住文档过程的任何部分。Sphinx 本身提供了许多事件，如 :ref:`API指南 "
+"<events>` 中的详细介绍，我们将在这里使用它们的一个子集。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:208
 msgid ""
 "Let's look at the event handlers used in the above example.  First, the one "
 "for the :event:`env-purge-doc` event:"
-msgstr ""
+msgstr "让我们来看看上面示例中使用的事件处理程序。首先，是用于 :event:`env-purge-doc` 事件的处理程序："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:216
 msgid ""
@@ -309,10 +347,12 @@ msgid ""
 "parallel builds. As during parallel builds all threads have their own "
 "``env``, there's multiple ``todo_all_todos`` lists that need to be merged:"
 msgstr ""
+"下一个处理程序，用于 :event:`env-merge-info` 事件，在并行构建期间使用。由于在并行构建期间所有线程都有自己的 "
+"``env``，因此需要合并多个 ``todo_all_todos`` 列表："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:235
 msgid "The other handler belongs to the :event:`doctree-resolved` event:"
-msgstr ""
+msgstr "另一个处理程序属于 :event:`doctree-resolved` 事件："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:242
 msgid ""
@@ -332,10 +372,18 @@ msgid ""
 "suitable URI depending on the used builder, and appending the todo node's "
 "(the target's) ID as the anchor name."
 msgstr ""
+":event:`doctree-resolved` 事件在 :ref:`phase 3 (resolving) <build-phases>` "
+"结束时即将编写的每个文档发出，并允许对该文档进行自定义解析。我们为此事件编写的处理程序更为复杂。如果 ``todo_include_todos`` "
+"配置值（我们将很快描述它）为 false，则从文档中删除所有 ``todo`` 和 ``todolist`` 节点。如果不是， ``todo`` "
+"节点就会保持原样。 ``todolist`` 节点被待办事项条目的列表替换，并带有指向其来源位置的反向链接。列表项由 ``todo`` "
+"条目中的节点和动态创建的 docutils "
+"节点组成：每个条目包含一个段落，其中包含提供位置的文本，以及一个带有反向引用的链接（包含斜体节点的引用节点）。引用 URI 由 "
+":meth:`sphinx.builders.Builder.get_relative_uri` 构建，它根据所使用的生成器创建适当的 "
+"URI，并将待办事项节点（目标）的 ID 作为锚名称附加。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:259
 msgid "The ``setup`` function"
-msgstr "setup 功能"
+msgstr "``setup`` 函数"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:262
 msgid ""
@@ -344,12 +392,14 @@ msgid ""
 "However, we also use it to hook up the other parts of our extension. Let's "
 "look at our ``setup`` function:"
 msgstr ""
+"如 :ref:`previously <tutorial-extending-syntax>` 所述，``setup`` "
+"函数是一个要求，用于将指令插入到 Sphinx 中。但是，我们还使用它来连接扩展的其他部分。让我们来看看我们的 ``setup`` 函数："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:272
 msgid ""
 "The calls in this function refer to the classes and functions we added "
 "earlier. What the individual calls do is the following:"
-msgstr ""
+msgstr "此函数中的调用引用了我们之前添加的类和函数。各个调用的作用如下："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:275
 msgid ""
@@ -357,6 +407,8 @@ msgid ""
 "the new *config value* ``todo_include_todos``, whose default value is "
 "``False`` (which also tells Sphinx that it is a boolean value)."
 msgstr ""
+":meth:`~Sphinx.add_config_value` 让 Sphinx 知道它应该识别新的 *config value* "
+"``todo_include_todos``，其默认值为 ``False`` （这也告诉 Sphinx 它是一个布尔值）。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:279
 msgid ""
@@ -364,6 +416,8 @@ msgid ""
 "if the config value changed its value.  This is needed for config values "
 "that influence reading (build :ref:`phase 1 (reading) <build-phases>`)."
 msgstr ""
+"如果第三个参数是 ``'html'``，则如果配置值更改其值，则会完全重建 HTML 文档。这对于影响读取（构建 :ref:`phase 1 "
+"(reading) <build-phases>`）的配置值是必需的。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:283
 msgid ""
@@ -373,6 +427,10 @@ msgid ""
 "(writing) <build-phases>`. Since the ``todolist`` node is always replaced in"
 " :ref:`phase 3 (resolving) <build-phases>`, it doesn't need any."
 msgstr ""
+":meth:`~Sphinx.add_node` 将一个新的 *node class* "
+"添加到构建系统中。它还可以为每个支持的输出格式指定访问者函数。当新节点保持到 :ref:`phase 4 (writing) <build-"
+"phases>` 时，需要这些访问者函数。由于 ``todolist`` 节点始终在 :ref:`phase 3 (resolving) <build-"
+"phases>` 中被替换，因此它不需要任何访问者函数。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:289
 msgid ""
@@ -391,7 +449,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:295
 msgid "With this, our extension is complete."
-msgstr ""
+msgstr "至此，我们的扩展完成了。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:299
 msgid "Using the extension"
@@ -401,7 +459,7 @@ msgstr "使用扩展"
 msgid ""
 "As before, we need to enable the extension by declaring it in our "
 ":file:`conf.py` file. There are two steps necessary here:"
-msgstr ""
+msgstr "和以前一样，我们需要通过在 :file:`conf.py` 文件中声明它来启用扩展。这里有两个必要的步骤："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:304
 msgid ""
@@ -420,6 +478,7 @@ msgid ""
 "In addition, we may wish to set the ``todo_include_todos`` config value. As "
 "noted above, this defaults to ``False`` but we can set it explicitly."
 msgstr ""
+"此外，我们可能希望设置 ``todo_include_todos`` 配置值。如上所述，它默认为 ``False``，但我们可以显式设置它。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:313
 msgid "For example:"
@@ -448,6 +507,8 @@ msgid ""
 " However, if we toggle this to true, we will see the output described "
 "previously."
 msgstr ""
+"因为我们已将 ``todo_include_todos`` 配置为 ``False``，所以我们实际上不会看到为 ``todo`` 和 "
+"``todolist`` 指令呈现的任何内容。但是，如果我们将其切换为 true，我们将看到前面描述的输出。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:369
 msgid "Further reading"
@@ -463,4 +524,4 @@ msgstr "有关更多信息，请参考 `docutils`_ 文档和 :doc:`/extdev/index
 msgid ""
 "If you wish to share your extension across multiple projects or with others,"
 " check out the :ref:`third-party-extensions` section."
-msgstr ""
+msgstr "如果您希望在多个项目或与其他人共享您的扩展，请查看 :ref:`third-party-extensions` 部分。"

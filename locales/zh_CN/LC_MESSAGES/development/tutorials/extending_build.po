@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-08 12:55+0000\n"
+"POT-Creation-Date: 2025-12-09 06:40+0000\n"
 "PO-Revision-Date: 2024-06-28 00:41+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -39,9 +39,9 @@ msgid ""
 "multiple directives, along with custom nodes, additional config values and "
 "custom event handlers."
 msgstr ""
-"本教程的目标是创建一个更全面的扩展，相比 :ref:`tutorial-extending-syntax` 中创建的那个。虽然该指南仅涵盖了编写自定义 "
-":term:`role` 和 :term:`directive`，但本指南涵盖了对 Sphinx "
-"构建过程的更复杂扩展；添加多个指令，以及自定义节点、其他配置值和自定义事件处理程序。"
+"本教程的目标是创建一个更全面的扩展，相比 :ref:`tutorial-extending-syntax` 中创建的那个。上篇那个指南仅涵盖了编写自定义"
+" :term:`role` 和 :term:`directive`，而本指南涵盖了对 Sphinx "
+"构建过程的更复杂扩展；添加多个指令，以及自定义节点、额外的配置值和自定义事件处理程序。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:14
 msgid ""
@@ -50,7 +50,7 @@ msgid ""
 " place. This is similar to the :mod:`sphinx.ext.todo` extension distributed "
 "with Sphinx."
 msgstr ""
-"为此，我们将介绍一个 ``todo`` 扩展，它增加了在文档中包含待办事项条目的功能，并将其集中收集在一个地方。这类似于随 Sphinx 分发的 "
+"为此，我们将完成一个 ``todo`` 扩展，它增加了在文档中包含待办事项条目的功能，并将其集中收集在一个地方。这类似于随Sphinx分发的 "
 ":mod:`sphinx.ext.todo` 扩展。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:20
@@ -65,7 +65,7 @@ msgstr "要了解此扩展的设计，请参阅 :ref:`important-objects` 和 :re
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:26
 msgid "We want the extension to add the following to Sphinx:"
-msgstr "我们希望插件将以下内容添加到Sphinx中："
+msgstr "我们希望扩展将以下内容添加到Sphinx中："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:28
 msgid ""
@@ -73,7 +73,7 @@ msgid ""
 "and only shown in the output if a new config value is set. Todo entries "
 "should not be in the output by default."
 msgstr ""
-"一个 ``todo`` 指令，其中包含一些标记为“TODO”的内容，只有在设置了新的配置值时才显示在输出中。默认情况下，待办事项条目不应出现在输出中。"
+"一个 ``todo`` 指令，其包含一些标记为“TODO”的内容，只有在置位了新的配置值时才显示在输出中。默认情况下，待办事项条目不应出现在输出中。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:32
 msgid ""
@@ -103,7 +103,7 @@ msgid ""
 "with the extension name, in order to stay unique) that controls whether todo"
 " entries make it into the output."
 msgstr ""
-"一个新的配置值 ``todo_include_todos`` （配置值名称应以扩展名开头，以保持唯一性），用于控制todo条目是否将其放入输出中。"
+"一个新的配置值 ``todo_include_todos`` （配置值名称应以扩展的名字开头，以保持唯一性），用于控制todo条目是否放入输出中。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:47
 msgid ""
@@ -113,8 +113,8 @@ msgid ""
 "doc` (the reason for that will be covered later)."
 msgstr ""
 "新的事件处理程序：一个用于 :event:`doctree-resolved` 事件，以替换 todo 和 todolist 节点，一个用于 "
-":event:`env-merge-info` 以合并来自并行构建的中间结果，以及一个用于 :event:`env-purge-doc` "
-"（稍后将介绍其原因）。"
+":event:`env-merge-info` 事件以合并来自并行构建的中间结果，还有一个用于 :event:`env-purge-doc` "
+"事件（稍后将介绍其原因）。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:54
 msgid "Prerequisites"
@@ -127,8 +127,9 @@ msgid ""
 "You can use an existing project or create a new one using :program:`sphinx-"
 "quickstart`."
 msgstr ""
-"与 :ref:`tutorial-extending-syntax` 一样，我们不会通过 PyPI 分发此插件，因此我们再次需要一个 Sphinx "
-"项目来调用它。您可以使用现有项目或使用 :program:`sphinx-quickstart` 创建一个新项目。"
+"与 :ref:`tutorial-extending-syntax` "
+"一样，我们不会通过PyPI分发此扩展，因此我们再次需要一个Sphinx项目来调用它。您可以使用现有项目或使用 :program:`sphinx-"
+"quickstart` 创建一个新项目。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:61
 msgid ""
@@ -137,7 +138,7 @@ msgid ""
 "project. In our case, let's do the following:"
 msgstr ""
 "我们假设您使用的是单独的 source（ :file:`source` ）和 build（ :file:`build`）文件夹。 "
-"您的扩展文件可以在项目的任何文件夹中。 在我们的情况下，让我们执行以下操作："
+"您的扩展文件可以在项目的任何文件夹中。在我们的例子中，让我们执行以下操作："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:65
 msgid "Create an :file:`_ext` folder in :file:`source`"
@@ -168,8 +169,7 @@ msgid ""
 ":ref:`tutorial-extending-syntax`, however, we will will look at each piece "
 "step-by-step to explain what's happening."
 msgstr ""
-"这是一个比 :ref:`tutorial-extending-syntax` "
-"中详细介绍的扩展更广泛的扩展，但是，我们将逐步查看每个部分以解释发生了什么。"
+"这是一个比 :ref:`tutorial-extending-syntax` 中介绍的扩展更深入的扩展，但是，我们将逐步查看每个部分以解释发生了什么。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:99
 msgid "The node classes"
@@ -186,8 +186,8 @@ msgid ""
 "inherits from ``Admonition`` because it should be handled like a note or "
 "warning, ``todolist`` is just a \"general\" node."
 msgstr ""
-"Node类除了从 :mod:`docutils.nodes` 中定义的标准的docutils类继承以外，不需要做其它任何事情。 ``todo`` 继承自"
-" ``adminion`` 因为它应该像注释或警告那样处理，`todolist` 只是一个“常规”节点。"
+"Node类除了从 :mod:`docutils.nodes` 中定义的标准的docutils类继承以外，通常不需要做其它任何事情。 ``todo`` "
+"继承自 ``adminion`` 因为它应该像注释或警告那样处理；``todolist`` 只是一个“常规”节点。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:114
 msgid ""
@@ -239,7 +239,7 @@ msgid ""
 " a ``run`` method that returns a list of nodes."
 msgstr ""
 "指令类通常是从 :class:`docutils.parsers.rst.Directive` 派生的类。指令接口在 `docutils "
-"documentation`_ 中也有详细介绍；重要的是该类应具有配置允许的标记的属性，以及返回节点列表的 ``run`` 方法。"
+"documentation`_ 中也有详细介绍；重要的是该类应具有一些属性，用于配置允许的标记；以及 ``run`` 方法，以返回节点列表。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:141
 msgid "Looking first at the ``TodolistDirective`` directive:"
@@ -275,8 +275,8 @@ msgstr ""
 ":class:`~docutils.parsers.rst.Directive` 类。这使我们能够使用 ``self.env`` 属性访问 "
 ":ref:`构建环境实例 <important-objects>`。没有这个，我们将不得不使用相当复杂的 "
 "``self.state.document.settings.env``。然后，为了充当链接目标（来自 ``TodolistDirective``）， "
-"``TodoDirective`` 指令需要返回一个目标节点，除了 ``todo`` 节点之外。目标 ID（在 HTML 中，这将是锚名称）是通过使用 "
-"``env.new_serialno`` "
+"``TodoDirective`` 指令除了需要返回 ``todo`` 节点以外，还需要返回一个目标节点。目标 ID（在 HTML "
+"中，这将是锚名称）是通过使用 ``env.new_serialno`` "
 "生成的，它在每次调用时返回一个新的唯一整数，因此会导致唯一的目标名称。目标节点在没有任何文本的情况下实例化（前两个参数）。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:170
@@ -295,7 +295,7 @@ msgstr ""
 "在创建警告节点时，使用 ``self.parse_content_to_nodes()`` 解析指令的内容主体。随后，``todo`` "
 "节点被添加到环境中。这是为了能够在作者放置 ``todolist`` 指令的位置创建整个文档中所有待办事项条目的列表。对于这种情况，使用环境属性 "
 "``todo_all_todos`` "
-"（同样，名称应该是唯一的，因此它以扩展名为前缀）。当创建新环境时它不存在，因此指令必须检查并在必要时创建它。有关待办事项条目位置的各种信息与节点的副本一起存储。"
+"（同样，名称应该是唯一的，所以它以扩展的名字为前缀）。当创建新环境时它不存在，因此指令必须检查并在必要时创建它。有关待办事项条目位置的各种信息与节点的副本一起存储。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:182
 msgid ""
@@ -318,7 +318,7 @@ msgid ""
 " provided by Sphinx itself, as detailed in :ref:`the API guide <events>`, "
 "and we're going to use a subset of them here."
 msgstr ""
-"事件处理程序是 Sphinx 最强大的功能之一，提供了一种方法来钩住文档过程的任何部分。Sphinx 本身提供了许多事件，如 :ref:`API指南 "
+"事件处理程序是 Sphinx 最强大的功能之一，提供了一种方法来钩入文档过程的任何部分。Sphinx本身提供了许多事件，如 :ref:`API指南 "
 "<events>` 中的详细介绍，我们将在这里使用它们的一个子集。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:208
@@ -338,8 +338,8 @@ msgid ""
 "document, they will be added again during parsing."
 msgstr ""
 "由于我们将源文件中的信息存储在环境中，这是持久的，所以当源文件更改时，它可能会过期。因此，在读取每个源文件之前，环境中对它的记录都会被清除，并且 "
-":event:`env-purge-doc` "
-"事件为扩展提供了执行相同操作的机会。在这里，我们从“todo”列表中清除docname与给定todo匹配的todo。如果文档中还剩下todo，则在解析期间将再次添加它们。"
+":event:`env-purge-doc` 事件为扩展提供了执行相同操作的机会。在这里，我们从 ``todo_all_todos`` "
+"中清除docname与给定todo匹配的todo。如果文档中还剩下todo，则在解析期间将再次添加它们。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:224
 msgid ""
@@ -392,8 +392,8 @@ msgid ""
 "However, we also use it to hook up the other parts of our extension. Let's "
 "look at our ``setup`` function:"
 msgstr ""
-"如 :ref:`previously <tutorial-extending-syntax>` 所述，``setup`` "
-"函数是一个要求，用于将指令插入到 Sphinx 中。但是，我们还使用它来连接扩展的其他部分。让我们来看看我们的 ``setup`` 函数："
+"如 :ref:`previously <tutorial-extending-syntax>` 所述，``setup`` 函数是必须的，用于将指令插入到"
+" Sphinx 中。但是，我们还使用它来连接扩展的其他部分。让我们来看看我们的 ``setup`` 函数："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:272
 msgid ""
@@ -436,7 +436,7 @@ msgstr ""
 msgid ""
 ":meth:`~Sphinx.add_directive` adds a new *directive*, given by name and "
 "class."
-msgstr " :meth:`~Sphinx.add_directive` 添加一个由名称和类给定的新 *指令*。"
+msgstr ":meth:`~Sphinx.add_directive` 添加一个新 *指令*，并指定其指令名和类名。"
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:291
 msgid ""
@@ -486,7 +486,7 @@ msgstr "例如："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:326
 msgid "You can now use the extension throughout your project. For example:"
-msgstr "现在，您可以在整个项目中使用扩展名。 例如："
+msgstr "现在，您可以在整个项目中使用扩展。 例如："
 
 #: ../../sphinx/doc/development/tutorials/extending_build.rst:328
 msgid "index.rst"

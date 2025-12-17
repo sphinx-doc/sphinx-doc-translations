@@ -14,9 +14,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.4+/69596331b\n"
+"Project-Id-Version: Sphinx 9.1.0+/cc604ad43\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04 12:57+0000\n"
+"POT-Creation-Date: 2025-12-17 12:58+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -278,6 +278,7 @@ msgid ""
 "To make any of the options described below the default, use the "
 ":confval:`autodoc_default_options` dictionary in :file:`conf.py`."
 msgstr ""
+"要使下面描述的任何选项成为默认选项，请在 :file:`conf.py` 中使用 :confval:`autodoc_default_options`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:258
 msgid ""
@@ -287,6 +288,9 @@ msgid ""
 "with the per-directive option, the list may be prepended with a plus sign "
 "(``+``), as follows:"
 msgstr ""
+"如果为 ``:members:``、 ``:exclude-members:``、 ``:private-members:`` 或 "
+"``:special-members:`` "
+"选项使用默认值，则在指令上设置该选项将覆盖默认值。相反，要使用每个指令选项扩展默认列表，该列表可以以加号（``+``）开头，如下所示："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:272
 msgid ""
@@ -294,6 +298,8 @@ msgid ""
 "per-directive with the negated form, :samp:`:no-{option}:` as an option of "
 "the directive For example:"
 msgstr ""
+"如果使用 :confval:`autodoc_default_options`，则可以通过否定形式 :samp:`:no-{option}:` "
+"作为指令的选项来禁用每个指令的默认值。例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:284
 msgid "Automatically document modules"
@@ -303,14 +309,14 @@ msgstr "自动为模块编写文档"
 msgid ""
 "Document a module. By default, the directive only inserts the docstring of "
 "the module itself:"
-msgstr ""
+msgstr "记录一个模块。默认情况下，该指令仅插入模块本身的docstring："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:295
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:540
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:815
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:897
 msgid "will produce source like this:"
-msgstr ""
+msgstr "将生成如下源代码："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:303
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:548
@@ -319,7 +325,7 @@ msgid ""
 "The directive can also contain content of its own, which will be inserted "
 "into the resulting non-auto directive source after the docstring (but before"
 " any automatic member documentation)."
-msgstr ""
+msgstr "该指令还可以包含自己的内容，这些内容将在生成的非自动指令源代码中插入docstring之后（但在任何自动成员文档之前）。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:307
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:552
@@ -327,7 +333,7 @@ msgstr ""
 msgid ""
 "Therefore, you can also mix automatic and non-automatic member "
 "documentation, as follows:"
-msgstr ""
+msgstr "因此，您还可以混合使用自动和非自动成员文档，如下所示："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:320
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:581
@@ -341,45 +347,45 @@ msgstr "选项"
 msgid ""
 "Do not generate an index entry for the documented module or any auto-"
 "documented members."
-msgstr ""
+msgstr "不为已记录的模块或任何自动记录的成员生成索引条目。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:332
 msgid ""
 "Do not generate an index entry for the documented module or any auto-"
 "documented members. Unlike ``:no-index:``, cross-references are still "
 "created."
-msgstr ""
+msgstr "不为已记录的模块或任何自动记录的成员生成索引条目。与 ``:no-index:`` 不同，仍会创建交叉引用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:341
 msgid ""
 "Indicate platforms on which the module is available. This is identical to "
 ":rst:dir:`py:module`'s ``:platform:`` option."
-msgstr ""
+msgstr "指示模块可用的平台。这与 :rst:dir:`py:module` 的 ``:platform:`` 选项相同。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:347
 msgid ""
 "A sentence describing the module's purpose. This is identical to "
 ":rst:dir:`py:module`'s ``:synopsis:`` option."
-msgstr ""
+msgstr "描述模块用途的句子。这与 :rst:dir:`py:module` 的 ``:synopsis:`` 选项相同。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:355
 msgid ""
 "Mark a module as deprecated. This is identical to :rst:dir:`py:module`'s "
 "``:deprecated:`` option."
-msgstr ""
+msgstr "将模块标记为已弃用。这与 :rst:dir:`py:module` 的 ``:deprecated:`` 选项相同。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:363
 msgid "Do not use ``__all__`` when analysing the module to document."
-msgstr ""
+msgstr "在分析要记录的模块时不要使用 ``__all__`` 。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:368
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:623
 msgid "Options for selecting members to document"
-msgstr ""
+msgstr "选择要记录的成员的选项"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:372
 msgid "Generate automatic documentation for all members of the target module:"
-msgstr ""
+msgstr "为目标模块的所有成员生成自动文档："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:379
 msgid ""
@@ -388,18 +394,21 @@ msgid ""
 " used to define which members are public, unless the :rst:dir:`:ignore-"
 "module-all: <automodule:ignore-module-all>` option is set."
 msgstr ""
+"默认情况下，``autodoc`` 仅包含具有docstring或 :ref:`doc-comment <doc-comment>` "
+"（``#:``）的公共成员。如果存在 ``__all__``，则将使用它来定义哪些成员是公共的，除非设置了 :rst:dir:`:ignore-"
+"module-all: <automodule:ignore-module-all>` 选项。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:385
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:638
 msgid ""
 "To only document certain members, an explicit comma-separated list may be "
 "used as the argument to ``:members:``:"
-msgstr ""
+msgstr "要仅记录某些成员，可以将显式的逗号分隔列表用作 ``:members:`` 的参数："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:396
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:649
 msgid "Exclude the given names from the members to document. For example:"
-msgstr ""
+msgstr "从要记录的成员中排除给定的名称。例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:410
 msgid ""
@@ -408,25 +417,27 @@ msgid ""
 "module members where the ``__module__`` attribute is equal to the module "
 "name given to ``automodule`` will be documented."
 msgstr ""
+"为了防止记录导入的类或函数，在设置了 ``members`` 选项的 :rst:dir:`!automodule` 指令中，只有 "
+"``__module__`` 属性等于传递给 ``automodule`` 的模块名称的模块成员才会被记录。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:415
 msgid ""
 "Set the ``imported-members`` option if you want to prevent this behavior and"
 " document all available members."
-msgstr ""
+msgstr "如果要防止此行为并记录所有可用成员，请设置 ``imported-members`` 选项。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:418
 msgid ""
 "Note that attributes from imported modules will not be documented, because "
 "attribute documentation is discovered by parsing the source file of the "
 "current module."
-msgstr ""
+msgstr "请注意，不会记录来自导入模块的属性，因为属性文档是通过解析当前模块的源文件来发现的。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:427
 msgid ""
 "Generate automatic documentation for members of the target module that don't"
 " have a docstring or doc-comment. For example:"
-msgstr ""
+msgstr "为目标模块中没有docstring或doc-comment的成员生成自动文档。例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:440
 msgid ""
@@ -434,19 +445,21 @@ msgid ""
 "This includes names with a leading underscore (e.g. ``_private``) and those "
 "members explicitly marked as private with ``:meta private:``."
 msgstr ""
+"为目标模块的私有成员生成自动文档。这包括以单下划线开头的名称（例如 ``_private`` ）和那些使用 ``:meta private:`` "
+"明确标记为私有的成员。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:450
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:726
 msgid ""
 "To only document certain private members, an explicit comma-separated list "
 "may be used as the argument to ``:private-members:``:"
-msgstr ""
+msgstr "要仅记录某些私有成员，可以将显式的逗号分隔列表用作 ``:private-members:`` 的参数："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:460
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:488
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:764
 msgid "The option can now take a comma-separated list of arguments."
-msgstr ""
+msgstr "该选项现在可以采用逗号分隔的参数列表。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:466
 msgid ""
@@ -454,18 +467,20 @@ msgid ""
 "also known as :ref:`'dunder' names <python:specialnames>`. This includes all"
 " names enclosed with a double-underscore, e.g. ``__special__``:"
 msgstr ""
+"为目标模块的特殊成员生成自动文档，也称为 :ref:`'dunder' names <python:specialnames>` "
+"。这包括所有用双下划线括起来的名称，例如 ``__special__`` ："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:477
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:753
 msgid ""
 "To only document certain special members, an explicit comma-separated list "
 "may be used as the argument to ``:special-members:``:"
-msgstr ""
+msgstr "要仅记录某些特殊成员，可以将显式的逗号分隔列表用作 ``:special-members:`` 的参数："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:492
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:768
 msgid "Options for documented members"
-msgstr ""
+msgstr "为已记录的成员设置选项"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:496
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:772
@@ -474,22 +489,24 @@ msgid ""
 "``alphabetical``). This overrides the :confval:`autodoc_member_order` "
 "setting."
 msgstr ""
+"选择自动记录的成员的排序方式（默认值： ``alphabetical`` ）。这将覆盖 :confval:`autodoc_member_order` "
+"设置。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:500
 msgid "``alphabetical``: Use simple alphabetical order."
-msgstr ""
+msgstr "``alphabetical``：使用简单的字母顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:502
 msgid ""
 "``groupwise``: Group by object type (class, function, etc), use alphabetical"
 " order within groups."
-msgstr ""
+msgstr "``groupwise``：按对象类型（类、函数等）分组，在组内使用字母顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:505
 msgid ""
 "``bysource``: Use the order of objects in the module's source. The "
 "``__all__`` variable can be used to override this order."
-msgstr ""
+msgstr "``bysource``：使用模块源代码中对象的顺序。可以使用 ``__all__`` 变量来覆盖此顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:509
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:785
@@ -501,13 +518,15 @@ msgstr "请注意，对于源代码顺序，该模块必须是具有可用源代
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:513
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:789
 msgid "Support the ``'bysource'`` option."
-msgstr ""
+msgstr "支持 ``'bysource'`` 选项。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:519
 msgid ""
 "Enable the :rst:dir:`:show-inheritance: <autoclass:show-inheritance>` option"
 " for all members of the module, if ``:members:`` is enabled."
 msgstr ""
+"如果启用了 ``:members:``，则为模块的所有成员启用 :rst:dir:`:show-inheritance: "
+"<autoclass:show-inheritance>` 选项。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:527
 msgid "Automatically document classes or exceptions"
@@ -517,12 +536,12 @@ msgstr "自动为类或异常编写文档"
 msgid ""
 "Document a class. For exception classes, prefer ``.. autoexception::``. By "
 "default, the directive only inserts the docstring of the class itself:"
-msgstr ""
+msgstr "记录一个类。对于异常类，优先使用 ``.. autoexception::`` 。默认情况下，该指令仅插入类本身的docstring："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:565
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:851
 msgid "Advanced usage"
-msgstr ""
+msgstr "高级用法"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:566
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:852
@@ -530,7 +549,7 @@ msgid ""
 "It is possible to override the signature for explicitly documented callable "
 "objects (functions, methods, classes) with the regular syntax that will "
 "override the signature gained from introspection:"
-msgstr ""
+msgstr "可以使用常规语法覆盖显式记录的可调用对象（函数、方法、类）的签名，从而覆盖从内省获得的签名："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:576
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:862
@@ -543,7 +562,7 @@ msgstr "如果方法的签名被修饰符隐藏，这很有用。"
 msgid ""
 "Do not generate an index entry for the documented class or any auto-"
 "documented members."
-msgstr ""
+msgstr "不为已记录的类或任何自动记录的成员生成索引条目。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:593
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:996
@@ -551,14 +570,14 @@ msgid ""
 "Do not generate an index entry for the documented class or any auto-"
 "documented members. Unlike ``:no-index:``, cross-references are still "
 "created."
-msgstr ""
+msgstr "不为已记录的类或任何自动记录的成员生成索引条目。与 ``:no-index:`` 不同，仍会创建交叉引用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:602
 msgid ""
 "Select which docstring will be used for the main body of the directive. This"
 " overrides the global value of :confval:`autoclass_content`. The possible "
 "values are:"
-msgstr ""
+msgstr "选择将用于指令主体的docstring。这将覆盖 :confval:`autoclass_content` 的全局值。可能的值有："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:606
 msgid ""
@@ -566,16 +585,18 @@ msgid ""
 "be separately documented using the ``:members:`` option or "
 ":rst:dir:`automethod`."
 msgstr ""
+"``class``：仅使用类的docstring。可以使用 ``:members:`` 选项或 :rst:dir:`automethod` 单独记录 "
+":meth:`!__init__` 方法。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:610
 msgid "``init``: Only use the docstring of the :meth:`!__init__` method."
-msgstr ""
+msgstr "``init``：仅使用 :meth:`!__init__` 方法的docstring。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:612
 msgid ""
 "``both``: Use both, appending the docstring of the :meth:`!__init__` method "
 "to the class's docstring."
-msgstr ""
+msgstr "``both``：两者都使用，将 :meth:`!__init__` 方法的docstring 附加到类的docstring。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:616
 msgid ""
@@ -583,10 +604,12 @@ msgid ""
 "``autodoc`` will attempt to use the :meth:`!__new__` method's docstring, if "
 "it exists and is not blank."
 msgstr ""
+"如果不存在 :meth:`!__init__` 方法或其docstring为空，``autodoc`` 将尝试使用 :meth:`!__new__` "
+"方法的docstring（如果存在且不为空）。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:627
 msgid "Generate automatic documentation for all members of the target class:"
-msgstr ""
+msgstr "为目标类的所有成员生成自动文档："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:634
 msgid ""
@@ -594,18 +617,20 @@ msgid ""
 ":ref:`doc-comment <doc-comment>` (``#:``) that are attributes of the target "
 "class (i.e. not inherited)."
 msgstr ""
+"默认情况下，``autodoc`` 仅包含具有docstring或 :ref:`doc-comment <doc-comment>` "
+"（``#:``）且是目标类属性（即非继承）的公共成员。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:663
 msgid ""
 "To generate automatic documentation for members inherited from base classes,"
 " use the ``:inherited-members:`` option:"
-msgstr ""
+msgstr "要为从基类继承的成员生成自动文档，请使用 ``:inherited-members:`` 选项："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:672
 msgid ""
 "This can be combined with the ``:undoc-members:`` option to generate "
 "automatic documentation for *all* available members of the class."
-msgstr ""
+msgstr "这可以与 ``:undoc-members:`` 选项结合使用，以为类的*所有*可用成员生成自动文档。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:675
 msgid ""
@@ -615,6 +640,9 @@ msgid ""
 "of the ``object`` class are not documented. To include these, use ``None`` "
 "as the argument."
 msgstr ""
+"在 ``:inherited-members:`` 的参数中列出的类的成员将从自动文档中排除。如果未提供参数，则默认为 "
+":py:class:`python:object`，这意味着不会记录 ``object`` 类的成员。要包含这些成员，请使用 ``None`` "
+"作为参数。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:681
 msgid ""
@@ -622,28 +650,30 @@ msgid ""
 " don't want to document ``list.__len__()``, you should specify a option "
 "``:inherited-members: list`` to avoid special members of list class."
 msgstr ""
+"例如；如果您的类 ``MyList`` 派生自 ``list`` 类，并且您不想记录 ``list.__len__()``，则应指定选项 "
+"``:inherited-members: list`` 以避免记录list类的特殊成员。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:687
 msgid ""
 "Should any of the inherited members use a format other than reStructuredText"
 " for their docstrings, there may be markup warnings or errors."
-msgstr ""
+msgstr "如果任何继承的成员对其docstring使用的格式不是reStructuredText，则可能会出现标记警告或错误。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:693
 msgid ""
 "``:inherited-members:`` now takes the name of a base class to exclude as an "
 "argument."
-msgstr ""
+msgstr "``:inherited-members:`` 现在将基类的名称作为参数进行排除。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:697
 msgid "A comma separated list of base class names can be used."
-msgstr ""
+msgstr "可以使用以逗号分隔的基类名称列表。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:703
 msgid ""
 "Generate automatic documentation for members of the target class that don't "
 "have a docstring or doc-comment. For example:"
-msgstr ""
+msgstr "为目标类中没有docstring或doc-comment的成员生成自动文档。例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:716
 msgid ""
@@ -651,6 +681,8 @@ msgid ""
 "This includes names with a leading underscore (e.g. ``_private``) and those "
 "members explicitly marked as private with ``:meta private:``."
 msgstr ""
+"为目标类的私有成员生成自动文档。这包括以单下划线开头的名称（例如 ``_private`` ）和那些使用 ``:meta private:`` "
+"明确标记为私有的成员。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:736
 msgid "The option can now take arguments."
@@ -662,26 +694,28 @@ msgid ""
 "also known as :ref:`'dunder' names <python:specialnames>`. This includes all"
 " names enclosed with a double-underscore, e.g. ``__special__``:"
 msgstr ""
+"为目标类的特殊成员生成自动文档，也称为 :ref:`'dunder' names <python:specialnames>` "
+"。这包括所有用双下划线括起来的名称，例如 ``__special__`` ："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:776
 msgid "``'alphabetical'``: Use simple alphabetical order."
-msgstr ""
+msgstr "``'alphabetical'``：使用简单的字母顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:778
 msgid ""
 "``'groupwise'``: Group by object type (class, function, etc), use "
 "alphabetical order within groups."
-msgstr ""
+msgstr "``'groupwise'``：按对象类型（类、函数等）分组，在组内使用字母顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:781
 msgid ""
 "``'bysource'``: Use the order of objects in the module's source. The "
 "``__all__`` variable can be used to override this order."
-msgstr ""
+msgstr "``'bysource'``：使用模块源代码中对象的顺序。可以使用 ``__all__`` 变量来覆盖此顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:795
 msgid "Insert the class's base classes after the class signature."
-msgstr ""
+msgstr "在类签名后插入类的基类。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:801
 msgid "Automatically document function-like objects"
@@ -691,28 +725,28 @@ msgstr "自动为类似函数的对象编写文档"
 msgid ""
 "Document a function, method, property, or decorator. By default, the "
 "directive only inserts the docstring of the function itself:"
-msgstr ""
+msgstr "记录一个函数、方法、属性或修饰符。默认情况下，该指令仅插入函数本身的docstring："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:823
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:905
 msgid ""
 "The directive can also contain content of its own, which will be inserted "
 "into the resulting non-auto directive source after the docstring."
-msgstr ""
+msgstr "该指令还可以包含自己的内容，这些内容将在生成的非自动指令源代码中插入docstring之后。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:827
 msgid ""
 "Therefore, you can also mix automatic and non-automatic documentation, as "
 "follows:"
-msgstr ""
+msgstr "因此，您还可以混合使用自动和非自动文档，如下所示："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:836
 msgid ":rst:dir:`autodecorator`."
-msgstr ""
+msgstr ":rst:dir:`autodecorator`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:838
 msgid ":rst:dir:`autoproperty`."
-msgstr ""
+msgstr ":rst:dir:`autoproperty`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:843
 msgid ""
@@ -722,16 +756,18 @@ msgid ""
 "if a decorator replaces the decorated function with another, it must copy "
 "the original ``__doc__`` to the new function."
 msgstr ""
+"如果您记录了装饰过的函数或方法，请记住，``autodoc`` 通过导入模块并检查给定函数或方法的 ``__doc__`` "
+"属性来检索其docstring。这意味着如果修饰符用另一个函数替换了被修饰的函数，则它必须将原始 ``__doc__`` 复制到新函数中。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:871
 msgid "Do not generate an index entry for the documented function."
-msgstr ""
+msgstr "不为已记录的函数生成索引条目。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:878
 msgid ""
 "Do not generate an index entry for the documented function. Unlike ``:no-"
 "index:``, cross-references are still created."
-msgstr ""
+msgstr "不为已记录的函数生成索引条目。与 ``:no-index:`` 不同，仍会创建交叉引用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:885
 msgid "Automatically document attributes or data"
@@ -741,7 +777,7 @@ msgstr "自动为属性或数据编写文档"
 msgid ""
 "Document a module level variable or constant ('data') or class attribute. By"
 " default, the directive only inserts the docstring of the variable itself:"
-msgstr ""
+msgstr "记录模块级变量或常量（“数据”）或类属性。默认情况下，该指令仅插入变量本身的docstring："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:918
 msgid ""
@@ -750,18 +786,18 @@ msgstr " :rst:dir:`autodata` 和 :rst:dir:`autoattribute` 现在可以提取docs
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:921
 msgid "Doc-comments are now allowed on the same line of an assignment."
-msgstr ""
+msgstr "现在允许在赋值的同一行上使用文档注释。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:929
 msgid ""
 "Do not generate an index entry for the documented variable or constant."
-msgstr ""
+msgstr "不为已记录的变量或常量生成索引条目。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:936
 msgid ""
 "Do not generate an index entry for the documented variable or constant. "
 "Unlike ``:no-index:``, cross-references are still created."
-msgstr ""
+msgstr "不为已记录的变量或常量生成索引条目。与 ``:no-index:`` 不同，仍会创建交叉引用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:946
 msgid ""
@@ -770,6 +806,8 @@ msgid ""
 "override this, a custom string for the variable's value may be used as the "
 "argument to ``annotation``."
 msgstr ""
+"默认情况下，``autodoc`` 尝试通过内省获取变量的类型注释和值，并在变量名称后显示它。要覆盖此内容，可以将变量值的自定义字符串用作 "
+"``annotation`` 的参数。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:952
 msgid ""
@@ -777,12 +815,14 @@ msgid ""
 "displayed value will be ``493`` (as ``oct(493) == '0o755'``). This can be "
 "fixed by setting ``:annotation: = 0o755``."
 msgstr ""
+"例如，如果 ``FILE_MODE`` 的运行时值为 ``0o755``，则显示的值将为 ``493`` （因为 ``oct(493) == "
+"'0o755'``）。可以通过设置 ``:annotation: = 0o755`` 来解决此问题。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:956
 msgid ""
 "If ``:annotation:`` is used without arguments, no value or type hint will be"
 " shown for the variable."
-msgstr ""
+msgstr "如果使用 ``:annotation:`` 而不带参数，则不会为变量显示任何值或类型提示。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:963
 msgid ""
@@ -790,6 +830,8 @@ msgid ""
 "value:`` option. If both the ``:annotation:`` and ``:no-value:`` options are"
 " used, ``:no-value:`` has no effect."
 msgstr ""
+"要显示变量的类型提示而不显示值，请使用 ``:no-value:`` 选项。如果同时使用了 ``:annotation:`` 和 ``:no-"
+"value:`` 选项，则 ``:no-value:`` 无效。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:970
 msgid "Automatically document type aliases"
@@ -799,13 +841,13 @@ msgstr "自动为类型别名编写文档"
 msgid ""
 "Document a :pep:`695` type alias (the :keyword:`type` statement). By "
 "default, the directive only inserts the docstring of the alias itself:"
-msgstr ""
+msgstr "记录一个 :pep:`695` 类型别名（:keyword:`type` 语句）。默认情况下，该指令仅插入别名本身的docstring："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:983
 msgid ""
 "Therefore, you can also mix automatic and non-automatic member "
 "documentation."
-msgstr ""
+msgstr "因此，您还可以混合使用自动和非自动成员文档。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1002
 msgid "Configuration"
@@ -829,6 +871,7 @@ msgid ""
 " behaviour prior to Sphinx 9.0. It is based on the ``Documenter`` class "
 "hierarchy."
 msgstr ""
+"如果为真，autodoc 将使用传统的基于类的实现。这是 Sphinx 9.0 之前的行为。它基于 ``Documenter`` 类层次结构。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1014
 msgid ""
@@ -840,11 +883,15 @@ msgid ""
 "that the maintainers are aware of your use case, for possible future "
 "improvements."
 msgstr ""
+"如果您的文档或您使用的扩展在Python代码中使用或猴子补丁传统的基于类的API，则提供此设置以实现向后兼容性。如果是这种情况，请在您的 "
+":file:`conf.py` 中将 ``autodoc_use_legacy_class_based = True`` 。并且请在 `the "
+"tracking issue on GitHub <https://github.com/sphinx-"
+"doc/sphinx/issues/14089>`__ 上添加评论，以便维护人员了解您的用例，以便将来可能进行改进。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1023
 msgid ""
 "The legacy class-based implementation does not support PEP 695 type aliases."
-msgstr ""
+msgstr "传统的基于类的实现不支持 PEP 695 类型别名。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1030
 msgid ""
@@ -854,7 +901,7 @@ msgstr "此值选择将插入到主体的内容 :rst:dir:`autoclass` 指令。�
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1033
 msgid "``'class'``"
-msgstr ""
+msgstr "``'class'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1034
 msgid ""
@@ -862,10 +909,12 @@ msgid ""
 "as a separate method using :rst:dir:`automethod` or the ``members`` option "
 "to :rst:dir:`autoclass`."
 msgstr ""
+"只插入类的docstring。您仍然可以使用 :rst:dir:`automethod` 或 :rst:dir:`autoclass` 的 "
+"``members`` 选项将 ``__init__`` 作为单独的方法进行记录。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1037
 msgid "``'both'``"
-msgstr ""
+msgstr "``'both'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1038
 msgid ""
@@ -875,11 +924,11 @@ msgstr "类和方法的文档字符串都被连接并插入。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1040
 msgid "``'init'``"
-msgstr ""
+msgstr "``'init'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1041
 msgid "Only the ``__init__`` method's docstring is inserted."
-msgstr "只插入方法的文档字符串。"
+msgstr "只插入 ``__init__`` 方法的文档字符串。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1045
 msgid ""
@@ -894,141 +943,141 @@ msgstr ""
 msgid ""
 "This value selects how the signature will be displayed for the class defined"
 " by :rst:dir:`autoclass` directive.  The possible values are:"
-msgstr ""
+msgstr "此值选择如何显示由 :rst:dir:`autoclass` 指令定义的类的签名。可能的值为："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1058
 msgid "``'mixed'``"
-msgstr ""
+msgstr "``'mixed'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1059
 msgid "Display the signature with the class name."
-msgstr ""
+msgstr "显示带有类名的签名。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1060
 msgid "``'separated'``"
-msgstr ""
+msgstr "``'separated'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1061
 msgid "Display the signature as a method."
-msgstr ""
+msgstr "将签名显示为方法。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1069
 msgid ""
 "Define the order in which :rst:dir:`automodule` and :rst:dir:`autoclass` "
 "members are listed. Supported values are:"
-msgstr ""
+msgstr "定义列出 :rst:dir:`automodule` 和 :rst:dir:`autoclass` 成员的顺序。支持的值有："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1072
 msgid "``'alphabetical'``: Use alphabetical order."
-msgstr ""
+msgstr "``'alphabetical'``：使用字母顺序。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1075
 msgid "``'groupwise'``: order by member type. The order is:"
-msgstr ""
+msgstr "``'groupwise'``：按成员类型排序。顺序为："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1077
 msgid "for modules, exceptions, classes, functions, data"
-msgstr ""
+msgstr "对于模块、异常、类、函数、数据"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1078
 msgid "for classes: class methods, static methods, methods,"
-msgstr ""
+msgstr "对于类：类方法、静态方法、方法，"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1079
 msgid "and properties/attributes"
-msgstr ""
+msgstr "和 properties/attributes"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1081
 msgid "Members are ordered alphabetically within groups."
-msgstr ""
+msgstr "成员在组内按字母顺序排列。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1083
 msgid ""
 "``'bysource'``: Use the order in which the members appear in the source "
 "code. This requires that the module must be a Python module with the source "
 "code available."
-msgstr ""
+msgstr "``bysource``：使用成员在源代码中出现的顺序。这要求模块必须是具有可用源代码的Python模块。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1089
 msgid "Support for ``'bysource'``."
-msgstr "支持“bysource”。"
+msgstr "支持 ``'bysource'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1096
 msgid ""
 "The default options for autodoc directives.  They are applied to all autodoc"
 " directives automatically.  It must be a dictionary which maps option names "
 "to the values.  For example:"
-msgstr ""
+msgstr "自动文档指令的默认选项。它们会自动应用于所有自动文档指令。它必须是一个将选项名称映射到值的字典。例如："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1110
 msgid ""
 "Setting ``None`` or ``True`` to the value is equivalent to giving only the "
 "option name to the directives."
-msgstr "将“None”或“True”设置为值相当于只给指令指定选项名。"
+msgstr "将 ``None`` 或 ``True`` 设置为值相当于只给指令指定选项名。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1113
 msgid "The supported options are:"
-msgstr ""
+msgstr "支持的选项有："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1115
 msgid "``'members'``: See :rst:dir:`automodule:members`."
-msgstr ""
+msgstr "``'members'``：见 :rst:dir:`automodule:members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1116
 msgid "``'undoc-members'`` See :rst:dir:`automodule:undoc-members`."
-msgstr ""
+msgstr "``'undoc-members'`` 见 :rst:dir:`automodule:undoc-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1117
 msgid "``'private-members'``: See :rst:dir:`automodule:private-members`."
-msgstr ""
+msgstr "``'private-members'``：见 :rst:dir:`automodule:private-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1118
 msgid "``'special-members'``: See :rst:dir:`automodule:special-members`."
-msgstr ""
+msgstr "``'special-members'``：见 :rst:dir:`automodule:special-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1119
 msgid "``'inherited-members'``: See :rst:dir:`autoclass:inherited-members`."
-msgstr ""
+msgstr "``'inherited-members'``：见 :rst:dir:`autoclass:inherited-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1120
 msgid "``'imported-members'``: See :rst:dir:`automodule:imported-members`."
-msgstr ""
+msgstr "``'imported-members'``：见 :rst:dir:`automodule:imported-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1121
 msgid "``'exclude-members'``: See :rst:dir:`automodule:exclude-members`."
-msgstr ""
+msgstr "``'exclude-members'``：见 :rst:dir:`automodule:exclude-members`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1122
 msgid "``'ignore-module-all'``: See :rst:dir:`automodule:ignore-module-all`."
-msgstr ""
+msgstr "``'ignore-module-all'``：见 :rst:dir:`automodule:ignore-module-all`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1123
 msgid "``'member-order'``: See :rst:dir:`automodule:member-order`."
-msgstr ""
+msgstr "``'member-order'``：见 :rst:dir:`automodule:member-order`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1124
 msgid "``'show-inheritance'``: See :rst:dir:`autoclass:show-inheritance`."
-msgstr ""
+msgstr "``'show-inheritance'``：见 :rst:dir:`autoclass:show-inheritance`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1125
 msgid "``'class-doc-from'``: See :rst:dir:`autoclass:class-doc-from`."
-msgstr ""
+msgstr "``'class-doc-from'``：见 :rst:dir:`autoclass:class-doc-from`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1126
 msgid "``'no-value'``: See :rst:dir:`autodata:no-value`."
-msgstr ""
+msgstr "``'no-value'``：见 :rst:dir:`autodata:no-value`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1127
 msgid "``'no-index'``: See :rst:dir:`automodule:no-index`."
-msgstr ""
+msgstr "``'no-index'``：见 :rst:dir:`automodule:no-index`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1128
 msgid "``'no-index-entry'``: See :rst:dir:`automodule:no-index-entry`."
-msgstr ""
+msgstr "``'no-index-entry'``：见 :rst:dir:`automodule:no-index-entry`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1132
 msgid "Accepts ``True`` as a value."
-msgstr "接受“True”作为值。"
+msgstr "接受 ``True`` 作为值。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1135
 msgid "Added ``'imported-members'``."
@@ -1036,11 +1085,11 @@ msgstr "添加 ``'imported-members'``."
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1138
 msgid "Added ``'class-doc-from'``."
-msgstr ""
+msgstr "添加 ``'class-doc-from'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1141
 msgid "Added ``'no-value'``."
-msgstr ""
+msgstr "添加 ``'no-value'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1148
 msgid ""
@@ -1057,14 +1106,15 @@ msgid ""
 "if it looks like a signature, use the line as the signature and remove it "
 "from the docstring content."
 msgstr ""
-"如果此布尔值设置为“True”（默认值），自动文档将查看文档字符串的第一行以查找函数和方法，如果它看起来像签名，则使用该行作为签名，并将其从文档字符串内容中删除。"
+"如果此布尔值设置为 ``True`` "
+"（默认值），自动文档将查看文档字符串的第一行以查找函数和方法，如果它看起来像签名，则使用该行作为签名，并将其从文档字符串内容中删除。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1158
 msgid ""
 "autodoc will continue to look for multiple signature lines, stopping at the "
 "first line that does not look like a signature. This is useful for declaring"
 " overloaded function signatures."
-msgstr ""
+msgstr "autodoc 将继续查找多个签名行，在第一个看起来不像签名的行处停止。这对于声明重载函数签名很有用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1165
 msgid "Support overloaded signatures"
@@ -1072,7 +1122,7 @@ msgstr "支持重载签名"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1169
 msgid "Overloaded signatures do not need to be separated by a backslash"
-msgstr ""
+msgstr "重载签名不需要用反斜杠分隔"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1175
 msgid ""
@@ -1084,7 +1134,7 @@ msgstr "此值包含要模拟的模块列表。当某些外部依赖项在构建
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1184
 msgid "Will mock all imports under the ``django`` package."
-msgstr "将模拟“django”包下的所有导入。"
+msgstr "将模拟 ``django`` 包下的所有导入。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1188
 msgid ""
@@ -1096,43 +1146,43 @@ msgstr "这个配置值只需要声明应该模拟的顶层模块。"
 msgid ""
 "This value controls how to represent typehints.  The setting takes the "
 "following values:"
-msgstr ""
+msgstr "此值控制如何表示类型提示。该设置采用以下值："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1199
 msgid "``'signature'`` -- Show typehints in the signature"
-msgstr ""
+msgstr "``'signature'`` --在签名中显示类型提示"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1200
 msgid ""
 "``'description'`` -- Show typehints as content of the function or method The"
 " typehints of overloaded functions or methods will still be represented in "
 "the signature."
-msgstr ""
+msgstr "``'description'`` -- 将类型提示显示为函数或方法的内容。重载函数或方法的类型提示仍将表示在签名中。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1203
 msgid "``'none'`` -- Do not show typehints"
-msgstr "``'none'`` --不显示类型提示"
+msgstr "``'none'`` -- 不显示类型提示"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1204
 msgid ""
 "``'both'`` -- Show typehints in the signature and as content of the function"
 " or method"
-msgstr ""
+msgstr "``'both'`` -- 在签名中显示类型提示，并作为函数或方法的内容"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1207
 msgid ""
 "Overloaded functions or methods will not have typehints included in the "
 "description because it is impossible to accurately represent all possible "
 "overloads as a list of parameters."
-msgstr ""
+msgstr "重载的函数或方法不会在描述中包含类型提示，因为不可能将所有可能的重载准确地表示为参数列表。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1214
 msgid "New option ``'description'`` is added."
-msgstr "添加了新选项“description”。"
+msgstr "添加了新选项 ``'description'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1218
 msgid "New option ``'both'`` is added."
-msgstr ""
+msgstr "添加了新选项 ``'both'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1224
 msgid ""
@@ -1140,18 +1190,20 @@ msgid ""
 "values are documented when :confval:`autodoc_typehints` is set to "
 "``'description'``. Supported values:"
 msgstr ""
+"此值控制在 :confval:`autodoc_typehints` 设置为 ``'description'`` "
+"时，是否记录未记录的参数和返回值的类型。支持的值："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1229
 msgid ""
 "``'all'``: Types are documented for all parameters and return values, "
 "whether they are documented or not."
-msgstr ""
+msgstr "``'all'``：记录所有参数和返回值的类型，无论它们是否被记录。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1232
 msgid ""
 "``'documented'``: Types will only be documented for a parameter or a return "
 "value that is already documented by the docstring."
-msgstr ""
+msgstr "``'documented'``：仅记录已由docstring记录的参数或返回值的类型。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1235
 msgid ""
@@ -1159,17 +1211,19 @@ msgid ""
 "parameter is documented in the docstring. The return type is always "
 "annotated (except if it is ``None``)."
 msgstr ""
+"``'documented_params'``：仅当参数在docstring中记录时，才会注释参数类型。返回类型始终被注释（除非它是 "
+"``None``）。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1244
 msgid "New option ``'documented_params'`` is added."
-msgstr ""
+msgstr "添加了新选项 ``'documented_params'``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1250
 msgid ""
 "A dictionary for users defined `type aliases`__ that maps a type name to the"
 " full-qualified object name.  It is used to keep type aliases not evaluated "
 "in the document."
-msgstr ""
+msgstr "用户定义的 `type aliases`__ 的字典，将类型名称映射到完全限定的对象名称。它用于在文档中保留未评估的类型别名。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1254
 msgid ""
@@ -1177,68 +1231,72 @@ msgid ""
 "Evaluation of Annotations (PEP 563) <563>` feature via ``from __future__ "
 "import annotations``."
 msgstr ""
+"只有当您的程序通过 ``from __future__ import annotations`` 启用 :pep:`Postponed "
+"Evaluation of Annotations (PEP 563) <563>` 功能时，类型别名才可用。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1258
 msgid "For example, there is code using a type alias:"
-msgstr ""
+msgstr "例如，有使用类型别名的代码："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1269
 msgid ""
 "If ``autodoc_type_aliases`` is not set, autodoc will generate internal mark-"
 "up from this code as following:"
-msgstr ""
+msgstr "如果 ``autodoc_type_aliases`` 未设置，autodoc 将根据以下代码生成内部标记："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1278
 msgid ""
 "If you set ``autodoc_type_aliases`` as ``{'AliasType': "
 "'your.module.AliasType'}``, it generates the following document internally:"
 msgstr ""
+"如果将 ``autodoc_type_aliases`` 设置为 ``{'AliasType': "
+"'your.module.AliasType'}``，则它在内部生成以下文档："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1295
 msgid ""
 "This value controls the format of typehints.  The setting takes the "
 "following values:"
-msgstr ""
+msgstr "此值控制类型提示的格式。该设置采用以下值："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1298
 msgid ""
 "``'fully-qualified'`` -- Show the module name and its name of typehints"
-msgstr ""
+msgstr "``'fully-qualified'`` -- 显示类型提示的模块名称及其名称"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1299
 msgid ""
 "``'short'`` -- Suppress the leading module names of the typehints (e.g. "
 "``io.StringIO`` -> ``StringIO``)"
-msgstr ""
+msgstr "``'short'`` -- 抑制类型提示的前导模块名称（例如 ``io.StringIO`` -> ``StringIO``）"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1306
 msgid "The default setting was changed to ``'short'``"
-msgstr ""
+msgstr "默认设置更改为 ``'short'``"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1312
 msgid ""
 "If True, the default argument values of functions will be not evaluated on "
 "generating document.  It preserves them as is in the source code."
-msgstr ""
+msgstr "如果为True，则在生成文档时不会评估函数的默认参数值。它将它们保留在源代码中。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1317
 msgid ""
 "Added as an experimental feature.  This will be integrated into autodoc core"
 " in the future."
-msgstr ""
+msgstr "作为实验性功能添加。将来这将集成到autodoc核心中。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1324
 msgid ""
 "Attempt to read ``# type: ...`` comments from source code to supplement "
 "missing type annotations, if True."
-msgstr ""
+msgstr "如果为True，则尝试从源代码中读取 ``# type: ...`` 注释以补充缺失的类型注释。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1327
 msgid ""
 "This can be disabled if your source code does not use type comments, for "
 "example if it exclusively uses type annotations or does not use type hints "
 "of any kind."
-msgstr ""
+msgstr "如果您的源代码不使用类型注释（例如，如果它专门使用类型注释或不使用任何类型提示），则可以禁用此功能。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1333
 msgid ""
@@ -1247,6 +1305,8 @@ msgid ""
 "py:`True` for backwards compatibility. The default will change to :code-"
 "py:`False` in Sphinx 10."
 msgstr ""
+"通过新的 :confval:`!autodoc_use_type_comments` 选项添加了禁用使用类型注释的选项，出于向后兼容性的考虑，默认为 "
+":code-py:`True`。默认值将在 Sphinx 10 中更改为 :code-py:`False`。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1344
 msgid ""
@@ -1254,12 +1314,14 @@ msgid ""
 " during importing modules. If ``False`` is given, autodoc forcedly "
 "suppresses the error if the imported module emits warnings."
 msgstr ""
+"这个值控制导入模块期间 :option:`sphinx-build --fail-on-warning` 的行为。如果给出 "
+"``False``，当导入的模块发出警告时，autodoc 会强制抑制错误。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1349
 msgid ""
 "This option now has no effect as :option:`!--fail-on-warning` no longer "
 "exits early."
-msgstr ""
+msgstr "由于 :option:`!--fail-on-warning` 不再提前退出，因此此选项现在无效。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1357
 msgid ""
@@ -1272,7 +1334,7 @@ msgid ""
 ":mod:`autodoc` supports suppressing warning messages via "
 ":confval:`suppress_warnings`. It defines the following additional warnings "
 "types:"
-msgstr ""
+msgstr ":mod:`autodoc` 支持通过 :confval:`suppress_warnings` 抑制警告消息。它定义了以下其他警告类型："
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1372
 msgid "autodoc"
@@ -1319,6 +1381,8 @@ msgid ""
 "``'class'``, ``'exception'``, ``'function'``, ``'decorator'``, ``'method'``,"
 " ``'property'``, ``'attribute'``, ``'data'``, or ``'type'``)"
 msgstr ""
+"文档字符串所属对象的类型（``'module'``、``'class'``、``'exception'``、``'function'``、``'decorator'``、``'method'``、``'property'``、``'attribute'``、``'data'``"
+" 或 ``'type'`` 之一）"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1393
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1423
@@ -1343,6 +1407,8 @@ msgid ""
 "to the options used in the auto directive, e.g. ``inherited_members``, "
 "``undoc_members``, or ``show_inheritance``."
 msgstr ""
+"指令给出的选项：一个对象，其属性对应于自动指令中使用的选项，例如 ``inherited_members``、``undoc_members`` 或 "
+"``show_inheritance``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1398
 msgid "the lines of the docstring, see above"
@@ -1373,19 +1439,21 @@ msgid ""
 "parameter_2)'``, or ``None`` if introspection didn't succeed and signature "
 "wasn't specified in the directive."
 msgstr ""
+"函数签名，形式为 ``'(parameter_1, parameter_2)'`` 的字符串，如果自省未成功且未在指令中指定签名，则为 "
+"``None``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1431
 msgid ""
 "function return annotation as a string of the form ``'annotation'``, or "
 "``''`` if there is no return annotation."
-msgstr ""
+msgstr "函数返回注释，形式为 ``'annotation'`` 的字符串，如果没有返回注释，则为 ``''``。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1434
 msgid ""
 "The :mod:`sphinx.ext.autodoc` module provides factory functions for commonly"
 " needed docstring processing in event :event:`autodoc-process-docstring`:"
 msgstr ""
-" :mod:`sphinx.ext.autodoc` 模块提供工厂函数，给事件 :event:`autodoc-process-docstring` "
+":mod:`sphinx.ext.autodoc` 模块提供工厂函数，给事件 :event:`autodoc-process-docstring` "
 "提供通用的docstring 处理:"
 
 #: ../../sphinx/sphinx/ext/autodoc/_event_listeners.pydocstring of
@@ -1395,7 +1463,8 @@ msgid ""
 "every docstring.  If *what* is a sequence of strings, only docstrings of a "
 "type in *what* will be processed."
 msgstr ""
-"返回一个侦听器，它删除每个文档字符串的第一行*pre*行和最后一行*post*。如果*what*是字符串序列，则只处理*what*中类型的文档字符串。"
+"返回一个侦听器，它删除每个文档字符串的第一行 *pre* 行和最后一行 *post*。如果 *what* 是字符串序列，则只处理 *what* "
+"中类型的文档字符串。"
 
 #: ../../sphinx/sphinx/ext/autodoc/_event_listeners.pydocstring of
 #: sphinx.ext.autodoc._event_listeners.cut_lines:5
@@ -1433,20 +1502,22 @@ msgid ""
 "**in place** to change what Sphinx puts into the output.  It's emitted only "
 "if the ``show-inheritance`` option is given."
 msgstr ""
+"当自动文档读取并处理类以确定基类时发出。*bases* 是类的列表，事件处理程序可以 **就地** 修改以更改Sphinx在输出中的内容。仅当给出 "
+"``show-inheritance`` 选项时才发出。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1450
 msgid "unused placeholder"
-msgstr ""
+msgstr "未使用的占位符"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1451
 msgid "the list of base classes signature. see above."
-msgstr ""
+msgstr "基类签名列表。见上文。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1456
 msgid ""
 "``bases`` can contain a string as a base class name. It will be processed as"
 " reStructuredText."
-msgstr ""
+msgstr "``bases`` 可以包含作为基类名称的字符串。它将被处理为 reStructuredText。"
 
 #: ../../sphinx/doc/usage/extensions/autodoc.rst:1461
 msgid "Skipping members"

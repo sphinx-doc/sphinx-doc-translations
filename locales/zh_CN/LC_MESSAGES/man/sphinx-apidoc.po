@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.2+/c04384139\n"
+"Project-Id-Version: Sphinx 9.1.0+/cc604ad43\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 12:56+0000\n"
+"POT-Creation-Date: 2025-12-17 12:58+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -49,6 +49,8 @@ msgid ""
 "sources that, using the :py:mod:`~sphinx.ext.autodoc` extension, document a "
 "whole package in the style of other automatic API documentation tools."
 msgstr ""
+":program:`sphinx-apidoc` 是一个用于自动生成 Sphinx 源文件的工具，使用 "
+":py:mod:`~sphinx.ext.autodoc` 扩展，以其他自动API文档工具的风格记录整个包。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:17
 msgid ""
@@ -67,13 +69,13 @@ msgid ""
 "these will be executed by ``autodoc`` when ``sphinx-build`` is run."
 msgstr ""
 "``sphinx-apidoc`` 生成源文件，这些文件使用 :mod:`sphinx.ext.autodoc` "
-"来记录所有找到的模块。如果任何模块对导入有副作用，则在运行“sphinx-build”时，将由“autodoc”执行这些副作用。"
+"来记录所有找到的模块。如果任何模块对导入有副作用，则在运行 ``sphinx-build`` 时，将由 ``autodoc`` 执行这些副作用。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:30
 msgid ""
 "If you document scripts (as opposed to library modules), make sure their "
 "main routine is protected by a ``if __name__ == '__main__'`` condition."
-msgstr "如果你要引入脚本（而不是库模块），确保主程序 main 有这个条件保护：“if __name__ == '__main__'”。"
+msgstr "如果你要引入脚本（而不是库模块），确保主程序 main 有这个条件保护： ``if __name__ == '__main__'``。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:34
 msgid "Options"
@@ -96,24 +98,24 @@ msgstr "强制覆盖任何现有生成的文件。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:53
 msgid "Follow symbolic links. Defaults to ``False``."
-msgstr ""
+msgstr "跟随符号链接。默认为 ``False``。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:57
 msgid "Do not create or remove any files."
-msgstr ""
+msgstr "不要创建或删除任何文件。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:61
 msgid "Suffix for the source files generated. Defaults to ``rst``."
-msgstr "生成的源文件的后缀。默认为“rst”。"
+msgstr "生成的源文件的后缀。默认为 ``rst``。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:65
 msgid ""
 "Maximum depth for the generated table of contents file. Defaults to ``4``."
-msgstr ""
+msgstr "生成的目录文件的最大深度。默认为 ``4``。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:69
 msgid "Filename for a table of contents file. Defaults to ``modules``."
-msgstr "目录文件的文件名。默认为“modules” 。"
+msgstr "目录文件的文件名。默认为 ``modules`` 。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:73
 msgid ""
@@ -125,7 +127,7 @@ msgstr "不要创建目录文件。忽略提供的 :option:`--full`。"
 msgid ""
 "Remove existing files in the output directory that are not created anymore. "
 "Not compatible with :option:`--full`."
-msgstr ""
+msgstr "删除输出目录中不再创建的现有文件。不兼容 :option:`--full`。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:84
 msgid ""
@@ -155,6 +157,8 @@ msgid ""
 "Python packages containing :file:`__init__.py` files, or single-file Python "
 "modules."
 msgstr ""
+"没有此选项，:program:`sphinx-apidoc` 会在 :data:`sys.path` 中搜索包含 :file:`__init__.py`"
+" 文件的Python包，或单文件Python模块。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:110
 msgid ""
@@ -162,6 +166,8 @@ msgid ""
 "paths such as ``foo/bar/module.py`` or ``foo/bar/baz/__init__.py`` (note "
 "that ``bar`` and ``foo`` are namespaces, not modules)."
 msgstr ""
+"此选项改为使用 :pep:`420` 隐式命名空间，允许布局路径，例如 ``foo/bar/module.py`` 或 "
+"``foo/bar/baz/__init__.py`` （注意 ``bar`` 和 ``foo`` 是命名空间，而不是模块）。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:116
 msgid "Put module documentation before submodule documentation."
@@ -213,45 +219,47 @@ msgstr "模板文件的模板目录。您可以修改apidoc生成的sphinx项目
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:152
 msgid "``module.rst.jinja``"
-msgstr ""
+msgstr "``module.rst.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:153
 msgid "``package.rst.jinja``"
-msgstr ""
+msgstr "```package.rst.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:154
 msgid "``toc.rst.jinja``"
-msgstr ""
+msgstr "``toc.rst.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:155
 msgid "``root_doc.rst.jinja``"
-msgstr ""
+msgstr "``root_doc.rst.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:156
 msgid "``conf.py.jinja``"
-msgstr ""
+msgstr "``conf.py.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:157
 msgid "``Makefile.jinja``"
-msgstr ""
+msgstr "``Makefile.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:158
 msgid "``Makefile.new.jinja``"
-msgstr ""
+msgstr "``Makefile.new.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:159
 msgid "``make.bat.jinja``"
-msgstr ""
+msgstr "``make.bat.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:160
 msgid "``make.bat.new.jinja``"
-msgstr ""
+msgstr "``make.bat.new.jinja``"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:162
 msgid ""
 "In detail, please refer the system template files Sphinx provides. "
 "(``sphinx/templates/apidoc`` and ``sphinx/templates/quickstart``)"
-msgstr "详细信息，请参考Sphinx提供的系统模板文件。(“sphinx/模板/apidoc”和“sphinx/模板/快速入门”)"
+msgstr ""
+"详细信息，请参考Sphinx提供的系统模板文件。(``sphinx/templates/apidoc`` 和 "
+"``sphinx/templates/quickstart``)"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:166
 msgid "Environment"
@@ -262,8 +270,8 @@ msgid ""
 "A comma-separated list of option to append to generated ``automodule`` "
 "directives. Defaults to ``members,undoc-members,show-inheritance``."
 msgstr ""
-"一个逗号分隔的选项列表，附加到生成的“automodule”指令。默认为“members,undoc-members,show-"
-"inheritance”。"
+"一个逗号分隔的选项列表，附加到生成的 ``automodule`` 指令。默认为 ``members,undoc-members,show-"
+"inheritance``。"
 
 #: ../../sphinx/doc/man/sphinx-apidoc.rst:174
 msgid "See also"

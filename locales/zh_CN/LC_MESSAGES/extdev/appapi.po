@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
+"Project-Id-Version: Sphinx 9.1.0+/cc604ad43\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-10 02:05+0000\n"
+"POT-Creation-Date: 2025-12-17 12:58+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -36,7 +36,7 @@ msgid ""
 " the application object representing the Sphinx process."
 msgstr ""
 "每个Sphinx扩展都是一个Python模块，其中至少有一个 :func:`setup` "
-"函数。此函数在初始化时使用一个参数调用，该参数是代表Sphinx进程的应用程序对象。"
+"函数。此函数在初始化时被调用，其参数是代表Sphinx进程的应用程序对象。"
 
 #: ../../sphinx/doc/extdev/appapi.rst:16
 msgid "This application object has the public API described in the following."
@@ -60,14 +60,14 @@ msgstr "使用Sphinx扩展API的例子可以在 :mod:`sphinx.ext` 包里找到�
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.setup_extension:1
 msgid "Import and setup a Sphinx extension module."
-msgstr "导入并设置Sphinx插件模块。"
+msgstr "导入并设置Sphinx扩展模块。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.setup_extension:3
 msgid ""
 "Load the extension given by the module *name*.  Use this if your extension "
 "needs the features provided by another extension.  No-op if called twice."
-msgstr "加载由模块 *name* 指定的扩展。如果您的扩展需要其他扩展提供的功能，请使用此选项。如果调用了两次，则不做任何操作。"
+msgstr "加载由模块 *name* 指定的扩展。当您的扩展需要其他扩展提供的功能时调用。若调用两次则不做任何操作。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.require_sphinx:1
@@ -79,7 +79,7 @@ msgstr "按需检查sphinx版本。"
 msgid ""
 "Compare *version* with the version of the running Sphinx, and abort the "
 "build when it is too old."
-msgstr "将 *version* 与正在运行的Sphinx版本进行比较，如果版本过旧则终止构建。"
+msgstr "将 *version* 与正在运行的Sphinx版本进行比较，如果Sphinx版本过旧则终止构建。"
 
 #: ../../sphinx/doc/extdev/appapi.rst:0
 msgid "Parameters"
@@ -94,12 +94,12 @@ msgstr "所需版本，格式为 ``major.minor`` 或 ``(major, minor)`` 。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.require_sphinx:10
 msgid "Type of *version* now allows ``(major, minor)`` form."
-msgstr "*version* 的类型现在允许 ``(major, minor)`` 形式。"
+msgstr "现在允许 ``(major, minor)`` 形式的 *version*。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.connect:1
 msgid "Register *callback* to be called when *event* is emitted."
-msgstr "*event* 事件发生时要调用的已注册 *callback* 回调。"
+msgstr "*event* 事件发生时要调用的、已注册的 *callback* 回调。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.connect:3
@@ -123,7 +123,7 @@ msgstr "事件的回调函数"
 msgid ""
 "The priority of the callback.  The callbacks will be invoked in order of "
 "*priority* (ascending)."
-msgstr "回调的优先级。回调将按 *priority* （升序）顺序调用。"
+msgstr "回调的优先级。回调将按 *优先级* （升序）顺序调用。"
 
 #: ../../sphinx/doc/extdev/appapi.rst:0
 msgid "Returns"
@@ -228,20 +228,20 @@ msgid ""
 "change in the setting needs a full rebuild of HTML   documents. * ``''`` if "
 "a change in the setting will not need any special rebuild."
 msgstr ""
-"重建的条件。它必须是以下值之一：  * ``'env'`` 如果设置中的更改仅在文档被解析时生效—这意味着必须重新构建整个环境。 * "
-"``'html'`` 如果更改设置需要完全重新生成html文档。 * ``''`` 如果设置中的更改不需要任何特殊的重建。"
+"重新构建的条件。它必须是以下值之一：\n"
+" * ``'env'`` 如果设置中的更改仅在文档被解析时生效--这意味着必须重新构建整个环境。 * ``'html'`` 如果更改设置需要完全重新生成html文档。 * ``''`` 如果设置中的更改不需要任何特殊的重建。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_config_value:10
 msgid "The condition of rebuild.  It must be one of those values:"
-msgstr "重建的条件。它必须是以下值之一："
+msgstr "重新构建的条件。它必须是以下值之一："
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_config_value:12
 msgid ""
 "``'env'`` if a change in the setting only takes effect when a document is "
 "parsed -- this means that the whole environment must be rebuilt."
-msgstr "``'env'`` 如果设置中的更改仅在文档被解析时生效—这意味着必须重新构建整个环境。"
+msgstr "``'env'`` 如果设置中的更改仅在文档被解析时生效--这意味着必须重新构建整个环境。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_config_value:15
@@ -383,10 +383,10 @@ msgid ""
 "``depart`` can be ``None`` if the ``visit`` function raises "
 ":exc:`docutils.nodes.SkipNode`.  Example:"
 msgstr ""
-"Sphinx HTML、LaTeX、text和手册页编写器的节点访问者函数可以作为关键字参数给定：关键字应该是一个或多个 ``'html'``, "
-"``'latex'``, ``'text'``, ``'man'``, ``'texinfo'`` 或任何其他受支持的翻译器，值为二元组 "
-"``(visit, depart)`` 方法。如果  ``visit`` 函数引发 :exc:`docutils.nodes.SkipNode`， "
-"``depart`` 可以为 ``None``。 例子："
+"Sphinx HTML、LaTeX、text和manpage writer的节点访问者函数，可以作为关键字参数：关键字应该是一个或多个 "
+"``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'`` "
+"或任何其他受支持的翻译器，值为方法二元组 ``(visit, depart)`` 。如果  ``visit`` 函数引发 "
+":exc:`docutils.nodes.SkipNode`，则 ``depart`` 可以为 ``None``。 例子："
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_node:30
@@ -420,6 +420,8 @@ msgid ""
 " defined.  It is possible to add custom nodes to these default figtypes.  It"
 " is also possible to define new custom figtype if a new figtype is given."
 msgstr ""
+"可枚举节点的类型。每个figtype都有单独的编号序列。作为系统figtypes，定义了 ``figure`` ， ``table`` 和 "
+"``code-block`` 。可以将自定义节点添加到这些默认的figtypes中。如果给出了新的figtype，也可以定义新的自定义figtype。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_enumerable_node:12
@@ -430,11 +432,14 @@ msgid ""
 "searches ``docutils.nodes.caption`` or ``docutils.nodes.title`` from the "
 "node as a title."
 msgstr ""
+"获取节点标题的getter函数。它接受一个可枚举节点的实例，并且必须返回其标题作为字符串。标题用于 :rst:role:`ref` "
+"的引用的默认标题。默认情况下，Sphinx会从节点中搜索 ``docutils.nodes.caption`` 或 "
+"``docutils.nodes.title`` 作为标题。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_enumerable_node:18
 msgid "Visitor functions for each builder (same as :meth:`add_node`)"
-msgstr ""
+msgstr "每个构建器的访问者函数（与 :meth:`add_node` 相同）"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:1
@@ -444,14 +449,14 @@ msgstr "注册Docutils指令。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:3
 msgid "The name of the directive"
-msgstr ""
+msgstr "指令的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:4
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:8
 msgid "A directive class"
-msgstr ""
+msgstr "指令的类"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:5
@@ -460,14 +465,14 @@ msgstr ""
 msgid ""
 "If false, do not install it if another directive is already installed as the"
 " same name If true, unconditionally install the directive."
-msgstr ""
+msgstr "如为假，则若同名指令已安装，则不安装它。如果为真，则无条件安装该指令。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:9
 msgid ""
 "For example, a custom directive named ``my-directive`` would be added like "
 "this:"
-msgstr ""
+msgstr "例如，名为 ``my-directive`` 的自定义指令将被这样添加："
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:32
@@ -475,6 +480,8 @@ msgid ""
 "For more details, see `the Docutils docs "
 "<https://docutils.sourceforge.io/docs/howto/rst-directives.html>`__ ."
 msgstr ""
+"有关更多详细信息，请参阅 `the Docutils docs "
+"<https://docutils.sourceforge.io/docs/howto/rst-directives.html>`__ 。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:35
@@ -484,7 +491,7 @@ msgstr "现在支持Docutils 0.5样式的指令类。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive:37
 msgid "Docutils 0.4-style (function based) directives support is deprecated."
-msgstr "不推荐使用Docutils 0.4样式（基于函数）指令支持。"
+msgstr "废弃了对Docutils 0.4样式（基于函数）指令的支持。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:1
@@ -494,12 +501,12 @@ msgstr "注册Docutils角色。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:3
 msgid "The name of role"
-msgstr ""
+msgstr "角色的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:4
 msgid "A role function"
-msgstr ""
+msgstr "角色函数"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_generic_role:6
@@ -510,7 +517,7 @@ msgstr ""
 msgid ""
 "If false, do not install it if another role is already installed as the same"
 " name If true, unconditionally install the role."
-msgstr ""
+msgstr "如为假，则若同名角色已安装，则不安装它。如果为真，则无条件安装该角色。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role:9
@@ -518,6 +525,8 @@ msgid ""
 "For more details about role functions, see `the Docutils docs "
 "<https://docutils.sourceforge.io/docs/howto/rst-roles.html>`__ ."
 msgstr ""
+"有关角色函数的更多详细信息，请参阅 `the Docutils docs "
+"<https://docutils.sourceforge.io/docs/howto/rst-roles.html>`__ 。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_generic_role:1
@@ -529,7 +538,7 @@ msgstr "注册通用Docutils角色。"
 msgid ""
 "Register a Docutils role that does nothing but wrap its contents in the node"
 " given by *nodeclass*."
-msgstr "注册一个Docutils角色，该角色只在*nodeclass*给定的节点中包装其内容。"
+msgstr "注册一个Docutils角色，该角色只在 *nodeclass* 给定的节点中包装其内容。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_domain:1
@@ -539,14 +548,14 @@ msgstr "注册域。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_domain:3
 msgid "A domain class"
-msgstr ""
+msgstr "域类"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_domain:4
 msgid ""
 "If false, do not install it if another domain is already installed as the "
 "same name If true, unconditionally install the domain."
-msgstr ""
+msgstr "如为假，则若同名域已安装，则不安装它。如果为真，则无条件安装该域。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:1
@@ -563,12 +572,12 @@ msgstr "例如 :meth:`add_directive`，但该指令被添加到名为 *domain* �
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:6
 msgid "The name of target domain"
-msgstr ""
+msgstr "目标域的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_directive_to_domain:7
 msgid "A name of directive"
-msgstr ""
+msgstr "指令的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role_to_domain:1
@@ -586,17 +595,17 @@ msgstr "类似 :meth:`add_role`，但是角色被添加到名为 *domain* 的域
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role_to_domain:6
 msgid "The name of the target domain"
-msgstr ""
+msgstr "目标域的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role_to_domain:7
 msgid "The name of the role"
-msgstr ""
+msgstr "角色的名称"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_role_to_domain:8
 msgid "The role function"
-msgstr ""
+msgstr "角色函数"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:1
@@ -606,19 +615,19 @@ msgstr "注册域的自定义索引。"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:3
 msgid "Add a custom *index* class to the domain named *domain*."
-msgstr ""
+msgstr "将自定义 *index* 类添加到名为 *domain* 的域中。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:6
 msgid "The index class"
-msgstr ""
+msgstr "索引类"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_index_to_domain:7
 msgid ""
 "If false, do not install it if another index is already installed as the "
 "same name If true, unconditionally install the index."
-msgstr ""
+msgstr "如为假，则若同名索引已安装，则不安装它。如果为真，则无条件安装该索引。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_object_type:1
@@ -630,7 +639,7 @@ msgstr "注册一个新的对象类型。"
 msgid ""
 "This method is a very convenient way to add a new :term:`object` type that "
 "can be cross-referenced.  It will do this:"
-msgstr "这方法是添加一个新的 :term:`object` 类型的非常方便的方法，可以交叉引用。它将这样做："
+msgstr "此方法是添加一个新的 :term:`object` 类型的非常方便的方法，可以交叉引用。它会："
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_object_type:6
@@ -717,7 +726,7 @@ msgstr "对于角色内容，您具有与标准Sphinx角色相同的语法可能
 msgid ""
 "If *override* is True, the given object_type is forcedly installed even if "
 "an object_type having the same name is already installed."
-msgstr ""
+msgstr "如果 *override* 为True，则强制安装给定的object_type，即使已安装具有相同名称的object_type。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_crossref_type:1
@@ -917,6 +926,7 @@ msgid ""
 "files have the same priority, those files will be included in order of "
 "registration. See list of \"priority range for JavaScript files\" below."
 msgstr ""
+"文件按优先级升序包含。如果多个JavaScript文件具有相同的优先级，则这些文件将按注册顺序包含。见下文“JavaScript文件的优先级范围”列表。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:13
@@ -932,6 +942,8 @@ msgid ""
 "  If the special keyword argument ``body`` is given, its value will be added"
 " as the content of the  ``<script>`` tag."
 msgstr ""
+"额外的关键字参数作为 ``<script>`` 标签的属性包含。如果给出了特殊的关键字参数 ``body`` ，其值将作为  ``<script>`` "
+"标签的内容添加。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:13
@@ -955,7 +967,7 @@ msgstr "200"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:37
 msgid "default priority for built-in JavaScript files"
-msgstr ""
+msgstr "内建JavaScript文件的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:33
@@ -981,7 +993,7 @@ msgstr "800"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:41
 msgid "default priority for :confval:`html_js_files`"
-msgstr ""
+msgstr ":confval:`html_js_files` 的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:43
@@ -989,6 +1001,7 @@ msgid ""
 "A JavaScript file can be added to the specific HTML page when an extension "
 "calls this method on :event:`html-page-context` event."
 msgstr ""
+"当扩展在 :event:`html-page-context` 事件上调用此方法时，可以将JavaScript文件添加到特定的HTML页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:48
@@ -1009,7 +1022,7 @@ msgstr "接受优先级参数。允许将JavaScript文件添加到特定页面�
 msgid ""
 "Take loading_method argument.  Allow to change the loading method of the "
 "JavaScript file."
-msgstr ""
+msgstr "接受loading_method参数。允许更改JavaScript文件的加载方法。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:1
@@ -1021,7 +1034,7 @@ msgstr "注册要包含在HTML输出中的样式表。"
 msgid ""
 "The name of a CSS file that the default HTML template will include. It must "
 "be relative to the HTML static path, or a full URI with scheme."
-msgstr ""
+msgstr "默认HTML模板将包含的CSS文件的名称。它必须相对于HTML静态路径，或者是带有方案的完整URI。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:6
@@ -1029,7 +1042,7 @@ msgid ""
 "Files are included in ascending order of priority. If multiple CSS files "
 "have the same priority, those files will be included in order of "
 "registration. See list of \"priority range for CSS files\" below."
-msgstr ""
+msgstr "文件按优先级升序包含。如果多个CSS文件具有相同的优先级，则这些文件将按注册顺序包含。见下文“CSS文件的优先级范围”列表。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:10
@@ -1067,6 +1080,9 @@ msgid ""
 "title and *alternate* = ``False``. For more information, refer to the "
 "`documentation <https://mdn.io/Web/CSS/Alternative_style_sheets>`__."
 msgstr ""
+"可以使用参数 *alternate* （布尔值）和 *title* （字符串）提供可选的 ``alternate`` 和/或 ``title`` "
+"属性。默认情况下没有标题且 *alternate* = ``False`` 。有关更多信息，请参阅 `documentation "
+"<https://mdn.io/Web/CSS/Alternative_style_sheets>`__ 。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:50
@@ -1093,6 +1109,8 @@ msgid ""
 "declaration.  If you set *after_hyperref* truthy, the package will be loaded"
 " after ``hyperref`` package."
 msgstr ""
+"将 *packagename* 添加到LaTeX源代码将包含的包列表中。如果提供 *options* ，它将被用于  `\\usepackage` "
+"声明。如果将 *after_hyperref* 设置为真值，则该包将在 ``hyperref`` 包之后加载。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_latex_package:18
@@ -1133,6 +1151,9 @@ msgid ""
 "autodoc module for examples on how to subclass "
 ":class:`~sphinx.ext.autodoc.Documenter`."
 msgstr ""
+"将 *cls* 作为 :mod:`sphinx.ext.autodoc` 扩展的新documenter类添加。它必须是 "
+":class:`sphinx.ext.autodoc.Documenter` 的子类。这允许自动记录新类型的对象。有关如何子类化 "
+":class:`~sphinx.ext.autodoc.Documenter` 的示例，请参阅autodoc模块的源代码。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_autodocumenter:9
@@ -1209,7 +1230,7 @@ msgstr "注册解析器类。"
 msgid ""
 "If false, do not install it if another parser is already installed for the "
 "same suffix. If true, unconditionally install the parser."
-msgstr ""
+msgstr "如果为false，则如果另一个解析器已为相同的后缀安装，则不安装它。如果为true，则无条件安装该解析器。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_source_parser:8
@@ -1352,14 +1373,14 @@ msgstr "要发出的事件的名称"
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit_firstresult:6
 msgid "The arguments for the event"
-msgstr ""
+msgstr "事件的参数"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit:8
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit_firstresult:7
 msgid "The list of exceptions that are allowed in the callbacks"
-msgstr ""
+msgstr "回调中允许的异常列表"
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.emit:12
@@ -1455,7 +1476,7 @@ msgstr "配置文件抽象。"
 msgid ""
 "The Config object makes the values of all config options available as "
 "attributes."
-msgstr ""
+msgstr "Config对象使所有配置选项的值可用作属性。"
 
 #: ../../sphinx/sphinx/config.pydocstring of sphinx.config.Config:6
 msgid ""
@@ -1464,6 +1485,10 @@ msgid ""
 "attributes. For example, to get the value of :confval:`language`, use either"
 " ``app.config.language`` or ``env.config.language``."
 msgstr ""
+"它通过 :py:class:`~sphinx.application.Sphinx`\\ ``.config`` 和 "
+":py:class:`sphinx.environment.BuildEnvironment`\\ ``.config`` 属性公开。例如，要获取 "
+":confval:`language` 的值，请使用 ``app.config.language`` 或者 "
+"``env.config.language`` 。"
 
 #: ../../sphinx/doc/extdev/appapi.rst:180
 msgid "The template bridge"

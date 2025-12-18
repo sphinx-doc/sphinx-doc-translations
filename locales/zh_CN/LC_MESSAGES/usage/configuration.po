@@ -15,9 +15,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/71cc5d847\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-11 06:42+0000\n"
+"POT-Creation-Date: 2025-12-18 06:41+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -416,6 +416,8 @@ msgid ""
 "numbered if they have a caption. The :rst:role:`numref` role is enabled. "
 "Obeyed so far only by HTML and LaTeX builders."
 msgstr ""
+"如果为 :code-py:`True`，则如果图像、表格和代码块具有标题，则会自动对其进行编号。启用 :rst:role:`numref` "
+"角色。到目前为止，仅HTML和LaTeX构建器遵守此规则。"
 
 #: ../../sphinx/doc/usage/configuration.rst:335
 msgid ""
@@ -430,6 +432,8 @@ msgid ""
 "format of figure numbers. The marker ``%s`` will be replaced with the figure"
 " number."
 msgstr ""
+"将 :code-py:`'figure'`、:code-py:`'table'`、:code-py:`'code-block'` 和 :code-"
+"py:`'section'` 映射到用于图像编号格式的字符串的字典。标记 ``%s`` 将被替换为图像编号。"
 
 #: ../../sphinx/doc/usage/configuration.rst:349
 msgid "The defaults are:"
@@ -439,7 +443,7 @@ msgstr "默认值为："
 msgid ""
 "If set to :code-py:`0`, figures, tables, and code-blocks are continuously "
 "numbered starting at ``1``."
-msgstr ""
+msgstr "如果设置为 :code-py:`0`，则图像、表格和代码块将从 ``1`` 开始连续编号。"
 
 #: ../../sphinx/doc/usage/configuration.rst:368
 msgid ""
@@ -449,6 +453,9 @@ msgid ""
 " has been activated via the ``:numbered:`` option of the :rst:dir:`toctree` "
 "directive."
 msgstr ""
+"如果为 :code-py:`1`，则编号将为 ``x.1``、``x.2``，... 其中 ``x`` "
+"表示章节编号。(如果没有顶级章节，则不会添加前缀)。这自然只适用于通过 :rst:dir:`toctree` 指令的 ``:numbered:`` "
+"选项激活章节编号的情况。"
 
 #: ../../sphinx/doc/usage/configuration.rst:373
 msgid ""
@@ -457,16 +464,18 @@ msgid ""
 " directly under a section, there will be no ``y.`` prefix, and if there is "
 "no top-level section, the prefix will not be added."
 msgstr ""
+"如果为 :code-py:`2`，则编号将为 ``x.y.1``、``x.y.2``，... 其中 ``x`` 表示章节编号，``y`` "
+"表示子章节编号。如果直接位于章节下，则不会有 ``y.`` 前缀；如果没有顶级章节，则不会添加前缀。"
 
 #: ../../sphinx/doc/usage/configuration.rst:377
 msgid "Any other positive integer can be used, following the rules above."
-msgstr ""
+msgstr "可以使用任何其他正整数，遵循上述规则。"
 
 #: ../../sphinx/doc/usage/configuration.rst:381
 msgid ""
 "The LaTeX builder obeys this setting if :confval:`numfig` is set to :code-"
 "py:`True`."
-msgstr ""
+msgstr "如果 :confval:`numfig` 设置为 :code-py:`True`，则LaTeX构建器会遵守此设置。"
 
 #: ../../sphinx/doc/usage/configuration.rst:387
 msgid "Options for highlighting"
@@ -477,7 +486,7 @@ msgid ""
 "The default language to highlight source code in. The default is :code-"
 "py:`'default'`, which suppresses warnings if highlighting as Python code "
 "fails."
-msgstr ""
+msgstr "用于高亮显示源代码的默认语言。默认值为 :code-py:`'default'`，如果以Python代码进行高亮显示失败，则会抑制警告。"
 
 #: ../../sphinx/doc/usage/configuration.rst:397
 msgid ""
@@ -555,7 +564,7 @@ msgid ""
 "the certificates. This also allows a dictionary mapping hostnames to the "
 "certificate file path. The certificates are used to verify server "
 "certifications."
-msgstr ""
+msgstr "CA的证书文件路径或包含证书的目录路径。这也允许将主机名映射到证书文件路径的字典。证书用于验证服务器证书。"
 
 #: ../../sphinx/doc/usage/configuration.rst:465
 msgid ""
@@ -563,6 +572,8 @@ msgid ""
 ":confval:`!tls_cacerts` is not set, Sphinx falls back to requests' default "
 "behaviour. See :ref:`requests:verification` for further details."
 msgstr ""
+"Sphinx在内部使用 requests_ 作为HTTP库。如果 :confval:`!tls_cacerts` "
+"未设置，Sphinx将回退到requests的默认行为。有关更多详细信息，请参见 :ref:`requests:verification` 。"
 
 #: ../../sphinx/doc/usage/configuration.rst:477
 msgid "Set the User-Agent used by Sphinx for HTTP requests."
@@ -895,7 +906,7 @@ msgstr "如果为 :code-py:`False`，则文档的文本域是完整的文档名�
 msgid ""
 "If set to a string, every document's text domain is set to this string, "
 "making all documents use single text domain."
-msgstr ""
+msgstr "If 设置为字符串，则每个文档的文本域都设置为该字符串，使所有文档使用单一文本域。"
 
 #: ../../sphinx/doc/usage/configuration.rst:619
 msgid ""
@@ -904,6 +915,9 @@ msgid ""
 "py:`False`, it is ``markup/code``. With this option set to :code-"
 "py:`'sample'`, it is ``sample``."
 msgstr ""
+"使用 :code-py:`gettext_compact = True`，文档 :file:`markup/code.rst` 最终位于 "
+"``markup`` 文本域中。将此选项设置为 :code-py:`False`，则为 ``markup/code``。将此选项设置为 :code-"
+"py:`'sample'`，则为 ``sample``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:626
 msgid "Allow string values."
@@ -1054,7 +1068,7 @@ msgid ""
 "Control which, if any, classes are added to indicate translation progress. "
 "This setting would likely only be used by translators of documentation, in "
 "order to quickly indicate translated and untranslated content."
-msgstr ""
+msgstr "控制是否添加类以指示翻译进度。此设置可能仅由文档的翻译人员使用，以快速指示已翻译和未翻译的内容。"
 
 #: ../../sphinx/doc/usage/configuration.rst:747
 #: ../../sphinx/doc/usage/configuration.rst:3062
@@ -1205,7 +1219,7 @@ msgstr "例: ``'Eq.{number}'`` 被渲染为, 例如， ``Eq.10``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:904
 msgid "Force all displayed equations to be numbered. Example:"
-msgstr ""
+msgstr "强制对所有显示的方程式进行编号。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:917
 msgid ""
@@ -1262,6 +1276,8 @@ msgid ""
 " Note that ``warning_type`` should include the domain name if present. "
 "Example:"
 msgstr ""
+"在生成 :confval:`“nitpicky 模式” <nitpicky>` 中的警告时, 应忽略的 :code-py:`(warning_type,"
+" target)` 元组的集合或列表。请注意, ``warning_type`` 如果存在, 应包括域名。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:980
 #: ../../sphinx/doc/usage/configuration.rst:1000
@@ -1275,6 +1291,8 @@ msgid ""
 "that the regular expression must match the whole string (as if the ``^`` and"
 " ``$`` markers were inserted)."
 msgstr ""
+":confval:`nitpick_ignore` 的扩展版本, 其中 ``warning_type`` 和 ``target`` "
+"字符串被解释为正则表达式。请注意, 正则表达式必须匹配整个字符串（就像插入了 ``^`` 和 ``$`` 标记一样）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:993
 msgid ""
@@ -1283,6 +1301,9 @@ msgid ""
 "them, such as  :code-py:`('py:const', 'foo_package.bar.BAZ_VALUE')` or "
 ":code-py:`('py:class', 'food.bar.Barman')`."
 msgstr ""
+"例如, ``(r'py:.*', r'foo.*bar\\.B.*')`` 将忽略所有以 ``'foo'`` 开头且包含 ``'bar.B'`` 的 "
+"python 实体的 nitpicky 警告, 例如 :code-py:`('py:const', "
+"'foo_package.bar.BAZ_VALUE')` 或 :code-py:`('py:class', 'food.bar.Barman')`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1005
 msgid "Options for object signatures"
@@ -1313,14 +1334,14 @@ msgstr "如果签名的字符长度超过设置的数量，则签名中的每个
 msgid ""
 "When :code-py:`None`, there is no maximum length and the entire signature "
 "will be displayed on a single logical line."
-msgstr ""
+msgstr "当为 :code-py:`None` 时，没有最大长度，整个签名将显示在单个逻辑行上。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1026
 msgid ""
 "A 'logical line' is similar to a hard line break---builders or themes may "
 "choose to 'soft wrap' a single logical line, and this setting does not "
 "affect that behaviour."
-msgstr ""
+msgstr "'逻辑行'类似于硬换行——构建器或主题可以选择`软换行`单个逻辑行，此设置不影响该行为。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1030
 msgid ""
@@ -1328,6 +1349,8 @@ msgid ""
 "object directive, such as seen in the C, C++, and Python domains (e.g. "
 ":rst:dir:`py:function:single-line-parameter-list`)."
 msgstr ""
+"域可以提供选项以抑制单个对象指令上的任何硬换行, 例如在 C、C++ 和 Python 域中看到的（例如 "
+":rst:dir:`py:function:single-line-parameter-list`）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1041
 msgid ""
@@ -1336,18 +1359,20 @@ msgid ""
 "This was the behaviour before version 3.0, and setting this variable to "
 ":code-py:`True` will reinstate that behaviour."
 msgstr ""
+"启用反斜杠剥离后，域指令中的每个 ``\\\\`` 都将更改为 ``\\``，即使在字符串字面量中也是如此。这是 3.0 版本之前的行为，将此变量设置为"
+" :code-py:`True` 将恢复该行为。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1052
 msgid ""
 "Create table of contents entries for domain objects (e.g. functions, "
 "classes, attributes, etc.)."
-msgstr ""
+msgstr "为域对象（例如函数、类、属性等）创建目录条目。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1061
 msgid ""
 "A string that determines how domain objects (functions, classes, attributes,"
 " etc.) are displayed in their table of contents entry."
-msgstr ""
+msgstr "一个字符串，确定域对象（函数、类、属性等）在其目录条目中的显示方式。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1065
 msgid ""
@@ -1356,18 +1381,21 @@ msgid ""
 "py:`Class.method()` and :code-py:`function()`, leaving out the :code-"
 "py:`module.` level of parents."
 msgstr ""
+"使用 :code-py:`'domain'` 允许域确定要显示的适当父级数量。例如，Python 域将显示 :code-"
+"py:`Class.method()` 和 :code-py:`function()`，省略 :code-py:`module.` 级别的父级。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1071
 msgid ""
 "Use :code-py:`'hide'` to only show the name of the element without any "
 "parents (i.e. :code-py:`method()`)."
-msgstr ""
+msgstr "使用 :code-py:`'hide'` 仅显示元素的名称，而不显示任何父级（即 :code-py:`method()`）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1074
 msgid ""
 "Use :code-py:`'all'` to show the fully-qualified name for the object (i.e.  "
 ":code-py:`module.Class.method()`), displaying all parents."
 msgstr ""
+"使用 :code-py:`'all'` 显示对象的完全限定名称（即 :code-py:`module.Class.method()`），显示所有父级。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1081
 msgid "Options for source files"
@@ -1380,6 +1408,8 @@ msgid ""
 " source directory, using slashes as directory separators on all platforms. "
 ":confval:`exclude_patterns` has priority over :confval:`include_patterns`."
 msgstr ""
+"在查找源文件时应排除的 `glob-style patterns`_ 列表。它们与相对于源目录的源文件名进行匹配，在所有平台上使用斜杠作为目录分隔符。 "
+":confval:`exclude_patterns` 优先于 :confval:`include_patterns`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1094
 #: ../../sphinx/doc/usage/configuration.rst:1119
@@ -1388,25 +1418,25 @@ msgstr "示例模式："
 
 #: ../../sphinx/doc/usage/configuration.rst:1096
 msgid ":code-py:`'library/xml.rst'` -- ignores the ``library/xml.rst`` file"
-msgstr ""
+msgstr ":code-py:`'library/xml.rst'` -- 忽略 ``library/xml.rst`` 文件"
 
 #: ../../sphinx/doc/usage/configuration.rst:1097
 msgid ":code-py:`'library/xml'` -- ignores the ``library/xml`` directory"
-msgstr ""
+msgstr ":code-py:`'library/xml'` -- 忽略 ``library/xml`` 目录"
 
 #: ../../sphinx/doc/usage/configuration.rst:1098
 msgid ""
 ":code-py:`'library/xml*'` -- ignores all files and directories starting with"
 " :code-py:`library/xml`"
-msgstr ""
+msgstr ":code-py:`'library/xml*'` -- 忽略所有以 :code-py:`library/xml` 开头的文件和目录"
 
 #: ../../sphinx/doc/usage/configuration.rst:1100
 msgid ":code-py:`'**/.git'` -- ignores all ``.git`` directories"
-msgstr ""
+msgstr ":code-py:`'**/.git'` -- 忽略所有 ``.git`` 目录"
 
 #: ../../sphinx/doc/usage/configuration.rst:1101
 msgid ":code-py:`'Thumbs.db'` -- ignores all ``Thumbs.db`` files"
-msgstr ""
+msgstr ":code-py:`'Thumbs.db'` -- 忽略所有 ``Thumbs.db`` 文件"
 
 #: ../../sphinx/doc/usage/configuration.rst:1103
 msgid ""
@@ -1424,28 +1454,31 @@ msgid ""
 "files are recursively included from the source directory. "
 ":confval:`exclude_patterns` has priority over :confval:`include_patterns`."
 msgstr ""
+"用于查找源文件的 `glob-style patterns`_ "
+"列表。它们与相对于源目录的源文件名进行匹配，在所有平台上使用斜杠作为目录分隔符。默认情况下，从源目录递归包含所有文件。 "
+":confval:`exclude_patterns` 优先于 :confval:`include_patterns`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1121
 msgid ""
 ":code-py:`'**'` -- all files in the source directory and subdirectories, "
 "recursively"
-msgstr ""
+msgstr ":code-py:`'**'` -- 源目录和子目录中的所有文件，递归地"
 
 #: ../../sphinx/doc/usage/configuration.rst:1123
 msgid ":code-py:`'library/xml'` -- just the ``library/xml`` directory"
-msgstr ""
+msgstr ":code-py:`'library/xml'` -- 仅仅是 ``library/xml`` 目录"
 
 #: ../../sphinx/doc/usage/configuration.rst:1124
 msgid ""
 ":code-py:`'library/xml*'` -- all files and directories starting with "
 "``library/xml``"
-msgstr ""
+msgstr ":code-py:`'library/xml*'` -- 所有以 ``library/xml`` 开头的文件和目录"
 
 #: ../../sphinx/doc/usage/configuration.rst:1126
 msgid ""
 ":code-py:`'**/doc'` -- all ``doc`` directories (this might be useful if "
 "documentation is co-located with source files)"
-msgstr ""
+msgstr ":code-py:`'**/doc'` -- 所有 ``doc`` 目录（如果文档与源文件共置，这可能很有用）"
 
 #: ../../sphinx/doc/usage/configuration.rst:1136
 msgid ""
@@ -1454,26 +1487,28 @@ msgid ""
 "containing the master ``toctree`` directive, and hence the root of the "
 "entire tree. Example:"
 msgstr ""
+"Sphinx 基于源文件中包含的 :rst:dir:`toctree` 指令构建文档树。此设置指定包含主 ``toctree`` 指令的文档的名称, "
+"因此是整个树的根。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1146
 msgid "Default is :code-py:`'index'` (previously :code-py:`'contents'`)."
-msgstr ""
+msgstr "默认值为 :code-py:`'index'` （以前为 :code-py:`'contents'`）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1149
 msgid "The :confval:`!root_doc` alias."
-msgstr ""
+msgstr ":confval:`!root_doc` 别名。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1156
 msgid ""
 "The file encoding of all source files. The recommended encoding is "
 "``'utf-8-sig'``."
-msgstr ""
+msgstr "所有源文件的文件编码。推荐的编码是 ``'utf-8-sig'``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1160
 msgid ""
 "Support for source encodings other than UTF-8 is deprecated. Sphinx 11 will "
 "only support UTF-8 files."
-msgstr ""
+msgstr "对 UTF-8 以外的源编码的支持已被弃用。Sphinx 11 将仅支持 UTF-8 文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1168
 msgid ""
@@ -1481,6 +1516,8 @@ msgid ""
 " file types. Sphinx considers all files files with suffixes in :code-"
 "py:`source_suffix` to be source files. Example:"
 msgstr ""
+"将源文件的文件扩展名（后缀）映射到其文件类型的字典。Sphinx 将所有具有 :code-py:`source_suffix` "
+"中后缀的文件视为源文件。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1182
 msgid ""
@@ -1489,24 +1526,26 @@ msgid ""
 "different source file parsers, such as `MyST-Parser`_. Refer to the "
 "extension's documentation to see which file types it supports."
 msgstr ""
+"默认情况下，Sphinx 仅支持 :code-py:`'restructuredtext'` "
+"文件类型。可以使用注册不同源文件解析器的扩展添加其他文件类型, 例如 `MyST-Parser`_。请参阅扩展的文档以查看它支持哪些文件类型。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1189
 msgid ""
 "If the value is a string or sequence of strings, Sphinx will consider that "
 "they are all :code-py:`'restructuredtext'` files."
-msgstr ""
+msgstr "如果值是字符串或字符串序列，Sphinx 将认为它们都是 :code-py:`'restructuredtext'` 文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1192
 msgid "File extensions must begin with a dot (``'.'``)."
-msgstr ""
+msgstr "文件扩展名必须以点（``'.'``）开头。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1194
 msgid "Support a list of file extensions."
-msgstr ""
+msgstr "支持文件扩展名列表。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1197
 msgid "Change to a map of file extensions to file types."
-msgstr ""
+msgstr "更改为文件扩展名到文件类型的映射。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1202
 msgid "Options for smart quotes"
@@ -1517,6 +1556,7 @@ msgid ""
 "If :code-py:`True`, the `Smart Quotes transform`__ will be used to convert "
 "quotation marks and dashes to typographically correct entities."
 msgstr ""
+"如果为 :code-py:`True`, 将使用 `Smart Quotes transform`__ 将引号和破折号转换为排版正确的实体。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1214
 msgid ""
@@ -1524,6 +1564,8 @@ msgid ""
 "default to all builders except ``man`` and ``text`` (see "
 ":confval:`smartquotes_excludes`.)"
 msgstr ""
+"取代了现已删除的 :confval:`!html_use_smartypants`。默认情况下, 它适用于除 ``man`` 和 ``text`` "
+"之外的所有构建器（请参见 :confval:`smartquotes_excludes`）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1221
 msgid ""
@@ -1532,6 +1574,9 @@ msgid ""
 "*deactivates* smart quotes via the corresponding `Docutils option`__. But if"
 " it *activates* them, then :confval:`smartquotes` does prevail."
 msgstr ""
+"位于 :term:`configuration directory` 中的 `docutils.conf`__ 文件（或全局 "
+":file:`~/.docutils` 文件）无条件遵守, 如果它通过相应的 `Docutils option`__ *停用* "
+"智能引号。但如果它*激活*它们, 则 :confval:`smartquotes` 确实占上风。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1233
 msgid ""
@@ -1540,6 +1585,9 @@ msgid ""
 "``'``, em- and en-**D**\\ ashes ``---``, ``--``, and **e**\\ llipses "
 "``...``.."
 msgstr ""
+"自定义 Smart Quotes 转换。有关允许的代码, 请参见下文。默认的 :code-py:`'qDe'` 教育普通 **q**\\ uote 字符"
+" ``\"``, ``'``, em- 和 en-**D**\\ ashes ``---``, ``--``, 和 **e**\\ llipses "
+"``...``.."
 
 #: ../../sphinx/doc/usage/configuration.rst:1240
 msgid ":code-py:`'q'`"
@@ -1617,12 +1665,14 @@ msgid ""
 ":code-py:`'builders'` and :code-py:`'languages'`, and The values are lists "
 "of strings."
 msgstr ""
+"控制何时禁用 Smart Quotes 转换。允许的键是 :code-py:`'builders'` 和 :code-"
+"py:`'languages'`，值是字符串列表。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1272
 msgid ""
 "Each entry gives a sufficient condition to ignore the :confval:`smartquotes`"
 " setting and deactivate the Smart Quotes transform. Example:"
-msgstr ""
+msgstr "每个条目都提供了一个充分的条件来忽略 :confval:`smartquotes` 设置并停用 Smart Quotes 转换。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1285
 msgid ""
@@ -1635,18 +1685,22 @@ msgid ""
 "direct usage of :program:`sphinx-build` as it caches (in its default usage) "
 "the parsed source files in per builder locations."
 msgstr ""
+"目前，在使用多个目标调用 :program:`make` 的情况下，只有第一个目标名称会针对 :code-py:`'builders'` "
+"条目进行测试，并决定所有目标。此外，紧随 ``make html`` 之后的 ``make text`` 需要以 ``make text "
+"SPHINXOPTS=\"-E\"`` 的形式发出，以强制重新解析源文件, 因为缓存的文件已经被转换。另一方面，使用 :program:`sphinx-"
+"build` 直接使用时不会出现此问题, 因为它在每个构建器位置缓存（在其默认用法中）解析的源文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1297
 msgid ""
 "An alternative way to effectively deactivate (or customise) the smart quotes"
 " for a given builder, for example ``latex``, is to use ``make`` this way:"
-msgstr ""
+msgstr "对于给定的构建器（例如 ``latex``），有效地停用（或自定义）智能引号的另一种方法是使用 ``make`` 这种方式："
 
 #: ../../sphinx/doc/usage/configuration.rst:1305
 msgid ""
 "This can follow some ``make html`` with no problem, in contrast to the "
 "situation from the prior note."
-msgstr ""
+msgstr "这可以跟随一些 ``make html`` 没有问题, 与前一条注释中的情况形成对比。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1312
 msgid "Options for templating"
@@ -1660,6 +1714,9 @@ msgid ""
 " of other builders (currently the changes builder). (Note that the template "
 "bridge must be made theme-aware if HTML themes are to be used.) Example:"
 msgstr ""
+"一个带有可调用对象（或简单类）的完全限定名称的字符串, 返回 :class:`~sphinx.application.TemplateBridge` "
+"的实例。然后使用该实例来渲染 HTML 文档, 以及其他构建器的输出（当前为更改构建器）。 （请注意, 如果要使用 HTML 主题, "
+"则必须使模板桥接器具有主题感知能力。）例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1334
 msgid ""
@@ -1667,6 +1724,7 @@ msgid ""
 "builtin/theme-specific templates). Relative paths are taken as relative to "
 "the :term:`configuration directory`. Example:"
 msgstr ""
+"包含额外模板（或覆盖内置/特定主题模板的模板）的路径列表。相对路径被视为相对于 :term:`configuration directory`。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1343
 msgid ""
@@ -1685,6 +1743,8 @@ msgid ""
 "This setting can be useful for determining which warnings types to include "
 "in a :confval:`suppress_warnings` list."
 msgstr ""
+"将每个警告的类型作为后缀添加到警告消息中。例如, ``WARNING: [...] [index]`` 或 ``WARNING: [...] "
+"[toc.circular]``。此设置对于确定要包含在 :confval:`suppress_warnings` 列表中的警告类型非常有用。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1361
 msgid "The default is now :code-py:`True`."
@@ -1772,7 +1832,7 @@ msgstr "``index``"
 
 #: ../../sphinx/doc/usage/configuration.rst:1392
 msgid "``misc.copy_overwrite``"
-msgstr ""
+msgstr "``misc.copy_overwrite``"
 
 #: ../../sphinx/doc/usage/configuration.rst:1393
 msgid "``misc.highlighting_failure``"
@@ -1974,7 +2034,7 @@ msgstr "``index``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1475
 msgid "``config.cache``, ``intersphinx.external``, and ``toc.no_title``."
-msgstr ""
+msgstr "``config.cache``, ``intersphinx.external``, 和 ``toc.no_title``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1478
 msgid "``docutils`` and ``autosummary.import_cycle``."
@@ -1991,6 +2051,10 @@ msgid ""
 "``i18n.not_writeable``, ``ref.any``, ``toc.duplicate_entry``, "
 "``toc.empty_glob``, and ``toc.not_included``."
 msgstr ""
+"``autodoc.mocked_object``, ``duplicate_declaration.c``, "
+"``duplicate_declaration.cpp``, ``i18n.babel``, ``i18n.not_readable``, "
+"``i18n.not_writeable``, ``ref.any``, ``toc.duplicate_entry``, "
+"``toc.empty_glob``, 和 ``toc.not_included``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1491
 msgid "``duration``."
@@ -2008,17 +2072,17 @@ msgstr "用于HTML输出的选项"
 msgid ""
 "These options influence HTML output. Various other builders are derived from"
 " the HTML output, and also make use of these options."
-msgstr ""
+msgstr "这些选项影响 HTML 输出。各种其他构建器都是从 HTML 输出派生的, 并且也利用这些选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1512
 msgid ""
 "The theme for HTML output. See the :doc:`HTML theming section "
 "</usage/theming>`."
-msgstr ""
+msgstr "HTML 输出的主题。请参阅 :doc:`HTML 主题部分 </usage/theming>`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1516
 msgid "The default theme is now :code-py:`'alabaster'`."
-msgstr ""
+msgstr "默认主题现在是 :code-py:`'alabaster'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1523
 #: ../../sphinx/doc/usage/configuration.rst:2526
@@ -2028,6 +2092,8 @@ msgid ""
 "theme. These are theme-specific. The options understood by the :ref:`builtin"
 " themes <builtin-themes>` are described :ref:`here <builtin-themes>`."
 msgstr ""
+"一个字典，包含影响所选主题外观和感觉的选项。这些是特定于主题的。:ref:`内置主题 <builtin-themes>` 所理解的选项在 "
+":ref:`这里 <builtin-themes>` 进行了描述。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1535
 msgid ""
@@ -2035,6 +2101,7 @@ msgid ""
 "zip files. Relative paths are taken as relative to the :term:`configuration "
 "directory`."
 msgstr ""
+"包含自定义主题的路径列表, 可以是子目录或zip文件。相对路径被视为相对于 :term:`configuration directory`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1545
 msgid ""
@@ -2044,10 +2111,13 @@ msgid ""
 ":confval:`html_static_path`. If you only want to add or override a few "
 "things from the theme, use CSS ``@import`` to import the theme's stylesheet."
 msgstr ""
+"用于 HTML 页面的样式表。默认情况下使用所选主题提供的样式表, 该名称的文件必须存在于 Sphinx 的 :file:`static/` 路径中或 "
+"在 :confval:`html_static_path` 中给出的自定义路径之一中。如果您只想添加或覆盖主题中的一些内容, 请使用 CSS "
+"``@import`` 导入主题的样式表。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1552
 msgid "The value can be a iterable of strings."
-msgstr ""
+msgstr "该值可以是字符串的可迭代对象。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1559
 msgid ""
@@ -2055,12 +2125,14 @@ msgid ""
 "This is appended to the ``<title>`` tag of individual pages, and used in the"
 " navigation bar as the \"topmost\" element."
 msgstr ""
+"使用 Sphinx 自己的模板生成的 HTML 文档的“标题”。这将附加到各个页面的 ``<title>`` 标签中, "
+"并在导航栏中用作“最顶部”的元素。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1567
 msgid ""
 "A shorter \"title\" for HTML documentation. This is used for links in the "
 "header and in the HTML Help documentation."
-msgstr ""
+msgstr "HTML 文档的较短“标题”。这用于标题中的链接和 HTML 帮助文档中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1576
 msgid ""
@@ -2068,6 +2140,8 @@ msgid ""
 "to indicate the location of document using :rfc:`the Canonical Link Relation"
 " <6596>`."
 msgstr ""
+"指向 HTML 文档根目录的基本 URL。它用于使用 :rfc:`the Canonical Link Relation <6596>` "
+"指示文档的位置。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1586
 msgid "The style of line numbers for code-blocks."
@@ -2103,6 +2177,8 @@ msgid ""
 ":program:`sphinx-build`'s :option:`--html-define <sphinx-build --html-"
 "define>` command-line option."
 msgstr ""
+"一个字典，包含要传递到所有页面的模板引擎上下文中的值。也可以使用 :program:`sphinx-build` 的 :option:`--html-"
+"define <sphinx-build --html-define>` 命令行选项将单个值放入此字典中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1614
 msgid ""
@@ -2111,6 +2187,8 @@ msgid ""
 " URL that points an image file for the logo. It is placed at the top of the "
 "sidebar; its width should therefore not exceed 200 pixels."
 msgstr ""
+"如果提供, 这必须是文档徽标的图像文件的名称（相对于 :term:`configuration directory` 的路径）, 或指向徽标图像文件的 "
+"URL。 它放置在侧边栏的顶部；因此其宽度不应超过 200 像素。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1621
 msgid ""
@@ -2130,6 +2208,9 @@ msgid ""
 " icon for tabs, windows and bookmarks. It should be a 16-by-16 pixel icon in"
 " the PNG, SVG, GIF, or ICO file formats."
 msgstr ""
+"如果提供, 这必须是文档的favicon_的图像文件的名称（相对于 :term:`configuration directory` 的路径）, 或指向 "
+"favicon_ 图像文件的URL。浏览器将其用作选项卡、窗口和书签的图标。它应该是 PNG、SVG、GIF 或 ICO 文件格式的 16x16 "
+"像素图标。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1648
 msgid ""
@@ -2149,6 +2230,10 @@ msgid ""
 "URI with scheme like :code-py:`'https://example.org/style.css'`. The "
 "*attributes* dictionary is used for the ``<link>`` tag's attributes."
 msgstr ""
+"CSS 文件的列表。条目必须是 *filename* 字符串或包含 *filename* 字符串和 *attributes* 字典的元组。 "
+"*filename* 必须相对于 :confval:`html_static_path`, 或具有类似 :code-"
+"py:`'https://example.org/style.css'` 方案的完整 URI。 *attributes* 字典用于 ``<link>``"
+" 标签的属性。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1676
 msgid ""
@@ -2156,6 +2241,8 @@ msgid ""
 "file at an earlier or later step. For more information, refer to "
 ":meth:`.Sphinx.add_css_file`."
 msgstr ""
+"特殊属性 *priority* 可以设置为整数, 以便在更早或更晚的步骤加载 CSS 文件。有关更多信息, 请参阅 "
+":meth:`.Sphinx.add_css_file`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1681
 #: ../../sphinx/doc/usage/configuration.rst:1710
@@ -2170,6 +2257,10 @@ msgid ""
 "URI with scheme like :code-py:`'https://example.org/script.js'`. The "
 "*attributes* dictionary is used for the ``<script>`` tag's attributes."
 msgstr ""
+"JavaScript 文件的列表。条目必须是 *filename* 字符串或包含 *filename* 字符串和 *attributes* 字典的元组。"
+" *filename* 必须相对于 :confval:`html_static_path`, 或具有类似 :code-"
+"py:`'https://example.org/script.js'` 方案的完整 URI。 *attributes* 字典用于 "
+"``<script>`` 标签的属性。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1705
 msgid ""
@@ -2177,6 +2268,8 @@ msgid ""
 "JavaScript file at an earlier or later step. For more information, refer to "
 ":meth:`.Sphinx.add_js_file`."
 msgstr ""
+"作为特殊属性, *priority* 可以设置为整数, 以便在更早或更晚的步骤加载 JavaScript 文件。有关更多信息, 请参阅 "
+":meth:`.Sphinx.add_js_file`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1717
 msgid ""
@@ -2186,6 +2279,9 @@ msgid ""
 ":file:`_static` directory after the theme's static files, so a file named "
 ":file:`default.css` will overwrite the theme's :file:`default.css`."
 msgstr ""
+"包含自定义静态文件（如样式表或脚本文件）的路径列表。相对路径被视为相对于 :term:`configuration directory`。 "
+"它们在主题的静态文件之后被复制到输出的 :file:`_static` 目录中, 因此名为 :file:`default.css` 的文件将覆盖主题的 "
+":file:`default.css`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1725
 #: ../../sphinx/doc/usage/configuration.rst:1763
@@ -2200,12 +2296,14 @@ msgid ""
 "be copied. If you would like to copy them intentionally, explicitly add each"
 " file to this setting:"
 msgstr ""
+"出于安全原因, :confval:`!html_static_path` 下的dotfiles将不会被复制。 如果您想有意地复制它们, "
+"请将每个文件显式添加到此设置中："
 
 #: ../../sphinx/doc/usage/configuration.rst:1739
 msgid ""
 "An alternative approach is to use :confval:`html_extra_path`, which allows "
 "copying dotfiles under the directories."
-msgstr ""
+msgstr "另一种方法是使用 :confval:`html_extra_path`, 它允许复制目录下的dotfiles。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1742
 msgid ""
@@ -2229,6 +2327,8 @@ msgid ""
 " copied to the output directory. They will overwrite any existing file of "
 "the same name."
 msgstr ""
+"包含与文档不直接相关的额外文件（如 :file:`robots.txt` 或 :file:`.htaccess`）的路径列表。 相对路径被视为相对于 "
+":term:`configuration directory`。它们被复制到输出目录。 它们将覆盖任何同名的现有文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1768
 msgid ""
@@ -2245,6 +2345,8 @@ msgid ""
 "using the given :func:`~time.strftime` format. The empty string is "
 "equivalent to :code-py:`'%b %d, %Y'` (or a locale-dependent equivalent)."
 msgstr ""
+"如果设置, 则使用给定的 :func:`~time.strftime` 格式在页面页脚中插入“最后更新于:”时间戳。 空字符串等同于 :code-"
+"py:`'%b %d, %Y'` （或依赖于区域设置的等效项）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1787
 msgid ""
@@ -2252,6 +2354,8 @@ msgid ""
 "supplied to :confval:`html_last_updated_fmt`. This is most useful when the "
 "format used includes the time."
 msgstr ""
+"对于提供给 :confval:`html_last_updated_fmt` 的时间, 使用 GMT/UTC (+00:00) 而不是系统的本地时区。 "
+"当使用的格式包含时间时, 这非常有用。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1795
 msgid "Add link anchors for each heading and description environment."
@@ -2261,7 +2365,7 @@ msgstr "为每个标题和描述环境添加链接锚点。"
 msgid ""
 "Text for link anchors for each heading and description environment. HTML "
 "entities and Unicode are allowed."
-msgstr ""
+msgstr "每个标题和描述环境的链接锚点文本。允许使用 HTML 实体和 Unicode。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1812
 #: ../../sphinx/doc/usage/configuration.rst:2251
@@ -2276,13 +2380,15 @@ msgid ""
 "documents will get the specified sidebars. (A warning is emitted when a more"
 " than one glob-style pattern matches for any document.)"
 msgstr ""
+"键可以包含 `glob-style patterns`_，在这种情况下，所有匹配的文档都将获得指定的侧边栏。 "
+"（当任何文档匹配多个通配符样式模式时，会发出警告。）"
 
 #: ../../sphinx/doc/usage/configuration.rst:1820
 msgid ""
 "Each value must be a list of strings which specifies the complete list of "
 "sidebar templates to include. If all or some of the default sidebars are to "
 "be included, they must be put into this list as well."
-msgstr ""
+msgstr "每个值必须是字符串列表，指定要包含的侧边栏模板的完整列表。 如果要包含所有或某些默认侧边栏，它们也必须放入此列表中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1825
 msgid ""
@@ -2291,6 +2397,9 @@ msgid ""
 ":code-py:`'localtoc.html'`, :code-py:`'relations.html'`, :code-"
 "py:`'sourcelink.html'`, and :code-py:`'searchbox.html'`."
 msgstr ""
+"默认侧边栏（对于不匹配任何模式的文档）由主题本身定义。内置主题默认使用这些模板：:code-py:`'localtoc.html'`, :code-"
+"py:`'relations.html'`, :code-py:`'sourcelink.html'`, 和 :code-"
+"py:`'searchbox.html'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1831
 msgid "The bundled first-party sidebar templates that can be rendered are:"
@@ -2330,6 +2439,8 @@ msgid ""
 "sidebars for all other pages (except that the local TOC is replaced by the "
 "global TOC)."
 msgstr ""
+"这将在给定文档的侧边栏中呈现自定义模板 ``windows-sidebar.html`` 和快速搜索框, "
+"并为所有其他页面呈现默认侧边栏（除了本地目录被全局目录替换）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1856
 msgid ""
@@ -2361,7 +2472,7 @@ msgstr "应呈现给HTML页面的其他模板必须是将文档名称映射到�
 msgid ""
 "This will render the template :file:`custom-download.html.jinja` as the page"
 " :file:`download.html`."
-msgstr ""
+msgstr "这将把模板 :file:`custom-download.html.jinja` 渲染为页面 :file:`download.html`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1892
 #: ../../sphinx/doc/usage/configuration.rst:3001
@@ -2369,7 +2480,7 @@ msgstr ""
 msgid ""
 "If True, generate domain-specific indices in addition to the general index. "
 "For e.g. the Python domain, this is the global module index."
-msgstr ""
+msgstr "如果为 True, 则生成特定于域的索引, 以及通用索引。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1895
 #: ../../sphinx/doc/usage/configuration.rst:3004
@@ -2380,34 +2491,39 @@ msgid ""
 " file name. For example, the Python module index has the name ``'py-"
 "modindex'``."
 msgstr ""
+"该值可以是布尔值或应生成的索引名称列表。要找出特定索引的索引名称, 请查看 HTML 文件名。例如, Python 模块索引的名称为 ``'py-"
+"modindex'``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1915
 msgid "Controls if an index is added to the HTML documents."
-msgstr ""
+msgstr "控制是否将索引添加到 HTML 文档中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1923
 msgid ""
 "Generates two versions of the index: once as a single page with all the "
 "entries, and once as one page per starting letter."
-msgstr ""
+msgstr "生成索引的两个版本：一次作为包含所有条目的单个页面, 一次作为每个起始字母的一个页面。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1933
 msgid ""
 "If True, the  reStructuredText sources are included in the HTML build as "
 ":file:`_sources/{docname}`."
 msgstr ""
+"如果为 True， reStructuredText 源包含在 HTML 构建中，作为 :file:`_sources/{docname}`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1940
 msgid ""
 "If True (and :confval:`html_copy_source` is true as well), links to the "
 "reStructuredText sources will be added to the sidebar."
 msgstr ""
+"如果为 True（并且 :confval:`html_copy_source` 也为真）, 则将链接到 reStructuredText "
+"源添加到侧边栏。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1949
 msgid ""
 "The suffix to append to source links (see :confval:`html_show_sourcelink`), "
 "unless files they have this suffix already."
-msgstr ""
+msgstr "要附加到源链接的后缀（请参阅 :confval:`html_show_sourcelink`）, 除非它们已经具有此后缀。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1959
 msgid ""
@@ -2418,6 +2534,9 @@ msgid ""
 "which these documents are served (without trailing slash), e.g. :code-"
 "py:`'https://docs.python.org'`."
 msgstr ""
+"如果非空，会输出一个 `OpenSearch <https://github.com/dewitt/opensearch>`_ "
+"描述文件，并且所有页面都将包含一个 ``<link>`` 标签引用它。由于 OpenSearch 不支持其搜索页面位置的相对 "
+"URL，此选项的值必须是提供这些文档的基本 URL（不带尾部斜杠），例如 :code-py:`'https://docs.python.org'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1973
 msgid "The file name suffix (file extension) for generated HTML files."
@@ -2433,7 +2552,7 @@ msgstr "生成的HTML文件链接的后缀。旨在支持更为复杂的服务�
 msgid ""
 "If True, \"© Copyright ...\" is shown in the HTML footer, with the value or "
 "values from :confval:`copyright`."
-msgstr ""
+msgstr "如果为 True，HTML 页脚中将显示“© Copyright ...”，以及来自 :confval:`copyright` 的值。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1999
 msgid ""
@@ -2448,7 +2567,7 @@ msgstr "在HTML页脚中添加“Created using Sphinx_”。"
 msgid ""
 "Encoding of HTML output files. This encoding name must both be a valid "
 "Python encoding name and a valid HTML ``charset`` value."
-msgstr ""
+msgstr "HTML 输出文件的编码。该编码名称必须既是有效的 Python 编码名称, 又是有效的 HTML ``charset`` 值。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2027
 msgid ""
@@ -2457,6 +2576,8 @@ msgid ""
 "element for any of its items. This is standard docutils behaviour. Default: "
 ":code-py:`True`."
 msgstr ""
+"如果为 True，则其项目由单个段落和/或子列表组成的列表（递归定义）将不会为其任何项目使用 ``<p>`` 元素。 这是标准的 docutils "
+"行为。默认值： :code-py:`True`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2038
 msgid ""
@@ -2471,10 +2592,12 @@ msgid ""
 "(:code-py:`'en'`) is used as a fall-back option if there is no support for "
 "this language."
 msgstr ""
+"用于生成 HTML 全文搜索索引的语言。默认情况下, 选择使用 :confval:`language` 的全局语言。 如果不支持此语言, "
+"则使用英语（:code-py:`'en'`）作为后备选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2052
 msgid "Support exists for the following languages:"
-msgstr ""
+msgstr "支持以下语言："
 
 #: ../../sphinx/doc/usage/configuration.rst:2056
 msgid "``en`` -- English"
@@ -2499,6 +2622,8 @@ msgid ""
 "the index file, you can use a third-party package (PyStemmer_) by running "
 ":command:`pip install PyStemmer`."
 msgstr ""
+"每种语言（除日语外）都提供自己的词干提取算法。Sphinx 默认使用 Python 实现。如果要加快索引文件的构建, 可以通过运行 "
+":command:`pip install PyStemmer` 使用第三方包 (PyStemmer_)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2082
 msgid "Support English (``en``) and Japanese (``ja``)."
@@ -2513,11 +2638,11 @@ msgid ""
 "A dictionary with options for the search language support. The meaning of "
 "these options depends on the language selected. Currently, only Japanese and"
 " Chinese support options."
-msgstr ""
+msgstr "一个包含搜索语言支持选项的字典。这些选项的含义取决于所选择的语言。 目前, 只有日语和中文支持选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:0
 msgid "Japanese"
-msgstr ""
+msgstr "日语"
 
 #: ../../sphinx/doc/usage/configuration.rst:2097
 msgid "``type`` -- the type of the splitter to use."
@@ -2545,6 +2670,8 @@ msgid ""
 "dynamic link library ('libmecab.so' for Linux, 'libmecab.dll' for Windows) "
 "is required."
 msgstr ""
+"MeCab 绑定要使用此拆分器, 需要 'mecab' python 绑定或动态链接库（Linux 的 'libmecab.so', Windows 的"
+" 'libmecab.dll'）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2107
 msgid ":code-py:`'sphinx.search.ja.JanomeSplitter'`:"
@@ -2554,7 +2681,7 @@ msgstr ":code-py:`'sphinx.search.ja.JanomeSplitter'`:"
 msgid ""
 "The Janome binding. To use this splitter, `Janome "
 "<https://pypi.org/project/Janome/>`_ is required."
-msgstr ""
+msgstr "Janome 绑定。要使用此拆分器, 需要 `Janome <https://pypi.org/project/Janome/>`_。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2113
 msgid ""
@@ -2593,7 +2720,7 @@ msgstr "lib"
 msgid ""
 "_`lib option` is the library name for finding the MeCab library via "
 "``ctypes`` if the Python binding is not installed."
-msgstr ""
+msgstr "_`lib option` 是用于通过 ``ctypes`` 查找 MeCab 库的库名称（如果未安装 Python 绑定）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2127
 msgid "For example:"
@@ -2623,7 +2750,7 @@ msgstr "_`user_dic_enc option` 是“user_dic”选项指定的用户词典文�
 
 #: ../../sphinx/doc/usage/configuration.rst:0
 msgid "Chinese"
-msgstr ""
+msgstr "中文"
 
 #: ../../sphinx/doc/usage/configuration.rst:2147
 msgid "``dict``"
@@ -2635,7 +2762,7 @@ msgstr "使用自定义词典的 ``jieba`` 词典路径。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2152
 msgid "Allow any custom splitter in the *type* setting for Japanese."
-msgstr ""
+msgstr "允许在日语的 *type* 设置中使用任何自定义拆分器。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2159
 msgid ""
@@ -2643,12 +2770,14 @@ msgid ""
 "directory`) that implements a search results scorer. If empty, the default "
 "will be used."
 msgstr ""
+"实现搜索结果评分器的 JavaScript 文件的名称（相对于 :term:`configuration directory`）。如果为空, "
+"将使用默认值。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2164
 msgid ""
 "The scorer must implement the following interface, and may optionally define"
 " the :code-js:`score()` function for more granular control."
-msgstr ""
+msgstr "评分器必须实现以下接口, 并且可以选择定义 :code-js:`score()` 函数以获得更细粒度的控制。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2207
 msgid ""
@@ -2657,6 +2786,8 @@ msgid ""
 "any link given by the *target* option on the the :dudir:`image` directive, "
 "if present."
 msgstr ""
+"将使用缩放选项（*scale*、*width* 或 *height*）调整大小的图像链接到其原始全分辨率图像。 如果存在, 这不会覆盖 "
+":dudir:`image` 指令上 *target* 选项提供的任何链接。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2215
 msgid ""
@@ -2674,6 +2805,8 @@ msgid ""
 " and *imgmath*. You must also load the relevant extension in "
 ":confval:`extensions`."
 msgstr ""
+"用于HTML输出的数学渲染器。捆绑的渲染器是 *mathjax* 和 *imgmath*。 您还必须在 :confval:`extensions` "
+"中加载相关扩展。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2241
 msgid "Options for Single HTML output"
@@ -2683,13 +2816,14 @@ msgstr "用于单一HTML输出的选项"
 msgid ""
 "These options influence Single HTML output. This builder derives from the "
 "HTML builder, so the HTML options also apply where appropriate."
-msgstr ""
+msgstr "这些选项影响单一HTML输出。此构建器派生自HTML构建器，因此HTML选项在适当的情况下也适用。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2254
 msgid ""
 "This has the same effect as :confval:`html_sidebars`, but the only permitted"
 " key is :code-py:`'index'`, and all other keys are ignored."
 msgstr ""
+"这与 :confval:`html_sidebars` 具有相同的效果, 但唯一允许的键是 :code-py:`'index'`, 并且忽略所有其他键。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2262
 msgid "Options for HTML help output"
@@ -2706,6 +2840,7 @@ msgid ""
 "Output file base name for HTML help builder. The default is the "
 ":confval:`project name <project>` with spaces removed and ``doc`` appended."
 msgstr ""
+"HTML帮助构建器的输出文件基本名称。默认值是 :confval:`project name <project>` 并删除空格并附加 ``doc``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2280
 msgid "This is the file name suffix for generated HTML help files."
@@ -2723,7 +2858,7 @@ msgstr "用于Apple Help输出选项"
 msgid ""
 "These options influence Apple Help output. This builder derives from the "
 "HTML builder, so the HTML options also apply where appropriate."
-msgstr ""
+msgstr "这些选项影响Apple Help输出。此构建器派生自HTML构建器，因此HTML选项在适当的情况下也适用。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2306
 msgid ""
@@ -2731,6 +2866,8 @@ msgid ""
 " the :program:`hiutil` and :program:`codesign` command-line tools, neither "
 "of which are Open Source."
 msgstr ""
+"Apple Help 输出仅适用于 Mac OS X 10.6 及更高版本, 因为它需要 :program:`hiutil` 和 "
+":program:`codesign` 命令行工具, 这两个工具都不是开源的。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2310
 msgid ""
@@ -2739,6 +2876,8 @@ msgid ""
 "valid help book until the indexer is run over the ``.lproj`` directories "
 "within the bundle."
 msgstr ""
+"您可以使用 :confval:`applehelp_disable_external_tools` 禁用这些工具的使用, 但在对包内的 "
+"``.lproj`` 目录运行索引器之前, 结果将不是有效的帮助手册。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2322
 msgid ""
@@ -2763,7 +2902,7 @@ msgstr "帮助手册包的版本，作为字符串。"
 msgid ""
 "The development region. Defaults to Apple’s recommended setting, :code-"
 "py:`'en-us'`."
-msgstr ""
+msgstr "开发区域。默认为 Apple 推荐的设置, :code-py:`'en-us'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2353
 msgid ""
@@ -2771,6 +2910,8 @@ msgid ""
 "to Apple's documentation, this should be a 16-by-16 pixel version of the "
 "application's icon with a transparent background, saved as a PNG file."
 msgstr ""
+"帮助手册包图标文件的路径或 :code-py:`None` 表示没有图标。根据 Apple 的文档, 这应该是应用程序图标的 16x16 像素版本, "
+"具有透明背景, 并保存为 PNG 文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2362
 msgid "The product tag for use with :confval:`applehelp_kb_url`."
@@ -2784,6 +2925,10 @@ msgid ""
 ":confval:`applehelp_kb_product`, ``'query'`` with the text entered by the "
 "user in the search box, and ``'lang'`` with the user's system language."
 msgstr ""
+"您的知识库服务器URL，比如 "
+"``https://example.com/kbsearch.py?p='product'&q='query'&l='lang'``。在运行时, "
+"帮助查看器将用 :confval:`applehelp_kb_product` 的内容替换 ``'product'``, 用用户在搜索框中输入的文本替换"
+" ``'query'``, 并用用户的系统语言替换 ``'lang'``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2375
 msgid "Set this to to :code-py:`None` to disable remote search."
@@ -2794,7 +2939,7 @@ msgid ""
 "The URL for remote content. You can place a copy of your Help Book's "
 "``Resources`` directory at this location and Help Viewer will attempt to use"
 " it to fetch updated content."
-msgstr ""
+msgstr "远程内容的URL。您可以将帮助手册的 ``Resources`` 目录的副本放在此位置, 并且帮助查看器将尝试使用它来获取更新的内容。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2386
 msgid ""
@@ -2802,6 +2947,9 @@ msgid ""
 "Viewer wants a copy of ``index.html`` for an English speaking customer, it "
 "will look at ``https://example.com/help/Foo/en.lproj/index.html``."
 msgstr ""
+"例如, 如果将其设置为 ``https://example.com/help/Foo/``, 并且帮助查看器想要 为讲英语的客户提供 "
+"``index.html`` 的副本, 它将查看 "
+"``https://example.com/help/Foo/en.lproj/index.html``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2391
 msgid "Set this to to :code-py:`None` for no remote content."
@@ -2815,12 +2963,15 @@ msgid ""
 "allows you to use ``help:anchor`` URLs; see the Apple documentation for more"
 " information on this topic."
 msgstr ""
+"告诉帮助索引器索引生成的HTML中的锚点。这对于使用 ``AHLookupAnchor`` 函数或 代码中的 "
+"``openHelpAnchor:inBook:`` 方法跳转到特定主题非常有用。它还允许您使用 ``help:anchor`` "
+"URL；有关此主题的更多信息, 请参阅 Apple 文档。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2408
 msgid ""
 "Controls the minimum term length for the help indexer. If :code-py:`None`, "
 "use the default length."
-msgstr ""
+msgstr "控制帮助索引器的最小术语长度。如果为 :code-py:`None`, 则使用默认长度。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2415
 msgid ""
@@ -2830,6 +2981,9 @@ msgid ""
 "``/usr/share/hiutil/Stopwords.plist`` and contains, at time of writing, "
 "stopwords for the following languages:"
 msgstr ""
+"要么是语言规范（以使用内置的停用词）, 要么是停用词 plist 的路径, 或者如果您不想使用停用词, 则为 :code-"
+"py:`None`。默认的停用词 plist 可以在 ``/usr/share/hiutil/Stopwords.plist`` 找到, "
+"截至撰写本文时, 包含以下语言的停用词："
 
 #: ../../sphinx/doc/usage/configuration.rst:2422
 msgid "German (``de``)"
@@ -2864,7 +3018,7 @@ msgid ""
 "Specifies the locale to generate help for. This is used to determine the "
 "name of the ``.lproj`` directory inside the Help Book’s ``Resources``, and "
 "is passed to the help indexer."
-msgstr ""
+msgstr "指定要生成帮助的区域设置。这用于确定帮助手册 ``Resources`` 内的 ``.lproj`` 目录的名称, 并传递给帮助索引器。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2443
 msgid "Specifies the help book title."
@@ -2874,7 +3028,7 @@ msgstr "指定帮助手册标题。"
 msgid ""
 "Specifies the identity to use for code signing. Use :code-py:`None` if code "
 "signing is not to be performed."
-msgstr ""
+msgstr "指定用于代码签名的身份。如果不执行代码签名, 则使用 :code-py:`None`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2452
 msgid ""
@@ -2882,6 +3036,8 @@ msgid ""
 "variable, which is set by Xcode for script build phases, or :code-py:`None` "
 "if that variable is not set."
 msgstr ""
+"默认为 :envvar:`!CODE_SIGN_IDENTITY` 环境变量的值, 该变量由 Xcode 为脚本构建阶段设置, 如果未设置该变量, 则为"
+" :code-py:`None`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2460
 msgid ""
@@ -2895,6 +3051,8 @@ msgid ""
 ":envvar:`!OTHER_CODE_SIGN_FLAGS` environment variable, which is set by Xcode"
 " for script build phases, or the empty list if that variable is not set."
 msgstr ""
+"默认为基于 :envvar:`!OTHER_CODE_SIGN_FLAGS` 环境变量值的列表, 该变量由 Xcode 为脚本构建阶段设置, "
+"如果未设置该变量, 则为空列表。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2471
 msgid "The path to the :program:`codesign` program."
@@ -2973,7 +3131,7 @@ msgstr "文档的作者。这被放在Dublin Core metadata中。"
 msgid ""
 "The name of a person, organisation, etc. that played a secondary role in the"
 " creation of the content of an EPUB Publication."
-msgstr ""
+msgstr "在创建EPUB出版物内容中扮演次要角色的个人、组织等的名称。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2571
 msgid "Renamed from :confval:`!epub3_contributor`"
@@ -2987,7 +3145,7 @@ msgstr "该文档的语言。它被放在Dublin Core metadata中。"
 msgid ""
 "The publisher of the document. This is put in the Dublin Core metadata. You "
 "may use any sensible string, e.g. the project homepage."
-msgstr ""
+msgstr "该文档的发布者。这被放在Dublin Core metadata中。您可以使用任何合理的字符串, 例如项目主页。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2593
 msgid ""
@@ -3001,6 +3159,7 @@ msgid ""
 " published documents this is the ISBN number, but you can also use an "
 "alternative scheme, e.g. the project homepage."
 msgstr ""
+"文档的标识符。这被放在Dublin Core metadata中。对于已发布的文档, 这是ISBN号码, 但您也可以使用替代方案, 例如项目主页。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2609
 msgid ""
@@ -3008,6 +3167,8 @@ msgid ""
 "the Dublin Core metadata. For published books the scheme is ``'ISBN'``. If "
 "you use the project homepage, ``'URL'`` seems reasonable."
 msgstr ""
+":confval:`epub_identifier` 的出版方案。这被放在Dublin Core metadata中。对于已发布的书籍, 该方案是 "
+"``'ISBN'``。如果您使用项目主页, ``'URL'`` 似乎是合理的。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2618
 msgid ""
@@ -3015,6 +3176,8 @@ msgid ""
 "metadata. You may use a `XML's Name format`_ string. You can't use hyphen, "
 "period, numbers as a first character."
 msgstr ""
+"文档的唯一标识符。这被放在Dublin Core metadata中。您可以使用 `XML's Name format`_ 字符串。 "
+"您不能使用连字符、句点、数字作为第一个字符。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2629
 msgid ""
@@ -3024,6 +3187,8 @@ msgid ""
 "filename is empty, no html cover page is created. No cover at all is created"
 " if the tuple is empty."
 msgstr ""
+"封面页信息。这是一个包含封面图像和html模板文件名的元组。渲染的html封面页作为 :file:`content.opf` "
+"中主轴的第一项插入。如果模板文件名为空, 则不创建html封面页。如果元组为空, 则根本不创建封面。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2637
 msgid "Examples:"
@@ -3038,6 +3203,10 @@ msgid ""
 "*attributes* dictionary is used for the ``<link>`` tag's attributes. For "
 "more information, see :confval:`html_css_files`."
 msgstr ""
+"CSS 文件列表。条目必须是 *filename* 字符串或包含 *filename* 字符串和 *attributes* "
+"字典的元组。*filename* 必须相对于 :confval:`html_static_path`, 或者是带有类似 :code-"
+"py:`'https://example.org/style.css'` 方案的完整 URI。*attributes* 字典用于 ``<link>`` "
+"标签的属性。有关更多信息, 请参见 :confval:`html_css_files`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2665
 msgid ""
@@ -3048,6 +3217,9 @@ msgid ""
 "automatically inserted. However, the types can be explicitly overwritten if "
 "the default entries are not appropriate."
 msgstr ""
+":file:`content.opf` 的 guide 元素的元数据。这是包含可选指南信息的 *type*、*uri* 和 *title* "
+"的元组序列。有关详细信息, 请参阅 `the OPF documentation <https://idpf.org/epub>`_。如果可能, "
+"*cover* 和 *toc* 类型的默认条目会自动插入。但是, 如果默认条目不合适, 则可以显式覆盖这些类型。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2682
 msgid "The default value is :code-py:`()`."
@@ -3059,6 +3231,8 @@ msgid ""
 "Sphinx. It is a list of tuples containing the file name and the title. If "
 "the title is empty, no entry is added to :file:`toc.ncx`."
 msgstr ""
+"应在 Sphinx 生成的文本之前插入的其他文件。这是一个包含文件名和标题的元组列表。如果标题为空, 则不会向 :file:`toc.ncx` "
+"添加条目。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2704
 msgid ""
@@ -3067,6 +3241,8 @@ msgid ""
 "  can be used to add an appendix. If the title is empty, no entry is added "
 "to :file:`toc.ncx`."
 msgstr ""
+"应在 Sphinx 生成的文本之后插入的其他文件。这是一个包含文件名和标题的元组列表。此选项可用于添加附录。如果标题为空, 则不会向 "
+":file:`toc.ncx` 添加条目。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2721
 msgid ""
@@ -3122,6 +3298,8 @@ msgid ""
 "disabled by default because the automatic conversion may lose information. "
 "You need the Python Image Library (Pillow_) installed to use this option."
 msgstr ""
+"尝试修复某些EPUB阅读器不支持的图像格式。目前, 具有小颜色表的调色板图像已升级。默认情况下禁用此功能, "
+"因为自动转换可能会丢失信息。您需要安装Python Image Library (Pillow_)才能使用此选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2775
 msgid ""
@@ -3130,13 +3308,15 @@ msgid ""
 " scaled accordingly. If it is zero, no scaling is performed. You need the "
 "Python Image Library (Pillow_) installed to use this option."
 msgstr ""
+"此选项指定图像的最大宽度。如果将其设置为大于零的值, 则宽度大于给定值的图像将相应地缩放。如果为零, 则不执行缩放。您需要安装Python Image "
+"Library (Pillow_)才能使用此选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2789
 msgid ""
 "Control how to display URL addresses. This is very useful for readers that "
 "have no other means to display the linked URL. The setting can have the "
 "following values:"
-msgstr ""
+msgstr "控制如何显示URL地址。这对于没有其他方式显示链接URL的读者非常有用。该设置可以具有以下值："
 
 #: ../../sphinx/doc/usage/configuration.rst:2795
 #: ../../sphinx/doc/usage/configuration.rst:3589
@@ -3280,6 +3460,9 @@ msgid ""
 "the extra Unicode characters. Since Sphinx 2.0, the default typeface is GNU "
 "FreeFont, which has good coverage of Latin, Cyrillic, and Greek glyphs."
 msgstr ""
+"``'pdflatex'`` 对 Unicode 字符的支持有限。如果您的项目使用 Unicode 字符, 将引擎设置为 ``'xelatex'`` 或"
+" ``'lualatex'``, 并确保使用具有足够宽字形覆盖范围的 OpenType 字体, 通常比尝试使 ``'pdflatex'`` 与额外的 "
+"Unicode 字符一起工作更容易。自 Sphinx 2.0 起, 默认字体是 GNU FreeFont, 它对拉丁文、西里尔文和希腊字形有很好的覆盖。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2877
 msgid ""
@@ -3288,6 +3471,8 @@ msgid ""
 " :ref:`fontenc` key of :ref:`latex_elements <latex_elements_confval>` must "
 "be used appropriately."
 msgstr ""
+"Sphinx 2.0 为使用拉丁语言和 ``'pdflatex'`` 的文档添加了对偶尔出现的西里尔字母和希腊字母或单词的支持。要启用此功能, "
+"必须适当地使用 :ref:`latex_elements_confval` 的 :ref:`fontenc` 键。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2884
 msgid ""
@@ -3300,6 +3485,12 @@ msgid ""
 "style=literal]{unicode-math}'`` to keep a Unicode literal such as ``α`` "
 "(U+03B1) as-is in output, rather than being rendered as :math:`\\alpha`."
 msgstr ""
+"与 :ref:`HTML 输出中的 MathJaX 数学渲染 <math-support>` 相反, LaTeX 需要一些额外的配置来支持在 "
+":rst:dir:`math` 中的 Unicode 字面值：唯一全面的解决方案（据我们所知）是使用 ``'xelatex'`` 或 "
+"``'lualatex'`` *和* 添加 ``r'\\usepackage{unicode-math}'`` （例如通过 "
+":ref:`latex_elements_confval` 的 :ref:`preamble` 键）。您可能更喜欢 "
+"``r'\\usepackage[math-style=literal]{unicode-math}'`` 来保持 Unicode 字面值（例如 "
+"``α`` (U+03B1)）在输出中保持不变, 而不是被渲染为 :math:`\\alpha`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2896
 msgid ""
@@ -3341,6 +3532,8 @@ msgid ""
 "will be included in the LaTeX file. (If you want to use the default master "
 "document for your LaTeX build, provide your :confval:`master_doc` here.)"
 msgstr ""
+"字符串，指定 LaTeX 文件主文档的 :term:`document name`。*startdoc* 文档在目录树中引用的所有文档都将包含在 "
+"LaTeX 文件中。(如果您想为 LaTeX 构建使用默认主文档, 请在此处提供您的 :confval:`master_doc`。)"
 
 #: ../../sphinx/doc/usage/configuration.rst:2927
 #: ../../sphinx/doc/usage/configuration.rst:3459
@@ -3363,6 +3556,8 @@ msgid ""
 "backslash or ampersand must be represented by the proper LaTeX commands if "
 "they are to be inserted literally."
 msgstr ""
+"LaTeX 文档标题。可以为空以使用 *startdoc* 文档的标题。这作为 LaTeX 标记插入, 因此如果要逐字插入, 则必须使用适当的 "
+"LaTeX 命令来表示反斜杠或和号等特殊字符。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2938
 #: ../../sphinx/doc/usage/configuration.rst:3469
@@ -3375,6 +3570,8 @@ msgid ""
 "applies. Use ``\\\\and`` to separate multiple authors,  as in: ``'John "
 "\\\\and Sarah'`` (backslashes must be Python-escaped to reach LaTeX)."
 msgstr ""
+"LaTeX 文档的作者。与 *title* 相同的 LaTeX 标记警告适用。使用 ``\\\\and`` 来分隔多个作者, 如: ``'John "
+"\\\\and Sarah'`` (反斜杠必须经过 Python 转义才能到达 LaTeX)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2944
 msgid "*theme*"
@@ -3417,6 +3614,8 @@ msgid ""
 ":term:`configuration directory`) that is the logo of the documentation. It "
 "is placed at the top of the title page."
 msgstr ""
+"如果给出, 则这必须是图像文件的名称（相对于 :term:`configuration directory` 的路径）, "
+"它是文档的徽标。它放置在标题页的顶部。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2977
 msgid ""
@@ -3426,6 +3625,9 @@ msgid ""
 "``'part'``, which means that LaTeX document will use the :code-"
 "tex:`\\\\part` command."
 msgstr ""
+"此值确定最顶层的分节单元。如果 :confval:`latex_theme` 是 ``'howto'``，则默认设置为 "
+"``'section'``，如果是 ``'manual'``，则为 ``'chapter'``。两种情况下的替代方案都是指定 "
+"``'part'``，这意味着 LaTeX 文档将使用 :code-tex:`\\\\part` 命令。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2983
 msgid ""
@@ -3434,6 +3636,9 @@ msgid ""
 "tex:`\\\\chapter` numbering (or :code-tex:`\\\\section` for ``'howto'`` "
 "theme) when encountering :code-tex:`\\\\part` command."
 msgstr ""
+"在这种情况下，一层深的分节单元的编号与 HTML 编号不同步，因为默认情况下，LaTeX 在遇到 :code-tex:`\\\\part` "
+"命令时不会重置 :code-tex:`\\\\chapter` 编号（或 :code-tex:`\\\\section` 用于 ``'howto'`` "
+"主题）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2994
 msgid ""
@@ -3488,6 +3693,9 @@ msgid ""
 " mark-up of the type ``>{..}``, ``<{..}``, ``@{..}`` as column "
 "specification."
 msgstr ""
+"Sphinx 自己的宏用于网格表中的合并单元格。它们允许一般内容（文字块、列表、引用块等），但如果使用 "
+":rst:dir:`tabularcolumns` 指令注入类型为 ``>{..}``, ``<{..}``, ``@{..}`` 的 LaTeX "
+"标记作为列规范，则可能会出现问题。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3063
 msgid ""
@@ -3495,6 +3703,8 @@ msgid ""
 "literal blocks in horizontally merged cells, and also with multiple "
 "paragraphs in such cells if the table is rendered using ``tabulary``."
 msgstr ""
+"使用 LaTeX 的标准 :code-tex:`\\\\multicolumn`; 这与水平合并单元格中的文字块不兼容，如果使用 "
+"``tabulary`` 渲染表格，这种单元格中的多个段落也不兼容。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3074
 msgid "A list of styling classes (strings). Currently supported:"
@@ -3528,6 +3738,8 @@ msgid ""
 "interface to customise them is via :ref:`dedicated keys <tablecolors>` of "
 ":ref:`latexsphinxsetup`."
 msgstr ""
+"表格行以交替的背景颜色呈现。自定义它们的界面是通过 :ref:`latexsphinxsetup` 的 :ref:`dedicated keys "
+"<tablecolors>`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3092
 msgid ""
@@ -3536,6 +3748,9 @@ msgid ""
 "correctly supported all types of tables Sphinx produces in LaTeX). Please "
 "use the :ref:`latex table color configuration <tablecolors>` keys instead."
 msgstr ""
+"使用 :code-py:`'colorrows'` 样式时，:code-tex:`\\\\rowcolors` LaTeX "
+"命令变为无操作（此命令有局限性，并且从未正确支持 Sphinx 在 LaTeX 中生成的所有类型的表格）。请改用 :ref:`latex table "
+"color configuration <tablecolors>` 键。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3099
 msgid ""
@@ -3543,6 +3758,8 @@ msgid ""
 " is defined using a directive, or otherwise insert a :ref:`rst-class "
 "<rstclass>` directive before the table (cf. :ref:`table-directives`)."
 msgstr ""
+"要自定义表格的样式, 如果使用指令定义表格, 请使用 ``:class:`` 选项, 否则请在表格前插入 :ref:`rst-class "
+"<rstclass>` 指令 (参见 :ref:`table-directives`)。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3104
 msgid ""
@@ -3551,6 +3768,9 @@ msgid ""
 "the first three. The ``standard`` class produces tables with both horizontal"
 " and vertical lines (as had been the default prior to Sphinx 6.0.0)."
 msgstr ""
+"当前识别的类有 ``booktabs``, ``borderless``, ``standard``, ``colorrows``, "
+"``nocolorrows``。后两者可以与前三者中的任何一个结合使用。 ``standard`` 类生成具有水平和垂直线的表格（这是 Sphinx "
+"6.0.0 之前的默认设置）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3111
 msgid ""
@@ -3558,6 +3778,8 @@ msgid ""
 "set. See also ``TableMergeColor{Header,Odd,Even}`` in the "
 ":ref:`latexsphinxsetup` section."
 msgstr ""
+"单行多l列合并单元格将遵守行颜色（如果设置了）。另请参见 :ref:`latexsphinxsetup` 部分中的 "
+"``TableMergeColor{Header,Odd,Even}``。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3118
 msgid ""
@@ -3567,12 +3789,14 @@ msgid ""
 "tex:`\\\\sphinxnorowcolor` which can be used in a table column specification"
 " like this:"
 msgstr ""
+"在 LaTeX 中, 即使通过列规范（请参见 :rst:dir:`tabularcolumns`）设置了列颜色, 单个单元格也会遵守行颜色。Sphinx"
+" 提供了 :code-tex:`\\\\sphinxnorowcolor`, 可以在表格列规范中使用，如下所示："
 
 #: ../../sphinx/doc/usage/configuration.rst:3128
 msgid ""
 "Sphinx also provides :code-tex:`\\\\sphinxcolorblend`, which however "
 "requires the xcolor_ package. Here is an example:"
-msgstr ""
+msgstr "Sphinx 还提供了 :code-tex:`\\\\sphinxcolorblend`, 但它需要 xcolor_ 包。以下是一个示例："
 
 #: ../../sphinx/doc/usage/configuration.rst:3136
 msgid ""
@@ -3584,6 +3808,10 @@ msgid ""
 "example of usage in the :ref:`dev-deprecated-apis` section of this document "
 "in PDF format."
 msgstr ""
+"这意味着在此列中，行颜色将被红色轻微染色；有关其 :code-tex:`\\\\blendcolors` 命令语法的更多信息，请参阅 xcolor_ "
+"文档（:code-tex:`\\\\blendcolors` 替代 :code-tex:`\\\\sphinxcolorblend` 将修改单元格 "
+"*内容* 的颜色, 而不是单元格 *背景颜色面板*...）。您可以在本文件的 PDF 格式的 :ref:`dev-deprecated-apis` "
+"部分中找到使用示例。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3148
 msgid ""
@@ -3591,12 +3819,14 @@ msgid ""
 "given column use ``>{\\noindent\\color{<color>}}``, possibly in addition to "
 "the above."
 msgstr ""
+"如果您想为给定列的单元格的 *内容* 使用特殊颜色, 请使用 ``>{\\noindent\\color{<color>}}``, "
+"可能还需要添加上述内容。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3152
 msgid ""
 "Multi-row merged cells, whether single column or multi-column currently "
 "ignore any set column, row, or cell colour."
-msgstr ""
+msgstr "无论是单列还是多列, 多行合并单元格目前都忽略任何设置的列、行或单元格颜色。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3155
 msgid ""
@@ -3605,6 +3835,8 @@ msgid ""
 "the cell contents. This currently is without effect in a merged cell, "
 "whatever its kind."
 msgstr ""
+"简单单元格可以通过 :dudir:`raw` 指令和单元格内容中任何位置使用的 :code-tex:`\\\\cellcolor` LaTeX "
+"命令来设置自定义颜色。这在合并单元格中目前无效, 无论其类型如何。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3163
 msgid ""
@@ -3612,17 +3844,21 @@ msgid ""
 "individual table via the ``booktabs`` class, but it will be necessary to add"
 " ``r'\\usepackage{booktabs}'`` to the LaTeX preamble."
 msgstr ""
+"在未全局使用 ``'booktabs'`` 的文档中, 可以通过 ``booktabs`` 类为单个表格设置样式, 但需要将 "
+"``r'\\usepackage{booktabs}'`` 添加到 LaTeX 前言中。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3168
 msgid ""
 "On the other hand one can use ``colorrows`` class for individual tables with"
 " no extra package (as Sphinx since 5.3.0 always loads colortbl_)."
 msgstr ""
+"另一方面，可以使用 ``colorrows`` 类为单个表格使用，无需额外的软件包（因为 Sphinx 自 5.3.0 起始终加载 "
+"colortbl_）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3179
 msgid ""
 "Modify default from :code-py:`[]` to :code-py:`['booktabs', 'colorrows']`."
-msgstr ""
+msgstr "将默认值从 :code-py:`[]` 修改为 :code-py:`['booktabs', 'colorrows']`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3185
 msgid ""
@@ -3631,12 +3867,16 @@ msgid ""
 " Using Xindy_ means that words with UTF-8 characters will be ordered "
 "correctly for the :confval:`language`."
 msgstr ""
+"使用 Xindy_ 来准备一般术语的索引。默认情况下, LaTeX 构建器使用 :program:`makeindex` 来准备一般术语的索引。 使用 "
+"Xindy_ 意味着具有 UTF-8 字符的单词将根据 :confval:`language` 正确排序。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3193
 msgid ""
 "This option is ignored if :confval:`latex_engine` is :code-py:`'platex'` "
 "(Japanese documents; :program:`mendex` replaces :program:`makeindex` then)."
 msgstr ""
+"如果 :confval:`latex_engine` 是 :code-py:`'platex'` （日文文档；:program:`mendex` 取代 "
+":program:`makeindex`），则忽略此选项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3197
 msgid ""
@@ -3645,6 +3885,9 @@ msgid ""
 "invalid bytes for the UTF-8 encoding if any indexed term starts with a non-"
 "ASCII character. With :code-py:`'lualatex'` this then breaks the PDF build."
 msgstr ""
+"对于 :code-py:`'xelatex'` 或 :code-py:`'lualatex'`, 默认值为 :code-py:`True`, "
+"因为如果任何索引术语以非 ASCII 字符开头, :program:`makeindex` 会创建包含无效字节的 ``.ind`` 文件。使用 "
+":code-py:`'lualatex'` 会破坏 PDF 构建。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3204
 msgid ""
@@ -3654,6 +3897,9 @@ msgid ""
 " a term whose first character is non-ASCII will break the build, if "
 ":confval:`latex_use_xindy` is left to its default :code-py:`False`."
 msgstr ""
+"对于 :code-py:`'pdflatex'`, 默认值为 :code-py:`False`, 但对于非英语文档, "
+"只要一些索引术语使用来自语言脚本的非 ASCII 字符, 就建议使用 :code-py:`True`。如果索引的术语的第一个字符是非 ASCII, "
+"则如果 :confval:`latex_use_xindy` 保持为其默认的 :code-py:`False`, 则会破坏构建。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3211
 msgid ""
@@ -3662,12 +3908,15 @@ msgid ""
 ":code-py:`'pdflatex'` and Unicode engines, Cyrillic documents handle the "
 "indexing of Latin names correctly, even those having diacritics."
 msgstr ""
+"Sphinx 为使用 :code-py:`'pdflatex'` 引擎与西里尔字母脚本的 :program:`xindy` "
+"基础发行版添加了一些专用支持。 使用 :code-py:`'pdflatex'` 和 Unicode 引擎的西里尔文档都能正确处理拉丁名称的索引, "
+"即使是那些带有变音符号的名称。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3225
 msgid ""
 ":ref:`See the full documentation for latex_elements  "
 "<latex_elements_confval>`."
-msgstr ""
+msgstr ":ref:`请参阅 latex_elements 的完整文档 <latex_elements_confval>`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3231
 msgid ""
@@ -3676,6 +3925,9 @@ msgid ""
 "classes. Default is to use :code-py:`'article'` for :code-py:`'howto'` and "
 ":code-py:`'report'` for :code-py:`'manual'`."
 msgstr ""
+"一个字典, 将 :code-py:`'howto'` 和 :code-py:`'manual'` 映射到将用作两个 Sphinx "
+"类基础的真实文档类的名称。 默认情况下, 对于 :code-py:`'howto'` 使用 :code-py:`'article'`, 对于 "
+":code-py:`'manual'` 使用 :code-py:`'report'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3239
 msgid ""
@@ -3683,6 +3935,8 @@ msgid ""
 "default :code-py:`'jreport'` is used for :code-py:`'howto'` and :code-"
 "py:`'jsbook'` for :code-py:`'manual'`."
 msgstr ""
+"在日文档 (:confval:`language` 为 :code-py:`'ja'`) 中, 默认情况下, 对于 :code-py:`'howto'`"
+" 使用 :code-py:`'jreport'`, 对于 :code-py:`'manual'` 使用 :code-py:`'jsbook'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3248
 msgid ""
@@ -3693,6 +3947,9 @@ msgid ""
 " source files (e.g. via ``.. image::``) are copied automatically and should "
 "not be listed there."
 msgstr ""
+"一个文件名列表, 相对于 :term:`configuration directory`, 在构建 LaTeX 输出时复制到构建目录。这对于复制 "
+"Sphinx 不会自动复制的文件或使用自定义版本覆盖 Sphinx LaTeX 支持文件非常有用。在源文件中引用的图像文件（例如通过 ``.. "
+"image::``）会自动复制, 不应在此列出。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3256
 msgid ""
@@ -3703,6 +3960,10 @@ msgid ""
 "further suffix such as ``.txt`` to the filename and adjust the :code-"
 "tex:`\\\\input{}` macro accordingly."
 msgstr ""
+"具有 ``.tex`` 扩展名的文件名将自动移交给由 :option:`sphinx-build -M latexpdf <sphinx-build "
+"-M>` 或 :program:`make latexpdf` 触发的 PDF 构建过程。如果该文件仅被添加为从修改后的前言中 :code-"
+"tex:`\\\\input{}`，则必须向文件名添加进一步的后缀（例如 ``.txt``），并相应地调整 :code-"
+"tex:`\\\\input{}` 宏。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3267
 msgid "This overrides the files provided from Sphinx such as ``sphinx.sty``."
@@ -3713,7 +3974,7 @@ msgid ""
 "The \"theme\" that the LaTeX output should use. It is a collection of "
 "settings for LaTeX output (e.g. document class, top level sectioning unit "
 "and so on)."
-msgstr ""
+msgstr "LaTeX 输出应使用的“主题”。它是 LaTeX 输出的一组设置（例如文档类、顶级分节单元等）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3278
 msgid "The bundled first-party LaTeX themes are *manual* and *howto*:"
@@ -3784,7 +4045,7 @@ msgstr ":code-py:`'windows'`"
 
 #: ../../sphinx/doc/usage/configuration.rst:3337
 msgid "Use Windows-style line endings (``\\r\\n``)."
-msgstr ""
+msgstr "使用Windows风格的行结尾（ ``\\r\\n`` ）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3338
 msgid ":code-py:`'native'`"
@@ -4311,6 +4572,8 @@ msgid ""
 "the maximum duration (in seconds) that the builder will wait for between "
 "each attempt before recording a failure."
 msgstr ""
+"*linkcheck* "
+"构建器可能在短时间内向同一站点发出大量请求。此设置控制当服务器指示请求受到速率限制时构建器的行为，方法是设置构建器在记录失败之前每次尝试之间等待的最长持续时间（以秒为单位）。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3869
 msgid ""
@@ -4320,6 +4583,9 @@ msgid ""
 "until it succeeds or exceeds the :confval:`!linkcheck_rate_limit_timeout` "
 "(in seconds). Custom timeouts should be given as a number of seconds."
 msgstr ""
+"*linkcheck* 构建器始终尊重服务器何时重试的指示（使用 `Retry-After`_ 头）。否则，``linkcheck`` "
+"会在重试前等待一分钟，并在尝试之间不断加倍等待时间，直到成功或超过 :confval:`!linkcheck_rate_limit_timeout` "
+"（以秒为单位）。自定义超时应以秒数给出。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3884
 msgid ""
@@ -4328,13 +4594,16 @@ msgid ""
 "default.  To report timeouts as ``broken`` instead, you can set "
 ":confval:`linkcheck_report_timeouts_as_broken` to :code-py:`True`."
 msgstr ""
+"如果在等待超链接的响应时 :confval:`linkcheck_timeout` 到期，*linkcheck* 构建器将默认将链接报告为 "
+"``timeout`` 。要将超时报告为 ``broken`` ，您可以将 "
+":confval:`linkcheck_report_timeouts_as_broken` 设置为 :code-py:`True` 。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3889
 msgid ""
 "The default value for this option changed to :code-py:`False`, meaning "
 "timeouts that occur while checking hyperlinks will be reported using the new"
 " 'timeout' status code."
-msgstr ""
+msgstr "此选项的默认值更改为 :code-py:`False` ，这意味着在检查超链接时发生的超时将使用新的“timeout”状态代码进行报告。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3900
 msgid "A dictionary that maps URL (without paths) to HTTP request headers."
@@ -4414,6 +4683,9 @@ msgid ""
 ":code-c:`{}`). For example, this can be used when  :code-c:`#define` has "
 "been used for attributes, for portability."
 msgstr ""
+"一个字符串序列，解析器应另外接受为带有一个参数的属性。也就是说，如果 ``my_align_as`` 在列表中，那么 "
+":code-c:`my_align_as(X)` 被解析为所有具有平衡括号的字符串 ``X`` 的属性（:code-c:`()`、 "
+":code-c:`[]` 和 :code-c:`{}`）。例如，当 :code-c:`#define` 用于属性时，可以出于可移植性的目的使用它。"
 
 #: ../../sphinx/doc/usage/configuration.rst:4031
 msgid ":confval:`!c_paren_attributes` can now be a tuple."
@@ -4449,6 +4721,9 @@ msgid ""
 "cpp:`{}`). For example, this can be used when  :code-cpp:`#define` has been "
 "used for attributes, for portability."
 msgstr ""
+"一个字符串序列，解析器应另外接受为带有一个参数的属性。也就是说，如果 ``my_align_as`` 在列表中，那么 :code-"
+"cpp:`my_align_as(X)` 被解析为所有具有平衡括号的字符串 ``X`` 的属性（:code-cpp:`()`、 :code-"
+"cpp:`[]` 和 :code-cpp:`{}`）。例如，当 :code-cpp:`#define` 用于属性时，可以出于可移植性的目的使用它。"
 
 #: ../../sphinx/doc/usage/configuration.rst:4116
 msgid ":confval:`!cpp_paren_attributes` can now be a tuple."
@@ -4484,6 +4759,8 @@ msgid ""
 "under ``B``, not ``F``). This can be handy if you document a project that "
 "consists of a single package."
 msgstr ""
+"一个前缀列表, 用于排序Python模块索引时会被忽略（例如, 如果设置为 :code-py:`['foo.']` , 则 ``foo.bar`` "
+"显示在 ``B`` 下, 而不是 ``F`` ）。如果您记录一个由单个包组成的项目, 这会很方便。"
 
 #: ../../sphinx/doc/usage/configuration.rst:4171
 msgid "Works only for the HTML builder currently."
@@ -4523,6 +4800,7 @@ msgid ""
 " signature length ignores the length of the arguments list; for the latter, "
 "the signature length ignores the length of the type parameters list."
 msgstr ""
+"对于Python语言域，签名长度取决于是格式化类型参数还是参数列表。对于前者，签名长度忽略参数列表的长度；对于后者，签名长度忽略类型参数列表的长度。"
 
 #: ../../sphinx/doc/usage/configuration.rst:4226
 msgid ""
@@ -4530,6 +4808,8 @@ msgid ""
 "only the list of type parameters will be wrapped while the arguments list "
 "will be rendered on a single line"
 msgstr ""
+"例如，使用 :code-py:`python_maximum_signature_line_length = 20` "
+"时，只有类型参数列表会被换行，而参数列表将渲染在单行上"
 
 #: ../../sphinx/doc/usage/configuration.rst:4248
 msgid ""

@@ -14,9 +14,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/ce19a75e3\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-16 12:58+0000\n"
+"POT-Creation-Date: 2025-12-18 06:41+0000\n"
 "PO-Revision-Date: 2018-03-29 15:10+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -63,7 +63,7 @@ msgid ""
 "reStructuredText, so all lines of the same paragraph must be left-aligned to"
 " the same level of indentation."
 msgstr ""
-"段落（:duref:`ref <paragraphs>`）是 reStructuredText "
+"段落(:duref:`ref <paragraphs>`)是 reStructuredText "
 "文档中最基本的块。段落只是由一个或多个空行分隔的文本块。就像在 Python 中一样，缩进在 reStructuredText "
 "中也是很重要的，所以同一段落的所有行必须左对齐到相同的缩进级别。"
 
@@ -81,7 +81,7 @@ msgstr "一个星号： ``*文本*`` 表示强调（斜体），"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:42
 msgid "two asterisks: ``**text**`` for strong emphasis (boldface), and"
-msgstr "两个星号： ``**文本**`` 表示更加强调（粗体），以及"
+msgstr "两个星号： ``**文本**`` 表示强强调（粗体），以及"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:43
 msgid "backquotes: ````text```` for code samples."
@@ -103,23 +103,25 @@ msgstr "不能嵌套，"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:51
 msgid "content may not start or end with whitespace: ``* text*`` is wrong,"
-msgstr "标记内不能以空格开始或结束： ``* 文本*`` 就不行，"
+msgstr "标记内的内容不能以空格开始或结束： ``* text*`` 就不行，"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:52
 msgid ""
 "it must be separated from surrounding text by non-word characters.  Use a "
 "backslash escaped space to work around that: ``thisis\\ *one*\\ word``."
-msgstr "行内标记符号外只能是非文字字符。想写空格的话就要转义：``thisis\\ *one*\\ word``。"
+msgstr ""
+"行内标记符号外只能是非文字字符。如果想要在行内标记符号外使用文字字符，使用反斜线转义空格来绕过限制：``thisis\\ *one*\\ word`` "
+"被呈现为 thisis\\ *one*\\ word。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:55
 msgid "These restrictions may be lifted in future versions of the docutils."
-msgstr "这些限制，在将来的 docutils 版本中可能会放宽。"
+msgstr "这些限制，在将来的 docutils 版本中可能会被取消。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:57
 msgid ""
 "It is also possible to replace or expand upon some of this inline markup "
 "with roles. Refer to :ref:`rst-roles` for more information."
-msgstr "也可以使用角色来替换或扩展一些行内标记。有关更多信息，请参阅 :ref:`rst-roles` 。"
+msgstr "也可以使用角色来替换或扩展一些行内标记。详参 :ref:`rst-roles`。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:62
 msgid "Lists and Quote-like blocks"
@@ -131,7 +133,7 @@ msgid ""
 " at the start of a paragraph and indent properly.  The same goes for "
 "numbered lists; they can also be autonumbered using a ``#`` sign::"
 msgstr ""
-"列表标记（:duref:`ref <bullet-lists>`）是自然的：只要在段落的开头加上星号并正确地缩进即可。编号列表也是如此；它们也可以使用 "
+"列表标记(:duref:`ref <bullet-lists>`)是自然的：只要在段落的开头加上星号并正确地缩进即可。编号列表也是如此；它们也可以使用 "
 "``#`` 符号来自动编号::"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:78
@@ -147,19 +149,19 @@ msgstr "定义列表（:duref:`ref <definition-lists>`）创建如下："
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:99
 msgid "Note that the term cannot have more than one line of text."
-msgstr "请注意，一个术语可以有很多段，段与段之间用空行分隔，但一段只能有一行文本。"
+msgstr "请注意，定义'term'所在处，不能有多于一行的文本。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:101
 msgid ""
 "Quoted paragraphs (:duref:`ref <block-quotes>`) are created by just "
 "indenting them more than the surrounding paragraphs."
-msgstr "引用的段落（:duref:`ref <block-quotes>`）只是通过缩进它们来创建，而不是根据周围的段落创建。"
+msgstr "引用的段落(:duref:`ref <block-quotes>`)通过比周围的段落多缩进一级即可创建。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:104
 msgid ""
 "Line blocks (:duref:`ref <line-blocks>`) are a way of preserving line "
 "breaks::"
-msgstr "行块（:duref:`ref <line-blocks>`）是一种保留换行符的方法："
+msgstr "line blocks(:duref:`ref <line-blocks>`)是一种保留换行符的方法："
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:110
 msgid "There are also several more special blocks available:"
@@ -169,23 +171,23 @@ msgstr "还有几个特殊的块可用："
 msgid ""
 "field lists (:duref:`ref <field-lists>`, with caveats noted in :ref:`rst-"
 "field-lists`)"
-msgstr "字段列表（ :duref:`ref <field-lists>` ，在 :ref:`rst-field-lists` 中有注释）"
+msgstr "字段列表(:duref:`ref <field-lists>`，在 :ref:`rst-field-lists` 中有说明)"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:114
 msgid "option lists (:duref:`ref <option-lists>`)"
-msgstr "选项列表（:duref:`ref <option-lists>`）"
+msgstr "选项列表(:duref:`ref <option-lists>`)"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:115
 msgid "quoted literal blocks (:duref:`ref <quoted-literal-blocks>`)"
-msgstr "引用文字块（ :duref:`ref <quoted-literal-blocks>`）"
+msgstr "引用文字块(:duref:`ref <quoted-literal-blocks>`)"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:116
 msgid "doctest blocks (:duref:`ref <doctest-blocks>`)"
-msgstr "doctest块（:duref:`ref <doctest-blocks>`）"
+msgstr "doctest块(:duref:`ref <doctest-blocks>`)"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:122
 msgid "Literal blocks"
-msgstr "文字块"
+msgstr "Literal blocks"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:124
 msgid ""
@@ -194,7 +196,7 @@ msgid ""
 "indented (and, like all paragraphs, separated from the surrounding ones by "
 "blank lines)::"
 msgstr ""
-"文字代码块（:duref:`ref <literal-blocks>`）是通过在段落结束时使用特殊标记 ``::`` "
+"literal code block(:duref:`ref <literal-blocks>`)是通过在段落结束时使用特殊标记 ``::`` "
 "来引入的。文字块必须缩进（和所有段落一样，用空行隔开周围的段落）::"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:138
@@ -231,8 +233,8 @@ msgid ""
 ":rst:dir:`code-block` directive can be used to set highlighting on a block-"
 "by-block basis. These directives are discussed later."
 msgstr ""
-"代码高亮显示可以在文档范围内使用 :rst:dir:`highlight` 指令为这些文字块启用，在项目范围内使用 "
-":confval:`highlight_language` 配置选项启用。 :rst:dir:`code-block` "
+"在本文档范围内使用 :rst:dir:`highlight` 指令，或者在项目范围内使用 :confval:`highlight_language` "
+"配置选项，可以为literal block启用代码高亮。 :rst:dir:`code-block` "
 "指令可以用于以块为单位设置高亮显示。稍后将讨论这些指令。"
 
 #: ../../sphinx/doc/usage/restructuredtext/basics.rst:159

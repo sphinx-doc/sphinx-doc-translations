@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-08 06:43+0000\n"
+"POT-Creation-Date: 2025-12-18 02:02+0000\n"
 "PO-Revision-Date: 2018-02-12 13:47+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -176,7 +176,7 @@ msgstr "在修改这样的核心LaTeX键后，请在下次PDF构建前清理LaTe
 
 #: ../../sphinx/doc/latex.rst:158
 msgid "Default: :code-tex:`r'\\\\usepackage{babel}'` (for Japanese documents)"
-msgstr ""
+msgstr "默认值： :code-tex:`r'\\\\usepackage{babel}'` （对于日语文档）"
 
 #: ../../sphinx/doc/latex.rst:160
 msgid ""
@@ -234,6 +234,8 @@ msgid ""
 "Greek or Cyrillic in a document using ``'pdflatex'`` engine. At 4.0.0 these "
 "commands were moved to the ``'fontsubstitution'`` key."
 msgstr ""
+"帮助在使用 ``'pdflatex'`` 引擎的文档中偶尔支持希腊语或西里尔语，包含一些字体替换命令。在4.0.0中，这些命令被移到了 "
+"``'fontsubstitution'`` 键。"
 
 #: ../../sphinx/doc/latex.rst:199
 msgid ""
@@ -242,6 +244,7 @@ msgid ""
 " TeX fonts and associated LaTeX packages.  The monospace font has been "
 "changed to better match the Times clone."
 msgstr ""
+"默认字体设置已更改。如上所示，它仍然使用Times和Helvetica克隆作为衬线和无衬线，但通过更好、更完整的TeX字体和相关的LaTeX包。等宽字体已更改为更好地匹配Times克隆。"
 
 #: ../../sphinx/doc/latex.rst:205
 msgid ""
@@ -251,6 +254,9 @@ msgid ""
 "fit better in their surrounding text, and it is easier to set up custom "
 "fonts, as :ref:`fvset` does not intervene anymore by default."
 msgstr ""
+"使用Unicode引擎的等宽字体FreeMono以比例 ``0.9`` 加载。这取代了以前通过 :ref:`fvset` "
+"的机制，该机制将代码块配置为使用 :code-"
+"tex:`\\\\small`。内联文字现在更适合其周围的文本，并且更容易设置自定义字体，因为默认情况下不再通过 :ref:`fvset` 进行干预。"
 
 #: ../../sphinx/doc/latex.rst:212
 msgid "``'fncychap'``"
@@ -267,6 +273,11 @@ msgid ""
 "\"Rejne\" and \"Bjornstrup\".  You can also set this to ``''`` to disable "
 "fncychap."
 msgstr ""
+"包含“fncychap”包（它使章节标题变得花哨），英文文档的默认值为 :code-"
+"tex:`r'\\\\usepackage[Bjarne]{fncychap}'` （此选项由Sphinx稍作自定义），国际化文档的默认值为 "
+":code-tex:`r'\\\\usepackage[Sonny]{fncychap}'` "
+"（因为“Bjarne”样式使用用英语拼写的数字）。您还可以尝试其他“fncychap”样式，如“Lenny”，“Glenn”，“Conny”，“Rejne”和“Bjornstrup”。您也可以将其设置为"
+" ``''`` 以禁用fncychap。"
 
 #: ../../sphinx/doc/latex.rst:221
 msgid ""
@@ -274,6 +285,8 @@ msgid ""
 "documents, :code-tex:`r'\\\\usepackage[Sonny]{fncychap}'` for "
 "internationalized documents, and ``''`` for Japanese documents."
 msgstr ""
+"默认值：英文文档为 :code-tex:`r'\\\\usepackage[Bjarne]{fncychap}'`，国际化文档为 :code-"
+"tex:`r'\\\\usepackage[Sonny]{fncychap}'`，日语文档为 ``''``。"
 
 #: ../../sphinx/doc/latex.rst:227
 msgid "``'preamble'``"
@@ -297,6 +310,7 @@ msgid ""
 "Do not use ``.tex`` as suffix, else the file is submitted itself to the PDF "
 "build process, use ``.tex.txt`` or ``.sty`` as in the examples above."
 msgstr ""
+"不要使用 ``.tex`` 作为后缀，否则该文件本身会被提交到PDF构建过程中，如上例所示，使用 ``.tex.txt`` 或 ``.sty``。"
 
 #: ../../sphinx/doc/latex.rst:248
 msgid "``'figure_align'``"
@@ -422,6 +436,7 @@ msgid ""
 "Default: :code-tex:`r'\\\\usepackage[utf8]{inputenc}'` when using pdflatex, "
 "else ``''``."
 msgstr ""
+"默认值：使用pdflatex时为 :code-tex:`r'\\\\usepackage[utf8]{inputenc}'`，否则为 ``''``。"
 
 #: ../../sphinx/doc/latex.rst:336
 msgid ""
@@ -432,6 +447,9 @@ msgid ""
 "not causing a build crash) may arise in the PDF, in particular regarding "
 "hyperlinks."
 msgstr ""
+"如果使用 ``utf8x`` 代替 ``utf8``，则必须使用适当的 ``\\PreloadUnicodePage{<number>}`` "
+"命令扩展LaTeX前导码，如 ``utf8x`` 文档所示（在基于TeXLive的TeX安装上使用 ``texdoc "
+"ucs``）。否则，PDF中可能会出现意外且可能难以发现的问题（即不会导致构建崩溃），尤其是关于超链接的问题。"
 
 #: ../../sphinx/doc/latex.rst:343
 msgid ""
@@ -452,7 +470,7 @@ msgstr ""
 msgid ""
 "Previously :code-tex:`r'\\\\usepackage[utf8]{inputenc}'` was used for all "
 "compilers."
-msgstr ""
+msgstr "以前，:code-tex:`r'\\\\usepackage[utf8]{inputenc}'` 用于所有编译器。"
 
 #: ../../sphinx/doc/latex.rst:360
 msgid "``'cmappkg'``"
@@ -464,7 +482,7 @@ msgstr "包含“cmap”软件包。"
 
 #: ../../sphinx/doc/latex.rst:363
 msgid "Default: :code-tex:`r'\\\\usepackage{cmap}'`"
-msgstr ""
+msgstr "默认值： :code-tex:`r'\\\\usepackage{cmap}'`"
 
 #: ../../sphinx/doc/latex.rst:369
 msgid "``'fontenc'``"
@@ -476,38 +494,43 @@ msgid ""
 "tex:`r'\\\\usepackage[T1]{fontenc}'`.  Replace it (if using ``'pdflatex'``) "
 "with:"
 msgstr ""
+"对于 ``'pdflatex'`` 作为 :confval:`latex_engine`，其默认值为 :code-"
+"tex:`r'\\\\usepackage[T1]{fontenc}'`。用以下内容替换它（如果使用 ``'pdflatex'``）："
 
 #: ../../sphinx/doc/latex.rst:374
 msgid ""
 ":code-tex:`r'\\\\usepackage[X2,T1]{fontenc}'` if you need occasional "
 "Cyrillic letters (физика частиц),"
 msgstr ""
+":code-tex:`r'\\\\usepackage[X2,T1]{fontenc}'` 如果您需要偶尔使用西里尔字母（физика частиц），"
 
 #: ../../sphinx/doc/latex.rst:377
 msgid ""
 ":code-tex:`r'\\\\usepackage[LGR,T1]{fontenc}'` if you need occasional Greek "
 "letters (Σωματιδιακή φυσική),"
 msgstr ""
+":code-tex:`r'\\\\usepackage[LGR,T1]{fontenc}'` 如果您需要偶尔使用希腊字母（Σωματιδιακή "
+"φυσική），"
 
 #: ../../sphinx/doc/latex.rst:380
 msgid ":code-tex:`r'\\\\usepackage[LGR,X2,T1]{fontenc}'` if you need both."
-msgstr ""
+msgstr ":code-tex:`r'\\\\usepackage[LGR,X2,T1]{fontenc}'` 如果您两者都需要。"
 
 #: ../../sphinx/doc/latex.rst:382
 msgid ""
 "The TeX installation may need some extra packages.  For example, on Ubuntu "
 "xenial:"
-msgstr ""
+msgstr "TeX安装可能需要一些额外的软件包。例如，在Ubuntu xenial上："
 
 #: ../../sphinx/doc/latex.rst:385
 msgid ""
 "``texlive-lang-greek`` and ``cm-super`` are needed for Greek (``LGR``),"
-msgstr ""
+msgstr "``texlive-lang-greek`` 和 ``cm-super`` 是希腊语（``LGR``）所需的，"
 
 #: ../../sphinx/doc/latex.rst:387
 msgid ""
 "``texlive-lang-cyrillic`` and ``cm-super`` are needed for Cyrillic (``X2``)."
-msgstr ""
+msgstr "``texlive-lang-cyrillic`` 和 ``cm-super`` 是西里尔语（``X2``）所需的。"
 
 #: ../../sphinx/doc/latex.rst:390
 msgid ""
@@ -516,18 +539,25 @@ msgid ""
 "package ``fontspec`` (with some extras described below) and selects the GNU "
 "FreeSerif font as body font.  See :ref:`fontpkg`."
 msgstr ""
+"使用 ``'xelatex'`` 和 ``'lualatex'``，可以开箱即用地支持希腊语和西里尔语：这个 :ref:`fontenc` "
+"键默认为包含LaTeX包 ``fontspec`` （下面描述了一些额外内容），并选择GNU FreeSerif字体作为正文字体。参见 "
+":ref:`fontpkg`。"
 
 #: ../../sphinx/doc/latex.rst:395
 msgid ""
 "Defaults to :code-tex:`r'\\\\usepackage{fontspec}'` if "
 ":confval:`latex_engine` is set to ``'xelatex'``."
 msgstr ""
+"默认值：如果 :confval:`latex_engine` 设置为 ``'xelatex'``，则为 :code-"
+"tex:`r'\\\\usepackage{fontspec}'`。"
 
 #: ../../sphinx/doc/latex.rst:399
 msgid ""
 "Defaults to :code-tex:`r'\\\\usepackage{fontspec}'` if "
 ":confval:`latex_engine` is set to ``'lualatex'``."
 msgstr ""
+"默认值：如果 :confval:`latex_engine` 设置为 ``'lualatex'``，则为 :code-"
+"tex:`r'\\\\usepackage{fontspec}'`。"
 
 #: ../../sphinx/doc/latex.rst:403
 msgid ""
@@ -535,6 +565,9 @@ msgid ""
 "tex:`\\\\defaultfontfeatures[\\\\rmfamily,\\\\sffamily]{}` to disable TeX "
 "ligatures for ``<<`` and ``>>``."
 msgstr ""
+"``'lualatex'`` 还执行 :code-"
+"tex:`\\\\defaultfontfeatures[\\\\rmfamily,\\\\sffamily]{}` 以禁用 ``<<`` 和 "
+"``>>`` 的TeX连字。"
 
 #: ../../sphinx/doc/latex.rst:408
 msgid ""
@@ -542,12 +575,15 @@ msgid ""
 "``X2`` are detected in this key, in order to support occasional Greek or "
 "Cyrillic with ``'pdflatex'``."
 msgstr ""
+"如果在此键中检测到 ``LGR``、``T2A`` 或 ``X2``，则会自动执行额外的LaTeX配置，以支持使用 ``'pdflatex'`` "
+"的偶尔希腊语或西里尔语。"
 
 #: ../../sphinx/doc/latex.rst:413
 msgid ""
 "Documents having Greek as main language default to ``'xelatex'`` and should "
 "not set the :ref:`fontenc` key, which will load ``fontspec``."
 msgstr ""
+"以希腊语为主要语言的文档默认为 ``'xelatex'``，不应设置 :ref:`fontenc` 键，该键将加载 ``fontspec``。"
 
 #: ../../sphinx/doc/latex.rst:417
 msgid ""
@@ -557,6 +593,10 @@ msgid ""
 "into curly quotes (which otherwise would happen even with "
 ":confval:`smartquotes` set to ``False``)."
 msgstr ""
+"``'xelatex'`` 执行 :code-"
+"tex:`\\\\defaultfontfeatures[\\\\rmfamily,\\\\sffamily]{}` 以避免将 ``--`` "
+"收缩为en-dash，并且还将直引号转换为弯引号（即使将 :confval:`smartquotes` 设置为 "
+"``False``，否则也会发生这种情况）。"
 
 #: ../../sphinx/doc/latex.rst:424
 msgid "``'fontsubstitution'``"
@@ -569,10 +609,12 @@ msgid ""
 "fonts known to be available in the ``LGR`` or ``X2`` encodings, set this one"
 " to be the empty string.  Else leave to its default."
 msgstr ""
+"如果 ``'fontenc'`` 未配置为使用 ``LGR`` 或 ``X2`` （或 ``T2A``），则忽略。如果 :ref:`fontpkg` "
+"键配置为与某些已知可用于 ``LGR`` 或 ``X2`` 编码的TeX字体一起使用，请将此项设置为空字符串。否则请保留其默认值。"
 
 #: ../../sphinx/doc/latex.rst:430
 msgid "Ignored with :confval:`latex_engine` other than ``'pdflatex'``."
-msgstr ""
+msgstr "忽略 :confval:`latex_engine` 不是 ``'pdflatex'`` 的情况。"
 
 #: ../../sphinx/doc/latex.rst:434
 msgid "``'textgreek'``"
@@ -590,6 +632,9 @@ msgid ""
 "the ``'fontenc'`` key was used with ``LGR`` or not.  Only expert LaTeX users"
 " may want to customize this key."
 msgstr ""
+"它在 ``'platex'``、``'xelatex'`` 或 ``'lualatex'`` 作为 :confval:`latex_engine` "
+"时被忽略，并且取决于是否在 ``'fontenc'`` 键中使用了 ``LGR``，对于 ``'pdflatex'``，默认为空字符串或 :code-"
+"tex:`r'\\\\usepackage{textalpha}'`。只有专业的LaTeX用户可能想要自定义此键。"
 
 #: ../../sphinx/doc/latex.rst:443
 msgid ""
@@ -597,12 +642,17 @@ msgid ""
 "``'pdflatex'`` support Greek Unicode input in :rst:dir:`math` context. For "
 "example ``:math:`α``` (U+03B1) will render as :math:`\\alpha`."
 msgstr ""
+"它也可以用作 ``r'\\usepackage{textalpha,alphabeta}'`` 以让 ``'pdflatex'`` 支持 "
+":rst:dir:`math` 上下文中的希腊Unicode输入。例如 ``:math:`α``` (U+03B1) 将呈现为 "
+":math:`\\alpha`。"
 
 #: ../../sphinx/doc/latex.rst:447
 msgid ""
 "Default: :code-tex:`r'\\\\usepackage{textalpha}'` or ``''`` if ``fontenc`` "
 "does not include the ``LGR`` option."
 msgstr ""
+"默认值：如果 ``fontenc`` 不包括 ``LGR`` 选项，则为 :code-"
+"tex:`r'\\\\usepackage{textalpha}'` 或 ``''``。"
 
 #: ../../sphinx/doc/latex.rst:452
 msgid "``'geometry'``"
@@ -615,6 +665,8 @@ msgid ""
 "tex:`r'\\\\usepackage[dvipdfm]{geometry}'` for Japanese documents. The "
 "Sphinx LaTeX style file executes additionally:"
 msgstr ""
+"包含“geometry”包，默认为 :code-tex:`r'\\\\usepackage{geometry}'` 或日语文档的 :code-"
+"tex:`r'\\\\usepackage[dvipdfm]{geometry}'`。Sphinx LaTeX样式文件还执行："
 
 #: ../../sphinx/doc/latex.rst:462
 msgid ""
@@ -641,6 +693,10 @@ msgid ""
 "to an integer multiple of the baseline. See the :ref:`hmargin "
 "<latexsphinxsetuphmargin>` documentation for more."
 msgstr ""
+"LaTeX文件中的位置已移动到 :code-tex:`\\\\usepackage{sphinx}` 和 :code-"
+"tex:`\\\\sphinxsetup{..}` 之后，因此也在插入 :ref:`fontpkg` "
+"键之后。这是为了以特殊方式处理日语文档的纸张布局选项：文本宽度将设置为*zenkaku*宽度的整数倍，文本高度将设置为基线的整数倍。有关更多信息，请参见"
+" :ref:`hmargin <latexsphinxsetuphmargin>` 文档。"
 
 #: ../../sphinx/doc/latex.rst:484
 msgid "``'hyperref'``"
@@ -652,6 +708,8 @@ msgid ""
 ":code-tex:`\\\\urlstyle{same}`. This is done after :file:`sphinx.sty` file "
 "is loaded and before executing the contents of ``'preamble'`` key."
 msgstr ""
+"包含“hyperref”包；还加载包“hypcap”并发出 :code-tex:`\\\\urlstyle{same}`。这是在加载 "
+":file:`sphinx.sty` 文件之后以及执行 ``'preamble'`` 键的内容之前完成的。"
 
 #: ../../sphinx/doc/latex.rst:491
 msgid "Loading of packages \"hyperref\" and \"hypcap\" is mandatory."
@@ -678,22 +736,26 @@ msgid ""
 "material>}\\\\sphinxmaketitle'`, then ``<Extra material>`` will be typeset "
 "on back of title page (``'manual'`` docclass only)."
 msgstr ""
+"如果键值设置为 :code-tex:`r'\\\\newcommand\\\\sphinxbackoftitlepage{<Extra "
+"material>}\\\\sphinxmaketitle'`，则 ``<Extra material>`` 将在标题页背面排版（仅限 "
+"``'manual'`` docclass）。"
 
 #: ../../sphinx/doc/latex.rst:507
 msgid "Default: :code-tex:`r'\\\\sphinxmaketitle'`"
-msgstr ""
+msgstr "默认值: :code-tex:`r'\\\\sphinxmaketitle'`"
 
 #: ../../sphinx/doc/latex.rst:509
 msgid ""
 "Original :code-tex:`\\\\maketitle` from document class is not overwritten, "
 "hence is reusable as part of some custom setting for this key."
-msgstr ""
+msgstr "文档类的原始 :code-tex:`\\\\maketitle` 未被覆盖，因此可以作为此键的一部分重用。"
 
 #: ../../sphinx/doc/latex.rst:513
 msgid ""
 ":code-tex:`\\\\sphinxbackoftitlepage` optional macro.  It can also be "
 "defined inside ``'preamble'`` key rather than this one."
 msgstr ""
+":code-tex:`\\\\sphinxbackoftitlepage` 可选宏。它也可以在 ``'preamble'`` 键内定义，而不是这个键。"
 
 #: ../../sphinx/doc/latex.rst:517
 msgid "``'releasename'``"
@@ -724,10 +786,13 @@ msgid ""
 "packages. Override if you want to generate a different table of contents or "
 "put content between the title page and the TOC."
 msgstr ""
+"“tableofcontents”调用。 :code-tex:`r'\\\\sphinxtableofcontents'` 的默认值是未修改的 "
+":code-tex:`\\\\tableofcontents` "
+"的包装器，用户加载的软件包本身可以自定义它。如果要生成不同的目录或在标题页和TOC之间放置内容，请重写。"
 
 #: ../../sphinx/doc/latex.rst:531
 msgid "Default: :code-tex:`r'\\\\sphinxtableofcontents'`"
-msgstr ""
+msgstr "默认值: :code-tex:`r'\\\\sphinxtableofcontents'`"
 
 #: ../../sphinx/doc/latex.rst:533
 msgid ""
@@ -735,6 +800,8 @@ msgid ""
 "modified by Sphinx. This created an incompatibility with dedicated packages "
 "modifying it also such as \"tocloft\" or \"etoc\"."
 msgstr ""
+"以前，Sphinx修改了 :code-tex:`\\\\tableofcontents` "
+"本身的含义。这与专门修改它的软件包（如“tocloft”或“etoc”）不兼容。"
 
 #: ../../sphinx/doc/latex.rst:538
 msgid "``'transition'``"
@@ -885,13 +952,13 @@ msgid ""
 "The ``'sphinxsetup'`` defaults to empty. If non-empty, it will be passed as "
 "argument to the ``\\sphinxsetup`` macro inside the document preamble, like "
 "this::"
-msgstr ""
+msgstr "``'sphinxsetup'`` 默认为空。如果非空，它将作为参数传递给文档序言中的 ``\\sphinxsetup`` 宏，如下所示::"
 
 #: ../../sphinx/doc/latex.rst:641
 msgid ""
 "It is possible to insert uses of the ``\\sphinxsetup`` LaTeX macro directly "
 "into the body of the document, via the ``raw`` directive:"
-msgstr ""
+msgstr "可以通过 ``raw`` 指令将 ``\\sphinxsetup`` LaTeX宏的使用直接插入到文档正文中："
 
 #: ../../sphinx/doc/latex.rst:663
 msgid ""
@@ -900,12 +967,14 @@ msgid ""
 "will be found at top of :file:`doc/latex.rst` at the `development "
 "repository`_."
 msgstr ""
+"这是用于为PDF输出特别设计文档当前部分的技术。实际上使用的选项将在 `development repository`_ 的 "
+":file:`doc/latex.rst` 顶部找到。"
 
 #: ../../sphinx/doc/latex.rst:669
 msgid ""
 "The color used in the above example is available from having passed the "
 "``svgnames`` option to the \"xcolor\" package::"
-msgstr ""
+msgstr "上面示例中使用的颜色可通过向“xcolor”包传递 ``svgnames`` 选项获得：："
 
 #: ../../sphinx/doc/latex.rst:676
 msgid "``bookmarksdepth``"
@@ -918,6 +987,7 @@ msgid ""
 "``subsubsection``, i.e. without backslash). For details, refer to the "
 "``hyperref`` LaTeX docs."
 msgstr ""
+"控制PDF中可折叠书签面板的深度。可以是数字（例如 ``3``）或LaTeX分节名称（例如 ``subsubsection``，即没有反斜杠）。"
 
 #: ../../sphinx/doc/latex.rst:682
 msgid "Default: ``5``"
@@ -932,7 +1002,8 @@ msgid ""
 "The dimensions of the horizontal (resp. vertical) margins, passed as "
 "``hmargin`` (resp. ``vmargin``) option to the ``geometry`` package. "
 "Example::"
-msgstr "水平方向的尺寸（分别为。垂直）页边距，作为“hmargin”传递（resp。``“geometry”包的vmargin``）选项。例子：："
+msgstr ""
+"水平（或垂直）方向的尺寸页边距，作为 ``hmargin`` 传递（或 ``vmargin``）给 ``geometry`` 包的选项。例子::"
 
 #: ../../sphinx/doc/latex.rst:695
 msgid ""
@@ -942,7 +1013,8 @@ msgid ""
 " height set to an integer multiple of the baselineskip, with the closest fit"
 " for the margins."
 msgstr ""
-"日语文档目前只接受这些参数的一维格式。然后向“geometry”包传递适当的选项，使文本宽度设置为*zenkaku*宽度的精确倍数，文本高度设置为基准线的整数倍，并与边距最接近。"
+"日语文档目前只接受这些参数的一维格式。然后向 ``geometry`` 包传递适当的选项，使文本宽度设置为 *zenkaku* "
+"宽度的精确倍数，文本高度设置为基准线的整数倍，并与边距最接近。"
 
 #: ../../sphinx/doc/latex.rst:701
 msgid "Default: ``1in`` (equivalent to ``{1in,1in}``)"
@@ -967,6 +1039,7 @@ msgid ""
 "the value is modified to be the closest integer multiple of the *zenkaku* "
 "width."
 msgstr ""
+":code-tex:`\\\\marginparwidth` LaTeX 维度。对于日语文档，该值被修改为 *zenkaku* 宽度的最接近整数倍。"
 
 #: ../../sphinx/doc/latex.rst:719
 msgid "Default: ``0.5in``"
@@ -974,7 +1047,7 @@ msgstr "默认值: ``0.5in``"
 
 #: ../../sphinx/doc/latex.rst:723
 msgid "``mathnumsep``"
-msgstr ""
+msgstr "``mathnumsep``"
 
 #: ../../sphinx/doc/latex.rst:724
 msgid ""
@@ -982,6 +1055,8 @@ msgid ""
 ":confval:`math_numsep` (which itself defaults to ``'.'``).  Use it if a "
 "different setting is needed for LaTeX output."
 msgstr ""
+"这默认为 :confval:`math_numsep` 设置的字符串（不带引号！）（它本身默认为 "
+"``'.'``）。如果LaTeX输出需要不同的设置，请使用它。"
 
 #: ../../sphinx/doc/latex.rst:730
 msgid "``verbatimwithframe``"
@@ -993,6 +1068,8 @@ msgid ""
 "framed. Setting it to ``false`` does not deactivate use of package "
 "\"framed\", because it is still in use for the optional background color."
 msgstr ""
+"布尔值指定是否对 :rst:dir:`code-block`\\ s 和文字包含进行框架设置。将其设置为 ``false`` "
+"不会停用“framed”包的使用，因为它仍然用于可选的背景颜色。"
 
 #: ../../sphinx/doc/latex.rst:735
 msgid "Default: ``true``."
@@ -1016,6 +1093,7 @@ msgid ""
 "string has no break points, it is moved to next line. If its length is "
 "longer than the line width it will overflow."
 msgstr ""
+"如果为 ``true``，则换行可能发生在空格处（换行前的最后一个空格将使用特殊符号呈现），以及ASCII标点符号处（即不在字母或数字处）。"
 
 #: ../../sphinx/doc/latex.rst:747 ../../sphinx/doc/latex.rst:808
 #: ../../sphinx/doc/latex.rst:826 ../../sphinx/doc/latex.rst:838
@@ -1030,7 +1108,7 @@ msgstr "``verbatimforcewraps``"
 msgid ""
 "Boolean to specify if long lines in :rst:dir:`code-block`\\ 's contents "
 "should be forcefully wrapped to never overflow due to long strings."
-msgstr ""
+msgstr "布尔值指定是否应强制换行 :rst:dir:`code-block`\\ 的内容中的长行，以防止由于长字符串而溢出。"
 
 #: ../../sphinx/doc/latex.rst:757
 msgid ""
@@ -1038,6 +1116,7 @@ msgid ""
 "``texcomments`` or similar options which allow additional (arbitrary) LaTeX "
 "mark-up."
 msgstr ""
+"假设 Pygments_ LaTeXFormatter没有使用其 ``texcomments`` 或类似选项，这些选项允许额外的（任意）LaTeX标记。"
 
 #: ../../sphinx/doc/latex.rst:761
 msgid ""
@@ -1045,6 +1124,8 @@ msgid ""
 "default LaTeX handling of Unicode code points, i.e. ``utf8`` not ``utf8x`` "
 "is allowed."
 msgstr ""
+"此外，在 :confval:`latex_engine` 设置为 ``'pdflatex'`` "
+"的情况下，仅允许使用默认的LaTeX处理Unicode代码点，即 ``utf8`` 而不是 ``utf8x`` 。"
 
 #: ../../sphinx/doc/latex.rst:767
 msgid "Default: ``false``"
@@ -1061,6 +1142,8 @@ msgid ""
 " is on, the input line will be reset using the forceful algorithm which "
 "applies breakpoints at each character."
 msgstr ""
+"一个数字。如果一个不可分割的长字符串的长度大于总行宽加上这个数字的字符数，并且如果 ``verbatimforcewraps`` "
+"模式开启，则输入行将使用在每个字符处应用断点的强制算法进行重置。"
 
 #: ../../sphinx/doc/latex.rst:777
 msgid "Default: ``3``"
@@ -1077,6 +1160,8 @@ msgid ""
 " lacking at least that number of characters to fill the available width, "
 "then the input line will be reset using the forceful algorithm."
 msgstr ""
+"一个数字。如果 ``verbatimforcewraps`` "
+"模式应用，并且在空格和标点处应用换行后，拆分行的第一部分至少缺少该数量的字符以填充可用宽度，则输入行将使用强制算法进行重置。"
 
 #: ../../sphinx/doc/latex.rst:787
 msgid ""
@@ -1085,13 +1170,15 @@ msgid ""
 "linewidth. Set this to ``0`` to force all input lines to be hard wrapped at "
 "the current available linewidth::"
 msgstr ""
+"由于默认值设置较高，因此仅在出现溢出情况时才会触发强制算法，即存在比完整行宽更长的字符串。将其设置为 ``0`` "
+"以强制所有输入行在当前可用行宽处进行硬换行::"
 
 #: ../../sphinx/doc/latex.rst:796
 msgid ""
 "This can be done locally for a given code-block via the use of raw latex "
 "directives to insert suitable ``\\sphinxsetup`` (before and after) into the "
 "latex file."
-msgstr ""
+msgstr "这可以通过使用原始latex指令在latex文件中插入适当的 ``\\sphinxsetup`` （之前和之后）来为给定的代码块局部完成。"
 
 #: ../../sphinx/doc/latex.rst:800
 msgid "Default: ``100``"
@@ -1105,11 +1192,11 @@ msgstr "``verbatimhintsturnover``"
 msgid ""
 "Boolean to specify if code-blocks display \"continued on next page\" and "
 "\"continued from previous page\" hints in case of page breaks."
-msgstr ""
+msgstr "布尔值指定代码块在分页时是否显示“继续下一页”和“从上一页继续”提示。"
 
 #: ../../sphinx/doc/latex.rst:811
 msgid "the default changed from ``false`` to ``true``."
-msgstr "默认值从“false”更改为“true”。"
+msgstr "默认值从 ``false`` 更改为 ``true``。"
 
 #: ../../sphinx/doc/latex.rst:814
 msgid "``verbatimcontinuedalign``, ``verbatimcontinuesalign``"
@@ -1119,7 +1206,7 @@ msgstr "``verbatimcontinuedalign``, ``verbatimcontinuesalign``"
 msgid ""
 "Horizontal position relative to the framed contents: either ``l`` (left "
 "aligned), ``r`` (right aligned) or ``c`` (centered)."
-msgstr "相对于框架内容的水平位置：“l”（左对齐）、“r”（右对齐）或“c”（居中）。"
+msgstr "相对于框架内容的水平位置： ``l`` （左对齐）、``r`` （右对齐）或 ``c`` （居中）。"
 
 #: ../../sphinx/doc/latex.rst:818
 msgid "Default: ``r``"
@@ -1180,18 +1267,18 @@ msgstr "``verbatimcontinued``"
 msgid ""
 "A LaTeX macro inserted at start of continuation code lines. Its "
 "(complicated...) default typesets a small red hook pointing to the right:"
-msgstr ""
+msgstr "在续行代码行的开头插入的LaTeX宏。它的（复杂的...）默认值会打印一个指向右侧的小红钩："
 
 #: ../../sphinx/doc/latex.rst:860
 msgid ""
 "The breaking of long code lines was added at 1.4.2. The default definition "
 "of the continuation symbol was changed at 1.5 to accommodate various font "
 "sizes (e.g. code-blocks can be in footnotes)."
-msgstr ""
+msgstr "长代码行的断开在1.4.2中添加。续行符号的默认定义在1.5中更改，以适应各种字体大小（例如，代码块可以在脚注中）。"
 
 #: ../../sphinx/doc/latex.rst:867
 msgid "Values for color keys must either:"
-msgstr ""
+msgstr "颜色keys的值必须是："
 
 #: ../../sphinx/doc/latex.rst:869
 msgid ""
@@ -1199,6 +1286,9 @@ msgid ""
 "something such as ``VerbatimColor={rgb}{0.2,0.3,0.5}`` or "
 "``{RGB}{37,23,255}`` or ``{gray}{0.75}`` or ``{HTML}{808080}`` or ..."
 msgstr ""
+"遵守 :code-tex:`\\\\definecolor` LaTeX命令的语法，例如类似 "
+"``VerbatimColor={rgb}{0.2,0.3,0.5}`` 或 ``{RGB}{37,23,255}`` 或 "
+"``{gray}{0.75}`` 或 ``{HTML}{808080}`` 或 ..."
 
 #: ../../sphinx/doc/latex.rst:874
 msgid ""
@@ -1210,7 +1300,7 @@ msgstr ""
 
 #: ../../sphinx/doc/latex.rst:881
 msgid "Formerly only the :code-tex:`\\\\definecolor` syntax was accepted."
-msgstr ""
+msgstr "以前只接受 :code-tex:`\\\\definecolor` 语法。"
 
 #: ../../sphinx/doc/latex.rst:884
 msgid "``TitleColor``"
@@ -1218,7 +1308,7 @@ msgstr "``TitleColor``"
 
 #: ../../sphinx/doc/latex.rst:885
 msgid "The color for titles (as configured via use of package \"titlesec\".)"
-msgstr ""
+msgstr "标题的颜色（通过使用“titlesec”包进行配置。）"
 
 #: ../../sphinx/doc/latex.rst:887
 msgid "Default: ``{rgb}{0.126,0.263,0.361}``"
@@ -1231,7 +1321,7 @@ msgstr "``InnerLinkColor``"
 #: ../../sphinx/doc/latex.rst:890
 msgid ""
 "A color passed to ``hyperref`` as value of ``linkcolor``  and ``citecolor``."
-msgstr ""
+msgstr "传递给 ``hyperref`` 作为 ``linkcolor`` 和 ``citecolor`` 的值的颜色。"
 
 #: ../../sphinx/doc/latex.rst:893
 msgid "Default: ``{rgb}{0.208,0.374,0.486}``."
@@ -1245,7 +1335,7 @@ msgstr "``OuterLinkColor``"
 msgid ""
 "A color passed to ``hyperref`` as value of ``filecolor``, ``menucolor``, and"
 " ``urlcolor``."
-msgstr ""
+msgstr "传递给 ``hyperref`` 作为 ``filecolor``、``menucolor`` 和 ``urlcolor`` 的值的颜色。"
 
 #: ../../sphinx/doc/latex.rst:899
 msgid "Default: ``{rgb}{0.216,0.439,0.388}``"
@@ -1257,15 +1347,15 @@ msgstr "``VerbatimColor``"
 
 #: ../../sphinx/doc/latex.rst:902
 msgid "The background color for :rst:dir:`code-block`\\ s."
-msgstr ""
+msgstr ":rst:dir:`code-block`\\ s 的背景颜色。"
 
 #: ../../sphinx/doc/latex.rst:904
 msgid "Default: ``{RGB}{242,242,242}`` (same as ``{gray}{0.95}``)."
-msgstr ""
+msgstr "默认值: ``{RGB}{242,242,242}`` (same as ``{gray}{0.95}``)."
 
 #: ../../sphinx/doc/latex.rst:908
 msgid "Formerly, it was ``{rgb}{1,1,1}`` (white)."
-msgstr ""
+msgstr "以前，它是 ``{rgb}{1,1,1}`` （白色）。"
 
 #: ../../sphinx/doc/latex.rst:910
 msgid "``VerbatimBorderColor``"
@@ -1281,7 +1371,7 @@ msgstr "默认：``{RGB}{32,32,32}``"
 
 #: ../../sphinx/doc/latex.rst:917
 msgid "Formerly it was ``{rgb}{0,0,0}`` (black)."
-msgstr ""
+msgstr "以前它是 ``{rgb}{0,0,0}`` （黑色）。"
 
 #: ../../sphinx/doc/latex.rst:919
 msgid "``VerbatimHighlightColor``"
@@ -1301,7 +1391,7 @@ msgstr "``TableRowColorHeader``"
 
 #: ../../sphinx/doc/latex.rst:929
 msgid "Sets the background color for (all) the header rows of tables."
-msgstr ""
+msgstr "设置表格（所有）标题行的背景颜色。"
 
 #: ../../sphinx/doc/latex.rst:931
 msgid ""
@@ -1309,6 +1399,8 @@ msgid ""
 "contains ``'colorrows'`` or if the table is assigned the ``colorrows`` "
 "class.  It is ignored for tables with ``nocolorrows`` class."
 msgstr ""
+"它只有在 :confval:`latex_table_style` 包含 ``'colorrows'`` 或表格被分配了 ``colorrows`` "
+"类时才会生效。对于具有 ``nocolorrows`` 类的表格，它将被忽略。"
 
 #: ../../sphinx/doc/latex.rst:935
 msgid ""
@@ -1318,6 +1410,9 @@ msgid ""
 "`container class <latexcontainer_>`_ and using such :code-"
 "tex:`\\\\sphinxsetup{...}`."
 msgstr ""
+"与其他 ``'sphinxsetup'`` 键一样，它也可以通过 :dudir:`raw` 指令插入的 :code-"
+"tex:`\\\\sphinxsetup{...}` LaTeX命令进行设置或修改，或者也可以从与 `container class "
+"<latexcontainer_>`_ 相关联的LaTeX环境中使用此类 :code-tex:`\\\\sphinxsetup{...}`。"
 
 #: ../../sphinx/doc/latex.rst:941
 msgid "Default: ``{gray}{0.86}``"
@@ -1327,7 +1422,7 @@ msgstr "默认：``{gray}{0.86}``"
 msgid ""
 "There is also ``TableMergeColorHeader``.  If used, sets a specific color for"
 " merged single-row cells in the header."
-msgstr ""
+msgstr "There is also ``TableMergeColorHeader``。如果使用，为标题中的合并单行单元格设置特定颜色。"
 
 #: ../../sphinx/doc/latex.rst:948
 msgid "``TableRowColorOdd``"
@@ -1340,6 +1435,8 @@ msgid ""
 ":confval:`latex_table_style` contains ``'colorrows'`` or for specific tables"
 " assigned the ``colorrows`` class."
 msgstr ""
+"设置表格中奇数行的背景颜色（行计数从第一个非标题行的 ``1`` 开始）。仅当 :confval:`latex_table_style` 包含 "
+"``'colorrows'`` 或为特定表分配了 ``colorrows`` 类时才有效。"
 
 #: ../../sphinx/doc/latex.rst:954
 msgid "Default: ``{gray}{0.92}``"
@@ -1347,7 +1444,7 @@ msgstr "默认：``{gray}{0.92}``"
 
 #: ../../sphinx/doc/latex.rst:956
 msgid "There is also ``TableMergeColorOdd``."
-msgstr ""
+msgstr "也有 ``TableMergeColorOdd``。"
 
 #: ../../sphinx/doc/latex.rst:960
 msgid "``TableRowColorEven``"
@@ -1355,7 +1452,7 @@ msgstr "``TableRowColorEven``"
 
 #: ../../sphinx/doc/latex.rst:961
 msgid "Sets the background color for even rows in tables."
-msgstr ""
+msgstr "设置表格中偶数行的背景颜色。"
 
 #: ../../sphinx/doc/latex.rst:963
 msgid "Default ``{gray}{0.98}``"
@@ -1363,7 +1460,7 @@ msgstr "默认：``{gray}{0.98}``"
 
 #: ../../sphinx/doc/latex.rst:965
 msgid "There is also ``TableMergeColorEven``."
-msgstr ""
+msgstr "也有 ``TableMergeColorEven``。"
 
 #: ../../sphinx/doc/latex.rst:969
 msgid "``verbatimsep``"
@@ -1376,11 +1473,11 @@ msgstr "代码行和框架之间的分隔。"
 #: ../../sphinx/doc/latex.rst:972
 msgid ""
 "See :ref:`additionalcss` for its alias  ``pre_padding`` and additional keys."
-msgstr ""
+msgstr "参见 :ref:`additionalcss` 了解其别名 ``pre_padding`` 和其他键。"
 
 #: ../../sphinx/doc/latex.rst:975
 msgid "Default: :code-tex:`\\\\fboxsep`"
-msgstr ""
+msgstr "默认值: :code-tex:`\\\\fboxsep`"
 
 #: ../../sphinx/doc/latex.rst:977
 msgid "``verbatimborder``"
@@ -1391,10 +1488,12 @@ msgid ""
 "The width of the frame around :rst:dir:`code-block`\\ s.  See also "
 ":ref:`additionalcss` for ``pre_border-width``."
 msgstr ""
+":rst:dir:`code-block`\\ s 周围框架的宽度。另请参阅 :ref:`additionalcss` 了解 ``pre_border-"
+"width``。"
 
 #: ../../sphinx/doc/latex.rst:981
 msgid "Default: :code-tex:`\\\\fboxrule`"
-msgstr ""
+msgstr "默认值: :code-tex:`\\\\fboxrule`"
 
 #: ../../sphinx/doc/latex.rst:985
 msgid ""
@@ -1403,6 +1502,8 @@ msgid ""
 ":ref:`additionalcss`.  The next three keys are kept as legacy interface not "
 "distinguishing between the three directives."
 msgstr ""
+"自8.1.0起，可以单独为 :dudir:`topic`、contents_ 和 :dudir:`sidebar` "
+"指令设置样式，并且它们的默认值不同。参见 :ref:`additionalcss`。接下来的三个键作为不区分这三个指令的传统接口保留。"
 
 #: ../../sphinx/doc/latex.rst:990
 msgid "``shadowsep``"
@@ -1412,7 +1513,7 @@ msgstr "``shadowsep``"
 msgid ""
 "This legacy option sets the padding (same in all directions) simultaneously "
 "for the :dudir:`topic`, contents_, and :dudir:`sidebar` directives."
-msgstr ""
+msgstr "这个传统选项同时为 :dudir:`topic`、contents_ 和 :dudir:`sidebar` 指令设置填充（所有方向相同）。"
 
 #: ../../sphinx/doc/latex.rst:994
 msgid "``shadowsize``"
@@ -1422,7 +1523,7 @@ msgstr "``shadowsize``"
 msgid ""
 "This legacy option sets the shadow width simultaneously for the "
 ":dudir:`topic`, contents_, and :dudir:`sidebar` directives."
-msgstr ""
+msgstr "这个传统选项同时为 :dudir:`topic`、contents_ 和 :dudir:`sidebar` 指令设置阴影宽度。"
 
 #: ../../sphinx/doc/latex.rst:998
 msgid "``shadowrule``"
@@ -1433,16 +1534,17 @@ msgid ""
 "This legacy option sets the border-width (same on all sides) simultaneously "
 "for the :dudir:`topic`, contents_, and :dudir:`sidebar` directives."
 msgstr ""
+"这个传统选项同时为 :dudir:`topic`、contents_ 和 :dudir:`sidebar` 指令设置边框宽度（所有边相同）。"
 
 #: ../../sphinx/doc/latex.rst:1004
 msgid ""
 "At 7.4.0 all admonitions (not only danger-type) use the possibilities which "
 "were added at 5.1.0 and 6.2.0.  All defaults have changed."
-msgstr ""
+msgstr "在7.4.0中，所有警告（不仅仅是危险类型）都使用了在5.1.0和6.2.0中添加的功能。所有默认值都已更改。"
 
 #: ../../sphinx/doc/latex.rst:1007
 msgid "``iconpackage``"
-msgstr ""
+msgstr "``iconpackage``"
 
 #: ../../sphinx/doc/latex.rst:1009
 msgid ""
@@ -1459,6 +1561,13 @@ msgid ""
 "then that LaTeX package interface (see the :ref:`additionalcss` section "
 "about this)."
 msgstr ""
+"用于在警告标题中呈现图标的LaTeX包的名称。它的默认值动态设置为 "
+"``fontawesome7``、``fontawesome6``、``fontawesome5``、``fontawesome`` 或 "
+"``none``，按优先级递减顺序，并取决于所使用的LaTeX安装中是否存在这些名称的包。每个警告图标的LaTeX代码将使用 ``\\faIcon`` "
+"命令（如果使用 ``fontawesome{5,6,7}``）和 ``\\faicon`` （如果使用 "
+"``fontawesome``）。如果未找到任何“Font Awesome”相关包（或者如果选项被强制设置为 "
+"``none``），则图标将被静默丢弃。用户可以将此选项设置为某个特定包，然后必须配置 ``div.note_title-icon`` "
+"和类似的键以使用该LaTeX包接口（请参阅关于此的 :ref:`additionalcss` 部分）。"
 
 #: ../../sphinx/doc/latex.rst:1026
 msgid "|notebdcolors|"
@@ -1467,35 +1576,35 @@ msgstr "|notebdcolors|"
 #: ../../sphinx/doc/latex.rst:1027 ../../sphinx/doc/latex.rst:1075
 #: ../../sphinx/doc/latex.rst:1084
 msgid "The color for the admonition border."
-msgstr ""
+msgstr "警告边框的颜色。"
 
 #: ../../sphinx/doc/latex.rst:1029
 msgid "Default: ``{RGB}{134,152,155}``."
-msgstr ""
+msgstr "默认值: ``{RGB}{134,152,155}``."
 
 #: ../../sphinx/doc/latex.rst:1033
 msgid "|notebgcolors|"
-msgstr ""
+msgstr "|notebgcolors|"
 
 #: ../../sphinx/doc/latex.rst:1034
 msgid "The color for the admonition background."
-msgstr ""
+msgstr "警告背景的颜色。"
 
 #: ../../sphinx/doc/latex.rst:1036 ../../sphinx/doc/latex.rst:1093
 msgid "Default: ``{RGB}{247,247,247}``."
-msgstr ""
+msgstr "默认值: ``{RGB}{247,247,247}``."
 
 #: ../../sphinx/doc/latex.rst:1042
 msgid "|notetextcolors|"
-msgstr ""
+msgstr "|notetextcolors|"
 
 #: ../../sphinx/doc/latex.rst:1043
 msgid "The color for the admonition contents."
-msgstr ""
+msgstr "警告内容的颜色。"
 
 #: ../../sphinx/doc/latex.rst:1045
 msgid "Default: unset (contents text uses ambient text color, a priori black)"
-msgstr ""
+msgstr "默认值: 未设置（内容文本使用环境文本颜色，原则上为黑色）"
 
 #: ../../sphinx/doc/latex.rst:1049
 msgid ""
@@ -1504,26 +1613,32 @@ msgid ""
 "latter will let Sphinx switch to a more complex LaTeX code, which supports "
 "the customizability described in :ref:`additionalcss`."
 msgstr ""
+"在7.0.0之前被视为实验性。这些选项具有在 :ref:`additionalcss` 中描述的别名 ``div.note_TeXcolor`` "
+"（等等）。使用后者将使Sphinx切换到更复杂的LaTeX代码，支持 :ref:`additionalcss` 中描述的可定制性。"
 
 #: ../../sphinx/doc/latex.rst:1054
 msgid "|notetexextras|"
-msgstr ""
+msgstr "|notetexextras|"
 
 #: ../../sphinx/doc/latex.rst:1055
 msgid ""
 "Some extra LaTeX code (such as :code-tex:`\\\\bfseries`  or :code-"
 "tex:`\\\\footnotesize`) to be executed at start of the contents."
 msgstr ""
+"一些额外的LaTeX代码（例如 :code-tex:`\\\\bfseries` 或 :code-"
+"tex:`\\\\footnotesize`）将在内容开始时执行。"
 
 #: ../../sphinx/doc/latex.rst:1058
 msgid "Default: empty"
-msgstr ""
+msgstr "默认值: 空"
 
 #: ../../sphinx/doc/latex.rst:1062
 msgid ""
 "To be considered experimental until 7.0.0.  These options have aliases "
 "``div.note_TeXextras`` (etc) described in :ref:`additionalcss`."
 msgstr ""
+"在7.0.0之前被视为实验性。这些选项具有在 :ref:`additionalcss` 中描述的别名 ``div.note_TeXextras`` "
+"（等等）。"
 
 #: ../../sphinx/doc/latex.rst:1065
 msgid "``noteborder``, ``hintborder``, ``importantborder``, ``tipborder``"
@@ -1533,7 +1648,7 @@ msgstr "``noteborder``, ``hintborder``, ``importantborder``, ``tipborder``"
 msgid ""
 "The width of the border.   See :ref:`additionalcss` for keys allowing to "
 "configure separately each border width."
-msgstr ""
+msgstr "边框的宽度。参见 :ref:`additionalcss` 了解允许单独配置每个边框宽度的键。"
 
 #: ../../sphinx/doc/latex.rst:1070
 msgid "Default: ``0.5pt``"
@@ -1545,7 +1660,7 @@ msgstr "|warningbdcolors|"
 
 #: ../../sphinx/doc/latex.rst:1077 ../../sphinx/doc/latex.rst:1086
 msgid "Default: ``{RGB}{148,0,0}`` except for ``error`` which uses ``red``."
-msgstr ""
+msgstr "默认值: ``{RGB}{148,0,0}``，``error`` 除外，使用 ``red``。"
 
 #: ../../sphinx/doc/latex.rst:1083
 msgid "|wgbdcolorslatex|"
@@ -1557,7 +1672,7 @@ msgstr "|warningbgcolors|"
 
 #: ../../sphinx/doc/latex.rst:1091
 msgid "The background color for the admonition background."
-msgstr ""
+msgstr "警告背景的背景颜色。"
 
 #: ../../sphinx/doc/latex.rst:1097
 msgid "|warningborders|"
@@ -1567,11 +1682,11 @@ msgstr "|warningborders|"
 msgid ""
 "The width of the admonition frame.  See :ref:`additionalcss` for keys "
 "allowing to configure separately each border width."
-msgstr ""
+msgstr "警告框架的宽度。参见 :ref:`additionalcss` 了解允许单独配置每个边框宽度的键。"
 
 #: ../../sphinx/doc/latex.rst:1102
 msgid "Default: ``1pt`` except for ``error`` which uses ``1.25pt``."
-msgstr ""
+msgstr "默认值: ``1pt``，``error`` 除外，使用 ``1.25pt``。"
 
 #: ../../sphinx/doc/latex.rst:1106
 msgid "``AtStartFootnote``"
@@ -1585,7 +1700,7 @@ msgstr "LaTeX宏插入页面底部脚注文本的开头，脚注编号之后。"
 
 #: ../../sphinx/doc/latex.rst:1110
 msgid "Default: :code-tex:`\\\\mbox{ }`"
-msgstr ""
+msgstr "默认值: :code-tex:`\\\\mbox{ }`"
 
 #: ../../sphinx/doc/latex.rst:1112
 msgid "``BeforeFootnote``"
@@ -1599,7 +1714,7 @@ msgstr "在脚注标记之前插入的乳胶宏。默认值会删除其前面可
 
 #: ../../sphinx/doc/latex.rst:1116
 msgid "Default: :code-tex:`\\\\leavevmode\\\\unskip`"
-msgstr ""
+msgstr "默认值: :code-tex:`\\\\leavevmode\\\\unskip`"
 
 #: ../../sphinx/doc/latex.rst:1120
 msgid "``HeaderFamily``"
@@ -1607,7 +1722,7 @@ msgstr "``头家``"
 
 #: ../../sphinx/doc/latex.rst:1121
 msgid "default :code-tex:`\\\\sffamily\\\\bfseries`. Sets the font used by headings."
-msgstr ""
+msgstr "默认值 :code-tex:`\\\\sffamily\\\\bfseries`。设置标题使用的字体。"
 
 #: ../../sphinx/doc/latex.rst:1156
 msgid "Additional  CSS-like ``'sphinxsetup'`` keys"
@@ -1618,6 +1733,8 @@ msgid ""
 "For :rst:dir:`code-block`, :dudir:`topic` and contents_ directive, and "
 "strong-type admonitions (:dudir:`warning`, :dudir:`error`, ...)."
 msgstr ""
+"For :rst:dir:`code-block`、:dudir:`topic` 和 contents_ "
+"指令，以及强类型警告（:dudir:`warning`、:dudir:`error`，...）。"
 
 #: ../../sphinx/doc/latex.rst:1165
 msgid ""
@@ -1628,12 +1745,16 @@ msgid ""
 "``noteBgColor`` (or ``hintBgColor``, ...) also triggers usage of "
 "``sphinxheavybox`` for :dudir:`note` (or :dudir:`hint`, ...)."
 msgstr ""
+"同样，:dudir:`note`、:dudir:`hint`、:dudir:`important` 和 :dudir:`tip` "
+"警告也可以这样设置样式。为它们使用*任何*列出的选项都将触发使用比默认使用的更复杂的LaTeX代码（``sphinxheavybox`` vs "
+"``sphinxlightbox``）。为 :dudir:`note`（或 :dudir:`hint`，...）设置新的 ``noteBgColor``"
+" （或 ``hintBgColor``，...）也会触发使用 ``sphinxheavybox``。"
 
 #: ../../sphinx/doc/latex.rst:1174
 msgid ""
 "For *all* admonition types, the default configuration does set a background "
 "color (hence the richer ``sphinxheavybox`` is always used)."
-msgstr ""
+msgstr "对于 *所有的* 警告类型，默认配置确实设置了背景颜色（因此总是使用更丰富的 ``sphinxheavybox``）。"
 
 #: ../../sphinx/doc/latex.rst:1179
 msgid ""
@@ -1643,17 +1764,19 @@ msgid ""
 "foreground and background colors for the title as well as the LaTeX code for"
 " the icon."
 msgstr ""
+"此外，所有警告标题默认都使用彩色行和图标进行样式设置，这些样式基于Sphinx自己文档在 https://www.sphinx-doc.org "
+"上的当前渲染。添加了类似CSS命名的键来设置标题的前景色和背景色以及图标的LaTeX代码。"
 
 #: ../../sphinx/doc/latex.rst:1185
 msgid ""
 "Customizability of the :rst:dir:`seealso` and :rst:dir:`todo` directives."
-msgstr ""
+msgstr "对 :rst:dir:`seealso` 和 :rst:dir:`todo` 指令的可定制性。"
 
 #: ../../sphinx/doc/latex.rst:1189
 msgid ""
 "Separate customizability and new defaults for the :dudir:`topic`, contents_,"
 " and :dudir:`sidebar` directives."
-msgstr ""
+msgstr "为 :dudir:`topic`、contents_ 和 :dudir:`sidebar` 指令提供单独的可定制性和新默认值。"
 
 #: ../../sphinx/doc/latex.rst:1193
 msgid ""
@@ -1663,12 +1786,14 @@ msgid ""
 " LaTeX command inserted via the :dudir:`raw` directive) and the CSS syntax "
 "is only imitated."
 msgstr ""
+"也许在未来，这些5.1.0（和6.2.0）新设置将可选地从某个真正的外部CSS文件中导入，但目前它们必须通过 ``'sphinxsetup'`` "
+"接口使用（或通过 :dudir:`raw` 指令插入的 :code-tex:`\\\\sphinxsetup` LaTeX命令），并且仅模仿CSS语法。"
 
 #: ../../sphinx/doc/latex.rst:1198
 msgid ""
 "Low-level LaTeX errors causing a build failure can happen if the input "
 "syntax is not respected."
-msgstr ""
+msgstr "如果不遵守输入语法，可能会发生导致构建失败的低级LaTeX错误。"
 
 #: ../../sphinx/doc/latex.rst:1201
 msgid ""
@@ -1676,22 +1801,25 @@ msgid ""
 "previously described, i.e. either in the :code-tex:`\\\\definecolor` syntax "
 "or via the :code-tex:`\\\\colorlet` syntax::"
 msgstr ""
+"特别是颜色必须像前面描述的其他与颜色相关的选项一样输入，即使用 :code-tex:`\\\\definecolor` 语法或通过 :code-"
+"tex:`\\\\colorlet` 语法::"
 
 #: ../../sphinx/doc/latex.rst:1210
 msgid "A colon in place of the equal sign will break LaTeX."
-msgstr ""
+msgstr "冒号代替等号会破坏LaTeX。"
 
 #: ../../sphinx/doc/latex.rst:1212
 msgid ""
 "``...border-width`` or ``...padding`` expect a *single* dimension: they can "
 "not be used so far with space separated dimensions."
 msgstr ""
+"``...border-width`` 或 ``...padding`` 期望一个 *单一* 维度：到目前为止，它们不能与空格分隔的维度一起使用。"
 
 #: ../../sphinx/doc/latex.rst:1215
 msgid ""
 "``...top-right-radius`` et al. values may be either a single or *two* space "
 "separated dimensions."
-msgstr ""
+msgstr "``...top-right-radius`` 等值可以是单个或 *两个* 以空格分隔的维度。"
 
 #: ../../sphinx/doc/latex.rst:1218
 msgid ""
@@ -1699,6 +1827,8 @@ msgid ""
 "``in``.  The ``px`` unit is recognized by ``pdflatex`` and ``lualatex`` but "
 "not by ``xelatex`` or ``platex``."
 msgstr ""
+"尺寸规格必须使用TeX单位，例如 ``pt`` 或 ``cm`` 或 ``in``。 ``px`` 单位被 ``pdflatex`` 和 "
+"``lualatex`` 识别，但不被 ``xelatex`` 或 ``platex`` 识别。"
 
 #: ../../sphinx/doc/latex.rst:1222
 msgid ""
@@ -1710,6 +1840,9 @@ msgid ""
 "raw Python string for the value of the :ref:`'sphinxsetup' "
 "<latexsphinxsetup>` key."
 msgstr ""
+"允许将此类规格称为“尺寸表达式”，例如 :code-tex:`\\\\fboxsep+2pt` 或 :code-"
+"tex:`0.5\\\\baselineskip` 是有效的输入。表达式将在排版时进行评估。但是，如果在这些示例中使用TeX控制序列来加倍反斜杠或为 "
+":ref:`'sphinxsetup' <latexsphinxsetup>` 键的值使用原始Python字符串，请小心。"
 
 #: ../../sphinx/doc/latex.rst:1230
 msgid ""
@@ -1719,203 +1852,207 @@ msgid ""
 "LaTeX.  You must use something such as ``{\\fboxsep} \\fboxsep``.  Or use "
 "directly ``3pt 3pt`` which is a priori equivalent and simpler."
 msgstr ""
+"通常，避免在键值中插入不必要的空格：特别是对于半径，输入 ``2 pt 3pt`` 会破坏LaTeX。还要注意，:code-"
+"tex:`\\\\fboxsep \\\\fboxsep` 在LaTeX中不会被视为以空格分隔。您必须使用类似 ``{\\fboxsep} "
+"\\fboxsep`` 的东西。或者直接使用 ``3pt 3pt``，这在原则上是等效且更简单的。"
 
 #: ../../sphinx/doc/latex.rst:1236
 msgid ""
 "The options are all named in a similar pattern which depends on a "
 "``prefix``, which is then followed by an underscore, then the property name."
-msgstr ""
+msgstr "所有选项都以类似的模式命名，该模式取决于 ``prefix``，然后跟一个下划线，然后是属性名称。"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "Directive"
-msgstr ""
+msgstr "指令"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "Option prefix"
-msgstr ""
+msgstr "选项前缀"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "LaTeX environment"
-msgstr ""
+msgstr "LaTeX环境"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":rst:dir:`code-block`"
-msgstr ""
+msgstr ":rst:dir:`code-block`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``pre``"
-msgstr ""
+msgstr "``pre``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxVerbatim``"
-msgstr ""
+msgstr "``sphinxVerbatim``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":rst:dir:`literalinclude`"
-msgstr ""
+msgstr ":rst:dir:`literalinclude`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":dudir:`topic`"
-msgstr ""
+msgstr ":dudir:`topic`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.topic``"
-msgstr ""
+msgstr "``div.topic``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxtopic``"
-msgstr ""
+msgstr "``sphinxtopic``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "contents_"
-msgstr ""
+msgstr "contents_"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.contents``"
-msgstr ""
+msgstr "``div.contents``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxcontents``"
-msgstr ""
+msgstr "``sphinxcontents``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":dudir:`sidebar`"
-msgstr ""
+msgstr ":dudir:`sidebar`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.sidebar``"
-msgstr ""
+msgstr "``div.sidebar``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxsidebar``"
-msgstr ""
+msgstr "``sphinxsidebar``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":dudir:`note`"
-msgstr ""
+msgstr ":dudir:`note`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.note``"
-msgstr ""
+msgstr "``div.note``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxnote``"
-msgstr ""
+msgstr "``sphinxnote``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":dudir:`warning`"
-msgstr ""
+msgstr ":dudir:`warning`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.warning``"
-msgstr ""
+msgstr "``div.warning``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxwarning``"
-msgstr ""
+msgstr "``sphinxwarning``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "further admonition types ``<type>``"
-msgstr ""
+msgstr "其他警告类型 ``<type>``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.<type>``"
-msgstr ""
+msgstr "``div.<type>``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinx<type>``"
-msgstr ""
+msgstr "``sphinx<type>``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":rst:dir:`seealso`"
-msgstr ""
+msgstr ":rst:dir:`seealso`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.seealso``"
-msgstr ""
+msgstr "``div.seealso``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxseealso``"
-msgstr ""
+msgstr "``sphinxseealso``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid ":rst:dir:`todo`"
-msgstr ""
+msgstr ":rst:dir:`todo`"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``div.todo``"
-msgstr ""
+msgstr "``div.todo``"
 
 #: ../../sphinx/doc/latex.rst:1
 msgid "``sphinxtodo``"
-msgstr ""
+msgstr "``sphinxtodo``"
 
 #: ../../sphinx/doc/latex.rst:1253
 msgid ""
 "Here are now these options as well as their common defaults. Replace below "
 "``<prefix>`` by the actual prefix as explained above.  Don't forget the "
 "underscore separating the prefix from the property names."
-msgstr ""
+msgstr "以下是这些选项及其常见默认值。将下面的 ``<prefix>`` 替换为上面解释的实际前缀。不要忘记下划线将前缀与属性名称分开。"
 
 #: ../../sphinx/doc/latex.rst:1257
 msgid "``<prefix>_border-top-width``,"
-msgstr ""
+msgstr "``<prefix>_border-top-width``，"
 
 #: ../../sphinx/doc/latex.rst:1258
 msgid "``<prefix>_border-right-width``,"
-msgstr ""
+msgstr "``<prefix>_border-right-width``，"
 
 #: ../../sphinx/doc/latex.rst:1259
 msgid "``<prefix>_border-bottom-width``,"
-msgstr ""
+msgstr "``<prefix>_border-bottom-width``，"
 
 #: ../../sphinx/doc/latex.rst:1260
 msgid "``<prefix>_border-left-width``,"
-msgstr ""
+msgstr "``<prefix>_border-left-width``，"
 
 #: ../../sphinx/doc/latex.rst:1261
 msgid ""
 "``<prefix>_border-width``.  The latter can (currently) be only a *single* "
 "dimension which then sets all four others."
-msgstr ""
+msgstr "``<prefix>_border-width``。后者目前只能是一个 *单一* 维度，然后设置其他四个。"
 
 #: ../../sphinx/doc/latex.rst:1264
 msgid "The default is that all those dimensions are equal.  They are set to:"
-msgstr ""
+msgstr "默认情况下，所有这些尺寸都是相等的。它们被设置为："
 
 #: ../../sphinx/doc/latex.rst:1266
 msgid "``0.4pt`` for :rst:dir:`code-block`,"
-msgstr ""
+msgstr ":rst:dir:`code-block` 为 ``0.4pt``，"
 
 #: ../../sphinx/doc/latex.rst:1267
 msgid "``0.5pt`` for :dudir:`topic` and contents_ directive,"
-msgstr ""
+msgstr "``0.5pt`` 用于 :dudir:`topic` 和 contents_ 指令，"
 
 #: ../../sphinx/doc/latex.rst:1268
 msgid "``1pt`` for :dudir:`sidebar` directive,"
-msgstr ""
+msgstr "``1pt`` 用于 :dudir:`sidebar` 指令，"
 
 #: ../../sphinx/doc/latex.rst:1269
 msgid "``0.5pt`` for :dudir:`note` and other \"light\" admonitions,"
-msgstr ""
+msgstr "``0.5pt`` 用于 :dudir:`note` 和其他“轻型”警告，"
 
 #: ../../sphinx/doc/latex.rst:1270
 msgid "``0.5pt`` for :rst:dir:`seealso` and :rst:dir:`todo` directives,"
-msgstr ""
+msgstr "``0.5pt`` 用于 :rst:dir:`seealso` 和 :rst:dir:`todo` 指令，"
 
 #: ../../sphinx/doc/latex.rst:1271
 msgid ""
 "``1pt`` for  :dudir:`warning` and other \"strong\" admonitions except "
 ":dudir:`error` which uses ``1.25pt``."
 msgstr ""
+"``1pt`` 用于 :dudir:`warning` 和其他“强力”警告，除了使用 ``1.25pt`` 的 :dudir:`error`。"
 
 #: ../../sphinx/doc/latex.rst:1274
 msgid "Changed defaults for :dudir:`topic` and :dudir:`error`."
-msgstr ""
+msgstr "更改了 :dudir:`topic` 和 :dudir:`error` 的默认值。"
 
 #: ../../sphinx/doc/latex.rst:1277
 msgid "Distinct from :dudir:`topic` defaults for :dudir:`sidebar`."
-msgstr ""
+msgstr "与 :dudir:`topic` 的默认值不同，适用于 :dudir:`sidebar`。"
 
 #: ../../sphinx/doc/latex.rst:1280
 msgid ""
@@ -1924,10 +2061,13 @@ msgid ""
 "``slice`` for :rst:dir:`code-block` (i.e. for ``<prefix>=pre``) since 6.0.0."
 "  For other directives the default is ``clone``."
 msgstr ""
+"``<prefix>_box-decoration-break`` 可以设置为 ``clone`` 或 "
+"``slice``，并配置分页符处的行为。自6.0.0以来，对于 :rst:dir:`code-block` （即 "
+"``<prefix>=pre``）默认值为 ``slice``。对于其他指令，默认值为 ``clone``。"
 
 #: ../../sphinx/doc/latex.rst:1284
 msgid "``<prefix>_padding-top``,"
-msgstr ""
+msgstr "``<prefix>_padding-top``，"
 
 #: ../../sphinx/doc/latex.rst:1285
 msgid "``<prefix>_padding-right``,"

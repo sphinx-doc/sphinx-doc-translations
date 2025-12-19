@@ -6,15 +6,16 @@
 # Translators:
 # Melia Lee <lixiuyu97@163.com>, 2022
 # Lu <lu2github@gmail.com>, 2023
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 8.3.0\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-24 00:54+0000\n"
+"POT-Creation-Date: 2025-12-19 06:40+0000\n"
 "PO-Revision-Date: 2022-03-06 06:35+0000\n"
-"Last-Translator: Lu <lu2github@gmail.com>, 2023\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:2
 msgid "Describing code in Sphinx"
-msgstr ""
+msgstr "在Sphinx中描述代码"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:4
 msgid ""
@@ -32,6 +33,8 @@ msgid ""
 "read how to write narrative or prose documentation in Sphinx. In this "
 "section you will describe code objects instead."
 msgstr ""
+"在教程的 :doc:`前几节 </tutorial/index>` "
+"中，您可以阅读如何在Sphinx中编写叙述性或散文式文档。在本节中，您将改为描述代码对象。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:8
 msgid ""
@@ -42,6 +45,9 @@ msgid ""
 "Python domain, but all the concepts seen in this section apply for the other"
 " domains as well."
 msgstr ""
+"Sphinx支持用多种语言描述代码对象，分别是Python、C、C++、JavaScript和reStructuredText。每种语言都可以使用一系列由"
+" :doc:`域 </usage/domains/index>` "
+"组织的指令和角色来进行描述。在本教程的其余部分，您将使用Python域，但本节中看到的所有概念也适用于其他域。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:18
 msgid "Python"
@@ -49,7 +55,7 @@ msgstr "Python"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:21
 msgid "Documenting Python objects"
-msgstr ""
+msgstr "描述Python对象"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:23
 msgid ""
@@ -58,6 +64,8 @@ msgid ""
 "example, you can use the :rst:dir:`py:function` directive to document a "
 "Python function, as follows:"
 msgstr ""
+"Sphinx提供了多种角色和指令来描述Python对象，所有这些都集中在 :doc:`Python域 </usage/domains/python>` "
+"中。例如，您可以使用 :rst:dir:`py:function` 指令来描述Python函数，如下所示："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:28
 #: ../../sphinx/doc/tutorial/describing-code.rst:81
@@ -69,25 +77,25 @@ msgstr "docs/source/usage.rst"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:46
 msgid "Which will render like this:"
-msgstr ""
+msgstr "将这样呈现："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:48
 msgid "HTML result of documenting a Python function in Sphinx"
-msgstr ""
+msgstr "在Sphinx中描述Python函数的HTML结果"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:53
 msgid "The rendered result of documenting a Python function in Sphinx"
-msgstr ""
+msgstr "在Sphinx中描述Python函数的渲染结果"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:55
 msgid "Notice several things:"
-msgstr ""
+msgstr "请注意以下几点："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:57
 msgid ""
 "Sphinx parsed the argument of the ``.. py:function`` directive and "
 "highlighted the module, the function name, and the parameters appropriately."
-msgstr ""
+msgstr "Sphinx解析了 ``.. py:function`` 指令的参数，并适当地突出显示了模块、函数名称和参数。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:59
 msgid ""
@@ -95,6 +103,8 @@ msgid ""
 "well as an :ref:`info field list <info-field-lists>` containing the function"
 " parameter, its expected type, the return value, and the return type."
 msgstr ""
+"Sphinx指令内容包括函数的一行描述，以及一个 :ref:`信息字段列表 <info-field-"
+"lists>`，其中包含函数参数、其预期类型、返回值和返回类型。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:65
 msgid ""
@@ -105,6 +115,9 @@ msgid ""
 "the file. For example, if you set it to ``py`` (the default), you can write "
 "``.. function::`` directly."
 msgstr ""
+"``py:`` 前缀指定了 :term:`域 <domain>`。您可以配置默认域，以便可以省略前缀，无论是通过 "
+":confval:`primary_domain` 配置全局设置，还是使用 :rst:dir:`default-domain` "
+"指令从调用点更改它直到文件末尾。例如，如果将其设置为 ``py`` （默认值），则可以直接编写 ``.. function::``。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:74
 msgid "Cross-referencing Python objects"
@@ -117,6 +130,8 @@ msgid ""
 " role <python-xref-roles>`. For the case of functions, you can use "
 ":rst:role:`py:func` for that, as follows:"
 msgstr ""
+"默认情况下，这些指令中的大多数会生成可以通过使用 :ref:`相应的角色 <python-xref-roles>` "
+"从文档的任何部分进行交叉引用的实体。对于函数的情况，您可以使用 :rst:role:`py:func`，如下所示："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:88
 msgid ""
@@ -126,33 +141,35 @@ msgid ""
 "exception raised by the function using the :rst:dir:`py:exception` "
 "directive:"
 msgstr ""
+"Sphinx在生成代码文档时，只需使用对象的名称即可自动生成交叉引用，而无需您显式地使用角色。例如，您可以使用 "
+":rst:dir:`py:exception` 指令来描述函数引发的自定义异常："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:101
 msgid "Then, add this exception to the original description of the function:"
-msgstr ""
+msgstr "然后，将此异常添加到函数的原始描述中："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:117
 msgid "And finally, this is how the result would look:"
-msgstr ""
+msgstr "最后，结果将如下所示："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:119
 msgid ""
 "HTML result of documenting a Python function in Sphinx\n"
 "with cross-references"
-msgstr ""
+msgstr "在Sphinx中描述Python函数的HTML结果，带有交叉引用"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:125
 msgid ""
 "HTML result of documenting a Python function in Sphinx with cross-references"
-msgstr ""
+msgstr "在Sphinx中描述Python函数的HTML结果，带有交叉引用"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:127
 msgid "Beautiful, isn't it?"
-msgstr ""
+msgstr "美观，不是吗？"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:130
 msgid "Including doctests in your documentation"
-msgstr ""
+msgstr "在文档中包含doctest"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:132
 msgid ""
@@ -162,6 +179,8 @@ msgid ""
 "in the documentation, called *doctests*, that are executed when the "
 "documentation is built."
 msgstr ""
+"既然您现在正在描述Python库中的代码，那么将文档和代码保持尽可能同步将变得非常有用。Sphinx中实现这一点的方法之一是将称为 *doctest* "
+"的代码片段包含在文档中，这些代码片段在构建文档时会被执行。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:138
 msgid ""
@@ -169,6 +188,7 @@ msgid ""
 "Sphinx will need to be able to import the code. To achieve that, write this "
 "at the beginning of ``conf.py``:"
 msgstr ""
+"为了演示本教程中介绍的doctest和其他Sphinx功能，Sphinx需要能够导入代码。为此，请在 ``conf.py`` 的开头编写以下内容："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:142
 #: ../../sphinx/doc/tutorial/describing-code.rst:162
@@ -181,16 +201,20 @@ msgid ""
 "``pyproject.toml`` file and make the code installable, so it behaves like "
 "any other Python library. However, the ``sys.path`` approach is simpler."
 msgstr ""
+"更改 :py:data:`sys.path` 变量的另一种方法是创建一个 ``pyproject.toml`` "
+"文件并使代码可安装，这样它就像任何其他Python库一样工作。但是，``sys.path`` 方法更简单。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:159
 msgid ""
 "Then, before adding doctests to your documentation, enable the :doc:`doctest"
 " </usage/extensions/doctest>` extension in ``conf.py``:"
 msgstr ""
+"然后，在将doctest添加到文档之前，在 ``conf.py`` 中启用 :doc:`doctest "
+"</usage/extensions/doctest>` 扩展："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:171
 msgid "Next, write a doctest block as follows:"
-msgstr ""
+msgstr "接下来，编写如下的doctest块："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:180
 msgid ""
@@ -199,6 +223,8 @@ msgid ""
 "instruction. This way, Sphinx can check whether the actual output matches "
 "the expected one."
 msgstr ""
+"Doctest包括要运行的Python指令，前面加上 "
+"``>>>``，即标准的Python解释器提示符，以及每条指令的预期输出。这样，Sphinx就可以检查实际输出是否与预期输出匹配。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:185
 msgid ""
@@ -206,6 +232,8 @@ msgid ""
 "above), let's write the return value incorrectly first. Therefore, add a "
 "function ``get_random_ingredients`` like this:"
 msgstr ""
+"为了观察doctest失败的样子（而不是像上面那样的代码错误），让我们先错误地编写返回值。因此，添加一个像这样的函数 "
+"``get_random_ingredients``："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:189
 #: ../../sphinx/doc/tutorial/describing-code.rst:224
@@ -217,17 +245,17 @@ msgid ""
 "You can now run ``make doctest`` to execute the doctests of your "
 "documentation. Initially this will display an error, since the actual code "
 "does not behave as specified:"
-msgstr ""
+msgstr "您现在可以运行 ``make doctest`` 来执行文档的doctest。最初这将显示一个错误，因为实际代码的行为与指定的不符："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:221
 msgid ""
 "As you can see, doctest reports the expected and the actual results, for "
 "easy examination. It is now time to fix the function:"
-msgstr ""
+msgstr "正如您所看到的，doctest报告了预期结果和实际结果，便于检查。现在是修复函数的时候了："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:231
 msgid "And finally, ``make doctest`` reports success!"
-msgstr ""
+msgstr "最后，``make doctest`` 报告成功！"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:233
 msgid ""
@@ -235,14 +263,16 @@ msgid ""
 "the next section, you will see :doc:`how to automate the process "
 "</tutorial/automatic-doc-generation>`."
 msgstr ""
+"不过，对于大型项目，这种手动方法可能会变得有些乏味。在下一节中，您将看到 :doc:`如何自动化该过程 </tutorial/automatic-"
+"doc-generation>`。"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:238
 msgid "Other languages (C, C++, others)"
-msgstr ""
+msgstr "其他语言（C、C++、其他）"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:241
 msgid "Documenting and cross-referencing objects"
-msgstr ""
+msgstr "描述和交叉引用对象"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:243
 msgid ""
@@ -251,28 +281,29 @@ msgid ""
 "C++, JavaScript, and reStructuredText. Third-party extensions may define "
 "domains for more languages, such as"
 msgstr ""
+"Sphinx还支持描述和交叉引用用其他编程语言编写的对象。还有四个额外的内置域：C、C++、JavaScript和reStructuredText。第三方扩展可以为更多语言定义域，例如"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:248
 msgid "`Fortran <https://sphinx-fortran.readthedocs.io>`_,"
-msgstr ""
+msgstr "`Fortran <https://sphinx-fortran.readthedocs.io>`_,"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:249
 msgid "`Julia <https://bastikr.github.io/sphinx-julia>`_, or"
-msgstr ""
+msgstr "`Julia <https://bastikr.github.io/sphinx-julia>`_, or"
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:250
 msgid "`PHP <https://github.com/markstory/sphinxcontrib-phpdomain>`_."
-msgstr ""
+msgstr "`PHP <https://github.com/markstory/sphinxcontrib-phpdomain>`_."
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:252
 msgid ""
 "For example, to document a C++ type definition, you would use the built-in "
 ":rst:dir:`cpp:type` directive, as follows:"
-msgstr ""
+msgstr "例如，要描述C++类型定义，您可以使用内置的 :rst:dir:`cpp:type` 指令，如下所示："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:261
 msgid "Which would give the following result:"
-msgstr ""
+msgstr "将产生以下结果："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:265
 msgid "A typedef-like declaration of a type."
@@ -284,9 +315,11 @@ msgid ""
 " using the corresponding role. For example, to reference the previous type "
 "definition, you can use the :rst:role:`cpp:type` role as follows:"
 msgstr ""
+"然后，所有这些指令都会生成可以使用相应角色进行交叉引用的引用。例如，要引用前面的类型定义，您可以使用 :rst:role:`cpp:type` "
+"角色，如下所示："
 
 #: ../../sphinx/doc/tutorial/describing-code.rst:276
 msgid ""
 "Which would produce a hyperlink to the previous definition: "
 ":cpp:type:`CustomList`."
-msgstr ""
+msgstr "这将生成一个指向前面定义的超链接： :cpp:type:`CustomList`。"

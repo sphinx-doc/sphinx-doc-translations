@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/71cc5d847\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-11 12:59+0000\n"
+"POT-Creation-Date: 2025-12-19 12:54+0000\n"
 "PO-Revision-Date: 2018-06-26 15:58+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -126,7 +126,7 @@ msgstr "选项"
 msgid ""
 "Assign `class attributes`_ to the table. This is a :dudir:`common option "
 "<common-options>`."
-msgstr ""
+msgstr "将 `class attributes`_ 分配给表。这是一个 :dudir:`常用选项 <common-options>` 。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:81
 msgid ""
@@ -193,7 +193,7 @@ msgstr "它将在Sphinx的未来版本中被弃用和移除。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:134
 msgid "Specify a custom template for rendering the summary. For example, ::"
-msgstr ""
+msgstr "指定用于渲染摘要的自定义模板。例如："
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:142
 msgid ""
@@ -207,7 +207,7 @@ msgstr ""
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:150
 msgid ""
 "Generate documents for modules and sub-packages recursively. For example, ::"
-msgstr ""
+msgstr "递归地为模块和子包生成文档。例如："
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:162
 msgid ":program:`sphinx-autogen` -- generate autodoc stub pages"
@@ -322,12 +322,16 @@ msgid ""
 "If ``autosummary_ignore_module_all`` is ``False``, this configuration value "
 "is ignored for members listed in ``__all__``."
 msgstr ""
+"如果 ``autosummary_ignore_module_all`` 为 ``False``，则对于 ``__all__`` "
+"中列出的成员，将忽略此配置值。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:260
 msgid ""
 "If ``False`` and a module has the ``__all__`` attribute set, autosummary "
 "documents every member listed in ``__all__`` and no others."
 msgstr ""
+"如果为 ``False`` 并且模块设置了 ``__all__`` 属性，autosummary 将记录 ``__all__`` "
+"中列出的每个成员，而不记录其他成员。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:263
 msgid ""
@@ -337,6 +341,10 @@ msgid ""
 "``autosummary_ignore_module_all`` to False and "
 "``autosummary_imported_members`` to True."
 msgstr ""
+"请注意，如果导入的成员列在 ``__all__`` 中，则无论 ``autosummary_imported_members`` "
+"的值如何，它都将被记录。要匹配 ``from module import *`` 的行为，将 "
+"``autosummary_ignore_module_all`` 设置为 False 并将 "
+"``autosummary_imported_members`` 设置为 True 。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:275
 msgid ""
@@ -396,7 +404,7 @@ msgstr " :file:`autosummary/method.rst`--类方法模板"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:308
 msgid "The following variables are available in the templates:"
-msgstr ""
+msgstr "模板中可用以下变量："
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:314
 msgid "Name of the documented object, excluding the module and class parts."
@@ -417,6 +425,9 @@ msgid ""
 "``\"object\"``, ``\"exception\"``, ``\"newvarattribute\"``, "
 "``\"newtypedata\"``, ``\"property\"``."
 msgstr ""
+"记录对象的类型之一 "
+"``\"module\"``、``\"function\"``、``\"class\"``、``\"method\"``、``\"attribute\"``、``\"data\"``、``\"object\"``、``\"exception\"``、``\"newvarattribute\"``、``\"newtypedata\"``、``\"property\"``"
+" 。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:332
 msgid "Name of the module the documented object belongs to."
@@ -451,7 +462,7 @@ msgid ""
 "List containing names of \"public\" functions in the module.  Here, "
 "\"public\" means that the name does not start with an underscore. Only "
 "available for modules."
-msgstr ""
+msgstr "包含模块中“public”函数名称的列表。在这里，“public”意味着名称不以下划线开头。仅适用于模块。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:364
 msgid ""
@@ -518,7 +529,7 @@ msgstr "您可以使用 :rst:dir:`autosummary` 指令。存根页也是基于这
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:417
 msgid "Autolink role"
-msgstr ""
+msgstr "Autolink角色"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:421
 msgid ""
@@ -526,6 +537,7 @@ msgid ""
 " can be resolved to a Python object, and otherwise it becomes simple "
 "emphasis."
 msgstr ""
+"The ``:autolink:`` 角色在引用的 *name* 可以解析为Python对象时，充当 ``:py:obj:``，否则它变成简单的强调。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:424
 msgid ""
@@ -535,6 +547,8 @@ msgid ""
 "for example due to a spelling mistake or renaming. This is sometimes "
 "unwanted behaviour."
 msgstr ""
+"存在一些已知的设计缺陷。例如，在多个对象具有相同名称的情况下，:rst:role:`!autolink` "
+"可能解析为错误的对象。如果找不到引用的对象（例如由于拼写错误或重命名），它将静默失败。这有时是不希望的行为。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:431
 msgid ""
@@ -542,6 +556,8 @@ msgid ""
 " for 'smart' referencing using the default interpreted text role "
 "(```content```)."
 msgstr ""
+"一些用户选择将他们的 :confval:`default_role` 配置为 ``autolink`` "
+"，以便使用默认的解释文本角色（```content```）进行“智能”引用。"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:436
 msgid ":rst:role:`any`"
@@ -549,4 +565,4 @@ msgstr ":rst:role:`any`"
 
 #: ../../sphinx/doc/usage/extensions/autosummary.rst:438
 msgid ":rst:role:`py:obj`"
-msgstr ""
+msgstr ":rst:role:`py:obj`"

@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/71cc5d847\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-11 02:06+0000\n"
+"POT-Creation-Date: 2025-12-19 12:54+0000\n"
 "PO-Revision-Date: 2022-03-06 06:36+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -24,11 +24,11 @@ msgstr ""
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:2
 msgid "Narrative documentation in Sphinx"
-msgstr ""
+msgstr "Sphinx叙述性文档"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:5
 msgid "Structuring your documentation across multiple pages"
-msgstr ""
+msgstr "跨多个页面构建文档结构"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:7
 msgid ""
@@ -38,12 +38,15 @@ msgid ""
 "you to assemble a project from different files, which is helpful when the "
 "project grows."
 msgstr ""
+"由 ``sphinx-quickstart`` 创建的 ``index.rst`` 文件是 :term:`根文档 <root "
+"document>`，其主要功能是作为欢迎页面并包含“目录树”（或 "
+"*toctree*）的根。Sphinx允许您从不同的文件组装项目，这在项目增长时非常有用。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:13
 msgid ""
 "As an example, create a new file ``docs/source/usage.rst`` (next to "
 "``index.rst``) with these contents:"
-msgstr ""
+msgstr "作为示例，创建一个新文件 ``docs/source/usage.rst`` （在 ``index.rst`` 旁边），内容如下："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:16
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:99
@@ -57,6 +60,8 @@ msgid ""
 "of content as source code, with appropriate syntax highlighting (in this "
 "case, generic ``console`` text)."
 msgstr ""
+"此新文件包含两个 :ref:`章节 <rst-sections>` 标题、普通段落文本和一个 :rst:dir:`code-block` "
+"指令，该指令将一块内容呈现为源代码，并具有适当的语法高亮显示（在本例中为通用的 ``console`` 文本）。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:36
 msgid ""
@@ -65,6 +70,8 @@ msgid ""
 "after ``===`` for the \"Usage\" section, you have declared \"Installation\" "
 "to be a *subsection* of \"Usage\"."
 msgstr ""
+"文档的结构由标题样式的连续决定，这意味着，通过在“用法”部分使用 ``===`` 后使用 ``---`` "
+"来表示“安装”部分，您已将“安装”声明为“用法”的*子部分*。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:41
 msgid ""
@@ -72,6 +79,8 @@ msgid ""
 " at the end of ``index.rst`` including the document you just created, as "
 "follows:"
 msgstr ""
+"要完成此过程，请在 ``index.rst`` 的末尾添加一个 ``toctree`` :ref:`指令 <rst-"
+"directives>`，包括您刚创建的文档，如下所示："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:44
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:83
@@ -83,7 +92,7 @@ msgstr "docs/source/index.rst"
 msgid ""
 "This step inserts that document in the root of the *toctree*, so now it "
 "belongs to the structure of your project, which so far looks like this:"
-msgstr ""
+msgstr "此步骤将该文档插入到 *toctree* 的根中，因此它现在属于您的项目结构，到目前为止看起来是这样的："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:62
 msgid ""
@@ -91,6 +100,7 @@ msgid ""
 " the ``toctree`` gets rendered as a list of hyperlinks, and this allows you "
 "to navigate to the new page you just created.  Neat!"
 msgstr ""
+"如果您运行 ``make html`` 构建HTML文档，您将看到 ``toctree`` 被渲染为超链接列表，这使您可以导航到刚创建的新页面。很整洁！"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:68
 msgid ""
@@ -98,6 +108,8 @@ msgid ""
 "included in any toctree`` messages during the build process, and will be "
 "unreachable for users."
 msgstr ""
+"不在 *toctree* 中的文档将在构建过程中导致 ``WARNING: document isn't included in any "
+"toctree`` 消息，并且用户将无法访问。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:73
 msgid "Adding cross-references"
@@ -109,12 +121,14 @@ msgid ""
 "references <xref>` to specific parts of the documentation: a document, a "
 "section, a figure, a code object, etc.  This tutorial is full of them!"
 msgstr ""
+"Sphinx的一个强大功能是能够无缝地向文档的特定部分添加 :ref:`交叉引用 "
+"<xref>`：一个文档、一个章节、一个图形、一个代码对象等。本教程充满了它们！"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:80
 msgid ""
 "To add a cross-reference, write this sentence right after the introduction "
 "paragraph in ``index.rst``:"
-msgstr ""
+msgstr "要添加交叉引用，请在 ``index.rst`` 的介绍段落后编写以下句子："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:88
 msgid ""
@@ -122,6 +136,8 @@ msgid ""
 "references a specific document in the project, in this case the "
 "``usage.rst`` you created earlier."
 msgstr ""
+"您使用的 :rst:role:`doc` :ref:`角色 <rst-roles>` 会自动引用项目中的特定文档，在这种情况下是您之前创建的 "
+"``usage.rst``。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:92
 msgid ""
@@ -129,16 +145,18 @@ msgid ""
 "the project. For that, you need to use the :rst:role:`ref` role, and add an "
 "explicit *label* that acts as :duref:`a target <hyperlink-targets>`."
 msgstr ""
+"或者，您还可以向项目的任意部分添加交叉引用。为此，您需要使用 :rst:role:`ref` 角色，并添加一个充当 :duref:`目标 "
+"<hyperlink-targets>` 的显式 *标签*。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:96
 msgid ""
 "For example, to reference the \"Installation\" subsection, add a label right"
 " before the heading, as follows:"
-msgstr ""
+msgstr "例如，要引用“安装”子部分，请在标题前添加一个标签，如下所示："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:113
 msgid "And make the sentence you added in ``index.rst`` look like this:"
-msgstr ""
+msgstr "并使您在 ``index.rst`` 中添加的句子如下所示："
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:121
 msgid ""
@@ -150,9 +168,13 @@ msgid ""
 " ``Installation``). Both the ``:doc:`` and the ``:ref:`` roles will be "
 "rendered as hyperlinks in the HTML documentation."
 msgstr ""
+"请注意这里的一个技巧：``install`` 部分指定了链接的外观（我们希望它是一个特定的单词，以使句子有意义），而 "
+"``<installation>`` 部分则指的是我们要添加交叉引用的实际标签。如果您不包含显式标题，因此使用 "
+"``:ref:`installation```，则将使用章节标题（在本例中为 ``Installation``）。 ``:doc:`` 和 "
+"``:ref:`` 角色都将被渲染为HTML文档中的超链接。"
 
 #: ../../sphinx/doc/tutorial/narrative-documentation.rst:129
 msgid ""
 "What about :doc:`documenting code objects in Sphinx </tutorial/describing-"
 "code>`? Read on!"
-msgstr ""
+msgstr "那么在Sphinx中 :doc:`记录代码对象 </tutorial/describing-code>` 呢？继续阅读！"

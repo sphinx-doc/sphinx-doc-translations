@@ -6,16 +6,16 @@
 # Translators:
 # YanJun Sun <zxvf6aj@sina.cn>, 2024
 # Lu <lu2github@gmail.com>, 2025
-# adams.gh, 2025
+# gerhardt.gao <gerhardt.gao@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.1+/9a1103348\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-01 06:42+0000\n"
+"POT-Creation-Date: 2025-12-19 12:54+0000\n"
 "PO-Revision-Date: 2022-03-06 06:35+0000\n"
-"Last-Translator: adams.gh, 2025\n"
+"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,11 +25,11 @@ msgstr ""
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:2
 msgid "First steps to document your project using Sphinx"
-msgstr ""
+msgstr "使用Sphinx记录您的项目的第一步"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:5
 msgid "Building your HTML documentation"
-msgstr "构建 HTML 文档"
+msgstr "构建HTML文档"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:7
 msgid ""
@@ -37,6 +37,8 @@ msgid ""
 "already, and it gets rendered as the front page of your HTML documentation."
 "  It is written in reStructuredText, a powerful markup language."
 msgstr ""
+"由 ``sphinx-quickstart`` 创建的 ``index.rst`` "
+"文件已经包含了一些内容，并且它被渲染为您的HTML文档的首页。它是用强大的标记语言reStructuredText编写的。"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:11
 msgid "Modify the file as follows:"
@@ -49,39 +51,41 @@ msgstr "docs/source/index.rst"
 #: ../../sphinx/doc/tutorial/first-steps.rst:28
 msgid ""
 "This showcases several features of the reStructuredText syntax, including:"
-msgstr ""
+msgstr "这展示了reStructuredText语法的几个特性，包括："
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:30
 msgid "a **section header** using ``===`` for the underline,"
-msgstr ""
+msgstr "一个使用 ``===`` 作为下划线的 **章节标题**，"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:31
 msgid ""
 "two examples of :ref:`rst-inline-markup`: ``**strong emphasis**`` (typically"
 " bold) and ``*emphasis*`` (typically italics),"
 msgstr ""
+"两个 :ref:`rst-inline-markup` 的例子： ``**strong emphasis**`` （通常为粗体）和 "
+"``*emphasis*`` （通常为斜体），"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:33
 msgid "an **inline external link**,"
-msgstr ""
+msgstr "一个 **内联外部链接**，"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:34
 msgid ""
 "and a ``note`` **admonition** (one of the available :ref:`directives <rst-"
 "directives>`)"
-msgstr ""
+msgstr "和一个 ``note`` **警告** （可用的 :ref:`directives <rst-directives>` 之一）"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:37
 msgid ""
 "Now to render it with the new content, you can use the ``sphinx-build`` "
 "command as before, or leverage the convenience script as follows:"
-msgstr ""
+msgstr "现在，为了用新内容渲染它，您可以像以前一样使用 ``sphinx-build`` 命令，或者利用方便的脚本，如下所示："
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:45
 msgid ""
 "After running this command, you will see that ``index.html`` reflects the "
 "new changes!"
-msgstr ""
+msgstr "运行此命令后，您会看到 ``index.html`` 反映了新的更改！"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:49
 msgid "Building your documentation in other formats"
@@ -93,7 +97,7 @@ msgid ""
 ":ref:`and more <builders>`.  For example, to build your documentation in "
 "EPUB format, run this command from the ``docs`` directory:"
 msgstr ""
-"除支持 HTML 格式，Sphinx 亦支持其它格式：包括 PDF，EPUB，:ref:`and more <builders>`。例如，以 EPUB "
+"除支持 HTML 格式，Sphinx 亦支持其它格式：包括 PDF，EPUB， :ref:`以及更多 <builders>`。例如，以 EPUB "
 "格式构建您的文档，从 ``docs`` 目录运行此命令："
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:59
@@ -122,6 +126,9 @@ msgid ""
 "change that behavior by adding the following code at the end of your "
 "``conf.py``:"
 msgstr ""
+"每种输出格式都有一些特定的配置选项，您可以进行调整， :ref:`包括 EPUB <epub-options>`。例如， "
+":confval:`epub_show_urls` 的默认值是 ``inline``，这意味着默认情况下，URL "
+"会在相应链接后以括号形式显示。您可以通过在 ``conf.py`` 末尾添加以下代码来更改此行为："
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:75
 msgid "docs/source/conf.py"
@@ -134,6 +141,8 @@ msgid ""
 "text. Sweet! Read on to explore :doc:`other ways to customize Sphinx "
 "</tutorial/more-sphinx-customization>`."
 msgstr ""
+"有了这个配置值，并再次运行 ``make epub``，您会注意到 URL 现在作为脚注出现，这避免了文本的混乱。太棒了！继续阅读以探索 "
+":doc:`自定义 Sphinx </tutorial/more-sphinx-customization>` 的其他方法。"
 
 #: ../../sphinx/doc/tutorial/first-steps.rst:88
 msgid ""
@@ -144,3 +153,6 @@ msgid ""
 " LaTeX requires careful configuration in some cases, so PDF generation is "
 "out of scope for this tutorial."
 msgstr ""
+"使用Sphinx生成PDF可以通过运行 ``make latexpdf`` 来完成，前提是系统具有可用的LaTeX安装，如 "
+":class:`sphinx.builders.latex.LaTeXBuilder` "
+"的文档中所述。虽然这是完全可行的，但此类安装通常很大，并且在某些情况下LaTeX需要仔细配置，因此PDF生成超出了本教程的范围。"

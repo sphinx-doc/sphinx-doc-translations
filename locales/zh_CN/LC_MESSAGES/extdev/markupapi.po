@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/71cc5d847\n"
+"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-11 18:39+0000\n"
+"POT-Creation-Date: 2025-12-19 12:54+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -25,13 +25,13 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/markupapi.rst:2
 msgid "Docutils markup API"
-msgstr "Docutils标记接口"
+msgstr "Docutils标记 API"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:4
 msgid ""
 "This section describes the API for adding reStructuredText markup elements "
 "(roles and directives)."
-msgstr ""
+msgstr "本节介绍用于添加reStructuredText标记元素（角色和指令）的 API。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:9
 msgid "Roles"
@@ -43,6 +43,8 @@ msgid ""
 " extension using :meth:`.Sphinx.add_role` or "
 ":meth:`.Sphinx.add_role_to_domain`."
 msgstr ""
+"角色遵循下面描述的接口。它们必须通过使用 :meth:`.Sphinx.add_role` 或 "
+":meth:`.Sphinx.add_role_to_domain` 的扩展来注册。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:27
 msgid ""
@@ -52,10 +54,13 @@ msgid ""
 "the second containing any system messages generated. For more information, "
 "see the `custom role overview`_ from Docutils."
 msgstr ""
+"*options* 和 *content* 参数仅用于通过 :dudir:`role` "
+"指令创建的自定义角色。返回值是一个包含两个列表的元组，第一个包含来自角色的文本节点和元素，第二个包含生成的任何系统消息。有关更多信息，请参阅 "
+"Docutils 的 `custom role overview`_。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:38
 msgid "Creating custom roles"
-msgstr ""
+msgstr "创建自定义角色"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:40
 msgid ""
@@ -63,6 +68,8 @@ msgid ""
 ":class:`~sphinx.util.docutils.SphinxRole` and "
 ":class:`~sphinx.util.docutils.ReferenceRole`."
 msgstr ""
+"Sphinx 提供了两个用于创建自定义角色的基类，:class:`~sphinx.util.docutils.SphinxRole` 和 "
+":class:`~sphinx.util.docutils.ReferenceRole`。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:43
 msgid ""
@@ -74,6 +81,10 @@ msgid ""
 "``self.title`` attributes. This is useful for creating cross-reference "
 "roles."
 msgstr ""
+"这些为创建角色提供了基于类的接口，其中主要逻辑必须在您的 ``run()`` 方法中实现。这些类提供了许多有用的方法和属性，例如 "
+"``self.text``、``self.config`` 和 ``self.env``。``ReferenceRole`` 类实现了 Sphinx 的"
+" ``title <target>`` 逻辑，公开了 ``self.target`` 和 ``self.title`` "
+"属性。这对于创建交叉引用角色非常有用。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:53
 msgid "Directives"
@@ -168,7 +179,7 @@ msgstr "给指令的选项，作为将选项名称映射到已验证/转换的�
 
 #: ../../sphinx/doc/extdev/markupapi.rst:107
 msgid "The directive content, if given, as a :class:`!ViewList`."
-msgstr ""
+msgstr "指令内容（如果给出），作为 :class:`!ViewList`。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:111
 msgid ""
@@ -198,21 +209,21 @@ msgstr "`Creating directives`_ Docutils文档的“HOWTO”"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:139
 msgid "Parsing directive content as reStructuredText"
-msgstr ""
+msgstr "将指令内容解析为 reStructuredText"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:141
 msgid ""
 "Many directives will contain more markup that must be parsed. To do this, "
 "use one of the following APIs from the :meth:`~Directive.run` method:"
-msgstr ""
+msgstr "许多指令将包含必须解析的更多标记。为此，请在 :meth:`~Directive.run` 方法中使用以下 API 之一："
 
 #: ../../sphinx/doc/extdev/markupapi.rst:144
 msgid ":py:meth:`.SphinxDirective.parse_content_to_nodes()`"
-msgstr ""
+msgstr ":py:meth:`.SphinxDirective.parse_content_to_nodes()`"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:145
 msgid ":py:meth:`.SphinxDirective.parse_text_to_nodes()`"
-msgstr ""
+msgstr ":py:meth:`.SphinxDirective.parse_text_to_nodes()`"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:147
 msgid ""
@@ -220,16 +231,17 @@ msgid ""
 "second only parses the given *text* string. Both methods return the parsed "
 "Docutils nodes in a list."
 msgstr ""
+"第一个方法将指令的所有内容解析为标记，而第二个方法仅解析给定的 *text* 字符串。这两种方法都以列表形式返回解析后的 Docutils 节点。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:151
 msgid "The methods are used as follows:"
-msgstr ""
+msgstr "这些方法的使用方式如下："
 
 #: ../../sphinx/doc/extdev/markupapi.rst:164
 msgid ""
 "The above utility methods were added in Sphinx 7.4. Prior to Sphinx 7.4, the"
 " following methods should be used to parse content:"
-msgstr ""
+msgstr "上述实用方法是在 Sphinx 7.4 中添加的。在 Sphinx 7.4 之前，应使用以下方法来解析内容："
 
 #: ../../sphinx/doc/extdev/markupapi.rst:167
 msgid "``self.state.nested_parse``"
@@ -248,6 +260,8 @@ msgid ""
 "only be used for text which is a single line or paragraph, and does not "
 "contain any structural elements (headings, transitions, directives, etc)."
 msgstr ""
+"要解析内联标记，请使用 "
+":py:meth:`~sphinx.util.docutils.SphinxDirective.parse_inline()`。这只能用于单行或段落的文本，并且不包含任何结构元素（标题、过渡、指令等）。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:190
 msgid ""
@@ -256,16 +270,20 @@ msgid ""
 "mixed content, such as in ``sphinx.ext.autodoc``, where it is used to parse "
 "docstrings."
 msgstr ""
+"``sphinx.util.docutils.switch_source_input()`` "
+"允许在指令中解析内容时更改源（输入）文件。它对于解析混合内容非常有用，例如在 ``sphinx.ext.autodoc`` 中，它用于解析文档字符串。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:208
 msgid ""
 "Until Sphinx 1.6, ``sphinx.ext.autodoc.AutodocReporter`` was used for this "
 "purpose.  It is replaced by ``switch_source_input()``."
 msgstr ""
+"直到 Sphinx 1.6，``sphinx.ext.autodoc.AutodocReporter`` 才用于此目的。它被 "
+"``switch_source_input()`` 所取代。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:215
 msgid "ViewLists and StringLists"
-msgstr ""
+msgstr "ViewLists 和 StringLists"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:217
 msgid ""
@@ -275,6 +293,8 @@ msgid ""
 "views of the original list and that the list contains information about "
 "source line numbers."
 msgstr ""
+"Docutils 在 ``docutils.statemachine`` 模块中使用 ``StringList`` 类表示文档源行，该类继承自 "
+"``ViewList``。这是一个具有扩展功能的列表，包括切片创建原始列表的视图，并且该列表包含有关源行号的信息。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:223
 msgid ""
@@ -284,14 +304,17 @@ msgid ""
 "Sphinx handle this automatically. Important for content generation are the "
 "following points:"
 msgstr ""
+":attr:`Directive.content` 属性是一个 ``StringList``。如果您生成的内容要作为 reStructuredText "
+"进行解析，则必须为 Docutils API 创建一个 ``StringList``。Sphinx "
+"提供的实用程序函数会自动处理此问题。内容生成的重要点如下："
 
 #: ../../sphinx/doc/extdev/markupapi.rst:229
 msgid ""
 "The ``ViewList`` constructor takes a list of strings (lines) and a source "
 "(document) name."
-msgstr ""
+msgstr "``ViewList`` 构造函数接受字符串列表（行）和源（文档）名称。"
 
 #: ../../sphinx/doc/extdev/markupapi.rst:231
 msgid ""
 "The ``ViewList.append()`` method takes a line and a source name as well."
-msgstr ""
+msgstr "``ViewList.append()`` 方法也接受一行和一个源名称。"

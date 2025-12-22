@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-21 18:35+0000\n"
+"POT-Creation-Date: 2025-12-22 06:43+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -25,13 +25,13 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:4
 msgid "Event callbacks API"
-msgstr ""
+msgstr "事件回调API"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:6
 msgid ""
 "Connecting callback functions to events is a simple way to extend Sphinx, by"
 " hooking into the build process at various points."
-msgstr ""
+msgstr "将回调函数连接到事件是一种扩展Sphinx的简单方法，可以在各个点上钩住构建过程。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:9
 msgid ""
@@ -39,6 +39,8 @@ msgid ""
 "``setup`` function in your project's :file:`conf.py`, to connect functions "
 "to the events:"
 msgstr ""
+"在扩展的 ``setup`` 函数中使用 :meth:`.Sphinx.connect`，或在项目的 :file:`conf.py` 中使用 "
+"``setup`` 函数，将函数连接到事件："
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:23
 msgid ""
@@ -46,28 +48,30 @@ msgid ""
 "calling them them with :meth:`.EventManager.emit` or "
 ":meth:`.EventManager.emit_firstresult`."
 msgstr ""
+"扩展可以使用 :meth:`.Sphinx.add_event` 添加自己的事件，并使用 :meth:`.EventManager.emit` 或 "
+":meth:`.EventManager.emit_firstresult` 调用它们。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:28
 msgid "Core events overview"
-msgstr ""
+msgstr "核心事件概述"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:30
 msgid "Below is an overview of the core event that happens during a build."
-msgstr ""
+msgstr "下面是构建过程中发生的核心事件的概述。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:79
 msgid ""
 "Here is also a flow diagram of the events, within the context of the Sphinx "
 "build process:"
-msgstr ""
+msgstr "下面是事件的流程图，在Sphinx构建过程的上下文中："
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:82
 msgid "Sphinx core events flow"
-msgstr ""
+msgstr "Sphinx核心事件流程"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:86
 msgid "Core event details"
-msgstr ""
+msgstr "核心事件详情"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:88
 msgid "Here is a more detailed list of these events."
@@ -99,11 +103,11 @@ msgstr "参数"
 #: ../../sphinx/doc/extdev/event_callbacks.rst:377
 #: ../../sphinx/doc/extdev/event_callbacks.rst:416
 msgid ":class:`.Sphinx`"
-msgstr ""
+msgstr ":class:`.Sphinx`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:93
 msgid ":class:`.Config`"
-msgstr ""
+msgstr ":class:`.Config`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:95
 msgid "Emitted when the config object has been initialized."
@@ -113,7 +117,7 @@ msgstr "初始化配置对象时发出。"
 msgid ""
 "Emitted when the builder object has been created (available as "
 "``app.builder``)."
-msgstr ""
+msgstr "创建构建器对象时发出（可用作 ``app.builder``）。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:109
 #: ../../sphinx/doc/extdev/event_callbacks.rst:126
@@ -125,21 +129,21 @@ msgstr ""
 #: ../../sphinx/doc/extdev/event_callbacks.rst:316
 #: ../../sphinx/doc/extdev/event_callbacks.rst:326
 msgid ":class:`.BuildEnvironment`"
-msgstr ""
+msgstr ":class:`.BuildEnvironment`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:110
 #: ../../sphinx/doc/extdev/event_callbacks.rst:111
 #: ../../sphinx/doc/extdev/event_callbacks.rst:112
 msgid "``Set[str]``"
-msgstr ""
+msgstr "``Set[str]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:0
 msgid "returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:113
 msgid "``Sequence[str]`` of additional docnames to re-read"
-msgstr ""
+msgstr "``Sequence[str]`` 额外要重新读取的文档名称"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:115
 msgid ""
@@ -148,6 +152,8 @@ msgid ""
 "that the environment has determined. You can return a list of docnames to "
 "re-read in addition to these."
 msgstr ""
+"当环境确定哪些源文件已更改并应重新读取时发出。*added*、*changed* 和 *removed* "
+"是环境已确定的文档名称集。您可以返回要重新读取的文档名称列表。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:127
 #: ../../sphinx/doc/extdev/event_callbacks.rst:161
@@ -157,7 +163,7 @@ msgstr ""
 #: ../../sphinx/doc/extdev/event_callbacks.rst:378
 #: ../../sphinx/doc/extdev/event_callbacks.rst:379
 msgid "``str``"
-msgstr ""
+msgstr "``str``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:129
 msgid ""
@@ -165,19 +171,19 @@ msgid ""
 "environment, that is, if the source file is removed or before it is freshly "
 "read. This is for extensions that keep their own caches in attributes of the"
 " environment."
-msgstr ""
+msgstr "当应从环境中清除源文件的所有痕迹时发出，也就是说，如果源文件被删除或在重新读取之前。这是针对在环境属性中保留自己缓存的扩展。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:134
 msgid ""
 "For example, there is a cache of all modules on the environment. When a "
 "source file has been changed, the cache's entries for the file are cleared, "
 "since the module declarations could have been removed from the file."
-msgstr ""
+msgstr "例如，环境中有所有模块的缓存。当源文件已更改时，将清除该文件的缓存条目，因为文件中的模块声明可能已被删除。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:144
 #: ../../sphinx/doc/extdev/event_callbacks.rst:279
 msgid "``list[str]``"
-msgstr ""
+msgstr "``list[str]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:146
 msgid ""
@@ -187,6 +193,8 @@ msgid ""
 "docnames that Sphinx did not consider changed (but never add any docnames "
 "that are not in :attr:`.found_docs`)."
 msgstr ""
+"在环境确定所有添加和更改的文件列表之后并在读取它们之前发出。它允许扩展作者在处理之前重新排序文档名称列表（*就地*），或添加Sphinx未考虑更改的更多文档名称（但绝不添加不在"
+" :attr:`.found_docs` 中的任何文档名称）。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:153
 msgid ""
@@ -199,17 +207,17 @@ msgstr "您还可以删除文档名；请谨慎操作，因为这会使Sphinx将
 msgid ""
 "``list[str]`` with a single element, representing the content of the "
 "included file."
-msgstr ""
+msgstr "包含文件内容的单个元素的 ``list[str]``。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:166
 msgid "Emitted when a source file has been read."
-msgstr ""
+msgstr "当读取源文件时发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:168
 msgid ""
 "You can process the ``content`` and replace this item to implement source-"
 "level transformations."
-msgstr ""
+msgstr "您可以处理 ``content`` 并替换此项以实现源级转换。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:171
 msgid ""
@@ -224,30 +232,30 @@ msgstr ""
 msgid ""
 ":class:`~pathlib.Path` representing the included file relative to the "
 ":term:`source directory`."
-msgstr ""
+msgstr ":class:`~pathlib.Path`，表示相对于 :term:`source directory` 的包含文件。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:183
 msgid ""
 "``str`` of the document name that contains the :dudir:`include` directive."
-msgstr ""
+msgstr "包含 :dudir:`include` 指令的文档名称的 ``str``。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:190
 msgid "Emitted when a file has been read with the :dudir:`include` directive."
-msgstr ""
+msgstr "当使用 :dudir:`include` 指令读取文件时发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:192
 msgid ""
 "You can process the ``content`` and replace this item to transform the "
 "included content, as with the :event:`source-read` event."
-msgstr ""
+msgstr "您可以处理 ``content`` 并替换此项以转换包含的内容，就像使用 :event:`source-read` 事件一样。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:197
 msgid "The :dudir:`include` directive and the :event:`source-read` event."
-msgstr ""
+msgstr ":dudir:`include` 指令和 :event:`source-read` 事件。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:204
 msgid ":class:`.desc_content`"
-msgstr ""
+msgstr ":class:`.desc_content`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:206
 msgid ""
@@ -262,13 +270,13 @@ msgstr ""
 #: ../../sphinx/doc/extdev/event_callbacks.rst:215
 #: ../../sphinx/doc/extdev/event_callbacks.rst:265
 msgid ":class:`docutils.nodes.document`"
-msgstr ""
+msgstr ":class:`docutils.nodes.document`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:217
 msgid ""
 "Emitted when a doctree has been parsed and read by the environment, and is "
 "about to be pickled. The ``doctree`` can be modified in-place."
-msgstr ""
+msgstr "当文档树已被环境解析和读取，并且即将被腌制时发出。 ``doctree`` 可以就地修改。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:225
 msgid ""
@@ -276,6 +284,8 @@ msgid ""
 "``reftarget``, ``modname`` and ``classname`` attributes determine the type "
 "and target of the reference."
 msgstr ""
+"The :class:`.pending_xref` 节点将被解析。它的 ``reftype``、``reftarget``、``modname`` 和"
+" ``classname`` 属性确定引用的类型和目标。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:228
 msgid ""
@@ -287,7 +297,7 @@ msgstr "在将来引用中承载文本和格式的节点，它应该是返回的
 msgid ""
 "A new node to be inserted in the document tree in place of the node, or "
 "``None`` to let other handlers try."
-msgstr ""
+msgstr "一个新节点，将插入文档树以替换该节点，或 ``None`` 让其他处理程序尝试。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:233
 msgid ""
@@ -300,18 +310,22 @@ msgid ""
 "to prevent other handlers in trying and suppress a warning about this cross-"
 "reference being unresolved."
 msgstr ""
+"当无法解析对对象的交叉引用时发出。如果事件处理程序可以解析引用，则应返回一个新的 docutils 节点，以替换文档树中的节点 "
+"*node*。通常，此节点是包含 *contnode* 作为子节点的 :class:`~nodes.reference` "
+"节点。如果处理程序无法解析交叉引用，则可以返回 ``None`` 让其他处理程序尝试，或者引发 "
+":class:`~sphinx.errors.NoUri` 以防止其他处理程序尝试并抑制有关此交叉引用未解析的警告。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:248
 msgid "The :class:`.Domain` of the missing reference."
-msgstr ""
+msgstr "丢失引用的 :class:`.Domain`。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:249
 msgid "The :class:`.pending_xref` node that could not be resolved."
-msgstr ""
+msgstr "无法解析的 :class:`.pending_xref` 节点。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:250
 msgid "``True`` if a warning was emitted, else ``None``"
-msgstr ""
+msgstr "``True`` 如果发出警告，否则 ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:252
 msgid ""
@@ -321,6 +335,9 @@ msgid ""
 ":confval:`nitpick_ignore` and :confval:`nitpick_ignore_regex` prevent the "
 "event from being emitted for the corresponding nodes."
 msgstr ""
+"当对对象的交叉引用即使在 :event:`missing-reference` 之后仍无法解析时发出。如果事件处理程序可以为丢失的引用发出警告，则应返回"
+" ``True``。配置变量 :confval:`nitpick_ignore` 和 :confval:`nitpick_ignore_regex` "
+"防止为相应的节点发出事件。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:268
 msgid ""
@@ -359,13 +376,13 @@ msgstr "*other* 是子进程中的环境对象， *env* 是主进程中的环境
 #: ../../sphinx/doc/extdev/event_callbacks.rst:299
 #: ../../sphinx/doc/extdev/event_callbacks.rst:317
 msgid "iterable of ``str``"
-msgstr ""
+msgstr "可迭代的 ``str``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:301
 msgid ""
 "Emitted after reading all documents, when the environment and all doctrees "
 "are now up-to-date."
-msgstr ""
+msgstr "在读取所有文档后发出，此时环境和所有文档树现在都是最新的。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:304
 msgid ""
@@ -382,7 +399,7 @@ msgstr "现在使用处理程序的返回值。"
 msgid ""
 "Emitted when the environment determines which source files have changed and "
 "should be re-read. You can return an iterable of docnames to re-read."
-msgstr ""
+msgstr "当环境确定哪些源文件已更改并应重新读取时发出。您可以返回要重新读取的文档名称的可迭代对象。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:328
 msgid ""
@@ -392,15 +409,15 @@ msgstr "在一致性检查阶段发出。您可以检查整个文档的元数据
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:336
 msgid ":class:`.Builder`"
-msgstr ""
+msgstr ":class:`.Builder`"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:338
 msgid "Emitted before the builder starts to resolve and write documents."
-msgstr ""
+msgstr "在构建器开始解析和编写文档之前发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:346
 msgid "``Exception`` or ``None``"
-msgstr ""
+msgstr "``Exception`` 或 ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:348
 msgid ""
@@ -417,38 +434,40 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:358
 msgid "Builder specific events"
-msgstr ""
+msgstr "特定于生成器的事件"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:360
 msgid "These events are emitted by specific builders."
-msgstr ""
+msgstr "这些事件由特定的生成器发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:365
 msgid ""
 "iterable of ``(pagename, context, templatename)`` where *pagename* and "
 "*templatename* are strings and *context* is a ``dict[str, Any]``."
 msgstr ""
+"可迭代的 ``(pagename, context, templatename)``，其中 *pagename* 和 *templatename* "
+"是字符串，*context* 是 ``dict[str, Any]``。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:369
 msgid "Emitted when the HTML builder is starting to write non-document pages."
-msgstr ""
+msgstr "当HTML生成器开始编写非文档页面时发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:371
 msgid "You can add pages to write by returning an iterable from this event."
-msgstr ""
+msgstr "您可以通过从此事件返回可迭代对象来添加要编写的页面。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:380
 msgid "``dict[str, Any]``"
-msgstr ""
+msgstr "``dict[str, Any]``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:381
 msgid ":class:`docutils.nodes.document` or ``None``"
-msgstr ""
+msgstr ":class:`docutils.nodes.document` 或 ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:382
 #: ../../sphinx/doc/extdev/event_callbacks.rst:418
 msgid "``str`` or ``None``"
-msgstr ""
+msgstr "``str`` 或 ``None``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:384
 msgid ""
@@ -463,13 +482,15 @@ msgid ""
 "*templatename* is the name of the template to render, this will be "
 "``'page.html'`` for all pages from reStructuredText documents."
 msgstr ""
+"The *pagename* 参数是正在呈现的页面的规范名称，即没有 ``.html`` 后缀并使用斜杠作为路径分隔符。*templatename* "
+"是要呈现的模板的名称，对于所有来自 reStructuredText 文档的页面，这将是 ``'page.html'``。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:392
 msgid ""
 "The *context* argument is a dictionary of values that are given to the "
 "template engine to render the page and can be modified to include custom "
 "values."
-msgstr ""
+msgstr "The *context* 参数是一个值的字典，这些值提供给模板引擎以呈现页面，并且可以修改以包含自定义值。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:396
 msgid ""
@@ -477,6 +498,8 @@ msgid ""
 "reStructuredText documents; it will be ``None`` when the page is created "
 "from an HTML template alone."
 msgstr ""
+"当页面是从 reStructuredText 文档创建时，*doctree* 参数将是一个文档树；当页面仅从HTML模板创建时，它将是 "
+"``None``。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:400
 msgid ""
@@ -489,6 +512,8 @@ msgid ""
 "You can install JS/CSS files for the specific page via "
 ":meth:`.Sphinx.add_js_file` and :meth:`.Sphinx.add_css_file` (since v3.5.0)."
 msgstr ""
+"您可以通过 :meth:`.Sphinx.add_js_file` 和 :meth:`.Sphinx.add_css_file` （自 v3.5.0 "
+"起）为特定页面安装 JS/CSS 文件。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:411
 msgid "The return value can now specify a template name."
@@ -496,12 +521,12 @@ msgstr "返回值现在可以指定模板名称。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:417
 msgid "``str`` of the collected URI"
-msgstr ""
+msgstr "收集到的 URI的 ``str``"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:420
 msgid "Emitted when the linkcheck builder collects hyperlinks from document."
-msgstr ""
+msgstr "当 linkcheck 生成器从文档中收集超链接时发出。"
 
 #: ../../sphinx/doc/extdev/event_callbacks.rst:422
 msgid "The event handlers can modify the URI by returning a string."
-msgstr ""
+msgstr "事件处理程序可以通过返回字符串来修改URI。"

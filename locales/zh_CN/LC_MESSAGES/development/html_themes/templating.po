@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.2+/c04384139\n"
+"Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 12:56+0000\n"
+"POT-Creation-Date: 2025-12-23 06:42+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -29,7 +29,7 @@ msgstr "模板"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:10
 msgid "What Is Templating?"
-msgstr ""
+msgstr "什么是模板？"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:12
 msgid ""
@@ -42,6 +42,7 @@ msgid ""
 "Doing so only requires an understanding of HTML and the templating syntax. "
 "Knowledge of Python can be helpful, but is not required."
 msgstr ""
+"模板是一种通过将静态模板与可变数据相结合来生成HTML页面的方法。模板文件包含所需HTML输出的静态部分，并包含描述如何插入可变内容的特殊语法。例如，这可用于在每个页面的页脚中插入当前日期，或使用HTML脚手架将文档的主要内容包围起来，以实现布局和格式目的。这样做只需要了解HTML和模板语法。了解Python可能会有所帮助，但不是必需的。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:22
 msgid ""
@@ -50,6 +51,7 @@ msgid ""
 "desired. Likewise, content authors can use their own local templates to "
 "override as much (or as little) of the theme templates as desired."
 msgstr ""
+"模板使用一种继承机制，允许子模板文件（例如，在主题中）覆盖其“父级”的任意多（或少）。同样，内容作者可以使用自己的本地模板来覆盖主题模板的任意多（或少）。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:27
 msgid ""
@@ -57,11 +59,11 @@ msgid ""
 "basic HTML generation, independent of the structure and appearance of the "
 "final output, while granting a great deal of flexibility to theme and "
 "content authors."
-msgstr ""
+msgstr "其结果是，Sphinx核心无需更改即可提供基本的HTML生成，而不依赖于最终输出的结构和外观，同时为主题和内容作者提供了极大的灵活性。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:33
 msgid "Sphinx Templating"
-msgstr ""
+msgstr "Sphinx模板"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:35
 msgid ""
@@ -71,6 +73,8 @@ msgid ""
 " it. It also has excellent documentation for those who need to make "
 "themselves familiar with it."
 msgstr ""
+"Sphinx使用 `Jinja <https://jinja.palletsprojects.com/>`_ "
+"模板引擎来处理其HTML模板。Jinja是一个基于文本的引擎，受Django模板的启发，因此任何使用过Django的人都会对它很熟悉。对于那些需要熟悉它的人来说，它也有出色的文档。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:43
 msgid "Do I need to use Sphinx's templates to produce HTML?"
@@ -104,6 +108,8 @@ msgid ""
 "that produces pickle files with the page contents, and postprocess them "
 "using a custom tool, or use them in your Web application."
 msgstr ""
+"您可以使用 :class:`~sphinxcontrib.serializinghtml.PickleHTMLBuilder` "
+"生成包含页面内容的pickle文件，并使用自定义工具对其进行后处理，或在您的Web应用程序中使用它们。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:62
 msgid "Jinja/Sphinx Templating Primer"
@@ -242,6 +248,8 @@ msgid ""
 "document.  By default, both blocks are filled; to show the relbar only "
 "before the document, you would override ``relbar2`` like this::"
 msgstr ""
+"此块包含 *ralation bar*，相关链接列表（左侧的父文档，以及右侧的索引，模块等的链接）。 ``relbar1`` 出现在文档之前， "
+"``relbar2`` 在文档之后。默认情况下，两个块都已填充；要仅在文档之前显示relbar，您可以像这样重写 ``relbar2``::"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:142
 msgid "``rootrellink``, ``relbaritems``"
@@ -256,10 +264,13 @@ msgid ""
 " them to add extra links into the bar make sure that they are list items and"
 " end with the :data:`reldelim1`."
 msgstr ""
+"在relbar中有三个部分： ``rootrellink``，文档中的链接和自定义 ``relbaritems``。 ``rootrellink`` "
+"是一个块，默认情况下包含一个指向根文档的列表项， ``relbaritems`` "
+"是一个空块。如果您重写它们以将额外的链接添加到栏中，请确保它们是列表项并以 :data:`reldelim1` 结尾。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:150
 msgid "``document``"
-msgstr "``文档``"
+msgstr "``document``"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:151
 msgid ""
@@ -474,7 +485,7 @@ msgstr ""
 msgid ""
 "The relative path to the HTML favicon image from the current document, or "
 "URL to the favicon, or ``''``."
-msgstr ""
+msgstr "从当前文档到HTML favicon图像的相对路径，或favicon的URL，或 ``''``。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:312
 msgid ""
@@ -482,7 +493,7 @@ msgid ""
 "attribute, i.e. the file name extension that the output files will get.  For"
 " a standard HTML builder, this is usually ``.html``."
 msgstr ""
-"生成器的值 "
+"构建器的值 "
 ":attr:`~.SerializingHTMLBuilder.out_suffix`，即输出文件将获得的文件扩展名。对于标准的HTML生成器，通常是 "
 "``.HTML``。"
 
@@ -491,6 +502,7 @@ msgid ""
 "True if the reStructuredText document sources are copied (if "
 ":confval:`html_copy_source` is ``True``)."
 msgstr ""
+"如果复制了reStructuredText文档源（如果 :confval:`html_copy_source` 为 ``True``），则为True。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:323
 msgid "The value of :confval:`language`."
@@ -498,23 +510,24 @@ msgstr " :confval:`language` 的值。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:327
 msgid "The build date."
-msgstr "生成日期。"
+msgstr "构建日期。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:331
 msgid ""
 "The relative path to the HTML logo image from the current document, or URL "
 "to the logo, or ``''``."
-msgstr ""
+msgstr "从当前文档到HTML徽标图像的相对路径，或徽标的URL，或 ``''``。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:339
 msgid ""
 "The value of :confval:`master_doc` or :confval:`root_doc` (aliases), for "
 "usage with :func:`pathto`."
 msgstr ""
+":confval:`master_doc` or :confval:`root_doc` (别名)的值，用于 :func:`pathto`。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:342
 msgid "The :data:`!root_doc` template variable."
-msgstr ""
+msgstr ":data:`!root_doc` 模板变量。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:347
 msgid ""
@@ -523,6 +536,8 @@ msgid ""
 "hierarchical name relative to the output directory "
 "(``[directory/]filename_without_extension``)."
 msgstr ""
+"当前文件的“页面名称”，即如果文件是从reStructuredText源生成的文档名称，或相对于输出目录的等效分层名称 "
+"（``[directory/]filename_without_extension``）。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:354
 msgid "The value of :confval:`project`."
@@ -554,7 +569,7 @@ msgstr "如果 :confval:`html_show_sourcelink` 为 ``True``，则为True。"
 msgid ""
 "The version of Sphinx used to build represented as a string for example "
 "\"3.5.1\"."
-msgstr ""
+msgstr "用于构建的Sphinx版本，用字符串表示，例如“3.5.1”。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:381
 msgid ""
@@ -563,6 +578,9 @@ msgid ""
 " fourth element can be one of: ``alpha``, ``beta``, ``rc``, ``final``. "
 "``final`` always has 0 as the last element."
 msgstr ""
+"用于构建的Sphinx版本，表示为五个元素的元组。对于Sphinx版本3.5.1 beta 3，这将是 ``(3, 5, 1, 'beta', "
+"3)``。第四个元素可以是以下之一： ``alpha``, ``beta``, ``rc``, ``final``。 ``final`` "
+"的最后一个元素始终为0。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:390
 msgid ""
@@ -571,12 +589,15 @@ msgid ""
 "'beta', 2)``. The fourth element can be one of: ``alpha``, ``beta``, "
 "``candidate``, ``final``. ``final`` always has 0 as the last element."
 msgstr ""
+"用于构建的Docutils版本，表示为五个元素的元组。对于Docutils版本0.16.1 beta 2，这将是 ``(0, 16, 1, "
+"'beta', 2)``。第四个元素可以是以下之一： ``alpha``, ``beta``, ``candidate``, ``final``。 "
+"``final`` 的最后一个元素始终为0。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:399
 msgid ""
 "A list of the names of the main stylesheets as given by the theme or "
 ":confval:`html_style`."
-msgstr ""
+msgstr "主题或 :confval:`html_style` 提供的主样式表名称列表。"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:406
 msgid "The title of the current document, as used in the ``<title>`` tag."
@@ -630,6 +651,8 @@ msgid ""
 "two attributes ``link`` and ``title``.  The title contains HTML markup.  For"
 " example, to generate a link to the next page, you can use this snippet::"
 msgstr ""
+"导航的下一个文档。此变量要么为false，要么具有两个属性 ``link`` 和 "
+"``title``。标题包含HTML标记。例如，要生成到下一页的链接，可以使用以下代码段::"
 
 #: ../../sphinx/doc/development/html_themes/templating.rst:454
 msgid ""

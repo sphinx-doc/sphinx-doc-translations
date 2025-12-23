@@ -14,9 +14,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/a672c5464\n"
+"Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-08 12:55+0000\n"
+"POT-Creation-Date: 2025-12-23 06:42+0000\n"
 "PO-Revision-Date: 2021-03-10 00:20+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -85,6 +85,9 @@ msgid ""
 ":file:`autodoc_intenum.py`. The :file:`my_enums.py` will contain the sample "
 "enums we will document."
 msgstr ""
+"我们需要与 :ref:`the previous extensions <tutorial-extend-build>` "
+"相同的设置。这次，我们将把插件放在名为 :file:`autodoc_intenum.py` 的文件中。:file:`my_enums.py` "
+"将包含我们将记录的示例枚举。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:36
 msgid "Here is an example of the folder structure you might obtain:"
@@ -111,7 +114,7 @@ msgstr ""
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:64
 msgid "We want to import certain objects from the autodoc extension:"
-msgstr ""
+msgstr "我们想从autodoc扩展中导入某些对象："
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:72
 msgid ""
@@ -120,10 +123,13 @@ msgid ""
 "class is the subclass of ``ClassDocumenter`` which a documenter class used "
 "by autodoc to document classes."
 msgstr ""
+"autodoc 扩展中有几种不同的文档类，例如 ``MethodDocumenter`` 或 "
+"``AttributeDocumenter``，但我们的新类是 ``ClassDocumenter`` 的子类，这是 autodoc "
+"用于记录类的文档类。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:77
 msgid "This is the definition of our new the auto-documenter class:"
-msgstr ""
+msgstr "这是我们新的自动文档类的定义："
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:85
 msgid "Important attributes of the new class:"
@@ -157,51 +163,51 @@ msgstr "**priority**"
 msgid ""
 "the larger the number the higher is the priority. We want our documenter be "
 "higher priority than the parent."
-msgstr ""
+msgstr "数字越大优先级越高。我们希望我们的文档优先于父类。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:99
 msgid "**option_spec**"
-msgstr ""
+msgstr "**option_spec**"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:100
 msgid ""
 "option specifications. We copy the parent class options and add a new option"
 " *hex*."
-msgstr ""
+msgstr "选项规范。我们复制父类选项并添加一个新选项 *hex*。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:104
 msgid "Overridden members:"
-msgstr ""
+msgstr "重写的成员："
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:106
 msgid "**can_document_member**"
-msgstr ""
+msgstr "**can_document_member**"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:107
 msgid ""
 "This member is important to override. It should return *True* when the "
 "passed object can be documented by this class."
-msgstr ""
+msgstr "这个成员很重要。 当传递的对象可以被这个类记录时，它应该返回 *True*。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:110
 msgid "**add_directive_header**"
-msgstr ""
+msgstr "**add_directive_header**"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:111
 msgid ""
 "This method generates the directive header. We add **:final:** directive "
 "option. Remember to call **super** or no directive will be generated."
-msgstr ""
+msgstr "此方法生成指令头。我们添加 **:final:** 指令选项。记得调用 **super**，否则不会生成任何指令。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:115
 msgid "**add_content**"
-msgstr ""
+msgstr "**add_content**"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:116
 msgid ""
 "This method generates the body of the class documentation. After calling the"
 " super method we generate lines for enum description."
-msgstr ""
+msgstr "此方法生成类文档的正文。在调用 super 方法后，我们为枚举描述生成行。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:121
 msgid "Using the extension"
@@ -209,11 +215,11 @@ msgstr "使用扩展"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:123
 msgid "You can now use the new autodoc directive to document any ``IntEnum``."
-msgstr ""
+msgstr "您现在可以使用新的 autodoc 指令来记录任何 ``IntEnum``。"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:125
 msgid "For example, you have the following ``IntEnum``:"
-msgstr ""
+msgstr "例如，您有以下 ``IntEnum``："
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:127
 msgid "my_enums.py"
@@ -221,7 +227,7 @@ msgstr "my_enums.py"
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:138
 msgid "This will be the documentation file with auto-documentation directive:"
-msgstr ""
+msgstr "这将是带有自动文档指令的文档文件："
 
 #: ../../sphinx/doc/development/tutorials/autodoc_ext.rst:140
 msgid "index.rst"

@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/ce19a75e3\n"
+"Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-16 12:58+0000\n"
+"POT-Creation-Date: 2025-12-23 06:42+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -26,27 +26,27 @@ msgstr ""
 
 #: ../../sphinx/doc/extdev/builderapi.rst:4
 msgid "Builder API"
-msgstr "生成器接口"
+msgstr "构建器API"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:10
 msgid "This is the base class for all builders."
-msgstr "这是所有生成器的基类。"
+msgstr "这是所有构建器的基类。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:12
 msgid "It follows this basic workflow:"
-msgstr ""
+msgstr "它遵循以下基本工作流程："
 
 #: ../../sphinx/doc/extdev/builderapi.rst:14
 msgid "Call graph for the standard Sphinx build workflow"
-msgstr ""
+msgstr "标准Sphinx生成工作流程的调用图"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:18
 msgid "Overridable Attributes"
-msgstr ""
+msgstr "可重写的属性"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:19
 msgid "These class attributes should be set on builder sub-classes:"
-msgstr "这些类属性应设置在构建器（生成器）子类之上："
+msgstr "这些类属性应设置在构建器（构建器）子类之上："
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.name:1
@@ -77,28 +77,28 @@ msgstr "成功完成生成时发出的消息。这可以是一个printf样式的
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.allow_parallel:1
 msgid "Whether it is safe to make parallel :meth:`~.Builder.write_doc` calls."
-msgstr ""
+msgstr "是否可以安全地进行并行 :meth:`~.Builder.write_doc` 调用。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.supported_image_types:1
 msgid ""
 "The list of MIME types of image formats supported by the builder. Image "
 "files are searched in the order in which they appear here."
-msgstr "生成器支持的图像格式的MIME类型列表。图像文件按它们在此处出现的顺序进行搜索。"
+msgstr "构建器支持的图像格式的MIME类型列表。图像文件按它们在此处出现的顺序进行搜索。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.supported_remote_images:1
 msgid ""
 "The builder can produce output documents that may fetch external images when"
 " opened."
-msgstr ""
+msgstr "构建器可以生成在打开时可能获取外部图像的输出文档。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.supported_data_uri_images:1
 msgid ""
 "The file format produced by the builder allows images to be embedded using "
 "data-URIs."
-msgstr ""
+msgstr "构建器生成的文件格式允许使用数据URI嵌入图像。"
 
 #: ../../sphinx/sphinx/ext/autodoc/_sentinels.pydocstring of
 #: sphinx.builders.Builder.default_translator_class:1
@@ -106,15 +106,16 @@ msgid ""
 "default translator class for the builder.  This can be overridden by "
 ":py:meth:`~sphinx.application.Sphinx.set_translator`."
 msgstr ""
+"构建器的默认转换器类。可以通过 :py:meth:`~sphinx.application.Sphinx.set_translator` 重写。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:31
 msgid "Core Methods"
-msgstr ""
+msgstr "核心方法"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:32
 msgid ""
 "These methods define the core build workflow and must not be overridden:"
-msgstr ""
+msgstr "这些方法定义了核心构建工作流程，不能被重写："
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.build_all:1
@@ -134,7 +135,7 @@ msgstr "仅重建自上次生成以来更改或添加的内容。"
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.build:1
 msgid "Main build method, usually called by a specific ``build_*`` method."
-msgstr ""
+msgstr "主要的构建方法，通常由特定的 ``build_*`` 方法调用。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.build:3
@@ -144,37 +145,37 @@ msgstr "首先，更新环境，然后调用 :meth:`!write`。"
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.read:1
 msgid "(Re-)read all files new or changed since last update."
-msgstr ""
+msgstr "(重新)读取自上次更新以来所有新的或更改的文件。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.read:3
 msgid ""
 "Store all environment docnames in the canonical format (ie using SEP as a "
 "separator in place of os.path.sep)."
-msgstr ""
+msgstr "将所有环境文档名称存储在规范格式中（即使用 SEP 作为 os.path.sep 的分隔符）。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.read_doc:1
 msgid "Parse a file and add/update inventory entries for the doctree."
-msgstr ""
+msgstr "解析文件并为文档树添加/更新清单条目。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doctree:1
 msgid "Write the doctree to a file, to be used as a cache by re-builds."
-msgstr ""
+msgstr "将文档树写入文件，以供重新生成时用作缓存。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write:1
 msgid "Write builder specific output files."
-msgstr ""
+msgstr "编写特定于构建器的输出文件。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:44
 msgid "Abstract Methods"
-msgstr ""
+msgstr "抽象方法"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:45
 msgid "These must be implemented in builder sub-classes:"
-msgstr ""
+msgstr "这些必须在构建器子类中实现："
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.get_outdated_docs:1
@@ -189,12 +190,12 @@ msgid ""
 "If the builder does not output individual files corresponding to source "
 "files, return a string here.  If it does, return an iterable of those files "
 "that need to be written."
-msgstr "如果生成器没有输出与源文件对应的单个文件，请在此处返回一个字符串。如果是，则返回需要写入的文件的迭代器。"
+msgstr "如果构建器没有输出与源文件对应的单个文件，请在此处返回一个字符串。如果是，则返回需要写入的文件的迭代器。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doc:1
 msgid "Write the output file for the document"
-msgstr ""
+msgstr "为文档编写输出文件"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doc:0
@@ -204,12 +205,12 @@ msgstr "参数"
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doc:3
 msgid "the :term:`docname <document name>`."
-msgstr ""
+msgstr ":term:`docname <document name>`。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doc:4
 msgid "defines the content to be written."
-msgstr ""
+msgstr "定义要写入的内容。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_doc:6
@@ -218,6 +219,8 @@ msgid ""
 "calling :meth:`~.Builder.get_target_uri` or "
 ":meth:`~.Builder.get_relative_uri`."
 msgstr ""
+"必须在此方法中确定输出文件名，通常通过调用 :meth:`~.Builder.get_target_uri` 或 "
+":meth:`~.Builder.get_relative_uri`。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.get_target_uri:1
@@ -233,11 +236,11 @@ msgstr "*typ* 可用于限定单个构建器的链接特性。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:52
 msgid "Overridable Methods"
-msgstr ""
+msgstr "可重写的方法"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:53
 msgid "These methods can be overridden in builder sub-classes:"
-msgstr ""
+msgstr "这些方法可以在构建器子类中重写："
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.init:1
@@ -249,14 +252,14 @@ msgstr "加载必要的模板并执行初始化。默认实现什么也不做。
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_documents:1
 msgid "Write all documents in *docnames*."
-msgstr ""
+msgstr "写入 *docnames* 中的所有文档。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.write_documents:3
 msgid ""
 "This method can be overridden if a builder does not create output files for "
 "each document."
-msgstr ""
+msgstr "如果构建器不为每个文档创建输出文件，则可以重写此方法。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.prepare_writing:1
@@ -266,7 +269,7 @@ msgstr "在运行 :meth:`write_doc` 之前可以添加逻辑的地方"
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.copy_assets:1
 msgid "Where assets (images, static files, etc) are copied before writing"
-msgstr ""
+msgstr "在编写之前复制资产（图像、静态文件等）的位置"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.get_relative_uri:1
@@ -276,12 +279,12 @@ msgstr "返回两个源文件名之间的相对URI。"
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.get_relative_uri:0
 msgid "raises"
-msgstr ""
+msgstr "引发"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.get_relative_uri:3
 msgid ":exc:`!NoUri` if there's no way to return a sensible URI."
-msgstr ""
+msgstr ":exc:`!NoUri` 如果没有办法返回合理的URI。"
 
 #: ../../sphinx/sphinx/builders/__init__.pydocstring of
 #: sphinx.builders.Builder.finish:1
@@ -295,11 +298,11 @@ msgstr "默认实现什么也不做。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:63
 msgid "Attributes"
-msgstr ""
+msgstr "Attributes"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:64
 msgid "Attributes that are callable from the builder instance:"
-msgstr ""
+msgstr "可以从构建器实例调用的属性："
 
 #: ../../sphinx/doc/extdev/builderapi.rst:68
 msgid "An :class:`.EventManager` object."
@@ -307,12 +310,12 @@ msgstr "一个 :class:`.EventManager` 类的对象。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:71
 msgid "Overridable Attributes (extensions)"
-msgstr ""
+msgstr "可重写的属性（扩展）"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:72
 msgid ""
 "Builder sub-classes can set these attributes to support built-in extensions:"
-msgstr ""
+msgstr "构建器子类可以设置这些属性以支持内置扩展："
 
 #: ../../sphinx/doc/extdev/builderapi.rst:77
 msgid ""
@@ -322,9 +325,12 @@ msgid ""
 "references generated by linkcode. The expected value for this attribute is "
 "an expression which is compatible with :rst:dir:`only`."
 msgstr ""
+"默认情况下，:mod:`linkcode <sphinx.ext.linkcode>` 扩展只会为 ``html`` "
+"构建器注入引用。可以在非HTML构建器中定义 ``supported_linkcode`` "
+"类属性，以支持管理linkcode生成的引用。该属性的预期值是与 :rst:dir:`only` 兼容的表达式。"
 
 #: ../../sphinx/doc/extdev/builderapi.rst:84
 msgid ""
 "For example, if a builder was named ``custom-builder``, the following can be"
 " used:"
-msgstr ""
+msgstr "例如，如果构建器名为 ``custom-builder``，则可以使用以下内容："

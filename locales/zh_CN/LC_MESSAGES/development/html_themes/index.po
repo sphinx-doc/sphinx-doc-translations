@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.0.2+/c04384139\n"
+"Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 12:56+0000\n"
+"POT-Creation-Date: 2025-12-23 06:42+0000\n"
 "PO-Revision-Date: 2024-06-24 06:45+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -105,6 +105,9 @@ msgid ""
 "templates (for example, if ``\"basic\"`` is used as the base theme, most "
 "templates will already be defined)."
 msgstr ""
+"**inherit** "
+"（字符串）：用于继承设置、选项、模板和静态文件的基本主题名称。将使用主题“祖先”的所有静态文件。主题将使用继承主题中定义的所有选项。最后，继承的主题将用于查找缺少的模板（例如，如果"
+" ``\"basic\"`` 用作基本主题，则大多数模板将已被定义）。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:56
 msgid ""
@@ -121,6 +124,8 @@ msgid ""
 "included in generated HTML header. Setting the   :confval:`html_style` "
 "config value will override this setting."
 msgstr ""
+"**stylesheets** （字符串列表）：将包含在生成的 HTML 头中的 CSS 文件名列表。设置 :confval:`html_style` "
+"配置值将覆盖此设置。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:64
 msgid ""
@@ -128,6 +133,8 @@ msgid ""
 "CSS or using a custom HTML template with appropriate ``<link "
 "rel=\"stylesheet\">`` tags."
 msgstr ""
+"包括多个样式表的其他机制包括 CSS 中的 ``@import`` 或使用带有适当 ``<link rel=\"stylesheet\">`` "
+"标签的自定义 HTML 模板。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:67
 msgid ""
@@ -162,6 +169,9 @@ msgid ""
 ":confval:`html_theme_options` and are accessible from all templates as "
 "``theme_<name>``."
 msgstr ""
+"``[options]`` 表格定义主题的选项。其结构为每个键值对对应一个变量名和相应的默认值。用户可以在 "
+":confval:`html_theme_options` 中覆盖这些选项，并且可以从所有模板中以 ``theme_<name>`` "
+"的形式访问这些选项。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:85
 msgid "``theme.toml`` support."
@@ -169,7 +179,7 @@ msgstr "``theme.toml`` 支持。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:90
 msgid "Exemplar :file:`theme.toml` file:"
-msgstr ""
+msgstr "示例 :file:`theme.toml` 文件："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:112
 msgid "Theme configuration (``theme.conf``)"
@@ -204,6 +214,9 @@ msgid ""
 "template that adds ``<link rel=\"stylesheet\">`` tags as necessary.  Setting"
 " the :confval:`html_style` config value will override this setting."
 msgstr ""
+"**stylesheet** 设置提供以逗号分隔的 CSS 文件名列表，这些文件将在 HTML 头中引用。您还可以使用 CSS' ``@import``"
+" 技术从其他文件中包含，或使用自定义 HTML 模板根据需要添加 ``<link rel=\"stylesheet\">`` 标签。设置 "
+":confval:`html_style` 配置值将覆盖此设置。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:141
 msgid ""
@@ -316,7 +329,7 @@ msgstr "``sphinx.html_themes`` 进入点特征。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:225
 msgid "Styling with CSS"
-msgstr ""
+msgstr "使用 CSS 进行样式设计"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:227
 msgid ""
@@ -331,10 +344,11 @@ msgid ""
 "pages. While we cannot guarantee full stability, they tend to be fairly "
 "stable."
 msgstr ""
+"HTML 元素及其类的结构目前不是定义良好的公共 API。请通过检查构建的 HTML 页面来推断它们。虽然我们不能保证完全稳定，但它们往往相当稳定。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:237
 msgid "Styling search result entries by category"
-msgstr ""
+msgstr "按类别设置搜索结果条目的样式"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:243
 msgid ""
@@ -342,33 +356,35 @@ msgid ""
 "code.  If you are using a third-party search provider, such as ReadTheDocs_,"
 " to provide search results, then the theming options available may vary."
 msgstr ""
+"以下命名的 CSS 类由 Sphinx 的独立搜索代码生成。如果您使用第三方搜索提供程序（如 "
+"ReadTheDocs_）来提供搜索结果，则可用的主题选项可能会有所不同。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:250
 msgid ""
 "The search result items have classes indicating the context in which the "
 "search term was found. You can use the CSS selectors:"
-msgstr ""
+msgstr "搜索结果项具有指示搜索词所在上下文的类。您可以使用 CSS 选择器："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:253
 msgid ""
 "``ul.search li.kind-index``: For results in an index, such as the glossary"
-msgstr ""
+msgstr "``ul.search li.kind-index``：用于索引中的结果，例如术语表"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:255
 msgid ""
 "``ul.search li.kind-object``: For results in source code, like Python "
 "function definitions"
-msgstr ""
+msgstr "``ul.search li.kind-object``：用于源代码中的结果，如 Python 函数定义"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:257
 msgid "``ul.search li.kind-title``: For results found in section headings"
-msgstr ""
+msgstr "``ul.search li.kind-title``：用于在章节标题中找到的结果"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:259
 msgid ""
 "``ul.search li.kind-text``: For results found anywhere else in the "
 "documentation text"
-msgstr ""
+msgstr "``ul.search li.kind-text``：用于在文档文本中的任何其他位置找到的结果"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:262
 msgid ""
@@ -377,6 +393,8 @@ msgid ""
 "themes are encouraged to use these selectors as they see fit. For example, "
 "the following stylesheet adds contextual icons to the search result list:"
 msgstr ""
+"作为其他主题继承的基础，``basic`` 主题故意是最小化的，并且不使用这些定义 CSS "
+"规则。鼓励派生主题根据需要使用这些选择器。例如，以下样式表向搜索结果列表添加了上下文图标："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:292
 msgid "Templating"
@@ -411,6 +429,9 @@ msgid ""
 "\"exclamation mark\" syntax as :ref:`described in the templating document "
 "<templating-primer>`."
 msgstr ""
+"在具有相同名称的基本主题中扩展模板时，请使用主题名称作为显式目录： ``{% extends \"basic/layout.html\" "
+"%}``。从用户 ``templates_path`` 模板，您仍然可以使用“感叹号”语法，如 :ref:`templating-primer` "
+"模板文档中所述。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:316
 msgid "Static templates"
@@ -431,6 +452,8 @@ msgid ""
 "user's static path) ends with ``.jinja`` or ``_t``, it will be processed by "
 "the template engine.  The suffix will be removed from the final file name."
 msgstr ""
+"如果主题的 ``static/`` 目录中的文件名（或用户的静态路径）以 ``.jinja`` 或 ``_t`` "
+"结尾，则将由模板引擎处理。后缀将从最终文件名中删除。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:327
 msgid ""
@@ -440,29 +463,32 @@ msgid ""
 "``_static/theme_styles.css`` file where all template tags have been "
 "processed."
 msgstr ""
+"例如，具有 ``static/theme_styles.css.jinja`` "
+"文件的主题可以使用模板将选项放入样式表中。当使用该主题构建文档项目时，输出目录将包含一个 ``_static/theme_styles.css`` "
+"文件，其中所有模板标签均已被处理。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:335
 msgid ""
 "The preferred suffix for static templates is now ``.jinja``, in line with "
 "the Jinja project's `recommended file extension`_."
-msgstr ""
+msgstr "静态模板的首选后缀现在是 ``.jinja``，符合 Jinja 项目的 `recommended file extension`_。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:338
 msgid ""
 "The ``_t`` file suffix for static templates is now considered 'legacy', and "
 "support may eventually be removed."
-msgstr ""
+msgstr "静态模板的 ``_t`` 文件后缀现在被视为“传统”，并且支持最终可能会被移除。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:341
 msgid ""
 "If a static template with either a ``_t`` suffix or a ``.jinja`` suffix is "
 "detected, it will be processed by the template engine, with the suffix "
 "removed from the final file name."
-msgstr ""
+msgstr "如果检测到具有 ``_t`` 后缀或 ``.jinja`` 后缀的静态模板，则将由模板引擎处理，并从最终文件名中删除后缀。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:349
 msgid "Use custom page metadata in HTML templates"
-msgstr ""
+msgstr "在 HTML 模板中使用自定义页面元数据"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:351
 msgid ""
@@ -471,20 +497,22 @@ msgid ""
 "Jinja template when building the page within the :data:`meta` attribute. For"
 " example, if a page had the following text before its first title:"
 msgstr ""
+"放置在页面标题*之前*的 :doc:`field lists </usage/restructuredtext/field-lists>` "
+"中的任何键/值对将在构建页面时通过 :data:`meta` 属性提供给 Jinja 模板。例如，如果页面在其第一个标题之前具有以下文本："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:363
 msgid "Then it could be accessed within a Jinja template like so:"
-msgstr ""
+msgstr "它可以在 Jinja 模板中这样访问："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:371
 msgid ""
 "Note the check that ``meta`` is a dictionary (\"mapping\" in Jinja "
 "terminology) to ensure that using it in this way is valid."
-msgstr ""
+msgstr "请注意检查 ``meta`` 是否为字典（Jinja 术语中的“映射”），以确保以这种方式使用它是有效的。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:376
 msgid "Defining custom template functions"
-msgstr ""
+msgstr "定义自定义模板函数"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:378
 msgid ""
@@ -494,28 +522,30 @@ msgid ""
 " if you'd like to include non-trivial checks and provide friendly error "
 "messages for incorrect configuration in the template."
 msgstr ""
+"有时在 Python "
+"中定义自己的函数然后在模板中使用它是很有用的。例如，如果您想插入一个模板值，其逻辑取决于项目中用户的配置，或者如果您想包含非平凡的检查并为模板中的错误配置提供友好的错误消息。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:384
 msgid ""
 "To define your own template function, you'll need to define two functions "
 "inside your module:"
-msgstr ""
+msgstr "要定义您自己的模板函数，您需要在模块内定义两个函数："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:387
 msgid ""
 "A **page context event handler** (or **registration**) function. This is "
 "connected to the :class:`.Sphinx` application via an event callback."
-msgstr ""
+msgstr "**页面上下文事件处理程序**（或**注册**）函数。这是通过事件回调连接到 :class:`.Sphinx` 应用程序的。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:389
 msgid "A **template function** that you will use in your Jinja template."
-msgstr ""
+msgstr "**模板函数**，您将在 Jinja 模板中使用它。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:391
 msgid ""
 "First, define the registration function, which accepts the arguments for "
 ":event:`html-page-context`."
-msgstr ""
+msgstr "首先，定义注册函数，该函数接受 :event:`html-page-context` 的参数。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:394
 msgid ""
@@ -524,12 +554,14 @@ msgid ""
 "Python objects (lists, dictionaries) with strings inside that Jinja uses in "
 "the templating process"
 msgstr ""
+"在注册函数内，定义您想在 Jinja 中使用的模板函数。模板函数应返回字符串或 Python 对象（列表、字典），其中包含 Jinja "
+"在模板处理过程中使用的字符串"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:400
 msgid ""
 "The template function will have access to all of the variables that are "
 "passed to the registration function."
-msgstr ""
+msgstr "模板函数将可以访问传递给注册函数的所有变量。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:403
 msgid ""
@@ -537,20 +569,22 @@ msgid ""
 "Sphinx application's context with ``context['template_func'] = "
 "template_func``."
 msgstr ""
+"在注册函数的末尾，将模板函数添加到 Sphinx 应用程序的上下文中，方法是 ``context['template_func'] = "
+"template_func``。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:406
 msgid ""
 "Finally, in your extension's ``setup()`` function, add your registration "
 "function as a callback for :event:`html-page-context`."
-msgstr ""
+msgstr "最后，在扩展的 ``setup()`` 函数中，将注册函数添加为 :event:`html-page-context` 的回调。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:423
 msgid "Now, you will have access to this function in jinja like so:"
-msgstr ""
+msgstr "现在，您将可以在 jinja 中访问此函数，如下所示："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:433
 msgid "Add your own static files to the build assets"
-msgstr ""
+msgstr "将您自己的静态文件添加到构建资产中"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:435
 msgid ""
@@ -560,10 +594,13 @@ msgid ""
 " to the ``_static/`` directory of HTML outputs manually at the build via an "
 "event hook.  Here is an example of code to accomplish this:"
 msgstr ""
+"默认情况下，Sphinx 会复制模板目录的 ``static/`` 目录中的静态文件。但是，如果您的包需要出于某些原因将静态文件放置在 "
+"``static/`` 目录之外，则需要通过事件钩子在构建时手动将它们复制到 HTML 输出的 ``_static/`` "
+"目录中。以下是实现此目的的代码示例："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:455
 msgid "Inject JavaScript based on user configuration"
-msgstr ""
+msgstr "根据用户配置注入JavaScript"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:457
 msgid ""
@@ -572,12 +609,14 @@ msgid ""
 "be difficult to do if your JavaScript comes in the form of a static library "
 "(which will not be built with Jinja)."
 msgstr ""
+"如果您的扩展使用 JavaScript，则允许用户使用其 Sphinx 配置来控制其行为可能很有用。但是，如果您的 JavaScript "
+"以静态库的形式出现（不会使用 Jinja 构建），则可能很难做到这一点。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:462
 msgid ""
 "There are two ways to inject variables into the JavaScript space based on "
 "user configuration."
-msgstr ""
+msgstr "有两种方法可以根据用户配置将变量注入 JavaScript 空间。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:465
 msgid ""
@@ -585,19 +624,20 @@ msgid ""
 "your extension. This will cause Sphinx to process these files with the "
 "templating engine, allowing you to embed variables and control behavior."
 msgstr ""
+"首先，您可以在扩展中包含的任何静态文件的末尾添加 ``_t``。这将导致 Sphinx 使用模板引擎处理这些文件，允许您嵌入变量和控制行为。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:469
 msgid "For example, the following JavaScript structure:"
-msgstr ""
+msgstr "例如，以下 JavaScript 结构："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:478
 msgid ""
 "Will result in the following static file placed in your HTML's build output:"
-msgstr ""
+msgstr "将导致在 HTML 的构建输出中放置以下静态文件："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:487
 msgid "See :ref:`theming-static-templates` for more information."
-msgstr ""
+msgstr "参见 :ref:`theming-static-templates` 以获取更多信息。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:489
 msgid ""
@@ -608,20 +648,23 @@ msgid ""
 "JavaScript into your site's head. This allows you to insert variables into "
 "your project's JavaScript from Python."
 msgstr ""
+"其次，您可以使用 :meth:`.Sphinx.add_js_file` 方法，而不指向文件。通常，此方法用于将新的 JavaScript "
+"文件插入到您的站点中。但是，如果您*不*传递文件路径，而是将字符串传递给“body”参数，则该文本将作为 JavaScript "
+"插入到您站点的头中。这允许您从 Python 将变量插入到项目的 JavaScript 中。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:496
 msgid ""
 "For example, the following code will read in a user-configured value and "
 "then insert this value as a JavaScript variable, which your extension's "
 "JavaScript code may use:"
-msgstr ""
+msgstr "例如，以下代码将读取用户配置的值，然后将该值作为 JavaScript 变量插入，您的扩展的 JavaScript 代码可以使用该变量："
 
 #: ../../sphinx/doc/development/html_themes/index.rst:515
 msgid ""
 "As a result, in your theme you can use code that depends on the presence of "
 "this variable. Users can control the variable's value by defining it in "
 "their :file:`conf.py` file."
-msgstr ""
+msgstr "因此，在您的主题中，您可以使用依赖于该变量存在的代码。用户可以通过在其 :file:`conf.py` 文件中定义该变量来控制变量的值。"
 
 #: ../../sphinx/doc/development/html_themes/index.rst:520
 msgid ""

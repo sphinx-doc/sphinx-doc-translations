@@ -15,9 +15,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/038fc40dd\n"
+"Project-Id-Version: Sphinx 9.1.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 06:41+0000\n"
+"POT-Creation-Date: 2025-12-24 06:42+0000\n"
 "PO-Revision-Date: 2018-05-01 15:28+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -38,8 +38,8 @@ msgid ""
 "configuration file\" and contains (almost) all configuration needed to "
 "customise Sphinx input and output behaviour."
 msgstr ""
-":term:`configuration directory` 必须包含一个名为 :file:`conf.py` "
-"的文件。该文件（内为Python代码）称为“构建配置文件”，并包含定制Sphinx输入和输出行为所需的（几乎）所有配置。"
+":term:`配置目录 <configuration directory>` 须包含 :file:`conf.py` "
+"文件(内为Python代码)。该文件称为\"构建配置文件\"，包含定制Sphinx输入和输出行为所需的（几乎）所有配置项。"
 
 #: ../../sphinx/doc/usage/configuration.rst:28
 msgid ""
@@ -93,8 +93,8 @@ msgid ""
 ":term:`configuration directory`), and therefore can execute arbitrarily "
 "complex code."
 msgstr ""
-"配置文件在构建时作为Python代码执行（使用 :func:`importlib.import_module`，当前目录设置为 "
-":term:`configuration directory`），因此可以执行任意复杂的代码。"
+"配置文件在构建时作为Python代码执行（使用 :func:`importlib.import_module`，当前目录设置为 :term:`配置目录 "
+"<configuration directory>`），因此可以执行任意复杂的代码。"
 
 #: ../../sphinx/doc/usage/configuration.rst:64
 msgid ""
@@ -314,8 +314,8 @@ msgid ""
 " custom extensions live in a directory that is relative to the "
 ":term:`configuration directory`, use :meth:`pathlib.Path.resolve` like so:"
 msgstr ""
-"在修改 :data:`sys.path` 时确保使用绝对路径。如果您的自定义扩展位于相对于 :term:`configuration "
-"directory` 的目录中，请使用 :meth:`pathlib.Path.resolve`，如下所示："
+"在修改 :data:`sys.path` 时确保使用绝对路径。如果您的自定义扩展位于相对于 :term:`配置目录 <configuration "
+"directory>` 的目录中，请使用 :meth:`pathlib.Path.resolve`，如下所示："
 
 #: ../../sphinx/doc/usage/configuration.rst:240
 msgid "The directory structure illustrated above would look like this:"
@@ -346,7 +346,7 @@ msgid ""
 "available are:"
 msgstr ""
 "用于交叉引用 :rst:role:`manpage` 角色的URL。如果将其定义为 "
-"``https://manpages.debian.org/{path}``， :literal:`manpage:man(1)` "
+"``https://manpages.debian.org/{path}``， :literal:`:manpage:`man(1)`` "
 "角色会被链接到<https://manpages.debian.org/man(1)>。可用的模式有："
 
 #: ../../sphinx/doc/usage/configuration.rst:282
@@ -486,7 +486,7 @@ msgid ""
 "The default language to highlight source code in. The default is :code-"
 "py:`'default'`, which suppresses warnings if highlighting as Python code "
 "fails."
-msgstr "用于高亮显示源代码的默认语言。默认值为 :code-py:`'default'`，如果以Python代码进行高亮显示失败，则会抑制警告。"
+msgstr "用于高亮显示源代码的默认语言。默认为\\ :code-py:`'default'`，若以Python代码进行高亮显示失败，则会抑制警告。"
 
 #: ../../sphinx/doc/usage/configuration.rst:397
 msgid ""
@@ -541,8 +541,7 @@ msgid ""
 "The style name to use for Pygments highlighting of source code. If not set, "
 "either the theme's default style or :code-py:`'sphinx'` is selected for HTML"
 " output."
-msgstr ""
-"Pygments高亮显示源代码时使用的样式名称。如果未设置, 则HTML输出将选择主题的默认样式或 :code-py:`'sphinx'` 。"
+msgstr "Pygments高亮显示源代码时使用的样式名称。如未设置, 则HTML输出将选择主题的默认样式或\\ :code-py:`'sphinx'`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:435
 msgid ""
@@ -858,7 +857,8 @@ msgid ""
 ":confval:`language`), relative to the source directory. The directories on "
 "this path are searched by the :mod:`gettext` module."
 msgstr ""
-"在其中搜索其他消息目录的目录（请参见 :confval:`language`），相对于源目录。 :mod:`gettext` 模块将搜索此路径上的目录。"
+"在其中搜索其他消息目录的目录(见\\ :confval:`language`)，相对于源目录。:mod:`gettext`\\ "
+"模块将搜索此路径上的目录。"
 
 #: ../../sphinx/doc/usage/configuration.rst:581
 msgid ""
@@ -1197,7 +1197,7 @@ msgid ""
 "Trim spaces before footnote references that are necessary for the  "
 "reStructuredText parser to recognise the footnote, but do not look too nice "
 "in the output."
-msgstr "在脚注引用之前修剪空格, 这些空格对于 reStructuredText 解析器识别脚注是必要的, 但在输出中看起来不太好看。"
+msgstr "在脚注引用之前修剪空格, 这些空格对于reStructuredText解析器识别脚注是必要的, 但输出不太好看。"
 
 #: ../../sphinx/doc/usage/configuration.rst:885
 msgid "Options for Maths"
@@ -1314,7 +1314,7 @@ msgid ""
 "A boolean that decides whether parentheses are appended to function and "
 "method role text (e.g. the content of ``:func:`input```) to signify that the"
 " name is callable."
-msgstr "一个布尔值，决定是否在函数和方法角色文本（例如 ``:func:`input``` 的内容）后附加括号以表示该名称是可调用的。"
+msgstr "布尔值，用于决定是否在函数和方法角色文本(例如\\ ``:func:`input```\\ 的内容)后附加括号以表示其是可调用的。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1019
 #: ../../sphinx/doc/usage/configuration.rst:3997
@@ -1574,7 +1574,7 @@ msgid ""
 "*deactivates* smart quotes via the corresponding `Docutils option`__. But if"
 " it *activates* them, then :confval:`smartquotes` does prevail."
 msgstr ""
-"位于 :term:`configuration directory` 中的 `docutils.conf`__ 文件（或全局 "
+"位于 :term:`配置目录 <configuration directory>` 中的 `docutils.conf`__ 文件（或全局 "
 ":file:`~/.docutils` 文件）无条件遵守, 如果它通过相应的 `Docutils option`__ *停用* "
 "智能引号。但如果它*激活*它们, 则 :confval:`smartquotes` 确实占上风。"
 
@@ -1724,7 +1724,8 @@ msgid ""
 "builtin/theme-specific templates). Relative paths are taken as relative to "
 "the :term:`configuration directory`. Example:"
 msgstr ""
-"包含额外模板（或覆盖内置/特定主题模板的模板）的路径列表。相对路径被视为相对于 :term:`configuration directory`。例："
+"包含额外模板（或覆盖内置/特定主题模板的模板）的路径列表。相对路径被视为相对于 :term:`配置目录 <configuration "
+"directory>`。例："
 
 #: ../../sphinx/doc/usage/configuration.rst:1343
 msgid ""
@@ -2101,7 +2102,8 @@ msgid ""
 "zip files. Relative paths are taken as relative to the :term:`configuration "
 "directory`."
 msgstr ""
-"包含自定义主题的路径列表, 可以是子目录或zip文件。相对路径被视为相对于 :term:`configuration directory`。"
+"包含自定义主题的路径列表, 可以是子目录或zip文件。相对路径被视为相对于 :term:`配置目录 <configuration "
+"directory>`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1545
 msgid ""
@@ -2187,8 +2189,8 @@ msgid ""
 " URL that points an image file for the logo. It is placed at the top of the "
 "sidebar; its width should therefore not exceed 200 pixels."
 msgstr ""
-"如果提供, 这必须是文档徽标的图像文件的名称（相对于 :term:`configuration directory` 的路径）, 或指向徽标图像文件的 "
-"URL。 它放置在侧边栏的顶部；因此其宽度不应超过 200 像素。"
+"如果提供, 这必须是文档徽标的图像文件的名称（相对于 :term:`配置目录 <configuration directory>` 的路径）, "
+"或指向徽标图像文件的 URL。 它放置在侧边栏的顶部；因此其宽度不应超过 200 像素。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1621
 msgid ""
@@ -2208,9 +2210,9 @@ msgid ""
 " icon for tabs, windows and bookmarks. It should be a 16-by-16 pixel icon in"
 " the PNG, SVG, GIF, or ICO file formats."
 msgstr ""
-"如果提供, 这必须是文档的favicon_的图像文件的名称（相对于 :term:`configuration directory` 的路径）, 或指向 "
-"favicon_ 图像文件的URL。浏览器将其用作选项卡、窗口和书签的图标。它应该是 PNG、SVG、GIF 或 ICO 文件格式的 16x16 "
-"像素图标。"
+"如果提供, 这必须是文档的favicon_的图像文件的名称（相对于 :term:`配置目录 <configuration directory>` "
+"的路径）, 或指向 favicon_ 图像文件的URL。浏览器将其用作选项卡、窗口和书签的图标。它应该是 PNG、SVG、GIF 或 ICO 文件格式的"
+" 16x16 像素图标。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1648
 msgid ""
@@ -2279,9 +2281,9 @@ msgid ""
 ":file:`_static` directory after the theme's static files, so a file named "
 ":file:`default.css` will overwrite the theme's :file:`default.css`."
 msgstr ""
-"包含自定义静态文件（如样式表或脚本文件）的路径列表。相对路径被视为相对于 :term:`configuration directory`。 "
-"它们在主题的静态文件之后被复制到输出的 :file:`_static` 目录中, 因此名为 :file:`default.css` 的文件将覆盖主题的 "
-":file:`default.css`。"
+"包含自定义静态文件（如样式表或脚本文件）的路径列表。相对路径被视为相对于 :term:`配置目录 <configuration directory>`。"
+" 它们在主题的静态文件之后被复制到输出的 :file:`_static` 目录中, 因此名为 :file:`default.css` 的文件将覆盖主题的"
+" :file:`default.css`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1725
 #: ../../sphinx/doc/usage/configuration.rst:1763
@@ -2328,7 +2330,7 @@ msgid ""
 "the same name."
 msgstr ""
 "包含与文档不直接相关的额外文件（如 :file:`robots.txt` 或 :file:`.htaccess`）的路径列表。 相对路径被视为相对于 "
-":term:`configuration directory`。它们被复制到输出目录。 它们将覆盖任何同名的现有文件。"
+":term:`配置目录 <configuration directory>`。它们被复制到输出目录。 它们将覆盖任何同名的现有文件。"
 
 #: ../../sphinx/doc/usage/configuration.rst:1768
 msgid ""
@@ -2770,8 +2772,8 @@ msgid ""
 "directory`) that implements a search results scorer. If empty, the default "
 "will be used."
 msgstr ""
-"实现搜索结果评分器的 JavaScript 文件的名称（相对于 :term:`configuration directory`）。如果为空, "
-"将使用默认值。"
+"实现搜索结果评分器的 JavaScript 文件的名称（相对于 :term:`配置目录 <configuration "
+"directory>`）。如果为空, 将使用默认值。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2164
 msgid ""
@@ -3614,7 +3616,7 @@ msgid ""
 ":term:`configuration directory`) that is the logo of the documentation. It "
 "is placed at the top of the title page."
 msgstr ""
-"如果给出, 则这必须是图像文件的名称（相对于 :term:`configuration directory` 的路径）, "
+"如果给出, 则这必须是图像文件的名称（相对于 :term:`配置目录 <configuration directory>` 的路径）, "
 "它是文档的徽标。它放置在标题页的顶部。"
 
 #: ../../sphinx/doc/usage/configuration.rst:2977
@@ -3947,9 +3949,9 @@ msgid ""
 " source files (e.g. via ``.. image::``) are copied automatically and should "
 "not be listed there."
 msgstr ""
-"一个文件名列表, 相对于 :term:`configuration directory`, 在构建 LaTeX 输出时复制到构建目录。这对于复制 "
-"Sphinx 不会自动复制的文件或使用自定义版本覆盖 Sphinx LaTeX 支持文件非常有用。在源文件中引用的图像文件（例如通过 ``.. "
-"image::``）会自动复制, 不应在此列出。"
+"一个文件名列表, 相对于 :term:`配置目录 <configuration directory>`, 在构建 LaTeX "
+"输出时复制到构建目录。这对于复制 Sphinx 不会自动复制的文件或使用自定义版本覆盖 Sphinx LaTeX "
+"支持文件非常有用。在源文件中引用的图像文件（例如通过 ``.. image::``）会自动复制, 不应在此列出。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3256
 msgid ""
@@ -4013,7 +4015,8 @@ msgstr "一个字典, 其中包含影响所选主题外观和感觉的选项。�
 msgid ""
 "A list of paths that contain custom LaTeX themes as subdirectories. Relative"
 " paths are taken as relative to the :term:`configuration directory`."
-msgstr "包含自定义LaTeX主题作为子目录的路径列表。相对路径被视为相对于 :term:`configuration directory` 。"
+msgstr ""
+"包含自定义LaTeX主题作为子目录的路径列表。相对路径被视为相对于 :term:`配置目录 <configuration directory>` 。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3316
 msgid "Options for text output"
@@ -4466,7 +4469,7 @@ msgid ""
 "These options control how the *linkcheck* builder makes HTTP requests, "
 "including how it handles redirects and authentication, and the number of "
 "workers to use."
-msgstr "这些选项控制 *linkcheck* 构建器如何发出HTTP请求，包括如何处理重定向和身份验证，以及要使用的工作线程数。"
+msgstr "这些选项控制\\ *linkcheck*\\ 构建器如何发出HTTP请求，包括如何处理重定向和身份验证，以及要使用的工作线程数。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3780
 msgid "Pass authentication information when doing a ``linkcheck`` build."
@@ -4520,7 +4523,7 @@ msgstr ""
 msgid ""
 "The default value for this option changed to :code-py:`False`, meaning HTTP "
 "401 responses to checked hyperlinks are treated as \"broken\" by default."
-msgstr "此选项的默认值更改为 :code-py:`False` ，这意味着对检查的超链接的HTTP 401响应默认被视为“broken”。"
+msgstr "默认值更改为 :code-py:`False`，意味着对检查的超链接的HTTP 401响应默认被视为\"broken\"。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3826
 msgid ""
@@ -4659,7 +4662,7 @@ msgid ""
 "A sequence of strings that the parser should additionally accept as "
 "attributes. For example, this can be used when  :code-c:`#define` has been "
 "used for attributes, for portability."
-msgstr "一个字符串序列，解析器应另外接受为属性。例如，当 :code-c:`#define` 用于属性时，可以出于可移植性的目的使用它。"
+msgstr "一个字符串序列，解析器应应额外把它们作为属性接受。例如，当\\ :code-c:`#define`\\ 用于属性时，可以出于可移植性的目的使用它。"
 
 #: ../../sphinx/doc/usage/configuration.rst:3990
 msgid ":confval:`!c_id_attributes` can now be a tuple."
@@ -4672,7 +4675,7 @@ msgstr ":confval:`!c_id_attributes` 现在可以是一个元组。"
 msgid ""
 "This is a domain-specific setting, overriding "
 ":confval:`maximum_signature_line_length`."
-msgstr "这是一个特定于语言域的设置，覆盖了 :confval:`maximum_signature_line_length` 。"
+msgstr "这是一个特定于语言域的设置，覆盖了 :confval:`maximum_signature_line_length`。"
 
 #: ../../sphinx/doc/usage/configuration.rst:4013
 msgid ""

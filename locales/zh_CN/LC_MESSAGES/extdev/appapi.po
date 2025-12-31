@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0+/cc604ad43\n"
+"Project-Id-Version: Sphinx 9.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-17 12:58+0000\n"
+"POT-Creation-Date: 2025-12-31 18:37+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -949,6 +949,8 @@ msgstr ""
 #: sphinx.application.Sphinx.add_css_file:13
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_js_file:20
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_static_dir:16
 msgid "Example::"
 msgstr "例如："
 
@@ -1004,21 +1006,29 @@ msgstr ""
 "当扩展在 :event:`html-page-context` 事件上调用此方法时，可以将JavaScript文件添加到特定的HTML页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:48
+#: sphinx.application.Sphinx.add_css_file:42
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:47
+msgid ""
+":meth:`add_static_dir` for copying static files to the output directory"
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:51
 msgid ""
 "Renamed from ``app.add_javascript()``. And it allows keyword arguments as "
 "attributes of script tag."
 msgstr "重命名自 ``app.add_javascript()``. 它允许关键字参数作为脚本标记的属性。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:52
+#: sphinx.application.Sphinx.add_js_file:55
 msgid ""
 "Take priority argument.  Allow to add a JavaScript file to the specific "
 "page."
 msgstr "接受优先级参数。允许将JavaScript文件添加到特定页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:54
+#: sphinx.application.Sphinx.add_js_file:57
 msgid ""
 "Take loading_method argument.  Allow to change the loading method of the "
 "JavaScript file."
@@ -1073,7 +1083,7 @@ msgid ""
 msgstr "当扩展在 :event:`html-page-context` 事件上调用此方法时，可以将CSS文件添加到特定的HTML页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:43
+#: sphinx.application.Sphinx.add_css_file:46
 msgid ""
 "Optional ``alternate`` and/or ``title`` attributes can be supplied with the "
 "arguments *alternate* (a Boolean) and *title* (a string). The default is no "
@@ -1085,16 +1095,45 @@ msgstr ""
 "<https://mdn.io/Web/CSS/Alternative_style_sheets>`__ 。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:50
+#: sphinx.application.Sphinx.add_css_file:53
 msgid ""
 "Renamed from ``app.add_stylesheet()``. And it allows keyword arguments as "
 "attributes of link tag."
 msgstr "重命名自 ``app.add_stylesheet()``. 它允许关键字参数作为链接标记的属性。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:54
+#: sphinx.application.Sphinx.add_css_file:57
 msgid "Take priority argument.  Allow to add a CSS file to the specific page."
 msgstr "接受优先级参数。允许将CSS文件添加到特定页面。"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_static_dir:1
+msgid "Register a static directory to include in HTML output."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_static_dir:3
+msgid ""
+"The given directory's contents will be copied to the ``_static`` directory "
+"during an HTML build. Files from extension static directories are copied "
+"after theme static files and before any directories from the user-configured"
+" ``html_static_path`` setting."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_static_dir:8
+msgid ""
+"Sphinx has built-in support for ``static/`` directories in themes; theme "
+"developers should only use this method to register further directories to be"
+" copied."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_static_dir:12
+msgid ""
+"The path to a directory containing static files. This is typically relative "
+"to the extension's package directory."
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_latex_package:1
@@ -1327,17 +1366,17 @@ msgstr "always: 在所有页面中包含资源"
 msgid "per_page: include the assets only in pages where they are used"
 msgstr "per_page: 仅在使用它们的页面中包含资源"
 
-#: ../../sphinx/doc/extdev/appapi.rst:102
+#: ../../sphinx/doc/extdev/appapi.rst:104
 msgid ""
 "All these methods raise this exception if something went wrong with the "
 "extension API."
 msgstr "如果插件接口出现问题，所有这些方法都会引发此异常。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:107
+#: ../../sphinx/doc/extdev/appapi.rst:109
 msgid "Emitting events"
 msgstr "发射事件"
 
-#: ../../sphinx/doc/extdev/appapi.rst:111
+#: ../../sphinx/doc/extdev/appapi.rst:113
 msgid ""
 "Extension developers should prefer using the event manager (``events``) "
 "object directly, via :meth:`.EventManager.emit` and "
@@ -1394,32 +1433,32 @@ msgstr "添加了 *allowed_exceptions* 来指定路径穿越异常"
 msgid "Return the result of the first callback that doesn't return ``None``."
 msgstr "返回第一个不返回 ``None`` 的回调的结果。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:125
+#: ../../sphinx/doc/extdev/appapi.rst:127
 msgid "Sphinx runtime information"
 msgstr "Sphinx运行时信息"
 
-#: ../../sphinx/doc/extdev/appapi.rst:127
+#: ../../sphinx/doc/extdev/appapi.rst:129
 msgid ""
 "The application object also provides runtime information as attributes."
 msgstr "应用程序对象还提供运行时信息作为属性。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:131
+#: ../../sphinx/doc/extdev/appapi.rst:133
 msgid "Target project.  See :class:`.Project`."
 msgstr "目标项目。参见： :class:`.Project`。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:135
+#: ../../sphinx/doc/extdev/appapi.rst:137
 msgid "Source directory."
 msgstr "源目录"
 
-#: ../../sphinx/doc/extdev/appapi.rst:139
+#: ../../sphinx/doc/extdev/appapi.rst:141
 msgid "Directory containing ``conf.py``."
 msgstr "目录包含 ``conf.py``."
 
-#: ../../sphinx/doc/extdev/appapi.rst:143
+#: ../../sphinx/doc/extdev/appapi.rst:145
 msgid "Directory for storing pickled doctrees."
 msgstr "用于存储文档树的目录。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:147
+#: ../../sphinx/doc/extdev/appapi.rst:149
 msgid "Directory for storing built document."
 msgstr "用于存储生成文档的目录。"
 
@@ -1430,19 +1469,19 @@ msgid ""
 "None if the environment has not been initialised yet."
 msgstr "True/False表示是否为此构建创建了新环境，如果环境尚未初始化，则为None。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:152
+#: ../../sphinx/doc/extdev/appapi.rst:154
 msgid "Sphinx core events"
 msgstr "Sphinx核心事件"
 
-#: ../../sphinx/doc/extdev/appapi.rst:154
+#: ../../sphinx/doc/extdev/appapi.rst:156
 msgid "Moved to :ref:`events`."
 msgstr "移动到了 :ref:`events`。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:157
+#: ../../sphinx/doc/extdev/appapi.rst:159
 msgid "Checking the Sphinx version"
 msgstr "检查Sphinx版本"
 
-#: ../../sphinx/doc/extdev/appapi.rst:161
+#: ../../sphinx/doc/extdev/appapi.rst:163
 msgid "Use this to adapt your extension to API changes in Sphinx."
 msgstr "使用此选项可使您的插件适应Sphinx中的接口更改。"
 
@@ -1464,7 +1503,7 @@ msgstr ""
 msgid "Before version 1.2, check the string ``sphinx.__version__``."
 msgstr "在版本1.2之前，请检查字符串 ``sphinx.__version__``。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:167
+#: ../../sphinx/doc/extdev/appapi.rst:169
 msgid "The Config object"
 msgstr "配置对象"
 
@@ -1490,7 +1529,7 @@ msgstr ""
 ":confval:`language` 的值，请使用 ``app.config.language`` 或者 "
 "``env.config.language`` 。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:180
+#: ../../sphinx/doc/extdev/appapi.rst:182
 msgid "The template bridge"
 msgstr "模板桥"
 
@@ -1543,7 +1582,7 @@ msgid ""
 "specified context (a Python dictionary)."
 msgstr "由生成器调用以呈现给定为字符串的模板，并具有指定的上下文（Python字典）。"
 
-#: ../../sphinx/doc/extdev/appapi.rst:191
+#: ../../sphinx/doc/extdev/appapi.rst:193
 msgid "Exceptions"
 msgstr "例外"
 

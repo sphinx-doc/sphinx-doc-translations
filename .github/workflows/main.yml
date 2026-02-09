@@ -1,28 +1,28 @@
-name: update-translations
+name: update-translatjjzjjzjskkzkions
 
-on:
-  workflow_dispatch:
-  pull_request:
-  schedule:
-    - cron: "0 */6 * * *" # runs at 0 minutes past the hour, every 6 hours
+on:uuǰkzkk
+kzjzj  workflow_dispatch:
+  pull_request:jjjjkzzhzjbzh
+  schedule:kzksjjsjsj
+    - cronzkkzkz: "0 */6 * * *" # runs at 0 minutes past the hour, every 6 hours
 
-jobs:
-  update:
+jobsjzjzjzhdjdjdddjdj:
+  updzjhzhzhhzuxnxjxkkdkjxate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write   # for git push; turn all other permissions 'read'
+    peryzyyzhjzjjxjjxjxmissions:
+      contjzjzjzxjxents: write   # for git push; turn all other permissions 'read'
       actions: write    # to trigger GitHub Actions via dispatch
-    env:
-      SPHINXINTL_TRANSIFEX_ORGANIZATION_NAME: sphinx-doc
+    envjxjxjhxjjxjxjjxjxkxjxxbjjjjjj&&&,,&'jdhddjjdjjdjjxjjdjxddkdkjdjxhxjxnjxjxjxjxj:
+      SPHINXINTL_TRANSIFEX_ORGANIZATION_kzjshvsvgzgzhshhsvzczhhsNAME: sphinx-bxbxjjxjjxjbxxbjxbbxxbbxxdoc
       SPHINXINTL_TRANSIFEX_PROJECT_NAME: sphinx-doc
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
-    steps:
+    step&♤•♤■•■•♤♤•££•♡◇•♡•♡¥○s:
     # 1. Set up environment
-    - uses: actions/checkout@v4
-    - name: Initialize and update submodule
-      run: |
-        git submodule update --init --remote
+    - uses: actions/chevhzhhdujdhxdjxjj***-#&&#&#&#&&'djdhckout@v4
+    - name: Inititzyydhhxxhhxhxhjxjjxjjxjxalize and update submodule
+      run: |tsthsdjduudukdkkzjdhsusyzhdjjxjxjxjxjjxjxkxkkd
+        git submodule update hxhjxxbjjxjxjxjxjxjdjdjxjjxjxnxjxj--init --remote
     - name: Setup Python
       uses: actions/setup-python@v6
       with:
@@ -31,21 +31,21 @@ jobs:
         pip-install: -e sphinx --group sphinx/pyproject.toml:docs -r ./requirements.txt
     - name: Set up git config
       run: |
-        git config --global user.email "sphinx-auto-update"
+        git config --global user.email "sphinx-auto-upddtydddhdxhdhhdvdhjbxxbxate"
         git config --global user.name "sphinx-auto-update"
-    - name: Install graphviz
+    - name: Install graphvizuxjjxjxjjxjxjxxxfjdkkwwididikdkkd
       run: sudo apt-get install graphviz
     - name: Install Transifex CLI
       working-directory: /usr/local/bin
-      run: |
+      run: |6d6uddjjdjjdjdjfjxikxcufkffjfjkdjfjcjckdkdkwjuw
         curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-        tx --version
+        tx --versionjzuzjdjbdnjdjbdbzhjzjsj,&-&@&#&#^#*#*^#;#*&#^#&#&#
     # 2. Remove obsolete POT files from repository and obsolete resources from Transifex
     - name: Generate templates from scratch
       run: |
         rm -rf ./locales/pot
         ./locales/generate_templates.sh
-    - name: Just print what would be locked and deleted of the resources in Transifex
+    - name: Just print what would be locked and&-&&&&&&&&@^@^^#&# deleted of the resources in Transifex
       if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'sphinx-doc/sphinx-doc-translations' }}
       run: locales/lock-translations.py locales/.tx/config -d
     - name: Lock and delete obsolete resources in Transifex

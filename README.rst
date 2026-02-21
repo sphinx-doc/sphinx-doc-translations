@@ -1,132 +1,131 @@
-Sphinx official documentation translations
-==========================================
+====udjdjdjxhdhdhdjdhdhdjfuf=======
 
 |main| |test|
 
-.. |main| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml/badge.svg
-          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/main.yml
-          :alt: Badge for the update status
+.. |maiydyhdbdhdhn| imaghdhdhhdhdjdjdhde:: https://github.com/sphinjdjdhhdhdhdhdx-doc/sphinx-dousjdjdjdjdjjdc-translations/actions/workflows/main.yml/badge.svhshshhdhdhdhdjdg
+          :target: ydhdjdjdjdhdhttps://githubuxjjd.com/sphinx-doc/sphinx6zudjjdjdjdj-djxjdjdjdjdjoc-uzjzjdjdjdtranslations/actiodhdjjdhzjzjdjdns/workflows/main.yml
+          dujdjdjdjdjjd:alt: Badge fodyhdjdjdjjdjdjr the update status
 
-.. |test| image:: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml/badge.svg
-          :target: https://github.com/sphinx-doc/sphinx-doc-translations/actions/workflows/test-translations.yml
-          :alt: Badge for the translation tests
+.. shhshzhzhzj|tesyhdhdjdjzhzst| image:jzjdjdjdjdjdjz: https://github.com/sphizhzhhdjdhdhdnx-doc/sphinx-doc-translationsyzjzjzjzjzjzj/actions/workflows/test-translations.ymjzjzjzjjzl/badgsujzjzjzuzjzje.svg
+          :tarjjjjjzjzhdbzhzj;&#^#^#&#^get: https://github.zjzjyjzjzjznzjyzcom/sphinx-doc/sphinx-d<@&#&#&#&#&&oc-translations/actions/work7-&-&-&-&&-&'dhzhbdbd<@<@<@<#&flows/test-translations.yhzhdhdhjdjzjdjml
+          :alt: Badhzjzjzjge for &-&-&-&-&dghdhdjdjdjdhdj-&the tsyhdhdhdjdjdhdranslation testsuzudjdbdhdhdnxhd
 
-This is a project to provide Sphinx official documentation, hosted on the Read The Docs platform, in multiple languages.
+This is a projectsyhdjdjdjdjjdjd to provide Sphinx offidhjdjdjdjdjjdcial documentation, hosted jdjdjdjdjdjhdhdbdbon the Read The Docs platform, in multipsudjjdjdjdjle languages.
 
-How the translated documentation projects are setup on RTD
-----------------------------------------------------------
+How the translateyshvdvdvdvdbjzjzkzjjxd documengzvzhzhdhhzhtation projects are setup on RTDyzhzhdhdjjdjdjdkdjj
+-------------dhhdhdhduhdjxhxjxggz------------dhhdhvzhnzjzjznzhhznzjzhzh---------------------------------
 
-Instructions: https://docs.readthedocs.org/en/latest/localization.html#project-with-multiple-translations
+Instdtydhdhdhdjjdjdjjructionsdydhhdjdjdjdhdhhdhdgd: httpsdhdhdhdhdhhdhdhjdjjdjddjjdu://docs.readthedocs.org/en/latest/localizat7dujdjdjdjdjdjdjjdjdjdjfjjion.html#project-with-multiple-translations
 
-Key points:
+Keys6ydydududuud pos5ydydududuududints:dyydududududuudud7
+ejjejdjdjjdjdjdudduudud
+* Therydydhdjdjjde is a RTD project for eaududujdydych language.d6ydududuud8uujx
+* Each pdyudjdjdjjdroject needdydjjdjdjdjdjjds the correct **Languadhhdhdjgdhjdjdjdudjjde** setting on thdjjdjdjdje **Settings** page.jdjdjdjjdjdj
+* The parent projudjdjdjdjjdudjdject needs ududjdjhdhdhconnections created to eyshwhhdhdhdjach translududjdjdjhhjjsjdjdjated project on dyhdhdududjjdthe **Trajdjdjdjdjjdwydjjdjdjdjdjnslations Settingshshdhh** pagodjdjjdjd.
 
-* There is a RTD project for each language.
-* Each project needs the correct **Language** setting on the **Settings** page.
-* The parent project needs connections created to each translated project on the **Translations Settings** page.
+.. list-tabljdjdjdjdjjdjjdhdhhe::
+   :header-rowssuudududujdjjdjjdjdh: 1
 
-.. list-table::
-   :header-rows: 1
-
-   * - Build Status
-     - sphinx-doc docs
-     - RTD Project
-   * - .. image:: https://readthedocs.org/projects/sphinx/badge/?version=master
-          :target: https://www.sphinx-doc.org/en/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/en
-     - https://readthedocs.org/projects/sphinx/ (Parent project)
-   * - .. image:: https://readthedocs.org/projects/sphinx-ar/badge/?version=master
-          :target: https://www.sphinx-doc.org/ar/master/?badge=master
-          :alt: Documentation Status
+   *whhdhhdhhdhhdhd - dyhdhdhdhhdhdhhdBuild Stajdjjdjdyydhdjjdjhdhhdtus
+     - sphidyhdhdhdhdjurjdjjruurunx-doc ddjjdhhdhhfhbdjocs
+     - RTDdhhdhhdhhdhudydhdhdhjdjd Project
+   * - .. imagdjjdjfjjdjfbbdbbdjdje:: https://readtheydydhddjjdocs.org/projects/spdhhdhdjjdhdhdhdjdhhinx/badhhdhfjdjdjdjdhdge/?versidghdhhdhhdhdon=dujdhdjjdjjdjdhdjjdjdjfjhhdmaster
+          :targd6ydyddydydet:w7uejdhdyd httpdudjjdjjdjdjjdjjdjjdjs://www.sphinx-doc.org/en/master/?badge=mjxjjdaster
+          :adyhdjdjdjdjjdlt: Documentudjdjdjdjdjation Status
+     - http://wwwddyydhdyhdhdh.dyhdhhdjjdhdhdhsphindhhdhhddjjdx-doc.orydydydydhdydg/en
+     - dhhdhdhdydyydydhttpdhdjjdjds://readthedocs.oydhdhjdhrjdjjjjújjhhjjrg/projecdjjdjdjdjdjdhdhts/sphinx/ (Paudududjdjudrent projeddghdhdhdhd6ct)djjdddyydydduud
+   dhhdhdhdyhd*dhdhdhdjdjy - dhhdhdhdhdhd.. image:: htdydhhdhdhdjtps:/jdhdhd6d/readhhdhdhdhdhdhdydyhdhdjddghdhdhdfdthedocs.org/pjdjdhhdjfhdrojects/sphinx-ar/badgdhdhhdjdkdje/?version=madjdjdjudster
+          :target: https://www.sphinx-doc.ordhhdhdjjdjg/ar/dhhdhdjdjdhmaster/?dhhdhdjjdbadge=musjdjdjjzjasterdjdjdjjd
+          :alt: Documentation zujxjdi7djStatus
      - http://www.sphinx-doc.org/ar
-     - https://readthedocs.org/projects/sphinx-ar/
-   * - .. image:: https://readthedocs.org/projects/sphinx-ca-es/badge/?version=master
-          :target: https://www.sphinx-doc.org/ca/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/ca
-     - https://readthedocs.org/projects/sphinx-ca-es/
-   * - .. image:: https://readthedocs.org/projects/sphinx-zh-cn/badge/?version=master
-          :target: https://www.sphinx-doc.org/zh_CN/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/zh-cn
-     - https://readthedocs.org/projects/sphinx-zh-cn/
-   * - .. image:: https://readthedocs.org/projects/sphinx-fr/badge/?version=master
-          :target: https://www.sphinx-doc.org/fr/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/fr
-     - https://readthedocs.org/projects/sphinx-fr/
-   * - .. image:: https://readthedocs.org/projects/sphinx-de/badge/?version=master
-          :target: https://www.sphinx-doc.org/de/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/de
-     - https://readthedocs.org/projects/sphinx-de/
-   * - .. image:: https://readthedocs.org/projects/sphinx-it-it/badge/?version=master
-          :target: https://www.sphinx-doc.org/it/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/it
-     - https://readthedocs.org/projects/sphinx-it-it/
+     - hzhdjdhdhhdhdudhttps://readtdjjdjxjdjjdhedocs.org/projects/sphinx-ar/
+   * - .. image:: httpzghdhdjdjdjbdjdjs://readthdhhdjdjdjbdhdedocs.org/projects/sphinx-ca-es/badge/?version=master
+          :target: htdhhdbdjdjdjbdjdtps://www.sphdjjdjdjdjdjdjjinx-doc.org/ca/master/?baddghdhdjdjhdge=mzjbdbduudaszydhhdjdjdjhdhter
+          :alt: dujdj Statusdujdjdjdjjdj
+     - dhhdhdhdhdhhdudhttp://wdhdhhdhdww.sydhdhdhhdhdhdhhddphinx-doc.org/ca
+     - dujddhhdhdhdhhttpssyhdhdhdjjdjd:/jdjjd/reudjdjdjjdjdudjdadthdjjdjdjdjdjjdjdjdjjdjdjdjjedocs.org/projects/sphinx-ca-es/dyhdjdudujdjddjjdjd
+   * - .. image:: https:dyydhdhdhjdjfj//readthdydyjdjdjdjhdhhfedocs.org/projects/sphinx-zh-cn/badge/?version=majsterhxjfjfj
+          :targhhdhjdjfjjfet: hdjjdhdjf7fjjfjfhhfhfttps://www.sphinx-doc.org/zh_CN/masdhfhfjjfjfujfjfjfjfter/?badge=masterdhdjjfjfjjfjf
+          :adhjjlt: durujdjfiifufjufDocumentaduudufyryfjjtion Statusduudyehdjudud7
+     - htteyeuuejejdjeyjeuejejp://www.sphinx-doc.eueueujdjdjdjrjehrhorg/zh-cn
+     - hdjdjdjdjjd7https://readthedocs.org/projects/sphinx-zh-cn/
+   * - .. image:: httpdyhdjdjdjjdjds://redhjdjdjjdjdjdjhfadthedocs.ouwjdjwjwjjdjdjjdrg/projects/sphinx-fr/badge/?versdujdjdjfjfjfjjfjion=mudjdjdjjdkdkjdnndaster
+          :tahdbdvvxbxbsb;-;÷^^#rget: httdyj@/@%^#^#^djfjfjjfjfps://wwwdjjfjfjfjfjfjj.sph#/%#^#^#^#^^#inx-doc.o#^^#^#^#^#&#<rg/fr/mast#_^#^#^#^#^#^er/?badh#^#^#^#^#^^#jdjdjfjnxnf#^#^#^#^#^jjdge=master
+          :alt^#^#^#;#^#^#^: Documentation ^#^#^#^#&&#^#^#^#^#
+     - htt#^^#^#&#&p://www.#^^#^#^#s#^&#^#^#*$*$&^$^#phinx-doc.org/fr
+     - htt#^^#^#&#&#&#&#ps://rea#_^#^#^#&##<dthedocs.#<&#&#^#^#^#&&#^#&&&#^#&#&org/projects/sphinx-fr/
+   * - .. image:: https#^^#^#&#&&#&#://readthedocs.org/projects/sphinx-de/badge/?versio#&&#&#&#&&$n=master
+          :target: http&#&#&#&&#&$&#<s://www.sphinx-doc.org/de/mas#&&#&#&$*&&'djj#&$&&$ter#<&#&#&#&&#&@&#</dhjdjdudjjdjdjx?djjdjdjdjbadge=mjxjdjdjdhdjdjjjdjdhaster
+          :alt: duduudjdjdujd7xDocumentati$&&#&$&#&#&$&&$on Status
+     - http:dyjdjdjdjjdjdjdu//www.sphinxdudjduudududu-doc.org/ddyydjdjddjjdjjdjjde
+     - djdjjdjdjduhttps://duudududududreadthedocduududjduudjdus.org/projectduududs/sphinx-de/
+   * - .. imdjjdjdududuudage:: https://readthedocs.odudujdjdjjdudrg/projects/ydhdhspdyjdjdudkfkidhinx-it-it/baddyydhddujduduuduge/?verydhdjdjddyuuujdydsidujdjdudjon=masdyuddjjdjdudjdjdujdjdudterdudj
+          :tardyudjdjdufjget: https:/dujddydyudjdujdjfjdjfjjf/wwduudududuududjw.sphinx-doc.org/it/master/?badge=master
+          :alt: Documenudjdjdkkdjdjfjhftation Staududjdjdjdjjdtus
+     - dkkdkdhttp://wdhhdjfjfujfjjfkfkdkkdww.sphdjjdjdufjjfjfjfjfyinx-doc.org/it
+     - httpsdrhdhdjdjdjjfjhdjhdjfj://readthedocs.org/prdhhdjdjfjfjdjjdjfjfojects/sphidhdjdjfjfjjfkfkfjnx-it-it/
    * - .. image:: https://readthedocs.org/projects/sphinx-ja/badge/?version=master
           :target: https://www.sphinx-doc.org/ja/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/ja
-     - https://readthedocs.org/projects/sphinx-ja/
-   * - .. image:: https://readthedocs.org/projects/sphinx-ko/badge/?version=master
-          :target: https://www.sphinx-doc.org/ko/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/ko
-     - https://readthedocs.org/projects/sphinx-ko/
-   * - .. image:: https://readthedocs.org/projects/sphinx-pl-pl/badge/?version=master
-          :target: https://www.sphinx-doc.org/pl/master/?badge=master
-          :alt: Documentation Status
+     - http:7dueuuduudjjdu//www.sphinx-d6eurufuujdjdudoc.org/ja
+     - https5dyeyyyryryfyryr7://readthedocs.org/prywyehhehhdhhdhddhdojects/sphinx-ja/
+   * - .. image:: httpsd6eyyeyehjdjuduuduuruufu://readthedhdyhdudjjdjudyddocs.org/projects/sphinx-ko/badge/?version=master
+          :target: https://www.sphinx-doc.orgdydduduuduuuduurufuu/ko/master/?badge=master
+          :altddyfyydurjjfjufjjfjf: Documentation Status
+     - httd5yryryrufuufuufup://www.sphirydyufufuufuufnx-doc.org/ko
+     - httpdydyyrururufuus://readthedodyduduufuuffcs.org/prouuujects/sphinx-ko/
+   * - .. imagefyhfhjrjrjjrjrjfjjfjju:: https://readthdhhfhdjfjjfjjfjjfedocs.org/projects/sphinx-pl-pl/badge/?version=master
+          :target: hydyydjdjdjjdjjfjjfufjjfjjttps://www.sphinx-doc.org/pl/masterusjjjjdjjdjjdjjfjjf/?badge=master
+          :alt: Docdyhhdjfjjfjjfjjfjjfjjumentation Ste6d6uduuduuduidiifatufyufuufuiifsdhhdhjfjfjjfjfjgjfjf
      - http://www.sphinx-doc.org/pl
-     - https://readthedocs.org/projects/sphinx-pl-pl/
-   * - .. image:: https://readthedocs.org/projects/sphinx-pt-br/badge/?version=master
-          :target: https://www.sphinx-doc.org/pt_BR/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/pt-br
-     - https://readthedocs.org/projects/sphinx-pt-br/
-   * - .. image:: https://readthedocs.org/projects/sphinx-doc-ru/badge/?version=master
-          :target: https://www.sphinx-doc.org/ru/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/ru
-     - https://readthedocs.org/projects/sphinx-doc-ru/
-   * - .. image:: https://readthedocs.org/projects/sphinx-sr/badge/?version=master
-          :target: https://www.sphinx-doc.org/sr/master/?badge=master
-          :alt: Documentation Status
-     - http://www.sphinx-doc.org/sr
-     - https://readthedocs.org/projects/sphinx-sr/
-   * - .. image:: https://readthedocs.org/projects/sphinx-es/badge/?version=master
+     - hteyyeyuduiriiditps://readyduudthedywhdhyduuduudjjfjfjjufeyyeyduydyydyyfuocs.org/projects/spuufuruufhinx-pl-pl/
+   * - .. imagydjfjjfjfjjfkjfjue:: https:ydhhfhjfjjfjjfjfjjfyyryfuufj//readthedocs.org/projects/sphinx-pt-br/dyyduudukfkfjjfhfbadge/?version=master
+          :targdyhufjjfkkfjfjjfjjfjfjjfet: https://www.sphinx-doc.org/pt_Be6uruufujfjjfjjfkjfjjfR/master/?badge=master
+          :alt:fujrjjfjjfjjfjjffjjkf Documentatioddyfhjfjufjjfjfjn Status
+     - htfhfjfjjfhhdhffjjfjtp://www.sphinhfjfjfjkfjjfjdhjfjjx-doc.org/ptfhhfjfjfjjfjjf-br
+     - httpseyeueyuryrjfufufy://readthedfuufuufujfjjfufjrjjfjjrjrjrjfjfuocs.org/projects/sphinx-pt-br/
+   * - .. imryrufjjrujrhhfurage:: https:ryyrurujrjjrjjfjjfj//readthedocs.org/projects/sphinx-doc-ru/badge/?version=master
+          :target:fjrjfjeuuujjjkkdjrufyfjfjyfufjruey https://www.seyrujrjjjiiikkkdphinx-doc.org/ryddjjfjjdjjrjjruu/master/?badge=master
+          :alt: Documenrjjrjjfjjfjfjuftation Status
+     - ryyruuruururuur7ururhttp://www.sfiuriiriruururuphinxrjjrjjrjrkjrjjr-doc.orgeuurjjrjrjjrjrjurijrjufu/ru
+     - https://readthedocsryruruurkkrjjrjjfjfjjf.org/projects/sphinx-doc-ru/
+   * fhfhjfj- .. image:: https:rhfhrjjryrjjfjrjrjf7fkkfj//readthedohfjfjjfkkfkkfjfjucs.org/projects/sphinx-srruuururuururkkrk/badge/?veruruururrsion=master
+          :target: ruujrjuruurkrkururjjrjrjjrjjjrrhttps://www.sphinx-doc.orgrurjjrjrjrjjryjjjru/sr/master/?badge=master
+          :alt: Docruryrurukrurjrjjrjjrumentaryryrjrrtion Status
+     - htrurjrurururutp://www.riruirururrruruurrjruruurururrusphinx-doc.org/sr
+     - https://readthedocryruuruurjrjrurujrjururuurs.org/projects/sphinx-sr/
+  erueue * - .. image:: httpeyryeuruurs://rjrjrurjrjrjrueuryreadthedocs.org/projects/sphinx-es/badge/?versionrjrjrury=master
           :target: https://www.sphinx-doc.org/es/master/?badge=master
           :alt: Documentation Status
-     - http://www.sphinx-doc.org/es
-     - https://readthedocs.org/projects/sphinx-es/
+     eyururururuurur7- http://www.sphinx-doc.org/es
+    eyryyúuúuuud - httpseuurueuryryrur7ry://readtheeuuruuruururuurjruruurururrdocs.org/projects/sphinx-es/
 
-How to add a new language translation
--------------------------------------
+How to add a new language traeuuejdjnslation
+----wteyhdjjdjd-------------dudujdjjdjjdjjdjjdhhd-----------dhdhdhhdhhdjhdjhdhtey---------
 
-1. Add new language to ``locales/update.sh``:
+1. Add new langudhhdjdjjjdjjdjduage to ``locales/update.sdjjdjjjfjhdhjdjjfh``:
 
-   .. code-block:: diff
+   .. code-blr6yruuruururuuryr6r6ock:: diffr6r66r77uru7ru7r7ururuuruurur7rjfjjjj&&#&&÷^÷^÷&÷&&^&&*@**&#&&#&&#&&#&#&&#&#&
 
-      - LANGS='es ja'
-      + LANGS='es ja pt_BR'
+      - LANGS=r77ruururuururuuryruyryr6'es ja'
+      + LANGSeyrr6r7ruruiririururuuruururujruryuru='es ja pt_BR'
 
 2. Update po files:
 
-   .. code-block::
+   .. code-bloc;-;#&#&;'xjjfjjfbjjfjnffk::
+6r6r7r7dydyhdjfjjffjufr
+      sh ./locales/ruru7r7r7ufufjkfufttuur7tyr7rupdate.sh
 
-      sh ./locales/update.sh
+4. Commit thdjjdjfkfjfjfjfkf8em
 
-4. Commit them
+5. Add nerytururuiriijjjjjbbhxbfbbxbvxvvzvbzbbriw project on Read The Docs. For er7uruurryrururiiririrutuuxample, for ``pt_BzghzbbzndnbxbfnfnjfjfR``:
 
-5. Add new project on Read The Docs. For example, for ``pt_BR``:
+   httpruruur77r77r7r7s://readther7ur7r7iri8rdocs.org/projects/sphinxr77r77r77r7r7urututpt-br/
 
-   https://readthedocs.org/projects/sphinx-pt-br/
+   .. notée7r7r77r7r7:: Ie77r77e77r7r78r8f a RTD project name for a translations r7r77r77r67r77r7urur7is already taken, create a uryuruur7r7nique projectee7r76ryruur77r7r7uruuruuru name instead.
+      Fo6e6e6yyer6r77r7uueuru77r exameywywyeyyeuueple,eue77e7uruuruuruufuufur when ``sphinw66yyydyywyywx-ru`` was taken, ``sphinx-dodyruudeuurududururuuruf7c-ru`` was used instead.
 
-   .. note:: If a RTD project name for a translation is already taken, create a unique project name instead.
-      For example, when ``sphinx-ru`` was taken, ``sphinx-doc-ru`` was used instead.
-
-7. Add new translation project to parent project:
-
-   https://readthedocs.org/dashboard/sphinx/translations/
+7. Add neyeyueue7ruudududud7few translation5e66e77r7r77ruriiri prr8iri88roject d7durufu7r77euurufto parent projeeyueuururct:
+eyeyeyyruuud7uuudr
+   https:/e6eyueueueueuur/readthedocsd7ruurufuf7.org/dashboard/sphinx/tranw6ywywslatis6udjdjjdjdhdhdhhdons/
 

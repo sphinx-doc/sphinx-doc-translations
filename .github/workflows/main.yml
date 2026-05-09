@@ -68,6 +68,7 @@ jobs:
         git diff --name-only --diff-filter=D | xargs -r git rm
         git diff -I'^# Copyright ' -I'^"Project-Id-Version: ' -I'^"POT-Creation-Date: '	-I'^"Language: ' --numstat locales/**/*.po locales/**/*.pot | cut -f3 | xargs -r git add -v
         git ls-files --others --exclude-standard | xargs -r git add
+        git add sphinx
         git diff-index --cached --quiet HEAD || git commit -vm "Update translations by GHA https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
     - name: GitHub Push
       if: github.event_name != 'pull_request'

@@ -62,10 +62,6 @@ jobs:
         sh ./locales/generate_templates.sh
         cat ./locales/.tx/config
         sh ./locales/update.sh
-    - name: Include obsolete catalog messages (po files) for removal
-      run: |
-        deleted_files=$(git status -s | grep ^' D' | cut -d' ' -f3)
-        if [ -n "$deleted_files" ]; then git rm $deleted_files; fi
     # 4. Commit and push changes
     - name: After success
       run: |

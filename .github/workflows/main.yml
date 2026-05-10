@@ -65,6 +65,7 @@ jobs:
     # 4. Commit and push changes
     - name: After success
       run: |
+        shopt -s globstar
         git diff --name-only --diff-filter=D | xargs -r git rm
         git diff -I'^# Copyright ' -I'^"Project-Id-Version: ' -I'^"POT-Creation-Date: '	-I'^"Language: ' --numstat locales/**/*.po locales/**/*.pot | cut -f3 | xargs -r git add -v
         git ls-files --others --exclude-standard | xargs -r git add

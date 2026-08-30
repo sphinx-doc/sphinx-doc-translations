@@ -8,6 +8,7 @@ on:
 
 jobs:
   update:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write   # for git push; turn all other permissions 'read'

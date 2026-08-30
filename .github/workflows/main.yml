@@ -85,7 +85,7 @@ jobs:
           https://api.github.com/repos/${{ github.repository }}/actions/workflows/test-translations.yml/dispatches \
           -d '{"ref":"master"}'
     #5. Upload sphinx log as artifact
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       if: always()
       with:
         name: sphinx-logs

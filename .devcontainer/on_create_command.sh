@@ -4,6 +4,7 @@
 set -ex
 
 sudo apt-get update && sudo apt-get install -y graphviz
+git submodule update --init --remote
 pip install -U pip setuptools
 pip install -e sphinx
 pip install --group sphinx/pyproject.toml:docs

@@ -28,7 +28,7 @@ jobs:
 
     steps:
     - name: Grab the repo src
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: List languages
       id: languages
@@ -47,7 +47,7 @@ jobs:
         language: ${{fromJson(needs.matrix.outputs.languages)}}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - name: Initialize and update submodule
       run: |
         git submodule update --init --remote

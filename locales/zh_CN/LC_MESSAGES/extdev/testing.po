@@ -1,20 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007-2025, the Sphinx developers
+# Copyright (C) 2007-2026, the Sphinx developers
 # This file is distributed under the same license as the Sphinx package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# cdarlint <cdarling@126.com>, 2024
 # gerhardt.gao <gerhardt.gao@gmail.com>, 2025
+# wendi cao <651645601@qq.com>, 2026
+# cdarlint <cdarling@126.com>, 2026
+# Georg Brandl <g.brandl@gmx.net>, 2026
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.1.0rc1\n"
+"Project-Id-Version: Sphinx 9.3.0+/f5103eccf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-22 06:43+0000\n"
+"POT-Creation-Date: 2026-10-21 21:28+0000\n"
 "PO-Revision-Date: 2024-07-25 00:42+0000\n"
-"Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
+"Last-Translator: Georg Brandl <g.brandl@gmx.net>, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,35 +30,233 @@ msgstr "测试API"
 
 #: ../../sphinx/doc/extdev/testing.rst:9
 msgid ""
-"Utility functions and pytest fixtures for testing are provided in "
-":py:mod:`!sphinx.testing`. If you are a developer of Sphinx extensions, you "
-"can write unit tests with pytest_."
+"Sphinx provides utility functions and pytest_ fixtures to make it easier to "
+"write test suites that build multiple Sphinx documentation projects."
 msgstr ""
-"测试的实用函数和pytests设施在 :py:mod:`!sphinx.testing` 中提供。如果您是Sphinx扩展的开发人员，您可以使用 "
-"pytest_ 编写单元测试。"
+
+#: ../../sphinx/doc/extdev/testing.rst:15
+msgid "Using the ``pytest`` plugin"
+msgstr ""
 
 #: ../../sphinx/doc/extdev/testing.rst:17
-msgid "``pytest`` configuration"
-msgstr "``pytest`` 配置"
-
-#: ../../sphinx/doc/extdev/testing.rst:19
 msgid ""
-"To use pytest fixtures that are provided by ``sphinx.testing``, add the "
-"``'sphinx.testing.fixtures'`` plugin to your test modules or "
-":file:`conftest.py` files as follows:"
+"To use pytest helpers that are provided by ``sphinx.testing``, add the "
+"``'sphinx.testing.fixtures'`` plugin to your :file:`conftest.py` file as "
+"follows:"
 msgstr ""
-"要使用 ``sphinx.testing`` 提供的 pytest 夹具，请将 ``'sphinx.testing.fixtures'`` "
-"插件添加到您的测试模块或 :file:`conftest.py` 文件中，如下所示："
 
-#: ../../sphinx/doc/extdev/testing.rst:28
-msgid "Usage"
-msgstr "如何使用"
+#: ../../sphinx/doc/extdev/testing.rst:26
+msgid "Markers"
+msgstr ""
 
 #: ../../sphinx/doc/extdev/testing.rst:30
-msgid ""
-"If you want to know more detailed usage, please refer to "
-":file:`tests/conftest.py` and other :file:`test_*.py` files under the "
-":file:`tests/` directory."
+msgid "Arguments to initialize the Sphinx test application."
 msgstr ""
-"如果您想了解更详细的用法，请参阅 :file:`tests/conftest.py` 和 :file:`tests/` 目录下的其他 "
-":file:`test_*.py` 文件。"
+
+#: ../../sphinx/doc/extdev/testing.rst:0
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../sphinx/doc/extdev/testing.rst:32
+msgid "Builder to use."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:33
+msgid "Test root directory to use."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:34
+msgid "Source directory to use."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:35
+msgid "Configuration values to override."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:36
+msgid "Whether to refresh the environment."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:37
+msgid "Treat warnings as errors."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:38
+msgid "List of tags to set."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:39
+msgid "Verbosity level."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:40
+msgid "Number of parallel processes."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:41
+msgid "Build directory."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:42
+msgid "Docutils configuration."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:53
+msgid "Parameters associated with a test."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:55
+msgid ""
+"A key that allows sharing the build result, status, and warnings between "
+"tests that use the same key."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:59
+msgid ""
+"When multiple tests with a module are marked with the same ``shared_result``"
+" value, they will share the same build result as well as status and warning "
+"buffers. This allows related tests to avoid redundant rebuilds and reuse the"
+" same build context."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:64
+msgid "*shared_result* and *srcdir* are mutually incompatible."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:79
+msgid "Fixtures"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:0
+msgid "scope"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:84
+#: ../../sphinx/doc/extdev/testing.rst:99
+#: ../../sphinx/doc/extdev/testing.rst:116
+msgid "function"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:86
+msgid ""
+"Provides a :class:`~sphinx.testing.util.SphinxTestApp` instance. This is the"
+" most common way to get a Sphinx application for testing."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:89
+msgid ""
+"The app can be configured by using the :deco:`pytest.mark.sphinx` marker."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:101
+msgid ""
+"Factory function that constructs a "
+":class:`~sphinx.testing.util.SphinxTestApp` instance for use in tests. This "
+"is the preferred way to create instances of the "
+":class:`~sphinx.application.Sphinx` object, as it handles clean-up. The "
+"arguments are the same as those to ``SphinxTestApp``."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:118
+msgid ""
+"The positional keyword arguments used to create the "
+":class:`~sphinx.testing.util.SphinxTestApp` for this test. These are derived"
+" from the markers_ applied to the test function."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:122
+msgid "Returns a namedtuple of ``(args, kwargs)``."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:127
+#: ../../sphinx/doc/extdev/testing.rst:157
+msgid "session"
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:129
+msgid "Default is ``None``, meaning tests use empty temporary directories."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:131
+msgid ""
+"Can be overridden in a project's :file:`conftest.py` to return a "
+":class:`~pathlib.Path` to a directory, containing multiple Sphinx "
+"documentation sources under sub-directories prefixed with ``test-``."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:159
+msgid ""
+"Base temporary directory :class:`~pathlib.Path` used for building the test "
+"apps."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:163
+msgid "Utilities"
+msgstr "公用程序"
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp:1
+msgid "A subclass of :class:`~sphinx.application.Sphinx` for tests."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp:3
+msgid ""
+"The constructor uses some better default values for the initialization "
+"parameters and supports arbitrary keywords stored in the :attr:`extras` "
+"read-only mapping."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp:7
+msgid "It is recommended to use::"
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp:13
+msgid "instead of::"
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp:18
+msgid ""
+"In the former case, the 'app' fixture takes care of setting the source "
+"directory, whereas in the latter, the user must provide it themselves."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:171
+msgid "A dictionary to store arbitrary data associated with this app."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp.status:1
+msgid "The in-memory text I/O for the application status messages."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestApp.warning:1
+msgid "The in-memory text I/O for the application warning messages."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestAppWrapperForSkipBuilding:1
+msgid "A wrapper for SphinxTestApp."
+msgstr ""
+
+#: ../../sphinx/sphinx/testing/util.pydocstring of
+#: sphinx.testing.util.SphinxTestAppWrapperForSkipBuilding:3
+msgid ""
+"This class is used to speed up the test by skipping ``app.build()`` if it "
+"has already been built and there are any output files."
+msgstr ""
+
+#: ../../sphinx/doc/extdev/testing.rst:178
+msgid "Examples"
+msgstr "实际案例"
+
+#: ../../sphinx/doc/extdev/testing.rst:180
+msgid ""
+"For practical examples, refer to :file:`tests/conftest.py` and other "
+":file:`test_*.py` files under the :file:`tests/` directory of the Sphinx "
+"source code."
+msgstr ""

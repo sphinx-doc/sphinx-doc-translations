@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Sphinx 9.3.0+/9db1715c1\n"
+"Project-Id-Version: Sphinx 9.3.0+/c386315ff\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-23 04:16+0000\n"
+"POT-Creation-Date: 2026-10-23 11:21+0000\n"
 "PO-Revision-Date: 2018-02-12 13:48+0000\n"
 "Last-Translator: gerhardt.gao <gerhardt.gao@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/sphinx-doc/teams/15434/zh_CN/)\n"
@@ -795,18 +795,18 @@ msgid "priority range categories for Sphinx transforms"
 msgstr "Sphinx变换的优先级范围类别"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:29
+#: sphinx.application.Sphinx.add_css_file:54
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:34
+#: sphinx.application.Sphinx.add_js_file:58
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:12
 msgid "Priority"
 msgstr "优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:30
+#: sphinx.application.Sphinx.add_css_file:55
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:35
+#: sphinx.application.Sphinx.add_js_file:59
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_transform:13
 msgid "Main purpose in Sphinx"
@@ -954,50 +954,82 @@ msgid "Example::"
 msgstr "例如："
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:31
+#: sphinx.application.Sphinx.add_css_file:29
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:33
+msgid ""
+"For the file to be included in the output, it must be present in the "
+"``_static`` directory at build time. Extension developers should use "
+":meth:`add_static_dir` to register a directory whose contents will be copied"
+" to ``_static``. Site authors can place files into a directory listed in "
+":confval:`html_static_path` instead."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:42
+msgid ""
+"Site authors (as opposed to extension developers) who wish to add custom "
+"JavaScript files may find it easier to use the :confval:`html_js_files` "
+"configuration value in combination with :confval:`html_static_path`, rather "
+"than writing an extension."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:45
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:49
+msgid ""
+"Files registered by extensions can be overridden by site authors by placing "
+"a file with the same name into their :confval:`html_static_path`. Note that "
+"this may not work in all cases; see `#12096 <https://github.com/sphinx-"
+"doc/sphinx/issues/12096>`__ for details."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:55
 msgid "priority range for JavaScript files"
 msgstr "JavaScript文件的优先级范围"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:31
+#: sphinx.application.Sphinx.add_css_file:56
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:36
+#: sphinx.application.Sphinx.add_js_file:60
 msgid "200"
 msgstr "200"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:37
+#: sphinx.application.Sphinx.add_js_file:61
 msgid "default priority for built-in JavaScript files"
 msgstr "内建JavaScript文件的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:33
+#: sphinx.application.Sphinx.add_css_file:58
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:38
+#: sphinx.application.Sphinx.add_js_file:62
 msgid "500"
 msgstr "500"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:34
+#: sphinx.application.Sphinx.add_css_file:59
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:39
+#: sphinx.application.Sphinx.add_js_file:63
 msgid "default priority for extensions"
 msgstr "扩展的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:35
+#: sphinx.application.Sphinx.add_css_file:60
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:40
+#: sphinx.application.Sphinx.add_js_file:64
 msgid "800"
 msgstr "800"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:41
+#: sphinx.application.Sphinx.add_js_file:65
 msgid "default priority for :confval:`html_js_files`"
 msgstr ":confval:`html_js_files` 的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:43
+#: sphinx.application.Sphinx.add_js_file:67
 msgid ""
 "A JavaScript file can be added to the specific HTML page when an extension "
 "calls this method on :event:`html-page-context` event."
@@ -1005,33 +1037,42 @@ msgstr ""
 "当扩展在 :event:`html-page-context` 事件上调用此方法时，可以将JavaScript文件添加到特定的HTML页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:42
+#: sphinx.application.Sphinx.add_css_file:67
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:47
+#: sphinx.application.Sphinx.add_js_file:71
 msgid ""
 ":meth:`add_static_dir` for copying static files to the output directory"
 msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:51
+#: sphinx.application.Sphinx.add_js_file:75
 msgid ""
 "Renamed from ``app.add_javascript()``. And it allows keyword arguments as "
 "attributes of script tag."
 msgstr "重命名自 ``app.add_javascript()``. 它允许关键字参数作为脚本标记的属性。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:55
+#: sphinx.application.Sphinx.add_js_file:79
 msgid ""
 "Take priority argument.  Allow to add a JavaScript file to the specific "
 "page."
 msgstr "接受优先级参数。允许将JavaScript文件添加到特定页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_js_file:57
+#: sphinx.application.Sphinx.add_js_file:81
 msgid ""
 "Take loading_method argument.  Allow to change the loading method of the "
 "JavaScript file."
 msgstr "接受loading_method参数。允许更改JavaScript文件的加载方法。"
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:85
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_js_file:84
+msgid ""
+"A checksum is appended as a query parameter to local asset URIs (e.g. "
+"``?v=a1b2c3d4``) for cache-busting purposes."
+msgstr ""
 
 #: ../../sphinx/sphinx/application.pydocstring of
 #: sphinx.application.Sphinx.add_css_file:1
@@ -1060,29 +1101,38 @@ msgid ""
 msgstr "额外的关键字参数作为 ``<link>`` 标签的属性包含。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:26
+#: sphinx.application.Sphinx.add_css_file:38
+msgid ""
+"Site authors (as opposed to extension developers) who wish to add custom CSS"
+" files may find it easier to use the :confval:`html_css_files` configuration"
+" value in combination with :confval:`html_static_path`, rather than writing "
+"an extension."
+msgstr ""
+
+#: ../../sphinx/sphinx/application.pydocstring of
+#: sphinx.application.Sphinx.add_css_file:51
 msgid "priority range for CSS files"
 msgstr "CSS文件的优先级范围"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:32
+#: sphinx.application.Sphinx.add_css_file:57
 msgid "default priority for built-in CSS files"
 msgstr "内建CSS文件的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:36
+#: sphinx.application.Sphinx.add_css_file:61
 msgid "default priority for :confval:`html_css_files`"
 msgstr ":confval:`html_css_files` 的默认优先级"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:38
+#: sphinx.application.Sphinx.add_css_file:63
 msgid ""
 "A CSS file can be added to the specific HTML page when an extension calls "
 "this method on :event:`html-page-context` event."
 msgstr "当扩展在 :event:`html-page-context` 事件上调用此方法时，可以将CSS文件添加到特定的HTML页面。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:46
+#: sphinx.application.Sphinx.add_css_file:71
 msgid ""
 "Optional ``alternate`` and/or ``title`` attributes can be supplied with the "
 "arguments *alternate* (a Boolean) and *title* (a string). The default is no "
@@ -1094,14 +1144,14 @@ msgstr ""
 "<https://mdn.io/Web/CSS/Alternative_style_sheets>`__ 。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:53
+#: sphinx.application.Sphinx.add_css_file:78
 msgid ""
 "Renamed from ``app.add_stylesheet()``. And it allows keyword arguments as "
 "attributes of link tag."
 msgstr "重命名自 ``app.add_stylesheet()``. 它允许关键字参数作为链接标记的属性。"
 
 #: ../../sphinx/sphinx/application.pydocstring of
-#: sphinx.application.Sphinx.add_css_file:57
+#: sphinx.application.Sphinx.add_css_file:82
 msgid "Take priority argument.  Allow to add a CSS file to the specific page."
 msgstr "接受优先级参数。允许将CSS文件添加到特定页面。"
 
